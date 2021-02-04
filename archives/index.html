@@ -294,7 +294,7 @@
           </li>
         
           <li>
-            <a href="/blog/2021/02/04/%E5%85%B3%E4%BA%8EAndroid%E5%90%8C%E6%AD%A5%E6%BA%90%E7%A0%81%E5%92%8C%E7%BC%96%E8%AF%91%E5%88%B7%E6%9C%BA%E5%8C%85/">Android同步源码和编译ROM傻瓜式教程</a>
+            <a href="/blog/2021/02/04/%E5%85%B3%E4%BA%8EAndroid%E5%90%8C%E6%AD%A5%E6%BA%90%E7%A0%81%E5%92%8C%E7%BC%96%E8%AF%91%E5%88%B7%E6%9C%BA%E5%8C%85/">Android同步源码和编译ROM傻瓜式 (有手就行)</a>
           </li>
         
       </ul>
@@ -823,40 +823,7 @@ var $main = document.querySelector('.main');
 
 			<article>
 				
-				<a id="more"></a>
-<h3 id="程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下"><a href="#程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下" class="headerlink" title="程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下"></a>程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</span><br></pre></td></tr></table></figure>
-<img src="/blog/images/wsl傻瓜式安装/按照提示重启电脑.jpg" style="width: 300px; height: 150px;">
-
-<p><strong>按照提示重启电脑</strong></p>
-<h3 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h3><p><strong>然后下载<a target="_blank" rel="noopener" href="https://github.com/yuk7/ArchWSL">Arch WSL</a></strong></p>
-<img src="/blog/images/wsl傻瓜式安装/Arch wsl下载.jpg" style="width: 400px; height: 300px;">
-
-<img src="/blog/images/wsl傻瓜式安装/Arch wsl下载版本.jpg" style="width: 400px; height: 300px;">
-
-<p><strong>那个安装证书是给appx版的arch用的</strong></p>
-<p><strong>你已经安装zip版的</strong></p>
-<p><strong>没有必要安两次</strong></p>
-<p><strong>只用需要用到zip</strong></p>
-<h3 id="配置Arch-Wsl"><a href="#配置Arch-Wsl" class="headerlink" title="配置Arch Wsl"></a>配置Arch Wsl</h3><img src="/blog/images/wsl傻瓜式安装/Arch wsl配置.jpg" style="width: 400px; height: 300px;">
-
-<p><strong>反正按照我这个改，保存是ctrl + x 回车</strong></p>
-<h3 id="然后提示配置-按照我的方法配置"><a href="#然后提示配置-按照我的方法配置" class="headerlink" title="然后提示配置  按照我的方法配置"></a>然后提示配置  按照我的方法配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ Arch.exe//这个是启动后的显示</span><br><span class="line">[root@PC-NAME user]<span class="comment"># passwd       //这个是用户名输完名字输密码</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ Arch.exe</span><br><span class="line">[root@PC-NAME]<span class="comment"># EDITOR=nano visudo</span></span><br><span class="line">    %wheel      ALL=(ALL) ALL</span><br><span class="line">    (setup sudoers file.)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ [root@PC-NAME]<span class="comment"># useradd -m -G wheel -s /bin/bash &#123;username&#125;</span></span><br><span class="line">(add user)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># passwd &#123;username&#125;      //&#123;&#125;换成你的用户名,记住不需要打&#123;&#125;</span></span><br><span class="line">(<span class="built_in">set</span> default user password)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># exit  //退出</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ Arch.exe config --default-user &#123;username&#125;</span><br><span class="line">    (setting to default user)     //现在是root用户,不用加sudo</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ [user@PC-NAME]$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ [root@PC-NAME]$ sudo pacman-key --populate</span><br></pre></td></tr></table></figure>
-<h3 id="就安装完了"><a href="#就安装完了" class="headerlink" title="就安装完了"></a>就安装完了</h3><p><strong>下面是<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/">换源</a></strong></p>
-<p><strong>打开nano /etc/pacman.d/mirrorlist 然后再最顶端添加 切记去##</strong></p>
-<img src="/blog/images/wsl傻瓜式安装/Arch wsl配置文件.jpg" style="width: 600px; height: 300px;">
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ Server = https:mirrors.tuna.tsinghua.edu.cn/archlinux/<span class="variable">$repo</span>/os/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
-<p><strong>然后就可以 更新软件包缓存</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo pacman -Syy</span><br></pre></td></tr></table></figure>
-<h3 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h3><h3 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h3><h3 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h3>
+				<p>本人是Arch教徒过来传一下教<br><img src="/blog/images/wsl傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
 				
 			</article>
 			<div class="dearmsdan-post-Statistics">
@@ -975,7 +942,7 @@ var $main = document.querySelector('.main');
 			<div class="dearmsdan-cover-content">
 				<a href="/blog/2021/02/04/%E5%85%B3%E4%BA%8EAndroid%E5%90%8C%E6%AD%A5%E6%BA%90%E7%A0%81%E5%92%8C%E7%BC%96%E8%AF%91%E5%88%B7%E6%9C%BA%E5%8C%85/">
 					<div class="dearmsdan-title"> 
-						Android同步源码和编译ROM傻瓜式教程
+						Android同步源码和编译ROM傻瓜式 (有手就行)
 					</div>
 				</a>
 			</div>
@@ -1040,7 +1007,7 @@ var $main = document.querySelector('.main');
 			<div class="dearmsdan-cover-content">
 				<a href="/blog/2021/02/04/Arch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">
 					<div class="dearmsdan-title"> 
-						Arch傻瓜式安装教程
+						Arch傻瓜式安装 (有手就行)
 					</div>
 				</a>
 			</div>
