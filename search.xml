@@ -3,11 +3,9 @@
   <entry>
     <title>Arch傻瓜式安装教程</title>
     <url>/blog/2021/02/04/Arch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p><strong>在Windows里用DiskGenius转GPT之后 删除你所要安装Arch的分区</strong></p>
-<img src="/blog/images/Arch无脑安装/转GPT格式.jpg" style="width: 300px; height: 150px;">
-
-
-<p><strong>磁盘变更还可以用Lixux命令来 不建议使用</strong></p>
+    <content><![CDATA[<p>本人是Arch教徒过来传一下教<br><img src="/blog/images/Arch无脑安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
+<a id="more"></a>
+<p><strong>在Windows里用DiskGenius转GPT之后 删除你所要安装Arch的分区</strong><br><img src="/blog/images/Arch无脑安装/转GPT格式.jpg" style="width: 300px; height: 150px;"><br><strong>磁盘变更还可以用Lixux命令来 不建议使用</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ partrd /dev/(你要变更的磁盘)</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gpt</span><br></pre></td></tr></table></figure>
 <p>然后退出</p>
@@ -121,9 +119,6 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ reboot</span><br></pre></td></tr></table></figure>
 <h3 id="Vim命令"><a href="#Vim命令" class="headerlink" title="Vim命令"></a>Vim命令</h3><p><strong>按A键是编辑模式</strong><br><strong>按回车键是执行</strong><br><strong>按两下D键是剪切</strong><br><strong>按两下G键是回到第一行</strong><br><strong>按P键粘贴</strong><br><strong>按N键查找下一个</strong><br><strong>按ESC 然后输入 :wq 是保存并退出</strong></p>
 <h3 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
-
-
-<p>本人是Arch教徒过来传一下教<br><img src="/blog/images/Arch无脑安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
 ]]></content>
   </entry>
   <entry>
@@ -131,7 +126,7 @@
     <url>/blog/2021/02/04/Hexo%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h3 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h3><p>前提是需要安装 Node.js,不懂的可以百度下载然后按照<a href="https://www.bilibili.com/video/BV1wA411s7re?from=search&seid=11841654225437997570">B站的安装视频按照</a></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-
+<a id="more"></a>
 <h3 id="第二是-Hexo初始化博客"><a href="#第二是-Hexo初始化博客" class="headerlink" title="第二是 Hexo初始化博客"></a>第二是 Hexo初始化博客</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init (博客名字自定义)  例如: hexo init blog</span><br></pre></td></tr></table></figure>
 
 <h3 id="第三是-给安装博客依赖"><a href="#第三是-给安装博客依赖" class="headerlink" title="第三是 给安装博客依赖"></a>第三是 给安装博客依赖</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
@@ -140,9 +135,12 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
-    <title>关于Android同步源码和编译ROM，日后反馈会有补充</title>
+    <title>Android同步源码和编译ROM傻瓜式教程</title>
     <url>/blog/2021/02/04/%E5%85%B3%E4%BA%8EAndroid%E5%90%8C%E6%AD%A5%E6%BA%90%E7%A0%81%E5%92%8C%E7%BC%96%E8%AF%91%E5%88%B7%E6%9C%BA%E5%8C%85/</url>
-    <content><![CDATA[<h3 id="第一是-安装Linux-我以Ubuntu和deepin为例子，建议新手用deepin"><a href="#第一是-安装Linux-我以Ubuntu和deepin为例子，建议新手用deepin" class="headerlink" title="第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin"></a>第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin</h3><p><a href="https://www.bilibili.com/video/BV1aW411C7NR">Ubantu的安装视频</a><br><a href="https://www.bilibili.com/video/BV1HW411Y73e">Deepin的安装视频</a><br>本人是用Arch，顺便来传一下教<br><img src="/blog/images/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
+    <content><![CDATA[<p>本人是用Arch，顺便来传一下教<br><img src="/blog/images/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
+<a id="more"></a>
+
+<h3 id="第一是-安装Linux-我以Ubuntu和deepin为例子，建议新手用deepin"><a href="#第一是-安装Linux-我以Ubuntu和deepin为例子，建议新手用deepin" class="headerlink" title="第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin"></a>第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin</h3><p><a href="https://www.bilibili.com/video/BV1aW411C7NR">Ubantu的安装视频</a><br><a href="https://www.bilibili.com/video/BV1HW411Y73e">Deepin的安装视频</a></p>
 <h3 id="第二是-环境搭载"><a href="#第二是-环境搭载" class="headerlink" title="第二是 环境搭载"></a>第二是 环境搭载</h3><p><strong>1.明确自己要开发的android版本 参考 lineageos官方的wiki：<a href="https://wiki.lineageos.org/">https://wiki.lineageos.org</a> 选择合适的linux发行版(推荐ubuntu 16)推荐而已，你可以是别的Linux,都没问题</strong></p>
 <p><strong>2.更新自身ubuntu的软件源</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update (如果自身网速不好建议换国内源 清华 中科大 阿里 )个人建议清华:https://mirrors.tuna.tsinghua.edu.cn/<span class="built_in">help</span>/ubuntu/</span><br></pre></td></tr></table></figure>
@@ -222,6 +220,7 @@
     <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
     <url>/blog/2021/02/04/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B/</url>
     <content><![CDATA[<h3 id="什么是线程-学习进程最重要的还是学习线程"><a href="#什么是线程-学习进程最重要的还是学习线程" class="headerlink" title="什么是线程(学习进程最重要的还是学习线程)"></a>什么是线程(学习进程最重要的还是学习线程)</h3><p>线程就是独立执行的路径，就算在什么都不干的话，里面会有(主线程)main线程，Java里面还有个一个收垃圾的gc线程</p>
+<a id="more"></a>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Thread是线程的英文</span><br></pre></td></tr></table></figure>
 
 <h3 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h3><p>把程序跑起来才叫做进程，进程是执行程序的一次执行过程是一个动态的概念</p>
