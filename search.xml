@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>关于Hexo我所踩过的坑和小白安装教程</title>
+    <url>/blog/2021/02/04/Hexo%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h3 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h3><p>前提是需要安装 Node.js,不懂的可以百度下载然后按照<a href="https://www.bilibili.com/video/BV1wA411s7re?from=search&seid=11841654225437997570">B站的安装视频按照</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="第二是-Hexo初始化博客"><a href="#第二是-Hexo初始化博客" class="headerlink" title="第二是 Hexo初始化博客"></a>第二是 Hexo初始化博客</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init (博客名字自定义)  例如: hexo init blog</span><br></pre></td></tr></table></figure>
+
+<h3 id="第三是-给安装博客依赖"><a href="#第三是-给安装博客依赖" class="headerlink" title="第三是 给安装博客依赖"></a>第三是 给安装博客依赖</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<h3 id="第四是-找主题"><a href="#第四是-找主题" class="headerlink" title="第四是 找主题"></a>第四是 找主题</h3><p>到这个网站去找<a href="https://hexo.bootcss.com/themes/">主题</a></p>
+<h3 id="第五是-本地运行"><a href="#第五是-本地运行" class="headerlink" title="第五是 本地运行"></a>第五是 本地运行</h3><p>这里地址是localhost:4000</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
     <title>Arch傻瓜式安装教程</title>
     <url>/blog/2021/02/04/Arch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<p>本人是Arch教徒过来传一下教<br><img src="/blog/images/Arch无脑安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
@@ -122,19 +135,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>关于Hexo我所踩过的坑和小白安装教程</title>
-    <url>/blog/2021/02/04/Hexo%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<h3 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h3><p>前提是需要安装 Node.js,不懂的可以百度下载然后按照<a href="https://www.bilibili.com/video/BV1wA411s7re?from=search&seid=11841654225437997570">B站的安装视频按照</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="第二是-Hexo初始化博客"><a href="#第二是-Hexo初始化博客" class="headerlink" title="第二是 Hexo初始化博客"></a>第二是 Hexo初始化博客</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init (博客名字自定义)  例如: hexo init blog</span><br></pre></td></tr></table></figure>
-
-<h3 id="第三是-给安装博客依赖"><a href="#第三是-给安装博客依赖" class="headerlink" title="第三是 给安装博客依赖"></a>第三是 给安装博客依赖</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-<h3 id="第四是-找主题"><a href="#第四是-找主题" class="headerlink" title="第四是 找主题"></a>第四是 找主题</h3><p>到这个网站去找<a href="https://hexo.bootcss.com/themes/">主题</a></p>
-<h3 id="第五是-本地运行"><a href="#第五是-本地运行" class="headerlink" title="第五是 本地运行"></a>第五是 本地运行</h3><p>这里地址是localhost:4000</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
     <title>SQL Server T-SQL 存储过程</title>
     <url>/blog/2021/02/04/SQL%20Server%20T-SQL%20%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</url>
     <content><![CDATA[<h3 id="创建变量"><a href="#创建变量" class="headerlink" title="创建变量"></a>创建变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">declare</span> 变量名 数据类型 常量</span><br></pre></td></tr></table></figure>
@@ -146,8 +146,8 @@
 <h3 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h3>]]></content>
   </entry>
   <entry>
-    <title>SQL Server T-SQL 视图</title>
-    <url>/blog/2021/02/04/SQL%20Server%20T-SQL%20%E8%A7%86%E5%9B%BE/</url>
+    <title>Wsl的傻瓜式安装</title>
+    <url>/blog/2021/02/04/Wsl%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h3 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ create view 视图(字段别名) as select 字段 from 表 WITH CHECK OPTION</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h3 id="向视图插入数据"><a href="#向视图插入数据" class="headerlink" title="向视图插入数据"></a>向视图插入数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ insert 视图 values(<span class="string">&#x27;数据&#x27;</span>) </span><br></pre></td></tr></table></figure>
@@ -155,8 +155,8 @@
 <h3 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ update 视图 <span class="built_in">set</span> 修改的字段=<span class="string">&#x27;修改的数据&#x27;</span> <span class="built_in">where</span> 匹配字段=<span class="string">&#x27;匹配数据&#x27;</span> </span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
-    <title>Wsl的傻瓜式安装</title>
-    <url>/blog/2021/02/04/Wsl%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
+    <title>SQL Server T-SQL 视图</title>
+    <url>/blog/2021/02/04/SQL%20Server%20T-SQL%20%E8%A7%86%E5%9B%BE/</url>
     <content><![CDATA[<h3 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ create view 视图(字段别名) as select 字段 from 表 WITH CHECK OPTION</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h3 id="向视图插入数据"><a href="#向视图插入数据" class="headerlink" title="向视图插入数据"></a>向视图插入数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ insert 视图 values(<span class="string">&#x27;数据&#x27;</span>) </span><br></pre></td></tr></table></figure>
