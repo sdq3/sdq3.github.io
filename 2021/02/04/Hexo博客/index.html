@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>archive：2021/1 -  我叫史迪奇</title>
+	<title>关于Hexo我所踩过的坑和小白安装教程 -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -77,25 +77,25 @@
 		</div>
 		<div class="nav-list"> 
 			
-			<a href="/blog/blog/" title="首页">
+			<a href="/blog/" title="首页">
 				<span>
 					首页
 				</span>
 			</a>
 			
-			<a href="/blog/blog/about.html" title="关于">
+			<a href="/blog/about.html" title="关于">
 				<span>
 					关于
 				</span>
 			</a>
 			
-			<a href="/blog/blog/valine.html" title="留言">
+			<a href="/blog/valine.html" title="留言">
 				<span>
 					留言
 				</span>
 			</a>
 			
-			<a href="/blog/blog/link.html" title="友情">
+			<a href="/blog/link.html" title="友情">
 				<span>
 					友情
 				</span>
@@ -113,25 +113,25 @@
           </div>
          	<div class="mobile-inner-nav"> 
 				
-				<a href="/blog/blog/" title="首页">
+				<a href="/blog/" title="首页">
 					<span>
 						首页
 					</span>
 				</a>
 				
-				<a href="/blog/blog/about.html" title="关于">
+				<a href="/blog/about.html" title="关于">
 					<span>
 						关于
 					</span>
 				</a>
 				
-				<a href="/blog/blog/valine.html" title="留言">
+				<a href="/blog/valine.html" title="留言">
 					<span>
 						留言
 					</span>
 				</a>
 				
-				<a href="/blog/blog/link.html" title="友情">
+				<a href="/blog/link.html" title="友情">
 					<span>
 						友情
 					</span>
@@ -182,7 +182,7 @@
 			<nav>
 				
 				<div class="dearmsdan-count">
-					<span>文章</span>2
+					<span>文章</span>4
 					<span>标签</span>0
 					<span>分类</span>0
 				</div>		
@@ -262,7 +262,7 @@
 	  <a href="javascript:;" class="nav-togg" target="_self" ><span>文章归档</span>
 	  </a>
     <div>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a></li></ul>
     </div>
   </li>
 
@@ -278,11 +278,19 @@
       <ul>
         
           <li>
-            <a href="/blog/2021/01/15/Hexo%E5%8D%9A%E5%AE%A2/">关于Hexo我所踩过的坑和小白安装教程</a>
+            <a href="/blog/2021/02/04/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B/">什么是线程?什么是进程?线程与进程到底是什么关系</a>
           </li>
         
           <li>
-            <a href="/blog/2021/01/14/hello-world/">Hello World</a>
+            <a href="/blog/2021/02/04/%E5%85%B3%E4%BA%8EAndroid%E5%90%8C%E6%AD%A5%E6%BA%90%E7%A0%81%E5%92%8C%E7%BC%96%E8%AF%91%E5%88%B7%E6%9C%BA%E5%8C%85/">关于Android同步源码和编译ROM，日后反馈会有补充</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2021/02/04/Hexo%E5%8D%9A%E5%AE%A2/">关于Hexo我所踩过的坑和小白安装教程</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2021/02/04/Arch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">Arch傻瓜式安装教程</a>
           </li>
         
       </ul>
@@ -665,165 +673,68 @@ var $main = document.querySelector('.main');
 
 
 
-
 <style>
-.dearmsdan-post {
-	webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-}
-.dearmsdan-post:hover{
-	webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-}
+	#dearmsdanPost:hover{
+   		    background-color: rgba(255, 255, 255, 0.5)!important;
+	}	
 </style>
-
-
-<style>
-@media screen and (max-width: 1024px){
-	.dearmsdan-more{    
-    opacity: 1!important;
-	}
-	.dearmsdan-more{  
-		display: contents!important;	
-	}
-	.dearmsdan-toping{
-		display: inline-block;
-		left: 10px;
-		top: 0;
-		z-index: 2;
-		color: #FFFFFF;
-		padding: 0 10px;
-		border-radius: 4px;
-		font-style: normal;
-		background-color: rgba(234, 67, 74, 0.7);
-	}
-	.dearmsdan-post:hover .dearmsdan-toping {display: inline-block!important;}
-}
-
-@media screen and (min-width: 1024px){
-	.dearmsdan-toping{
-		display: none;
-		position: fixed;
-		left: 10px;
-		top: 0;
-		z-index: 2;color: #FFFFFF;
-		clip-path: polygon(100% 0, 100% 100%, 50% 70%, 0 100%, 0 0);
-		background-color: rgba(255, 0, 0, 0.51);    
-		background: -webkit-gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
-    	background: gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
-		height: 61px;
-		width: 41px;
-	}
-}
-	.dearmsdan-more{   
-	display: inline-block;
-    float: right;
-    background-color: rgba(204, 196, 196, 0.45);
-    padding: .5rem 1rem;
-    border-radius: 4px;
-    color: #919191!important;
-    text-decoration: none;
-    opacity: 0;
-    -webkit-transition: opacity 1.2s;
-    transition: opacity 1.2s;
-    will-change: opacity;
-        -moz-user-select: none; /*火狐*/
-        -webkit-user-select: none; /*webkit浏览器*/
-        -ms-user-select: none; /*IE10*/
-        -khtml-user-select: none; /*早期浏览器*/
-        -o-user-select: none; /* Opera*/
-        user-select: none;
-	}
-	.dearmsdan-post:hover .dearmsdan-more {
-		opacity: 1;
-		animation: fade-in;
-		animation-duration: 0.6s;
-		-webkit-animation: fade-in 0.6s;
-	}
-	
-	@keyframes fade-in {  
-    0% {opacity: 0;}/*初始状态 透明度为0*/  
-    40% {opacity: 0;}/*过渡状态 透明度为0*/  
-    100% {opacity: 1;}/*结束状态 透明度为1*/  
-	}  
-	@-webkit-keyframes fade-in {/*针对webkit内核*/  
-		0% {opacity: 0;}  
-		40% {opacity: 0;}  
-		100% {opacity: 1;}  
-	}  
-	.dearmsdan-post:hover .dearmsdan-toping {display: block;}
-	.dearmsdan-tags{
-	}
-	.dearmsdan-tags a{
-		color: #fff; 
-		font-size: 15px; 
-	}
-	.dearmsdan-tags a {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-	}
-	
-</style>
-
-
-<style>
-	
-@media screen and (min-width: 1024px){
-	.dearmsdan-post:hover{
-   		border: none;
-		transform: translateY(-20px);
-		-webkit-transform: translateY(-20px);
-		-moz-transform: translateY(-20px);
-		background-color: rgba(255, 255, 255, 0.3);
-	}
-	.dearmsdan-post{    
-		padding: 60px 70px!important;
-	}
-}
-	.dearmsdan-post{    
-/*   		border: 1px #b8c7ff solid;*/
-		margin: 0px;    margin-bottom: 20px;
-        background-color: rgba(240, 248, 255, 0.4);
-	}
-</style>
-
-
-
-
-
-
 <div class="dearmsdan">
-	<section class="dearmsdan-posts">
-    
-    
-    
-    
-    
-    
-    
-		
-    <div class="dearmsdan-post" id="dearmsdanIndex">
-		<div class="dearmsdan-inner-content">
-		<div class="dearmsdan-inner-img">
-			<div class="dearmsdan-cover-content">
-				<a href="/blog/2021/01/15/Hexo%E5%8D%9A%E5%AE%A2/">
-					<div class="dearmsdan-title"> 
-						关于Hexo我所踩过的坑和小白安装教程
-					</div>
-				</a>
-			</div>
-			
+	<div class="dearmsdan-post" id="dearmsdanPost">
+		<div class="dearmsdan-title">
+			<h1>关于Hexo我所踩过的坑和小白安装教程</h1>
 		</div>
+	  <div id="post" class="dearmsdan-post-Statistics">
+            <a>2021年02月04日</a>
+		  	<a class="post-count">99 字</a>
+		
+		
+	  </div>
+		
+		
+<div id="modal" style="display:none">
 
-			<article>
-				
+<aside id="article-toc" class="fixed-toc">
+    <div id="article-toc-inner">
+        <strong class="sidebar-title">目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%98%AF-Hexo-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">第一是 Hexo 环境搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%98%AF-Hexo%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8D%9A%E5%AE%A2"><span class="toc-text">第二是 Hexo初始化博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%98%AF-%E7%BB%99%E5%AE%89%E8%A3%85%E5%8D%9A%E5%AE%A2%E4%BE%9D%E8%B5%96"><span class="toc-text">第三是 给安装博客依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%98%AF-%E6%89%BE%E4%B8%BB%E9%A2%98"><span class="toc-text">第四是 找主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E6%98%AF-%E6%9C%AC%E5%9C%B0%E8%BF%90%E8%A1%8C"><span class="toc-text">第五是 本地运行</span></a></li></ol>
+    </div>
+</aside>
+</div>
+
+
+		
+			<a href="#modal" class="second">
+				<div class="i">
+						<i style="font-size:20px" class="DearMsDanIconFont icon-sousuo">
+						<span style="font-size:0px"><br/>目<br/>录</span>
+						</i>
+				</div>
+			</a>
+
+
+
+
+<script>
+	$(".second .i").mouseover(function(){
+  $(".second .i span").css("font-size","18px");
+});
+	$(".second .i").mouseleave(function(){
+  $(".second .i span").css("font-size","0px");
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+		<div>
+			  <article>
 				<h3 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h3><p>前提是需要安装 Node.js,不懂的可以百度下载然后按照<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1wA411s7re?from=search&seid=11841654225437997570">B站的安装视频按照</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
 
@@ -833,80 +744,56 @@ var $main = document.querySelector('.main');
 <h3 id="第四是-找主题"><a href="#第四是-找主题" class="headerlink" title="第四是 找主题"></a>第四是 找主题</h3><p>到这个网站去找<a target="_blank" rel="noopener" href="https://hexo.bootcss.com/themes/">主题</a></p>
 <h3 id="第五是-本地运行"><a href="#第五是-本地运行" class="headerlink" title="第五是 本地运行"></a>第五是 本地运行</h3><p>这里地址是localhost:4000</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-				
-			</article>
-			<div class="dearmsdan-post-Statistics">
-				<a>2021年01月15日</a>
-				
-				
-			</div>
+			  </article>
 		</div>
-		<a href="/blog/2021/01/15/Hexo%E5%8D%9A%E5%AE%A2/"><div class="dearmsdan-more">阅读更多...</div></a>
 		
-    </div>
-    
-	
-    
-    
 		
-    <div class="dearmsdan-post" id="dearmsdanIndex">
-		<div class="dearmsdan-inner-content">
-		<div class="dearmsdan-inner-img">
-			<div class="dearmsdan-cover-content">
-				<a href="/blog/2021/01/14/hello-world/">
-					<div class="dearmsdan-title"> 
-						Hello World
-					</div>
-				</a>
-			</div>
-			
-		</div>
 
-			<article>
-				
-				<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
-				
-			</article>
-			<div class="dearmsdan-post-Statistics">
-				<a>2021年01月14日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/blog/2021/01/14/hello-world/"><div class="dearmsdan-more">阅读更多...</div></a>
+		 	
 		
-    </div>
-    
+	  
 	
-    
-</section>
+		
+
+
+<div class="copy">
+<i></i>
+<strong>本文作者：</strong>
 	
-
-
-
-<!--
-        prev_text: '<i class="iconfont">&#xe617;</i>',
-        next_text: '<i class="iconfont">&#xe627;</i>'
--->
+	 
+			史迪奇<br>
+        
+	
+<strong>本文链接：</strong>
+	<a href="https://sdq3.gitee.io/blog/2021/02/04/Hexo%E5%8D%9A%E5%AE%A2/" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;blog&#x2F;2021&#x2F;02&#x2F;04&#x2F;Hexo%E5%8D%9A%E5%AE%A2&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;blog&#x2F;2021&#x2F;02&#x2F;04&#x2F;Hexo%E5%8D%9A%E5%AE%A2&#x2F;</a><br>
 </div>
 
+	  
+	</div>
+</div>
+<script>
+	(function(){
+		var jmz = {};
+		jmz.GetLength = function(str) {
+			var realLength = 0, len = str.length, charCode = -1;
+			for (var i = 0; i < len; i++) {
+				charCode = str.charCodeAt(i);
+				if (charCode >= 0 && charCode <= 128) 
+					  realLength += 1;
+				else
+					  realLength += 1;
+			}
+			return realLength;
+		};
+		//console.log(str);
+		var article = document.querySelector('.dearmsdan-post article').innerHTML.trim();
 
-
-
-
-
-
-
-
+		var b = article.replace(/<.*?>/ig,"");
+		
+		$('.post-count').html(jmz.GetLength(b)+"字");
+	})()
+</script>
 
 
     				
