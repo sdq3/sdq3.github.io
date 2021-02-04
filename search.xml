@@ -127,6 +127,19 @@
 ]]></content>
   </entry>
   <entry>
+    <title>关于Hexo我所踩过的坑和小白安装教程</title>
+    <url>/blog/2021/02/04/Hexo%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h3 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h3><p>前提是需要安装 Node.js,不懂的可以百度下载然后按照<a href="https://www.bilibili.com/video/BV1wA411s7re?from=search&seid=11841654225437997570">B站的安装视频按照</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<h3 id="第二是-Hexo初始化博客"><a href="#第二是-Hexo初始化博客" class="headerlink" title="第二是 Hexo初始化博客"></a>第二是 Hexo初始化博客</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init (博客名字自定义)  例如: hexo init blog</span><br></pre></td></tr></table></figure>
+
+<h3 id="第三是-给安装博客依赖"><a href="#第三是-给安装博客依赖" class="headerlink" title="第三是 给安装博客依赖"></a>第三是 给安装博客依赖</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<h3 id="第四是-找主题"><a href="#第四是-找主题" class="headerlink" title="第四是 找主题"></a>第四是 找主题</h3><p>到这个网站去找<a href="https://hexo.bootcss.com/themes/">主题</a></p>
+<h3 id="第五是-本地运行"><a href="#第五是-本地运行" class="headerlink" title="第五是 本地运行"></a>第五是 本地运行</h3><p>这里地址是localhost:4000</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
     <title>关于Android同步源码和编译ROM，日后反馈会有补充</title>
     <url>/blog/2021/02/04/%E5%85%B3%E4%BA%8EAndroid%E5%90%8C%E6%AD%A5%E6%BA%90%E7%A0%81%E5%92%8C%E7%BC%96%E8%AF%91%E5%88%B7%E6%9C%BA%E5%8C%85/</url>
     <content><![CDATA[<h3 id="第一是-安装Linux-我以Ubuntu和deepin为例子，建议新手用deepin"><a href="#第一是-安装Linux-我以Ubuntu和deepin为例子，建议新手用deepin" class="headerlink" title="第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin"></a>第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin</h3><p><a href="https://www.bilibili.com/video/BV1aW411C7NR">Ubantu的安装视频</a><br><a href="https://www.bilibili.com/video/BV1HW411Y73e">Deepin的安装视频</a><br>本人是用Arch，顺便来传一下教<br><img src="/blog/images/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
@@ -204,19 +217,6 @@
 <h3 id="另外设置ccache提高编译速度"><a href="#另外设置ccache提高编译速度" class="headerlink" title="另外设置ccache提高编译速度"></a>另外设置ccache提高编译速度</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> USE_CCACHE=1 </span><br><span class="line">$ <span class="built_in">export</span> CCACHE_COMPRESS=1</span><br><span class="line">$ ccache -M 50G 或者100G</span><br></pre></td></tr></table></figure>
 <p><strong>防止低内存编译出错 设置大小: export ANDROID_JACK_VM_ARGS=”-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G”</strong></p>
 <h3 id="祝福大家能自己动手做出属于自己的ROM"><a href="#祝福大家能自己动手做出属于自己的ROM" class="headerlink" title="祝福大家能自己动手做出属于自己的ROM"></a>祝福大家能自己动手做出属于自己的ROM</h3>]]></content>
-  </entry>
-  <entry>
-    <title>关于Hexo我所踩过的坑和小白安装教程</title>
-    <url>/blog/2021/02/04/Hexo%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<h3 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h3><p>前提是需要安装 Node.js,不懂的可以百度下载然后按照<a href="https://www.bilibili.com/video/BV1wA411s7re?from=search&seid=11841654225437997570">B站的安装视频按照</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-
-<h3 id="第二是-Hexo初始化博客"><a href="#第二是-Hexo初始化博客" class="headerlink" title="第二是 Hexo初始化博客"></a>第二是 Hexo初始化博客</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init (博客名字自定义)  例如: hexo init blog</span><br></pre></td></tr></table></figure>
-
-<h3 id="第三是-给安装博客依赖"><a href="#第三是-给安装博客依赖" class="headerlink" title="第三是 给安装博客依赖"></a>第三是 给安装博客依赖</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-<h3 id="第四是-找主题"><a href="#第四是-找主题" class="headerlink" title="第四是 找主题"></a>第四是 找主题</h3><p>到这个网站去找<a href="https://hexo.bootcss.com/themes/">主题</a></p>
-<h3 id="第五是-本地运行"><a href="#第五是-本地运行" class="headerlink" title="第五是 本地运行"></a>第五是 本地运行</h3><p>这里地址是localhost:4000</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
