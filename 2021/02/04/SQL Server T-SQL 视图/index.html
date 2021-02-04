@@ -182,7 +182,7 @@
 			<nav>
 				
 				<div class="dearmsdan-count">
-					<span>文章</span>5
+					<span>文章</span>6
 					<span>标签</span>0
 					<span>分类</span>0
 				</div>		
@@ -278,6 +278,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2021/02/04/SQL%20Server%20T-SQL%20%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/">SQL Server T-SQL 存储过程</a>
+          </li>
+        
+          <li>
             <a href="/blog/2021/02/04/SQL%20Server%20T-SQL%20%E8%A7%86%E5%9B%BE/">SQL Server T-SQL 视图</a>
           </li>
         
@@ -291,10 +295,6 @@
         
           <li>
             <a href="/blog/2021/02/04/Hexo%E5%8D%9A%E5%AE%A2/">关于Hexo我所踩过的坑和小白安装教程</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2021/02/04/Arch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">Arch傻瓜式安装教程</a>
           </li>
         
       </ul>
@@ -740,6 +740,7 @@ var $main = document.querySelector('.main');
 		<div>
 			  <article>
 				<h3 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ create view 视图(字段别名) as select 字段 from 表 WITH CHECK OPTION</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="向视图插入数据"><a href="#向视图插入数据" class="headerlink" title="向视图插入数据"></a>向视图插入数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ insert 视图 values(<span class="string">&#x27;数据&#x27;</span>) </span><br></pre></td></tr></table></figure>
 <h3 id="查询视图数据"><a href="#查询视图数据" class="headerlink" title="查询视图数据"></a>查询视图数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ select 字段 from 视图</span><br></pre></td></tr></table></figure>
 <h3 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ update 视图 <span class="built_in">set</span> 修改的字段=<span class="string">&#x27;修改的数据&#x27;</span> <span class="built_in">where</span> 匹配字段=<span class="string">&#x27;匹配数据&#x27;</span> </span><br></pre></td></tr></table></figure>
