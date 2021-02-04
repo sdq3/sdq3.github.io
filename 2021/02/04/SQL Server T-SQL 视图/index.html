@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>Arch傻瓜式安装教程 -  我叫史迪奇</title>
+	<title>SQL Server T-SQL 视图 -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -685,7 +685,7 @@ var $main = document.querySelector('.main');
 <div class="dearmsdan">
 	<div class="dearmsdan-post" id="dearmsdanPost">
 		<div class="dearmsdan-title">
-			<h1>Arch傻瓜式安装教程</h1>
+			<h1>SQL Server T-SQL 视图</h1>
 		</div>
 	  <div id="post" class="dearmsdan-post-Statistics">
             <a>2021年02月04日</a>
@@ -700,7 +700,7 @@ var $main = document.querySelector('.main');
 <aside id="article-toc" class="fixed-toc">
     <div id="article-toc-inner">
         <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E5%85%88%E8%A6%81%E6%9C%89%E4%B8%80%E4%B8%AA%E5%90%AF%E5%8A%A8%E7%9B%98-%E8%BF%99%E9%87%8C%E6%8E%A8%E8%8D%90%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6%E9%95%9C%E5%83%8F%E7%AB%99"><span class="toc-text">第一步 先要有一个启动盘 这里推荐清华大学开源软件镜像站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5-%E5%BC%95%E5%AF%BC%E7%95%8C%E9%9D%A2%E9%80%89%E6%8B%A9%E7%AC%AC%E4%B8%80%E4%B8%AA-%E8%BF%9B%E5%85%A5U%E7%9B%98"><span class="toc-text">第二步 引导界面选择第一个 进入U盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5-%E6%A3%80%E6%9F%A5%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5"><span class="toc-text">第三步 检查网络连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5-%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F%E6%9B%B4%E6%96%B0-%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5"><span class="toc-text">第四步 设置系统时钟更新 与网络时间同步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E6%AD%A5-%E6%9B%B4%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90"><span class="toc-text">第五步 更换镜像源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E6%AD%A5-%E5%88%86%E5%8C%BA"><span class="toc-text">第六步 分区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E6%AD%A5-%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%93%8D%E4%BD%9C"><span class="toc-text">第七步 格式化操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E6%AD%A5-%E6%8C%82%E8%BD%BD"><span class="toc-text">第六步 挂载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E6%AD%A5-%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F"><span class="toc-text">第六步 安装系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E6%AD%A5-%E6%8A%8A%E7%8E%AF%E5%A2%83%E8%BF%81%E7%A7%BB%E5%88%B0%E6%96%B0%E7%B3%BB%E7%BB%9F"><span class="toc-text">第七步 把环境迁移到新系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E6%AD%A5-%E7%94%A8%E6%88%B7%E8%AE%BE%E7%BD%AE"><span class="toc-text">第八步 用户设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E6%AD%A5-%E5%AE%89%E8%A3%85%E5%BC%95%E5%AF%BC%E7%A8%8B%E5%BA%8F"><span class="toc-text">第九步 安装引导程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E6%AD%A5-%E5%AE%89%E8%A3%85%E5%88%B0%E6%AD%A4%E4%B8%BA%E6%AD%A2-%E5%AE%89%E8%A3%85%E6%A1%8C%E9%9D%A2%E7%8E%A9%E4%B8%8B%E7%9C%8B"><span class="toc-text">第九步 安装到此为止 安装桌面玩下看</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83"><span class="toc-text">桌面环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vim%E5%91%BD%E4%BB%A4"><span class="toc-text">Vim命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#neofetch%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F"><span class="toc-text">neofetch查看系统</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%A7%86%E5%9B%BE"><span class="toc-text">创建视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E8%A7%86%E5%9B%BE%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-text">向视图插入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E8%A7%86%E5%9B%BE%E6%95%B0%E6%8D%AE"><span class="toc-text">查询视图数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9-%E6%9B%B4%E6%96%B0-%E8%A7%86%E5%9B%BE%E6%95%B0%E6%8D%AE"><span class="toc-text">修改(更新)视图数据</span></a></li></ol>
     </div>
 </aside>
 </div>
@@ -739,123 +739,10 @@ var $main = document.querySelector('.main');
 
 		<div>
 			  <article>
-				<p>本人是Arch教徒过来传一下教<br><img src="/blog/images/Arch无脑安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
-<a id="more"></a>
-<p><strong>在Windows里用DiskGenius转GPT之后 删除你所要安装Arch的分区</strong><br><img src="/blog/images/Arch无脑安装/转GPT格式.jpg" style="width: 300px; height: 150px;"><br><strong>磁盘变更还可以用Lixux命令来 不建议使用</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ partrd /dev/(你要变更的磁盘)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gpt</span><br></pre></td></tr></table></figure>
-<p>然后退出</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ quit</span><br></pre></td></tr></table></figure>
-<h3 id="第一步-先要有一个启动盘-这里推荐清华大学开源软件镜像站"><a href="#第一步-先要有一个启动盘-这里推荐清华大学开源软件镜像站" class="headerlink" title="第一步 先要有一个启动盘 这里推荐清华大学开源软件镜像站"></a>第一步 先要有一个启动盘 这里推荐<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/">清华大学开源软件镜像站</a></h3><h3 id="第二步-引导界面选择第一个-进入U盘"><a href="#第二步-引导界面选择第一个-进入U盘" class="headerlink" title="第二步 引导界面选择第一个 进入U盘"></a>第二步 引导界面选择第一个 进入U盘</h3><p><strong>先检查一下是不是UEFI启动,输入以下命令，有输出就代码是UEFI启动，检查BIOS设置是否为UEFI, BIOS设置每个机型都不一样</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ls /sys/firmware/efi/efivars</span><br></pre></td></tr></table></figure>
-<h3 id="第三步-检查网络连接"><a href="#第三步-检查网络连接" class="headerlink" title="第三步 检查网络连接"></a>第三步 检查网络连接</h3><p><strong>建议直接插网线，然后ping一下百度，有反应继续 没反应检查网线</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ping www.baidu.com</span><br></pre></td></tr></table></figure>
-<p>然后CTRL+Z退出</p>
-<p><strong>如果你想用WIFI就执行以下步骤</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ iwctl</span><br></pre></td></tr></table></figure>
-<p><strong>查看网卡 通常都是wlan0</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ device list</span><br></pre></td></tr></table></figure>
-<p><strong>以下命令是扫描你范围内的无线网卡</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ station wlan0 get-networks</span><br></pre></td></tr></table></figure>
-
-<p><strong>找到你的WIFI</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ station (无线网卡名字通常是wlan0) connect (WIFI名字)</span><br></pre></td></tr></table></figure>
-<p><strong>Passphrase:是让你输密码</strong></p>
-<p><strong>然后以下命令退出</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
-<h3 id="第四步-设置系统时钟更新-与网络时间同步"><a href="#第四步-设置系统时钟更新-与网络时间同步" class="headerlink" title="第四步 设置系统时钟更新 与网络时间同步"></a>第四步 设置系统时钟更新 与网络时间同步</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ timedatectl set-ntp <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p><strong>查看是否执行完同步</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ timedatectl status</span><br></pre></td></tr></table></figure>
-<h3 id="第五步-更换镜像源"><a href="#第五步-更换镜像源" class="headerlink" title="第五步 更换镜像源"></a>第五步 更换镜像源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/pamcan.d/mtrrorlist</span><br></pre></td></tr></table></figure>
-<p><strong>查找: Server = <a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch">https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch</a></strong></p>
-<h3 id="第六步-分区"><a href="#第六步-分区" class="headerlink" title="第六步 分区"></a>第六步 分区</h3><p><strong>查看分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lsblk</span><br></pre></td></tr></table></figure>
-<p><strong>然后正式分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cfdisk /dev/(磁盘号)</span><br></pre></td></tr></table></figure>
-<p><strong>终于到这里了 这里是图形化界面很好查找</strong><br><img src="/blog/images/Arch无脑安装/图形化界面.jpg" style="width: 750px; height: 100px;"></p>
-<p><strong>(New是新建) (Resize是调整大小) (Quit是退出) (Type是类型) (Heip是帮助) (Wrire是保存) (Dump是丢弃)</strong></p>
-<p><strong>步骤: 先点New建一个300M的文件，然后点Type选择EFI System点击，再点New建一个2G的文件，然后点Type选择Linux swap点击，最后点New建一个(根目录)主分区把剩下的所有内存用上，然后点Type选择Linux filesystem点击，然后Wrire回车，并输入yes，然后拍照，点击Quit退出</strong></p>
-<img src="/blog/images/Arch无脑安装/例子.jpg" style="width: 900px; height: 300px;">
-
-<p><strong>以防万一，检查一下</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cfdisk -l</span><br></pre></td></tr></table></figure>
-<h3 id="第七步-格式化操作"><a href="#第七步-格式化操作" class="headerlink" title="第七步 格式化操作"></a>第七步 格式化操作</h3><p><strong>格式化主分区(根目录)</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkfs.ext4 /dev/(就是你刚刚Linux filesystem的)</span><br></pre></td></tr></table></figure>
-<p><strong>格式化EFI分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkfs.vfat /dev/(就是你刚刚EFI System的)</span><br></pre></td></tr></table></figure>
-<p><strong>格式化swap分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkfswap -f /dev/(就是你刚刚Linux swap的)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ swapon /dev/(就是你刚刚Linux swap的)</span><br></pre></td></tr></table></figure>
-<h3 id="第六步-挂载"><a href="#第六步-挂载" class="headerlink" title="第六步 挂载"></a>第六步 挂载</h3><p><strong>挂载根目录 注意/mnt前面有空格</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mount /dev/(就是你刚刚Linux filesystem的) /mnt</span><br></pre></td></tr></table></figure>
-<p><strong>挂载EFI分区 先创建boot目录 再里面创建EFI目录 注意/mnt前面还有空格</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir /mnt/boot</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir /mnt/boot/EFI</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mount /dev/(就是你刚刚EFI System的) /mnt/boot/EFI</span><br></pre></td></tr></table></figure>
-<h3 id="第六步-安装系统"><a href="#第六步-安装系统" class="headerlink" title="第六步 安装系统"></a>第六步 安装系统</h3><p><strong>这三个包必安装</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pacstrap /mnt base linux linux-firmware</span><br></pre></td></tr></table></figure>
-<p><strong>然后安装功能性软件 联网的有dhcpcd iwd，编辑器有vim，提权有sudo</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pacstrap /mnt dhcpcd iwd vim sudo</span><br></pre></td></tr></table></figure>
-<p><strong>然后定义etc分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
-<p><strong>以防万一还是检查一下</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
-<h3 id="第七步-把环境迁移到新系统"><a href="#第七步-把环境迁移到新系统" class="headerlink" title="第七步 把环境迁移到新系统"></a>第七步 把环境迁移到新系统</h3><p><strong>迁移命令</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ arch-chroot /mnt</span><br></pre></td></tr></table></figure>
-<p><strong>创建时区 例如上海</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ln -sf /usr.share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
-<p><strong>同步时区</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hwclock --systohc</span><br></pre></td></tr></table></figure>
-<p><strong>设置语言 留意en_US.UTF-8 UTF-8</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/locale.gen</span><br></pre></td></tr></table></figure>
-<p><strong>然后生成</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ locale-gen</span><br></pre></td></tr></table></figure>
-<p><strong>然后输入内容</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">&#x27;LANG=EN_us.utf-8 &gt; /etc/locale.conf&#x27;</span></span><br></pre></td></tr></table></figure>
-<p><strong>以防万一 检查一下</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /etc/locale.conf</span><br></pre></td></tr></table></figure>
-<h3 id="第八步-用户设置"><a href="#第八步-用户设置" class="headerlink" title="第八步 用户设置"></a>第八步 用户设置</h3><p><strong>Root用户设置密码</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ passwd root</span><br></pre></td></tr></table></figure>
-<p><strong>intel英特尔CPU安装这个</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pacman -S intel-ucode</span><br></pre></td></tr></table></figure>
-<p><strong>AMD超微CPU安装这个</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pacman -S amd-ucode</span><br></pre></td></tr></table></figure>
-<h3 id="第九步-安装引导程序"><a href="#第九步-安装引导程序" class="headerlink" title="第九步 安装引导程序"></a>第九步 安装引导程序</h3><p><strong>安装grub引导</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pacman -S grub efibootmgr</span><br></pre></td></tr></table></figure>
-<p><strong>然后给grub引导取个名字</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grub-install --target=x86_64-efi --efi-directory=/bootloader-id=(顺便起个名字)</span><br></pre></td></tr></table></figure>
-<p><strong>生成配置文件</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
-<p><strong>退出安装环境</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
-<p><strong>卸载分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ umount -R /mnt</span><br></pre></td></tr></table></figure>
-<p><strong>然后重启一下 可选择物理重启和命令重启</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ reboot</span><br></pre></td></tr></table></figure>
-<img src="/blog/images/Arch无脑安装/效果.jpg" style="width: 318px; height: 144px;">
-
-<h3 id="第九步-安装到此为止-安装桌面玩下看"><a href="#第九步-安装到此为止-安装桌面玩下看" class="headerlink" title="第九步 安装到此为止 安装桌面玩下看"></a>第九步 安装到此为止 安装桌面玩下看</h3><h3 id="桌面环境"><a href="#桌面环境" class="headerlink" title="桌面环境"></a>桌面环境</h3><p><strong>创建用户 有利于提权</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ useradd -m -g users G wheel -s /bin/bash (顺便起的用户名)</span><br></pre></td></tr></table></figure>
-<p><strong>创建密码</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ passwd wallen</span><br></pre></td></tr></table></figure>
-<p><strong>编辑新用户权限 %wheel ALL=(ALL) ALL</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ EDITOR=vim visudo</span><br></pre></td></tr></table></figure>
-<p><strong>创建桌面环境命令和其他必要软件命令  dolpin是文件管理器  konsole是终端</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pacman -S plasma-meta dolphin konsole</span><br></pre></td></tr></table></figure>
-<p><strong>配置sddm设置为开机自启</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl <span class="built_in">enable</span> sddm</span><br></pre></td></tr></table></figure>
-<p><strong>开启一下32位支持库 有些程序还是32位 所以要装一些库</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/pacman.conf</span><br></pre></td></tr></table></figure>
-<p><strong>配置</strong></p>
-<img src="/blog/images/Arch无脑安装/配置.jpg" style="width: 900px; height: 300px;">
-
-<p><strong>刷新数据库内容</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pacmam -Syyu</span><br></pre></td></tr></table></figure>
-<p><strong>然后重启一下 可选择物理重启和命令重启</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ reboot</span><br></pre></td></tr></table></figure>
-<h3 id="Vim命令"><a href="#Vim命令" class="headerlink" title="Vim命令"></a>Vim命令</h3><p><strong>按A键是编辑模式</strong><br><strong>按回车键是执行</strong><br><strong>按两下D键是剪切</strong><br><strong>按两下G键是回到第一行</strong><br><strong>按P键粘贴</strong><br><strong>按N键查找下一个</strong><br><strong>按ESC 然后输入 :wq 是保存并退出</strong></p>
-<h3 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
-
+				<h3 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ create view 视图(字段别名) as select 字段 from 表 WITH CHECK OPTION</span><br></pre></td></tr></table></figure>
+<h3 id="向视图插入数据"><a href="#向视图插入数据" class="headerlink" title="向视图插入数据"></a>向视图插入数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ insert 视图 values(<span class="string">&#x27;数据&#x27;</span>) </span><br></pre></td></tr></table></figure>
+<h3 id="查询视图数据"><a href="#查询视图数据" class="headerlink" title="查询视图数据"></a>查询视图数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ select 字段 from 视图</span><br></pre></td></tr></table></figure>
+<h3 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ update 视图 <span class="built_in">set</span> 修改的字段=<span class="string">&#x27;修改的数据&#x27;</span> <span class="built_in">where</span> 匹配字段=<span class="string">&#x27;匹配数据&#x27;</span> </span><br></pre></td></tr></table></figure>
 			  </article>
 		</div>
 		
@@ -878,7 +765,7 @@ var $main = document.querySelector('.main');
         
 	
 <strong>本文链接：</strong>
-	<a href="https://sdq3.gitee.io/blog/2021/02/04/Arch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;blog&#x2F;2021&#x2F;02&#x2F;04&#x2F;Arch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;blog&#x2F;2021&#x2F;02&#x2F;04&#x2F;Arch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B&#x2F;</a><br>
+	<a href="https://sdq3.gitee.io/blog/2021/02/04/SQL%20Server%20T-SQL%20%E8%A7%86%E5%9B%BE/" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;blog&#x2F;2021&#x2F;02&#x2F;04&#x2F;SQL%20Server%20T-SQL%20%E8%A7%86%E5%9B%BE&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;blog&#x2F;2021&#x2F;02&#x2F;04&#x2F;SQL%20Server%20T-SQL%20%E8%A7%86%E5%9B%BE&#x2F;</a><br>
 </div>
 
 	  
