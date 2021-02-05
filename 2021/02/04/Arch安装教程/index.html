@@ -780,7 +780,7 @@ var $main = document.querySelector('.main');
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
 <h3 id="第七步-把环境迁移到新系统"><a href="#第七步-把环境迁移到新系统" class="headerlink" title="第七步 把环境迁移到新系统"></a>第七步 把环境迁移到新系统</h3><p><strong>迁移命令</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ arch-chroot /mnt</span><br></pre></td></tr></table></figure>
-<p><strong>创建时区 例如上海</strong></p>
+<p><strong>创建时区 例如: 上海</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ln -sf /usr.share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
 <p><strong>同步时区</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hwclock --systohc</span><br></pre></td></tr></table></figure>
@@ -1192,10 +1192,10 @@ var myPlaylist = new jPlayerPlaylist({
    
 ],{
     playlistOptions: {
-        autoPlay: true,
+        autoPlay: false,
         enableRemoveControls: true
     },
-	loop: true,
+	loop: false,
     swfPath: "js/",
     supplied: "webmv, ogv, m4v, oga, mp3",
     useStateClassSkin: true,
