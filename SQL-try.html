@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>关于Hexo我所踩过的坑和小白安装教程 -  我叫史迪奇</title>
+	<title>SQL Server T-SQL 视图 -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -278,23 +278,23 @@
       <ul>
         
           <li>
-            <a href="/sdq3/ckksdaxa30009woum91xhh9l5.html">Wsl的傻瓜式安装 (有手就行)</a>
+            <a href="/sdq3/Arch-Wsl-install.html">Wsl的傻瓜式安装 (有手就行)</a>
           </li>
         
           <li>
-            <a href="/sdq3/ckksdax9y0005woumehym2e02.html">SQL Server T-SQL 存储过程</a>
+            <a href="/sdq3/SQL-storage.html">SQL Server T-SQL 存储过程</a>
           </li>
         
           <li>
-            <a href="/sdq3/ckksdaxa20008woum00412u8y.html">SQL Server T-SQL 视图</a>
+            <a href="/sdq3/SQL-try.html">SQL Server T-SQL 视图</a>
           </li>
         
           <li>
-            <a href="/sdq3/ckksdaxa4000bwoum6yd8hyar.html">什么是线程?什么是进程?线程与进程到底是什么关系</a>
+            <a href="/sdq3/Thread-Process.html">什么是线程?什么是进程?线程与进程到底是什么关系</a>
           </li>
         
           <li>
-            <a href="/sdq3/ckksdaxa4000awoumaoceexd4.html">Android同步源码和编译ROM傻瓜式 (有手就行)</a>
+            <a href="/sdq3/Android-compile.html">Android同步源码和编译ROM傻瓜式 (有手就行)</a>
           </li>
         
       </ul>
@@ -662,7 +662,7 @@ var $main = document.querySelector('.main');
 <div class="dearmsdan">
 	<div class="dearmsdan-post" id="dearmsdanPost">
 		<div class="dearmsdan-title">
-			<h1>关于Hexo我所踩过的坑和小白安装教程</h1>
+			<h1>SQL Server T-SQL 视图</h1>
 		</div>
 	  <div id="post" class="dearmsdan-post-Statistics">
             <a>2021年02月04日</a>
@@ -677,7 +677,7 @@ var $main = document.querySelector('.main');
 <aside id="article-toc" class="fixed-toc">
     <div id="article-toc-inner">
         <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%98%AF-Hexo-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">第一是 Hexo 环境搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%98%AF-Hexo%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8D%9A%E5%AE%A2"><span class="toc-text">第二是 Hexo初始化博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%98%AF-%E7%BB%99%E5%AE%89%E8%A3%85%E5%8D%9A%E5%AE%A2%E4%BE%9D%E8%B5%96"><span class="toc-text">第三是 给安装博客依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%98%AF-%E6%89%BE%E4%B8%BB%E9%A2%98"><span class="toc-text">第四是 找主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E6%98%AF-%E6%9C%AC%E5%9C%B0%E8%BF%90%E8%A1%8C"><span class="toc-text">第五是 本地运行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6%E5%92%8C"><span class="toc-text">生成静态文件和</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%85%E9%99%A4%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6%E5%92%8C%E9%83%A8%E7%BD%B2"><span class="toc-text">清除静态文件和部署</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%A7%86%E5%9B%BE"><span class="toc-text">创建视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E8%A7%86%E5%9B%BE%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-text">向视图插入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E8%A7%86%E5%9B%BE%E6%95%B0%E6%8D%AE"><span class="toc-text">查询视图数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9-%E6%9B%B4%E6%96%B0-%E8%A7%86%E5%9B%BE%E6%95%B0%E6%8D%AE"><span class="toc-text">修改(更新)视图数据</span></a></li></ol>
     </div>
 </aside>
 </div>
@@ -716,21 +716,11 @@ var $main = document.querySelector('.main');
 
 		<div>
 			  <article>
-				<h3 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h3><p>前提是需要安装 Node.js,不懂的可以百度下载然后按照<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1wA411s7re?from=search&seid=11841654225437997570">B站的安装视频按照</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+				<h3 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ create view 视图(字段别名) as select 字段 from 表 WITH CHECK OPTION</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="第二是-Hexo初始化博客"><a href="#第二是-Hexo初始化博客" class="headerlink" title="第二是 Hexo初始化博客"></a>第二是 Hexo初始化博客</h3><p><strong>cd 到你想存放博客源码的一个目录里面，这时会自动建立一个博客文件夹</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog  //hexo init (博客名字自定义)</span><br></pre></td></tr></table></figure>
-
-<h3 id="第三是-给安装博客依赖"><a href="#第三是-给安装博客依赖" class="headerlink" title="第三是 给安装博客依赖"></a>第三是 给安装博客依赖</h3><p><strong>cd 进刚创建的博客文件夹，安装依赖模块命令如下</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-<h3 id="第四是-找主题"><a href="#第四是-找主题" class="headerlink" title="第四是 找主题"></a>第四是 找主题</h3><p><strong>到这个 <a target="_blank" rel="noopener" href="https://hexo.bootcss.com/themes/">Hexo网站</a> 去找主题</strong></p>
-<h3 id="第五是-本地运行"><a href="#第五是-本地运行" class="headerlink" title="第五是 本地运行"></a>第五是 本地运行</h3><p><strong>这里地址是localhost:4000</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<h3 id="生成静态文件和"><a href="#生成静态文件和" class="headerlink" title="生成静态文件和"></a>生成静态文件和</h3><p><strong>部署在GitHub 或者 Gitee服务器上，生成静态文件，生成的静态文件在博客工程的 public文件夹下 到哪里找就行了</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-<h3 id="清除静态文件和部署"><a href="#清除静态文件和部署" class="headerlink" title="清除静态文件和部署"></a>清除静态文件和部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &amp; hexo d</span><br></pre></td></tr></table></figure>
-
+<h3 id="向视图插入数据"><a href="#向视图插入数据" class="headerlink" title="向视图插入数据"></a>向视图插入数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ insert 视图 values(<span class="string">&#x27;数据&#x27;</span>) </span><br></pre></td></tr></table></figure>
+<h3 id="查询视图数据"><a href="#查询视图数据" class="headerlink" title="查询视图数据"></a>查询视图数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ select 字段 from 视图</span><br></pre></td></tr></table></figure>
+<h3 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ update 视图 <span class="built_in">set</span> 修改的字段=<span class="string">&#x27;修改的数据&#x27;</span> <span class="built_in">where</span> 匹配字段=<span class="string">&#x27;匹配数据&#x27;</span> </span><br></pre></td></tr></table></figure>
 			  </article>
 		</div>
 		
@@ -753,7 +743,7 @@ var $main = document.querySelector('.main');
         
 	
 <strong>本文链接：</strong>
-	<a href="https://sdq3.gitee.io/ckksdax9w0003woum9emq8eat.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;ckksdax9w0003woum9emq8eat.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;ckksdax9w0003woum9emq8eat.html</a><br>
+	<a href="https://sdq3.gitee.io/SQL-try.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;SQL-try.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;SQL-try.html</a><br>
 </div>
 
 	  
