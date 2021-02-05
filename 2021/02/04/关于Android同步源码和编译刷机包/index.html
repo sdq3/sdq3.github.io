@@ -721,10 +721,9 @@ var $main = document.querySelector('.main');
 
 <h3 id="第一是-安装Linux-我以Ubuntu和deepin为例子，建议新手用deepin"><a href="#第一是-安装Linux-我以Ubuntu和deepin为例子，建议新手用deepin" class="headerlink" title="第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin"></a>第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin</h3><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1aW411C7NR">Ubantu的安装视频</a><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1HW411Y73e">Deepin的安装视频</a></p>
 <h3 id="第二是-环境搭载"><a href="#第二是-环境搭载" class="headerlink" title="第二是 环境搭载"></a>第二是 环境搭载</h3><p><strong>1.明确自己要开发的android版本 参考 lineageos官方的wiki：<a target="_blank" rel="noopener" href="https://wiki.lineageos.org/">https://wiki.lineageos.org</a> 选择合适的linux发行版(推荐ubuntu 16)推荐而已，你可以是别的Linux,都没问题</strong></p>
-<p><strong>2.更新自身ubuntu的软件源</strong></p>
+<p><strong>2.更新自身ubuntu的软件源  替换到etc/apt/sources.list替换完毕后执行</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update //如果自身网速不好建议换国内源(清华 中科大 阿里)</span><br></pre></td></tr></table></figure>
 <p><strong><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">个人建议清华</a></strong><br><strong>deepin就更简单，直接设置里面换</strong></p>
-<p><strong>替换到etc/apt/sources.list替换完毕后执行</strong></p>
 <p><strong>3.安装jdk，需要根据开发的android版本选择</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure>
 
@@ -754,7 +753,7 @@ var $main = document.querySelector('.main');
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/los         //例如: los 你随便起名字的文件夹</span><br></pre></td></tr></table></figure>
 <p><strong>(3) 由于使用repo拉取源码时，会尝试访问官方的git源更新自己，但由于是谷歌，就无法正常访问，所以在正式拉取前，我们需要先做点修改打开主目录，按组合键ctrl+H，在显示的隐藏文件中，打开.bashrc文件，将如下内容复制到你的~/.bashrc最后一行，保存退出</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">export</span> REPO_URL=<span class="string">&#x27;https://mirrors.tuna.tsinghua.edu.cn/git/git-repo&#x27;</span></span><br></pre></td></tr></table></figure>
-<p><strong>(4) 获取源码拉取地址</strong><br>访问[lineage的开源地址库]：(<a target="_blank" rel="noopener" href="https://github.com/LineageOS)%E7%82%B9%E5%87%BBandroid%EF%BC%8C%E8%BF%9B%E5%85%A5%E5%A6%82%E4%B8%8B%E7%95%8C%E9%9D%A2%EF%BC%8C%E8%BF%99%E9%87%8C%E5%B0%B1%E7%9C%8B%E5%88%B0%E4%BA%86%E6%8B%89%E5%8F%96lineage-x.x%E7%9A%84%E5%91%BD%E4%BB%A4">https://github.com/LineageOS)点击android，进入如下界面，这里就看到了拉取lineage-x.x的命令</a></p>
+<p><strong>(4) 获取源码拉取地址</strong><br>访问<a target="_blank" rel="noopener" href="https://github.com/LineageOS">lineage的开源地址库</a>点击android，进入如下界面，这里就看到了拉取lineage-x.x的命令</p>
 <p><strong>(5) 获取源码default</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ repo init -u git://github.com/los/android.git -b lineage-x.x       //例如: los 你随便起名字的文件夹和lineage版本</span><br></pre></td></tr></table></figure>
 <p><strong>(6) 输入邮箱和昵称</strong></p>
@@ -777,7 +776,7 @@ var $main = document.querySelector('.main');
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/LineageOS/android_device_(品牌)_(设备代号).git -b lineage-x.x device/(品牌)/(设备代号) depth=1(可加可不加，加入同步源码会小点)</span><br></pre></td></tr></table></figure>
 <p><strong>(7) 我们需要拉取的项目如下</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ android_device_(品牌)_(设备代号)</span><br><span class="line"></span><br><span class="line">$ android_device_(品牌)_(处理器代号)-common</span><br><span class="line"></span><br><span class="line">$ android_device_(品牌)_(厂家)_common</span><br><span class="line"></span><br><span class="line">$ android_kernel_(品牌)_(处理器代号)</span><br><span class="line"></span><br><span class="line">$ proprietary_vendor_(品牌) </span><br></pre></td></tr></table></figure>
-<p><strong>(8) vendor需要访问地址:<a target="_blank" rel="noopener" href="https://github.com/TheMuppets">https://github.com/TheMuppets</a>  ，然后搜索(你的品牌)就可以找到</strong></p>
+<p><strong>(8) <a target="_blank" rel="noopener" href="https://github.com/TheMuppets">vendor需要访问地址</a>然后搜索(你的品牌)就可以找到</strong></p>
 <p><strong>(9) 同样和同步其他项目一样</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/TheMuppets/proprietary_vendor_(品牌).git -b lineage-x.x vendor/(品牌)</span><br></pre></td></tr></table></figure>
 <h3 id="第七是-执行编译"><a href="#第七是-执行编译" class="headerlink" title="第七是 执行编译"></a>第七是 执行编译</h3><p><strong>(1)如果你退出了，你就按组合键ctrl+alt+t，打开终端，输入以下命令，回车，进入los             //你随便起名字的文件夹，没有的话跳过这个环节</strong></p>
@@ -796,7 +795,8 @@ var $main = document.querySelector('.main');
 <p><strong>(7) 编译完成后</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ 进入主目录\(你随便起名字的文件夹)\out\target\product\(设备代号)中就可以看到我们编译好的ROM了，可以复制到手机刷入了</span><br></pre></td></tr></table></figure>
 <h3 id="另外设置ccache提高编译速度"><a href="#另外设置ccache提高编译速度" class="headerlink" title="另外设置ccache提高编译速度"></a>另外设置ccache提高编译速度</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">export</span> USE_CCACHE=1 </span><br><span class="line">$ <span class="built_in">export</span> CCACHE_COMPRESS=1</span><br><span class="line">$ ccache -M 50G 或者100G</span><br></pre></td></tr></table></figure>
-<p><strong>防止低内存编译出错 设置大小: export ANDROID_JACK_VM_ARGS=”-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G”</strong></p>
+<p><strong>防止低内存编译出错 设置大小为</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">export</span> ANDROID_JACK_VM_ARGS=<span class="string">&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G&quot;</span></span><br></pre></td></tr></table></figure>
 <h3 id="祝福大家能自己动手做出属于自己的ROM"><a href="#祝福大家能自己动手做出属于自己的ROM" class="headerlink" title="祝福大家能自己动手做出属于自己的ROM"></a>祝福大家能自己动手做出属于自己的ROM</h3>
 			  </article>
 		</div>
