@@ -780,12 +780,13 @@ var $main = document.querySelector('.main');
 <p><strong>(9) 同样和同步其他项目一样</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/TheMuppets/proprietary_vendor_(品牌).git -b lineage-x.x vendor/(品牌)</span><br></pre></td></tr></table></figure>
 <h3 id="第七是-执行编译"><a href="#第七是-执行编译" class="headerlink" title="第七是 执行编译"></a>第七是 执行编译</h3><p><strong>(1)如果你退出了，你就按组合键ctrl+alt+t，打开终端，输入以下命令，回车，进入los             //你随便起名字的文件夹，没有的话跳过这个环节</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/los             //例如: los 你随便起名字的文件夹</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/los    //例如: los 你随便起名字的文件夹</span><br></pre></td></tr></table></figure>
 <p><strong>(2) 初始化</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ . build/envsetup.sh</span><br></pre></td></tr></table></figure>
 <p><strong>(3) 输入如下命令，回车</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ breakfast xxx  //自己的机型</span><br></pre></td></tr></table></figure>
-<p>如果有错误，就根据错误提示到lineageOS目录检查device、kernel和vendor等是否正确<br><strong>(4) 输入，回车，进行编译</strong></p>
+<p>如果有错误，就根据错误提示到lineageOS目录检查device、kernel和vendor等是否正确</p>
+<p><strong>(4) 输入，回车，进行编译</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brunch xxx    //自己的机型</span><br></pre></td></tr></table></figure>
 <p>编译耗费的时间取决于你的电脑配置情况，所以我不建议用虚拟机，如果你电脑配置相当牛逼，当我没说</p>
 <p><strong>(5)在我编译时出现了 fatal error: openssl/opensslv.h: No such file or directory 原因是libssl-dev没有安装</strong></p>

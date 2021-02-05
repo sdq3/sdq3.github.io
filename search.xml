@@ -123,17 +123,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>SQL Server T-SQL 存储过程</title>
-    <url>/blog/2021/02/04/SQL%20Server%20T-SQL%20%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</url>
-    <content><![CDATA[<h3 id="创建变量"><a href="#创建变量" class="headerlink" title="创建变量"></a>创建变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">declare</span> 变量名 数据类型 常量</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="查询变量"><a href="#查询变量" class="headerlink" title="查询变量"></a>查询变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ select 变量名</span><br></pre></td></tr></table></figure>
-<h3 id="创建存储过程"><a href="#创建存储过程" class="headerlink" title="创建存储过程"></a>创建存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ create Procedure 存储过程名 as select 字段 from 表名</span><br></pre></td></tr></table></figure>
-<h3 id="执行存储过程"><a href="#执行存储过程" class="headerlink" title="执行存储过程"></a>执行存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ EXECUTE 存储过程名</span><br></pre></td></tr></table></figure>
-<h3 id="删除存储过程"><a href="#删除存储过程" class="headerlink" title="删除存储过程"></a>删除存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ drop proc 存储过程名</span><br></pre></td></tr></table></figure>
-<h3 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h3>]]></content>
-  </entry>
-  <entry>
     <title>关于Hexo我所踩过的坑和小白安装教程</title>
     <url>/blog/2021/02/04/Hexo%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h3 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h3><p>前提是需要安装 Node.js,不懂的可以百度下载然后按照<a href="https://www.bilibili.com/video/BV1wA411s7re?from=search&seid=11841654225437997570">B站的安装视频按照</a></p>
@@ -160,6 +149,17 @@
 <h3 id="向视图插入数据"><a href="#向视图插入数据" class="headerlink" title="向视图插入数据"></a>向视图插入数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ insert 视图 values(<span class="string">&#x27;数据&#x27;</span>) </span><br></pre></td></tr></table></figure>
 <h3 id="查询视图数据"><a href="#查询视图数据" class="headerlink" title="查询视图数据"></a>查询视图数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ select 字段 from 视图</span><br></pre></td></tr></table></figure>
 <h3 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ update 视图 <span class="built_in">set</span> 修改的字段=<span class="string">&#x27;修改的数据&#x27;</span> <span class="built_in">where</span> 匹配字段=<span class="string">&#x27;匹配数据&#x27;</span> </span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>SQL Server T-SQL 存储过程</title>
+    <url>/blog/2021/02/04/SQL%20Server%20T-SQL%20%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</url>
+    <content><![CDATA[<h3 id="创建变量"><a href="#创建变量" class="headerlink" title="创建变量"></a>创建变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">declare</span> 变量名 数据类型 常量</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="查询变量"><a href="#查询变量" class="headerlink" title="查询变量"></a>查询变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ select 变量名</span><br></pre></td></tr></table></figure>
+<h3 id="创建存储过程"><a href="#创建存储过程" class="headerlink" title="创建存储过程"></a>创建存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ create Procedure 存储过程名 as select 字段 from 表名</span><br></pre></td></tr></table></figure>
+<h3 id="执行存储过程"><a href="#执行存储过程" class="headerlink" title="执行存储过程"></a>执行存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ EXECUTE 存储过程名</span><br></pre></td></tr></table></figure>
+<h3 id="删除存储过程"><a href="#删除存储过程" class="headerlink" title="删除存储过程"></a>删除存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ drop proc 存储过程名</span><br></pre></td></tr></table></figure>
+<h3 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h3>]]></content>
   </entry>
   <entry>
     <title>Wsl的傻瓜式安装 (有手就行)</title>
@@ -274,12 +274,13 @@
 <p><strong>(9) 同样和同步其他项目一样</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/TheMuppets/proprietary_vendor_(品牌).git -b lineage-x.x vendor/(品牌)</span><br></pre></td></tr></table></figure>
 <h3 id="第七是-执行编译"><a href="#第七是-执行编译" class="headerlink" title="第七是 执行编译"></a>第七是 执行编译</h3><p><strong>(1)如果你退出了，你就按组合键ctrl+alt+t，打开终端，输入以下命令，回车，进入los             //你随便起名字的文件夹，没有的话跳过这个环节</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/los             //例如: los 你随便起名字的文件夹</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/los    //例如: los 你随便起名字的文件夹</span><br></pre></td></tr></table></figure>
 <p><strong>(2) 初始化</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ . build/envsetup.sh</span><br></pre></td></tr></table></figure>
 <p><strong>(3) 输入如下命令，回车</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ breakfast xxx  //自己的机型</span><br></pre></td></tr></table></figure>
-<p>如果有错误，就根据错误提示到lineageOS目录检查device、kernel和vendor等是否正确<br><strong>(4) 输入，回车，进行编译</strong></p>
+<p>如果有错误，就根据错误提示到lineageOS目录检查device、kernel和vendor等是否正确</p>
+<p><strong>(4) 输入，回车，进行编译</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ brunch xxx    //自己的机型</span><br></pre></td></tr></table></figure>
 <p>编译耗费的时间取决于你的电脑配置情况，所以我不建议用虚拟机，如果你电脑配置相当牛逼，当我没说</p>
 <p><strong>(5)在我编译时出现了 fatal error: openssl/opensslv.h: No such file or directory 原因是libssl-dev没有安装</strong></p>
