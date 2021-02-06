@@ -213,6 +213,21 @@
 <h3 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h3><h3 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h3><h3 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h3>]]></content>
   </entry>
   <entry>
+    <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
+    <url>/sdq3/Thread-Process.html</url>
+    <content><![CDATA[<h3 id="什么是线程-学习进程最重要的还是学习线程"><a href="#什么是线程-学习进程最重要的还是学习线程" class="headerlink" title="什么是线程(学习进程最重要的还是学习线程)"></a>什么是线程(学习进程最重要的还是学习线程)</h3><p>线程就是独立执行的路径，就算在什么都不干的话，里面会有(主线程)main线程，Java里面还有个一个收垃圾的gc线程</p>
+<a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Thread是线程的英文</span><br></pre></td></tr></table></figure>
+
+<h3 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h3><p>把程序跑起来才叫做进程，进程是执行程序的一次执行过程是一个动态的概念</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Process是进程的英文</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="线程与进程到底是什么关系"><a href="#线程与进程到底是什么关系" class="headerlink" title="线程与进程到底是什么关系"></a>线程与进程到底是什么关系</h3><p>一个进程里面可以包含若干个线程，一个进程里面必须要有一个线程，否则没有存在的意义</p>
+<h3 id="注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行"><a href="#注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行" class="headerlink" title="注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行"></a>注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行</h3>]]></content>
+  </entry>
+  <entry>
     <title>Android同步源码和编译ROM傻瓜式 (有手就行)</title>
     <url>/sdq3/Android-compile.html</url>
     <content><![CDATA[<p>本人是用Arch，顺便来传一下教<br><img src="images/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
@@ -298,20 +313,5 @@
 <p><strong>防止低内存编译出错 设置大小为</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> ANDROID_JACK_VM_ARGS=<span class="string">&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G&quot;</span></span><br></pre></td></tr></table></figure>
 <h3 id="祝福大家能自己动手做出属于自己的ROM"><a href="#祝福大家能自己动手做出属于自己的ROM" class="headerlink" title="祝福大家能自己动手做出属于自己的ROM"></a>祝福大家能自己动手做出属于自己的ROM</h3>]]></content>
-  </entry>
-  <entry>
-    <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
-    <url>/sdq3/Thread-Process.html</url>
-    <content><![CDATA[<h3 id="什么是线程-学习进程最重要的还是学习线程"><a href="#什么是线程-学习进程最重要的还是学习线程" class="headerlink" title="什么是线程(学习进程最重要的还是学习线程)"></a>什么是线程(学习进程最重要的还是学习线程)</h3><p>线程就是独立执行的路径，就算在什么都不干的话，里面会有(主线程)main线程，Java里面还有个一个收垃圾的gc线程</p>
-<a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Thread是线程的英文</span><br></pre></td></tr></table></figure>
-
-<h3 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h3><p>把程序跑起来才叫做进程，进程是执行程序的一次执行过程是一个动态的概念</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Process是进程的英文</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="线程与进程到底是什么关系"><a href="#线程与进程到底是什么关系" class="headerlink" title="线程与进程到底是什么关系"></a>线程与进程到底是什么关系</h3><p>一个进程里面可以包含若干个线程，一个进程里面必须要有一个线程，否则没有存在的意义</p>
-<h3 id="注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行"><a href="#注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行" class="headerlink" title="注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行"></a>注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行</h3>]]></content>
   </entry>
 </search>
