@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>about -  我叫史迪奇</title>
+	<title>Linux命令 -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -639,25 +639,134 @@ var $main = document.querySelector('.main');
 			<div class="main">
 				<div class="main-content">
 					
-<div class="dearmsdan-post" id="Permalinks">
-  <article>
-    <h3 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h3><p>我叫史迪奇 </p>
-<a id="more"></a>
-<p>是Turo星球的强霸卓齐霸博士制作的第626个基因改造实验品<br>因为一次意外来到了地球，地球很美丽，人类也很友善，我将在地球上展开我一系列的冒险</p>
-<h3 id="名言"><a href="#名言" class="headerlink" title="名言"></a>名言</h3><p><strong>那些不能摧毁你的</strong></p>
-<p><strong>总有一天</strong></p>
-<p><strong>会让你变得更加强大</strong></p>
-<p><strong>————————–红魔鬼 麦林</strong></p>
-<hr>
 
-  </article>
-	
+
+
+<style>
+	#dearmsdanPost:hover{
+   		    background-color: rgba(255, 255, 255, 0.5)!important;
+	}	
+</style>
+<div class="dearmsdan">
+	<div class="dearmsdan-post" id="dearmsdanPost">
+		<div class="dearmsdan-title">
+			<h1>Linux命令</h1>
+		</div>
+	  <div id="post" class="dearmsdan-post-Statistics">
+            <a>2021年02月07日</a>
+		  	<a class="post-count">99 字</a>
+		
+		
+	  </div>
+		
+		
+<div id="modal" style="display:none">
+
+<aside id="article-toc" class="fixed-toc">
+    <div id="article-toc-inner">
+        <strong class="sidebar-title">目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#ls%E5%91%BD%E4%BB%A4"><span class="toc-text">ls命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cd%E5%91%BD%E4%BB%A4"><span class="toc-text">cd命令</span></a></li></ol>
+    </div>
+</aside>
+</div>
+
+
+		
+			<a href="#modal" class="second">
+				<div class="i">
+						<i style="font-size:20px" class="DearMsDanIconFont icon-sousuo">
+						<span style="font-size:0px"><br/>目<br/>录</span>
+						</i>
+				</div>
+			</a>
+
+
+
+
+<script>
+	$(".second .i").mouseover(function(){
+  $(".second .i span").css("font-size","18px");
+});
+	$(".second .i").mouseleave(function(){
+  $(".second .i span").css("font-size","0px");
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+		<div>
+			  <article>
+				<blockquote>
+<h3 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h3><p><strong>命令英文原意: list</strong><br><strong>命令所在路径: /bin/ls</strong><br><strong>执行权限: 所有用户</strong><br><strong>功能描述: 显示目录文件</strong></p>
+</blockquote>
+<a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ ls // 显示当前目录下文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> 目录名 // 显示指定目录下文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -l // 长格式显示目录文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -l 文件名 // 长格式显示指定文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -a // 显示所有文件// 包含隐藏文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -al // 长格式显示当前目录下所有文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -h // 文件大小显示为常见大小单位 B KB MB …</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -d // 显示目录本身，而不是里面的子文件</span><br></pre></td></tr></table></figure>
+<h3 id="cd命令"><a href="#cd命令" class="headerlink" title="cd命令"></a>cd命令</h3><p><strong>命令英文原意: change directory</strong><br><strong>命令所在路径: shell内置命令</strong><br><strong>执行权限: 所有用户</strong><br><strong>功能描述: 切换所在目录</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$cd</span> /xx  // 切换到指定路径(使用绝对路径方式)</span><br><span class="line"></span><br><span class="line"><span class="variable">$cd</span> ~    // 进入当前用户的家目录</span><br><span class="line"></span><br><span class="line"><span class="variable">$cd</span> –    // 进入上次目录</span><br><span class="line"></span><br><span class="line"><span class="variable">$cd</span> ..   // 进入上一级目录</span><br><span class="line"></span><br><span class="line"><span class="variable">$cd</span> .    // 进入当前目录</span><br></pre></td></tr></table></figure>
+<!-- ``` bash
+$ 
+``` -->
+
+
+			  </article>
+		</div>
 		
 		
 
 
 		 	
+		
+	  
+	
+		
+
+
+<div class="copy">
+<i></i>
+<strong>本文作者：</strong>
+	
+	 
+			史迪奇<br>
+        
+	
+<strong>本文链接：</strong>
+	<a href="https://sdq3.gitee.io/Linux-command.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;Linux-command.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;Linux-command.html</a><br>
 </div>
+
+	  
+	</div>
+</div>
+<script>
+	(function(){
+		var jmz = {};
+		jmz.GetLength = function(str) {
+			var realLength = 0, len = str.length, charCode = -1;
+			for (var i = 0; i < len; i++) {
+				charCode = str.charCodeAt(i);
+				if (charCode >= 0 && charCode <= 128) 
+					  realLength += 1;
+				else
+					  realLength += 1;
+			}
+			return realLength;
+		};
+		//console.log(str);
+		var article = document.querySelector('.dearmsdan-post article').innerHTML.trim();
+
+		var b = article.replace(/<.*?>/ig,"");
+		
+		$('.post-count').html(jmz.GetLength(b)+"字");
+	})()
+</script>
+
 
     				
 					
