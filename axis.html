@@ -3604,22 +3604,6 @@ $(document).ready(function () {
 function linker(){
 /* 外链保护http://link.zhd99.cn */
 	 
-
-		$("article a").not(".toc a,article h1 a,article h2 a,article h3 a,article h4 a,article h5 a,article h6 a,article .gallerys,.ui-artZoom-buttons a").attr("href",
-																														function(){
-			// 不是本站链接检测  article
-			var str = this.href;
-			var pattern = /http.+zhd99.cn/;
-			var falg = pattern.test(str).toString().trim();
-
-			var pattern2 = /http.+dearmsdan/;
-			var falg2 = pattern2.test(str).toString().trim();
-			if('true' != falg && 'true' != falg2){
-				return 'https://sdq3.gitee.io/links.html' + '?target=' + str;
-			   }
-	});
-
-	
 }
 		
 	
