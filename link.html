@@ -30,7 +30,7 @@
 	
 	<link rel="stylesheet" type="text/css" href="css/navEffect.css">
 	
-	<link rel="stylesheet" href="resources/dearmsdan_link">
+	<link rel="stylesheet" href="resources/dearmsdan_link/link.css">
 	
 	<link rel="stylesheet" type="text/css" href="css/post_content.css">
 	
@@ -266,11 +266,11 @@
       <ul>
         
           <li>
-            <a href="/sdq3/Android-compile.html">Android同步源码和编译ROM傻瓜式 (有手就行)</a>
+            <a href="/sdq3/Thread-Process.html">什么是线程?什么是进程?线程与进程到底是什么关系</a>
           </li>
         
           <li>
-            <a href="/sdq3/Thread-Process.html">什么是线程?什么是进程?线程与进程到底是什么关系</a>
+            <a href="/sdq3/Android-compile.html">Android同步源码和编译ROM傻瓜式 (有手就行)</a>
           </li>
         
           <li>
@@ -3380,22 +3380,6 @@ $(document).ready(function () {
 function linker(){
 /* 外链保护http://link.zhd99.cn */
 	 
-
-		$("article a").not(".toc a,article h1 a,article h2 a,article h3 a,article h4 a,article h5 a,article h6 a,article .gallerys,.ui-artZoom-buttons a").attr("href",
-																														function(){
-			// 不是本站链接检测  article
-			var str = this.href;
-			var pattern = /http.+zhd99.cn/;
-			var falg = pattern.test(str).toString().trim();
-
-			var pattern2 = /http.+sdq3/;
-			var falg2 = pattern2.test(str).toString().trim();
-			if('true' != falg && 'true' != falg2){
-				return '' + '?target=' + str;
-			   }
-	});
-
-	
 }
 		
 	
