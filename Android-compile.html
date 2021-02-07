@@ -278,11 +278,11 @@
           </li>
         
           <li>
-            <a href="/sdq3/SQL-try.html">SQL Server T-SQL 视图</a>
+            <a href="/sdq3/SQL-storage.html">SQL Server T-SQL 存储过程</a>
           </li>
         
           <li>
-            <a href="/sdq3/SQL-storage.html">SQL Server T-SQL 存储过程</a>
+            <a href="/sdq3/SQL-try.html">SQL Server T-SQL 视图</a>
           </li>
         
       </ul>
@@ -704,7 +704,7 @@ var $main = document.querySelector('.main');
 
 		<div>
 			  <article>
-				<p>本人是用Arch，顺便来传一下教<br><img src="images/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
+				<p>本人是用Arch，顺便来传一下教<br><img src="images/编译Android/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
 <a id="more"></a>
 
 <h3 id="第一是-安装Linux-我以Ubuntu和deepin为例子，建议新手用deepin"><a href="#第一是-安装Linux-我以Ubuntu和deepin为例子，建议新手用deepin" class="headerlink" title="第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin"></a>第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin</h3><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1aW411C7NR">Ubantu的安装视频</a><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1HW411Y73e">Deepin的安装视频</a></p>
@@ -763,6 +763,8 @@ var $main = document.querySelector('.main');
 <p>解释一下:git clone就是拷贝到本地的命令，那段网址就是我们上面复制的地址，-b后面的lineage-x.x,表示lineage-x.x的分支；device/(品牌)/(设备代号)就是要下载到地方的路径</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/LineageOS/android_device_(品牌)_(设备代号).git -b lineage-x.x device/(品牌)/(设备代号) depth=1(可加可不加，加入同步源码会小点)</span><br></pre></td></tr></table></figure>
 <p><strong>(7) 我们需要拉取的项目如下</strong></p>
+<img src="images/编译Android/找机型.jpg">
+
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ android_device_(品牌)_(设备代号)</span><br><span class="line"></span><br><span class="line">$ android_device_(品牌)_(处理器代号)-common</span><br><span class="line"></span><br><span class="line">$ android_device_(品牌)_(厂家)_common</span><br><span class="line"></span><br><span class="line">$ android_kernel_(品牌)_(处理器代号)</span><br><span class="line"></span><br><span class="line">$ proprietary_vendor_(品牌) </span><br></pre></td></tr></table></figure>
 <p><strong>(8) <a target="_blank" rel="noopener" href="https://github.com/TheMuppets">vendor需要访问地址</a>然后搜索(你的品牌)就可以找到</strong></p>
 <p><strong>(9) 同样和同步其他项目一样</strong></p>
