@@ -1,6 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Java Swing 图形界面速背表</title>
+    <url>/sdq3/Java-Swing.html</url>
+    <content><![CDATA[<blockquote>
+<h3 id="JavaSwing-布局管理器"><a href="#JavaSwing-布局管理器" class="headerlink" title="JavaSwing 布局管理器"></a>JavaSwing 布局管理器</h3></blockquote>
+<a id="more"></a>
+<p><strong>FlowLayout (流式布局)</strong></p>
+<p><strong>GridLayout (网格布局)</strong></p>
+<p><strong>GridBagLayout (网格袋布局)</strong></p>
+<p><strong>BoxLayout (箱式布局)</strong></p>
+<p><strong>GroupLayout (分组布局)</strong></p>
+<p><strong>CardLayout (卡片布局)</strong></p>
+<p><strong>BorderLayout (边界布局)</strong></p>
+<p><strong>SpringLayout (弹性布局)</strong></p>
+<p><strong>null (绝对布局)</strong></p>
+<blockquote>
+<h3 id="JavaSwing-基本组件"><a href="#JavaSwing-基本组件" class="headerlink" title="JavaSwing 基本组件"></a>JavaSwing 基本组件</h3></blockquote>
+<p><strong>JLabel (标签)</strong></p>
+<p><strong>JButton (按钮)</strong></p>
+<p><strong>JRadioButton (单选按钮)</strong></p>
+<p><strong>JCheckBox (复选框)</strong></p>
+<p><strong>JToggleButton (开关按钮)</strong></p>
+<p><strong>JTextField (文本框)</strong></p>
+<p><strong>JPasswordField (密码框)</strong></p>
+<p><strong>JTextArea (文本区域)</strong></p>
+<p><strong>JComboBox (下拉列表框)</strong></p>
+<p><strong>JList (列表框)</strong></p>
+<p><strong>JProgressBar (进度条)</strong></p>
+<p><strong>JSlider (滑块)</strong></p>
+<blockquote>
+<h3 id="JavaSwing-面板组件"><a href="#JavaSwing-面板组件" class="headerlink" title="JavaSwing 面板组件"></a>JavaSwing 面板组件</h3></blockquote>
+<p><strong>JPanel (面板)</strong></p>
+<p><strong>JScrollPane (滚动面板)</strong></p>
+<p><strong>JSplitPane (分隔面板)</strong></p>
+<p><strong>JTabbedPane (选项卡面板)</strong></p>
+<p><strong>JLayeredPane (层级面板)</strong></p>
+<blockquote>
+<h3 id="JavaSwing-其他组件"><a href="#JavaSwing-其他组件" class="headerlink" title="JavaSwing 其他组件"></a>JavaSwing 其他组件</h3></blockquote>
+<p><strong>JFrame (窗口)</strong></p>
+<p><strong>JDialog, JOptionPane (对话框)</strong></p>
+<p><strong>JFileChooser (文件选择器)</strong></p>
+<p><strong>JColorChooser (颜色选择器)</strong></p>
+<p><strong>JMenuBar (菜单栏)</strong></p>
+<p><strong>JToolBar (工具栏)</strong></p>
+<p><strong>JPopupMenu (弹出菜单)</strong></p>
+<p><strong>JTable (表格)</strong></p>
+<p><strong>JTree (树)</strong></p>
+<p><strong>JInternalFrame (内部窗口)</strong></p>
+<!-- # JavaSwing 相关特性(了解就行)
+
+**组件的位置和尺寸**
+
+**组件边框 (Border)**
+
+**事件处理**
+
+**多线程并发与线程安全**
+
+**拖拽功能**
+
+**系统托盘 (System Tray)**
+
+**闪屏 (Splash Screen)**
+
+# Java AWT/Swing 其他相关
+
+**Java绘图: 使用Graphics类绘制线段, 矩形, 椭圆/圆弧/扇形, 图片, 文本**
+
+**Java图片操作 — 图片的读取, 绘制, 缩放, 裁剪, 保存**
+
+**Java代码截屏：使用 Java 代码截取电脑屏幕并保存**
+
+**Java模拟鼠标键盘输入事件 — Robot 类**
+
+**Java操作桌面应用 — Desktop 类**
+
+**Java操作系统剪贴板(Clipboard)实现复制和粘贴** -->]]></content>
+  </entry>
+  <entry>
     <title>Arch傻瓜式安装 (有手就行)</title>
     <url>/sdq3/Arch-install.html</url>
     <content><![CDATA[<p>本人是Arch教徒过来传一下教<br><img src="images/Arch傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
@@ -124,6 +202,15 @@
 ]]></content>
   </entry>
   <entry>
+    <title>SQL Server T-SQL 视图</title>
+    <url>/sdq3/SQL-try.html</url>
+    <content><![CDATA[<h3 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ create view 视图(字段别名) as select 字段 from 表 WITH CHECK OPTION</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="向视图插入数据"><a href="#向视图插入数据" class="headerlink" title="向视图插入数据"></a>向视图插入数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ insert 视图 values(<span class="string">&#x27;数据&#x27;</span>) </span><br></pre></td></tr></table></figure>
+<h3 id="查询视图数据"><a href="#查询视图数据" class="headerlink" title="查询视图数据"></a>查询视图数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ select 字段 from 视图</span><br></pre></td></tr></table></figure>
+<h3 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ update 视图 <span class="built_in">set</span> 修改的字段=<span class="string">&#x27;修改的数据&#x27;</span> <span class="built_in">where</span> 匹配字段=<span class="string">&#x27;匹配数据&#x27;</span> </span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
     <title>关于Hexo我所踩过的坑和小白安装教程</title>
     <url>/sdq3/Hexo-install.html</url>
     <content><![CDATA[<h3 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h3><p>前提是需要安装 Node.js,不懂的可以百度下载然后按照<a href="https://www.bilibili.com/video/BV1wA411s7re?from=search&seid=11841654225437997570">B站的安装视频按照</a></p>
@@ -163,84 +250,6 @@ $
 ]]></content>
   </entry>
   <entry>
-    <title>Java Swing 图形界面速背表</title>
-    <url>/sdq3/Java-Swing.html</url>
-    <content><![CDATA[<blockquote>
-<h3 id="JavaSwing-布局管理器"><a href="#JavaSwing-布局管理器" class="headerlink" title="JavaSwing 布局管理器"></a>JavaSwing 布局管理器</h3></blockquote>
-<a id="more"></a>
-<p><strong>FlowLayout (流式布局)</strong></p>
-<p><strong>GridLayout (网格布局)</strong></p>
-<p><strong>GridBagLayout (网格袋布局)</strong></p>
-<p><strong>BoxLayout (箱式布局)</strong></p>
-<p><strong>GroupLayout (分组布局)</strong></p>
-<p><strong>CardLayout (卡片布局)</strong></p>
-<p><strong>BorderLayout (边界布局)</strong></p>
-<p><strong>SpringLayout (弹性布局)</strong></p>
-<p><strong>null (绝对布局)</strong></p>
-<blockquote>
-<h3 id="JavaSwing-基本组件"><a href="#JavaSwing-基本组件" class="headerlink" title="JavaSwing 基本组件"></a>JavaSwing 基本组件</h3></blockquote>
-<p><strong>JLabel (标签)</strong></p>
-<p><strong>JButton (按钮)</strong></p>
-<p><strong>JRadioButton (单选按钮)</strong></p>
-<p><strong>JCheckBox (复选框)</strong></p>
-<p><strong>JToggleButton (开关按钮)</strong></p>
-<p><strong>JTextField (文本框)</strong></p>
-<p><strong>JPasswordField (密码框)</strong></p>
-<p><strong>JTextArea (文本区域)</strong></p>
-<p><strong>JComboBox (下拉列表框)</strong></p>
-<p><strong>JList (列表框)</strong></p>
-<p><strong>JProgressBar (进度条)</strong></p>
-<p><strong>JSlider (滑块)</strong></p>
-<blockquote>
-<h3 id="JavaSwing-面板组件"><a href="#JavaSwing-面板组件" class="headerlink" title="JavaSwing 面板组件"></a>JavaSwing 面板组件</h3></blockquote>
-<p><strong>JPanel (面板)</strong></p>
-<p><strong>JScrollPane (滚动面板)</strong></p>
-<p><strong>JSplitPane (分隔面板)</strong></p>
-<p><strong>JTabbedPane (选项卡面板)</strong></p>
-<p><strong>JLayeredPane (层级面板)</strong></p>
-<blockquote>
-<h3 id="JavaSwing-其他组件"><a href="#JavaSwing-其他组件" class="headerlink" title="JavaSwing 其他组件"></a>JavaSwing 其他组件</h3></blockquote>
-<p><strong>JFrame (窗口)</strong></p>
-<p><strong>JDialog, JOptionPane (对话框)</strong></p>
-<p><strong>JFileChooser (文件选择器)</strong></p>
-<p><strong>JColorChooser (颜色选择器)</strong></p>
-<p><strong>JMenuBar (菜单栏)</strong></p>
-<p><strong>JToolBar (工具栏)</strong></p>
-<p><strong>JPopupMenu (弹出菜单)</strong></p>
-<p><strong>JTable (表格)</strong></p>
-<p><strong>JTree (树)</strong></p>
-<p><strong>JInternalFrame (内部窗口)</strong></p>
-<!-- # JavaSwing 相关特性(了解就行)
-
-**组件的位置和尺寸**
-
-**组件边框 (Border)**
-
-**事件处理**
-
-**多线程并发与线程安全**
-
-**拖拽功能**
-
-**系统托盘 (System Tray)**
-
-**闪屏 (Splash Screen)**
-
-# Java AWT/Swing 其他相关
-
-**Java绘图: 使用Graphics类绘制线段, 矩形, 椭圆/圆弧/扇形, 图片, 文本**
-
-**Java图片操作 — 图片的读取, 绘制, 缩放, 裁剪, 保存**
-
-**Java代码截屏：使用 Java 代码截取电脑屏幕并保存**
-
-**Java模拟鼠标键盘输入事件 — Robot 类**
-
-**Java操作桌面应用 — Desktop 类**
-
-**Java操作系统剪贴板(Clipboard)实现复制和粘贴** -->]]></content>
-  </entry>
-  <entry>
     <title>SQL Server T-SQL 存储过程</title>
     <url>/sdq3/SQL-storage.html</url>
     <content><![CDATA[<h3 id="创建变量"><a href="#创建变量" class="headerlink" title="创建变量"></a>创建变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">declare</span> 变量名 数据类型 常量</span><br></pre></td></tr></table></figure>
@@ -250,15 +259,6 @@ $
 <h3 id="执行存储过程"><a href="#执行存储过程" class="headerlink" title="执行存储过程"></a>执行存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ EXECUTE 存储过程名</span><br></pre></td></tr></table></figure>
 <h3 id="删除存储过程"><a href="#删除存储过程" class="headerlink" title="删除存储过程"></a>删除存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ drop proc 存储过程名</span><br></pre></td></tr></table></figure>
 <h3 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h3>]]></content>
-  </entry>
-  <entry>
-    <title>SQL Server T-SQL 视图</title>
-    <url>/sdq3/SQL-try.html</url>
-    <content><![CDATA[<h3 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ create view 视图(字段别名) as select 字段 from 表 WITH CHECK OPTION</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="向视图插入数据"><a href="#向视图插入数据" class="headerlink" title="向视图插入数据"></a>向视图插入数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ insert 视图 values(<span class="string">&#x27;数据&#x27;</span>) </span><br></pre></td></tr></table></figure>
-<h3 id="查询视图数据"><a href="#查询视图数据" class="headerlink" title="查询视图数据"></a>查询视图数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ select 字段 from 视图</span><br></pre></td></tr></table></figure>
-<h3 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ update 视图 <span class="built_in">set</span> 修改的字段=<span class="string">&#x27;修改的数据&#x27;</span> <span class="built_in">where</span> 匹配字段=<span class="string">&#x27;匹配数据&#x27;</span> </span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>Arch wsl的傻瓜式安装 (有手就行)</title>
@@ -305,21 +305,6 @@ $
 <img src="images/wsl傻瓜式安装/Arch wsl.jpg" style="width: 800px; height: 500px;">
 
 <h3 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h3><h3 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h3><h3 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h3>]]></content>
-  </entry>
-  <entry>
-    <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
-    <url>/sdq3/Thread-Process.html</url>
-    <content><![CDATA[<h3 id="什么是线程-学习进程最重要的还是学习线程"><a href="#什么是线程-学习进程最重要的还是学习线程" class="headerlink" title="什么是线程(学习进程最重要的还是学习线程)"></a>什么是线程(学习进程最重要的还是学习线程)</h3><p>线程就是独立执行的路径，就算在什么都不干的话，里面会有(主线程)main线程，Java里面还有个一个收垃圾的gc线程</p>
-<a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Thread是线程的英文</span><br></pre></td></tr></table></figure>
-
-<h3 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h3><p>把程序跑起来才叫做进程，进程是执行程序的一次执行过程是一个动态的概念</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Process是进程的英文</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="线程与进程到底是什么关系"><a href="#线程与进程到底是什么关系" class="headerlink" title="线程与进程到底是什么关系"></a>线程与进程到底是什么关系</h3><p>一个进程里面可以包含若干个线程，一个进程里面必须要有一个线程，否则没有存在的意义</p>
-<h3 id="注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行"><a href="#注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行" class="headerlink" title="注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行"></a>注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行</h3>]]></content>
   </entry>
   <entry>
     <title>Android同步源码和编译ROM傻瓜式 (有手就行)</title>
@@ -409,5 +394,20 @@ $
 <p><strong>防止低内存编译出错 设置大小为</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> ANDROID_JACK_VM_ARGS=<span class="string">&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G&quot;</span></span><br></pre></td></tr></table></figure>
 <h1 id="祝福大家能自己动手做出属于自己的ROM"><a href="#祝福大家能自己动手做出属于自己的ROM" class="headerlink" title="祝福大家能自己动手做出属于自己的ROM"></a>祝福大家能自己动手做出属于自己的ROM</h1>]]></content>
+  </entry>
+  <entry>
+    <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
+    <url>/sdq3/Thread-Process.html</url>
+    <content><![CDATA[<h3 id="什么是线程-学习进程最重要的还是学习线程"><a href="#什么是线程-学习进程最重要的还是学习线程" class="headerlink" title="什么是线程(学习进程最重要的还是学习线程)"></a>什么是线程(学习进程最重要的还是学习线程)</h3><p>线程就是独立执行的路径，就算在什么都不干的话，里面会有(主线程)main线程，Java里面还有个一个收垃圾的gc线程</p>
+<a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Thread是线程的英文</span><br></pre></td></tr></table></figure>
+
+<h3 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h3><p>把程序跑起来才叫做进程，进程是执行程序的一次执行过程是一个动态的概念</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Process是进程的英文</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="线程与进程到底是什么关系"><a href="#线程与进程到底是什么关系" class="headerlink" title="线程与进程到底是什么关系"></a>线程与进程到底是什么关系</h3><p>一个进程里面可以包含若干个线程，一个进程里面必须要有一个线程，否则没有存在的意义</p>
+<h3 id="注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行"><a href="#注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行" class="headerlink" title="注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行"></a>注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行</h3>]]></content>
   </entry>
 </search>
