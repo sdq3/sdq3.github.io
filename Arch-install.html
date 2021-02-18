@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>Arch傻瓜式安装 (有手就行) -  我叫史迪奇</title>
+	<title>Arch系统包桌面傻瓜式安装 (有手就行) -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -182,7 +182,7 @@
 			<nav>
 				
 				<div class="dearmsdan-count">
-					<span>文章</span>9
+					<span>文章</span>10
 					<span>标签</span>0
 					<span>分类</span>0
 				</div>		
@@ -266,6 +266,10 @@
       <ul>
         
           <li>
+            <a href="/Object-oriented.html">Java面向对象思维</a>
+          </li>
+        
+          <li>
             <a href="/Arch-Wsl-install.html">Arch wsl的傻瓜式安装 (有手就行)</a>
           </li>
         
@@ -279,10 +283,6 @@
         
           <li>
             <a href="/SQL-storage.html">SQL Server T-SQL 存储过程</a>
-          </li>
-        
-          <li>
-            <a href="/SQL-try.html">SQL Server T-SQL 视图</a>
           </li>
         
       </ul>
@@ -650,7 +650,7 @@ var $main = document.querySelector('.main');
 <div class="dearmsdan">
 	<div class="dearmsdan-post" id="dearmsdanPost">
 		<div class="dearmsdan-title">
-			<h1>Arch傻瓜式安装 (有手就行)</h1>
+			<h1>Arch系统包桌面傻瓜式安装 (有手就行)</h1>
 		</div>
 	  <div id="post" class="dearmsdan-post-Statistics">
             <a>2021年02月18日</a>
@@ -746,7 +746,7 @@ var $main = document.querySelector('.main');
 <p><strong>以防万一，检查一下</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cfdisk -l</span><br></pre></td></tr></table></figure>
 <h3 id="第七步-格式化操作"><a href="#第七步-格式化操作" class="headerlink" title="第七步 格式化操作"></a>第七步 格式化操作</h3><p><strong>格式化主分区(根目录)</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkfs.ext4 /dev/(就是你刚刚Linux filesystem的)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkfs.ext4 /dev/xxx   //就是你刚刚Linux filesystem的</span><br></pre></td></tr></table></figure>
 <p><strong>格式化EFI分区</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkfs.vfat /dev/xxx     //就是你刚刚EFI System的</span><br></pre></td></tr></table></figure>
 <p><strong>格式化swap分区</strong></p>
