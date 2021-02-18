@@ -124,6 +124,29 @@
 ]]></content>
   </entry>
   <entry>
+    <title>关于Hexo我所踩过的坑和小白安装教程</title>
+    <url>/Hexo-install.html</url>
+    <content><![CDATA[<h3 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h3><p>前提是需要安装 Node.js,不懂的可以百度下载然后按照<a href="https://www.bilibili.com/video/BV1wA411s7re?from=search&seid=11841654225437997570">B站的安装视频按照</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="第二是-Hexo初始化博客"><a href="#第二是-Hexo初始化博客" class="headerlink" title="第二是 Hexo初始化博客"></a>第二是 Hexo初始化博客</h3><p><strong>cd 到你想存放博客源码的一个目录里面，这时会自动建立一个博客文件夹</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init blog  //hexo init (博客名字自定义)</span><br></pre></td></tr></table></figure>
+
+<h3 id="第三是-给安装博客依赖"><a href="#第三是-给安装博客依赖" class="headerlink" title="第三是 给安装博客依赖"></a>第三是 给安装博客依赖</h3><p><strong>cd 进刚创建的博客文件夹，安装依赖模块命令如下</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<h3 id="第四是-找主题"><a href="#第四是-找主题" class="headerlink" title="第四是 找主题"></a>第四是 找主题</h3><p><strong>到这个 <a href="https://hexo.bootcss.com/themes/">Hexo网站</a> 去找主题</strong></p>
+<h3 id="第五是-本地运行"><a href="#第五是-本地运行" class="headerlink" title="第五是 本地运行"></a>第五是 本地运行</h3><p><strong>这里地址是localhost:4000</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="生成静态文件和"><a href="#生成静态文件和" class="headerlink" title="生成静态文件和"></a>生成静态文件和</h3><p><strong>部署在GitHub 或者 Gitee服务器上，生成静态文件，生成的静态文件在博客工程的 public文件夹下 到哪里找就行了</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<h3 id="清除静态文件和部署"><a href="#清除静态文件和部署" class="headerlink" title="清除静态文件和部署"></a>清除静态文件和部署</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean &amp; hexo d</span><br></pre></td></tr></table></figure>
+<h3 id="查看你有没有被百度收录文章"><a href="#查看你有没有被百度收录文章" class="headerlink" title="查看你有没有被百度收录文章"></a>查看你有没有被百度收录文章</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ site:(你的博客)  //直接复制命令百度搜索</span><br></pre></td></tr></table></figure>
+<h3 id="改变文章链接规则"><a href="#改变文章链接规则" class="headerlink" title="改变文章链接规则"></a>改变文章链接规则</h3><p><strong>Ctrl+f搜索 permalink</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ permalink: :id.html   //填入:id.html</span><br></pre></td></tr></table></figure>
+<p><strong>然后在指定位置填入id即可 数字随意，只要保证每篇文章里面的数字不要一样就行</strong></p>
+<img src="images/Hexo博客/案例.jpg">]]></content>
+  </entry>
+  <entry>
     <title>Java Swing 图形界面速背表</title>
     <url>/Java-Swing.html</url>
     <content><![CDATA[<blockquote>
@@ -219,29 +242,6 @@
 <h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$   Car c = new Car();   //先创建一辆车</span><br><span class="line">$   c.fly();  //.表示调用  众所周知所以车都是可以飞的</span><br><span class="line">$   c.diving();  //.表示调用  众所周知所以车都是可以下水的</span><br><span class="line">$   c.color = <span class="string">&quot;透明&quot;</span>  //我的车是透明色</span><br><span class="line">$   c.wheel = <span class="string">&quot;5&quot;</span>  //众所周知所以车都是5个轮子</span><br><span class="line">$   c.seat = <span class="string">&quot;9&quot;</span>  //我的车 里面坐4个 车前绑1个人用来刹车 车顶坐1个人 剩下3个人的拿板拿雨伞凳坐后车厢 尾气管那面绑上1个人 用来吸收尾气</span><br><span class="line">$   System.out.println(c.color);</span><br><span class="line">$   System.out.println(c.wheel);</span><br><span class="line">$   System.out.println(c.seat);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
-    <title>关于Hexo我所踩过的坑和小白安装教程</title>
-    <url>/Hexo-install.html</url>
-    <content><![CDATA[<h3 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h3><p>前提是需要安装 Node.js,不懂的可以百度下载然后按照<a href="https://www.bilibili.com/video/BV1wA411s7re?from=search&seid=11841654225437997570">B站的安装视频按照</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="第二是-Hexo初始化博客"><a href="#第二是-Hexo初始化博客" class="headerlink" title="第二是 Hexo初始化博客"></a>第二是 Hexo初始化博客</h3><p><strong>cd 到你想存放博客源码的一个目录里面，这时会自动建立一个博客文件夹</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init blog  //hexo init (博客名字自定义)</span><br></pre></td></tr></table></figure>
-
-<h3 id="第三是-给安装博客依赖"><a href="#第三是-给安装博客依赖" class="headerlink" title="第三是 给安装博客依赖"></a>第三是 给安装博客依赖</h3><p><strong>cd 进刚创建的博客文件夹，安装依赖模块命令如下</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-<h3 id="第四是-找主题"><a href="#第四是-找主题" class="headerlink" title="第四是 找主题"></a>第四是 找主题</h3><p><strong>到这个 <a href="https://hexo.bootcss.com/themes/">Hexo网站</a> 去找主题</strong></p>
-<h3 id="第五是-本地运行"><a href="#第五是-本地运行" class="headerlink" title="第五是 本地运行"></a>第五是 本地运行</h3><p><strong>这里地址是localhost:4000</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<h3 id="生成静态文件和"><a href="#生成静态文件和" class="headerlink" title="生成静态文件和"></a>生成静态文件和</h3><p><strong>部署在GitHub 或者 Gitee服务器上，生成静态文件，生成的静态文件在博客工程的 public文件夹下 到哪里找就行了</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-<h3 id="清除静态文件和部署"><a href="#清除静态文件和部署" class="headerlink" title="清除静态文件和部署"></a>清除静态文件和部署</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean &amp; hexo d</span><br></pre></td></tr></table></figure>
-<h3 id="查看你有没有被百度收录文章"><a href="#查看你有没有被百度收录文章" class="headerlink" title="查看你有没有被百度收录文章"></a>查看你有没有被百度收录文章</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ site:(你的博客)  //直接复制命令百度搜索</span><br></pre></td></tr></table></figure>
-<h3 id="改变文章链接规则"><a href="#改变文章链接规则" class="headerlink" title="改变文章链接规则"></a>改变文章链接规则</h3><p><strong>Ctrl+f搜索 permalink</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ permalink: :id.html   //填入:id.html</span><br></pre></td></tr></table></figure>
-<p><strong>然后在指定位置填入id即可 数字随意，只要保证每篇文章里面的数字不要一样就行</strong></p>
-<img src="images/Hexo博客/案例.jpg">]]></content>
-  </entry>
-  <entry>
     <title>Linux命令</title>
     <url>/Linux-command.html</url>
     <content><![CDATA[<blockquote>
@@ -267,6 +267,52 @@ $
 <h3 id="执行存储过程"><a href="#执行存储过程" class="headerlink" title="执行存储过程"></a>执行存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ EXECUTE 存储过程名</span><br></pre></td></tr></table></figure>
 <h3 id="删除存储过程"><a href="#删除存储过程" class="headerlink" title="删除存储过程"></a>删除存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ drop proc 存储过程名</span><br></pre></td></tr></table></figure>
 <h3 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h3>]]></content>
+  </entry>
+  <entry>
+    <title>Arch wsl的傻瓜式安装 (有手就行)</title>
+    <url>/Arch-Wsl-install.html</url>
+    <content><![CDATA[<p>本人是Arch教徒过来传一下教<br><img src="images/wsl傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
+<a id="more"></a>
+
+<h3 id="第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下"><a href="#第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下" class="headerlink" title="第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下"></a>第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</span><br></pre></td></tr></table></figure>
+<img src="images/wsl傻瓜式安装/按照提示重启电脑.jpg" style="width: 300px; height: 300px;">
+
+<p><strong>按照提示重启电脑</strong></p>
+<h3 id="第二步-下载文件"><a href="#第二步-下载文件" class="headerlink" title="第二步 下载文件"></a>第二步 下载文件</h3><p><strong>然后下载<a href="https://github.com/yuk7/ArchWSL">Arch WSL</a></strong></p>
+<img src="images/wsl傻瓜式安装/Arch wsl下载.jpg">
+<br>
+<img src="images/wsl傻瓜式安装/Arch wsl下载版本.jpg">
+
+<p><strong>那个安装证书是给appx版的arch wsl用的</strong></p>
+<p><strong>你已经安装zip版的</strong></p>
+<p><strong>没有必要安两次</strong></p>
+<p><strong>只用需要用到zip</strong></p>
+<h3 id="第三步-配置Arch-Wsl"><a href="#第三步-配置Arch-Wsl" class="headerlink" title="第三步 配置Arch Wsl"></a>第三步 配置Arch Wsl</h3><img src="images/wsl傻瓜式安装/Arch wsl配置.jpg" style="width: 800px; height: 500px;">
+
+<p><strong>反正按照我这个改，保存是ctrl + x 回车</strong></p>
+<h3 id="第四步-配置相关参数"><a href="#第四步-配置相关参数" class="headerlink" title="第四步 配置相关参数"></a>第四步 配置相关参数</h3><p><strong>这里会提示配置  按照我的方法配置</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe//这个是启动后的显示</span><br><span class="line">[root@PC-NAME user]<span class="comment"># passwd       //这个是用户名输完名字输密码</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe</span><br><span class="line">[root@PC-NAME]<span class="comment"># EDITOR=nano visudo</span></span><br><span class="line">    %wheel      ALL=(ALL) ALL</span><br><span class="line">    (setup sudoers file.)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]<span class="comment"># useradd -m -G wheel -s /bin/bash &#123;username&#125;</span></span><br><span class="line">(add user)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># passwd &#123;username&#125;      //&#123;&#125;换成你的用户名,记住不需要打&#123;&#125;</span></span><br><span class="line">(<span class="built_in">set</span> default user password)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># exit  //退出</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe config --default-user &#123;username&#125;</span><br><span class="line">    (setting to default user)     //现在是root用户,不用加sudo</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [user@PC-NAME]$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]$ sudo pacman-key --populate</span><br></pre></td></tr></table></figure>
+<h3 id="第五步-安装完后操作"><a href="#第五步-安装完后操作" class="headerlink" title="第五步 安装完后操作"></a>第五步 安装完后操作</h3><p><strong>下面是<a href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/">换源</a></strong></p>
+<p><strong>打开nano /etc/pacman.d/mirrorlist 然后再最顶端添加 切记去##</strong></p>
+<img src="images/wsl傻瓜式安装/Arch wsl配置文件.jpg" style="width: 800px; height: 500px;">
+<br>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Server = https:mirrors.tuna.tsinghua.edu.cn/archlinux/<span class="variable">$repo</span>/os/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
+**然后就可以 更新软件包缓存**
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman -Syy</span><br></pre></td></tr></table></figure>
+<h3 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
+<img src="images/wsl傻瓜式安装/Arch wsl.jpg" style="width: 800px; height: 500px;">
+
+<h3 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h3><h3 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h3><h3 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h3>]]></content>
   </entry>
   <entry>
     <title>SQL Server T-SQL 视图</title>
@@ -365,52 +411,6 @@ $
 <p><strong>防止低内存编译出错 设置大小为</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> ANDROID_JACK_VM_ARGS=<span class="string">&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G&quot;</span></span><br></pre></td></tr></table></figure>
 <h1 id="祝福大家能自己动手做出属于自己的ROM"><a href="#祝福大家能自己动手做出属于自己的ROM" class="headerlink" title="祝福大家能自己动手做出属于自己的ROM"></a>祝福大家能自己动手做出属于自己的ROM</h1>]]></content>
-  </entry>
-  <entry>
-    <title>Arch wsl的傻瓜式安装 (有手就行)</title>
-    <url>/Arch-Wsl-install.html</url>
-    <content><![CDATA[<p>本人是Arch教徒过来传一下教<br><img src="images/wsl傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
-<a id="more"></a>
-
-<h3 id="第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下"><a href="#第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下" class="headerlink" title="第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下"></a>第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</span><br></pre></td></tr></table></figure>
-<img src="images/wsl傻瓜式安装/按照提示重启电脑.jpg" style="width: 300px; height: 300px;">
-
-<p><strong>按照提示重启电脑</strong></p>
-<h3 id="第二步-下载文件"><a href="#第二步-下载文件" class="headerlink" title="第二步 下载文件"></a>第二步 下载文件</h3><p><strong>然后下载<a href="https://github.com/yuk7/ArchWSL">Arch WSL</a></strong></p>
-<img src="images/wsl傻瓜式安装/Arch wsl下载.jpg">
-<br>
-<img src="images/wsl傻瓜式安装/Arch wsl下载版本.jpg">
-
-<p><strong>那个安装证书是给appx版的arch wsl用的</strong></p>
-<p><strong>你已经安装zip版的</strong></p>
-<p><strong>没有必要安两次</strong></p>
-<p><strong>只用需要用到zip</strong></p>
-<h3 id="第三步-配置Arch-Wsl"><a href="#第三步-配置Arch-Wsl" class="headerlink" title="第三步 配置Arch Wsl"></a>第三步 配置Arch Wsl</h3><img src="images/wsl傻瓜式安装/Arch wsl配置.jpg" style="width: 800px; height: 500px;">
-
-<p><strong>反正按照我这个改，保存是ctrl + x 回车</strong></p>
-<h3 id="第四步-配置相关参数"><a href="#第四步-配置相关参数" class="headerlink" title="第四步 配置相关参数"></a>第四步 配置相关参数</h3><p><strong>这里会提示配置  按照我的方法配置</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe//这个是启动后的显示</span><br><span class="line">[root@PC-NAME user]<span class="comment"># passwd       //这个是用户名输完名字输密码</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe</span><br><span class="line">[root@PC-NAME]<span class="comment"># EDITOR=nano visudo</span></span><br><span class="line">    %wheel      ALL=(ALL) ALL</span><br><span class="line">    (setup sudoers file.)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]<span class="comment"># useradd -m -G wheel -s /bin/bash &#123;username&#125;</span></span><br><span class="line">(add user)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># passwd &#123;username&#125;      //&#123;&#125;换成你的用户名,记住不需要打&#123;&#125;</span></span><br><span class="line">(<span class="built_in">set</span> default user password)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># exit  //退出</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe config --default-user &#123;username&#125;</span><br><span class="line">    (setting to default user)     //现在是root用户,不用加sudo</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [user@PC-NAME]$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]$ sudo pacman-key --populate</span><br></pre></td></tr></table></figure>
-<h3 id="第五步-安装完后操作"><a href="#第五步-安装完后操作" class="headerlink" title="第五步 安装完后操作"></a>第五步 安装完后操作</h3><p><strong>下面是<a href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/">换源</a></strong></p>
-<p><strong>打开nano /etc/pacman.d/mirrorlist 然后再最顶端添加 切记去##</strong></p>
-<img src="images/wsl傻瓜式安装/Arch wsl配置文件.jpg" style="width: 800px; height: 500px;">
-<br>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Server = https:mirrors.tuna.tsinghua.edu.cn/archlinux/<span class="variable">$repo</span>/os/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
-**然后就可以 更新软件包缓存**
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman -Syy</span><br></pre></td></tr></table></figure>
-<h3 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
-<img src="images/wsl傻瓜式安装/Arch wsl.jpg" style="width: 800px; height: 500px;">
-
-<h3 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h3><h3 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h3><h3 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h3>]]></content>
   </entry>
   <entry>
     <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
