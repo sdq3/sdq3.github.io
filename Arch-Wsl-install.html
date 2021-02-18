@@ -30,7 +30,7 @@
 	
 	<link rel="stylesheet" type="text/css" href="css/navEffect.css">
 	
-	<link rel="stylesheet" href="resources/dearmsdan_link/link.css">
+	<link rel="stylesheet" href="resources/sdq_link/link.css">
 	
 	<link rel="stylesheet" type="text/css" href="css/post_content.css">
 	
@@ -60,13 +60,13 @@
 
 	
     <body class="pace-done layout-fullwidth">
-		<div id="dearmsdan">
+		<div id="sdq">
 		<!-- Header -->
 		
 <nav class="navbar navbar-default navbar-fixed-top">
 		<div class="brand"> 
 			<a>
-				<i id="dearmsdan-logo" style="font-size:50px;vertical-align: middle;"
+				<i id="sdq-logo" style="font-size:50px;vertical-align: middle;"
 			class=""></i>
 				
 				
@@ -181,7 +181,7 @@
 			</div>
 			<nav>
 				
-				<div class="dearmsdan-count">
+				<div class="sdq-count">
 					<span>文章</span>10
 					<span>标签</span>0
 					<span>分类</span>0
@@ -323,8 +323,8 @@
     z-index: -1;
 }
 	</style>
-<canvas class="canvas dearmsdan-canvas" width="1920" height="862"></canvas>
-<canvas class="canvas dearmsdan-festival dearmsdan-canvas" width="1920" height="862"></canvas>
+<canvas class="canvas sdq-canvas" width="1920" height="862"></canvas>
+<canvas class="canvas sdq-festival sdq-canvas" width="1920" height="862"></canvas>
 
 
 
@@ -337,7 +337,7 @@
 
 
 
-<div class="dearmsdan-bg">
+<div class="sdq-bg">
 	<div class="div_bg"></div>		
 </div>
 
@@ -353,7 +353,7 @@
 
 	var	$body = document.querySelector('body');
 	/*$('body').addClass('is-preload');  添加灰面遮罩，可能存在问题
-	//$('.dearmsdan-bg').css('background','none'); */
+	//$('.sdq-bg').css('background','none'); */
 	// Methods/polyfills.
 
 		// classList | (c) @remy | github.com/remy/polyfills | rem.mit-license.org
@@ -376,10 +376,10 @@
 	
 	// Slideshow Background.
 
-   if (window.addEventListener) { window.addEventListener("load",dearmsdanimgbg, false);} 
-   else if (window.attachEvent) {window.attachEvent("onload",dearmsdanimgbg); }
-    else{ window.onload =dearmsdanimgbg; }
-function dearmsdanimgbg(){
+   if (window.addEventListener) { window.addEventListener("load",sdqimgbg, false);} 
+   else if (window.attachEvent) {window.attachEvent("onload",sdqimgbg); }
+    else{ window.onload =sdqimgbg; }
+function sdqimgbg(){
 (function() {
      
 					
@@ -643,16 +643,16 @@ var $main = document.querySelector('.main');
 
 
 <style>
-	#dearmsdanPost:hover{
+	#sdqPost:hover{
    		    background-color: rgba(255, 255, 255, 0.5)!important;
 	}	
 </style>
-<div class="dearmsdan">
-	<div class="dearmsdan-post" id="dearmsdanPost">
-		<div class="dearmsdan-title">
+<div class="sdq">
+	<div class="sdq-post" id="sdqPost">
+		<div class="sdq-title">
 			<h1>Arch wsl的傻瓜式安装 (有手就行)</h1>
 		</div>
-	  <div id="post" class="dearmsdan-post-Statistics">
+	  <div id="post" class="sdq-post-Statistics">
             <a>2021年02月19日</a>
 		  	<a class="post-count">99 字</a>
 		
@@ -842,7 +842,7 @@ $(window).load(function(){
 			return realLength;
 		};
 		//console.log(str);
-		var article = document.querySelector('.dearmsdan-post article').innerHTML.trim();
+		var article = document.querySelector('.sdq-post article').innerHTML.trim();
 
 		var b = article.replace(/<.*?>/ig,"");
 		
@@ -935,8 +935,8 @@ $(window).load(function(){
 		<div class="foor">
 			© 2021 
 			我叫史迪奇.  
-			 <span id="dearmsdan-time-box"> 
-				 网站已经运行了<span id="dearmsdan-time"></span>
+			 <span id="sdq-time-box"> 
+				 网站已经运行了<span id="sdq-time"></span>
 			 </span>...
 		</div>
 		<div class="foor">
@@ -999,7 +999,7 @@ function timeElapse(date){
 		seconds = "0" + seconds;
 	}
 	var result = "第 <span class=\"digit\">" + days + "</span> 天 <span class=\"digit\">" + hours + "</span> 小时 <span class=\"digit\">" + minutes + "</span> 分钟 <span class=\"digit\">" + seconds + "</span> 秒"; 
-	$("#dearmsdan-time").html(result);
+	$("#sdq-time").html(result);
 }
     </script>
 	<script>
@@ -1016,7 +1016,7 @@ function timeElapse(date){
 		    together.setMinutes(0);						//分钟
 		    together.setSeconds(0);						//秒前一位
 		    together.setMilliseconds(0);				//秒第二位
-            $("#dearmsdan-time-box").fadeIn(500);
+            $("#sdq-time-box").fadeIn(500);
             while (true) {
                 timeElapse(together);
                 $await(Jscex.Async.sleep(1000));
@@ -1134,12 +1134,12 @@ function timeElapse(date){
 <script async src="resources/meuplayer/player/playlist.js"></script>
 <script type="text/javascript">
 
-   if (window.addEventListener) {window.addEventListener("load",dearmsdanPlaylist, false); } 
-   else if (window.attachEvent) { window.attachEvent("onload",dearmsdanPlaylist);}  
-   else{window.onload =dearmsdanPlaylist; }
+   if (window.addEventListener) {window.addEventListener("load",sdqPlaylist, false); } 
+   else if (window.attachEvent) { window.attachEvent("onload",sdqPlaylist);}  
+   else{window.onload =sdqPlaylist; }
       
 
-function dearmsdanPlaylist(){
+function sdqPlaylist(){
 	
 var myPlaylist = new jPlayerPlaylist({
 		jPlayer: "#jquery_jplayer_N",
@@ -1719,11 +1719,11 @@ $(document).ready(function () {
         }
 </style>
 <script>
-   if (window.addEventListener) { window.addEventListener("load",dearmsdanread, false);} 
-   else if (window.attachEvent) {window.attachEvent("onload",dearmsdanread); }
-    else{ window.onload =dearmsdanread; }
+   if (window.addEventListener) { window.addEventListener("load",sdqread, false);} 
+   else if (window.attachEvent) {window.attachEvent("onload",sdqread); }
+    else{ window.onload =sdqread; }
 	
-  function dearmsdanread(){
+  function sdqread(){
 
 function speak(text){if(!isBlank(text)){var src="https://api.heycmm.cn/speak/"+text;if(src.length<=2083){var n=document.querySelector(".Audio-speech");if(!n){(n=document.createElement("AUDIO")).className="Audio-speech";}else{document.getElementById("audios").style.display="block";}
 n.setAttribute("id","audios");n.setAttribute("src",src);n.setAttribute("controls","controls");n.play()}}else{document.getElementById("audios").pause();document.getElementById("audios").style.display="none"}}
@@ -1858,16 +1858,16 @@ window.vditorSpeechRange=getSelection().getRangeAt(0).cloneRange();var rect=getS
 	
 	
 	
-	function dearmsdanfooter() {
+	function sdqfooter() {
 	//https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302
 	/* 设置 背景 */
 	
    }
 
 
-   if (window.addEventListener) { window.addEventListener("load",dearmsdanfooter, false);} 
-   else if (window.attachEvent) {window.attachEvent("onload",dearmsdanfooter); }
-    else{ window.onload =dearmsdanfooter; }
+   if (window.addEventListener) { window.addEventListener("load",sdqfooter, false);} 
+   else if (window.attachEvent) {window.attachEvent("onload",sdqfooter); }
+    else{ window.onload =sdqfooter; }
      
 </script>
 
@@ -1878,8 +1878,8 @@ window.vditorSpeechRange=getSelection().getRangeAt(0).cloneRange();var rect=getS
 	
 
 <script>
-dearmsdanDate();
-function dearmsdanDate() {
+sdqDate();
+function sdqDate() {
   document.write('<a href="#" style="display:none" target="_blank"><div id="date"></div><font color="#DF0A10">星期<span id="wk"></span></font>&nbsp;<span id="clk"></span><br />农历<span id="nongli"></span></a>')
   cal_u()
   cal_s()
@@ -1889,7 +1889,7 @@ function dearmsdanDate() {
 
 var season = 0;  // 四季判断标识
 var festival = [];  // 节日标识
-var dearmsdanCanvas = null;  // 自定义画布标识
+var sdqCanvas = null;  // 自定义画布标识
 (function(d){
 var traditional,month,date;
 traditional = d[0];
@@ -2045,9 +2045,9 @@ var arr = ['正月初一','正月初二','正月初三','正月初四','正月�
 
 
 	//console.log(season);
-$(".dearmsdan-festival").attr("id","dearmsdanSeason");
+$(".sdq-festival").attr("id","sdqSeason");
 if(season == 1){
-var particleCanvas = new particleCanvas("dearmsdanSeason", [{
+var particleCanvas = new particleCanvas("sdqSeason", [{
 	"type": {
 		"typeName": "image",
 		"url": "resources/season/flake.png"
@@ -2083,7 +2083,7 @@ var particleCanvas = new particleCanvas("dearmsdanSeason", [{
 }]);
 }
 if(season == 2){
-var particleCanvas = new particleCanvas("dearmsdanSeason", [{
+var particleCanvas = new particleCanvas("sdqSeason", [{
 	"type": {
 		"typeName": "image",
 		"url": "resources/season/watermelon.png"
@@ -2119,7 +2119,7 @@ var particleCanvas = new particleCanvas("dearmsdanSeason", [{
 }]);
 }
 if(season == 3){
-var particleCanvas = new particleCanvas("dearmsdanSeason", [{
+var particleCanvas = new particleCanvas("sdqSeason", [{
 	"type": {
 		"typeName": "image",
 		"url": "resources/season/butterfly.png"
@@ -2155,7 +2155,7 @@ var particleCanvas = new particleCanvas("dearmsdanSeason", [{
 }]);
 }
 if(season == 4){
-var particleCanvas = new particleCanvas("dearmsdanSeason", [{
+var particleCanvas = new particleCanvas("sdqSeason", [{
 	"type": {
 		"typeName": "image",
 		"url": "resources/season/snowflake.png"
@@ -2231,16 +2231,16 @@ $('a').css('color','#b23232');
 // 导航栏
 $('.navbar-default').css('background-color','rgba(255, 135, 135, 0.8)');
 // 侧边栏
-$('#dearmsdan .sidebar').css('background-color','#ffd1d1');
-$('#dearmsdan .sidebar').css('box-shadow','none');
+$('#sdq .sidebar').css('background-color','#ffd1d1');
+$('#sdq .sidebar').css('box-shadow','none');
 // 一级导航
 $('.nav').addClass('navred');
 // bg
-$('.dearmsdan-bg').css('background-color','rgba(255, 0, 0, 0.5)');
+$('.sdq-bg').css('background-color','rgba(255, 0, 0, 0.5)');
 	
 	
 	
-$(".dearmsdan-festival").attr("id","c");
+$(".sdq-festival").attr("id","c");
 	var w = c.width = window.innerWidth,
 		h = c.height = window.innerHeight,
 		ctx = c.getContext( '2d' ),
@@ -2662,14 +2662,14 @@ $('a').css('color','#b23232');
 // 导航栏
 $('.navbar-default').css('background-color','rgba(255, 135, 135, 0.8)');
 // 侧边栏
-$('#dearmsdan .sidebar').css('background-color','#ffd1d1');
-$('#dearmsdan .sidebar').css('box-shadow','none');
+$('#sdq .sidebar').css('background-color','#ffd1d1');
+$('#sdq .sidebar').css('box-shadow','none');
 // 一级导航
 $('.nav').addClass('navred');
 // bg
-$('.dearmsdan-bg').css('background-color','rgba(255, 0, 0, 0.5)');
+$('.sdq-bg').css('background-color','rgba(255, 0, 0, 0.5)');
 	
-	var ctx = document.querySelector('.dearmsdan-festival').getContext('2d')
+	var ctx = document.querySelector('.sdq-festival').getContext('2d')
 ctx.canvas.width = window.innerWidth
 ctx.canvas.height = window.innerHeight
 
@@ -2822,18 +2822,18 @@ $('a').css('color','#b23232');
 // 导航栏
 $('.navbar-default').css('background-color','rgba(255, 204, 223, 0.8)');
 // 侧边栏
-$('#dearmsdan .sidebar').css('background-color','rgba(255, 204, 223, 0.8)');
-$('#dearmsdan .sidebar').css('box-shadow','none');
+$('#sdq .sidebar').css('background-color','rgba(255, 204, 223, 0.8)');
+$('#sdq .sidebar').css('box-shadow','none');
 // 一级导航
 $('.nav').addClass('navfen');
 // bg
-$('.dearmsdan-bg').css('background-color','rgba(255, 136, 181, 1)');
+$('.sdq-bg').css('background-color','rgba(255, 136, 181, 1)');
 	
 	
 (function () {
   'use strict';
   window.addEventListener('load', function () {
-$(".dearmsdan-festival").attr("id","valentinesDay");
+$(".sdq-festival").attr("id","valentinesDay");
     var canvas = document.getElementById('valentinesDay');
 
     if (!canvas || !canvas.getContext) {
@@ -3082,7 +3082,7 @@ if(festival[1] == 4.4){
 	console.log(festival[0]);
 		$('html').css({"filter":"grayscale(100%)"});
 	(function(){
-		$(".dearmsdan-festival").attr("id","qingmingFestival");
+		$(".sdq-festival").attr("id","qingmingFestival");
 var c = document.getElementById("qingmingFestival");
 var ctx = c.getContext("2d");
 var w = c.width = window.innerWidth;
@@ -3221,13 +3221,13 @@ if(festival[1] == 6.1){
 // 导航栏
 $('.navbar-default').css('background-color','rgba(187, 209, 255, 0.8)');
 // 侧边栏
-$('#dearmsdan .sidebar').css('background-color','rgba(148, 202, 255, 0.8)');
-$('#dearmsdan .sidebar').css('box-shadow','none');
+$('#sdq .sidebar').css('background-color','rgba(148, 202, 255, 0.8)');
+$('#sdq .sidebar').css('box-shadow','none');
 // 一级导航
 $('.nav').addClass('navlan');
 	
 	
-$(".dearmsdan-festival").attr("id","childrensDay");
+$(".sdq-festival").attr("id","childrensDay");
 		/*
 * File Name / pinwheel.js
 * Created Date / Aug 14, 2020
@@ -3510,7 +3510,7 @@ $(".dearmsdan-festival").attr("id","childrensDay");
 	
 
  
-		<div class="dearmsdan-pjax">
+		<div class="sdq-pjax">
 		<script src="js/pjax/jquery.pjax.js"></script>
 			<script type="text/javascript">
 $(document).ready(function () {
@@ -3536,7 +3536,7 @@ $(document).ready(function () {
 	copycodes();
 	postcolor();								 
 	styleS();
-	dearmsdanlazyload();
+	sdqlazyload();
 	
 	}); /*end ready pjax*/
 
@@ -3547,22 +3547,22 @@ function linker(){
 }
 		
 	
-/* .dearmsdan-post悬浮变色 */ 
+/* .sdq-post悬浮变色 */ 
 function postcolor(){
 	
-$(".dearmsdan-post").mouseover(function(){
+$(".sdq-post").mouseover(function(){
 		
 	// 随机 变化的淡入
 var arr = ['0 4px 24px rgb(255, 255, 255)','0 4px 24px rgb(163, 163, 163)','0 4px 24px rgb(206, 154, 154)','0 4px 24px rgb(206, 154, 178)','0 4px 24px rgb(193, 154, 206)','0 4px 24px rgb(154, 158, 206)','0 4px 24px rgb(154, 187, 206)','0 4px 24px rgb(154, 206, 170)','0 4px 24px rgb(206, 200, 154)','0 4px 24px rgb(206, 180, 154)','0 4px 24px rgb(206, 154, 154)']; 
 		
 var index = Math.floor((Math.random()*arr.length)); 
 	// 预期不佳
-	$('.dearmsdan-post:hover').css("box-shadow",arr[index]);
+	$('.sdq-post:hover').css("box-shadow",arr[index]);
 		
 });
-	$(".dearmsdan-post").mouseleave(function(){
+	$(".sdq-post").mouseleave(function(){
 	// 移除
-	$('.dearmsdan-post').css("box-shadow","none");
+	$('.sdq-post').css("box-shadow","none");
 		
 });
 	
@@ -3656,27 +3656,27 @@ if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobi
 	
 
 	/* 首页 排版 */
-	$('.dearmsdan-bg').css('box-shadow','none');
-	$('.dearmsdan-bg').css('-webkit-box-shadow','none');
+	$('.sdq-bg').css('box-shadow','none');
+	$('.sdq-bg').css('-webkit-box-shadow','none');
 //	$('.main-content').css('background-color','#ECECEE');
-	$('.dearmsdan-post').css('background-color','rgba(255, 255, 255, 0.52)');
-	$('.dearmsdan-post').css('padding','30px');
-	$('.dearmsdan-post').css('margin-bottom','20px');
+	$('.sdq-post').css('background-color','rgba(255, 255, 255, 0.52)');
+	$('.sdq-post').css('padding','30px');
+	$('.sdq-post').css('margin-bottom','20px');
 	$('.main-content').addClass('m-content');
-	$('.dearmsdan-title').css('opacity','1');
+	$('.sdq-title').css('opacity','1');
 	
 	/* 文章 内容页 排版 */
-	$('.dearmsdan-bg div').removeClass('div_bg');
-	$('.dearmsdan-bg div').addClass('divbg');
-	$('.dearmsdan-bg div').css("background-color","rgba(255, 255, 255, 0.8)");
-	$('#dearmsdanPost').addClass('dearmsdanPost');
+	$('.sdq-bg div').removeClass('div_bg');
+	$('.sdq-bg div').addClass('divbg');
+	$('.sdq-bg div').css("background-color","rgba(255, 255, 255, 0.8)");
+	$('#sdqPost').addClass('sdqPost');
 	
 	
 	
-		$('.dearmsdan-post').css('padding','15px');
-		//$('.dearmsdan-post').css('background-color','rgba(223, 223, 223, 0.52)');
+		$('.sdq-post').css('padding','15px');
+		//$('.sdq-post').css('background-color','rgba(223, 223, 223, 0.52)');
 		$('.main').css('background','rgba(255, 255, 255, 0)');//#d6ecff
-		$('.dearmsdan-bg').css('background','#254663');
+		$('.sdq-bg').css('background','#254663');
 	
 	
 	
@@ -3689,7 +3689,7 @@ if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobi
 	}else{
 		
 	
-		$('.dearmsdan-bg').css('background','none');
+		$('.sdq-bg').css('background','none');
 	
 	
 	}
@@ -3698,19 +3698,19 @@ if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobi
 
 /* 观察者模式 */
 function Observer(){
-	$('#dearmsdan-logo').click( 
+	$('#sdq-logo').click( 
 		function () { 
 			alert("你是观察者");
-			$('.nav-list').addClass('dearmsdan-none');
-			$('.dearmsdan-bg').addClass('dearmsdan-none');
-			$('.main-content').addClass('dearmsdan-none');
-			$('.container-fluid').addClass('dearmsdan-none');
-			$('#dearmsdan-vbg').css("opacity","1");
-			$('#dearmsdan-vbg').css("z-index","5201314");
+			$('.nav-list').addClass('sdq-none');
+			$('.sdq-bg').addClass('sdq-none');
+			$('.main-content').addClass('sdq-none');
+			$('.container-fluid').addClass('sdq-none');
+			$('#sdq-vbg').css("opacity","1");
+			$('#sdq-vbg').css("z-index","5201314");
 			$('.navbar').css("background-color","transparent");
 			$('.navbar').css("box-shadow","none");
-			$('#dearmsdan-logo').css("position","relative");
-			$('#dearmsdan-logo').css("left","-100px");
+			$('#sdq-logo').css("position","relative");
+			$('#sdq-logo').css("left","-100px");
 			console.log("你是观察者null");
 			
 		});
@@ -3718,7 +3718,7 @@ function Observer(){
 	
 													
 /* 图片懒加载 */
-function dearmsdanlazyload(){
+function sdqlazyload(){
 		var imgs = document.querySelectorAll('img');
 		
 		//pimg.css('display','none');
@@ -3726,9 +3726,9 @@ function dearmsdanlazyload(){
 			var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
 			var winTop = window.innerHeight;
 			for(var i=0;i < imgs.length;i++){
-				var flag=imgs[i].hasAttribute('dearmsdan-src');
+				var flag=imgs[i].hasAttribute('sdq-src');
 				if(flag){
-					imgs[i].src = imgs[i].getAttribute('dearmsdan-src');
+					imgs[i].src = imgs[i].getAttribute('sdq-src');
 				   }
 			}
 		}
@@ -3751,9 +3751,9 @@ function dearmsdanlazyload(){
 		
 	
 } /* end Obimg */
- if (window.addEventListener) { window.addEventListener("load",dearmsdanlazyload, false);} 
-   else if (window.attachEvent) {window.attachEvent("onload",dearmsdanlazyload); }
-    else{ window.onload = dearmsdanlazyload; }
+ if (window.addEventListener) { window.addEventListener("load",sdqlazyload, false);} 
+   else if (window.attachEvent) {window.attachEvent("onload",sdqlazyload); }
+    else{ window.onload = sdqlazyload; }
 
 
 
