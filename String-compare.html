@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>Java面向对象思维 -  我叫史迪奇</title>
+	<title>String 比较 -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -650,10 +650,10 @@ var $main = document.querySelector('.main');
 <div class="sdq">
 	<div class="sdq-post" id="sdqPost">
 		<div class="sdq-title">
-			<h1>Java面向对象思维</h1>
+			<h1>String 比较</h1>
 		</div>
 	  <div id="post" class="sdq-post-Statistics">
-            <a>2021年02月20日</a>
+            <a>2021年02月27日</a>
 		  	<a class="post-count">99 字</a>
 		
 		
@@ -665,7 +665,7 @@ var $main = document.querySelector('.main');
 <aside id="article-toc" class="fixed-toc">
     <div id="article-toc-inner">
         <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E5%A6%82%E9%80%A0%E4%B8%80%E8%BE%86%E8%BD%A6-%E8%80%8C%E8%BD%A6%E6%9C%89%E4%BB%80%E4%B9%88%E5%B1%9E%E6%80%A7%EF%BC%9F-%E4%BE%8B%E5%A6%82-%E8%BD%A6%E6%9C%89%E9%A2%9C%E8%89%B2-%E8%BD%A6%E6%9C%89%E8%BD%AE%E5%AD%90-%E8%BD%A6%E5%BA%A7%E4%BD%8D"><span class="toc-text">例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E4%BD%9C"><span class="toc-text">动作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8Cmain%E6%96%B9%E6%B3%95"><span class="toc-text">执行main方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">this关键字</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#String-%E6%AF%94%E8%BE%83"><span class="toc-text">String 比较</span></a></li></ol>
     </div>
 </aside>
 </div>
@@ -704,16 +704,10 @@ var $main = document.querySelector('.main');
 
 		<div>
 			  <article>
-				<h3 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ 	String color;  //颜色</span><br><span class="line">$ 	int wheel;   //轮子</span><br><span class="line">$ 	int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>显示属性</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public void <span class="function"><span class="title">run</span></span>() &#123;</span><br><span class="line">$	System.out.println(this.color);    //颜色</span><br><span class="line">$	System.out.println(this.wheel);    //轮子</span><br><span class="line">$	System.out.println(this.seat);     //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h3><p><strong>例如车能飞</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">fly</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.color+<span class="string">&quot;车能飞&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>例如车可以潜水</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">diving</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.color+<span class="string">&quot;车可以下水&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$ 	  Car c1 = new Car();   //先创建一辆车</span><br><span class="line">$ 	  c1.color = <span class="string">&quot;透明&quot;</span>;  //我的车是透明色</span><br><span class="line">$ 	  c1.wheel = 5;  //众所周知所以车都是5个轮子</span><br><span class="line">$      c1.seat = 9; //我的车 里面坐4个 车前绑1个人用来刹车 车顶坐1个人</span><br><span class="line">$      c1.run();</span><br><span class="line">$      c1.fly();</span><br><span class="line">$      c1.diving();</span><br><span class="line">$</span><br><span class="line">$      Car c2 = new Car();   //先创建一辆车</span><br><span class="line">$	  c2.color = <span class="string">&quot;黄&quot;</span>;  //我的车是屎黄</span><br><span class="line">$	  c2.wheel = 5;  //众所周知所以车都是5个轮子</span><br><span class="line">$      c2.seat = 9; //我的车 里面坐4个 车前绑1个人用来刹车 车顶坐1个人</span><br><span class="line">$      c2.run();</span><br><span class="line">$      c2.fly();</span><br><span class="line">$      c2.diving();</span><br><span class="line">$	&#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h3><p><strong>this: 当前类的对象</strong><br><strong>this可以在方法内部获取到对象中的属性信息</strong><br><strong>this还可以区分局部变量和成员变量</strong></p>
+				<h3 id="String-比较"><a href="#String-比较" class="headerlink" title="String 比较"></a>String 比较</h3><a id="more"></a>
+<p><strong>当String进行比较时应该用equals</strong></p>
+<p><strong>因为equals是String类重写后的用于比较字符串内容的方法</strong></p>
+<p><strong>为什么不用==进行比较, 因为==是用于比较地址值</strong></p>
 
 			  </article>
 		</div>
@@ -790,7 +784,7 @@ $(window).load(function(){
         
 	
 <strong>本文链接：</strong>
-	<a href="https://sdq3.gitee.io/Object-oriented-this.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;Object-oriented-this.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;Object-oriented-this.html</a><br>
+	<a href="https://sdq3.gitee.io/String-compare.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;String-compare.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;String-compare.html</a><br>
 </div>
 
 	  

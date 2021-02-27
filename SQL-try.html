@@ -182,7 +182,7 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>15
+					<span>文章</span>16
 					<span>标签</span>0
 					<span>分类</span>0
 				</div>		
@@ -266,6 +266,10 @@
       <ul>
         
           <li>
+            <a href="/String-compare.html">String 比较</a>
+          </li>
+        
+          <li>
             <a href="/Bodhi-Linux.html">Bodhi Linux安装教程(老电脑的福利)</a>
           </li>
         
@@ -275,10 +279,6 @@
         
           <li>
             <a href="/Object-oriented-constructor-heavy-load.html">Java面向对象思维之构造方法需的重载</a>
-          </li>
-        
-          <li>
-            <a href="/Object-oriented-constructor.html">Java面向对象思维之构造方法</a>
           </li>
         
           <li>
@@ -704,8 +704,8 @@ var $main = document.querySelector('.main');
 
 		<div>
 			  <article>
-				<h3 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ create view 视图(字段别名) as select 字段 from 表 WITH CHECK OPTION</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+				<h3 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ create view 视图(字段别名) as select 字段 from 表 WITH CHECK OPTION</span><br></pre></td></tr></table></figure>
 <h3 id="向视图插入数据"><a href="#向视图插入数据" class="headerlink" title="向视图插入数据"></a>向视图插入数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ insert 视图 values(<span class="string">&#x27;数据&#x27;</span>) </span><br></pre></td></tr></table></figure>
 <h3 id="查询视图数据"><a href="#查询视图数据" class="headerlink" title="查询视图数据"></a>查询视图数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ select 字段 from 视图</span><br></pre></td></tr></table></figure>
 <h3 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ update 视图 <span class="built_in">set</span> 修改的字段=<span class="string">&#x27;修改的数据&#x27;</span> <span class="built_in">where</span> 匹配字段=<span class="string">&#x27;匹配数据&#x27;</span> </span><br></pre></td></tr></table></figure>
