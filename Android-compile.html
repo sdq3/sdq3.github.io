@@ -282,7 +282,7 @@
           </li>
         
           <li>
-            <a href="/Object-oriented-this.html">Java面向对象思维</a>
+            <a href="/Object-oriented-constructor.html">Java面向对象思维之构造方法</a>
           </li>
         
       </ul>
@@ -704,7 +704,7 @@ var $main = document.querySelector('.main');
 
 		<div>
 			  <article>
-				<p>本人是用Arch，顺便来传一下教<br><img src="images/编译Android/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
+				<p>本人是用Arch，顺便来传一下教<br><img src="/images/编译Android/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
 <a id="more"></a>
 
 <h1 id="第一是-安装Linux-我以Ubuntu和deepin为例子，建议新手用deepin"><a href="#第一是-安装Linux-我以Ubuntu和deepin为例子，建议新手用deepin" class="headerlink" title="第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin"></a>第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin</h1><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1aW411C7NR">Ubantu的安装视频</a><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1HW411Y73e">Deepin的安装视频</a></p>
@@ -747,7 +747,7 @@ var $main = document.querySelector('.main');
 <p><strong>(6) 输入邮箱和昵称</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.email xxxxxx@xxxx   //你的邮箱</span><br><span class="line">$ git config --global user.name xxxxxxxxx     //随便起一个英文昵称</span><br></pre></td></tr></table></figure>
 <p><strong>打开lineageOS文件夹 (如果是空的按组合键ctrl+H，显示隐藏内容)**</strong></p>
-<p><img src="images/%E7%BC%96%E8%AF%91Android/%E5%90%8C%E6%AD%A5%E6%BA%90%E7%A0%81.png"></p>
+<p><img src="/images/%E7%BC%96%E8%AF%91Android/%E5%90%8C%E6%AD%A5%E6%BA%90%E7%A0%81.png"></p>
 <p>然后更改<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/lineageOS/">链接</a></p>
 <h1 id="第五是-拉取源码"><a href="#第五是-拉取源码" class="headerlink" title="第五是 拉取源码"></a>第五是 拉取源码</h1><p><strong>输入</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ repo sync</span><br></pre></td></tr></table></figure>
@@ -763,7 +763,7 @@ var $main = document.querySelector('.main');
 <p>解释一下:git clone就是拷贝到本地的命令，那段网址就是我们上面复制的地址，-b后面的lineage-x.x,表示lineage-x.x的分支；device/(品牌)/(设备代号)就是要下载到地方的路径</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/LineageOS/android_device_(品牌)_(设备代号).git -b lineage-x.x device/(品牌)/(设备代号) depth=1(可加可不加，加入同步源码会小点)</span><br></pre></td></tr></table></figure>
 <p><strong>(7) 我们需要拉取的项目如下</strong></p>
-<img src="images/编译Android/找机型.jpg">
+<img src="/images/编译Android/找机型.jpg">
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ android_device_(品牌)_(设备代号)</span><br><span class="line"></span><br><span class="line">$ android_device_(品牌)_(处理器代号)-common</span><br><span class="line"></span><br><span class="line">$ android_device_(品牌)_(厂家)_common</span><br><span class="line"></span><br><span class="line">$ android_kernel_(品牌)_(处理器代号)</span><br><span class="line"></span><br><span class="line">$ proprietary_vendor_(品牌) </span><br></pre></td></tr></table></figure>
 <p><strong>(8) <a target="_blank" rel="noopener" href="https://github.com/TheMuppets">vendor需要访问地址</a>然后搜索(你的品牌)就可以找到</strong></p>
