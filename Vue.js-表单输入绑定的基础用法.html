@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>archive -  我叫史迪奇</title>
+	<title>Vue.js 表单输入绑定的基础用法 -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -642,502 +642,55 @@ var $main = document.querySelector('.main');
 
 
 
-
 <style>
-.sdq-post {
-	webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-}
-.sdq-post:hover{
-	webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-}
+	#sdqPost:hover{
+   		    background-color: rgba(255, 255, 255, 0.5)!important;
+	}	
 </style>
-
-
-<style>
-@media screen and (max-width: 1024px){
-	.sdq-more{    
-    opacity: 1!important;
-	}
-	.sdq-more{  
-		display: contents!important;	
-	}
-	.sdq-toping{
-		display: inline-block;
-		left: 10px;
-		top: 0;
-		z-index: 2;
-		color: #FFFFFF;
-		padding: 0 10px;
-		border-radius: 4px;
-		font-style: normal;
-		background-color: rgba(234, 67, 74, 0.7);
-	}
-	.sdq-post:hover .sdq-toping {display: inline-block!important;}
-}
-
-@media screen and (min-width: 1024px){
-	.sdq-toping{
-		display: none;
-		position: fixed;
-		left: 10px;
-		top: 0;
-		z-index: 2;color: #FFFFFF;
-		clip-path: polygon(100% 0, 100% 100%, 50% 70%, 0 100%, 0 0);
-		background-color: rgba(255, 0, 0, 0.51);    
-		background: -webkit-gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
-    	background: gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
-		height: 61px;
-		width: 41px;
-	}
-}
-	.sdq-more{   
-	display: inline-block;
-    float: right;
-    background-color: rgba(204, 196, 196, 0.45);
-    padding: .5rem 1rem;
-    border-radius: 4px;
-    color: #919191!important;
-    text-decoration: none;
-    opacity: 0;
-    -webkit-transition: opacity 1.2s;
-    transition: opacity 1.2s;
-    will-change: opacity;
-        -moz-user-select: none; /*火狐*/
-        -webkit-user-select: none; /*webkit浏览器*/
-        -ms-user-select: none; /*IE10*/
-        -khtml-user-select: none; /*早期浏览器*/
-        -o-user-select: none; /* Opera*/
-        user-select: none;
-	}
-	.sdq-post:hover .sdq-more {
-		opacity: 1;
-		animation: fade-in;
-		animation-duration: 0.6s;
-		-webkit-animation: fade-in 0.6s;
-	}
-	
-	@keyframes fade-in {  
-    0% {opacity: 0;}/*初始状态 透明度为0*/  
-    40% {opacity: 0;}/*过渡状态 透明度为0*/  
-    100% {opacity: 1;}/*结束状态 透明度为1*/  
-	}  
-	@-webkit-keyframes fade-in {/*针对webkit内核*/  
-		0% {opacity: 0;}  
-		40% {opacity: 0;}  
-		100% {opacity: 1;}  
-	}  
-	.sdq-post:hover .sdq-toping {display: block;}
-	.sdq-tags{
-	}
-	.sdq-tags a{
-		color: #fff; 
-		font-size: 15px; 
-	}
-	.sdq-tags a {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-	}
-	
-</style>
-
-
-<style>
-	
-@media screen and (min-width: 1024px){
-	.sdq-post:hover{
-   		border: none;
-		transform: translateY(-20px);
-		-webkit-transform: translateY(-20px);
-		-moz-transform: translateY(-20px);
-		background-color: rgba(255, 255, 255, 0.3);
-	}
-	.sdq-post{    
-		padding: 60px 70px!important;
-	}
-}
-	.sdq-post{    
-/*   		border: 1px #b8c7ff solid;*/
-		margin: 0px;    margin-bottom: 20px;
-        background-color: rgba(240, 248, 255, 0.4);
-	}
-</style>
-
-
-
-
-
-
 <div class="sdq">
-	<section class="sdq-posts">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Object-oriented-constructor.html">
-					<div class="sdq-title"> 
-						Java面向对象思维之构造方法
-					</div>
-				</a>
-			</div>
-			
+	<div class="sdq-post" id="sdqPost">
+		<div class="sdq-title">
+			<h1>Vue.js 表单输入绑定的基础用法</h1>
 		</div>
+	  <div id="post" class="sdq-post-Statistics">
+            <a>2021年03月04日</a>
+		  	<a class="post-count">99 字</a>
+		
+		
+	  </div>
+		
+		
+<div id="modal" style="display:none">
 
-			<article>
-				
-				<h3 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h3>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年02月20日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Object-oriented-constructor.html"><div class="sdq-more">阅读更多...</div></a>
-		
+<aside id="article-toc" class="fixed-toc">
+    <div id="article-toc-inner">
+        <strong class="sidebar-title">目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B"><span class="toc-text">案例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#view%E5%92%8CModel%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A"><span class="toc-text">view和Model双向绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-js%E6%98%AF%E7%9B%AE%E5%89%8D%E6%9C%80%E7%81%AB%E7%9A%84%E4%B8%80%E4%B8%AA%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6%EF%BC%8CReact%E6%98%AF%E6%9C%80%E6%B5%81%E8%A1%8C%E7%9A%84%E4%B8%80%E4%B8%AA%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6%EF%BC%8C"><span class="toc-text">Vue.js是目前最火的一个前端框架，React是最流行的一个前端框架，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#React%E9%99%A4%E4%BA%86%E5%BC%80%E5%8F%91%E7%BD%91%E7%AB%99%EF%BC%8C%E8%BF%98%E5%8F%AF%E4%BB%A5%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%BA%E5%8E%9F%E7%94%9FApp-Vue%E8%AF%AD%E6%B3%95%E4%B9%9F%E6%98%AF%E5%8F%AF%E4%BB%A5%E7%94%A8%E4%BA%8E%E8%BF%9B%E8%A1%8C%E6%89%8B%E6%9C%BAApp%E5%BC%80%E5%8F%91%E7%9A%84%EF%BC%8C%E9%9C%80%E8%A6%81%E5%80%9F%E5%8A%A9%E4%BA%8EWeex%E3%80%82"><span class="toc-text">React除了开发网站，还可以开发手机原生App,Vue语法也是可以用于进行手机App开发的，需要借助于Weex。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-js%E6%98%AF%E5%89%8D%E7%AB%AF%E7%9A%84%E4%B8%BB%E6%B5%81%E6%A1%86%E6%9E%B6%E4%B9%8B%E4%B8%80%EF%BC%8C%E5%92%8CAngular-js%EF%BC%8CReact-js%E4%B8%80%E8%B5%B7%EF%BC%8C%E5%B9%B6%E7%A7%B0%E4%B8%BA%E5%89%8D%E7%AB%AF%E4%B8%89%E5%A4%A7%E4%B8%BB%E6%B5%81%E6%A1%86%E6%9E%B6%E3%80%82"><span class="toc-text">Vue.js是前端的主流框架之一，和Angular.js，React.js一起，并称为前端三大主流框架。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-js%E6%98%AF%E4%B8%80%E5%A5%97%E6%9E%84%E5%BB%BA%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E7%9A%84%E6%A1%86%E6%9E%B6%EF%BC%8C%E5%8F%AA%E5%85%B3%E6%B3%A8%E8%A7%86%E5%9B%BE%E5%B1%82%EF%BC%8C%E5%AE%83%E4%B8%8D%E4%BB%85%E6%98%93%E4%BA%8E%E4%B8%8A%E6%89%8B%EF%BC%8C%E8%BF%98%E4%BE%BF%E4%BA%8E%E4%B8%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E6%88%96%E5%B7%B2%E6%9C%89%E9%A1%B9%E7%9B%AE%E6%95%B4%E5%90%88%EF%BC%8C"><span class="toc-text">Vue.js是一套构建用户界面的框架，只关注视图层，它不仅易于上手，还便于与第三方库或已有项目整合，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue%E6%9C%89%E4%B8%B0%E5%AF%8C%E7%9A%84%E9%85%8D%E5%A5%97%E4%B8%89%E6%96%B9%E7%B1%BB%E5%BA%93%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%95%B4%E5%90%88%E8%B5%B7%E6%9D%A5%E5%81%9A%E5%A4%A7%E5%9E%8B%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%BC%80%E5%8F%91"><span class="toc-text">Vue有丰富的配套三方类库，可以整合起来做大型项目的开发</span></a></li></ol>
     </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Android-compile.html">
-					<div class="sdq-title"> 
-						Android同步源码和编译ROM傻瓜式 (有手就行)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p>本人是用Arch，顺便来传一下教<br><img src="/images/编译Android/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年02月19日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Android-compile.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Thread-Process.html">
-					<div class="sdq-title"> 
-						什么是线程?什么是进程?线程与进程到底是什么关系
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<h3 id="什么是线程-学习进程最重要的还是学习线程"><a href="#什么是线程-学习进程最重要的还是学习线程" class="headerlink" title="什么是线程(学习进程最重要的还是学习线程)"></a>什么是线程(学习进程最重要的还是学习线程)</h3>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年02月19日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Thread-Process.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/SQL-try.html">
-					<div class="sdq-title"> 
-						SQL Server T-SQL 视图
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<h3 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h3>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年02月19日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/SQL-try.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Arch-Wsl-install.html">
-					<div class="sdq-title"> 
-						Arch wsl的傻瓜式安装 (有手就行)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p>本人是Arch教徒过来传一下教<br><img src="/images/wsl傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年02月19日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Arch-Wsl-install.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/SQL-storage.html">
-					<div class="sdq-title"> 
-						SQL Server T-SQL 存储过程
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<h3 id="创建变量"><a href="#创建变量" class="headerlink" title="创建变量"></a>创建变量</h3>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年02月19日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/SQL-storage.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Linux-command.html">
-					<div class="sdq-title"> 
-						Linux命令(未完工)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<blockquote>
-<h3 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h3></blockquote>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年02月19日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Linux-command.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Java-Swing.html">
-					<div class="sdq-title"> 
-						Java Swing 图形界面速背表(未完工)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<blockquote>
-<h3 id="JavaSwing-布局管理器"><a href="#JavaSwing-布局管理器" class="headerlink" title="JavaSwing 布局管理器"></a>JavaSwing 布局管理器</h3></blockquote>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年02月19日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Java-Swing.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Object-oriented.html">
-					<div class="sdq-title"> 
-						Java面向对象思维
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<h3 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h3>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年02月19日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Object-oriented.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Hexo-install.html">
-					<div class="sdq-title"> 
-						关于Hexo我所踩过的坑和小白安装教程
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<h3 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h3>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年02月19日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Hexo-install.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-</section>
-	
-
-
-    <nav id="paging">
-      <a class="extend prev" rel="prev" href="/archives/"><i class="DearMsDanIconFont">&#xe617;</i></a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/"><i class="DearMsDanIconFont">&#xe627;</i></a>
-    </nav>
-  
-
-<!--
-        prev_text: '<i class="iconfont">&#xe617;</i>',
-        next_text: '<i class="iconfont">&#xe627;</i>'
--->
+</aside>
 </div>
 
 
+		
+			<a href="#modal" class="second">
+				<div class="i">
+						<i style="font-size:20px" class="DearMsDanIconFont icon-sousuo">
+						<span style="font-size:0px"><br/>目<br/>录</span>
+						</i>
+				</div>
+			</a>
+
+
+
+
+<script>
+	$(".second .i").mouseover(function(){
+  $(".second .i span").css("font-size","18px");
+});
+	$(".second .i").mouseleave(function(){
+  $(".second .i span").css("font-size","0px");
+});
+</script>
 
 
 
@@ -1145,6 +698,119 @@ var $main = document.querySelector('.main');
 
 
 
+
+
+
+
+		<div>
+			  <article>
+				<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><a id="more"></a>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line">$        &lt;!DOCTYPE html&gt;</span><br><span class="line">$        &lt;html lang=<span class="string">&quot;cn&quot;</span>&gt;</span><br><span class="line">$        &lt;head&gt;</span><br><span class="line">$            &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">$            &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br><span class="line">$            &lt;title&gt;作业&lt;/title&gt;</span><br><span class="line">$            &lt;script src=<span class="string">&quot;js/vue.min.js&quot;</span>&gt;&lt;/script&gt; </span><br><span class="line">$            &lt;style&gt;</span><br><span class="line">$            <span class="comment">#app div&#123;                         //给它设定一个css</span></span><br><span class="line">$                width: 500px;</span><br><span class="line">$                border: 1px solid <span class="comment">#bbb;</span></span><br><span class="line">$                margin: 0 auto;</span><br><span class="line">$                text-decoration: center;</span><br><span class="line">$                padding: 30px;</span><br><span class="line">$            &#125;</span><br><span class="line">$            &lt;/style&gt;</span><br><span class="line">$        &lt;/head&gt;</span><br><span class="line">$        &lt;body&gt;</span><br><span class="line">$            &lt;div id = <span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">$                &lt;div&gt;     //以下是文本</span><br><span class="line">$                    请输入你喜欢的城市&lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;cname&quot;</span>&gt;</span><br><span class="line">$                    &lt;p&gt;</span><br><span class="line">$                        你选择的城市:&#123;&#123;cname&#125;&#125;</span><br><span class="line">$                    &lt;/p&gt;</span><br><span class="line">$                &lt;/div&gt;</span><br><span class="line">$                &lt;div&gt;</span><br><span class="line">$                    回复评论: &lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;huifu&quot;</span>&gt;</span><br><span class="line">$                    &lt;p&gt;</span><br><span class="line">$                        你选回复是:&#123;&#123;huifu&#125;&#125;</span><br><span class="line">$                    &lt;/p&gt;</span><br><span class="line">$                &lt;/div&gt;</span><br><span class="line">$                &lt;div&gt;        //以下是复选框</span><br><span class="line">$                    &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;blue&quot;</span> value=<span class="string">&quot;蓝色&quot;</span> <span class="variable">$v</span>-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$                    &lt;label <span class="keyword">for</span>=<span class="string">&quot;blue&quot;</span>&gt;蓝色&lt;/label&gt;</span><br><span class="line">$                    &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;red&quot;</span> value=<span class="string">&quot;红色&quot;</span> <span class="variable">$v</span>-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$                    &lt;label <span class="keyword">for</span>=<span class="string">&quot;red&quot;</span>&gt;红色&lt;/label&gt;</span><br><span class="line">$                    &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;yellow&quot;</span> value=<span class="string">&quot;黄色&quot;</span> <span class="variable">$v</span>-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$                    &lt;label <span class="keyword">for</span>=<span class="string">&quot;yellow&quot;</span>&gt;黄色&lt;/label&gt;</span><br><span class="line">$                    &lt;p&gt;</span><br><span class="line">$                        你选择的颜色是: &#123;&#123;color&#125;&#125;</span><br><span class="line">$                    &lt;/p&gt;</span><br><span class="line">$                &lt;/div&gt;</span><br><span class="line">$                    &lt;div&gt;      //以下是单选按钮</span><br><span class="line">$                        &lt;input <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> id=<span class="string">&quot;男&quot;</span> value=<span class="string">&quot;男&quot;</span> <span class="variable">$v</span>-model=<span class="string">&quot;sex&quot;</span>&gt;</span><br><span class="line">$                        &lt;label <span class="keyword">for</span>=<span class="string">&quot;男&quot;</span>&gt;男&lt;/label&gt;</span><br><span class="line">$                        &lt;br&gt;</span><br><span class="line">$                        &lt;input <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> id=<span class="string">&quot;女&quot;</span> value=<span class="string">&quot;女&quot;</span> <span class="variable">$v</span>-model=<span class="string">&quot;sex&quot;</span>&gt;</span><br><span class="line">$                        &lt;label <span class="keyword">for</span>=<span class="string">&quot;女&quot;</span>&gt;女&lt;/label&gt;</span><br><span class="line">$                        &lt;p&gt;</span><br><span class="line">$                            你选择的性别是: &#123;&#123;sex&#125;&#125;</span><br><span class="line">$                        &lt;/p&gt;</span><br><span class="line">$                    &lt;/div&gt;</span><br><span class="line">$                        &lt;div&gt;    //以下是选择框单选时</span><br><span class="line">$                            请你选择你喜欢的季节:&lt;select v-model=<span class="string">&quot;season&quot;</span> <span class="variable">$style</span>=<span class="string">&quot;width: 50px;&quot;</span>&gt;</span><br><span class="line">$                                &lt;option&gt;春天&lt;/option&gt;</span><br><span class="line">$                                &lt;option&gt;夏天&lt;/option&gt;</span><br><span class="line">$                                &lt;option&gt;秋天&lt;/option&gt;</span><br><span class="line">$                                &lt;option&gt;冬天&lt;/option&gt;</span><br><span class="line">$                            &lt;/select&gt;</span><br><span class="line">$                        </span><br><span class="line">$                        &lt;p&gt;</span><br><span class="line">$                            你喜欢的季节是: &#123;&#123;season&#125;&#125;</span><br><span class="line">$                        &lt;/p&gt;</span><br><span class="line">$                    &lt;/div&gt;     </span><br><span class="line">$                    &lt;div&gt;请你选择你喜欢的季节:      //以下是以下是选择框多选时</span><br><span class="line">$                    &lt;select v-model=<span class="string">&quot;selected&quot;</span>  multiple style=<span class="string">&quot;width: <span class="variable">$50px</span>;&quot;</span>&gt;</span><br><span class="line">$                        &lt;option&gt;春天&lt;/option&gt;</span><br><span class="line">$                        &lt;option&gt;夏天&lt;/option&gt;</span><br><span class="line">$                        &lt;option&gt;秋天&lt;/option&gt;</span><br><span class="line">$                        &lt;option&gt;冬天&lt;/option&gt;</span><br><span class="line">$                    &lt;/select&gt;</span><br><span class="line">$                    &lt;p&gt;</span><br><span class="line">$                        你喜欢的季节是:&#123;&#123;selected&#125;&#125;</span><br><span class="line">$                    &lt;/p&gt;</span><br><span class="line">$                    &lt;/div&gt;</span><br><span class="line">$</span><br><span class="line">$            &lt;/div&gt;</span><br><span class="line">$                &lt;script&gt;</span><br><span class="line">$                    var app = new Vue(&#123;</span><br><span class="line">$                    el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">$                    data : &#123;</span><br><span class="line">$                        cname : <span class="string">&quot;哈哈哈尔滨市&quot;</span>,</span><br><span class="line">$                        huifu : <span class="string">&quot;你好666&quot;</span>,</span><br><span class="line">$                        color : [],</span><br><span class="line">$                        sex :[],</span><br><span class="line">$                        season: <span class="string">&quot;夏天&quot;</span>,</span><br><span class="line">$                        selected:[<span class="string">&quot;夏天&quot;</span>,<span class="string">&quot;秋天&quot;</span>,<span class="string">&quot;冬天&quot;</span>]</span><br><span class="line">$                    &#125;</span><br><span class="line">$                &#125;);</span><br><span class="line">$                &lt;/script&gt;</span><br><span class="line">$        &lt;/body&gt;</span><br><span class="line">$        &lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="view和Model双向绑定"><a href="#view和Model双向绑定" class="headerlink" title="view和Model双向绑定"></a>view和Model双向绑定</h3><h3 id="Vue-js是目前最火的一个前端框架，React是最流行的一个前端框架，"><a href="#Vue-js是目前最火的一个前端框架，React是最流行的一个前端框架，" class="headerlink" title="Vue.js是目前最火的一个前端框架，React是最流行的一个前端框架，"></a>Vue.js是目前最火的一个前端框架，React是最流行的一个前端框架，</h3><h3 id="React除了开发网站，还可以开发手机原生App-Vue语法也是可以用于进行手机App开发的，需要借助于Weex。"><a href="#React除了开发网站，还可以开发手机原生App-Vue语法也是可以用于进行手机App开发的，需要借助于Weex。" class="headerlink" title="React除了开发网站，还可以开发手机原生App,Vue语法也是可以用于进行手机App开发的，需要借助于Weex。"></a>React除了开发网站，还可以开发手机原生App,Vue语法也是可以用于进行手机App开发的，需要借助于Weex。</h3><h3 id="Vue-js是前端的主流框架之一，和Angular-js，React-js一起，并称为前端三大主流框架。"><a href="#Vue-js是前端的主流框架之一，和Angular-js，React-js一起，并称为前端三大主流框架。" class="headerlink" title="Vue.js是前端的主流框架之一，和Angular.js，React.js一起，并称为前端三大主流框架。"></a>Vue.js是前端的主流框架之一，和Angular.js，React.js一起，并称为前端三大主流框架。</h3><h3 id="Vue-js是一套构建用户界面的框架，只关注视图层，它不仅易于上手，还便于与第三方库或已有项目整合，"><a href="#Vue-js是一套构建用户界面的框架，只关注视图层，它不仅易于上手，还便于与第三方库或已有项目整合，" class="headerlink" title="Vue.js是一套构建用户界面的框架，只关注视图层，它不仅易于上手，还便于与第三方库或已有项目整合，"></a>Vue.js是一套构建用户界面的框架，只关注视图层，它不仅易于上手，还便于与第三方库或已有项目整合，</h3><h3 id="Vue有丰富的配套三方类库，可以整合起来做大型项目的开发"><a href="#Vue有丰富的配套三方类库，可以整合起来做大型项目的开发" class="headerlink" title="Vue有丰富的配套三方类库，可以整合起来做大型项目的开发"></a>Vue有丰富的配套三方类库，可以整合起来做大型项目的开发</h3>
+			  </article>
+		</div>
+		
+		
+
+
+		 	
+				<style>
+.veditor {
+    background: url('images/评论区/史迪奇睡觉.gif') no-repeat #fcfcfc!important;
+    background-size: auto 130px!important;
+    background-position: right bottom!important;
+}
+</style>
+<div id="vcomments" class="comment">
+
+</div>
+<script>
+	window.valine = new Valine({
+		el: '#vcomments',
+		appId: 'QqqoNLFAJzeDU9WPBVYk7UBj-MdYXbMMI',
+		appKey: 'hzwk2U93vOE4IdBWQXvda2mJ',
+		avatar: 'robohash',
+		placeholder: '我叫史迪奇',
+		path: window.location.pathname,   //[重点] 记得添加path路径
+	});
+	
+    // 使用方法 https://valine.js.org/quickstart.html
+	/*
+		var $vcomments = document.querySelector('.comment');
+		var $div= document.createElement('div');
+		$div.setAttribute("id","#vcomments");
+		$vcomments.appendChild($div);
+    new Valine({
+        el: '#vcomments',
+        appId: 'QqqoNLFAJzeDU9WPBVYk7UBj-MdYXbMMI',
+        appKey: 'hzwk2U93vOE4IdBWQXvda2mJ',
+		avatar: 'robohash',
+        placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ',
+    });*/
+        //placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ',
+</script>
+
+<script>
+/*//$(function() 
+$(window).load(function(){
+	// 去valine版权
+	$('.info').css("display","none");
+	// 去valine位移
+	$('.vmeta').css("padding-right","66px");
+	$('.vcontrol').css("padding-right","66px");
+	$('.vctrl').css("padding-right","66px");
+	$('#veditor').removeAttr("placeholder");
+	$("#veditor").attr("placeholder","输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ");
+	$('.v .vwrap .vheader .vinput:nth-child(3)').removeAttr("placeholder");
+	$(".v .vwrap .vheader .vinput:nth-child(3)").attr("placeholder","你的HOME(例：https://www.baidu.com)");
+	$(".info").after(" <p>&copy; </p>");
+});*/
+</script>
+			
+		
+	  
+	
+		
+
+
+<div class="copy">
+<i></i>
+<strong>本文作者：</strong>
+	
+	 
+			史迪奇<br>
+        
+	
+<strong>本文链接：</strong>
+	<a href="https://sdq3.gitee.io/Vue.js-%E8%A1%A8%E5%8D%95%E8%BE%93%E5%85%A5%E7%BB%91%E5%AE%9A%E7%9A%84%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;Vue.js-%E8%A1%A8%E5%8D%95%E8%BE%93%E5%85%A5%E7%BB%91%E5%AE%9A%E7%9A%84%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;Vue.js-%E8%A1%A8%E5%8D%95%E8%BE%93%E5%85%A5%E7%BB%91%E5%AE%9A%E7%9A%84%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95.html</a><br>
+</div>
+
+	  
+	</div>
+</div>
+<script>
+	(function(){
+		var jmz = {};
+		jmz.GetLength = function(str) {
+			var realLength = 0, len = str.length, charCode = -1;
+			for (var i = 0; i < len; i++) {
+				charCode = str.charCodeAt(i);
+				if (charCode >= 0 && charCode <= 128) 
+					  realLength += 1;
+				else
+					  realLength += 1;
+			}
+			return realLength;
+		};
+		//console.log(str);
+		var article = document.querySelector('.sdq-post article').innerHTML.trim();
+
+		var b = article.replace(/<.*?>/ig,"");
+		
+		$('.post-count').html(jmz.GetLength(b)+"字");
+	})()
+</script>
 
 
     				
