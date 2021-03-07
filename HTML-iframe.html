@@ -182,7 +182,7 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>28
+					<span>文章</span>29
 					<span>标签</span>0
 					<span>分类</span>0
 				</div>		
@@ -266,6 +266,10 @@
       <ul>
         
           <li>
+            <a href="/CSS8.html">CSS-边距-边框-阴影-浮动-定位-透明-z-index-动画</a>
+          </li>
+        
+          <li>
             <a href="/CSS%E5%88%97%E8%A1%A8.html">CSS 列表</a>
           </li>
         
@@ -279,10 +283,6 @@
         
           <li>
             <a href="/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html">CSS 伪类选择器</a>
-          </li>
-        
-          <li>
-            <a href="/CSS%E5%B1%82%E6%AC%A1%E9%80%89%E6%8B%A9%E5%99%A8.html">CSS 层次选择器</a>
           </li>
         
       </ul>
@@ -665,7 +665,7 @@ var $main = document.querySelector('.main');
 <aside id="article-toc" class="fixed-toc">
     <div id="article-toc-inner">
         <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#iframe-%E5%86%85%E8%81%94%E6%A1%86%E6%9E%B6"><span class="toc-text">iframe 内联框架</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#iframe-%E5%86%85%E8%81%94%E6%A1%86%E6%9E%B6"><span class="toc-text">iframe 内联框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Iframe-%E5%88%A0%E9%99%A4%E8%BE%B9%E6%A1%86"><span class="toc-text">Iframe - 删除边框</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-iframe-%E4%BD%9C%E4%B8%BA%E9%93%BE%E6%8E%A5%E7%9A%84%E7%9B%AE%E6%A0%87"><span class="toc-text">使用 iframe 作为链接的目标</span></a></li></ol>
     </div>
 </aside>
 </div>
@@ -706,9 +706,11 @@ var $main = document.querySelector('.main');
 			  <article>
 				<h3 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h3><a id="more"></a>
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ &lt;iframe src=<span class="string">&quot;path&quot;</span> name=<span class="string">&quot;mainFrame&quot;</span>&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;path&quot;</span> name=<span class="string">&quot;mainFrame&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;mainFrame&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
 <p><strong>其中path是引用页面地址 mainFrame是框架标识名</strong></p>
-
+<h3 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h3><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;demo_iframe.html&quot;</span> frameborder=<span class="string">&quot;0&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;xxx/xxx.html&quot;</span> name=<span class="string">&quot;iframe_a&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;iframe_a&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
 			  </article>
 		</div>
 		
