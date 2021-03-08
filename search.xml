@@ -318,6 +318,17 @@ $</style>
 <h3 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;xxx/xxx.html&quot;</span> name=<span class="string">&quot;iframe_a&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;iframe_a&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
+    <title>HTML表格</title>
+    <url>/HTML.html</url>
+    <content><![CDATA[<h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><a id="more"></a>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ tr  //行</span><br><span class="line">$ td  //列</span><br></pre></td></tr></table></figure>
+
+<h3 id="跨列"><a href="#跨列" class="headerlink" title="跨列"></a>跨列</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;table&gt;</span><br><span class="line">$    &lt;tr&gt;</span><br><span class="line">$        &lt;tb cospan=<span class="string">&quot;2&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">$     &lt;tr&gt;</span><br><span class="line">$ &lt;/table&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="跨行"><a href="#跨行" class="headerlink" title="跨行"></a>跨行</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;table&gt;</span><br><span class="line">$    &lt;tr&gt;</span><br><span class="line">$        &lt;tb rowspan=<span class="string">&quot;2&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">$     &lt;tr&gt;</span><br><span class="line">$ &lt;/table&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>HTML可操作大集合</title>
     <url>/HTML-operation.html</url>
     <content><![CDATA[<h3 id="输入框与密码框"><a href="#输入框与密码框" class="headerlink" title="输入框与密码框"></a>输入框与密码框</h3><a id="more"></a>
@@ -370,7 +381,7 @@ $</style>
 </body>
 </html>
 
-<h3 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$  &lt;p&gt;</span><br><span class="line">$      &lt;input <span class="built_in">type</span>=<span class="string">&quot;button&quot;</span> value=<span class="string">&quot;code&quot;</span> name=<span class="string">&quot;btn1&quot;</span>/&gt;   &lt;!-- button普通按钮 --&gt;</span><br><span class="line">$      &lt;input <span class="built_in">type</span>=<span class="string">&quot;image&quot;</span> src=<span class="string">&quot;...&quot;</span>/&gt;   &lt;!-- 图片按钮 --&gt;</span><br><span class="line">$      &lt;input <span class="built_in">type</span>=<span class="string">&quot;submit&quot;</span>&gt;       &lt;!-- submit提交 --&gt;</span><br><span class="line">$      &lt;input <span class="built_in">type</span>=<span class="string">&quot;reset&quot;</span>&gt;        &lt;!-- reset重置 --&gt;</span><br><span class="line">$  &lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$  &lt;p&gt;</span><br><span class="line">$      &lt;input <span class="built_in">type</span>=<span class="string">&quot;button&quot;</span> value=<span class="string">&quot;code&quot;</span> name=<span class="string">&quot;btn1&quot;</span>/&gt;   &lt;!-- button普通按钮 --&gt;</span><br><span class="line">$      &lt;input <span class="built_in">type</span>=<span class="string">&quot;image&quot;</span> src=<span class="string">&quot;...&quot;</span>/&gt;   &lt;!-- 图片按钮 这里懒得添加图片了--&gt;</span><br><span class="line">$      &lt;input <span class="built_in">type</span>=<span class="string">&quot;submit&quot;</span>&gt;       &lt;!-- submit提交 --&gt;</span><br><span class="line">$      &lt;input <span class="built_in">type</span>=<span class="string">&quot;reset&quot;</span>&gt;        &lt;!-- reset重置 --&gt;</span><br><span class="line">$  &lt;/p&gt;</span><br></pre></td></tr></table></figure>
 
 <!DOCTYPE html>
 <html lang="cn">
@@ -381,7 +392,7 @@ $</style>
 <body>
 <p>
     <input type="button" value="code" name="btn1">
-    <input type="image" src="/images/HTML可操作大集合/sdq.png">
+    <input type="image" src="...">
     <input type="submit">  
     <input type="reset">   
 </p>
@@ -443,7 +454,7 @@ $</style>
 </body>
 </html>
 
-<h3 id="简单验证"><a href="#简单验证" class="headerlink" title="简单验证"></a>简单验证</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$  &lt;p&gt;邮箱:</span><br><span class="line">$      &lt;input <span class="built_in">type</span>=<span class="string">&quot;email&quot;</span> name=<span class="string">&quot;email&quot;</span>&gt;   &lt;!-- email表示邮箱 --&gt;</span><br><span class="line">$  &lt;/p&gt;</span><br><span class="line">$</span><br><span class="line">$  &lt;p&gt;网址:</span><br><span class="line">$      &lt;input <span class="built_in">type</span>=<span class="string">&quot;url&quot;</span> name=<span class="string">&quot;url&quot;</span>&gt;       &lt;!-- url表示网址 --&gt;</span><br><span class="line">$  &lt;/p&gt;</span><br><span class="line">$</span><br><span class="line">$  &lt;p&gt;商品数量:</span><br><span class="line">$      &lt;input <span class="built_in">type</span>=<span class="string">&quot;number&quot;</span> name=<span class="string">&quot;num&quot;</span> max=<span class="string">&quot;100&quot;</span> min=<span class="string">&quot;0&quot;</span> step=<span class="string">&quot;1&quot;</span>&gt;       &lt;!-- number表示数字 max表示最大值 min表示最小值 step表示步长 --&gt;</span><br><span class="line">$  &lt;/p&gt;</span><br><span class="line">$</span><br><span class="line">$  &lt;p width=<span class="string">&quot;65px&quot;</span>&gt;声音大小:</span><br><span class="line">$      &lt;input <span class="built_in">type</span>=<span class="string">&quot;range&quot;</span> name=<span class="string">&quot;voice&quot;</span> max=<span class="string">&quot;100&quot;</span> min=<span class="string">&quot;0&quot;</span> step=<span class="string">&quot;1&quot;</span>&gt;       &lt;!-- range表示滑块 max表示最大值 min表示最小值 step表示步长 --&gt;</span><br><span class="line">$</span><br><span class="line">$  &lt;/p&gt;</span><br><span class="line">$  &lt;p&gt;搜索框:</span><br><span class="line">$      &lt;input <span class="built_in">type</span>=<span class="string">&quot;search&quot;</span> name=<span class="string">&quot;search&quot;</span>&gt;       &lt;!-- search表示搜索框 --&gt;</span><br><span class="line">$  &lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="简单验证"><a href="#简单验证" class="headerlink" title="简单验证"></a>简单验证</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$  &lt;p&gt;邮箱:</span><br><span class="line">$      &lt;input <span class="built_in">type</span>=<span class="string">&quot;email&quot;</span> name=<span class="string">&quot;email&quot;</span>&gt;   &lt;!-- email表示邮箱 --&gt;</span><br><span class="line">$  &lt;/p&gt;</span><br><span class="line">$</span><br><span class="line">$  &lt;p&gt;网址:</span><br><span class="line">$      &lt;input <span class="built_in">type</span>=<span class="string">&quot;url&quot;</span> name=<span class="string">&quot;url&quot;</span>&gt;       &lt;!-- url表示网址 --&gt;</span><br><span class="line">$  &lt;/p&gt;</span><br><span class="line">$</span><br><span class="line">$  &lt;p&gt;商品数量:</span><br><span class="line">$      &lt;input <span class="built_in">type</span>=<span class="string">&quot;number&quot;</span> name=<span class="string">&quot;num&quot;</span> max=<span class="string">&quot;100&quot;</span> min=<span class="string">&quot;0&quot;</span> step=<span class="string">&quot;1&quot;</span>&gt;       &lt;!-- number表示数字 max表示最大值 min表示最小值 step表示步长 --&gt;</span><br><span class="line">$  &lt;/p&gt;</span><br><span class="line">$</span><br><span class="line">$  &lt;p width=<span class="string">&quot;65px&quot;</span>&gt;声音大小:</span><br><span class="line">$      &lt;input <span class="built_in">type</span>=<span class="string">&quot;range&quot;</span> name=<span class="string">&quot;voice&quot;</span> max=<span class="string">&quot;100&quot;</span> min=<span class="string">&quot;0&quot;</span> step=<span class="string">&quot;1&quot;</span> width=<span class="string">&quot;33&quot;</span>&gt;       &lt;!-- range表示滑块 max表示最大值 min表示最小值 step表示步长 --&gt;</span><br><span class="line">$</span><br><span class="line">$  &lt;/p&gt;</span><br><span class="line">$  &lt;p&gt;搜索框:</span><br><span class="line">$      &lt;input <span class="built_in">type</span>=<span class="string">&quot;search&quot;</span> name=<span class="string">&quot;search&quot;</span>&gt;       &lt;!-- search表示搜索框 --&gt;</span><br><span class="line">$  &lt;/p&gt;</span><br></pre></td></tr></table></figure>
 
 <!DOCTYPE html>
 <html lang="cn">
@@ -565,17 +576,6 @@ $</style>
 <h3 id="只要input都需要value值和name值-这样就可以养成好习惯"><a href="#只要input都需要value值和name值-这样就可以养成好习惯" class="headerlink" title="只要input都需要value值和name值, 这样就可以养成好习惯"></a>只要input都需要value值和name值, 这样就可以养成好习惯</h3>]]></content>
   </entry>
   <entry>
-    <title>HTML表格</title>
-    <url>/HTML.html</url>
-    <content><![CDATA[<h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><a id="more"></a>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ tr  //行</span><br><span class="line">$ td  //列</span><br></pre></td></tr></table></figure>
-
-<h3 id="跨列"><a href="#跨列" class="headerlink" title="跨列"></a>跨列</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;table&gt;</span><br><span class="line">$    &lt;tr&gt;</span><br><span class="line">$        &lt;tb cospan=<span class="string">&quot;2&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">$     &lt;tr&gt;</span><br><span class="line">$ &lt;/table&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="跨行"><a href="#跨行" class="headerlink" title="跨行"></a>跨行</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;table&gt;</span><br><span class="line">$    &lt;tr&gt;</span><br><span class="line">$        &lt;tb rowspan=<span class="string">&quot;2&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">$     &lt;tr&gt;</span><br><span class="line">$ &lt;/table&gt;</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>关于Hexo我所踩过的坑和小白安装教程</title>
     <url>/Hexo-install.html</url>
     <content><![CDATA[<h3 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h3><a id="more"></a>
@@ -597,6 +597,18 @@ $</style>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ permalink: :id.html   //填入:id.html</span><br></pre></td></tr></table></figure>
 <p><strong>然后在指定位置填入id即可 数字随意，只要保证每篇文章里面的数字不要一样就行</strong></p>
 <img src="/images/Hexo博客/案例.jpg">]]></content>
+  </entry>
+  <entry>
+    <title>Java面向对象思维</title>
+    <url>/Object-oriented.html</url>
+    <content><![CDATA[<h3 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h3><p><strong>例如车能飞</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public void <span class="function"><span class="title">fly</span></span>()&#123;</span><br><span class="line">$ System.out.println(<span class="string">&quot;车能飞&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>例如车可以潜水</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public void <span class="function"><span class="title">diving</span></span>()&#123;</span><br><span class="line">$ System.out.println(<span class="string">&quot;车可以下水&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$   Car c = new Car();   //先创建一辆车</span><br><span class="line">$   c.fly();  //.表示调用  众所周知所以车都是可以飞的</span><br><span class="line">$   c.diving();  //.表示调用  众所周知所以车都是可以下水的</span><br><span class="line">$   c.color = <span class="string">&quot;透明&quot;</span>;  //我的车是透明色</span><br><span class="line">$   c.wheel = 5; //众所周知所以车都是5个轮子</span><br><span class="line">$   c.seat = 9;  //我的车 里面坐4个 车前绑1个人用来刹车 车顶坐1个人 剩下3个人的拿板拿雨伞凳坐后车厢 尾气管那面绑上1个人 用来吸收尾气</span><br><span class="line">$   System.out.println(c.color);</span><br><span class="line">$   System.out.println(c.wheel);</span><br><span class="line">$   System.out.println(c.seat);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>Java Swing 图形界面速背表(未完工)</title>
@@ -682,16 +694,12 @@ $</style>
 ]]></content>
   </entry>
   <entry>
-    <title>Java面向对象思维</title>
-    <url>/Object-oriented.html</url>
-    <content><![CDATA[<h3 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h3><p><strong>例如车能飞</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public void <span class="function"><span class="title">fly</span></span>()&#123;</span><br><span class="line">$ System.out.println(<span class="string">&quot;车能飞&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>例如车可以潜水</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public void <span class="function"><span class="title">diving</span></span>()&#123;</span><br><span class="line">$ System.out.println(<span class="string">&quot;车可以下水&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$   Car c = new Car();   //先创建一辆车</span><br><span class="line">$   c.fly();  //.表示调用  众所周知所以车都是可以飞的</span><br><span class="line">$   c.diving();  //.表示调用  众所周知所以车都是可以下水的</span><br><span class="line">$   c.color = <span class="string">&quot;透明&quot;</span>;  //我的车是透明色</span><br><span class="line">$   c.wheel = 5; //众所周知所以车都是5个轮子</span><br><span class="line">$   c.seat = 9;  //我的车 里面坐4个 车前绑1个人用来刹车 车顶坐1个人 剩下3个人的拿板拿雨伞凳坐后车厢 尾气管那面绑上1个人 用来吸收尾气</span><br><span class="line">$   System.out.println(c.color);</span><br><span class="line">$   System.out.println(c.wheel);</span><br><span class="line">$   System.out.println(c.seat);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <title>Java面向对象思维之getter和setter(作用)</title>
+    <url>/Object-oriented-getter-setter.html</url>
+    <content><![CDATA[<h3 id="getter"><a href="#getter" class="headerlink" title="getter"></a>getter</h3><a id="more"></a>
+<p><strong>主要是给成员变量赋值, 做一定的保护</strong></p>
+<h3 id="setter"><a href="#setter" class="headerlink" title="setter"></a>setter</h3><p><strong>从成员变量中获取数据</strong></p>
+]]></content>
   </entry>
   <entry>
     <title>Java面向对象思维</title>
@@ -709,24 +717,6 @@ $</style>
 ]]></content>
   </entry>
   <entry>
-    <title>Java面向对象思维之getter和setter(作用)</title>
-    <url>/Object-oriented-getter-setter.html</url>
-    <content><![CDATA[<h3 id="getter"><a href="#getter" class="headerlink" title="getter"></a>getter</h3><a id="more"></a>
-<p><strong>主要是给成员变量赋值, 做一定的保护</strong></p>
-<h3 id="setter"><a href="#setter" class="headerlink" title="setter"></a>setter</h3><p><strong>从成员变量中获取数据</strong></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Java面向对象思维之构造方法需的重载</title>
-    <url>/Object-oriented-constructor-heavy-load.html</url>
-    <content><![CDATA[<h3 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color,  int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color, int wheel, int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this(color,seat);  //this还可以调用当前累中其他的构造方法</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h3>]]></content>
-  </entry>
-  <entry>
     <title>Java面向对象思维之构造方法</title>
     <url>/Object-oriented-constructor.html</url>
     <content><![CDATA[<h3 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
@@ -739,6 +729,16 @@ $</style>
 <h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,5,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     c1.fly();</span><br><span class="line">$     c1.diving();</span><br><span class="line">$ </span><br><span class="line">$     c2.fly();</span><br><span class="line">$     c2.diving();</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="构造方法需要注意"><a href="#构造方法需要注意" class="headerlink" title="构造方法需要注意"></a>构造方法需要注意</h3><p><strong>没有返回值这一项</strong><br><strong>在new的时候, 给对象设置属性信息</strong><br><strong>Java会默认自动的送每个类一个无参数的构造方法, 如果你写了构造方法, 那么Java就不送了</strong></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Java面向对象思维之构造方法需的重载</title>
+    <url>/Object-oriented-constructor-heavy-load.html</url>
+    <content><![CDATA[<h3 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color,  int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color, int wheel, int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this(color,seat);  //this还可以调用当前累中其他的构造方法</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h3>]]></content>
   </entry>
   <entry>
     <title>Linux命令(未完工)</title>
