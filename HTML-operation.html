@@ -182,7 +182,7 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>29
+					<span>文章</span>30
 					<span>标签</span>0
 					<span>分类</span>0
 				</div>		
@@ -266,6 +266,10 @@
       <ul>
         
           <li>
+            <a href="/css-Import-styles.html">CSS 三种导入样式</a>
+          </li>
+        
+          <li>
             <a href="/CSS8.html">CSS-边距-边框-阴影-浮动-定位-透明-z-index-动画</a>
           </li>
         
@@ -279,10 +283,6 @@
         
           <li>
             <a href="/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html">CSS 属性选择器(常用)</a>
-          </li>
-        
-          <li>
-            <a href="/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html">CSS 伪类选择器</a>
           </li>
         
       </ul>
@@ -707,7 +707,19 @@ var $main = document.querySelector('.main');
 				<h3 id="输入框与密码框"><a href="#输入框与密码框" class="headerlink" title="输入框与密码框"></a>输入框与密码框</h3><a id="more"></a>
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ &lt;p&gt;名字: &lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;username&quot;</span> size=<span class="string">&quot;33&quot;</span>&gt;&lt;/p&gt;    //text指输入框  size 文本框的长度</span><br><span class="line">$ &lt;p&gt;密码: &lt;input <span class="built_in">type</span>=<span class="string">&quot;password&quot;</span> name=<span class="string">&quot;pwd&quot;</span> maxlength=<span class="string">&quot;8&quot;</span> size=<span class="string">&quot;33&quot;</span>&gt;&lt;/p&gt;    //password指密码框   maxlength最大长度   </span><br></pre></td></tr></table></figure>
-<p><img src="/images/HTML%E5%8F%AF%E6%93%8D%E4%BD%9C%E5%A4%A7%E9%9B%86%E5%90%88/%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2.jpg"></p>
+<p>!!!<br><!DOCTYPE html></p>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<p>名字: <input type="text" name="username" size="33"></p>    
+<p>密码: <input type="password" name="pwd" maxlength="8" size="33"></p> 
+</body>
+</html>
+!!!
+
 <h3 id="get与post"><a href="#get与post" class="headerlink" title="get与post"></a>get与post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ &lt;form action=<span class="string">&quot;史迪奇的第一个网站.html&quot;</span> mathod=<span class="string">&quot;get&quot;</span>&gt;&lt;/iframe&gt;    //get方式提交 uil可以看到提交信息 不安全 但是高效</span><br><span class="line">$ &lt;form action=<span class="string">&quot;史迪奇的第一个网站.html&quot;</span> mathod=<span class="string">&quot;post&quot;</span>&gt;&lt;/iframe&gt;   //post方式提交 Form Data可以看到提交信息 比较安全 传输大文件</span><br></pre></td></tr></table></figure>
 <h3 id="单选框"><a href="#单选框" class="headerlink" title="单选框"></a>单选框</h3><p><strong>单选框 radio 要value表示单选框的值 name表示组用来实现单选效果</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$  &lt;p&gt;</span><br><span class="line">$      &lt;input <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> value=<span class="string">&quot;boy&quot;</span> name=<span class="string">&quot;sex&quot;</span>/&gt;男</span><br><span class="line">$      &lt;input <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> value=<span class="string">&quot;girl&quot;</span> name=<span class="string">&quot;sex&quot;</span>/&gt;女</span><br><span class="line">$  &lt;/p&gt;</span><br></pre></td></tr></table></figure>
