@@ -707,6 +707,7 @@ var $main = document.querySelector('.main');
 				<h3 id="输入框与密码框"><a href="#输入框与密码框" class="headerlink" title="输入框与密码框"></a>输入框与密码框</h3><a id="more"></a>
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ &lt;p&gt;名字: &lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;username&quot;</span> size=<span class="string">&quot;33&quot;</span>&gt;&lt;/p&gt;    &lt;!-- text指输入框  size 文本框的长度 --&gt;</span><br><span class="line">$ &lt;p&gt;密码: &lt;input <span class="built_in">type</span>=<span class="string">&quot;password&quot;</span> name=<span class="string">&quot;pwd&quot;</span> maxlength=<span class="string">&quot;8&quot;</span> size=<span class="string">&quot;33&quot;</span>&gt;&lt;/p&gt;    &lt;!-- password指密码框   maxlength最大长度 --&gt;   </span><br></pre></td></tr></table></figure>
+<p><strong>以下为效果</strong></p>
 <!DOCTYPE html>
 <html lang="cn">
 <head>
@@ -718,6 +719,8 @@ var $main = document.querySelector('.main');
 <p>密码: <input type="password" name="pwd" maxlength="8" size="33"></p> 
 </body>
 </html>
+
+<HR>
 
 <h3 id="get与post"><a href="#get与post" class="headerlink" title="get与post"></a>get与post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ &lt;form action=<span class="string">&quot;史迪奇的第一个网站.html&quot;</span> mathod=<span class="string">&quot;get&quot;</span>&gt;&lt;/iframe&gt;    &lt;!-- get方式提交 uil可以看到提交信息 不安全 但是高效 --&gt;</span><br><span class="line">$ &lt;form action=<span class="string">&quot;史迪奇的第一个网站.html&quot;</span> mathod=<span class="string">&quot;post&quot;</span>&gt;&lt;/iframe&gt;   &lt;!-- post方式提交 Form Data可以看到提交信息 比较安全 传输大文件 --&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="单选框"><a href="#单选框" class="headerlink" title="单选框"></a>单选框</h3><p><strong>单选框 radio 要value表示单选框的值 name表示组用来实现单选效果</strong></p>
@@ -895,7 +898,7 @@ var $main = document.querySelector('.main');
 </head>
 <body>
 <p>
-    <input type="radio" value="boy" name="sex" checked>男
+    <input type="radio" value="boy" name="sex" disabled>男
     <input type="radio" value="girl" name="sex" checked disabled>女  
 </p>
 </body>
@@ -946,7 +949,7 @@ var $main = document.querySelector('.main');
 </html>
 
 <p><img src="/images/HTML%E5%8F%AF%E6%93%8D%E4%BD%9C%E5%A4%A7%E9%9B%86%E5%90%88/%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E6%A0%BC%E5%BC%8F.jpg"></p>
-<h3 id="只要input都需要value值和name值-这样就可以养成好习惯"><a href="#只要input都需要value值和name值-这样就可以养成好习惯" class="headerlink" title="只要input都需要value值和name值, 这样就可以养成好习惯"></a>只要input都需要value值和name值, 这样就可以养成好习惯</h3>
+<h3 id="只要input都需要value值和name值-这样就可以养成好习惯"><a href="#只要input都需要value值和name值-这样就可以养成好习惯" class="headerlink" title="只要input都需要value值和name值, 这样就可以养成好习惯"></a>只要input都需要value值和name值, 这样就可以养成好习惯</h3></HR>
 			  </article>
 		</div>
 		
