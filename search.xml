@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Bodhi Linux安装教程(老电脑的福利)</title>
+    <url>/Bodhi-Linux.html</url>
+    <content><![CDATA[<h3 id="本人是2008年的联想电脑-Bodhi-Linux是我唯一能完美运行的带桌面的发行版"><a href="#本人是2008年的联想电脑-Bodhi-Linux是我唯一能完美运行的带桌面的发行版" class="headerlink" title="本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版"></a>本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版</h3><a id="more"></a>
+<p><strong>以下是我的电脑的参数</strong></p>
+<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%81%94%E6%83%B3G430.jpg"></p>
+<h3 id="第一步-安装Bodhi-Linux"><a href="#第一步-安装Bodhi-Linux" class="headerlink" title="第一步 安装Bodhi Linux"></a>第一步 安装Bodhi Linux</h3><p><strong>Bodhi Linux<a href="https://nchc.dl.sourceforge.net/project/bodhilinux/5.1.0/bodhi-5.1.0-64.iso">个人建议Standard版本</a>如果你想选择别的版本到<a href="https://www.bodhilinux.com/download/">官网找</a></strong></p>
+<p><a href="https://www.bilibili.com/video/BV1aW411C7NR">安装视频参考Ubantu的, 都是可视化界面安装</a></p>
+<h3 id="第二步-老电脑无法连接WIFI-所以终端输入以下命令"><a href="#第二步-老电脑无法连接WIFI-所以终端输入以下命令" class="headerlink" title="第二步 老电脑无法连接WIFI 所以终端输入以下命令"></a>第二步 老电脑无法连接WIFI 所以终端输入以下命令</h3><p><strong>建议用网线装机</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install bcmwl-kernel-source</span><br></pre></td></tr></table></figure>
+
+<p><strong>仍然没有的话 就在终端输入以下命令</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo nano /etc/modprobe.d/blacklist.conf   //nano命令ctrl+x退出，选择y后保存</span><br><span class="line">$ blacklist acer-wmi   //最后一行加入</span><br></pre></td></tr></table></figure>
+
+<h3 id="第三步-安装安装中文环境"><a href="#第三步-安装安装中文环境" class="headerlink" title="第三步 安装安装中文环境"></a>第三步 安装安装中文环境</h3><p><strong>安装中文字体和中文语言包</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install -y language-pack-zh-hans language-pack-zh-hans-base language-pack-gnome-zh-hans language-pack-gnome-zh-hans-base fonts-wqy-microhei</span><br></pre></td></tr></table></figure>
+
+<p><strong>然后按照以下打开步骤</strong></p>
+<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%871.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%872.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%873.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%874.jpg"></p>
+<h3 id="第四步安装输入法"><a href="#第四步安装输入法" class="headerlink" title="第四步安装输入法"></a>第四步安装输入法</h3><p><strong>这里<a href="https://pinyin.sogou.com/linux/">安装搜狗输入法</a></strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install fonts-droid-fallback zip   //安装它的依赖包</span><br><span class="line">$ sudo dpkg -i xxx    //xxx为下载的包名 后缀名也要</span><br></pre></td></tr></table></figure>
+<h3 id="第五步安装一些常用软件"><a href="#第五步安装一些常用软件" class="headerlink" title="第五步安装一些常用软件"></a>第五步安装一些常用软件</h3><p><strong>例如安装vim</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install vim   //vim是文本编辑软件</span><br></pre></td></tr></table></figure>
+<p><strong>例如浏览器 它自身也有web浏览器 看个人喜欢</strong></p>
+<p><strong>安装火狐浏览器和中文语言包</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get remove firefox</span><br><span class="line">$ sudo apt-get install -y firefox firefox-locale-zh-hans</span><br></pre></td></tr></table></figure>
+<p><strong>安装谷歌浏览器</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/</span><br><span class="line">wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -     //先添加源</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install google-chrome-stable     //安装谷歌浏览器</span><br></pre></td></tr></table></figure>
+<h3 id="安装neofetch"><a href="#安装neofetch" class="headerlink" title="安装neofetch"></a>安装neofetch</h3><p><strong>终端输入以下命令</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:dawidd0811/neofetch</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install neofetch</span><br><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
+<p><strong>本人试了(CrunchBang Linux), (Zenix Linux), (antiX Linux), (Zenwalk Linux), (Xubuntu Linux), (Lubuntu Linux), (Tiny Core Linux), (SliTaz Linux), (Porteus Linux), (Puppy Linux), (Silverblue Linux), (4MLinux)等等带桌面的发行版然后就唯独Bodhi Linux最满意</strong></p>
+<p><strong>至于为什么要带桌面的发行版, 因为要日用偶尔看看B站什么的</strong></p>
+<p><strong>关于这台电脑用的硬盘 大小80G 有9724个坏道 拆掉坏掉的戴尔一条三星的DDR2 才有2G内存可以体验</strong></p>
+<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E5%9D%8F%E9%81%93.jpg"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Arch系统包桌面傻瓜式安装 (有手就行)</title>
     <url>/Arch-install.html</url>
     <content><![CDATA[<p>本人是Arch教徒过来传一下教<br><img src="/images/Arch傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
@@ -121,42 +157,6 @@
 <h3 id="Vim命令"><a href="#Vim命令" class="headerlink" title="Vim命令"></a>Vim命令</h3><p><strong>按A键是编辑模式</strong><br><strong>按回车键是执行</strong><br><strong>按两下D键是剪切</strong><br><strong>按两下G键是回到第一行</strong><br><strong>按P键粘贴</strong><br><strong>按N键查找下一个</strong><br><strong>按ESC 然后输入 :wq 是保存并退出</strong></p>
 <h3 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
-    <title>Bodhi Linux安装教程(老电脑的福利)</title>
-    <url>/Bodhi-Linux.html</url>
-    <content><![CDATA[<h3 id="本人是2008年的联想电脑-Bodhi-Linux是我唯一能完美运行的带桌面的发行版"><a href="#本人是2008年的联想电脑-Bodhi-Linux是我唯一能完美运行的带桌面的发行版" class="headerlink" title="本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版"></a>本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版</h3><a id="more"></a>
-<p><strong>以下是我的电脑的参数</strong></p>
-<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%81%94%E6%83%B3G430.jpg"></p>
-<h3 id="第一步-安装Bodhi-Linux"><a href="#第一步-安装Bodhi-Linux" class="headerlink" title="第一步 安装Bodhi Linux"></a>第一步 安装Bodhi Linux</h3><p><strong>Bodhi Linux<a href="https://nchc.dl.sourceforge.net/project/bodhilinux/5.1.0/bodhi-5.1.0-64.iso">个人建议Standard版本</a>如果你想选择别的版本到<a href="https://www.bodhilinux.com/download/">官网找</a></strong></p>
-<p><a href="https://www.bilibili.com/video/BV1aW411C7NR">安装视频参考Ubantu的, 都是可视化界面安装</a></p>
-<h3 id="第二步-老电脑无法连接WIFI-所以终端输入以下命令"><a href="#第二步-老电脑无法连接WIFI-所以终端输入以下命令" class="headerlink" title="第二步 老电脑无法连接WIFI 所以终端输入以下命令"></a>第二步 老电脑无法连接WIFI 所以终端输入以下命令</h3><p><strong>建议用网线装机</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install bcmwl-kernel-source</span><br></pre></td></tr></table></figure>
-
-<p><strong>仍然没有的话 就在终端输入以下命令</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo nano /etc/modprobe.d/blacklist.conf   //nano命令ctrl+x退出，选择y后保存</span><br><span class="line">$ blacklist acer-wmi   //最后一行加入</span><br></pre></td></tr></table></figure>
-
-<h3 id="第三步-安装安装中文环境"><a href="#第三步-安装安装中文环境" class="headerlink" title="第三步 安装安装中文环境"></a>第三步 安装安装中文环境</h3><p><strong>安装中文字体和中文语言包</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install -y language-pack-zh-hans language-pack-zh-hans-base language-pack-gnome-zh-hans language-pack-gnome-zh-hans-base fonts-wqy-microhei</span><br></pre></td></tr></table></figure>
-
-<p><strong>然后按照以下打开步骤</strong></p>
-<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%871.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%872.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%873.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%874.jpg"></p>
-<h3 id="第四步安装输入法"><a href="#第四步安装输入法" class="headerlink" title="第四步安装输入法"></a>第四步安装输入法</h3><p><strong>这里<a href="https://pinyin.sogou.com/linux/">安装搜狗输入法</a></strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install fonts-droid-fallback zip   //安装它的依赖包</span><br><span class="line">$ sudo dpkg -i xxx    //xxx为下载的包名 后缀名也要</span><br></pre></td></tr></table></figure>
-<h3 id="第五步安装一些常用软件"><a href="#第五步安装一些常用软件" class="headerlink" title="第五步安装一些常用软件"></a>第五步安装一些常用软件</h3><p><strong>例如安装vim</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install vim   //vim是文本编辑软件</span><br></pre></td></tr></table></figure>
-<p><strong>例如浏览器 它自身也有web浏览器 看个人喜欢</strong></p>
-<p><strong>安装火狐浏览器和中文语言包</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get remove firefox</span><br><span class="line">$ sudo apt-get install -y firefox firefox-locale-zh-hans</span><br></pre></td></tr></table></figure>
-<p><strong>安装谷歌浏览器</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/</span><br><span class="line">wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -     //先添加源</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install google-chrome-stable     //安装谷歌浏览器</span><br></pre></td></tr></table></figure>
-<h3 id="安装neofetch"><a href="#安装neofetch" class="headerlink" title="安装neofetch"></a>安装neofetch</h3><p><strong>终端输入以下命令</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:dawidd0811/neofetch</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install neofetch</span><br><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
-<p><strong>本人试了(CrunchBang Linux), (Zenix Linux), (antiX Linux), (Zenwalk Linux), (Xubuntu Linux), (Lubuntu Linux), (Tiny Core Linux), (SliTaz Linux), (Porteus Linux), (Puppy Linux), (Silverblue Linux), (4MLinux)等等带桌面的发行版然后就唯独Bodhi Linux最满意</strong></p>
-<p><strong>至于为什么要带桌面的发行版, 因为要日用偶尔看看B站什么的</strong></p>
-<p><strong>关于这台电脑用的硬盘 大小80G 有9724个坏道 拆掉坏掉的戴尔一条三星的DDR2 才有2G内存可以体验</strong></p>
-<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E5%9D%8F%E9%81%93.jpg"></p>
 ]]></content>
   </entry>
   <entry>
@@ -290,6 +290,17 @@ $</style>
 <p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E5%A4%96%E9%83%A8%E6%A0%B7%E5%BC%8F.jpg"></p>
 <h3 id="优先级-行内样式-gt-内部样式-gt-外部样式"><a href="#优先级-行内样式-gt-内部样式-gt-外部样式" class="headerlink" title="优先级: 行内样式 &gt; 内部样式 &gt; 外部样式"></a>优先级: 行内样式 &gt; 内部样式 &gt; 外部样式</h3><p><strong>优先级看就近原则</strong></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>HTML iframe内联框架</title>
+    <url>/HTML-iframe.html</url>
+    <content><![CDATA[<h3 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h3><a id="more"></a>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;path&quot;</span> name=<span class="string">&quot;mainFrame&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;mainFrame&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>其中path是引用页面地址 mainFrame是框架标识名</strong></p>
+<h3 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h3><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;demo_iframe.html&quot;</span> frameborder=<span class="string">&quot;0&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;xxx/xxx.html&quot;</span> name=<span class="string">&quot;iframe_a&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;iframe_a&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>HTML可操作大集合</title>
@@ -555,17 +566,6 @@ $</style>
 <h3 id="只要input都需要value值和name值-这样就可以养成好习惯"><a href="#只要input都需要value值和name值-这样就可以养成好习惯" class="headerlink" title="只要input都需要value值和name值, 这样就可以养成好习惯"></a>只要input都需要value值和name值, 这样就可以养成好习惯</h3>]]></content>
   </entry>
   <entry>
-    <title>HTML iframe内联框架</title>
-    <url>/HTML-iframe.html</url>
-    <content><![CDATA[<h3 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h3><a id="more"></a>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;path&quot;</span> name=<span class="string">&quot;mainFrame&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;mainFrame&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>其中path是引用页面地址 mainFrame是框架标识名</strong></p>
-<h3 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h3><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;demo_iframe.html&quot;</span> frameborder=<span class="string">&quot;0&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;xxx/xxx.html&quot;</span> name=<span class="string">&quot;iframe_a&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;iframe_a&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
     <title>HTML表格</title>
     <url>/HTML.html</url>
     <content><![CDATA[<h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><a id="more"></a>
@@ -703,20 +703,6 @@ $</style>
 ]]></content>
   </entry>
   <entry>
-    <title>Java面向对象思维之构造方法</title>
-    <url>/Object-oriented-constructor.html</url>
-    <content><![CDATA[<h3 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ // 自动生成一个无参数的构造方法 public <span class="function"><span class="title">Car</span></span>() &#123; </span><br><span class="line">$ public Car(String color, int wheel, int seat) &#123; //这里给它添加参数  </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h3><p><strong>例如 车能飞</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">fly</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.color+<span class="string">&quot;车能飞&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>例如 车可以潜水</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">diving</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.diving+<span class="string">&quot;车可以下水&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,5,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     c1.fly();</span><br><span class="line">$     c1.diving();</span><br><span class="line">$ </span><br><span class="line">$     c2.fly();</span><br><span class="line">$     c2.diving();</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="构造方法需要注意"><a href="#构造方法需要注意" class="headerlink" title="构造方法需要注意"></a>构造方法需要注意</h3><p><strong>没有返回值这一项</strong><br><strong>在new的时候, 给对象设置属性信息</strong><br><strong>Java会默认自动的送每个类一个无参数的构造方法, 如果你写了构造方法, 那么Java就不送了</strong></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Java面向对象思维</title>
     <url>/Object-oriented-this.html</url>
     <content><![CDATA[<h3 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
@@ -729,6 +715,20 @@ $</style>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">diving</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.color+<span class="string">&quot;车可以下水&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$ 	  Car c1 = new Car();   //先创建一辆车</span><br><span class="line">$ 	  c1.color = <span class="string">&quot;透明&quot;</span>;  //我的车是透明色</span><br><span class="line">$ 	  c1.wheel = 5;  //众所周知所以车都是5个轮子</span><br><span class="line">$      c1.seat = 9; //我的车 里面坐4个 车前绑1个人用来刹车 车顶坐1个人</span><br><span class="line">$      c1.run();</span><br><span class="line">$      c1.fly();</span><br><span class="line">$      c1.diving();</span><br><span class="line">$</span><br><span class="line">$      Car c2 = new Car();   //先创建一辆车</span><br><span class="line">$	  c2.color = <span class="string">&quot;黄&quot;</span>;  //我的车是屎黄</span><br><span class="line">$	  c2.wheel = 5;  //众所周知所以车都是5个轮子</span><br><span class="line">$      c2.seat = 9; //我的车 里面坐4个 车前绑1个人用来刹车 车顶坐1个人</span><br><span class="line">$      c2.run();</span><br><span class="line">$      c2.fly();</span><br><span class="line">$      c2.diving();</span><br><span class="line">$	&#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h3><p><strong>this: 当前类的对象</strong><br><strong>this可以在方法内部获取到对象中的属性信息</strong><br><strong>this还可以区分局部变量和成员变量</strong></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Java面向对象思维之构造方法</title>
+    <url>/Object-oriented-constructor.html</url>
+    <content><![CDATA[<h3 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ // 自动生成一个无参数的构造方法 public <span class="function"><span class="title">Car</span></span>() &#123; </span><br><span class="line">$ public Car(String color, int wheel, int seat) &#123; //这里给它添加参数  </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h3><p><strong>例如 车能飞</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">fly</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.color+<span class="string">&quot;车能飞&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>例如 车可以潜水</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">diving</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.diving+<span class="string">&quot;车可以下水&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,5,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     c1.fly();</span><br><span class="line">$     c1.diving();</span><br><span class="line">$ </span><br><span class="line">$     c2.fly();</span><br><span class="line">$     c2.diving();</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="构造方法需要注意"><a href="#构造方法需要注意" class="headerlink" title="构造方法需要注意"></a>构造方法需要注意</h3><p><strong>没有返回值这一项</strong><br><strong>在new的时候, 给对象设置属性信息</strong><br><strong>Java会默认自动的送每个类一个无参数的构造方法, 如果你写了构造方法, 那么Java就不送了</strong></p>
 ]]></content>
   </entry>
   <entry>
@@ -769,15 +769,6 @@ $
 <h3 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h3>]]></content>
   </entry>
   <entry>
-    <title>String 比较</title>
-    <url>/String-compare.html</url>
-    <content><![CDATA[<h3 id="String-比较"><a href="#String-比较" class="headerlink" title="String 比较"></a>String 比较</h3><a id="more"></a>
-<p><strong>当String进行比较时应该用equals</strong></p>
-<p><strong>因为equals是String类重写后的用于比较字符串内容的方法</strong></p>
-<p><strong>为什么不用==进行比较, 因为==是用于比较地址值</strong></p>
-]]></content>
-  </entry>
-  <entry>
     <title>SQL Server T-SQL 视图</title>
     <url>/SQL-try.html</url>
     <content><![CDATA[<h3 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h3><a id="more"></a>
@@ -785,6 +776,15 @@ $
 <h3 id="向视图插入数据"><a href="#向视图插入数据" class="headerlink" title="向视图插入数据"></a>向视图插入数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ insert 视图 values(<span class="string">&#x27;数据&#x27;</span>) </span><br></pre></td></tr></table></figure>
 <h3 id="查询视图数据"><a href="#查询视图数据" class="headerlink" title="查询视图数据"></a>查询视图数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ select 字段 from 视图</span><br></pre></td></tr></table></figure>
 <h3 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ update 视图 <span class="built_in">set</span> 修改的字段=<span class="string">&#x27;修改的数据&#x27;</span> <span class="built_in">where</span> 匹配字段=<span class="string">&#x27;匹配数据&#x27;</span> </span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>String 比较</title>
+    <url>/String-compare.html</url>
+    <content><![CDATA[<h3 id="String-比较"><a href="#String-比较" class="headerlink" title="String 比较"></a>String 比较</h3><a id="more"></a>
+<p><strong>当String进行比较时应该用equals</strong></p>
+<p><strong>因为equals是String类重写后的用于比较字符串内容的方法</strong></p>
+<p><strong>为什么不用==进行比较, 因为==是用于比较地址值</strong></p>
+]]></content>
   </entry>
   <entry>
     <title>第一个Vue.js</title>
@@ -800,16 +800,10 @@ $
     <content><![CDATA[<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><a id="more"></a>
 
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$        &lt;!DOCTYPE html&gt;</span><br><span class="line">$        &lt;html lang=<span class="string">&quot;cn&quot;</span>&gt;</span><br><span class="line">$        &lt;head&gt;</span><br><span class="line">$            &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">$            &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br><span class="line">$            &lt;title&gt;作业&lt;/title&gt;</span><br><span class="line">$            &lt;script src=<span class="string">&quot;js/vue.min.js&quot;</span>&gt;&lt;/script&gt; </span><br><span class="line">$            &lt;style&gt;</span><br><span class="line">$            <span class="comment">#app div&#123;                         &lt;!--给它设定一个css --&gt;</span></span><br><span class="line">$                width: 500px;</span><br><span class="line">$                border: 1px solid <span class="comment">#bbb;</span></span><br><span class="line">$                margin: 0 auto;</span><br><span class="line">$                text-decoration: center;</span><br><span class="line">$                padding: 30px;</span><br><span class="line">$            &#125;</span><br><span class="line">$            &lt;/style&gt;</span><br><span class="line">$        &lt;/head&gt;</span><br><span class="line">$        &lt;body&gt;</span><br><span class="line">$            &lt;div id = <span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">$                &lt;div&gt;     &lt;!--以下是文本 --&gt;</span><br><span class="line">$                    请输入你喜欢的城市&lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;cname&quot;</span>&gt;</span><br><span class="line">$                    &lt;p&gt;</span><br><span class="line">$                        你选择的城市:&#123;&#123;cname&#125;&#125;</span><br><span class="line">$                    &lt;/p&gt;</span><br><span class="line">$                &lt;/div&gt;</span><br><span class="line">$                &lt;div&gt;</span><br><span class="line">$                    回复评论: &lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;huifu&quot;</span>&gt;</span><br><span class="line">$                    &lt;p&gt;</span><br><span class="line">$                        你选回复是:&#123;&#123;huifu&#125;&#125;</span><br><span class="line">$                    &lt;/p&gt;</span><br><span class="line">$                &lt;/div&gt;</span><br><span class="line">$                &lt;div&gt;        &lt;!--以下是复选框 --&gt;</span><br><span class="line">$                    &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;blue&quot;</span> value=<span class="string">&quot;蓝色&quot;</span> <span class="variable">$v</span>-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$                    &lt;label <span class="keyword">for</span>=<span class="string">&quot;blue&quot;</span>&gt;蓝色&lt;/label&gt;</span><br><span class="line">$                    &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;red&quot;</span> value=<span class="string">&quot;红色&quot;</span> <span class="variable">$v</span>-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$                    &lt;label <span class="keyword">for</span>=<span class="string">&quot;red&quot;</span>&gt;红色&lt;/label&gt;</span><br><span class="line">$                    &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;yellow&quot;</span> value=<span class="string">&quot;黄色&quot;</span> <span class="variable">$v</span>-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$                    &lt;label <span class="keyword">for</span>=<span class="string">&quot;yellow&quot;</span>&gt;黄色&lt;/label&gt;</span><br><span class="line">$                    &lt;p&gt;</span><br><span class="line">$                        你选择的颜色是: &#123;&#123;color&#125;&#125;</span><br><span class="line">$                    &lt;/p&gt;</span><br><span class="line">$                &lt;/div&gt;</span><br><span class="line">$                    &lt;div&gt;      &lt;!--以下是单选按钮 --&gt;</span><br><span class="line">$                        &lt;input <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> id=<span class="string">&quot;男&quot;</span> value=<span class="string">&quot;男&quot;</span> <span class="variable">$v</span>-model=<span class="string">&quot;sex&quot;</span>&gt;</span><br><span class="line">$                        &lt;label <span class="keyword">for</span>=<span class="string">&quot;男&quot;</span>&gt;男&lt;/label&gt;</span><br><span class="line">$                        &lt;br&gt;</span><br><span class="line">$                        &lt;input <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> id=<span class="string">&quot;女&quot;</span> value=<span class="string">&quot;女&quot;</span> <span class="variable">$v</span>-model=<span class="string">&quot;sex&quot;</span>&gt;</span><br><span class="line">$                        &lt;label <span class="keyword">for</span>=<span class="string">&quot;女&quot;</span>&gt;女&lt;/label&gt;</span><br><span class="line">$                        &lt;p&gt;</span><br><span class="line">$                            你选择的性别是: &#123;&#123;sex&#125;&#125;</span><br><span class="line">$                        &lt;/p&gt;</span><br><span class="line">$                    &lt;/div&gt;</span><br><span class="line">$                        &lt;div&gt;    &lt;!--以下是选择框单选时 --&gt;</span><br><span class="line">$                            请你选择你喜欢的季节:&lt;select v-model=<span class="string">&quot;season&quot;</span> <span class="variable">$style</span>=<span class="string">&quot;width: 50px;&quot;</span>&gt;</span><br><span class="line">$                                &lt;option&gt;春天&lt;/option&gt;</span><br><span class="line">$                                &lt;option&gt;夏天&lt;/option&gt;</span><br><span class="line">$                                &lt;option&gt;秋天&lt;/option&gt;</span><br><span class="line">$                                &lt;option&gt;冬天&lt;/option&gt;</span><br><span class="line">$                            &lt;/select&gt;</span><br><span class="line">$                        </span><br><span class="line">$                        &lt;p&gt;</span><br><span class="line">$                            你喜欢的季节是: &#123;&#123;season&#125;&#125;</span><br><span class="line">$                        &lt;/p&gt;</span><br><span class="line">$                    &lt;/div&gt;     </span><br><span class="line">$                    &lt;div&gt;请你选择你喜欢的季节:      &lt;!--以下是以下是选择框多选时 --&gt;</span><br><span class="line">$                    &lt;select v-model=<span class="string">&quot;selected&quot;</span>  multiple style=<span class="string">&quot;width: <span class="variable">$50px</span>;&quot;</span>&gt;</span><br><span class="line">$                        &lt;option&gt;春天&lt;/option&gt;</span><br><span class="line">$                        &lt;option&gt;夏天&lt;/option&gt;</span><br><span class="line">$                        &lt;option&gt;秋天&lt;/option&gt;</span><br><span class="line">$                        &lt;option&gt;冬天&lt;/option&gt;</span><br><span class="line">$                    &lt;/select&gt;</span><br><span class="line">$                    &lt;p&gt;</span><br><span class="line">$                        你喜欢的季节是:&#123;&#123;selected&#125;&#125;</span><br><span class="line">$                    &lt;/p&gt;</span><br><span class="line">$                    &lt;/div&gt;</span><br><span class="line">$</span><br><span class="line">$            &lt;/div&gt;</span><br><span class="line">$                &lt;script&gt;</span><br><span class="line">$                    var app = new Vue(&#123;</span><br><span class="line">$                    el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">$                    data : &#123;</span><br><span class="line">$                        cname : <span class="string">&quot;哈哈哈尔滨市&quot;</span>,</span><br><span class="line">$                        huifu : <span class="string">&quot;你好666&quot;</span>,</span><br><span class="line">$                        color : [],</span><br><span class="line">$                        sex :[],</span><br><span class="line">$                        season: <span class="string">&quot;夏天&quot;</span>,</span><br><span class="line">$                        selected:[<span class="string">&quot;夏天&quot;</span>,<span class="string">&quot;秋天&quot;</span>,<span class="string">&quot;冬天&quot;</span>]</span><br><span class="line">$                    &#125;</span><br><span class="line">$                &#125;);</span><br><span class="line">$                &lt;/script&gt;</span><br><span class="line">$        &lt;/body&gt;</span><br><span class="line">$        &lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p><font color="#DC143C"> 以下为效果</font></p>
+<p><font color="#DC143C">直接实战</font></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$                &lt;div&gt;     </span><br><span class="line">$                    请输入你喜欢的城市&lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;cname&quot;</span>&gt;</span><br><span class="line">$                    &lt;p&gt;</span><br><span class="line">$                        你选择的城市:&#123;&#123;cname&#125;&#125;</span><br><span class="line">$                    &lt;/p&gt;</span><br><span class="line">$                &lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<div>     
-    请输入你喜欢的城市<input type="text" v-model="cname">
-    <p>
-        你选择的城市:
-    </p>
-</div>
-
-<!-- <!DOCTYPE html>
+<p><font color="#DC143C"> 以下为效果</font></p>
+<!DOCTYPE html>
 <html lang="cn">
 <head>
     <meta charset="UTF-8">
@@ -817,18 +811,18 @@ $
     <title>作业</title>
     <script src="js/vue.min.js"></script> 
     <style>
-    #app div{                         <!--给它设定一个css -->
-<pre><code>    width: 500px;
-    border: 1px solid #bbb;
-    margin: 0 auto;
-    text-decoration: center;
-    padding: 30px;
-&#125;
-&lt;/style&gt;</code></pre>
-
+    #app div{                         
+        width: 500px;
+        border: 1px solid #bbb;
+        margin: 0 auto;
+        text-decoration: center;
+        padding: 30px;
+    }
+    </style>
+</head>
 <body>
     <div id="app">
-        <div>     <!--以下是文本 -->
+        <div>     
             请输入你喜欢的城市<input type="text" v-model="cname">
             <p>
                 你选择的城市:
@@ -840,71 +834,68 @@ $
                 你选回复是:
             </p>
         </div>
-        <div>        <!--以下是复选框 -->
-            <input type="checkbox" id="blue" value="蓝色" $v-model="color">
-            <label for="blue">蓝色</label>
-            <input type="checkbox" id="red" value="红色" $v-model="color">
-            <label for="red">红色</label>
-            <input type="checkbox" id="yellow" value="黄色" $v-model="color">
-            <label for="yellow">黄色</label>
-            <p>
-                你选择的颜色是: 
-            </p>
-        </div>
-            <div>      <!--以下是单选按钮 -->
-                <input type="radio" id="男" value="男" $v-model="sex">
-                <label for="男">男</label>
-                <br>
-                <input type="radio" id="女" value="女" $v-model="sex">
-                <label for="女">女</label>
-                <p>
-                    你选择的性别是: 
-                </p>
-            </div>
-                <div>    <!--以下是选择框单选时 -->
-                    请你选择你喜欢的季节:<select v-model="season" $style="width: 50px;">
-                        <option>春天</option>
-                        <option>夏天</option>
-                        <option>秋天</option>
-                        <option>冬天</option>
-                    </select>
-
-<pre><code>            &lt;p&gt;
-                你喜欢的季节是: &#123;&#123;season&#125;&#125;
-            &lt;/p&gt;
-        &lt;/div&gt;     
-        &lt;div&gt;请你选择你喜欢的季节:      &lt;!-- 以下是以下是选择框多选时 --&gt;
-        &lt;select v-model=&quot;selected&quot;  multiple style=&quot;width: $50px;&quot;&gt;
-            &lt;option&gt;春天&lt;/option&gt;
-            &lt;option&gt;夏天&lt;/option&gt;
-            &lt;option&gt;秋天&lt;/option&gt;
-            &lt;option&gt;冬天&lt;/option&gt;
-        &lt;/select&gt;
-        &lt;p&gt;
-            你喜欢的季节是:&#123;&#123;selected&#125;&#125;
-        &lt;/p&gt;
-        &lt;/div&gt;
-&lt;/div&gt;
-    &lt;script&gt;
-        var app = new Vue(&#123;
-        el:&#39;#app&#39;,
-        data : &#123;
-            cname : &quot;哈哈哈尔滨市&quot;,
-            huifu : &quot;你好666&quot;,
-            color : [],
-            sex :[],
-            season: &quot;夏天&quot;,
-            selected:[&quot;夏天&quot;,&quot;秋天&quot;,&quot;冬天&quot;]
-        &#125;
-    &#125;);
-    &lt;/script&gt;</code></pre>
-</div></div></body>
+    </div>
+        <script>
+            var app = new Vue({
+            el:'#app',
+            data : {
+                cname : "哈哈哈尔滨市",
+            }
+        });
+        </script>
+</body>
+</html>
 
 
 
 
-<p> –&gt;</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Arch wsl的傻瓜式安装 (有手就行)</title>
+    <url>/Arch-Wsl-install.html</url>
+    <content><![CDATA[<p>本人是Arch教徒过来传一下教<br><img src="/images/wsl傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
+<a id="more"></a>
+
+<h3 id="第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下"><a href="#第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下" class="headerlink" title="第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下"></a>第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</span><br></pre></td></tr></table></figure>
+<img src="/images/wsl傻瓜式安装/按照提示重启电脑.jpg" style="width: 300px; height: 300px;">
+
+<p><strong>按照提示重启电脑</strong></p>
+<h3 id="第二步-下载文件"><a href="#第二步-下载文件" class="headerlink" title="第二步 下载文件"></a>第二步 下载文件</h3><p><strong>然后下载<a href="https://github.com/yuk7/ArchWSL">Arch WSL</a></strong></p>
+<img src="/images/wsl傻瓜式安装/Arch wsl下载.jpg">
+<br>
+<img src="/images/wsl傻瓜式安装/Arch wsl下载版本.jpg">
+
+<p><strong>那个安装证书是给appx版的arch wsl用的</strong></p>
+<p><strong>你已经安装zip版的</strong></p>
+<p><strong>没有必要安两次</strong></p>
+<p><strong>只用需要用到zip</strong></p>
+<h3 id="第三步-配置Arch-Wsl"><a href="#第三步-配置Arch-Wsl" class="headerlink" title="第三步 配置Arch Wsl"></a>第三步 配置Arch Wsl</h3><img src="/images/wsl傻瓜式安装/Arch wsl配置.jpg" style="width: 800px; height: 500px;">
+
+<p><strong>反正按照我这个改，保存是ctrl + x 回车</strong></p>
+<h3 id="第四步-配置相关参数"><a href="#第四步-配置相关参数" class="headerlink" title="第四步 配置相关参数"></a>第四步 配置相关参数</h3><p><strong>这里会提示配置  按照我的方法配置</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe//这个是启动后的显示</span><br><span class="line">[root@PC-NAME user]<span class="comment"># passwd       //这个是用户名输完名字输密码</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe</span><br><span class="line">[root@PC-NAME]<span class="comment"># EDITOR=nano visudo</span></span><br><span class="line">    %wheel      ALL=(ALL) ALL</span><br><span class="line">    (setup sudoers file.)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]<span class="comment"># useradd -m -G wheel -s /bin/bash &#123;username&#125;</span></span><br><span class="line">(add user)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># passwd &#123;username&#125;      //&#123;&#125;换成你的用户名,记住不需要打&#123;&#125;</span></span><br><span class="line">(<span class="built_in">set</span> default user password)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># exit  //退出</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe config --default-user &#123;username&#125;</span><br><span class="line">    (setting to default user)     //现在是root用户,不用加sudo</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [user@PC-NAME]$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]$ sudo pacman-key --populate</span><br></pre></td></tr></table></figure>
+<h3 id="第五步-安装完后操作"><a href="#第五步-安装完后操作" class="headerlink" title="第五步 安装完后操作"></a>第五步 安装完后操作</h3><p><strong>下面是<a href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/">换源</a></strong></p>
+<p><strong>打开nano /etc/pacman.d/mirrorlist 然后再最顶端添加 切记去##</strong></p>
+<img src="/images/wsl傻瓜式安装/Arch wsl配置文件.jpg" style="width: 800px; height: 500px;">
+<br>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Server = https:mirrors.tuna.tsinghua.edu.cn/archlinux/<span class="variable">$repo</span>/os/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
+**然后就可以 更新软件包缓存**
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman -Syy</span><br></pre></td></tr></table></figure>
+<h3 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
+<img src="/images/wsl傻瓜式安装/Arch wsl.jpg" style="width: 800px; height: 500px;">
+
+<h3 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h3><h3 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h3><h3 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h3>]]></content>
   </entry>
   <entry>
     <title>Android同步源码和编译ROM傻瓜式 (有手就行)</title>
@@ -1006,51 +997,5 @@ $
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Process是进程的英文</span><br></pre></td></tr></table></figure>
 <h3 id="线程与进程到底是什么关系"><a href="#线程与进程到底是什么关系" class="headerlink" title="线程与进程到底是什么关系"></a>线程与进程到底是什么关系</h3><p><strong>一个进程里面可以包含若干个线程，一个进程里面必须要有一个线程，否则没有存在的意义</strong></p>
 <h3 id="注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行"><a href="#注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行" class="headerlink" title="注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行"></a>注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行</h3>]]></content>
-  </entry>
-  <entry>
-    <title>Arch wsl的傻瓜式安装 (有手就行)</title>
-    <url>/Arch-Wsl-install.html</url>
-    <content><![CDATA[<p>本人是Arch教徒过来传一下教<br><img src="/images/wsl傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
-<a id="more"></a>
-
-<h3 id="第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下"><a href="#第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下" class="headerlink" title="第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下"></a>第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</span><br></pre></td></tr></table></figure>
-<img src="/images/wsl傻瓜式安装/按照提示重启电脑.jpg" style="width: 300px; height: 300px;">
-
-<p><strong>按照提示重启电脑</strong></p>
-<h3 id="第二步-下载文件"><a href="#第二步-下载文件" class="headerlink" title="第二步 下载文件"></a>第二步 下载文件</h3><p><strong>然后下载<a href="https://github.com/yuk7/ArchWSL">Arch WSL</a></strong></p>
-<img src="/images/wsl傻瓜式安装/Arch wsl下载.jpg">
-<br>
-<img src="/images/wsl傻瓜式安装/Arch wsl下载版本.jpg">
-
-<p><strong>那个安装证书是给appx版的arch wsl用的</strong></p>
-<p><strong>你已经安装zip版的</strong></p>
-<p><strong>没有必要安两次</strong></p>
-<p><strong>只用需要用到zip</strong></p>
-<h3 id="第三步-配置Arch-Wsl"><a href="#第三步-配置Arch-Wsl" class="headerlink" title="第三步 配置Arch Wsl"></a>第三步 配置Arch Wsl</h3><img src="/images/wsl傻瓜式安装/Arch wsl配置.jpg" style="width: 800px; height: 500px;">
-
-<p><strong>反正按照我这个改，保存是ctrl + x 回车</strong></p>
-<h3 id="第四步-配置相关参数"><a href="#第四步-配置相关参数" class="headerlink" title="第四步 配置相关参数"></a>第四步 配置相关参数</h3><p><strong>这里会提示配置  按照我的方法配置</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe//这个是启动后的显示</span><br><span class="line">[root@PC-NAME user]<span class="comment"># passwd       //这个是用户名输完名字输密码</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe</span><br><span class="line">[root@PC-NAME]<span class="comment"># EDITOR=nano visudo</span></span><br><span class="line">    %wheel      ALL=(ALL) ALL</span><br><span class="line">    (setup sudoers file.)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]<span class="comment"># useradd -m -G wheel -s /bin/bash &#123;username&#125;</span></span><br><span class="line">(add user)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># passwd &#123;username&#125;      //&#123;&#125;换成你的用户名,记住不需要打&#123;&#125;</span></span><br><span class="line">(<span class="built_in">set</span> default user password)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># exit  //退出</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe config --default-user &#123;username&#125;</span><br><span class="line">    (setting to default user)     //现在是root用户,不用加sudo</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [user@PC-NAME]$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]$ sudo pacman-key --populate</span><br></pre></td></tr></table></figure>
-<h3 id="第五步-安装完后操作"><a href="#第五步-安装完后操作" class="headerlink" title="第五步 安装完后操作"></a>第五步 安装完后操作</h3><p><strong>下面是<a href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/">换源</a></strong></p>
-<p><strong>打开nano /etc/pacman.d/mirrorlist 然后再最顶端添加 切记去##</strong></p>
-<img src="/images/wsl傻瓜式安装/Arch wsl配置文件.jpg" style="width: 800px; height: 500px;">
-<br>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Server = https:mirrors.tuna.tsinghua.edu.cn/archlinux/<span class="variable">$repo</span>/os/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
-**然后就可以 更新软件包缓存**
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman -Syy</span><br></pre></td></tr></table></figure>
-<h3 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
-<img src="/images/wsl傻瓜式安装/Arch wsl.jpg" style="width: 800px; height: 500px;">
-
-<h3 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h3><h3 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h3><h3 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h3>]]></content>
   </entry>
 </search>
