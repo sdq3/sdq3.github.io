@@ -179,6 +179,15 @@
 ]]></content>
   </entry>
   <entry>
+    <title>CSS 列表</title>
+    <url>/CSS%E5%88%97%E8%A1%A8.html</url>
+    <content><![CDATA[<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    ol li&#123;</span><br><span class="line">$          color: blue;</span><br><span class="line">$         &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;ol&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇法师&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇战士&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇辅助&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇坦克&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇刺客&lt;/li&gt;</span><br><span class="line">$  &lt;ol&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    ul li&#123;</span><br><span class="line">$        list-style: none;          //去掉原点</span><br><span class="line">$        list-style: cirle;         //空心圆</span><br><span class="line">$        list-style: decimal;       //数字</span><br><span class="line">$        list-style: square;        //正方形</span><br><span class="line">$          &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;ul&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇法师&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇战士&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇辅助&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇坦克&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇刺客&lt;/li&gt;</span><br><span class="line">$  &lt;ul&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    dl dd dt&#123;</span><br><span class="line">$          color: blue;</span><br><span class="line">$         &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;dl&gt;</span><br><span class="line">$      &lt;dt&gt;史迪奇近战&lt;/dt&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇战士&lt;/li&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇辅助&lt;/li&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇坦克&lt;/li&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇刺客&lt;/li&gt;</span><br><span class="line">$      &lt;dt&gt;史迪奇远程&lt;/dt&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇法师&lt;/li&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇射手&lt;/li&gt;</span><br><span class="line">$  &lt;dl&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
     <title>CSS 伪类选择器</title>
     <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
     <content><![CDATA[<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><a id="more"></a>
@@ -188,15 +197,6 @@
 
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>CSS 列表</title>
-    <url>/CSS%E5%88%97%E8%A1%A8.html</url>
-    <content><![CDATA[<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    ol li&#123;</span><br><span class="line">$          color: blue;</span><br><span class="line">$         &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;ol&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇法师&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇战士&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇辅助&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇坦克&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇刺客&lt;/li&gt;</span><br><span class="line">$  &lt;ol&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    ul li&#123;</span><br><span class="line">$        list-style: none;          //去掉原点</span><br><span class="line">$        list-style: cirle;         //空心圆</span><br><span class="line">$        list-style: decimal;       //数字</span><br><span class="line">$        list-style: square;        //正方形</span><br><span class="line">$          &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;ul&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇法师&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇战士&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇辅助&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇坦克&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇刺客&lt;/li&gt;</span><br><span class="line">$  &lt;ul&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    dl dd dt&#123;</span><br><span class="line">$          color: blue;</span><br><span class="line">$         &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;dl&gt;</span><br><span class="line">$      &lt;dt&gt;史迪奇近战&lt;/dt&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇战士&lt;/li&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇辅助&lt;/li&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇坦克&lt;/li&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇刺客&lt;/li&gt;</span><br><span class="line">$      &lt;dt&gt;史迪奇远程&lt;/dt&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇法师&lt;/li&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇射手&lt;/li&gt;</span><br><span class="line">$  &lt;dl&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>CSS 层次选择器</title>
@@ -221,20 +221,6 @@
 
 
 
-]]></content>
-  </entry>
-  <entry>
-    <title>CSS 三种导入样式</title>
-    <url>/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F.html</url>
-    <content><![CDATA[<h3 id="span标签"><a href="#span标签" class="headerlink" title="span标签"></a>span标签</h3><a id="more"></a>
-<p><strong>span标签: 重点突出的字, 使用span套起来</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    <span class="comment">#sdq1&#123;</span></span><br><span class="line">$        color: blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$ 我叫&lt;span id=<span class="string">&quot;sdq1&quot;</span>&gt;史迪奇&lt;/span&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
-
-<h3 id="字体风格"><a href="#字体风格" class="headerlink" title="字体风格"></a>字体风格</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    body&#123;</span><br><span class="line">$        font-family: <span class="string">&quot;Arial Black&quot;</span>, 楷体;   //字体</span><br><span class="line">$        color:blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$    h1&#123;</span><br><span class="line">$        font-size: 50px;    //字体大小</span><br><span class="line">$      &#125;</span><br><span class="line">$    .sdq1&#123;</span><br><span class="line">$        font-weight: bolder;  //粗体</span><br><span class="line">$      &#125;</span><br><span class="line">$    p&#123;</span><br><span class="line">$        font: oblique bolder 12px <span class="string">&quot;楷体&quot;</span>;   //斜体oblique粗细bolder大小12px</span><br><span class="line">$        color:blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$ &lt;h1&gt;史迪奇的故事&lt;/h1&gt;</span><br><span class="line">$ &lt;p class=<span class="string">&quot;sdq1&quot;</span>&gt;生物史迪奇&lt;/p&gt;</span><br><span class="line">$ &lt;p&gt;5岁女孩莉萝聪明善良, 她最爱听猫王的老歌, 也一直梦想拥有一只属于自己的宠物狗&lt;/p&gt;</span><br><span class="line">$ &lt;p&gt;史迪奇只能把自己的两只脚藏起来, 外表看起来和别的小狗一样&lt;/p&gt;</span><br><span class="line">$ &lt;p&gt;当外星人终于在地球上发现了伪装的史迪奇时, 他们绑架了莉萝想逼史迪奇就范, 为了救回自己的好朋友, 也为了证明自己不是无可救药的危险分子, 史迪奇只有使出浑身解数, 放手一搏了&lt;/p&gt;</span><br><span class="line">$ &lt;body&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h3><p><strong>装饰</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color:blue;     //颜色</span><br><span class="line">$        text-align: center;  //文本对齐的方式 </span><br><span class="line">$        text-indent: 2em;     //首行缩进</span><br><span class="line">$        line-height: 20px;    //行高 </span><br><span class="line">$        text-decoration: overline;   //上划线</span><br><span class="line">$        text-decoration: line-through;   //中划线</span><br><span class="line">$        text-decoration: underline   //下划线</span><br><span class="line">$      &#125;</span><br><span class="line">$     img,span&#123;</span><br><span class="line">$               vertical-align: middle;</span><br><span class="line">$            &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$&lt;h1&gt;史迪奇的王国&lt;/h1&gt;</span><br><span class="line">$ &lt;p&gt;</span><br><span class="line">$ &lt;img src=<span class="string">&quot;images/x.jpg&quot;</span>&gt;</span><br><span class="line">$ &lt;span&gt;史迪奇&lt;/span&gt;</span><br><span class="line">$ &lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="超链接伪类"><a href="#超链接伪类" class="headerlink" title="超链接伪类"></a>超链接伪类</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    //默认颜色</span><br><span class="line">$     a&#123;  </span><br><span class="line">$          text-decoration: none;</span><br><span class="line">$          color: <span class="comment">#000000;</span></span><br><span class="line">$       &#125;  </span><br><span class="line">$     //鼠标悬浮状态 </span><br><span class="line">$     a:hover&#123;  </span><br><span class="line">$          color: blue;</span><br><span class="line">$       &#125;     </span><br><span class="line">$     //鼠标按住未释放状态 </span><br><span class="line">$     a:active&#123;  </span><br><span class="line">$          color: rad;</span><br><span class="line">$       &#125;      </span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;p&gt;</span><br><span class="line">$&lt;h1&gt;史迪奇的王国&lt;/h1&gt;</span><br><span class="line">$ &lt;a&gt;史迪奇&lt;a&gt;</span><br><span class="line">$ &lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    //默认颜色</span><br><span class="line">$     <span class="comment">#sdq&#123;  </span></span><br><span class="line">$          text-shawdow: blue 10px 10px 10px;    //text-shawdow是阴影, 阴影颜色, 水平偏移, 垂直偏移, 阴影半径</span><br><span class="line">$       &#125;       </span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;p&gt;</span><br><span class="line">$&lt;h1&gt;史迪奇的王国&lt;/h1&gt;</span><br><span class="line">$ &lt;a id=<span class="string">&quot;sdq&quot;</span>&gt;史迪奇&lt;a&gt;</span><br><span class="line">$ &lt;/p&gt;</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
   <entry>
@@ -274,6 +260,20 @@ $</style>
 
 
 
+]]></content>
+  </entry>
+  <entry>
+    <title>CSS 三种导入样式</title>
+    <url>/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F.html</url>
+    <content><![CDATA[<h3 id="span标签"><a href="#span标签" class="headerlink" title="span标签"></a>span标签</h3><a id="more"></a>
+<p><strong>span标签: 重点突出的字, 使用span套起来</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    <span class="comment">#sdq1&#123;</span></span><br><span class="line">$        color: blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$ 我叫&lt;span id=<span class="string">&quot;sdq1&quot;</span>&gt;史迪奇&lt;/span&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<h3 id="字体风格"><a href="#字体风格" class="headerlink" title="字体风格"></a>字体风格</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    body&#123;</span><br><span class="line">$        font-family: <span class="string">&quot;Arial Black&quot;</span>, 楷体;   //字体</span><br><span class="line">$        color:blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$    h1&#123;</span><br><span class="line">$        font-size: 50px;    //字体大小</span><br><span class="line">$      &#125;</span><br><span class="line">$    .sdq1&#123;</span><br><span class="line">$        font-weight: bolder;  //粗体</span><br><span class="line">$      &#125;</span><br><span class="line">$    p&#123;</span><br><span class="line">$        font: oblique bolder 12px <span class="string">&quot;楷体&quot;</span>;   //斜体oblique粗细bolder大小12px</span><br><span class="line">$        color:blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$ &lt;h1&gt;史迪奇的故事&lt;/h1&gt;</span><br><span class="line">$ &lt;p class=<span class="string">&quot;sdq1&quot;</span>&gt;生物史迪奇&lt;/p&gt;</span><br><span class="line">$ &lt;p&gt;5岁女孩莉萝聪明善良, 她最爱听猫王的老歌, 也一直梦想拥有一只属于自己的宠物狗&lt;/p&gt;</span><br><span class="line">$ &lt;p&gt;史迪奇只能把自己的两只脚藏起来, 外表看起来和别的小狗一样&lt;/p&gt;</span><br><span class="line">$ &lt;p&gt;当外星人终于在地球上发现了伪装的史迪奇时, 他们绑架了莉萝想逼史迪奇就范, 为了救回自己的好朋友, 也为了证明自己不是无可救药的危险分子, 史迪奇只有使出浑身解数, 放手一搏了&lt;/p&gt;</span><br><span class="line">$ &lt;body&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h3><p><strong>装饰</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color:blue;     //颜色</span><br><span class="line">$        text-align: center;  //文本对齐的方式 </span><br><span class="line">$        text-indent: 2em;     //首行缩进</span><br><span class="line">$        line-height: 20px;    //行高 </span><br><span class="line">$        text-decoration: overline;   //上划线</span><br><span class="line">$        text-decoration: line-through;   //中划线</span><br><span class="line">$        text-decoration: underline   //下划线</span><br><span class="line">$      &#125;</span><br><span class="line">$     img,span&#123;</span><br><span class="line">$               vertical-align: middle;</span><br><span class="line">$            &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$&lt;h1&gt;史迪奇的王国&lt;/h1&gt;</span><br><span class="line">$ &lt;p&gt;</span><br><span class="line">$ &lt;img src=<span class="string">&quot;images/x.jpg&quot;</span>&gt;</span><br><span class="line">$ &lt;span&gt;史迪奇&lt;/span&gt;</span><br><span class="line">$ &lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="超链接伪类"><a href="#超链接伪类" class="headerlink" title="超链接伪类"></a>超链接伪类</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    //默认颜色</span><br><span class="line">$     a&#123;  </span><br><span class="line">$          text-decoration: none;</span><br><span class="line">$          color: <span class="comment">#000000;</span></span><br><span class="line">$       &#125;  </span><br><span class="line">$     //鼠标悬浮状态 </span><br><span class="line">$     a:hover&#123;  </span><br><span class="line">$          color: blue;</span><br><span class="line">$       &#125;     </span><br><span class="line">$     //鼠标按住未释放状态 </span><br><span class="line">$     a:active&#123;  </span><br><span class="line">$          color: rad;</span><br><span class="line">$       &#125;      </span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;p&gt;</span><br><span class="line">$&lt;h1&gt;史迪奇的王国&lt;/h1&gt;</span><br><span class="line">$ &lt;a&gt;史迪奇&lt;a&gt;</span><br><span class="line">$ &lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    //默认颜色</span><br><span class="line">$     <span class="comment">#sdq&#123;  </span></span><br><span class="line">$          text-shawdow: blue 10px 10px 10px;    //text-shawdow是阴影, 阴影颜色, 水平偏移, 垂直偏移, 阴影半径</span><br><span class="line">$       &#125;       </span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;p&gt;</span><br><span class="line">$&lt;h1&gt;史迪奇的王国&lt;/h1&gt;</span><br><span class="line">$ &lt;a id=<span class="string">&quot;sdq&quot;</span>&gt;史迪奇&lt;a&gt;</span><br><span class="line">$ &lt;/p&gt;</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
   <entry>
@@ -569,17 +569,6 @@ $</style>
 <h3 id="只要input都需要value值和name值-这样就可以养成好习惯"><a href="#只要input都需要value值和name值-这样就可以养成好习惯" class="headerlink" title="只要input都需要value值和name值, 这样就可以养成好习惯"></a>只要input都需要value值和name值, 这样就可以养成好习惯</h3>]]></content>
   </entry>
   <entry>
-    <title>HTML iframe内联框架</title>
-    <url>/HTML-iframe.html</url>
-    <content><![CDATA[<h3 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h3><a id="more"></a>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;path&quot;</span> name=<span class="string">&quot;mainFrame&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;mainFrame&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>其中path是引用页面地址 mainFrame是框架标识名</strong></p>
-<h3 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h3><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;demo_iframe.html&quot;</span> frameborder=<span class="string">&quot;0&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;xxx/xxx.html&quot;</span> name=<span class="string">&quot;iframe_a&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;iframe_a&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
     <title>HTML表格</title>
     <url>/HTML.html</url>
     <content><![CDATA[<h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><a id="more"></a>
@@ -589,6 +578,17 @@ $</style>
 <h3 id="跨列"><a href="#跨列" class="headerlink" title="跨列"></a>跨列</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;table&gt;</span><br><span class="line">$    &lt;tr&gt;</span><br><span class="line">$        &lt;tb cospan=<span class="string">&quot;2&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">$     &lt;tr&gt;</span><br><span class="line">$ &lt;/table&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="跨行"><a href="#跨行" class="headerlink" title="跨行"></a>跨行</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;table&gt;</span><br><span class="line">$    &lt;tr&gt;</span><br><span class="line">$        &lt;tb rowspan=<span class="string">&quot;2&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">$     &lt;tr&gt;</span><br><span class="line">$ &lt;/table&gt;</span><br></pre></td></tr></table></figure>
 ]]></content>
+  </entry>
+  <entry>
+    <title>HTML iframe内联框架</title>
+    <url>/HTML-iframe.html</url>
+    <content><![CDATA[<h3 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h3><a id="more"></a>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;path&quot;</span> name=<span class="string">&quot;mainFrame&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;mainFrame&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>其中path是引用页面地址 mainFrame是框架标识名</strong></p>
+<h3 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h3><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;demo_iframe.html&quot;</span> frameborder=<span class="string">&quot;0&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;xxx/xxx.html&quot;</span> name=<span class="string">&quot;iframe_a&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;iframe_a&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>关于Hexo我所踩过的坑和小白安装教程</title>
@@ -732,16 +732,6 @@ $</style>
 ]]></content>
   </entry>
   <entry>
-    <title>Java面向对象思维之构造方法需的重载</title>
-    <url>/Object-oriented-constructor-heavy-load.html</url>
-    <content><![CDATA[<h3 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color,  int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color, int wheel, int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this(color,seat);  //this还可以调用当前累中其他的构造方法</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h3>]]></content>
-  </entry>
-  <entry>
     <title>Java面向对象思维之构造方法</title>
     <url>/Object-oriented-constructor.html</url>
     <content><![CDATA[<h3 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
@@ -754,6 +744,16 @@ $</style>
 <h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,5,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     c1.fly();</span><br><span class="line">$     c1.diving();</span><br><span class="line">$ </span><br><span class="line">$     c2.fly();</span><br><span class="line">$     c2.diving();</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="构造方法需要注意"><a href="#构造方法需要注意" class="headerlink" title="构造方法需要注意"></a>构造方法需要注意</h3><p><strong>没有返回值这一项</strong><br><strong>在new的时候, 给对象设置属性信息</strong><br><strong>Java会默认自动的送每个类一个无参数的构造方法, 如果你写了构造方法, 那么Java就不送了</strong></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Java面向对象思维之构造方法需的重载</title>
+    <url>/Object-oriented-constructor-heavy-load.html</url>
+    <content><![CDATA[<h3 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color,  int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color, int wheel, int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this(color,seat);  //this还可以调用当前累中其他的构造方法</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h3>]]></content>
   </entry>
   <entry>
     <title>Linux命令(未完工)</title>
@@ -783,6 +783,14 @@ $
 <h3 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h3>]]></content>
   </entry>
   <entry>
+    <title>第一个Vue.js</title>
+    <url>/one-Vue.html</url>
+    <content><![CDATA[<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><a id="more"></a>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$  &lt;!DOCTYPE html&gt;</span><br><span class="line">$  &lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line">$  &lt;head&gt;</span><br><span class="line">$      &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">$      &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br><span class="line">$      &lt;title&gt;Vue学习&lt;/title&gt;</span><br><span class="line">$      &lt;script src=<span class="string">&quot;js/vue.min.js&quot;</span>&gt;&lt;/script&gt; </span><br><span class="line">$      &lt;!-- 导入Vue.js --&gt;</span><br><span class="line">$  &lt;/head&gt;</span><br><span class="line">$  &lt;body&gt;</span><br><span class="line">$      &lt;div id = <span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">$          &lt;button @click=<span class="string">&quot;showInfo&quot;</span>&gt;请点击&lt;/button&gt;</span><br><span class="line">$          &lt;p&gt;&#123;&#123;ms&#125;&#125;&lt;/p&gt;</span><br><span class="line">$          &lt;!-- &#123;&#123;massage&#125;&#125; --&gt;</span><br><span class="line">$      &lt;/div&gt;</span><br><span class="line">$      </span><br><span class="line">$          &lt;script&gt;</span><br><span class="line">$              var app = new Vue(&#123;</span><br><span class="line">$              el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">$              // Model : 数据</span><br><span class="line">$               data:&#123;</span><br><span class="line">$                   ms: <span class="string">&quot;hello,vue!&quot;</span>,</span><br><span class="line">$               &#125;,</span><br><span class="line">$               methods:&#123;</span><br><span class="line">$                   <span class="function"><span class="title">showInfo</span></span>()&#123;</span><br><span class="line">$                          this.ms = <span class="string">&quot;你好666999, Vue&quot;</span></span><br><span class="line">$                   &#125;</span><br><span class="line">$               &#125;</span><br><span class="line">$          &#125;);</span><br><span class="line">$          &lt;/script&gt;</span><br><span class="line">$      &lt;/script&gt;</span><br><span class="line">$      </span><br><span class="line">$  &lt;/body&gt;</span><br><span class="line">$  &lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="view和Model双向绑定"><a href="#view和Model双向绑定" class="headerlink" title="view和Model双向绑定"></a>view和Model双向绑定</h3>]]></content>
+  </entry>
+  <entry>
     <title>SQL Server T-SQL 视图</title>
     <url>/SQL-try.html</url>
     <content><![CDATA[<h3 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h3><a id="more"></a>
@@ -799,14 +807,6 @@ $
 <p><strong>因为equals是String类重写后的用于比较字符串内容的方法</strong></p>
 <p><strong>为什么不用==进行比较, 因为==是用于比较地址值</strong></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>第一个Vue.js</title>
-    <url>/one-Vue.html</url>
-    <content><![CDATA[<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><a id="more"></a>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$  &lt;!DOCTYPE html&gt;</span><br><span class="line">$  &lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line">$  &lt;head&gt;</span><br><span class="line">$      &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">$      &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br><span class="line">$      &lt;title&gt;Vue学习&lt;/title&gt;</span><br><span class="line">$      &lt;script src=<span class="string">&quot;js/vue.min.js&quot;</span>&gt;&lt;/script&gt; </span><br><span class="line">$      &lt;!-- 导入Vue.js --&gt;</span><br><span class="line">$  &lt;/head&gt;</span><br><span class="line">$  &lt;body&gt;</span><br><span class="line">$      &lt;div id = <span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">$          &lt;button @click=<span class="string">&quot;showInfo&quot;</span>&gt;请点击&lt;/button&gt;</span><br><span class="line">$          &lt;p&gt;&#123;&#123;ms&#125;&#125;&lt;/p&gt;</span><br><span class="line">$          &lt;!-- &#123;&#123;massage&#125;&#125; --&gt;</span><br><span class="line">$      &lt;/div&gt;</span><br><span class="line">$      </span><br><span class="line">$          &lt;script&gt;</span><br><span class="line">$              var app = new Vue(&#123;</span><br><span class="line">$              el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">$              // Model : 数据</span><br><span class="line">$               data:&#123;</span><br><span class="line">$                   ms: <span class="string">&quot;hello,vue!&quot;</span>,</span><br><span class="line">$               &#125;,</span><br><span class="line">$               methods:&#123;</span><br><span class="line">$                   <span class="function"><span class="title">showInfo</span></span>()&#123;</span><br><span class="line">$                          this.ms = <span class="string">&quot;你好666999, Vue&quot;</span></span><br><span class="line">$                   &#125;</span><br><span class="line">$               &#125;</span><br><span class="line">$          &#125;);</span><br><span class="line">$          &lt;/script&gt;</span><br><span class="line">$      &lt;/script&gt;</span><br><span class="line">$      </span><br><span class="line">$  &lt;/body&gt;</span><br><span class="line">$  &lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="view和Model双向绑定"><a href="#view和Model双向绑定" class="headerlink" title="view和Model双向绑定"></a>view和Model双向绑定</h3>]]></content>
   </entry>
   <entry>
     <title>Vue.js 表单输入绑定的基础用法</title>
@@ -850,52 +850,6 @@ $
         </script>
 </div></body>
 </html>]]></content>
-  </entry>
-  <entry>
-    <title>Arch wsl的傻瓜式安装 (有手就行)</title>
-    <url>/Arch-Wsl-install.html</url>
-    <content><![CDATA[<p>本人是Arch教徒过来传一下教<br><img src="/images/wsl傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
-<a id="more"></a>
-
-<h3 id="第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下"><a href="#第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下" class="headerlink" title="第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下"></a>第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</span><br></pre></td></tr></table></figure>
-<img src="/images/wsl傻瓜式安装/按照提示重启电脑.jpg" style="width: 300px; height: 300px;">
-
-<p><strong>按照提示重启电脑</strong></p>
-<h3 id="第二步-下载文件"><a href="#第二步-下载文件" class="headerlink" title="第二步 下载文件"></a>第二步 下载文件</h3><p><strong>然后下载<a href="https://github.com/yuk7/ArchWSL">Arch WSL</a></strong></p>
-<img src="/images/wsl傻瓜式安装/Arch wsl下载.jpg">
-<br>
-<img src="/images/wsl傻瓜式安装/Arch wsl下载版本.jpg">
-
-<p><strong>那个安装证书是给appx版的arch wsl用的</strong></p>
-<p><strong>你已经安装zip版的</strong></p>
-<p><strong>没有必要安两次</strong></p>
-<p><strong>只用需要用到zip</strong></p>
-<h3 id="第三步-配置Arch-Wsl"><a href="#第三步-配置Arch-Wsl" class="headerlink" title="第三步 配置Arch Wsl"></a>第三步 配置Arch Wsl</h3><img src="/images/wsl傻瓜式安装/Arch wsl配置.jpg" style="width: 800px; height: 500px;">
-
-<p><strong>反正按照我这个改，保存是ctrl + x 回车</strong></p>
-<h3 id="第四步-配置相关参数"><a href="#第四步-配置相关参数" class="headerlink" title="第四步 配置相关参数"></a>第四步 配置相关参数</h3><p><strong>这里会提示配置  按照我的方法配置</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe//这个是启动后的显示</span><br><span class="line">[root@PC-NAME user]<span class="comment"># passwd       //这个是用户名输完名字输密码</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe</span><br><span class="line">[root@PC-NAME]<span class="comment"># EDITOR=nano visudo</span></span><br><span class="line">    %wheel      ALL=(ALL) ALL</span><br><span class="line">    (setup sudoers file.)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]<span class="comment"># useradd -m -G wheel -s /bin/bash &#123;username&#125;</span></span><br><span class="line">(add user)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># passwd &#123;username&#125;      //&#123;&#125;换成你的用户名,记住不需要打&#123;&#125;</span></span><br><span class="line">(<span class="built_in">set</span> default user password)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># exit  //退出</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe config --default-user &#123;username&#125;</span><br><span class="line">    (setting to default user)     //现在是root用户,不用加sudo</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [user@PC-NAME]$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]$ sudo pacman-key --populate</span><br></pre></td></tr></table></figure>
-<h3 id="第五步-安装完后操作"><a href="#第五步-安装完后操作" class="headerlink" title="第五步 安装完后操作"></a>第五步 安装完后操作</h3><p><strong>下面是<a href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/">换源</a></strong></p>
-<p><strong>打开nano /etc/pacman.d/mirrorlist 然后再最顶端添加 切记去##</strong></p>
-<img src="/images/wsl傻瓜式安装/Arch wsl配置文件.jpg" style="width: 800px; height: 500px;">
-<br>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Server = https:mirrors.tuna.tsinghua.edu.cn/archlinux/<span class="variable">$repo</span>/os/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
-**然后就可以 更新软件包缓存**
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman -Syy</span><br></pre></td></tr></table></figure>
-<h3 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
-<img src="/images/wsl傻瓜式安装/Arch wsl.jpg" style="width: 800px; height: 500px;">
-
-<h3 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h3><h3 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h3><h3 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h3>]]></content>
   </entry>
   <entry>
     <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
@@ -997,5 +951,51 @@ $
 <p><strong>防止低内存编译出错 设置大小为</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> ANDROID_JACK_VM_ARGS=<span class="string">&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G&quot;</span></span><br></pre></td></tr></table></figure>
 <h1 id="祝福大家能自己动手做出属于自己的ROM"><a href="#祝福大家能自己动手做出属于自己的ROM" class="headerlink" title="祝福大家能自己动手做出属于自己的ROM"></a>祝福大家能自己动手做出属于自己的ROM</h1>]]></content>
+  </entry>
+  <entry>
+    <title>Arch wsl的傻瓜式安装 (有手就行)</title>
+    <url>/Arch-Wsl-install.html</url>
+    <content><![CDATA[<p>本人是Arch教徒过来传一下教<br><img src="/images/wsl傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
+<a id="more"></a>
+
+<h3 id="第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下"><a href="#第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下" class="headerlink" title="第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下"></a>第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</span><br></pre></td></tr></table></figure>
+<img src="/images/wsl傻瓜式安装/按照提示重启电脑.jpg" style="width: 300px; height: 300px;">
+
+<p><strong>按照提示重启电脑</strong></p>
+<h3 id="第二步-下载文件"><a href="#第二步-下载文件" class="headerlink" title="第二步 下载文件"></a>第二步 下载文件</h3><p><strong>然后下载<a href="https://github.com/yuk7/ArchWSL">Arch WSL</a></strong></p>
+<img src="/images/wsl傻瓜式安装/Arch wsl下载.jpg">
+<br>
+<img src="/images/wsl傻瓜式安装/Arch wsl下载版本.jpg">
+
+<p><strong>那个安装证书是给appx版的arch wsl用的</strong></p>
+<p><strong>你已经安装zip版的</strong></p>
+<p><strong>没有必要安两次</strong></p>
+<p><strong>只用需要用到zip</strong></p>
+<h3 id="第三步-配置Arch-Wsl"><a href="#第三步-配置Arch-Wsl" class="headerlink" title="第三步 配置Arch Wsl"></a>第三步 配置Arch Wsl</h3><img src="/images/wsl傻瓜式安装/Arch wsl配置.jpg" style="width: 800px; height: 500px;">
+
+<p><strong>反正按照我这个改，保存是ctrl + x 回车</strong></p>
+<h3 id="第四步-配置相关参数"><a href="#第四步-配置相关参数" class="headerlink" title="第四步 配置相关参数"></a>第四步 配置相关参数</h3><p><strong>这里会提示配置  按照我的方法配置</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe//这个是启动后的显示</span><br><span class="line">[root@PC-NAME user]<span class="comment"># passwd       //这个是用户名输完名字输密码</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe</span><br><span class="line">[root@PC-NAME]<span class="comment"># EDITOR=nano visudo</span></span><br><span class="line">    %wheel      ALL=(ALL) ALL</span><br><span class="line">    (setup sudoers file.)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]<span class="comment"># useradd -m -G wheel -s /bin/bash &#123;username&#125;</span></span><br><span class="line">(add user)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># passwd &#123;username&#125;      //&#123;&#125;换成你的用户名,记住不需要打&#123;&#125;</span></span><br><span class="line">(<span class="built_in">set</span> default user password)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># exit  //退出</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe config --default-user &#123;username&#125;</span><br><span class="line">    (setting to default user)     //现在是root用户,不用加sudo</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [user@PC-NAME]$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]$ sudo pacman-key --populate</span><br></pre></td></tr></table></figure>
+<h3 id="第五步-安装完后操作"><a href="#第五步-安装完后操作" class="headerlink" title="第五步 安装完后操作"></a>第五步 安装完后操作</h3><p><strong>下面是<a href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/">换源</a></strong></p>
+<p><strong>打开nano /etc/pacman.d/mirrorlist 然后再最顶端添加 切记去##</strong></p>
+<img src="/images/wsl傻瓜式安装/Arch wsl配置文件.jpg" style="width: 800px; height: 500px;">
+<br>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Server = https:mirrors.tuna.tsinghua.edu.cn/archlinux/<span class="variable">$repo</span>/os/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
+**然后就可以 更新软件包缓存**
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman -Syy</span><br></pre></td></tr></table></figure>
+<h3 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
+<img src="/images/wsl傻瓜式安装/Arch wsl.jpg" style="width: 800px; height: 500px;">
+
+<h3 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h3><h3 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h3><h3 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h3>]]></content>
   </entry>
 </search>
