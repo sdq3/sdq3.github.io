@@ -124,17 +124,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>CSS 伪类选择器</title>
-    <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
-    <content><![CDATA[<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:first-child&#123;   //first-child意思是选中第一个</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">$        color: blue;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    p:nth-child(2)&#123;   //选中p1: 定位到父元素, 选择当前的第一个元素也就是选择当前p元素的父级元素, 选中父级元素的第一个, 并且是当前元素才生效</span><br><span class="line">$        color: yellow;   //黄色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    p:nth-of-type(2)&#123;   //nth-of-type意思是选中父类下元素的第二个类型</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;p&gt;p1&lt;/p&gt;</span><br><span class="line">$  &lt;p&gt;p2&lt;/p&gt;</span><br><span class="line">$  &lt;p&gt;p3&lt;/p&gt;</span><br><span class="line">$  &lt;ul&gt;</span><br><span class="line">$  &lt;li&gt;史迪奇骑士&lt;/li&gt;</span><br><span class="line">$  &lt;li&gt;史迪奇打手&lt;/li&gt;</span><br><span class="line">$  &lt;li&gt;史迪奇国王&lt;/li&gt;</span><br><span class="line">$  &lt;ul&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-
-]]></content>
-  </entry>
-  <entry>
     <title>Bodhi Linux安装教程(老电脑的福利)</title>
     <url>/Bodhi-Linux.html</url>
     <content><![CDATA[<h3 id="本人是2008年的联想电脑-Bodhi-Linux是我唯一能完美运行的带桌面的发行版"><a href="#本人是2008年的联想电脑-Bodhi-Linux是我唯一能完美运行的带桌面的发行版" class="headerlink" title="本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版"></a>本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版</h3><a id="more"></a>
@@ -171,15 +160,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>CSS 列表</title>
-    <url>/CSS%E5%88%97%E8%A1%A8.html</url>
-    <content><![CDATA[<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    ol li&#123;</span><br><span class="line">$          color: blue;</span><br><span class="line">$         &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;ol&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇法师&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇战士&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇辅助&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇坦克&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇刺客&lt;/li&gt;</span><br><span class="line">$  &lt;ol&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    ul li&#123;</span><br><span class="line">$        list-style: none;          //去掉原点</span><br><span class="line">$        list-style: cirle;         //空心圆</span><br><span class="line">$        list-style: decimal;       //数字</span><br><span class="line">$        list-style: square;        //正方形</span><br><span class="line">$          &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;ul&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇法师&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇战士&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇辅助&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇坦克&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇刺客&lt;/li&gt;</span><br><span class="line">$  &lt;ul&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    dl dd dt&#123;</span><br><span class="line">$          color: blue;</span><br><span class="line">$         &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;dl&gt;</span><br><span class="line">$      &lt;dt&gt;史迪奇近战&lt;/dt&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇战士&lt;/li&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇辅助&lt;/li&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇坦克&lt;/li&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇刺客&lt;/li&gt;</span><br><span class="line">$      &lt;dt&gt;史迪奇远程&lt;/dt&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇法师&lt;/li&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇射手&lt;/li&gt;</span><br><span class="line">$  &lt;dl&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
     <title>CSS 三种基本选择器</title>
     <url>/CSS%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
     <content><![CDATA[<h3 id="第一种-标签选择器"><a href="#第一种-标签选择器" class="headerlink" title="第一种  标签选择器"></a>第一种  标签选择器</h3><a id="more"></a>
@@ -196,6 +176,26 @@
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>标签选择器: 选择一类标签 标签名{}</strong></p>
 <p><strong>类/class选择器: 选择所有的class属性一致的标签, 跨标签 .类名{}</strong></p>
 <p><strong>id选择器: 全局唯一 id名{}</strong></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>CSS 列表</title>
+    <url>/CSS%E5%88%97%E8%A1%A8.html</url>
+    <content><![CDATA[<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    ol li&#123;</span><br><span class="line">$          color: blue;</span><br><span class="line">$         &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;ol&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇法师&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇战士&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇辅助&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇坦克&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇刺客&lt;/li&gt;</span><br><span class="line">$  &lt;ol&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    ul li&#123;</span><br><span class="line">$        list-style: none;          //去掉原点</span><br><span class="line">$        list-style: cirle;         //空心圆</span><br><span class="line">$        list-style: decimal;       //数字</span><br><span class="line">$        list-style: square;        //正方形</span><br><span class="line">$          &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;ul&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇法师&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇战士&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇辅助&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇坦克&lt;/li&gt;</span><br><span class="line">$       &lt;li&gt;史迪奇刺客&lt;/li&gt;</span><br><span class="line">$  &lt;ul&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    dl dd dt&#123;</span><br><span class="line">$          color: blue;</span><br><span class="line">$         &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;dl&gt;</span><br><span class="line">$      &lt;dt&gt;史迪奇近战&lt;/dt&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇战士&lt;/li&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇辅助&lt;/li&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇坦克&lt;/li&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇刺客&lt;/li&gt;</span><br><span class="line">$      &lt;dt&gt;史迪奇远程&lt;/dt&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇法师&lt;/li&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇射手&lt;/li&gt;</span><br><span class="line">$  &lt;dl&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>CSS 伪类选择器</title>
+    <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <content><![CDATA[<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:first-child&#123;   //first-child意思是选中第一个</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">$        color: blue;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    p:nth-child(2)&#123;   //选中p1: 定位到父元素, 选择当前的第一个元素也就是选择当前p元素的父级元素, 选中父级元素的第一个, 并且是当前元素才生效</span><br><span class="line">$        color: yellow;   //黄色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    p:nth-of-type(2)&#123;   //nth-of-type意思是选中父类下元素的第二个类型</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;p&gt;p1&lt;/p&gt;</span><br><span class="line">$  &lt;p&gt;p2&lt;/p&gt;</span><br><span class="line">$  &lt;p&gt;p3&lt;/p&gt;</span><br><span class="line">$  &lt;ul&gt;</span><br><span class="line">$  &lt;li&gt;史迪奇骑士&lt;/li&gt;</span><br><span class="line">$  &lt;li&gt;史迪奇打手&lt;/li&gt;</span><br><span class="line">$  &lt;li&gt;史迪奇国王&lt;/li&gt;</span><br><span class="line">$  &lt;ul&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
 ]]></content>
   </entry>
   <entry>
@@ -235,45 +235,6 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color:blue;     //颜色</span><br><span class="line">$        text-align: center;  //文本对齐的方式 </span><br><span class="line">$        text-indent: 2em;     //首行缩进</span><br><span class="line">$        line-height: 20px;    //行高 </span><br><span class="line">$        text-decoration: overline;   //上划线</span><br><span class="line">$        text-decoration: line-through;   //中划线</span><br><span class="line">$        text-decoration: underline   //下划线</span><br><span class="line">$      &#125;</span><br><span class="line">$     img,span&#123;</span><br><span class="line">$               vertical-align: middle;</span><br><span class="line">$            &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$&lt;h1&gt;史迪奇的王国&lt;/h1&gt;</span><br><span class="line">$ &lt;p&gt;</span><br><span class="line">$ &lt;img src=<span class="string">&quot;images/x.jpg&quot;</span>&gt;</span><br><span class="line">$ &lt;span&gt;史迪奇&lt;/span&gt;</span><br><span class="line">$ &lt;/p&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="超链接伪类"><a href="#超链接伪类" class="headerlink" title="超链接伪类"></a>超链接伪类</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    //默认颜色</span><br><span class="line">$     a&#123;  </span><br><span class="line">$          text-decoration: none;</span><br><span class="line">$          color: <span class="comment">#000000;</span></span><br><span class="line">$       &#125;  </span><br><span class="line">$     //鼠标悬浮状态 </span><br><span class="line">$     a:hover&#123;  </span><br><span class="line">$          color: blue;</span><br><span class="line">$       &#125;     </span><br><span class="line">$     //鼠标按住未释放状态 </span><br><span class="line">$     a:active&#123;  </span><br><span class="line">$          color: rad;</span><br><span class="line">$       &#125;      </span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;p&gt;</span><br><span class="line">$&lt;h1&gt;史迪奇的王国&lt;/h1&gt;</span><br><span class="line">$ &lt;a&gt;史迪奇&lt;a&gt;</span><br><span class="line">$ &lt;/p&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    //默认颜色</span><br><span class="line">$     <span class="comment">#sdq&#123;  </span></span><br><span class="line">$          text-shawdow: blue 10px 10px 10px;    //text-shawdow是阴影, 阴影颜色, 水平偏移, 垂直偏移, 阴影半径</span><br><span class="line">$       &#125;       </span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;p&gt;</span><br><span class="line">$&lt;h1&gt;史迪奇的王国&lt;/h1&gt;</span><br><span class="line">$ &lt;a id=<span class="string">&quot;sdq&quot;</span>&gt;史迪奇&lt;a&gt;</span><br><span class="line">$ &lt;/p&gt;</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
-    <title>CSS-边距-边框-阴影-浮动-定位-透明-z-index-动画</title>
-    <url>/CSS8.html</url>
-    <content><![CDATA[<h3 id="内外边距"><a href="#内外边距" class="headerlink" title="内外边距"></a>内外边距</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$      &lt;style&gt;</span><br><span class="line">$          div&#123;</span><br><span class="line">$             /* margin是外边距 1 2 3 4 分别对应 上 下 左 右  */</span><br><span class="line">$             margin:1 2 3 4; </span><br><span class="line">$             /* padding是内边距 上下左右的边距都是33px */</span><br><span class="line">$             padding:33px;       </span><br><span class="line">$              &#125;</span><br><span class="line">$        &lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<p>![](/images/BodhiLinux安装教程(</p>
-<p>)/1.jpg)</p>
-<h3 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$&lt;style&gt;</span><br><span class="line">$  div&#123;</span><br><span class="line">$       /* border是边框 3px是边框的粗细 soshed是边框的样式 black是边框的颜色 */</span><br><span class="line">$       border: 3px soshed black;</span><br><span class="line">$        &#125;</span><br><span class="line">$&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a>圆角边框</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$&lt;style&gt;</span><br><span class="line">$  div&#123;</span><br><span class="line">$       /* border是边框 10px是边框的粗细 solid是边框的样式 blue是边框的颜色 */</span><br><span class="line">$       border: 10px solid blue;</span><br><span class="line">$       border-radius: 100px;  //100px这是圆角边框 这个值可以随便改很好玩的</span><br><span class="line">$        &#125;</span><br><span class="line">$&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$&lt;style&gt; </span><br><span class="line">$  div&#123;</span><br><span class="line">$     width:300px;  //宽</span><br><span class="line">$     height:100px;  //高</span><br><span class="line">$     background-color:<span class="comment">#ff9900;  //颜色</span></span><br><span class="line">$     -moz-box-shadow: 10px 10px 5px <span class="comment">#888888; // 老的 Firefox </span></span><br><span class="line">$     box-shadow: 10px 10px 5px <span class="comment">#888888; //box-shadow 属性向框添加一个或多个阴影</span></span><br><span class="line">$     &#125;</span><br><span class="line">$&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$&lt;style&gt; </span><br><span class="line">$  div&#123;</span><br><span class="line">$     display: inline-block;  //将对象呈现为inline对象，但是对象的作为daoblock对象呈现</span><br><span class="line">$     <span class="built_in">float</span>:right;  //<span class="built_in">float</span>浮动 right右</span><br><span class="line">$     clear: right;  //右侧不允许有浮动元素</span><br><span class="line">$     clear: left;  //左侧不允许有浮动元素</span><br><span class="line">$     clear: both;  //两侧都不允许有浮动元素</span><br><span class="line">$     &#125;</span><br><span class="line">$&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<!-- **解决方法 增加父级元素的高度**
-**解决方法 增加一个空的div标签, 清除浮动** -->
-<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$&lt;style&gt; </span><br><span class="line">$  div&#123;</span><br><span class="line">$     //固定定位</span><br><span class="line">$     position: fixed;</span><br><span class="line">$     //绝对定位    没有父级元素定位的前提下, 相对浏览器定位</span><br><span class="line">$     position: absolute;</span><br><span class="line">$     //相对定位</span><br><span class="line">$     position: relative;</span><br><span class="line">$     &#125;</span><br><span class="line">$&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="透明"><a href="#透明" class="headerlink" title="透明"></a>透明</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$&lt;style&gt; </span><br><span class="line">$  div&#123;</span><br><span class="line">$      opacity: 0.5;</span><br><span class="line">$     &#125;</span><br><span class="line">$&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="z-index"><a href="#z-index" class="headerlink" title="z-index"></a>z-index</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$&lt;style&gt;</span><br><span class="line">$   p&#123;</span><br><span class="line">$       position:absolute;  //绝对定位</span><br><span class="line">$       left:0px;  //左侧</span><br><span class="line">$       top:0px;   //top规定元素的顶部边缘</span><br><span class="line">$       z-index:-1;</span><br><span class="line">$   &#125;</span><br><span class="line">$&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h3><style> 
-$   div {
-$       width: 100px;  //宽
-$       height: 100px;  //高
-$       background-color: red; //颜色
-$       animation-name: example;  //animation-name 属性为 @keyframes 动画规定名称
-$       animation-duration: 4s; //4秒
-$   }
-$
-$  @keyframes example {    //animation-name 属性为 @keyframes 动画规定名称
-$           from {background-color: red;}  //变化颜色
-$           to {background-color: yellow;}  //最后颜色
-$            }
-$</style>
-
-
-
-
-
-
-
 ]]></content>
   </entry>
   <entry>
@@ -569,6 +530,45 @@ $</style>
 <h3 id="只要input都需要value值和name值-这样就可以养成好习惯"><a href="#只要input都需要value值和name值-这样就可以养成好习惯" class="headerlink" title="只要input都需要value值和name值, 这样就可以养成好习惯"></a>只要input都需要value值和name值, 这样就可以养成好习惯</h3>]]></content>
   </entry>
   <entry>
+    <title>CSS-边距-边框-阴影-浮动-定位-透明-z-index-动画</title>
+    <url>/CSS8.html</url>
+    <content><![CDATA[<h3 id="内外边距"><a href="#内外边距" class="headerlink" title="内外边距"></a>内外边距</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$      &lt;style&gt;</span><br><span class="line">$          div&#123;</span><br><span class="line">$             /* margin是外边距 1 2 3 4 分别对应 上 下 左 右  */</span><br><span class="line">$             margin:1 2 3 4; </span><br><span class="line">$             /* padding是内边距 上下左右的边距都是33px */</span><br><span class="line">$             padding:33px;       </span><br><span class="line">$              &#125;</span><br><span class="line">$        &lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>![](/images/BodhiLinux安装教程(</p>
+<p>)/1.jpg)</p>
+<h3 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$&lt;style&gt;</span><br><span class="line">$  div&#123;</span><br><span class="line">$       /* border是边框 3px是边框的粗细 soshed是边框的样式 black是边框的颜色 */</span><br><span class="line">$       border: 3px soshed black;</span><br><span class="line">$        &#125;</span><br><span class="line">$&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a>圆角边框</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$&lt;style&gt;</span><br><span class="line">$  div&#123;</span><br><span class="line">$       /* border是边框 10px是边框的粗细 solid是边框的样式 blue是边框的颜色 */</span><br><span class="line">$       border: 10px solid blue;</span><br><span class="line">$       border-radius: 100px;  //100px这是圆角边框 这个值可以随便改很好玩的</span><br><span class="line">$        &#125;</span><br><span class="line">$&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$&lt;style&gt; </span><br><span class="line">$  div&#123;</span><br><span class="line">$     width:300px;  //宽</span><br><span class="line">$     height:100px;  //高</span><br><span class="line">$     background-color:<span class="comment">#ff9900;  //颜色</span></span><br><span class="line">$     -moz-box-shadow: 10px 10px 5px <span class="comment">#888888; // 老的 Firefox </span></span><br><span class="line">$     box-shadow: 10px 10px 5px <span class="comment">#888888; //box-shadow 属性向框添加一个或多个阴影</span></span><br><span class="line">$     &#125;</span><br><span class="line">$&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$&lt;style&gt; </span><br><span class="line">$  div&#123;</span><br><span class="line">$     display: inline-block;  //将对象呈现为inline对象，但是对象的作为daoblock对象呈现</span><br><span class="line">$     <span class="built_in">float</span>:right;  //<span class="built_in">float</span>浮动 right右</span><br><span class="line">$     clear: right;  //右侧不允许有浮动元素</span><br><span class="line">$     clear: left;  //左侧不允许有浮动元素</span><br><span class="line">$     clear: both;  //两侧都不允许有浮动元素</span><br><span class="line">$     &#125;</span><br><span class="line">$&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<!-- **解决方法 增加父级元素的高度**
+**解决方法 增加一个空的div标签, 清除浮动** -->
+<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$&lt;style&gt; </span><br><span class="line">$  div&#123;</span><br><span class="line">$     //固定定位</span><br><span class="line">$     position: fixed;</span><br><span class="line">$     //绝对定位    没有父级元素定位的前提下, 相对浏览器定位</span><br><span class="line">$     position: absolute;</span><br><span class="line">$     //相对定位</span><br><span class="line">$     position: relative;</span><br><span class="line">$     &#125;</span><br><span class="line">$&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="透明"><a href="#透明" class="headerlink" title="透明"></a>透明</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$&lt;style&gt; </span><br><span class="line">$  div&#123;</span><br><span class="line">$      opacity: 0.5;</span><br><span class="line">$     &#125;</span><br><span class="line">$&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="z-index"><a href="#z-index" class="headerlink" title="z-index"></a>z-index</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$&lt;style&gt;</span><br><span class="line">$   p&#123;</span><br><span class="line">$       position:absolute;  //绝对定位</span><br><span class="line">$       left:0px;  //左侧</span><br><span class="line">$       top:0px;   //top规定元素的顶部边缘</span><br><span class="line">$       z-index:-1;</span><br><span class="line">$   &#125;</span><br><span class="line">$&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h3><style> 
+$   div {
+$       width: 100px;  //宽
+$       height: 100px;  //高
+$       background-color: red; //颜色
+$       animation-name: example;  //animation-name 属性为 @keyframes 动画规定名称
+$       animation-duration: 4s; //4秒
+$   }
+$
+$  @keyframes example {    //animation-name 属性为 @keyframes 动画规定名称
+$           from {background-color: red;}  //变化颜色
+$           to {background-color: yellow;}  //最后颜色
+$            }
+$</style>
+
+
+
+
+
+
+
+]]></content>
+  </entry>
+  <entry>
     <title>HTML iframe内联框架</title>
     <url>/HTML-iframe.html</url>
     <content><![CDATA[<h3 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h3><a id="more"></a>
@@ -578,6 +578,17 @@ $</style>
 <h3 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h3><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;demo_iframe.html&quot;</span> frameborder=<span class="string">&quot;0&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;xxx/xxx.html&quot;</span> name=<span class="string">&quot;iframe_a&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;iframe_a&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>HTML表格</title>
+    <url>/HTML.html</url>
+    <content><![CDATA[<h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><a id="more"></a>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ tr  //行</span><br><span class="line">$ td  //列</span><br></pre></td></tr></table></figure>
+
+<h3 id="跨列"><a href="#跨列" class="headerlink" title="跨列"></a>跨列</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;table&gt;</span><br><span class="line">$    &lt;tr&gt;</span><br><span class="line">$        &lt;tb cospan=<span class="string">&quot;2&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">$     &lt;tr&gt;</span><br><span class="line">$ &lt;/table&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="跨行"><a href="#跨行" class="headerlink" title="跨行"></a>跨行</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;table&gt;</span><br><span class="line">$    &lt;tr&gt;</span><br><span class="line">$        &lt;tb rowspan=<span class="string">&quot;2&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">$     &lt;tr&gt;</span><br><span class="line">$ &lt;/table&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
   </entry>
   <entry>
     <title>关于Hexo我所踩过的坑和小白安装教程</title>
@@ -601,17 +612,6 @@ $</style>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ permalink: :id.html   //填入:id.html</span><br></pre></td></tr></table></figure>
 <p><strong>然后在指定位置填入id即可 数字随意，只要保证每篇文章里面的数字不要一样就行</strong></p>
 <img src="/images/Hexo博客/案例.jpg">]]></content>
-  </entry>
-  <entry>
-    <title>HTML表格</title>
-    <url>/HTML.html</url>
-    <content><![CDATA[<h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><a id="more"></a>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ tr  //行</span><br><span class="line">$ td  //列</span><br></pre></td></tr></table></figure>
-
-<h3 id="跨列"><a href="#跨列" class="headerlink" title="跨列"></a>跨列</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;table&gt;</span><br><span class="line">$    &lt;tr&gt;</span><br><span class="line">$        &lt;tb cospan=<span class="string">&quot;2&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">$     &lt;tr&gt;</span><br><span class="line">$ &lt;/table&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="跨行"><a href="#跨行" class="headerlink" title="跨行"></a>跨行</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;table&gt;</span><br><span class="line">$    &lt;tr&gt;</span><br><span class="line">$        &lt;tb rowspan=<span class="string">&quot;2&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">$     &lt;tr&gt;</span><br><span class="line">$ &lt;/table&gt;</span><br></pre></td></tr></table></figure>
-]]></content>
   </entry>
   <entry>
     <title>Java Swing 图形界面速背表(未完工)</title>
@@ -709,14 +709,6 @@ $</style>
 <h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$   Car c = new Car();   //先创建一辆车</span><br><span class="line">$   c.fly();  //.表示调用  众所周知所以车都是可以飞的</span><br><span class="line">$   c.diving();  //.表示调用  众所周知所以车都是可以下水的</span><br><span class="line">$   c.color = <span class="string">&quot;透明&quot;</span>;  //我的车是透明色</span><br><span class="line">$   c.wheel = 5; //众所周知所以车都是5个轮子</span><br><span class="line">$   c.seat = 9;  //我的车 里面坐4个 车前绑1个人用来刹车 车顶坐1个人 剩下3个人的拿板拿雨伞凳坐后车厢 尾气管那面绑上1个人 用来吸收尾气</span><br><span class="line">$   System.out.println(c.color);</span><br><span class="line">$   System.out.println(c.wheel);</span><br><span class="line">$   System.out.println(c.seat);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
-    <title>Java面向对象思维之getter和setter(作用)</title>
-    <url>/Object-oriented-getter-setter.html</url>
-    <content><![CDATA[<h3 id="getter"><a href="#getter" class="headerlink" title="getter"></a>getter</h3><a id="more"></a>
-<p><strong>主要是给成员变量赋值, 做一定的保护</strong></p>
-<h3 id="setter"><a href="#setter" class="headerlink" title="setter"></a>setter</h3><p><strong>从成员变量中获取数据</strong></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Java面向对象思维</title>
     <url>/Object-oriented-this.html</url>
     <content><![CDATA[<h3 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
@@ -730,6 +722,24 @@ $</style>
 <h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$ 	  Car c1 = new Car();   //先创建一辆车</span><br><span class="line">$ 	  c1.color = <span class="string">&quot;透明&quot;</span>;  //我的车是透明色</span><br><span class="line">$ 	  c1.wheel = 5;  //众所周知所以车都是5个轮子</span><br><span class="line">$      c1.seat = 9; //我的车 里面坐4个 车前绑1个人用来刹车 车顶坐1个人</span><br><span class="line">$      c1.run();</span><br><span class="line">$      c1.fly();</span><br><span class="line">$      c1.diving();</span><br><span class="line">$</span><br><span class="line">$      Car c2 = new Car();   //先创建一辆车</span><br><span class="line">$	  c2.color = <span class="string">&quot;黄&quot;</span>;  //我的车是屎黄</span><br><span class="line">$	  c2.wheel = 5;  //众所周知所以车都是5个轮子</span><br><span class="line">$      c2.seat = 9; //我的车 里面坐4个 车前绑1个人用来刹车 车顶坐1个人</span><br><span class="line">$      c2.run();</span><br><span class="line">$      c2.fly();</span><br><span class="line">$      c2.diving();</span><br><span class="line">$	&#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h3><p><strong>this: 当前类的对象</strong><br><strong>this可以在方法内部获取到对象中的属性信息</strong><br><strong>this还可以区分局部变量和成员变量</strong></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Java面向对象思维之getter和setter(作用)</title>
+    <url>/Object-oriented-getter-setter.html</url>
+    <content><![CDATA[<h3 id="getter"><a href="#getter" class="headerlink" title="getter"></a>getter</h3><a id="more"></a>
+<p><strong>主要是给成员变量赋值, 做一定的保护</strong></p>
+<h3 id="setter"><a href="#setter" class="headerlink" title="setter"></a>setter</h3><p><strong>从成员变量中获取数据</strong></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Java面向对象思维之构造方法需的重载</title>
+    <url>/Object-oriented-constructor-heavy-load.html</url>
+    <content><![CDATA[<h3 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color,  int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color, int wheel, int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this(color,seat);  //this还可以调用当前累中其他的构造方法</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h3>]]></content>
   </entry>
   <entry>
     <title>Java面向对象思维之构造方法</title>
@@ -746,14 +756,15 @@ $</style>
 ]]></content>
   </entry>
   <entry>
-    <title>Java面向对象思维之构造方法需的重载</title>
-    <url>/Object-oriented-constructor-heavy-load.html</url>
-    <content><![CDATA[<h3 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color,  int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color, int wheel, int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this(color,seat);  //this还可以调用当前累中其他的构造方法</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h3>]]></content>
+    <title>SQL Server T-SQL 存储过程</title>
+    <url>/SQL-storage.html</url>
+    <content><![CDATA[<h3 id="创建变量"><a href="#创建变量" class="headerlink" title="创建变量"></a>创建变量</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">declare</span> 变量名 数据类型 常量</span><br></pre></td></tr></table></figure>
+<h3 id="查询变量"><a href="#查询变量" class="headerlink" title="查询变量"></a>查询变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ select 变量名</span><br></pre></td></tr></table></figure>
+<h3 id="创建存储过程"><a href="#创建存储过程" class="headerlink" title="创建存储过程"></a>创建存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ create Procedure 存储过程名 as select 字段 from 表名</span><br></pre></td></tr></table></figure>
+<h3 id="执行存储过程"><a href="#执行存储过程" class="headerlink" title="执行存储过程"></a>执行存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ EXECUTE 存储过程名</span><br></pre></td></tr></table></figure>
+<h3 id="删除存储过程"><a href="#删除存储过程" class="headerlink" title="删除存储过程"></a>删除存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ drop proc 存储过程名</span><br></pre></td></tr></table></figure>
+<h3 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h3>]]></content>
   </entry>
   <entry>
     <title>Linux命令(未完工)</title>
@@ -770,17 +781,6 @@ $
 ``` -->
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>SQL Server T-SQL 存储过程</title>
-    <url>/SQL-storage.html</url>
-    <content><![CDATA[<h3 id="创建变量"><a href="#创建变量" class="headerlink" title="创建变量"></a>创建变量</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">declare</span> 变量名 数据类型 常量</span><br></pre></td></tr></table></figure>
-<h3 id="查询变量"><a href="#查询变量" class="headerlink" title="查询变量"></a>查询变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ select 变量名</span><br></pre></td></tr></table></figure>
-<h3 id="创建存储过程"><a href="#创建存储过程" class="headerlink" title="创建存储过程"></a>创建存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ create Procedure 存储过程名 as select 字段 from 表名</span><br></pre></td></tr></table></figure>
-<h3 id="执行存储过程"><a href="#执行存储过程" class="headerlink" title="执行存储过程"></a>执行存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ EXECUTE 存储过程名</span><br></pre></td></tr></table></figure>
-<h3 id="删除存储过程"><a href="#删除存储过程" class="headerlink" title="删除存储过程"></a>删除存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ drop proc 存储过程名</span><br></pre></td></tr></table></figure>
-<h3 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h3>]]></content>
   </entry>
   <entry>
     <title>SQL Server T-SQL 视图</title>
