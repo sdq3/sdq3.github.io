@@ -124,25 +124,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>CSS 三种基本选择器</title>
-    <url>/CSS%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
-    <content><![CDATA[<h3 id="第一种-标签选择器"><a href="#第一种-标签选择器" class="headerlink" title="第一种  标签选择器"></a>第一种  标签选择器</h3><a id="more"></a>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    p&#123;</span><br><span class="line">$        color: blue;   //蓝色字体</span><br><span class="line">$        background: red;    //设置背景图颜色</span><br><span class="line">$        borde-radius: 24px;    //设置圆角边框</span><br><span class="line">$        font-size: 80px;    //设置字体大小</span><br><span class="line">$      &#125;</span><br><span class="line">$  &lt;p class=<span class="string">&quot;sdq1&quot;</span>&gt;史迪奇骑士&lt;/p&gt;</span><br><span class="line">$  &lt;p class=<span class="string">&quot;sdq2&quot;</span>&gt;史迪奇打手&lt;/p&gt;</span><br><span class="line">$  &lt;p&gt;史迪奇国王&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="第二种-类-class-选择器"><a href="#第二种-类-class-选择器" class="headerlink" title="第二种 类 class 选择器"></a>第二种 类 class 选择器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    .sdq1&#123;</span><br><span class="line">$        color: blue;   //蓝色字体</span><br><span class="line">$        background: red;    //设置背景图颜色</span><br><span class="line">$        borde-radius: 24px;    //设置圆角边框</span><br><span class="line">$        font-size: 80px;    //设置字体大小</span><br><span class="line">$    &#125;</span><br><span class="line">$    .sdq2&#123;</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;h1 class=<span class="string">&quot;sdq1&quot;</span>&gt;史迪奇骑士&lt;h1&gt;</span><br><span class="line">$  &lt;h1 class=<span class="string">&quot;sdq2&quot;</span>&gt;史迪奇打手&lt;h1&gt;</span><br><span class="line">$  &lt;h1&gt;史迪奇国王&lt;h1&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>类选择器 .class的名称{}</strong></p>
-<p><strong>好处: 可以多个标签归类, 是同一个class, 可以复用</strong></p>
-<h3 id="第三种-id选择器"><a href="#第三种-id选择器" class="headerlink" title="第三种 id选择器"></a>第三种 id选择器</h3><p><strong>id选择器 #id的名称{}</strong></p>
-<p><strong>id必须保证全局唯一</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    <span class="comment">#sdq1&#123;</span></span><br><span class="line">$        color: blue;   //蓝色字体</span><br><span class="line">$        background: red;    //设置背景图颜色</span><br><span class="line">$        borde-radius: 24px;    //设置圆角边框</span><br><span class="line">$        font-size: 80px;    //设置字体大小</span><br><span class="line">$    &#125;</span><br><span class="line">$    .sdq2&#123;</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;h1 id=<span class="string">&quot;sdq1&quot;</span>&gt;史迪奇骑士&lt;h1&gt;</span><br><span class="line">$  &lt;h1 class=<span class="string">&quot;sdq2&quot;</span>&gt;史迪奇打手&lt;h1&gt;</span><br><span class="line">$  &lt;h1&gt;史迪奇国王&lt;h1&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="优先级-id选择器-gt-class选择器-gt-标签选择器"><a href="#优先级-id选择器-gt-class选择器-gt-标签选择器" class="headerlink" title="优先级: id选择器 &gt; class选择器&gt; 标签选择器"></a>优先级: id选择器 &gt; class选择器&gt; 标签选择器</h3><p><strong>优先级不遵循就近原则, 是固定的</strong></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>标签选择器: 选择一类标签 标签名{}</strong></p>
-<p><strong>类/class选择器: 选择所有的class属性一致的标签, 跨标签 .类名{}</strong></p>
-<p><strong>id选择器: 全局唯一 id名{}</strong></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Bodhi Linux安装教程(老电脑的福利)</title>
     <url>/Bodhi-Linux.html</url>
     <content><![CDATA[<h3 id="本人是2008年的联想电脑-Bodhi-Linux是我唯一能完美运行的带桌面的发行版"><a href="#本人是2008年的联想电脑-Bodhi-Linux是我唯一能完美运行的带桌面的发行版" class="headerlink" title="本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版"></a>本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版</h3><a id="more"></a>
@@ -176,6 +157,25 @@
 <p><strong>至于为什么要带桌面的发行版, 因为要日用偶尔看看B站什么的</strong></p>
 <p><strong>关于这台电脑用的硬盘 大小80G 有9724个坏道 拆掉坏掉的戴尔一条三星的DDR2 才有2G内存可以体验</strong></p>
 <p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E5%9D%8F%E9%81%93.jpg"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>CSS 三种基本选择器</title>
+    <url>/CSS%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <content><![CDATA[<h3 id="第一种-标签选择器"><a href="#第一种-标签选择器" class="headerlink" title="第一种  标签选择器"></a>第一种  标签选择器</h3><a id="more"></a>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    p&#123;</span><br><span class="line">$        color: blue;   //蓝色字体</span><br><span class="line">$        background: red;    //设置背景图颜色</span><br><span class="line">$        borde-radius: 24px;    //设置圆角边框</span><br><span class="line">$        font-size: 80px;    //设置字体大小</span><br><span class="line">$      &#125;</span><br><span class="line">$  &lt;p class=<span class="string">&quot;sdq1&quot;</span>&gt;史迪奇骑士&lt;/p&gt;</span><br><span class="line">$  &lt;p class=<span class="string">&quot;sdq2&quot;</span>&gt;史迪奇打手&lt;/p&gt;</span><br><span class="line">$  &lt;p&gt;史迪奇国王&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="第二种-类-class-选择器"><a href="#第二种-类-class-选择器" class="headerlink" title="第二种 类 class 选择器"></a>第二种 类 class 选择器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    .sdq1&#123;</span><br><span class="line">$        color: blue;   //蓝色字体</span><br><span class="line">$        background: red;    //设置背景图颜色</span><br><span class="line">$        borde-radius: 24px;    //设置圆角边框</span><br><span class="line">$        font-size: 80px;    //设置字体大小</span><br><span class="line">$    &#125;</span><br><span class="line">$    .sdq2&#123;</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;h1 class=<span class="string">&quot;sdq1&quot;</span>&gt;史迪奇骑士&lt;h1&gt;</span><br><span class="line">$  &lt;h1 class=<span class="string">&quot;sdq2&quot;</span>&gt;史迪奇打手&lt;h1&gt;</span><br><span class="line">$  &lt;h1&gt;史迪奇国王&lt;h1&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>类选择器 .class的名称{}</strong></p>
+<p><strong>好处: 可以多个标签归类, 是同一个class, 可以复用</strong></p>
+<h3 id="第三种-id选择器"><a href="#第三种-id选择器" class="headerlink" title="第三种 id选择器"></a>第三种 id选择器</h3><p><strong>id选择器 #id的名称{}</strong></p>
+<p><strong>id必须保证全局唯一</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    <span class="comment">#sdq1&#123;</span></span><br><span class="line">$        color: blue;   //蓝色字体</span><br><span class="line">$        background: red;    //设置背景图颜色</span><br><span class="line">$        borde-radius: 24px;    //设置圆角边框</span><br><span class="line">$        font-size: 80px;    //设置字体大小</span><br><span class="line">$    &#125;</span><br><span class="line">$    .sdq2&#123;</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;h1 id=<span class="string">&quot;sdq1&quot;</span>&gt;史迪奇骑士&lt;h1&gt;</span><br><span class="line">$  &lt;h1 class=<span class="string">&quot;sdq2&quot;</span>&gt;史迪奇打手&lt;h1&gt;</span><br><span class="line">$  &lt;h1&gt;史迪奇国王&lt;h1&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="优先级-id选择器-gt-class选择器-gt-标签选择器"><a href="#优先级-id选择器-gt-class选择器-gt-标签选择器" class="headerlink" title="优先级: id选择器 &gt; class选择器&gt; 标签选择器"></a>优先级: id选择器 &gt; class选择器&gt; 标签选择器</h3><p><strong>优先级不遵循就近原则, 是固定的</strong></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>标签选择器: 选择一类标签 标签名{}</strong></p>
+<p><strong>类/class选择器: 选择所有的class属性一致的标签, 跨标签 .类名{}</strong></p>
+<p><strong>id选择器: 全局唯一 id名{}</strong></p>
 ]]></content>
   </entry>
   <entry>
@@ -238,6 +238,21 @@
 ]]></content>
   </entry>
   <entry>
+    <title>CSS 三种导入样式</title>
+    <url>/CSS-Import-styles.html</url>
+    <content><![CDATA[<h3 id="第一种-行内样式"><a href="#第一种-行内样式" class="headerlink" title="第一种  行内样式"></a>第一种  行内样式</h3><a id="more"></a>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;h1 style=<span class="string">&quot;color: red&quot;</span>&gt;行内样式&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E8%A1%8C%E5%86%85%E6%A0%B7%E5%BC%8F.jpg"></p>
+<h3 id="第二种-内部样式"><a href="#第二种-内部样式" class="headerlink" title="第二种 内部样式"></a>第二种 内部样式</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color: blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E5%86%85%E9%83%A8%E6%A0%B7%E5%BC%8F.jpg"></p>
+<h3 id="第三种-外部样式"><a href="#第三种-外部样式" class="headerlink" title="第三种 外部样式"></a>第三种 外部样式</h3><p><strong>另外一个css页面</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   &lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;css/style.css&quot;</span>&gt;    //链接式  属于html</span><br><span class="line">$    @import url(<span class="string">&quot;css/style.css&quot;</span>)          //导入式  属于CSS2.1 了解就可以</span><br><span class="line">$ &lt;style&gt;</span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color: blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E5%A4%96%E9%83%A8%E6%A0%B7%E5%BC%8F.jpg"></p>
+<h3 id="优先级-行内样式-gt-内部样式-gt-外部样式"><a href="#优先级-行内样式-gt-内部样式-gt-外部样式" class="headerlink" title="优先级: 行内样式 &gt; 内部样式 &gt; 外部样式"></a>优先级: 行内样式 &gt; 内部样式 &gt; 外部样式</h3><p><strong>优先级看就近原则</strong></p>
+]]></content>
+  </entry>
+  <entry>
     <title>CSS-边距-边框-阴影-浮动-定位-透明-z-index-动画</title>
     <url>/CSS8.html</url>
     <content><![CDATA[<h3 id="内外边距"><a href="#内外边距" class="headerlink" title="内外边距"></a>内外边距</h3><a id="more"></a>
@@ -274,21 +289,6 @@ $</style>
 
 
 
-]]></content>
-  </entry>
-  <entry>
-    <title>CSS 三种导入样式</title>
-    <url>/CSS-Import-styles.html</url>
-    <content><![CDATA[<h3 id="第一种-行内样式"><a href="#第一种-行内样式" class="headerlink" title="第一种  行内样式"></a>第一种  行内样式</h3><a id="more"></a>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;h1 style=<span class="string">&quot;color: red&quot;</span>&gt;行内样式&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E8%A1%8C%E5%86%85%E6%A0%B7%E5%BC%8F.jpg"></p>
-<h3 id="第二种-内部样式"><a href="#第二种-内部样式" class="headerlink" title="第二种 内部样式"></a>第二种 内部样式</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color: blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E5%86%85%E9%83%A8%E6%A0%B7%E5%BC%8F.jpg"></p>
-<h3 id="第三种-外部样式"><a href="#第三种-外部样式" class="headerlink" title="第三种 外部样式"></a>第三种 外部样式</h3><p><strong>另外一个css页面</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   &lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;css/style.css&quot;</span>&gt;    //链接式  属于html</span><br><span class="line">$    @import url(<span class="string">&quot;css/style.css&quot;</span>)          //导入式  属于CSS2.1 了解就可以</span><br><span class="line">$ &lt;style&gt;</span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color: blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E5%A4%96%E9%83%A8%E6%A0%B7%E5%BC%8F.jpg"></p>
-<h3 id="优先级-行内样式-gt-内部样式-gt-外部样式"><a href="#优先级-行内样式-gt-内部样式-gt-外部样式" class="headerlink" title="优先级: 行内样式 &gt; 内部样式 &gt; 外部样式"></a>优先级: 行内样式 &gt; 内部样式 &gt; 外部样式</h3><p><strong>优先级看就近原则</strong></p>
 ]]></content>
   </entry>
   <entry>
@@ -697,6 +697,14 @@ $</style>
 ]]></content>
   </entry>
   <entry>
+    <title>Java面向对象思维之getter和setter(作用)</title>
+    <url>/Object-oriented-getter-setter.html</url>
+    <content><![CDATA[<h3 id="getter"><a href="#getter" class="headerlink" title="getter"></a>getter</h3><a id="more"></a>
+<p><strong>主要是给成员变量赋值, 做一定的保护</strong></p>
+<h3 id="setter"><a href="#setter" class="headerlink" title="setter"></a>setter</h3><p><strong>从成员变量中获取数据</strong></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Java面向对象思维</title>
     <url>/Object-oriented.html</url>
     <content><![CDATA[<h3 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
@@ -707,14 +715,6 @@ $</style>
 <p><strong>例如车可以潜水</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public void <span class="function"><span class="title">diving</span></span>()&#123;</span><br><span class="line">$ System.out.println(<span class="string">&quot;车可以下水&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$   Car c = new Car();   //先创建一辆车</span><br><span class="line">$   c.fly();  //.表示调用  众所周知所以车都是可以飞的</span><br><span class="line">$   c.diving();  //.表示调用  众所周知所以车都是可以下水的</span><br><span class="line">$   c.color = <span class="string">&quot;透明&quot;</span>;  //我的车是透明色</span><br><span class="line">$   c.wheel = 5; //众所周知所以车都是5个轮子</span><br><span class="line">$   c.seat = 9;  //我的车 里面坐4个 车前绑1个人用来刹车 车顶坐1个人 剩下3个人的拿板拿雨伞凳坐后车厢 尾气管那面绑上1个人 用来吸收尾气</span><br><span class="line">$   System.out.println(c.color);</span><br><span class="line">$   System.out.println(c.wheel);</span><br><span class="line">$   System.out.println(c.seat);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
-    <title>Java面向对象思维之getter和setter(作用)</title>
-    <url>/Object-oriented-getter-setter.html</url>
-    <content><![CDATA[<h3 id="getter"><a href="#getter" class="headerlink" title="getter"></a>getter</h3><a id="more"></a>
-<p><strong>主要是给成员变量赋值, 做一定的保护</strong></p>
-<h3 id="setter"><a href="#setter" class="headerlink" title="setter"></a>setter</h3><p><strong>从成员变量中获取数据</strong></p>
-]]></content>
   </entry>
   <entry>
     <title>Java面向对象思维</title>
@@ -746,6 +746,22 @@ $</style>
 ]]></content>
   </entry>
   <entry>
+    <title>Linux命令(未完工)</title>
+    <url>/Linux-command.html</url>
+    <content><![CDATA[<blockquote>
+<h3 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h3></blockquote>
+<a id="more"></a>
+<p><strong>命令英文原意: list</strong><br><strong>命令所在路径: /bin/ls</strong><br><strong>执行权限: 所有用户</strong><br><strong>功能描述: 显示目录文件</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ls // 显示当前目录下文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> 目录名 // 显示指定目录下文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -l // 长格式显示目录文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -l 文件名 // 长格式显示指定文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -a // 显示所有文件// 包含隐藏文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -al // 长格式显示当前目录下所有文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -h // 文件大小显示为常见大小单位 B KB MB …</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -d // 显示目录本身，而不是里面的子文件</span><br></pre></td></tr></table></figure>
+<h3 id="cd命令"><a href="#cd命令" class="headerlink" title="cd命令"></a>cd命令</h3><p><strong>命令英文原意: change directory</strong><br><strong>命令所在路径: shell内置命令</strong><br><strong>执行权限: 所有用户</strong><br><strong>功能描述: 切换所在目录</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="variable">$cd</span> /xx  // 切换到指定路径(使用绝对路径方式)</span><br><span class="line"></span><br><span class="line"><span class="variable">$cd</span> ~    // 进入当前用户的家目录</span><br><span class="line"></span><br><span class="line"><span class="variable">$cd</span> –    // 进入上次目录</span><br><span class="line"></span><br><span class="line"><span class="variable">$cd</span> ..   // 进入上一级目录</span><br><span class="line"></span><br><span class="line"><span class="variable">$cd</span> .    // 进入当前目录</span><br></pre></td></tr></table></figure>
+<!-- ``` bash
+$ 
+``` -->
+
+]]></content>
+  </entry>
+  <entry>
     <title>Java面向对象思维之构造方法需的重载</title>
     <url>/Object-oriented-constructor-heavy-load.html</url>
     <content><![CDATA[<h3 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
@@ -765,22 +781,6 @@ $</style>
 <h3 id="执行存储过程"><a href="#执行存储过程" class="headerlink" title="执行存储过程"></a>执行存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ EXECUTE 存储过程名</span><br></pre></td></tr></table></figure>
 <h3 id="删除存储过程"><a href="#删除存储过程" class="headerlink" title="删除存储过程"></a>删除存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ drop proc 存储过程名</span><br></pre></td></tr></table></figure>
 <h3 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h3>]]></content>
-  </entry>
-  <entry>
-    <title>Linux命令(未完工)</title>
-    <url>/Linux-command.html</url>
-    <content><![CDATA[<blockquote>
-<h3 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h3></blockquote>
-<a id="more"></a>
-<p><strong>命令英文原意: list</strong><br><strong>命令所在路径: /bin/ls</strong><br><strong>执行权限: 所有用户</strong><br><strong>功能描述: 显示目录文件</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ls // 显示当前目录下文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> 目录名 // 显示指定目录下文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -l // 长格式显示目录文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -l 文件名 // 长格式显示指定文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -a // 显示所有文件// 包含隐藏文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -al // 长格式显示当前目录下所有文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -h // 文件大小显示为常见大小单位 B KB MB …</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -d // 显示目录本身，而不是里面的子文件</span><br></pre></td></tr></table></figure>
-<h3 id="cd命令"><a href="#cd命令" class="headerlink" title="cd命令"></a>cd命令</h3><p><strong>命令英文原意: change directory</strong><br><strong>命令所在路径: shell内置命令</strong><br><strong>执行权限: 所有用户</strong><br><strong>功能描述: 切换所在目录</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="variable">$cd</span> /xx  // 切换到指定路径(使用绝对路径方式)</span><br><span class="line"></span><br><span class="line"><span class="variable">$cd</span> ~    // 进入当前用户的家目录</span><br><span class="line"></span><br><span class="line"><span class="variable">$cd</span> –    // 进入上次目录</span><br><span class="line"></span><br><span class="line"><span class="variable">$cd</span> ..   // 进入上一级目录</span><br><span class="line"></span><br><span class="line"><span class="variable">$cd</span> .    // 进入当前目录</span><br></pre></td></tr></table></figure>
-<!-- ``` bash
-$ 
-``` -->
-
-]]></content>
   </entry>
   <entry>
     <title>SQL Server T-SQL 视图</title>
