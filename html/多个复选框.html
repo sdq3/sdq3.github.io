@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>多个复选框</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+    #app div{
+        width: 500px;
+        border: 1px solid #bbb;
+        margin: 0 auto;
+        text-decoration: center;
+        padding: 30px;
+    }
+    </style>
+</head>
+<body>
+    <div id = "app">
+        <div>
+            <input type="checkbox" id="blue" value="蓝色" v-model="color">
+            <label for="blue">蓝色</label>
+            <input type="checkbox" id="red" value="红色" v-model="color">
+            <label for="red">红色</label>
+            <input type="checkbox" id="yellow" value="黄色" v-model="color">
+            <label for="yellow">黄色</label>
+            <p>
+                你选择的颜色是: {{color}}
+            </p>
+        <script>
+            var app = new Vue({
+            el:'#app',
+            data : {
+                color : [],
+            }
+        });
+        </script>
+</body>
+</html>

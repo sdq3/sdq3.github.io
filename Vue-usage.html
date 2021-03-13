@@ -184,7 +184,7 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>31
+					<span>文章</span>29
 					<span>标签</span>0
 					<span>分类</span>0
 				</div>		
@@ -268,14 +268,6 @@
       <ul>
         
           <li>
-            <a href="/ckm5ytk6y000yygum40p947ry.html">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/ckm5ytk6n000qygum4khw5d5w.html">NewPost</a>
-          </li>
-        
-          <li>
             <a href="/Thread-Process.html">什么是线程?什么是进程?线程与进程到底是什么关系</a>
           </li>
         
@@ -285,6 +277,14 @@
         
           <li>
             <a href="/Arch-Wsl-install.html">Arch wsl的傻瓜式安装 (有手就行)</a>
+          </li>
+        
+          <li>
+            <a href="/Android-compile.html">Android同步源码和编译ROM傻瓜式 (有手就行)</a>
+          </li>
+        
+          <li>
+            <a href="/one-Vue.html">第一个Vue.js</a>
           </li>
         
       </ul>
@@ -667,7 +667,7 @@ var $main = document.querySelector('.main');
 <aside id="article-toc" class="fixed-toc">
     <div id="article-toc-inner">
         <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B"><span class="toc-text">案例</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%96%87%E6%9C%AC"><span class="toc-text">输入文本</span></a></li></ol>
     </div>
 </aside>
 </div>
@@ -706,106 +706,11 @@ var $main = document.querySelector('.main');
 
 		<div>
 			  <article>
-				<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><a id="more"></a>
-
-
-  <!DOCTYPE html>
-  <html lang="cn">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>作业</title>
-      <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>  
-      <style>
-      #app div{                         <!--给它设定一个css -->
-          width: 500px;
-          border: 1px solid #bbb;
-          margin: 0 auto;
-          text-decoration: center;
-          padding: 30px;
-      }
-      </style>
-  </head>
-  <body>
-      <div id="app">
-          <div>     <!--以下是文本 -->
-              请输入你喜欢的城市<input type="text" v-model="cname">
-              <p>
-                  你选择的城市:
-              </p>
-          </div>
-          <div>
-              回复评论: <input type="text" v-model="huifu">
-              <p>
-                  你选回复是:
-              </p>
-          </div>
-          <div>        <!--以下是复选框 -->
-              <input type="checkbox" id="blue" value="蓝色" $v-model="color">
-              <label for="blue">蓝色</label>
-              <input type="checkbox" id="red" value="红色" $v-model="color">
-              <label for="red">红色</label>
-              <input type="checkbox" id="yellow" value="黄色" $v-model="color">
-              <label for="yellow">黄色</label>
-              <p>
-                  你选择的颜色是: 
-              </p>
-          </div>
-              <div>      <!--以下是单选按钮 -->
-                  <input type="radio" id="男" value="男" $v-model="sex">
-                  <label for="男">男</label>
-                  <br>
-                  <input type="radio" id="女" value="女" $v-model="sex">
-                  <label for="女">女</label>
-                  <p>
-                      你选择的性别是: 
-                  </p>
-              </div>
-                  <div>    <!--以下是选择框单选时 -->
-                      请你选择你喜欢的季节:<select v-model="season" $style="width: 50px;">
-                          <option>春天</option>
-                          <option>夏天</option>
-                          <option>秋天</option>
-                          <option>冬天</option>
-                      </select>
-
-<pre><code>              &lt;p&gt;
-                  你喜欢的季节是: &#123;&#123;season&#125;&#125;
-              &lt;/p&gt;
-          &lt;/div&gt;     
-          &lt;div&gt;请你选择你喜欢的季节:      &lt;!--以下是以下是选择框多选时 --&gt;
-          &lt;select v-model=&quot;selected&quot;  multiple style=&quot;width: $50px;&quot;&gt;
-              &lt;option&gt;春天&lt;/option&gt;
-              &lt;option&gt;夏天&lt;/option&gt;
-              &lt;option&gt;秋天&lt;/option&gt;
-              &lt;option&gt;冬天&lt;/option&gt;
-          &lt;/select&gt;
-          &lt;p&gt;
-              你喜欢的季节是:&#123;&#123;selected&#125;&#125;
-          &lt;/p&gt;
-          &lt;/div&gt;
-
-  &lt;/div&gt;
-      &lt;script&gt;
-          var app = new Vue(&#123;
-          el:&#39;#app&#39;,
-          data : &#123;
-              cname : &quot;哈哈哈尔滨市&quot;,
-              huifu : &quot;你好666&quot;,
-              color : [],
-              sex :[],
-              season: &quot;夏天&quot;,
-              selected:[&quot;夏天&quot;,&quot;秋天&quot;,&quot;冬天&quot;]
-          &#125;
-      &#125;);
-      &lt;/script&gt;</code></pre>
-  </div></div></body>
-  </html>
-
-
+				<h3 id="输入文本"><a href="#输入文本" class="headerlink" title="输入文本"></a>输入文本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">$     &lt;div id = <span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">$         &lt;div&gt;</span><br><span class="line">$            请输入你喜欢的城市&lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;cname&quot;</span>&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选择的城市:&#123;&#123;cname&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$        &lt;div&gt;</span><br><span class="line">$            回复评论: &lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;huifu&quot;</span>&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选回复是:&#123;&#123;huifu&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                cname : <span class="string">&quot;哈哈哈尔滨市&quot;</span>,</span><br><span class="line">$                huifu : <span class="string">&quot;我叫史迪奇&quot;</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <p><font color="#DC143C">直接实战</font></p>
-<p></p>
-
+<frameset cols="300px" rows="100px">
+<iframe width="500px" height="500px" src="./文本.html" scrolling="yes" noresize="noresize" frameborder="1px" marginheight="20px">
+</iframe></frameset>
 			  </article>
 		</div>
 		
