@@ -124,25 +124,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>CSS 三种基本选择器</title>
-    <url>/CSS%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
-    <content><![CDATA[<h3 id="第一种-标签选择器"><a href="#第一种-标签选择器" class="headerlink" title="第一种  标签选择器"></a>第一种  标签选择器</h3><a id="more"></a>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    p&#123;</span><br><span class="line">$        color: blue;   //蓝色字体</span><br><span class="line">$        background: red;    //设置背景图颜色</span><br><span class="line">$        borde-radius: 24px;    //设置圆角边框</span><br><span class="line">$        font-size: 80px;    //设置字体大小</span><br><span class="line">$      &#125;</span><br><span class="line">$  &lt;p class=<span class="string">&quot;sdq1&quot;</span>&gt;史迪奇骑士&lt;/p&gt;</span><br><span class="line">$  &lt;p class=<span class="string">&quot;sdq2&quot;</span>&gt;史迪奇打手&lt;/p&gt;</span><br><span class="line">$  &lt;p&gt;史迪奇国王&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="第二种-类-class-选择器"><a href="#第二种-类-class-选择器" class="headerlink" title="第二种 类 class 选择器"></a>第二种 类 class 选择器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    .sdq1&#123;</span><br><span class="line">$        color: blue;   //蓝色字体</span><br><span class="line">$        background: red;    //设置背景图颜色</span><br><span class="line">$        borde-radius: 24px;    //设置圆角边框</span><br><span class="line">$        font-size: 80px;    //设置字体大小</span><br><span class="line">$    &#125;</span><br><span class="line">$    .sdq2&#123;</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;h1 class=<span class="string">&quot;sdq1&quot;</span>&gt;史迪奇骑士&lt;h1&gt;</span><br><span class="line">$  &lt;h1 class=<span class="string">&quot;sdq2&quot;</span>&gt;史迪奇打手&lt;h1&gt;</span><br><span class="line">$  &lt;h1&gt;史迪奇国王&lt;h1&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>类选择器 .class的名称{}</strong></p>
-<p><strong>好处: 可以多个标签归类, 是同一个class, 可以复用</strong></p>
-<h3 id="第三种-id选择器"><a href="#第三种-id选择器" class="headerlink" title="第三种 id选择器"></a>第三种 id选择器</h3><p><strong>id选择器 #id的名称{}</strong></p>
-<p><strong>id必须保证全局唯一</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    <span class="comment">#sdq1&#123;</span></span><br><span class="line">$        color: blue;   //蓝色字体</span><br><span class="line">$        background: red;    //设置背景图颜色</span><br><span class="line">$        borde-radius: 24px;    //设置圆角边框</span><br><span class="line">$        font-size: 80px;    //设置字体大小</span><br><span class="line">$    &#125;</span><br><span class="line">$    .sdq2&#123;</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;h1 id=<span class="string">&quot;sdq1&quot;</span>&gt;史迪奇骑士&lt;h1&gt;</span><br><span class="line">$  &lt;h1 class=<span class="string">&quot;sdq2&quot;</span>&gt;史迪奇打手&lt;h1&gt;</span><br><span class="line">$  &lt;h1&gt;史迪奇国王&lt;h1&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="优先级-id选择器-gt-class选择器-gt-标签选择器"><a href="#优先级-id选择器-gt-class选择器-gt-标签选择器" class="headerlink" title="优先级: id选择器 &gt; class选择器&gt; 标签选择器"></a>优先级: id选择器 &gt; class选择器&gt; 标签选择器</h3><p><strong>优先级不遵循就近原则, 是固定的</strong></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>标签选择器: 选择一类标签 标签名{}</strong></p>
-<p><strong>类/class选择器: 选择所有的class属性一致的标签, 跨标签 .类名{}</strong></p>
-<p><strong>id选择器: 全局唯一 id名{}</strong></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Bodhi Linux安装教程(老电脑的福利)</title>
     <url>/Bodhi-Linux.html</url>
     <content><![CDATA[<h3 id="本人是2008年的联想电脑-Bodhi-Linux是我唯一能完美运行的带桌面的发行版"><a href="#本人是2008年的联想电脑-Bodhi-Linux是我唯一能完美运行的带桌面的发行版" class="headerlink" title="本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版"></a>本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版</h3><a id="more"></a>
@@ -176,6 +157,25 @@
 <p><strong>至于为什么要带桌面的发行版, 因为要日用偶尔看看B站什么的</strong></p>
 <p><strong>关于这台电脑用的硬盘 大小80G 有9724个坏道 拆掉坏掉的戴尔一条三星的DDR2 才有2G内存可以体验</strong></p>
 <p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E5%9D%8F%E9%81%93.jpg"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>CSS 三种基本选择器</title>
+    <url>/CSS%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <content><![CDATA[<h3 id="第一种-标签选择器"><a href="#第一种-标签选择器" class="headerlink" title="第一种  标签选择器"></a>第一种  标签选择器</h3><a id="more"></a>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    p&#123;</span><br><span class="line">$        color: blue;   //蓝色字体</span><br><span class="line">$        background: red;    //设置背景图颜色</span><br><span class="line">$        borde-radius: 24px;    //设置圆角边框</span><br><span class="line">$        font-size: 80px;    //设置字体大小</span><br><span class="line">$      &#125;</span><br><span class="line">$  &lt;p class=<span class="string">&quot;sdq1&quot;</span>&gt;史迪奇骑士&lt;/p&gt;</span><br><span class="line">$  &lt;p class=<span class="string">&quot;sdq2&quot;</span>&gt;史迪奇打手&lt;/p&gt;</span><br><span class="line">$  &lt;p&gt;史迪奇国王&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="第二种-类-class-选择器"><a href="#第二种-类-class-选择器" class="headerlink" title="第二种 类 class 选择器"></a>第二种 类 class 选择器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    .sdq1&#123;</span><br><span class="line">$        color: blue;   //蓝色字体</span><br><span class="line">$        background: red;    //设置背景图颜色</span><br><span class="line">$        borde-radius: 24px;    //设置圆角边框</span><br><span class="line">$        font-size: 80px;    //设置字体大小</span><br><span class="line">$    &#125;</span><br><span class="line">$    .sdq2&#123;</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;h1 class=<span class="string">&quot;sdq1&quot;</span>&gt;史迪奇骑士&lt;h1&gt;</span><br><span class="line">$  &lt;h1 class=<span class="string">&quot;sdq2&quot;</span>&gt;史迪奇打手&lt;h1&gt;</span><br><span class="line">$  &lt;h1&gt;史迪奇国王&lt;h1&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>类选择器 .class的名称{}</strong></p>
+<p><strong>好处: 可以多个标签归类, 是同一个class, 可以复用</strong></p>
+<h3 id="第三种-id选择器"><a href="#第三种-id选择器" class="headerlink" title="第三种 id选择器"></a>第三种 id选择器</h3><p><strong>id选择器 #id的名称{}</strong></p>
+<p><strong>id必须保证全局唯一</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    <span class="comment">#sdq1&#123;</span></span><br><span class="line">$        color: blue;   //蓝色字体</span><br><span class="line">$        background: red;    //设置背景图颜色</span><br><span class="line">$        borde-radius: 24px;    //设置圆角边框</span><br><span class="line">$        font-size: 80px;    //设置字体大小</span><br><span class="line">$    &#125;</span><br><span class="line">$    .sdq2&#123;</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;h1 id=<span class="string">&quot;sdq1&quot;</span>&gt;史迪奇骑士&lt;h1&gt;</span><br><span class="line">$  &lt;h1 class=<span class="string">&quot;sdq2&quot;</span>&gt;史迪奇打手&lt;h1&gt;</span><br><span class="line">$  &lt;h1&gt;史迪奇国王&lt;h1&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="优先级-id选择器-gt-class选择器-gt-标签选择器"><a href="#优先级-id选择器-gt-class选择器-gt-标签选择器" class="headerlink" title="优先级: id选择器 &gt; class选择器&gt; 标签选择器"></a>优先级: id选择器 &gt; class选择器&gt; 标签选择器</h3><p><strong>优先级不遵循就近原则, 是固定的</strong></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>标签选择器: 选择一类标签 标签名{}</strong></p>
+<p><strong>类/class选择器: 选择所有的class属性一致的标签, 跨标签 .类名{}</strong></p>
+<p><strong>id选择器: 全局唯一 id名{}</strong></p>
 ]]></content>
   </entry>
   <entry>
@@ -213,6 +213,17 @@
 ]]></content>
   </entry>
   <entry>
+    <title>CSS 属性选择器(常用)</title>
+    <url>/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <content><![CDATA[<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$</span><br><span class="line">$  .sdq1 a&#123; </span><br><span class="line">$       <span class="built_in">float</span>: left;  //left往左<span class="built_in">float</span>浮动</span><br><span class="line">$       dispay: block;  //dispay规定元素应该生成的框的类型block此元素将显示为块级元素，此元素前后会带有换行符。</span><br><span class="line">$       heigh: 50px;  //heigh高度</span><br><span class="line">$       width: 50px;  //width宽度</span><br><span class="line">$       border-radius: 10px;  //border-radius圆角边框</span><br><span class="line">$       </span><br><span class="line">$       text-align: center;   //text-align对齐center剧中</span><br><span class="line">$       color: yellow;  //color文字颜色</span><br><span class="line">$       text-decoration: none;  //text-decoration下划线none不显示</span><br><span class="line">$       margin-right: 5px;    //margin-right外边距向右</span><br><span class="line">$       font: bold 20px/50px Arial;   //font设置文字的字体bold字体大小20px字体的大小50px行高Arial是一种字体</span><br><span class="line">$   &#125;</span><br><span class="line">$    //格式a[]&#123;&#125;  存在id的属性的元素  </span><br><span class="line">$   a[class*=first]&#123;        //=是绝对等于  *=是包含这个元素</span><br><span class="line">$       background: yellow;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href^=xxy]&#123;          //^=表示以什么开头     </span><br><span class="line">$       background: green;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href$=ghfgh]&#123;          //$=表示以什么结尾     </span><br><span class="line">$       background: powder;</span><br><span class="line">$   &#125;</span><br><span class="line">$    </span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;p&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxy.fgdhrth&quot;</span> class=<span class="string">&quot;links item first&quot;</span> id=<span class="string">&quot;first&quot;</span>&gt;史迪奇&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪仔&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇骑士&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇国王&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇勇士&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;hh.ghfgh&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇巫师&lt;a&gt;</span><br><span class="line">$  &lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+]]></content>
+  </entry>
+  <entry>
     <title>CSS 三种导入样式</title>
     <url>/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F.html</url>
     <content><![CDATA[<h3 id="span标签"><a href="#span标签" class="headerlink" title="span标签"></a>span标签</h3><a id="more"></a>
@@ -224,17 +235,6 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color:blue;     //颜色</span><br><span class="line">$        text-align: center;  //文本对齐的方式 </span><br><span class="line">$        text-indent: 2em;     //首行缩进</span><br><span class="line">$        line-height: 20px;    //行高 </span><br><span class="line">$        text-decoration: overline;   //上划线</span><br><span class="line">$        text-decoration: line-through;   //中划线</span><br><span class="line">$        text-decoration: underline   //下划线</span><br><span class="line">$      &#125;</span><br><span class="line">$     img,span&#123;</span><br><span class="line">$               vertical-align: middle;</span><br><span class="line">$            &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$&lt;h1&gt;史迪奇的王国&lt;/h1&gt;</span><br><span class="line">$ &lt;p&gt;</span><br><span class="line">$ &lt;img src=<span class="string">&quot;images/x.jpg&quot;</span>&gt;</span><br><span class="line">$ &lt;span&gt;史迪奇&lt;/span&gt;</span><br><span class="line">$ &lt;/p&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="超链接伪类"><a href="#超链接伪类" class="headerlink" title="超链接伪类"></a>超链接伪类</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    //默认颜色</span><br><span class="line">$     a&#123;  </span><br><span class="line">$          text-decoration: none;</span><br><span class="line">$          color: <span class="comment">#000000;</span></span><br><span class="line">$       &#125;  </span><br><span class="line">$     //鼠标悬浮状态 </span><br><span class="line">$     a:hover&#123;  </span><br><span class="line">$          color: blue;</span><br><span class="line">$       &#125;     </span><br><span class="line">$     //鼠标按住未释放状态 </span><br><span class="line">$     a:active&#123;  </span><br><span class="line">$          color: rad;</span><br><span class="line">$       &#125;      </span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;p&gt;</span><br><span class="line">$&lt;h1&gt;史迪奇的王国&lt;/h1&gt;</span><br><span class="line">$ &lt;a&gt;史迪奇&lt;a&gt;</span><br><span class="line">$ &lt;/p&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    //默认颜色</span><br><span class="line">$     <span class="comment">#sdq&#123;  </span></span><br><span class="line">$          text-shawdow: blue 10px 10px 10px;    //text-shawdow是阴影, 阴影颜色, 水平偏移, 垂直偏移, 阴影半径</span><br><span class="line">$       &#125;       </span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;p&gt;</span><br><span class="line">$&lt;h1&gt;史迪奇的王国&lt;/h1&gt;</span><br><span class="line">$ &lt;a id=<span class="string">&quot;sdq&quot;</span>&gt;史迪奇&lt;a&gt;</span><br><span class="line">$ &lt;/p&gt;</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
-    <title>CSS 属性选择器(常用)</title>
-    <url>/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
-    <content><![CDATA[<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$</span><br><span class="line">$  .sdq1 a&#123; </span><br><span class="line">$       <span class="built_in">float</span>: left;  //left往左<span class="built_in">float</span>浮动</span><br><span class="line">$       dispay: block;  //dispay规定元素应该生成的框的类型block此元素将显示为块级元素，此元素前后会带有换行符。</span><br><span class="line">$       heigh: 50px;  //heigh高度</span><br><span class="line">$       width: 50px;  //width宽度</span><br><span class="line">$       border-radius: 10px;  //border-radius圆角边框</span><br><span class="line">$       </span><br><span class="line">$       text-align: center;   //text-align对齐center剧中</span><br><span class="line">$       color: yellow;  //color文字颜色</span><br><span class="line">$       text-decoration: none;  //text-decoration下划线none不显示</span><br><span class="line">$       margin-right: 5px;    //margin-right外边距向右</span><br><span class="line">$       font: bold 20px/50px Arial;   //font设置文字的字体bold字体大小20px字体的大小50px行高Arial是一种字体</span><br><span class="line">$   &#125;</span><br><span class="line">$    //格式a[]&#123;&#125;  存在id的属性的元素  </span><br><span class="line">$   a[class*=first]&#123;        //=是绝对等于  *=是包含这个元素</span><br><span class="line">$       background: yellow;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href^=xxy]&#123;          //^=表示以什么开头     </span><br><span class="line">$       background: green;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href$=ghfgh]&#123;          //$=表示以什么结尾     </span><br><span class="line">$       background: powder;</span><br><span class="line">$   &#125;</span><br><span class="line">$    </span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;p&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxy.fgdhrth&quot;</span> class=<span class="string">&quot;links item first&quot;</span> id=<span class="string">&quot;first&quot;</span>&gt;史迪奇&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪仔&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇骑士&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇国王&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇勇士&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;hh.ghfgh&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇巫师&lt;a&gt;</span><br><span class="line">$  &lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-
 ]]></content>
   </entry>
   <entry>
@@ -277,17 +277,6 @@ $</style>
 ]]></content>
   </entry>
   <entry>
-    <title>HTML iframe内联框架</title>
-    <url>/HTML-iframe.html</url>
-    <content><![CDATA[<h3 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h3><a id="more"></a>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;path&quot;</span> name=<span class="string">&quot;mainFrame&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;mainFrame&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>其中path是引用页面地址 mainFrame是框架标识名</strong></p>
-<h3 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h3><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;demo_iframe.html&quot;</span> frameborder=<span class="string">&quot;0&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;xxx/xxx.html&quot;</span> name=<span class="string">&quot;iframe_a&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;iframe_a&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
     <title>CSS 三种导入样式</title>
     <url>/CSS-Import-styles.html</url>
     <content><![CDATA[<h3 id="第一种-行内样式"><a href="#第一种-行内样式" class="headerlink" title="第一种  行内样式"></a>第一种  行内样式</h3><a id="more"></a>
@@ -303,15 +292,15 @@ $</style>
 ]]></content>
   </entry>
   <entry>
-    <title>HTML表格</title>
-    <url>/HTML.html</url>
-    <content><![CDATA[<h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><a id="more"></a>
+    <title>HTML iframe内联框架</title>
+    <url>/HTML-iframe.html</url>
+    <content><![CDATA[<h3 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h3><a id="more"></a>
 
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ tr  //行</span><br><span class="line">$ td  //列</span><br></pre></td></tr></table></figure>
-
-<h3 id="跨列"><a href="#跨列" class="headerlink" title="跨列"></a>跨列</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;table&gt;</span><br><span class="line">$    &lt;tr&gt;</span><br><span class="line">$        &lt;tb cospan=<span class="string">&quot;2&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">$     &lt;tr&gt;</span><br><span class="line">$ &lt;/table&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="跨行"><a href="#跨行" class="headerlink" title="跨行"></a>跨行</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;table&gt;</span><br><span class="line">$    &lt;tr&gt;</span><br><span class="line">$        &lt;tb rowspan=<span class="string">&quot;2&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">$     &lt;tr&gt;</span><br><span class="line">$ &lt;/table&gt;</span><br></pre></td></tr></table></figure>
-]]></content>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;path&quot;</span> name=<span class="string">&quot;mainFrame&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;mainFrame&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>其中path是引用页面地址 mainFrame是框架标识名</strong></p>
+<h3 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h3><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;demo_iframe.html&quot;</span> frameborder=<span class="string">&quot;0&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;xxx/xxx.html&quot;</span> name=<span class="string">&quot;iframe_a&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;iframe_a&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>HTML 基本控件大集合</title>
@@ -591,6 +580,17 @@ $</style>
 <h3 id="只要input都需要value值和name值-这样就可以养成好习惯"><a href="#只要input都需要value值和name值-这样就可以养成好习惯" class="headerlink" title="只要input都需要value值和name值, 这样就可以养成好习惯"></a>只要input都需要value值和name值, 这样就可以养成好习惯</h3>]]></content>
   </entry>
   <entry>
+    <title>HTML表格</title>
+    <url>/HTML.html</url>
+    <content><![CDATA[<h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><a id="more"></a>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ tr  //行</span><br><span class="line">$ td  //列</span><br></pre></td></tr></table></figure>
+
+<h3 id="跨列"><a href="#跨列" class="headerlink" title="跨列"></a>跨列</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;table&gt;</span><br><span class="line">$    &lt;tr&gt;</span><br><span class="line">$        &lt;tb cospan=<span class="string">&quot;2&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">$     &lt;tr&gt;</span><br><span class="line">$ &lt;/table&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="跨行"><a href="#跨行" class="headerlink" title="跨行"></a>跨行</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;table&gt;</span><br><span class="line">$    &lt;tr&gt;</span><br><span class="line">$        &lt;tb rowspan=<span class="string">&quot;2&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">$     &lt;tr&gt;</span><br><span class="line">$ &lt;/table&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>关于Hexo我所踩过的坑和小白安装教程</title>
     <url>/Hexo-install.html</url>
     <content><![CDATA[<h3 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h3><a id="more"></a>
@@ -756,17 +756,6 @@ $</style>
 <h3 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h3>]]></content>
   </entry>
   <entry>
-    <title>SQL Server T-SQL 存储过程</title>
-    <url>/SQL-storage.html</url>
-    <content><![CDATA[<h3 id="创建变量"><a href="#创建变量" class="headerlink" title="创建变量"></a>创建变量</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">declare</span> 变量名 数据类型 常量</span><br></pre></td></tr></table></figure>
-<h3 id="查询变量"><a href="#查询变量" class="headerlink" title="查询变量"></a>查询变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ select 变量名</span><br></pre></td></tr></table></figure>
-<h3 id="创建存储过程"><a href="#创建存储过程" class="headerlink" title="创建存储过程"></a>创建存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ create Procedure 存储过程名 as select 字段 from 表名</span><br></pre></td></tr></table></figure>
-<h3 id="执行存储过程"><a href="#执行存储过程" class="headerlink" title="执行存储过程"></a>执行存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ EXECUTE 存储过程名</span><br></pre></td></tr></table></figure>
-<h3 id="删除存储过程"><a href="#删除存储过程" class="headerlink" title="删除存储过程"></a>删除存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ drop proc 存储过程名</span><br></pre></td></tr></table></figure>
-<h3 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h3>]]></content>
-  </entry>
-  <entry>
     <title>Linux命令(未完工)</title>
     <url>/Linux-command.html</url>
     <content><![CDATA[<blockquote>
@@ -781,6 +770,17 @@ $
 ``` -->
 
 ]]></content>
+  </entry>
+  <entry>
+    <title>SQL Server T-SQL 存储过程</title>
+    <url>/SQL-storage.html</url>
+    <content><![CDATA[<h3 id="创建变量"><a href="#创建变量" class="headerlink" title="创建变量"></a>创建变量</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">declare</span> 变量名 数据类型 常量</span><br></pre></td></tr></table></figure>
+<h3 id="查询变量"><a href="#查询变量" class="headerlink" title="查询变量"></a>查询变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ select 变量名</span><br></pre></td></tr></table></figure>
+<h3 id="创建存储过程"><a href="#创建存储过程" class="headerlink" title="创建存储过程"></a>创建存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ create Procedure 存储过程名 as select 字段 from 表名</span><br></pre></td></tr></table></figure>
+<h3 id="执行存储过程"><a href="#执行存储过程" class="headerlink" title="执行存储过程"></a>执行存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ EXECUTE 存储过程名</span><br></pre></td></tr></table></figure>
+<h3 id="删除存储过程"><a href="#删除存储过程" class="headerlink" title="删除存储过程"></a>删除存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ drop proc 存储过程名</span><br></pre></td></tr></table></figure>
+<h3 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h3>]]></content>
   </entry>
   <entry>
     <title>SQL Server T-SQL 视图</title>
@@ -813,10 +813,12 @@ $
     <url>/Vue-usage.html</url>
     <content><![CDATA[<h3 id="输入文本"><a href="#输入文本" class="headerlink" title="输入文本"></a>输入文本</h3><a id="more"></a>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$     &lt;div id = <span class="string">&quot;app1&quot;</span>&gt;</span><br><span class="line">$         &lt;div&gt;</span><br><span class="line">$            请输入你喜欢的城市&lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;cname&quot;</span>&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选择的城市:&#123;&#123;cname&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$        &lt;div&gt;</span><br><span class="line">$            回复评论: &lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;huifu&quot;</span>&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选回复是:&#123;&#123;huifu&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app1&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                cname : <span class="string">&quot;哈哈哈尔滨市&quot;</span>,</span><br><span class="line">$                huifu : <span class="string">&quot;我叫史迪奇&quot;</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p><font color="#DC143C">直接实战</font></p>
-<iframe src="./html/文本.html">
+<!-- <font  color=#DC143C>直接实战</font>
 
-<hr>
+<iframe src="./html/文本.html"/>
+
+*** -->
+
 <h3 id="输入多行文本"><a href="#输入多行文本" class="headerlink" title="输入多行文本"></a>输入多行文本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app2&quot;</span>&gt;</span><br><span class="line">$         &lt;div&gt;</span><br><span class="line">$            &lt;span&gt;你的名字: &lt;/span&gt;</span><br><span class="line">$            &lt;p style=<span class="string">&quot;white-space: pre-line;&quot;</span>&gt;&#123;&#123; name &#125;&#125;&lt;/p&gt;</span><br><span class="line">$            &lt;br&gt;</span><br><span class="line">$            &lt;textarea v-model=<span class="string">&quot;name &quot;</span> placeholder=<span class="string">&quot;请输入你的名字&quot;</span>&gt;&lt;/textarea&gt;</span><br><span class="line">$</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你的名字:&#123;&#123;name&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app2&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                name : <span class="string">&quot;史迪奇&quot;</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 <p><font color="#DC143C">直接实战</font></p>
@@ -851,7 +853,7 @@ $
 <iframe src="./html/选择框多选时.html">
 
 <hr>
-</iframe></iframe></iframe></iframe></iframe></iframe></iframe>]]></content>
+</iframe></iframe></iframe></iframe></iframe></iframe>]]></content>
   </entry>
   <entry>
     <title>Arch wsl的傻瓜式安装 (有手就行)</title>
@@ -898,6 +900,18 @@ $
 <img src="/images/wsl傻瓜式安装/Arch wsl.jpg" style="width: 800px; height: 500px;">
 
 <h3 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h3><h3 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h3><h3 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h3>]]></content>
+  </entry>
+  <entry>
+    <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
+    <url>/Thread-Process.html</url>
+    <content><![CDATA[<h3 id="什么是线程-学习进程最重要的还是学习线程"><a href="#什么是线程-学习进程最重要的还是学习线程" class="headerlink" title="什么是线程(学习进程最重要的还是学习线程)"></a>什么是线程(学习进程最重要的还是学习线程)</h3><a id="more"></a>
+<p><strong>线程就是独立执行的路径，就算在什么都不干的话，里面会有(主线程)main线程，Java里面还有个一个收垃圾的gc线程</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Thread是线程的英文</span><br></pre></td></tr></table></figure>
+
+<h3 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h3><p><strong>把程序跑起来才叫做进程，进程是执行程序的一次执行过程是一个动态的概念</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Process是进程的英文</span><br></pre></td></tr></table></figure>
+<h3 id="线程与进程到底是什么关系"><a href="#线程与进程到底是什么关系" class="headerlink" title="线程与进程到底是什么关系"></a>线程与进程到底是什么关系</h3><p><strong>一个进程里面可以包含若干个线程，一个进程里面必须要有一个线程，否则没有存在的意义</strong></p>
+<h3 id="注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行"><a href="#注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行" class="headerlink" title="注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行"></a>注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行</h3>]]></content>
   </entry>
   <entry>
     <title>Android同步源码和编译ROM傻瓜式 (有手就行)</title>
@@ -987,17 +1001,5 @@ $
 <p><strong>防止低内存编译出错 设置大小为</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> ANDROID_JACK_VM_ARGS=<span class="string">&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G&quot;</span></span><br></pre></td></tr></table></figure>
 <h1 id="祝福大家能自己动手做出属于自己的ROM"><a href="#祝福大家能自己动手做出属于自己的ROM" class="headerlink" title="祝福大家能自己动手做出属于自己的ROM"></a>祝福大家能自己动手做出属于自己的ROM</h1>]]></content>
-  </entry>
-  <entry>
-    <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
-    <url>/Thread-Process.html</url>
-    <content><![CDATA[<h3 id="什么是线程-学习进程最重要的还是学习线程"><a href="#什么是线程-学习进程最重要的还是学习线程" class="headerlink" title="什么是线程(学习进程最重要的还是学习线程)"></a>什么是线程(学习进程最重要的还是学习线程)</h3><a id="more"></a>
-<p><strong>线程就是独立执行的路径，就算在什么都不干的话，里面会有(主线程)main线程，Java里面还有个一个收垃圾的gc线程</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Thread是线程的英文</span><br></pre></td></tr></table></figure>
-
-<h3 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h3><p><strong>把程序跑起来才叫做进程，进程是执行程序的一次执行过程是一个动态的概念</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Process是进程的英文</span><br></pre></td></tr></table></figure>
-<h3 id="线程与进程到底是什么关系"><a href="#线程与进程到底是什么关系" class="headerlink" title="线程与进程到底是什么关系"></a>线程与进程到底是什么关系</h3><p><strong>一个进程里面可以包含若干个线程，一个进程里面必须要有一个线程，否则没有存在的意义</strong></p>
-<h3 id="注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行"><a href="#注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行" class="headerlink" title="注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行"></a>注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行</h3>]]></content>
   </entry>
 </search>
