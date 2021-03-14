@@ -213,6 +213,17 @@
 ]]></content>
   </entry>
   <entry>
+    <title>CSS 属性选择器(常用)</title>
+    <url>/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <content><![CDATA[<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$</span><br><span class="line">$  .sdq1 a&#123; </span><br><span class="line">$       <span class="built_in">float</span>: left;  //left往左<span class="built_in">float</span>浮动</span><br><span class="line">$       dispay: block;  //dispay规定元素应该生成的框的类型block此元素将显示为块级元素，此元素前后会带有换行符。</span><br><span class="line">$       heigh: 50px;  //heigh高度</span><br><span class="line">$       width: 50px;  //width宽度</span><br><span class="line">$       border-radius: 10px;  //border-radius圆角边框</span><br><span class="line">$       </span><br><span class="line">$       text-align: center;   //text-align对齐center剧中</span><br><span class="line">$       color: yellow;  //color文字颜色</span><br><span class="line">$       text-decoration: none;  //text-decoration下划线none不显示</span><br><span class="line">$       margin-right: 5px;    //margin-right外边距向右</span><br><span class="line">$       font: bold 20px/50px Arial;   //font设置文字的字体bold字体大小20px字体的大小50px行高Arial是一种字体</span><br><span class="line">$   &#125;</span><br><span class="line">$    //格式a[]&#123;&#125;  存在id的属性的元素  </span><br><span class="line">$   a[class*=first]&#123;        //=是绝对等于  *=是包含这个元素</span><br><span class="line">$       background: yellow;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href^=xxy]&#123;          //^=表示以什么开头     </span><br><span class="line">$       background: green;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href$=ghfgh]&#123;          //$=表示以什么结尾     </span><br><span class="line">$       background: powder;</span><br><span class="line">$   &#125;</span><br><span class="line">$    </span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;p&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxy.fgdhrth&quot;</span> class=<span class="string">&quot;links item first&quot;</span> id=<span class="string">&quot;first&quot;</span>&gt;史迪奇&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪仔&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇骑士&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇国王&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇勇士&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;hh.ghfgh&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇巫师&lt;a&gt;</span><br><span class="line">$  &lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+]]></content>
+  </entry>
+  <entry>
     <title>CSS 三种导入样式</title>
     <url>/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F.html</url>
     <content><![CDATA[<h3 id="span标签"><a href="#span标签" class="headerlink" title="span标签"></a>span标签</h3><a id="more"></a>
@@ -227,14 +238,18 @@
 ]]></content>
   </entry>
   <entry>
-    <title>CSS 属性选择器(常用)</title>
-    <url>/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
-    <content><![CDATA[<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$</span><br><span class="line">$  .sdq1 a&#123; </span><br><span class="line">$       <span class="built_in">float</span>: left;  //left往左<span class="built_in">float</span>浮动</span><br><span class="line">$       dispay: block;  //dispay规定元素应该生成的框的类型block此元素将显示为块级元素，此元素前后会带有换行符。</span><br><span class="line">$       heigh: 50px;  //heigh高度</span><br><span class="line">$       width: 50px;  //width宽度</span><br><span class="line">$       border-radius: 10px;  //border-radius圆角边框</span><br><span class="line">$       </span><br><span class="line">$       text-align: center;   //text-align对齐center剧中</span><br><span class="line">$       color: yellow;  //color文字颜色</span><br><span class="line">$       text-decoration: none;  //text-decoration下划线none不显示</span><br><span class="line">$       margin-right: 5px;    //margin-right外边距向右</span><br><span class="line">$       font: bold 20px/50px Arial;   //font设置文字的字体bold字体大小20px字体的大小50px行高Arial是一种字体</span><br><span class="line">$   &#125;</span><br><span class="line">$    //格式a[]&#123;&#125;  存在id的属性的元素  </span><br><span class="line">$   a[class*=first]&#123;        //=是绝对等于  *=是包含这个元素</span><br><span class="line">$       background: yellow;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href^=xxy]&#123;          //^=表示以什么开头     </span><br><span class="line">$       background: green;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href$=ghfgh]&#123;          //$=表示以什么结尾     </span><br><span class="line">$       background: powder;</span><br><span class="line">$   &#125;</span><br><span class="line">$    </span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;p&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxy.fgdhrth&quot;</span> class=<span class="string">&quot;links item first&quot;</span> id=<span class="string">&quot;first&quot;</span>&gt;史迪奇&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪仔&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇骑士&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇国王&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇勇士&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;hh.ghfgh&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇巫师&lt;a&gt;</span><br><span class="line">$  &lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+    <title>CSS 三种导入样式</title>
+    <url>/CSS-Import-styles.html</url>
+    <content><![CDATA[<h3 id="第一种-行内样式"><a href="#第一种-行内样式" class="headerlink" title="第一种  行内样式"></a>第一种  行内样式</h3><a id="more"></a>
 
-
-
-
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;h1 style=<span class="string">&quot;color: red&quot;</span>&gt;行内样式&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E8%A1%8C%E5%86%85%E6%A0%B7%E5%BC%8F.jpg"></p>
+<h3 id="第二种-内部样式"><a href="#第二种-内部样式" class="headerlink" title="第二种 内部样式"></a>第二种 内部样式</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color: blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E5%86%85%E9%83%A8%E6%A0%B7%E5%BC%8F.jpg"></p>
+<h3 id="第三种-外部样式"><a href="#第三种-外部样式" class="headerlink" title="第三种 外部样式"></a>第三种 外部样式</h3><p><strong>另外一个css页面</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   &lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;css/style.css&quot;</span>&gt;    //链接式  属于html</span><br><span class="line">$    @import url(<span class="string">&quot;css/style.css&quot;</span>)          //导入式  属于CSS2.1 了解就可以</span><br><span class="line">$ &lt;style&gt;</span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color: blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E5%A4%96%E9%83%A8%E6%A0%B7%E5%BC%8F.jpg"></p>
+<h3 id="优先级-行内样式-gt-内部样式-gt-外部样式"><a href="#优先级-行内样式-gt-内部样式-gt-外部样式" class="headerlink" title="优先级: 行内样式 &gt; 内部样式 &gt; 外部样式"></a>优先级: 行内样式 &gt; 内部样式 &gt; 外部样式</h3><p><strong>优先级看就近原则</strong></p>
 ]]></content>
   </entry>
   <entry>
@@ -274,21 +289,6 @@ $</style>
 
 
 
-]]></content>
-  </entry>
-  <entry>
-    <title>CSS 三种导入样式</title>
-    <url>/CSS-Import-styles.html</url>
-    <content><![CDATA[<h3 id="第一种-行内样式"><a href="#第一种-行内样式" class="headerlink" title="第一种  行内样式"></a>第一种  行内样式</h3><a id="more"></a>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;h1 style=<span class="string">&quot;color: red&quot;</span>&gt;行内样式&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E8%A1%8C%E5%86%85%E6%A0%B7%E5%BC%8F.jpg"></p>
-<h3 id="第二种-内部样式"><a href="#第二种-内部样式" class="headerlink" title="第二种 内部样式"></a>第二种 内部样式</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color: blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E5%86%85%E9%83%A8%E6%A0%B7%E5%BC%8F.jpg"></p>
-<h3 id="第三种-外部样式"><a href="#第三种-外部样式" class="headerlink" title="第三种 外部样式"></a>第三种 外部样式</h3><p><strong>另外一个css页面</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   &lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;css/style.css&quot;</span>&gt;    //链接式  属于html</span><br><span class="line">$    @import url(<span class="string">&quot;css/style.css&quot;</span>)          //导入式  属于CSS2.1 了解就可以</span><br><span class="line">$ &lt;style&gt;</span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color: blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E5%A4%96%E9%83%A8%E6%A0%B7%E5%BC%8F.jpg"></p>
-<h3 id="优先级-行内样式-gt-内部样式-gt-外部样式"><a href="#优先级-行内样式-gt-内部样式-gt-外部样式" class="headerlink" title="优先级: 行内样式 &gt; 内部样式 &gt; 外部样式"></a>优先级: 行内样式 &gt; 内部样式 &gt; 外部样式</h3><p><strong>优先级看就近原则</strong></p>
 ]]></content>
   </entry>
   <entry>
@@ -580,29 +580,6 @@ $</style>
 <h3 id="只要input都需要value值和name值-这样就可以养成好习惯"><a href="#只要input都需要value值和name值-这样就可以养成好习惯" class="headerlink" title="只要input都需要value值和name值, 这样就可以养成好习惯"></a>只要input都需要value值和name值, 这样就可以养成好习惯</h3>]]></content>
   </entry>
   <entry>
-    <title>关于Hexo我所踩过的坑和小白安装教程</title>
-    <url>/Hexo-install.html</url>
-    <content><![CDATA[<h3 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h3><a id="more"></a>
-<p>前提是需要安装 Node.js,不懂的可以百度下载然后按照<a href="https://www.bilibili.com/video/BV1wA411s7re?from=search&seid=11841654225437997570">B站的安装视频按照</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<h3 id="第二是-Hexo初始化博客"><a href="#第二是-Hexo初始化博客" class="headerlink" title="第二是 Hexo初始化博客"></a>第二是 Hexo初始化博客</h3><p><strong>cd 到你想存放博客源码的一个目录里面，这时会自动建立一个博客文件夹</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init blog  //hexo init (博客名字自定义)</span><br></pre></td></tr></table></figure>
-
-<h3 id="第三是-给安装博客依赖"><a href="#第三是-给安装博客依赖" class="headerlink" title="第三是 给安装博客依赖"></a>第三是 给安装博客依赖</h3><p><strong>cd 进刚创建的博客文件夹，安装依赖模块命令如下</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-<h3 id="第四是-找主题"><a href="#第四是-找主题" class="headerlink" title="第四是 找主题"></a>第四是 找主题</h3><p><strong>到这个 <a href="https://hexo.bootcss.com/themes/">Hexo网站</a> 去找主题</strong></p>
-<h3 id="第五是-本地运行"><a href="#第五是-本地运行" class="headerlink" title="第五是 本地运行"></a>第五是 本地运行</h3><p><strong>这里地址是localhost:4000</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<h3 id="生成静态文件和"><a href="#生成静态文件和" class="headerlink" title="生成静态文件和"></a>生成静态文件和</h3><p><strong>部署在GitHub 或者 Gitee服务器上，生成静态文件，生成的静态文件在博客工程的 public文件夹下 到哪里找就行了</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-<h3 id="清除静态文件和部署"><a href="#清除静态文件和部署" class="headerlink" title="清除静态文件和部署"></a>清除静态文件和部署</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean &amp; hexo d</span><br></pre></td></tr></table></figure>
-<h3 id="查看你有没有被百度收录文章"><a href="#查看你有没有被百度收录文章" class="headerlink" title="查看你有没有被百度收录文章"></a>查看你有没有被百度收录文章</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ site:(你的博客)  //直接复制命令百度搜索</span><br></pre></td></tr></table></figure>
-<h3 id="改变文章链接规则"><a href="#改变文章链接规则" class="headerlink" title="改变文章链接规则"></a>改变文章链接规则</h3><p><strong>Ctrl+f搜索 permalink</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ permalink: :id.html   //填入:id.html</span><br></pre></td></tr></table></figure>
-<p><strong>然后在指定位置填入id即可 数字随意，只要保证每篇文章里面的数字不要一样就行</strong></p>
-<img src="/images/Hexo博客/案例.jpg">]]></content>
-  </entry>
-  <entry>
     <title>HTML表格</title>
     <url>/HTML.html</url>
     <content><![CDATA[<h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><a id="more"></a>
@@ -695,6 +672,29 @@ $</style>
 <h3 id="演示drawString（）方法的示例程序："><a href="#演示drawString（）方法的示例程序：" class="headerlink" title="演示drawString（）方法的示例程序："></a>演示drawString（）方法的示例程序：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// drawString示例程序</span><br><span class="line"><span class="variable">$import</span> java.awt.*; </span><br><span class="line"><span class="variable">$import</span> java.applet.*; </span><br><span class="line"><span class="variable">$public</span> class HelloWorldApplet扩展Applet &#123;     </span><br><span class="line">$ public void paint(Graphics g)&#123;         </span><br><span class="line">$ g.drawString(<span class="string">&quot;Hello World&quot;</span>，100,100);</span><br></pre></td></tr></table></figure>
 <h3 id="显示消息对话框"><a href="#显示消息对话框" class="headerlink" title="显示消息对话框"></a>显示消息对话框</h3><p>showMessageDialog(“里面的文字”)<br>f.setVisible(true)<br>f.setTitle(“框框上的文字”)<br>charAt</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>关于Hexo我所踩过的坑和小白安装教程</title>
+    <url>/Hexo-install.html</url>
+    <content><![CDATA[<h3 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h3><a id="more"></a>
+<p>前提是需要安装 Node.js,不懂的可以百度下载然后按照<a href="https://www.bilibili.com/video/BV1wA411s7re?from=search&seid=11841654225437997570">B站的安装视频按照</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<h3 id="第二是-Hexo初始化博客"><a href="#第二是-Hexo初始化博客" class="headerlink" title="第二是 Hexo初始化博客"></a>第二是 Hexo初始化博客</h3><p><strong>cd 到你想存放博客源码的一个目录里面，这时会自动建立一个博客文件夹</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init blog  //hexo init (博客名字自定义)</span><br></pre></td></tr></table></figure>
+
+<h3 id="第三是-给安装博客依赖"><a href="#第三是-给安装博客依赖" class="headerlink" title="第三是 给安装博客依赖"></a>第三是 给安装博客依赖</h3><p><strong>cd 进刚创建的博客文件夹，安装依赖模块命令如下</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<h3 id="第四是-找主题"><a href="#第四是-找主题" class="headerlink" title="第四是 找主题"></a>第四是 找主题</h3><p><strong>到这个 <a href="https://hexo.bootcss.com/themes/">Hexo网站</a> 去找主题</strong></p>
+<h3 id="第五是-本地运行"><a href="#第五是-本地运行" class="headerlink" title="第五是 本地运行"></a>第五是 本地运行</h3><p><strong>这里地址是localhost:4000</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="生成静态文件和"><a href="#生成静态文件和" class="headerlink" title="生成静态文件和"></a>生成静态文件和</h3><p><strong>部署在GitHub 或者 Gitee服务器上，生成静态文件，生成的静态文件在博客工程的 public文件夹下 到哪里找就行了</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<h3 id="清除静态文件和部署"><a href="#清除静态文件和部署" class="headerlink" title="清除静态文件和部署"></a>清除静态文件和部署</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean &amp; hexo d</span><br></pre></td></tr></table></figure>
+<h3 id="查看你有没有被百度收录文章"><a href="#查看你有没有被百度收录文章" class="headerlink" title="查看你有没有被百度收录文章"></a>查看你有没有被百度收录文章</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ site:(你的博客)  //直接复制命令百度搜索</span><br></pre></td></tr></table></figure>
+<h3 id="改变文章链接规则"><a href="#改变文章链接规则" class="headerlink" title="改变文章链接规则"></a>改变文章链接规则</h3><p><strong>Ctrl+f搜索 permalink</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ permalink: :id.html   //填入:id.html</span><br></pre></td></tr></table></figure>
+<p><strong>然后在指定位置填入id即可 数字随意，只要保证每篇文章里面的数字不要一样就行</strong></p>
+<img src="/images/Hexo博客/案例.jpg">]]></content>
   </entry>
   <entry>
     <title>Java面向对象思维</title>
@@ -801,6 +801,14 @@ $
 ]]></content>
   </entry>
   <entry>
+    <title>第一个Vue.js</title>
+    <url>/one-Vue.html</url>
+    <content><![CDATA[<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><a id="more"></a>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$  &lt;!DOCTYPE html&gt;</span><br><span class="line">$  &lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line">$  &lt;head&gt;</span><br><span class="line">$      &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">$      &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br><span class="line">$      &lt;title&gt;Vue学习&lt;/title&gt;</span><br><span class="line">$      &lt;script src=<span class="string">&quot;js/vue.min.js&quot;</span>&gt;&lt;/script&gt; </span><br><span class="line">$      &lt;!-- 导入Vue.js --&gt;</span><br><span class="line">$  &lt;/head&gt;</span><br><span class="line">$  &lt;body&gt;</span><br><span class="line">$      &lt;div id = <span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">$          &lt;button @click=<span class="string">&quot;showInfo&quot;</span>&gt;请点击&lt;/button&gt;</span><br><span class="line">$          &lt;p&gt;&#123;&#123;ms&#125;&#125;&lt;/p&gt;</span><br><span class="line">$          &lt;!-- &#123;&#123;massage&#125;&#125; --&gt;</span><br><span class="line">$      &lt;/div&gt;</span><br><span class="line">$      </span><br><span class="line">$          &lt;script&gt;</span><br><span class="line">$              var app = new Vue(&#123;</span><br><span class="line">$              el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">$              // Model : 数据</span><br><span class="line">$               data:&#123;</span><br><span class="line">$                   ms: <span class="string">&quot;hello,vue!&quot;</span>,</span><br><span class="line">$               &#125;,</span><br><span class="line">$               methods:&#123;</span><br><span class="line">$                   <span class="function"><span class="title">showInfo</span></span>()&#123;</span><br><span class="line">$                          this.ms = <span class="string">&quot;你好666999, Vue&quot;</span></span><br><span class="line">$                   &#125;</span><br><span class="line">$               &#125;</span><br><span class="line">$          &#125;);</span><br><span class="line">$          &lt;/script&gt;</span><br><span class="line">$      &lt;/script&gt;</span><br><span class="line">$      </span><br><span class="line">$  &lt;/body&gt;</span><br><span class="line">$  &lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="view和Model双向绑定"><a href="#view和Model双向绑定" class="headerlink" title="view和Model双向绑定"></a>view和Model双向绑定</h3>]]></content>
+  </entry>
+  <entry>
     <title>Vue.js 表单输入绑定的基础用法</title>
     <url>/Vue-usage.html</url>
     <content><![CDATA[<h3 id="输入文本"><a href="#输入文本" class="headerlink" title="输入文本"></a>输入文本</h3><a id="more"></a>
@@ -808,14 +816,6 @@ $
 <p><font color="#DC143C">直接实战</font></p>
 <iframe src="./html/文本.html">
 </iframe>]]></content>
-  </entry>
-  <entry>
-    <title>第一个Vue.js</title>
-    <url>/one-Vue.html</url>
-    <content><![CDATA[<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><a id="more"></a>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$  &lt;!DOCTYPE html&gt;</span><br><span class="line">$  &lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line">$  &lt;head&gt;</span><br><span class="line">$      &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">$      &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br><span class="line">$      &lt;title&gt;Vue学习&lt;/title&gt;</span><br><span class="line">$      &lt;script src=<span class="string">&quot;js/vue.min.js&quot;</span>&gt;&lt;/script&gt; </span><br><span class="line">$      &lt;!-- 导入Vue.js --&gt;</span><br><span class="line">$  &lt;/head&gt;</span><br><span class="line">$  &lt;body&gt;</span><br><span class="line">$      &lt;div id = <span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">$          &lt;button @click=<span class="string">&quot;showInfo&quot;</span>&gt;请点击&lt;/button&gt;</span><br><span class="line">$          &lt;p&gt;&#123;&#123;ms&#125;&#125;&lt;/p&gt;</span><br><span class="line">$          &lt;!-- &#123;&#123;massage&#125;&#125; --&gt;</span><br><span class="line">$      &lt;/div&gt;</span><br><span class="line">$      </span><br><span class="line">$          &lt;script&gt;</span><br><span class="line">$              var app = new Vue(&#123;</span><br><span class="line">$              el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">$              // Model : 数据</span><br><span class="line">$               data:&#123;</span><br><span class="line">$                   ms: <span class="string">&quot;hello,vue!&quot;</span>,</span><br><span class="line">$               &#125;,</span><br><span class="line">$               methods:&#123;</span><br><span class="line">$                   <span class="function"><span class="title">showInfo</span></span>()&#123;</span><br><span class="line">$                          this.ms = <span class="string">&quot;你好666999, Vue&quot;</span></span><br><span class="line">$                   &#125;</span><br><span class="line">$               &#125;</span><br><span class="line">$          &#125;);</span><br><span class="line">$          &lt;/script&gt;</span><br><span class="line">$      &lt;/script&gt;</span><br><span class="line">$      </span><br><span class="line">$  &lt;/body&gt;</span><br><span class="line">$  &lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="view和Model双向绑定"><a href="#view和Model双向绑定" class="headerlink" title="view和Model双向绑定"></a>view和Model双向绑定</h3>]]></content>
   </entry>
   <entry>
     <title>Arch wsl的傻瓜式安装 (有手就行)</title>
