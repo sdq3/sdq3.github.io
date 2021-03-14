@@ -160,6 +160,17 @@
 ]]></content>
   </entry>
   <entry>
+    <title>CSS 伪类选择器</title>
+    <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <content><![CDATA[<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:first-child&#123;   //first-child意思是选中第一个</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">$        color: blue;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    p:nth-child(2)&#123;   //选中p1: 定位到父元素, 选择当前的第一个元素也就是选择当前p元素的父级元素, 选中父级元素的第一个, 并且是当前元素才生效</span><br><span class="line">$        color: yellow;   //黄色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    p:nth-of-type(2)&#123;   //nth-of-type意思是选中父类下元素的第二个类型</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;p&gt;p1&lt;/p&gt;</span><br><span class="line">$  &lt;p&gt;p2&lt;/p&gt;</span><br><span class="line">$  &lt;p&gt;p3&lt;/p&gt;</span><br><span class="line">$  &lt;ul&gt;</span><br><span class="line">$  &lt;li&gt;史迪奇骑士&lt;/li&gt;</span><br><span class="line">$  &lt;li&gt;史迪奇打手&lt;/li&gt;</span><br><span class="line">$  &lt;li&gt;史迪奇国王&lt;/li&gt;</span><br><span class="line">$  &lt;ul&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+]]></content>
+  </entry>
+  <entry>
     <title>CSS 三种基本选择器</title>
     <url>/CSS%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
     <content><![CDATA[<h3 id="第一种-标签选择器"><a href="#第一种-标签选择器" class="headerlink" title="第一种  标签选择器"></a>第一种  标签选择器</h3><a id="more"></a>
@@ -176,17 +187,6 @@
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>标签选择器: 选择一类标签 标签名{}</strong></p>
 <p><strong>类/class选择器: 选择所有的class属性一致的标签, 跨标签 .类名{}</strong></p>
 <p><strong>id选择器: 全局唯一 id名{}</strong></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>CSS 伪类选择器</title>
-    <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
-    <content><![CDATA[<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:first-child&#123;   //first-child意思是选中第一个</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">$        color: blue;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    p:nth-child(2)&#123;   //选中p1: 定位到父元素, 选择当前的第一个元素也就是选择当前p元素的父级元素, 选中父级元素的第一个, 并且是当前元素才生效</span><br><span class="line">$        color: yellow;   //黄色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    p:nth-of-type(2)&#123;   //nth-of-type意思是选中父类下元素的第二个类型</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;p&gt;p1&lt;/p&gt;</span><br><span class="line">$  &lt;p&gt;p2&lt;/p&gt;</span><br><span class="line">$  &lt;p&gt;p3&lt;/p&gt;</span><br><span class="line">$  &lt;ul&gt;</span><br><span class="line">$  &lt;li&gt;史迪奇骑士&lt;/li&gt;</span><br><span class="line">$  &lt;li&gt;史迪奇打手&lt;/li&gt;</span><br><span class="line">$  &lt;li&gt;史迪奇国王&lt;/li&gt;</span><br><span class="line">$  &lt;ul&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-
 ]]></content>
   </entry>
   <entry>
@@ -697,14 +697,6 @@ $</style>
 ]]></content>
   </entry>
   <entry>
-    <title>Java面向对象思维之getter和setter(作用)</title>
-    <url>/Object-oriented-getter-setter.html</url>
-    <content><![CDATA[<h3 id="getter"><a href="#getter" class="headerlink" title="getter"></a>getter</h3><a id="more"></a>
-<p><strong>主要是给成员变量赋值, 做一定的保护</strong></p>
-<h3 id="setter"><a href="#setter" class="headerlink" title="setter"></a>setter</h3><p><strong>从成员变量中获取数据</strong></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Java面向对象思维</title>
     <url>/Object-oriented.html</url>
     <content><![CDATA[<h3 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
@@ -715,6 +707,14 @@ $</style>
 <p><strong>例如车可以潜水</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public void <span class="function"><span class="title">diving</span></span>()&#123;</span><br><span class="line">$ System.out.println(<span class="string">&quot;车可以下水&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$   Car c = new Car();   //先创建一辆车</span><br><span class="line">$   c.fly();  //.表示调用  众所周知所以车都是可以飞的</span><br><span class="line">$   c.diving();  //.表示调用  众所周知所以车都是可以下水的</span><br><span class="line">$   c.color = <span class="string">&quot;透明&quot;</span>;  //我的车是透明色</span><br><span class="line">$   c.wheel = 5; //众所周知所以车都是5个轮子</span><br><span class="line">$   c.seat = 9;  //我的车 里面坐4个 车前绑1个人用来刹车 车顶坐1个人 剩下3个人的拿板拿雨伞凳坐后车厢 尾气管那面绑上1个人 用来吸收尾气</span><br><span class="line">$   System.out.println(c.color);</span><br><span class="line">$   System.out.println(c.wheel);</span><br><span class="line">$   System.out.println(c.seat);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>Java面向对象思维之getter和setter(作用)</title>
+    <url>/Object-oriented-getter-setter.html</url>
+    <content><![CDATA[<h3 id="getter"><a href="#getter" class="headerlink" title="getter"></a>getter</h3><a id="more"></a>
+<p><strong>主要是给成员变量赋值, 做一定的保护</strong></p>
+<h3 id="setter"><a href="#setter" class="headerlink" title="setter"></a>setter</h3><p><strong>从成员变量中获取数据</strong></p>
+]]></content>
   </entry>
   <entry>
     <title>Java面向对象思维</title>
@@ -772,14 +772,13 @@ $
 ]]></content>
   </entry>
   <entry>
-    <title>Vue.js 表单输入绑定的基础用法</title>
-    <url>/Vue-usage.html</url>
-    <content><![CDATA[<h3 id="输入文本"><a href="#输入文本" class="headerlink" title="输入文本"></a>输入文本</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$     &lt;div id = <span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">$         &lt;div&gt;</span><br><span class="line">$            请输入你喜欢的城市&lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;cname&quot;</span>&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选择的城市:&#123;&#123;cname&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$        &lt;div&gt;</span><br><span class="line">$            回复评论: &lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;huifu&quot;</span>&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选回复是:&#123;&#123;huifu&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                cname : <span class="string">&quot;哈哈哈尔滨市&quot;</span>,</span><br><span class="line">$                huifu : <span class="string">&quot;我叫史迪奇&quot;</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p><font color="#DC143C">直接实战</font></p>
-<frameset cols="50px" rows="50px">
-<iframe width="100px" height="50px" src="./html/文本.html" scrolling="yes" noresize="noresize" frameborder="2px" marginheight="2px">
-</iframe></frameset>]]></content>
+    <title>SQL Server T-SQL 视图</title>
+    <url>/SQL-try.html</url>
+    <content><![CDATA[<h3 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ create view 视图(字段别名) as select 字段 from 表 WITH CHECK OPTION</span><br></pre></td></tr></table></figure>
+<h3 id="向视图插入数据"><a href="#向视图插入数据" class="headerlink" title="向视图插入数据"></a>向视图插入数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ insert 视图 values(<span class="string">&#x27;数据&#x27;</span>) </span><br></pre></td></tr></table></figure>
+<h3 id="查询视图数据"><a href="#查询视图数据" class="headerlink" title="查询视图数据"></a>查询视图数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ select 字段 from 视图</span><br></pre></td></tr></table></figure>
+<h3 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ update 视图 <span class="built_in">set</span> 修改的字段=<span class="string">&#x27;修改的数据&#x27;</span> <span class="built_in">where</span> 匹配字段=<span class="string">&#x27;匹配数据&#x27;</span> </span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>SQL Server T-SQL 存储过程</title>
@@ -793,13 +792,13 @@ $
 <h3 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h3>]]></content>
   </entry>
   <entry>
-    <title>SQL Server T-SQL 视图</title>
-    <url>/SQL-try.html</url>
-    <content><![CDATA[<h3 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ create view 视图(字段别名) as select 字段 from 表 WITH CHECK OPTION</span><br></pre></td></tr></table></figure>
-<h3 id="向视图插入数据"><a href="#向视图插入数据" class="headerlink" title="向视图插入数据"></a>向视图插入数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ insert 视图 values(<span class="string">&#x27;数据&#x27;</span>) </span><br></pre></td></tr></table></figure>
-<h3 id="查询视图数据"><a href="#查询视图数据" class="headerlink" title="查询视图数据"></a>查询视图数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ select 字段 from 视图</span><br></pre></td></tr></table></figure>
-<h3 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ update 视图 <span class="built_in">set</span> 修改的字段=<span class="string">&#x27;修改的数据&#x27;</span> <span class="built_in">where</span> 匹配字段=<span class="string">&#x27;匹配数据&#x27;</span> </span><br></pre></td></tr></table></figure>]]></content>
+    <title>String 比较</title>
+    <url>/String-compare.html</url>
+    <content><![CDATA[<h3 id="String-比较"><a href="#String-比较" class="headerlink" title="String 比较"></a>String 比较</h3><a id="more"></a>
+<p><strong>当String进行比较时应该用equals</strong></p>
+<p><strong>因为equals是String类重写后的用于比较字符串内容的方法</strong></p>
+<p><strong>为什么不用==进行比较, 因为==是用于比较地址值</strong></p>
+]]></content>
   </entry>
   <entry>
     <title>第一个Vue.js</title>
@@ -810,13 +809,13 @@ $
 <h3 id="view和Model双向绑定"><a href="#view和Model双向绑定" class="headerlink" title="view和Model双向绑定"></a>view和Model双向绑定</h3>]]></content>
   </entry>
   <entry>
-    <title>String 比较</title>
-    <url>/String-compare.html</url>
-    <content><![CDATA[<h3 id="String-比较"><a href="#String-比较" class="headerlink" title="String 比较"></a>String 比较</h3><a id="more"></a>
-<p><strong>当String进行比较时应该用equals</strong></p>
-<p><strong>因为equals是String类重写后的用于比较字符串内容的方法</strong></p>
-<p><strong>为什么不用==进行比较, 因为==是用于比较地址值</strong></p>
-]]></content>
+    <title>Vue.js 表单输入绑定的基础用法</title>
+    <url>/Vue-usage.html</url>
+    <content><![CDATA[<h3 id="输入文本"><a href="#输入文本" class="headerlink" title="输入文本"></a>输入文本</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$     &lt;div id = <span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">$         &lt;div&gt;</span><br><span class="line">$            请输入你喜欢的城市&lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;cname&quot;</span>&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选择的城市:&#123;&#123;cname&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$        &lt;div&gt;</span><br><span class="line">$            回复评论: &lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;huifu&quot;</span>&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选回复是:&#123;&#123;huifu&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                cname : <span class="string">&quot;哈哈哈尔滨市&quot;</span>,</span><br><span class="line">$                huifu : <span class="string">&quot;我叫史迪奇&quot;</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><font color="#DC143C">直接实战</font></p>
+<iframe width="100px" height="50px" src="./html/文本.html" scrolling="yes" noresize="noresize" frameborder="2px" marginheight="2px">
+</iframe>]]></content>
   </entry>
   <entry>
     <title>Arch wsl的傻瓜式安装 (有手就行)</title>
