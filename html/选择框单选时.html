@@ -7,27 +7,26 @@
 
 </head>
 <body>
-    <div id = "app">
+    <div id = "app6">
         <div>
             请你选择你喜欢的季节:<select v-model="season" style="width: 50px;">
                 <option>春天</option>
                 <option>夏天</option>
                 <option>秋天</option>
                 <option>冬天</option>
-              </select>
-        
+            </select>
         <p>
             你喜欢的季节是: {{season}}
         </p>
         </div>
     </div>
-        <script>
-            var app = new Vue({
-            el:'#app',
-            data : {
-                season: "夏天",
-            }
-        });
-        </script>
+    <script>
+        var app = new Vue({
+        el:'#app6',
+        data : {
+            season: "夏天",
+        }
+    });
+    </script>
 </body>
 </html>

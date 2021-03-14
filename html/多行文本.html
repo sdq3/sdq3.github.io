@@ -7,26 +7,24 @@
 
 </head>
 <body>
-    <div id = "app">
-         <div>
-            <span>你的名字: </span>
-            <p style="white-space: pre-line;">{{ name }}</p>
-            <br>
-            <textarea v-model="name " placeholder="请输入你的名字"></textarea>
-
-            <p>
-                你的名字:{{name}}
-            </p>
-        </div>
-
-    </div>
-        <script>
-            var app = new Vue({
-            el:'#app',
-            data : {
-                name : "史迪奇",
-            }
-        });
-        </script>
+    <div id = "app2">
+        <div>
+           <span>你的名字: </span>
+           <p style="white-space: pre-line;">{{ name }}</p>
+           <br>
+           <textarea v-model="name " placeholder="请输入你的名字"></textarea>
+           <p>
+               你的名字:{{name}}
+           </p>
+       </div>
+   </div>
+       <script>
+           var app = new Vue({
+           el:'#app2',
+           data : {
+               name : "史迪奇",
+           }
+       });
+       </script>
 </body>
 </html>
