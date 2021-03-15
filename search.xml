@@ -160,6 +160,17 @@
 ]]></content>
   </entry>
   <entry>
+    <title>CSS 伪类选择器</title>
+    <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <content><![CDATA[<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:first-child&#123;   //first-child意思是选中第一个</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">$        color: blue;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    p:nth-child(2)&#123;   //选中p1: 定位到父元素, 选择当前的第一个元素也就是选择当前p元素的父级元素, 选中父级元素的第一个, 并且是当前元素才生效</span><br><span class="line">$        color: yellow;   //黄色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    p:nth-of-type(2)&#123;   //nth-of-type意思是选中父类下元素的第二个类型</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;p&gt;p1&lt;/p&gt;</span><br><span class="line">$  &lt;p&gt;p2&lt;/p&gt;</span><br><span class="line">$  &lt;p&gt;p3&lt;/p&gt;</span><br><span class="line">$  &lt;ul&gt;</span><br><span class="line">$  &lt;li&gt;史迪奇骑士&lt;/li&gt;</span><br><span class="line">$  &lt;li&gt;史迪奇打手&lt;/li&gt;</span><br><span class="line">$  &lt;li&gt;史迪奇国王&lt;/li&gt;</span><br><span class="line">$  &lt;ul&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+]]></content>
+  </entry>
+  <entry>
     <title>CSS 三种基本选择器</title>
     <url>/CSS%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
     <content><![CDATA[<h3 id="第一种-标签选择器"><a href="#第一种-标签选择器" class="headerlink" title="第一种  标签选择器"></a>第一种  标签选择器</h3><a id="more"></a>
@@ -188,17 +199,6 @@
 <h3 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    dl dd dt&#123;</span><br><span class="line">$          color: blue;</span><br><span class="line">$         &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;dl&gt;</span><br><span class="line">$      &lt;dt&gt;史迪奇近战&lt;/dt&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇战士&lt;/li&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇辅助&lt;/li&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇坦克&lt;/li&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇刺客&lt;/li&gt;</span><br><span class="line">$      &lt;dt&gt;史迪奇远程&lt;/dt&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇法师&lt;/li&gt;</span><br><span class="line">$          &lt;li&gt;史迪奇射手&lt;/li&gt;</span><br><span class="line">$  &lt;dl&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
-    <title>CSS 伪类选择器</title>
-    <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
-    <content><![CDATA[<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:first-child&#123;   //first-child意思是选中第一个</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">$        color: blue;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    p:nth-child(2)&#123;   //选中p1: 定位到父元素, 选择当前的第一个元素也就是选择当前p元素的父级元素, 选中父级元素的第一个, 并且是当前元素才生效</span><br><span class="line">$        color: yellow;   //黄色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    p:nth-of-type(2)&#123;   //nth-of-type意思是选中父类下元素的第二个类型</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;p&gt;p1&lt;/p&gt;</span><br><span class="line">$  &lt;p&gt;p2&lt;/p&gt;</span><br><span class="line">$  &lt;p&gt;p3&lt;/p&gt;</span><br><span class="line">$  &lt;ul&gt;</span><br><span class="line">$  &lt;li&gt;史迪奇骑士&lt;/li&gt;</span><br><span class="line">$  &lt;li&gt;史迪奇打手&lt;/li&gt;</span><br><span class="line">$  &lt;li&gt;史迪奇国王&lt;/li&gt;</span><br><span class="line">$  &lt;ul&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-
-]]></content>
-  </entry>
-  <entry>
     <title>CSS 层次选择器</title>
     <url>/CSS%E5%B1%82%E6%AC%A1%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
     <content><![CDATA[<h3 id="第一种-后代选择器"><a href="#第一种-后代选择器" class="headerlink" title="第一种  后代选择器"></a>第一种  后代选择器</h3><a id="more"></a>
@@ -213,6 +213,17 @@
 ]]></content>
   </entry>
   <entry>
+    <title>CSS 属性选择器(常用)</title>
+    <url>/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <content><![CDATA[<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$</span><br><span class="line">$  .sdq1 a&#123; </span><br><span class="line">$       <span class="built_in">float</span>: left;  //left往左<span class="built_in">float</span>浮动</span><br><span class="line">$       dispay: block;  //dispay规定元素应该生成的框的类型block此元素将显示为块级元素，此元素前后会带有换行符。</span><br><span class="line">$       heigh: 50px;  //heigh高度</span><br><span class="line">$       width: 50px;  //width宽度</span><br><span class="line">$       border-radius: 10px;  //border-radius圆角边框</span><br><span class="line">$       </span><br><span class="line">$       text-align: center;   //text-align对齐center剧中</span><br><span class="line">$       color: yellow;  //color文字颜色</span><br><span class="line">$       text-decoration: none;  //text-decoration下划线none不显示</span><br><span class="line">$       margin-right: 5px;    //margin-right外边距向右</span><br><span class="line">$       font: bold 20px/50px Arial;   //font设置文字的字体bold字体大小20px字体的大小50px行高Arial是一种字体</span><br><span class="line">$   &#125;</span><br><span class="line">$    //格式a[]&#123;&#125;  存在id的属性的元素  </span><br><span class="line">$   a[class*=first]&#123;        //=是绝对等于  *=是包含这个元素</span><br><span class="line">$       background: yellow;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href^=xxy]&#123;          //^=表示以什么开头     </span><br><span class="line">$       background: green;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href$=ghfgh]&#123;          //$=表示以什么结尾     </span><br><span class="line">$       background: powder;</span><br><span class="line">$   &#125;</span><br><span class="line">$    </span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;p&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxy.fgdhrth&quot;</span> class=<span class="string">&quot;links item first&quot;</span> id=<span class="string">&quot;first&quot;</span>&gt;史迪奇&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪仔&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇骑士&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇国王&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇勇士&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;hh.ghfgh&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇巫师&lt;a&gt;</span><br><span class="line">$  &lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+]]></content>
+  </entry>
+  <entry>
     <title>CSS 三种导入样式</title>
     <url>/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F.html</url>
     <content><![CDATA[<h3 id="span标签"><a href="#span标签" class="headerlink" title="span标签"></a>span标签</h3><a id="more"></a>
@@ -224,17 +235,6 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color:blue;     //颜色</span><br><span class="line">$        text-align: center;  //文本对齐的方式 </span><br><span class="line">$        text-indent: 2em;     //首行缩进</span><br><span class="line">$        line-height: 20px;    //行高 </span><br><span class="line">$        text-decoration: overline;   //上划线</span><br><span class="line">$        text-decoration: line-through;   //中划线</span><br><span class="line">$        text-decoration: underline   //下划线</span><br><span class="line">$      &#125;</span><br><span class="line">$     img,span&#123;</span><br><span class="line">$               vertical-align: middle;</span><br><span class="line">$            &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$&lt;h1&gt;史迪奇的王国&lt;/h1&gt;</span><br><span class="line">$ &lt;p&gt;</span><br><span class="line">$ &lt;img src=<span class="string">&quot;images/x.jpg&quot;</span>&gt;</span><br><span class="line">$ &lt;span&gt;史迪奇&lt;/span&gt;</span><br><span class="line">$ &lt;/p&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="超链接伪类"><a href="#超链接伪类" class="headerlink" title="超链接伪类"></a>超链接伪类</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    //默认颜色</span><br><span class="line">$     a&#123;  </span><br><span class="line">$          text-decoration: none;</span><br><span class="line">$          color: <span class="comment">#000000;</span></span><br><span class="line">$       &#125;  </span><br><span class="line">$     //鼠标悬浮状态 </span><br><span class="line">$     a:hover&#123;  </span><br><span class="line">$          color: blue;</span><br><span class="line">$       &#125;     </span><br><span class="line">$     //鼠标按住未释放状态 </span><br><span class="line">$     a:active&#123;  </span><br><span class="line">$          color: rad;</span><br><span class="line">$       &#125;      </span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;p&gt;</span><br><span class="line">$&lt;h1&gt;史迪奇的王国&lt;/h1&gt;</span><br><span class="line">$ &lt;a&gt;史迪奇&lt;a&gt;</span><br><span class="line">$ &lt;/p&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$    //默认颜色</span><br><span class="line">$     <span class="comment">#sdq&#123;  </span></span><br><span class="line">$          text-shawdow: blue 10px 10px 10px;    //text-shawdow是阴影, 阴影颜色, 水平偏移, 垂直偏移, 阴影半径</span><br><span class="line">$       &#125;       </span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;p&gt;</span><br><span class="line">$&lt;h1&gt;史迪奇的王国&lt;/h1&gt;</span><br><span class="line">$ &lt;a id=<span class="string">&quot;sdq&quot;</span>&gt;史迪奇&lt;a&gt;</span><br><span class="line">$ &lt;/p&gt;</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
-    <title>CSS 属性选择器(常用)</title>
-    <url>/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
-    <content><![CDATA[<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;style&gt;</span><br><span class="line">$</span><br><span class="line">$  .sdq1 a&#123; </span><br><span class="line">$       <span class="built_in">float</span>: left;  //left往左<span class="built_in">float</span>浮动</span><br><span class="line">$       dispay: block;  //dispay规定元素应该生成的框的类型block此元素将显示为块级元素，此元素前后会带有换行符。</span><br><span class="line">$       heigh: 50px;  //heigh高度</span><br><span class="line">$       width: 50px;  //width宽度</span><br><span class="line">$       border-radius: 10px;  //border-radius圆角边框</span><br><span class="line">$       </span><br><span class="line">$       text-align: center;   //text-align对齐center剧中</span><br><span class="line">$       color: yellow;  //color文字颜色</span><br><span class="line">$       text-decoration: none;  //text-decoration下划线none不显示</span><br><span class="line">$       margin-right: 5px;    //margin-right外边距向右</span><br><span class="line">$       font: bold 20px/50px Arial;   //font设置文字的字体bold字体大小20px字体的大小50px行高Arial是一种字体</span><br><span class="line">$   &#125;</span><br><span class="line">$    //格式a[]&#123;&#125;  存在id的属性的元素  </span><br><span class="line">$   a[class*=first]&#123;        //=是绝对等于  *=是包含这个元素</span><br><span class="line">$       background: yellow;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href^=xxy]&#123;          //^=表示以什么开头     </span><br><span class="line">$       background: green;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href$=ghfgh]&#123;          //$=表示以什么结尾     </span><br><span class="line">$       background: powder;</span><br><span class="line">$   &#125;</span><br><span class="line">$    </span><br><span class="line">$ &lt;/style&gt;</span><br><span class="line">$ &lt;body&gt;</span><br><span class="line">$  &lt;p&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxy.fgdhrth&quot;</span> class=<span class="string">&quot;links item first&quot;</span> id=<span class="string">&quot;first&quot;</span>&gt;史迪奇&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪仔&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇骑士&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇国王&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;xxx&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇勇士&lt;a&gt;</span><br><span class="line">$  &lt;a href=<span class="string">&quot;hh.ghfgh&quot;</span> class=<span class="string">&quot;links item&quot;</span>&gt;史迪奇巫师&lt;a&gt;</span><br><span class="line">$  &lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-
 ]]></content>
   </entry>
   <entry>
@@ -289,17 +289,6 @@ $</style>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   &lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;css/style.css&quot;</span>&gt;    //链接式  属于html</span><br><span class="line">$    @import url(<span class="string">&quot;css/style.css&quot;</span>)          //导入式  属于CSS2.1 了解就可以</span><br><span class="line">$ &lt;style&gt;</span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color: blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ &lt;/style&gt;</span><br></pre></td></tr></table></figure>
 <p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E5%A4%96%E9%83%A8%E6%A0%B7%E5%BC%8F.jpg"></p>
 <h3 id="优先级-行内样式-gt-内部样式-gt-外部样式"><a href="#优先级-行内样式-gt-内部样式-gt-外部样式" class="headerlink" title="优先级: 行内样式 &gt; 内部样式 &gt; 外部样式"></a>优先级: 行内样式 &gt; 内部样式 &gt; 外部样式</h3><p><strong>优先级看就近原则</strong></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>HTML表格</title>
-    <url>/HTML.html</url>
-    <content><![CDATA[<h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><a id="more"></a>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ tr  //行</span><br><span class="line">$ td  //列</span><br></pre></td></tr></table></figure>
-
-<h3 id="跨列"><a href="#跨列" class="headerlink" title="跨列"></a>跨列</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;table&gt;</span><br><span class="line">$    &lt;tr&gt;</span><br><span class="line">$        &lt;tb cospan=<span class="string">&quot;2&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">$     &lt;tr&gt;</span><br><span class="line">$ &lt;/table&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="跨行"><a href="#跨行" class="headerlink" title="跨行"></a>跨行</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;table&gt;</span><br><span class="line">$    &lt;tr&gt;</span><br><span class="line">$        &lt;tb rowspan=<span class="string">&quot;2&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">$     &lt;tr&gt;</span><br><span class="line">$ &lt;/table&gt;</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
   <entry>
@@ -591,6 +580,17 @@ $</style>
 <h3 id="只要input都需要value值和name值-这样就可以养成好习惯"><a href="#只要input都需要value值和name值-这样就可以养成好习惯" class="headerlink" title="只要input都需要value值和name值, 这样就可以养成好习惯"></a>只要input都需要value值和name值, 这样就可以养成好习惯</h3>]]></content>
   </entry>
   <entry>
+    <title>HTML表格</title>
+    <url>/HTML.html</url>
+    <content><![CDATA[<h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><a id="more"></a>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ tr  //行</span><br><span class="line">$ td  //列</span><br></pre></td></tr></table></figure>
+
+<h3 id="跨列"><a href="#跨列" class="headerlink" title="跨列"></a>跨列</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;table&gt;</span><br><span class="line">$    &lt;tr&gt;</span><br><span class="line">$        &lt;tb cospan=<span class="string">&quot;2&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">$     &lt;tr&gt;</span><br><span class="line">$ &lt;/table&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="跨行"><a href="#跨行" class="headerlink" title="跨行"></a>跨行</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;table&gt;</span><br><span class="line">$    &lt;tr&gt;</span><br><span class="line">$        &lt;tb rowspan=<span class="string">&quot;2&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">$     &lt;tr&gt;</span><br><span class="line">$ &lt;/table&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>关于Hexo我所踩过的坑和小白安装教程</title>
     <url>/Hexo-install.html</url>
     <content><![CDATA[<h3 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h3><a id="more"></a>
@@ -746,6 +746,22 @@ $</style>
 ]]></content>
   </entry>
   <entry>
+    <title>Linux命令(未完工)</title>
+    <url>/Linux-command.html</url>
+    <content><![CDATA[<blockquote>
+<h3 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h3></blockquote>
+<a id="more"></a>
+<p><strong>命令英文原意: list</strong><br><strong>命令所在路径: /bin/ls</strong><br><strong>执行权限: 所有用户</strong><br><strong>功能描述: 显示目录文件</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ls // 显示当前目录下文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> 目录名 // 显示指定目录下文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -l // 长格式显示目录文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -l 文件名 // 长格式显示指定文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -a // 显示所有文件// 包含隐藏文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -al // 长格式显示当前目录下所有文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -h // 文件大小显示为常见大小单位 B KB MB …</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -d // 显示目录本身，而不是里面的子文件</span><br></pre></td></tr></table></figure>
+<h3 id="cd命令"><a href="#cd命令" class="headerlink" title="cd命令"></a>cd命令</h3><p><strong>命令英文原意: change directory</strong><br><strong>命令所在路径: shell内置命令</strong><br><strong>执行权限: 所有用户</strong><br><strong>功能描述: 切换所在目录</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="variable">$cd</span> /xx  // 切换到指定路径(使用绝对路径方式)</span><br><span class="line"></span><br><span class="line"><span class="variable">$cd</span> ~    // 进入当前用户的家目录</span><br><span class="line"></span><br><span class="line"><span class="variable">$cd</span> –    // 进入上次目录</span><br><span class="line"></span><br><span class="line"><span class="variable">$cd</span> ..   // 进入上一级目录</span><br><span class="line"></span><br><span class="line"><span class="variable">$cd</span> .    // 进入当前目录</span><br></pre></td></tr></table></figure>
+<!-- ``` bash
+$ 
+``` -->
+
+]]></content>
+  </entry>
+  <entry>
     <title>Java面向对象思维之构造方法需的重载</title>
     <url>/Object-oriented-constructor-heavy-load.html</url>
     <content><![CDATA[<h3 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
@@ -767,22 +783,6 @@ $</style>
 <h3 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h3>]]></content>
   </entry>
   <entry>
-    <title>Linux命令(未完工)</title>
-    <url>/Linux-command.html</url>
-    <content><![CDATA[<blockquote>
-<h3 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h3></blockquote>
-<a id="more"></a>
-<p><strong>命令英文原意: list</strong><br><strong>命令所在路径: /bin/ls</strong><br><strong>执行权限: 所有用户</strong><br><strong>功能描述: 显示目录文件</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ls // 显示当前目录下文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> 目录名 // 显示指定目录下文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -l // 长格式显示目录文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -l 文件名 // 长格式显示指定文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -a // 显示所有文件// 包含隐藏文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -al // 长格式显示当前目录下所有文件</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -h // 文件大小显示为常见大小单位 B KB MB …</span><br><span class="line"></span><br><span class="line"><span class="variable">$ls</span> -d // 显示目录本身，而不是里面的子文件</span><br></pre></td></tr></table></figure>
-<h3 id="cd命令"><a href="#cd命令" class="headerlink" title="cd命令"></a>cd命令</h3><p><strong>命令英文原意: change directory</strong><br><strong>命令所在路径: shell内置命令</strong><br><strong>执行权限: 所有用户</strong><br><strong>功能描述: 切换所在目录</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="variable">$cd</span> /xx  // 切换到指定路径(使用绝对路径方式)</span><br><span class="line"></span><br><span class="line"><span class="variable">$cd</span> ~    // 进入当前用户的家目录</span><br><span class="line"></span><br><span class="line"><span class="variable">$cd</span> –    // 进入上次目录</span><br><span class="line"></span><br><span class="line"><span class="variable">$cd</span> ..   // 进入上一级目录</span><br><span class="line"></span><br><span class="line"><span class="variable">$cd</span> .    // 进入当前目录</span><br></pre></td></tr></table></figure>
-<!-- ``` bash
-$ 
-``` -->
-
-]]></content>
-  </entry>
-  <entry>
     <title>SQL Server T-SQL 视图</title>
     <url>/SQL-try.html</url>
     <content><![CDATA[<h3 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h3><a id="more"></a>
@@ -792,14 +792,6 @@ $
 <h3 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ update 视图 <span class="built_in">set</span> 修改的字段=<span class="string">&#x27;修改的数据&#x27;</span> <span class="built_in">where</span> 匹配字段=<span class="string">&#x27;匹配数据&#x27;</span> </span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
-    <title>第一个Vue.js</title>
-    <url>/one-Vue.html</url>
-    <content><![CDATA[<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><a id="more"></a>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$  &lt;!DOCTYPE html&gt;</span><br><span class="line">$  &lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line">$  &lt;head&gt;</span><br><span class="line">$      &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">$      &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br><span class="line">$      &lt;title&gt;Vue学习&lt;/title&gt;</span><br><span class="line">$      &lt;script src=<span class="string">&quot;js/vue.min.js&quot;</span>&gt;&lt;/script&gt; </span><br><span class="line">$      &lt;!-- 导入Vue.js --&gt;</span><br><span class="line">$  &lt;/head&gt;</span><br><span class="line">$  &lt;body&gt;</span><br><span class="line">$      &lt;div id = <span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">$          &lt;button @click=<span class="string">&quot;showInfo&quot;</span>&gt;请点击&lt;/button&gt;</span><br><span class="line">$          &lt;p&gt;&#123;&#123;ms&#125;&#125;&lt;/p&gt;</span><br><span class="line">$          &lt;!-- &#123;&#123;massage&#125;&#125; --&gt;</span><br><span class="line">$      &lt;/div&gt;</span><br><span class="line">$      </span><br><span class="line">$          &lt;script&gt;</span><br><span class="line">$              var app = new Vue(&#123;</span><br><span class="line">$              el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">$              // Model : 数据</span><br><span class="line">$               data:&#123;</span><br><span class="line">$                   ms: <span class="string">&quot;hello,vue!&quot;</span>,</span><br><span class="line">$               &#125;,</span><br><span class="line">$               methods:&#123;</span><br><span class="line">$                   <span class="function"><span class="title">showInfo</span></span>()&#123;</span><br><span class="line">$                          this.ms = <span class="string">&quot;你好666999, Vue&quot;</span></span><br><span class="line">$                   &#125;</span><br><span class="line">$               &#125;</span><br><span class="line">$          &#125;);</span><br><span class="line">$          &lt;/script&gt;</span><br><span class="line">$      &lt;/script&gt;</span><br><span class="line">$      </span><br><span class="line">$  &lt;/body&gt;</span><br><span class="line">$  &lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="view和Model双向绑定"><a href="#view和Model双向绑定" class="headerlink" title="view和Model双向绑定"></a>view和Model双向绑定</h3>]]></content>
-  </entry>
-  <entry>
     <title>String 比较</title>
     <url>/String-compare.html</url>
     <content><![CDATA[<h3 id="String-比较"><a href="#String-比较" class="headerlink" title="String 比较"></a>String 比较</h3><a id="more"></a>
@@ -807,6 +799,14 @@ $
 <p><strong>因为equals是String类重写后的用于比较字符串内容的方法</strong></p>
 <p><strong>为什么不用==进行比较, 因为==是用于比较地址值</strong></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>第一个Vue.js</title>
+    <url>/one-Vue.html</url>
+    <content><![CDATA[<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><a id="more"></a>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$  &lt;!DOCTYPE html&gt;</span><br><span class="line">$  &lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line">$  &lt;head&gt;</span><br><span class="line">$      &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">$      &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br><span class="line">$      &lt;title&gt;Vue学习&lt;/title&gt;</span><br><span class="line">$      &lt;script src=<span class="string">&quot;js/vue.min.js&quot;</span>&gt;&lt;/script&gt; </span><br><span class="line">$      &lt;!-- 导入Vue.js --&gt;</span><br><span class="line">$  &lt;/head&gt;</span><br><span class="line">$  &lt;body&gt;</span><br><span class="line">$      &lt;div id = <span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">$          &lt;button @click=<span class="string">&quot;showInfo&quot;</span>&gt;请点击&lt;/button&gt;</span><br><span class="line">$          &lt;p&gt;&#123;&#123;ms&#125;&#125;&lt;/p&gt;</span><br><span class="line">$          &lt;!-- &#123;&#123;massage&#125;&#125; --&gt;</span><br><span class="line">$      &lt;/div&gt;</span><br><span class="line">$      </span><br><span class="line">$          &lt;script&gt;</span><br><span class="line">$              var app = new Vue(&#123;</span><br><span class="line">$              el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">$              // Model : 数据</span><br><span class="line">$               data:&#123;</span><br><span class="line">$                   ms: <span class="string">&quot;hello,vue!&quot;</span>,</span><br><span class="line">$               &#125;,</span><br><span class="line">$               methods:&#123;</span><br><span class="line">$                   <span class="function"><span class="title">showInfo</span></span>()&#123;</span><br><span class="line">$                          this.ms = <span class="string">&quot;你好666999, Vue&quot;</span></span><br><span class="line">$                   &#125;</span><br><span class="line">$               &#125;</span><br><span class="line">$          &#125;);</span><br><span class="line">$          &lt;/script&gt;</span><br><span class="line">$      &lt;/script&gt;</span><br><span class="line">$      </span><br><span class="line">$  &lt;/body&gt;</span><br><span class="line">$  &lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="view和Model双向绑定"><a href="#view和Model双向绑定" class="headerlink" title="view和Model双向绑定"></a>view和Model双向绑定</h3>]]></content>
   </entry>
   <entry>
     <title>Vue.js 表单输入绑定的基础用法</title>
