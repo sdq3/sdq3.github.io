@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>CSS 三种导入样式 -  我叫史迪奇</title>
+	<title>archive：2021/4 -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -644,184 +644,507 @@ var $main = document.querySelector('.main');
 
 
 
+
 <style>
-	#sdqPost:hover{
-   		    background-color: rgba(255, 255, 255, 0.5)!important;
-	}	
-</style>
-<div class="sdq">
-	<div class="sdq-post" id="sdqPost">
-		<div class="sdq-title">
-			<h1>CSS 三种导入样式</h1>
-		</div>
-	  <div id="post" class="sdq-post-Statistics">
-            <a>2021年04月07日</a>
-		  	<a class="post-count">99 字</a>
-		
-		
-	  </div>
-		
-		
-<div id="modal" style="display:none">
-
-<aside id="article-toc" class="fixed-toc">
-    <div id="article-toc-inner">
-        <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#span%E6%A0%87%E7%AD%BE"><span class="toc-text">span标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E4%BD%93%E9%A3%8E%E6%A0%BC"><span class="toc-text">字体风格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E6%A0%B7%E5%BC%8F"><span class="toc-text">文本样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5%E4%BC%AA%E7%B1%BB"><span class="toc-text">超链接伪类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B4%E5%BD%B1"><span class="toc-text">阴影</span></a></li></ol>
-    </div>
-</aside>
-</div>
-
-
-		
-			<a href="#modal" class="second">
-				<div class="i">
-						<i style="font-size:20px" class="sdq3 sdqfasong">
-						<span style="font-size:0px">
-						</i>
-				</div>
-			</a>
-
-
-
-
-<script>
-	$(".second .i").mouseover(function(){
-  $(".second .i span").css("font-size","18px");
-});
-	$(".second .i").mouseleave(function(){
-  $(".second .i span").css("font-size","0px");
-});
-</script>
-
-
-
-
-
-
-
-
-
-
-
-		<div>
-			  <article>
-				<h3 id="span标签"><a href="#span标签" class="headerlink" title="span标签"></a>span标签</h3><a id="more"></a>
-<p><strong>span标签: 重点突出的字, 使用span套起来</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    #sdq1&#123;</span><br><span class="line">$        color: blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$ 我叫<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;sdq1&quot;</span>&gt;</span>史迪奇<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"> </span><br></pre></td></tr></table></figure>
-
-<h3 id="字体风格"><a href="#字体风格" class="headerlink" title="字体风格"></a>字体风格</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    body&#123;</span><br><span class="line">$        font-family: &quot;Arial Black&quot;, 楷体;   //字体</span><br><span class="line">$        color:blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$    h1&#123;</span><br><span class="line">$        font-size: 50px;    //字体大小</span><br><span class="line">$      &#125;</span><br><span class="line">$    .sdq1&#123;</span><br><span class="line">$        font-weight: bolder;  //粗体</span><br><span class="line">$      &#125;</span><br><span class="line">$    p&#123;</span><br><span class="line">$        font: oblique bolder 12px &quot;楷体&quot;;   //斜体oblique粗细bolder大小12px</span><br><span class="line">$        color:blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的故事<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;sdq1&quot;</span>&gt;</span>生物史迪奇<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span>5岁女孩莉萝聪明善良, 她最爱听猫王的老歌, 也一直梦想拥有一只属于自己的宠物狗<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span>史迪奇只能把自己的两只脚藏起来, 外表看起来和别的小狗一样<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span>当外星人终于在地球上发现了伪装的史迪奇时, 他们绑架了莉萝想逼史迪奇就范, 为了救回自己的好朋友, 也为了证明自己不是无可救药的危险分子, 史迪奇只有使出浑身解数, 放手一搏了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h3><p><strong>装饰</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color:blue;     //颜色</span><br><span class="line">$        text-align: center;  //文本对齐的方式 </span><br><span class="line">$        text-indent: 2em;     //首行缩进</span><br><span class="line">$        line-height: 20px;    //行高 </span><br><span class="line">$        text-decoration: overline;   //上划线</span><br><span class="line">$        text-decoration: line-through;   //中划线</span><br><span class="line">$        text-decoration: underline   //下划线</span><br><span class="line">$      &#125;</span><br><span class="line">$     img,span&#123;</span><br><span class="line">$               vertical-align: middle;</span><br><span class="line">$            &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$<span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的王国<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/x.jpg&quot;</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">span</span>&gt;</span>史迪奇<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="超链接伪类"><a href="#超链接伪类" class="headerlink" title="超链接伪类"></a>超链接伪类</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    //默认颜色</span><br><span class="line">$     a&#123;  </span><br><span class="line">$          text-decoration: none;</span><br><span class="line">$          color: #000000;</span><br><span class="line">$       &#125;  </span><br><span class="line">$     //鼠标悬浮状态 </span><br><span class="line">$     a:hover&#123;  </span><br><span class="line">$          color: blue;</span><br><span class="line">$       &#125;     </span><br><span class="line">$     //鼠标按住未释放状态 </span><br><span class="line">$     a:active&#123;  </span><br><span class="line">$          color: rad;</span><br><span class="line">$       &#125;      </span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$<span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的王国<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">a</span>&gt;</span>史迪奇<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    //默认颜色</span><br><span class="line">$     #sdq&#123;  </span><br><span class="line">$          text-shawdow: blue 10px 10px 10px;    //text-shawdow是阴影, 阴影颜色, 水平偏移, 垂直偏移, 阴影半径</span><br><span class="line">$       &#125;       </span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$<span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的王国<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">&quot;sdq&quot;</span>&gt;</span>史迪奇<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-			  </article>
-		</div>
-		
-		
-
-
-		 	
-				<style>
-.veditor {
-    background: url('images/评论区/史迪奇睡觉.gif') no-repeat #fcfcfc!important;
-    background-size: auto 130px!important;
-    background-position: right bottom!important;
+.sdq-post {
+	webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+}
+.sdq-post:hover{
+	webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
 }
 </style>
-<div id="vcomments" class="comment">
 
-</div>
-<script>
-	window.valine = new Valine({
-		el: '#vcomments',
-		appId: 'QqqoNLFAJzeDU9WPBVYk7UBj-MdYXbMMI',
-		appKey: 'hzwk2U93vOE4IdBWQXvda2mJ',
-		avatar: 'robohash',
-		placeholder: '我叫史迪奇',
-		path: window.location.pathname,   //[重点] 记得添加path路径
-	});
+
+<style>
+@media screen and (max-width: 1024px){
+	.sdq-more{    
+    opacity: 1!important;
+	}
+	.sdq-more{  
+		display: contents!important;	
+	}
+	.sdq-toping{
+		display: inline-block;
+		left: 10px;
+		top: 0;
+		z-index: 2;
+		color: #FFFFFF;
+		padding: 0 10px;
+		border-radius: 4px;
+		font-style: normal;
+		background-color: rgba(234, 67, 74, 0.7);
+	}
+	.sdq-post:hover .sdq-toping {display: inline-block!important;}
+}
+
+@media screen and (min-width: 1024px){
+	.sdq-toping{
+		display: none;
+		position: fixed;
+		left: 10px;
+		top: 0;
+		z-index: 2;color: #FFFFFF;
+		clip-path: polygon(100% 0, 100% 100%, 50% 70%, 0 100%, 0 0);
+		background-color: rgba(255, 0, 0, 0.51);    
+		background: -webkit-gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
+    	background: gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
+		height: 61px;
+		width: 41px;
+	}
+}
+	.sdq-more{   
+	display: inline-block;
+    float: right;
+    background-color: rgba(204, 196, 196, 0.45);
+    padding: .5rem 1rem;
+    border-radius: 4px;
+    color: #919191!important;
+    text-decoration: none;
+    opacity: 0;
+    -webkit-transition: opacity 1.2s;
+    transition: opacity 1.2s;
+    will-change: opacity;
+        -moz-user-select: none; /*火狐*/
+        -webkit-user-select: none; /*webkit浏览器*/
+        -ms-user-select: none; /*IE10*/
+        -khtml-user-select: none; /*早期浏览器*/
+        -o-user-select: none; /* Opera*/
+        user-select: none;
+	}
+	.sdq-post:hover .sdq-more {
+		opacity: 1;
+		animation: fade-in;
+		animation-duration: 0.6s;
+		-webkit-animation: fade-in 0.6s;
+	}
 	
-    // 使用方法 https://valine.js.org/quickstart.html
-	/*
-		var $vcomments = document.querySelector('.comment');
-		var $div= document.createElement('div');
-		$div.setAttribute("id","#vcomments");
-		$vcomments.appendChild($div);
-    new Valine({
-        el: '#vcomments',
-        appId: 'QqqoNLFAJzeDU9WPBVYk7UBj-MdYXbMMI',
-        appKey: 'hzwk2U93vOE4IdBWQXvda2mJ',
-		avatar: 'robohash',
-        placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ',
-    });*/
-        //placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ',
-</script>
+	@keyframes fade-in {  
+    0% {opacity: 0;}/*初始状态 透明度为0*/  
+    40% {opacity: 0;}/*过渡状态 透明度为0*/  
+    100% {opacity: 1;}/*结束状态 透明度为1*/  
+	}  
+	@-webkit-keyframes fade-in {/*针对webkit内核*/  
+		0% {opacity: 0;}  
+		40% {opacity: 0;}  
+		100% {opacity: 1;}  
+	}  
+	.sdq-post:hover .sdq-toping {display: block;}
+	.sdq-tags{
+	}
+	.sdq-tags a{
+		color: #fff; 
+		font-size: 15px; 
+	}
+	.sdq-tags a {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+	}
+	
+</style>
 
-<script>
-/*//$(function() 
-$(window).load(function(){
-	// 去valine版权
-	$('.info').css("display","none");
-	// 去valine位移
-	$('.vmeta').css("padding-right","66px");
-	$('.vcontrol').css("padding-right","66px");
-	$('.vctrl').css("padding-right","66px");
-	$('#veditor').removeAttr("placeholder");
-	$("#veditor").attr("placeholder","输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ");
-	$('.v .vwrap .vheader .vinput:nth-child(3)').removeAttr("placeholder");
-	$(".v .vwrap .vheader .vinput:nth-child(3)").attr("placeholder","你的HOME(例：https://www.baidu.com)");
-	$(".info").after(" <p>&copy; </p>");
-});*/
-</script>
+
+<style>
+	
+@media screen and (min-width: 1024px){
+	.sdq-post:hover{
+   		border: none;
+		transform: translateY(-20px);
+		-webkit-transform: translateY(-20px);
+		-moz-transform: translateY(-20px);
+		background-color: rgba(255, 255, 255, 0.3);
+	}
+	.sdq-post{    
+		padding: 60px 70px!important;
+	}
+}
+	.sdq-post{    
+/*   		border: 1px #b8c7ff solid;*/
+		margin: 0px;    margin-bottom: 20px;
+        background-color: rgba(240, 248, 255, 0.4);
+	}
+</style>
+
+
+
+
+
+
+<div class="sdq">
+	<section class="sdq-posts">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/Thread-Process.html">
+					<div class="sdq-title"> 
+						什么是线程?什么是进程?线程与进程到底是什么关系
+					</div>
+				</a>
+			</div>
 			
+		</div>
+
+			<article>
+				
+				<h3 id="什么是线程-学习进程最重要的还是学习线程"><a href="#什么是线程-学习进程最重要的还是学习线程" class="headerlink" title="什么是线程(学习进程最重要的还是学习线程)"></a>什么是线程(学习进程最重要的还是学习线程)</h3>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年04月07日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/Thread-Process.html"><div class="sdq-more">阅读更多...</div></a>
 		
-	  
+    </div>
+    
 	
+    
+    
 		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/Private%20cloud.html">
+					<div class="sdq-title"> 
+						私有云配置(个人笔记)
+					</div>
+				</a>
+			</div>
+			
+		</div>
+
+			<article>
+				
+				<h3 id="空白分区划分"><a href="#空白分区划分" class="headerlink" title="空白分区划分"></a>空白分区划分</h3>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年04月07日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/Private%20cloud.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
+	
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/Arch-Wsl-install.html">
+					<div class="sdq-title"> 
+						Arch wsl的傻瓜式安装 (有手就行)
+					</div>
+				</a>
+			</div>
+			
+		</div>
+
+			<article>
+				
+				<p>本人是Arch教徒过来传一下教<br><img src="/images/wsl傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年04月07日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/Arch-Wsl-install.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
+	
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/zjx2.8.1.html">
+					<div class="sdq-title"> 
+						职教星2.8.1(搬运软件)
+					</div>
+				</a>
+			</div>
+			
+		</div>
+
+			<article>
+				
+				<h3 id="职教星2-8-1"><a href="#职教星2-8-1" class="headerlink" title="职教星2.8.1"></a>职教星2.8.1</h3>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年04月07日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/zjx2.8.1.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
+	
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/Android-compile.html">
+					<div class="sdq-title"> 
+						Android同步源码和编译ROM傻瓜式 (有手就行)
+					</div>
+				</a>
+			</div>
+			
+		</div>
+
+			<article>
+				
+				<p>本人是用Arch，顺便来传一下教<br><img src="/images/编译Android/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年04月07日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/Android-compile.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
+	
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/one-Vue.html">
+					<div class="sdq-title"> 
+						第一个Vue.js
+					</div>
+				</a>
+			</div>
+			
+		</div>
+
+			<article>
+				
+				<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年04月07日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/one-Vue.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
+	
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/Vue-usage.html">
+					<div class="sdq-title"> 
+						Vue.js 表单输入绑定的基础用法
+					</div>
+				</a>
+			</div>
+			
+		</div>
+
+			<article>
+				
+				<h3 id="输入文本"><a href="#输入文本" class="headerlink" title="输入文本"></a>输入文本</h3>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年04月07日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/Vue-usage.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
+	
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/SQL-try.html">
+					<div class="sdq-title"> 
+						SQL Server T-SQL 视图
+					</div>
+				</a>
+			</div>
+			
+		</div>
+
+			<article>
+				
+				<h3 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h3>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年04月07日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/SQL-try.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
+	
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/String-compare.html">
+					<div class="sdq-title"> 
+						String 比较
+					</div>
+				</a>
+			</div>
+			
+		</div>
+
+			<article>
+				
+				<h3 id="String-比较"><a href="#String-比较" class="headerlink" title="String 比较"></a>String 比较</h3>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年04月07日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/String-compare.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
+	
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/SQL-storage.html">
+					<div class="sdq-title"> 
+						SQL Server T-SQL 存储过程
+					</div>
+				</a>
+			</div>
+			
+		</div>
+
+			<article>
+				
+				<h3 id="创建变量"><a href="#创建变量" class="headerlink" title="创建变量"></a>创建变量</h3>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年04月07日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/SQL-storage.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
+	
+    
+</section>
+	
 
 
-<div class="copy">
-<i></i>
-<strong>本文作者：</strong>
-	
-	 
-			史迪奇<br>
-        
-	
-<strong>本文链接：</strong>
-	<a href="https://sdq3.gitee.io/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F.html</a><br>
+    <nav id="paging">
+      <span class="page-number current">1</span><a class="page-number" href="/archives/2021/04/page/2/">2</a><a class="page-number" href="/archives/2021/04/page/3/">3</a><a class="page-number" href="/archives/2021/04/page/4/">4</a><a class="extend next" rel="next" href="/archives/2021/04/page/2/"><i class="sdqMsDanIconFont"></i></a>
+    </nav>
+  
+
+<!--
+        prev_text: '<i class="iconfont">&#xe617;</i>',
+        next_text: '<i class="iconfont">&#xe627;</i>'
+-->
 </div>
 
-	  
-	</div>
-</div>
-<script>
-	(function(){
-		var jmz = {};
-		jmz.GetLength = function(str) {
-			var realLength = 0, len = str.length, charCode = -1;
-			for (var i = 0; i < len; i++) {
-				charCode = str.charCodeAt(i);
-				if (charCode >= 0 && charCode <= 128) 
-					  realLength += 1;
-				else
-					  realLength += 1;
-			}
-			return realLength;
-		};
-		//console.log(str);
-		var article = document.querySelector('.sdq-post article').innerHTML.trim();
-
-		var b = article.replace(/<.*?>/ig,"");
-		
-		$('.post-count').html(jmz.GetLength(b)+"字");
-	})()
 
 
 
-</script>
+
+
+
+
+
 
 
     				
