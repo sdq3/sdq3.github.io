@@ -1,129 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Arch系统包桌面傻瓜式安装 (有手就行)</title>
-    <url>/Arch-install.html</url>
-    <content><![CDATA[<p>本人是Arch教徒过来传一下教<br><img src="/images/Arch傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
-<a id="more"></a>
-<p><strong>在Windows里用DiskGenius转GPT之后 删除你所要安装Arch的分区</strong><br><img src="/images/Arch傻瓜式安装/转GPT格式.jpg" style="width: 300px; height: 150px;"><br><strong>磁盘变更还可以用Lixux命令来 不建议使用</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ partrd /dev/xxx  //你要变更的磁盘</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gpt</span><br></pre></td></tr></table></figure>
-<p>然后退出</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ quit</span><br></pre></td></tr></table></figure>
-<h3 id="第一步-先要有一个启动盘-这里推荐清华大学开源软件镜像站"><a href="#第一步-先要有一个启动盘-这里推荐清华大学开源软件镜像站" class="headerlink" title="第一步 先要有一个启动盘 这里推荐清华大学开源软件镜像站"></a>第一步 先要有一个启动盘 这里推荐<a href="https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/">清华大学开源软件镜像站</a></h3><h3 id="第二步-引导界面选择第一个-进入U盘"><a href="#第二步-引导界面选择第一个-进入U盘" class="headerlink" title="第二步 引导界面选择第一个 进入U盘"></a>第二步 引导界面选择第一个 进入U盘</h3><p><strong>先检查一下是不是UEFI启动,输入以下命令，有输出就代码是UEFI启动，检查BIOS设置是否为UEFI, BIOS设置每个机型都不一样</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ls /sys/firmware/efi/efivars</span><br></pre></td></tr></table></figure>
-<h3 id="第三步-检查网络连接"><a href="#第三步-检查网络连接" class="headerlink" title="第三步 检查网络连接"></a>第三步 检查网络连接</h3><p><strong>建议直接插网线，然后ping一下百度，有反应继续 没反应检查网线</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ping www.baidu.com</span><br></pre></td></tr></table></figure>
-
-<p>然后CTRL+Z退出</p>
-<p><strong>如果你想用WIFI就执行以下步骤</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ iwctl</span><br></pre></td></tr></table></figure>
-<p><strong>查看网卡 通常都是wlan0</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ device list</span><br></pre></td></tr></table></figure>
-<p><strong>以下命令是扫描你范围内的无线网卡</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ station wlan0 get-networks</span><br></pre></td></tr></table></figure>
-
-<p><strong>找到你的WIFI</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ station wlan0 connect xxx    //无线网卡名字通常是wlan0，WIFI名字xxx</span><br></pre></td></tr></table></figure>
-<p><strong>Passphrase:是让你输密码</strong></p>
-<p><strong>然后以下命令退出</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
-<h3 id="第四步-设置系统时钟更新-与网络时间同步"><a href="#第四步-设置系统时钟更新-与网络时间同步" class="headerlink" title="第四步 设置系统时钟更新 与网络时间同步"></a>第四步 设置系统时钟更新 与网络时间同步</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ timedatectl set-ntp <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p><strong>查看是否执行完同步</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ timedatectl status</span><br></pre></td></tr></table></figure>
-<h3 id="第五步-更换镜像源"><a href="#第五步-更换镜像源" class="headerlink" title="第五步 更换镜像源"></a>第五步 更换镜像源</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ vim /etc/pamcan.d/mtrrorlist</span><br></pre></td></tr></table></figure>
-<p><strong>查找: Server = <a href="https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch">https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch</a></strong></p>
-<h3 id="第六步-分区"><a href="#第六步-分区" class="headerlink" title="第六步 分区"></a>第六步 分区</h3><p><strong>查看分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ lsblk</span><br></pre></td></tr></table></figure>
-<p><strong>然后正式分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cfdisk /dev/xxx   //你要变更的磁盘</span><br></pre></td></tr></table></figure>
-<p><strong>终于到这里了 这里是图形化界面很好查找</strong><br><img src="/images/Arch傻瓜式安装/图形化界面.jpg" style="width: 750px; height: 100px;"></p>
-<p><strong>(New是新建) (Resize是调整大小) (Quit是退出) (Type是类型) (Heip是帮助) (Wrire是保存) (Dump是丢弃)</strong></p>
-<p><strong>步骤: 先点New建一个300M的文件，然后点Type选择EFI System点击，再点New建一个2G的文件，然后点Type选择Linux swap点击，最后点New建一个(根目录)主分区把剩下的所有内存用上，然后点Type选择Linux filesystem点击，然后Wrire回车，并输入yes，然后拍照，点击Quit退出</strong></p>
-<img src="/images/Arch傻瓜式安装/例子.jpg" style="width: 900px; height: 300px;">
-
-<p><strong>以防万一，检查一下</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cfdisk -l</span><br></pre></td></tr></table></figure>
-<h3 id="第七步-格式化操作"><a href="#第七步-格式化操作" class="headerlink" title="第七步 格式化操作"></a>第七步 格式化操作</h3><p><strong>格式化主分区(根目录)</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkfs.ext4 /dev/xxx   //就是你刚刚Linux filesystem的</span><br></pre></td></tr></table></figure>
-<p><strong>格式化EFI分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkfs.vfat /dev/xxx     //就是你刚刚EFI System的</span><br></pre></td></tr></table></figure>
-<p><strong>格式化swap分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkfswap -f /dev/xxx     //就是你刚刚Linux swap的</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ swapon /dev/xxx     //就是你刚刚Linux swap的</span><br></pre></td></tr></table></figure>
-<h3 id="第八步-挂载"><a href="#第八步-挂载" class="headerlink" title="第八步 挂载"></a>第八步 挂载</h3><p><strong>挂载根目录 注意/mnt前面有空格</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mount /dev/(就是你刚刚Linux filesystem的) /mnt</span><br></pre></td></tr></table></figure>
-<p><strong>挂载EFI分区 先创建boot目录 再里面创建EFI目录 注意/mnt前面还有空格</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir /mnt/boot</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir /mnt/boot/EFI</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mount /dev/xxx /mnt/boot/EFI       //xxx就是你刚刚EFI System的</span><br></pre></td></tr></table></figure>
-<h3 id="第九步-安装系统"><a href="#第九步-安装系统" class="headerlink" title="第九步 安装系统"></a>第九步 安装系统</h3><p><strong>这三个包必安装</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacstrap /mnt base linux linux-firmware</span><br></pre></td></tr></table></figure>
-<p><strong>然后安装功能性软件 联网的有dhcpcd iwd，编辑器有vim，提权有sudo</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacstrap /mnt dhcpcd iwd vim sudo</span><br></pre></td></tr></table></figure>
-<p><strong>然后定义etc分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
-<p><strong>以防万一还是检查一下</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
-<h3 id="第七步-把环境迁移到新系统"><a href="#第七步-把环境迁移到新系统" class="headerlink" title="第七步 把环境迁移到新系统"></a>第七步 把环境迁移到新系统</h3><p><strong>迁移命令</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ arch-chroot /mnt</span><br></pre></td></tr></table></figure>
-<p><strong>创建时区 例如: 上海</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ln -sf /usr.share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
-<p><strong>同步时区</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hwclock --systohc</span><br></pre></td></tr></table></figure>
-<p><strong>设置语言 留意en_US.UTF-8 UTF-8</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ vim /etc/locale.gen</span><br></pre></td></tr></table></figure>
-<p><strong>然后生成</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ locale-gen</span><br></pre></td></tr></table></figure>
-<p><strong>然后输入内容</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">&#x27;LANG=EN_us.utf-8 &gt; /etc/locale.conf&#x27;</span></span><br></pre></td></tr></table></figure>
-<p><strong>以防万一 检查一下</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat /etc/locale.conf</span><br></pre></td></tr></table></figure>
-<h3 id="第八步-用户设置"><a href="#第八步-用户设置" class="headerlink" title="第八步 用户设置"></a>第八步 用户设置</h3><p><strong>Root用户设置密码</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ passwd root</span><br></pre></td></tr></table></figure>
-<p><strong>intel英特尔CPU安装这个</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S intel-ucode</span><br></pre></td></tr></table></figure>
-<p><strong>AMD超微CPU安装这个</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S amd-ucode</span><br></pre></td></tr></table></figure>
-<h3 id="第九步-安装引导程序"><a href="#第九步-安装引导程序" class="headerlink" title="第九步 安装引导程序"></a>第九步 安装引导程序</h3><p><strong>安装grub引导</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S grub efibootmgr</span><br></pre></td></tr></table></figure>
-<p><strong>然后给grub引导取个名字</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ grub-install --target=x86_64-efi --efi-directory=/bootloader-id=Arch      //这里我起Arch 顺便起个名字就好了</span><br></pre></td></tr></table></figure>
-<p><strong>生成配置文件</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
-<p><strong>退出安装环境</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
-<p><strong>卸载分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ umount -R /mnt</span><br></pre></td></tr></table></figure>
-<p><strong>然后重启一下 可选择物理重启和命令重启</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ reboot</span><br></pre></td></tr></table></figure>
-<img src="/images/Arch傻瓜式安装/效果.jpg" style="width: 318px; height: 144px;">
-
-<h3 id="第九步-安装到此为止-安装桌面玩下看"><a href="#第九步-安装到此为止-安装桌面玩下看" class="headerlink" title="第九步 安装到此为止 安装桌面玩下看"></a>第九步 安装到此为止 安装桌面玩下看</h3><h3 id="桌面环境"><a href="#桌面环境" class="headerlink" title="桌面环境"></a>桌面环境</h3><p><strong>创建用户 有利于提权</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ useradd -m -g users G wheel -s /bin/bash xxx     //xxx是你顺便起个用户名</span><br></pre></td></tr></table></figure>
-<p><strong>创建密码</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ passwd wallen</span><br></pre></td></tr></table></figure>
-<p><strong>编辑新用户权限 %wheel ALL=(ALL) ALL</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ EDITOR=vim visudo</span><br></pre></td></tr></table></figure>
-<p><strong>创建桌面环境命令和其他必要软件命令  dolpin是文件管理器  konsole是终端</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S plasma-meta dolphin konsole</span><br></pre></td></tr></table></figure>
-<p><strong>配置sddm设置为开机自启</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ systemctl <span class="built_in">enable</span> sddm</span><br></pre></td></tr></table></figure>
-<p><strong>开启一下32位支持库 有些程序还是32位 所以要装一些库</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo vim /etc/pacman.conf</span><br></pre></td></tr></table></figure>
-<p><strong>配置</strong></p>
-<img src="/images/Arch傻瓜式安装/配置.jpg" style="width: 900px; height: 300px;">
-
-<p><strong>刷新数据库内容</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacmam -Syyu</span><br></pre></td></tr></table></figure>
-<p><strong>然后重启一下 可选择物理重启和命令重启</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ reboot</span><br></pre></td></tr></table></figure>
-<h3 id="Vim命令"><a href="#Vim命令" class="headerlink" title="Vim命令"></a>Vim命令</h3><p><strong>按A键是编辑模式</strong><br><strong>按回车键是执行</strong><br><strong>按两下D键是剪切</strong><br><strong>按两下G键是回到第一行</strong><br><strong>按P键粘贴</strong><br><strong>按N键查找下一个</strong><br><strong>按ESC 然后输入 :wq 是保存并退出</strong></p>
-<h3 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>Anroid 项目结构</title>
     <url>/Anroid-structure.html</url>
     <content><![CDATA[<h3 id="Project-项目结构"><a href="#Project-项目结构" class="headerlink" title="Project 项目结构"></a>Project 项目结构</h3><a id="more"></a>
@@ -562,22 +439,126 @@ var tools = (function(){
 </ul></ul></ul></ul>]]></content>
   </entry>
   <entry>
-    <title>CSS 三种基本选择器</title>
-    <url>/CSS%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
-    <content><![CDATA[<h3 id="第一种-标签选择器"><a href="#第一种-标签选择器" class="headerlink" title="第一种  标签选择器"></a>第一种  标签选择器</h3><a id="more"></a>
+    <title>Arch系统包桌面傻瓜式安装 (有手就行)</title>
+    <url>/Arch-install.html</url>
+    <content><![CDATA[<p>本人是Arch教徒过来传一下教<br><img src="/images/Arch傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
+<a id="more"></a>
+<p><strong>在Windows里用DiskGenius转GPT之后 删除你所要安装Arch的分区</strong><br><img src="/images/Arch傻瓜式安装/转GPT格式.jpg" style="width: 300px; height: 150px;"><br><strong>磁盘变更还可以用Lixux命令来 不建议使用</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ partrd /dev/xxx  //你要变更的磁盘</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gpt</span><br></pre></td></tr></table></figure>
+<p>然后退出</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ quit</span><br></pre></td></tr></table></figure>
+<h3 id="第一步-先要有一个启动盘-这里推荐清华大学开源软件镜像站"><a href="#第一步-先要有一个启动盘-这里推荐清华大学开源软件镜像站" class="headerlink" title="第一步 先要有一个启动盘 这里推荐清华大学开源软件镜像站"></a>第一步 先要有一个启动盘 这里推荐<a href="https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/">清华大学开源软件镜像站</a></h3><h3 id="第二步-引导界面选择第一个-进入U盘"><a href="#第二步-引导界面选择第一个-进入U盘" class="headerlink" title="第二步 引导界面选择第一个 进入U盘"></a>第二步 引导界面选择第一个 进入U盘</h3><p><strong>先检查一下是不是UEFI启动,输入以下命令，有输出就代码是UEFI启动，检查BIOS设置是否为UEFI, BIOS设置每个机型都不一样</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ls /sys/firmware/efi/efivars</span><br></pre></td></tr></table></figure>
+<h3 id="第三步-检查网络连接"><a href="#第三步-检查网络连接" class="headerlink" title="第三步 检查网络连接"></a>第三步 检查网络连接</h3><p><strong>建议直接插网线，然后ping一下百度，有反应继续 没反应检查网线</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ping www.baidu.com</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$    p&#123;</span><br><span class="line">$        color: blue;   //蓝色字体</span><br><span class="line">$        background: red;    //设置背景图颜色</span><br><span class="line">$        borde-radius: 24px;    //设置圆角边框</span><br><span class="line">$        font-size: 80px;    //设置字体大小</span><br><span class="line">$      &#125;</span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;sdq1&quot;</span>&gt;</span>史迪奇骑士<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;sdq2&quot;</span>&gt;</span>史迪奇打手<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span>&gt;</span>史迪奇国王<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>然后CTRL+Z退出</p>
+<p><strong>如果你想用WIFI就执行以下步骤</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ iwctl</span><br></pre></td></tr></table></figure>
+<p><strong>查看网卡 通常都是wlan0</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ device list</span><br></pre></td></tr></table></figure>
+<p><strong>以下命令是扫描你范围内的无线网卡</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ station wlan0 get-networks</span><br></pre></td></tr></table></figure>
 
-<h3 id="第二种-类-class-选择器"><a href="#第二种-类-class-选择器" class="headerlink" title="第二种 类 class 选择器"></a>第二种 类 class 选择器</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    .sdq1&#123;</span><br><span class="line">$        color: blue;   //蓝色字体</span><br><span class="line">$        background: red;    //设置背景图颜色</span><br><span class="line">$        borde-radius: 24px;    //设置圆角边框</span><br><span class="line">$        font-size: 80px;    //设置字体大小</span><br><span class="line">$    &#125;</span><br><span class="line">$    .sdq2&#123;</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;sdq1&quot;</span>&gt;</span>史迪奇骑士<span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;sdq2&quot;</span>&gt;</span>史迪奇打手<span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇国王<span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>类选择器 .class的名称{}</strong></p>
-<p><strong>好处: 可以多个标签归类, 是同一个class, 可以复用</strong></p>
-<h3 id="第三种-id选择器"><a href="#第三种-id选择器" class="headerlink" title="第三种 id选择器"></a>第三种 id选择器</h3><p><strong>id选择器 #id的名称{}</strong></p>
-<p><strong>id必须保证全局唯一</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    #sdq1&#123;</span><br><span class="line">$        color: blue;   //蓝色字体</span><br><span class="line">$        background: red;    //设置背景图颜色</span><br><span class="line">$        borde-radius: 24px;    //设置圆角边框</span><br><span class="line">$        font-size: 80px;    //设置字体大小</span><br><span class="line">$    &#125;</span><br><span class="line">$    .sdq2&#123;</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">&quot;sdq1&quot;</span>&gt;</span>史迪奇骑士<span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;sdq2&quot;</span>&gt;</span>史迪奇打手<span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇国王<span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="优先级-id选择器-gt-class选择器-gt-标签选择器"><a href="#优先级-id选择器-gt-class选择器-gt-标签选择器" class="headerlink" title="优先级: id选择器 &gt; class选择器&gt; 标签选择器"></a>优先级: id选择器 &gt; class选择器&gt; 标签选择器</h3><p><strong>优先级不遵循就近原则, 是固定的</strong></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>标签选择器: 选择一类标签 标签名{}</strong></p>
-<p><strong>类/class选择器: 选择所有的class属性一致的标签, 跨标签 .类名{}</strong></p>
-<p><strong>id选择器: 全局唯一 id名{}</strong></p>
+<p><strong>找到你的WIFI</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ station wlan0 connect xxx    //无线网卡名字通常是wlan0，WIFI名字xxx</span><br></pre></td></tr></table></figure>
+<p><strong>Passphrase:是让你输密码</strong></p>
+<p><strong>然后以下命令退出</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+<h3 id="第四步-设置系统时钟更新-与网络时间同步"><a href="#第四步-设置系统时钟更新-与网络时间同步" class="headerlink" title="第四步 设置系统时钟更新 与网络时间同步"></a>第四步 设置系统时钟更新 与网络时间同步</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ timedatectl set-ntp <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p><strong>查看是否执行完同步</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ timedatectl status</span><br></pre></td></tr></table></figure>
+<h3 id="第五步-更换镜像源"><a href="#第五步-更换镜像源" class="headerlink" title="第五步 更换镜像源"></a>第五步 更换镜像源</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ vim /etc/pamcan.d/mtrrorlist</span><br></pre></td></tr></table></figure>
+<p><strong>查找: Server = <a href="https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch">https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch</a></strong></p>
+<h3 id="第六步-分区"><a href="#第六步-分区" class="headerlink" title="第六步 分区"></a>第六步 分区</h3><p><strong>查看分区</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ lsblk</span><br></pre></td></tr></table></figure>
+<p><strong>然后正式分区</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cfdisk /dev/xxx   //你要变更的磁盘</span><br></pre></td></tr></table></figure>
+<p><strong>终于到这里了 这里是图形化界面很好查找</strong><br><img src="/images/Arch傻瓜式安装/图形化界面.jpg" style="width: 750px; height: 100px;"></p>
+<p><strong>(New是新建) (Resize是调整大小) (Quit是退出) (Type是类型) (Heip是帮助) (Wrire是保存) (Dump是丢弃)</strong></p>
+<p><strong>步骤: 先点New建一个300M的文件，然后点Type选择EFI System点击，再点New建一个2G的文件，然后点Type选择Linux swap点击，最后点New建一个(根目录)主分区把剩下的所有内存用上，然后点Type选择Linux filesystem点击，然后Wrire回车，并输入yes，然后拍照，点击Quit退出</strong></p>
+<img src="/images/Arch傻瓜式安装/例子.jpg" style="width: 900px; height: 300px;">
+
+<p><strong>以防万一，检查一下</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cfdisk -l</span><br></pre></td></tr></table></figure>
+<h3 id="第七步-格式化操作"><a href="#第七步-格式化操作" class="headerlink" title="第七步 格式化操作"></a>第七步 格式化操作</h3><p><strong>格式化主分区(根目录)</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkfs.ext4 /dev/xxx   //就是你刚刚Linux filesystem的</span><br></pre></td></tr></table></figure>
+<p><strong>格式化EFI分区</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkfs.vfat /dev/xxx     //就是你刚刚EFI System的</span><br></pre></td></tr></table></figure>
+<p><strong>格式化swap分区</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkfswap -f /dev/xxx     //就是你刚刚Linux swap的</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ swapon /dev/xxx     //就是你刚刚Linux swap的</span><br></pre></td></tr></table></figure>
+<h3 id="第八步-挂载"><a href="#第八步-挂载" class="headerlink" title="第八步 挂载"></a>第八步 挂载</h3><p><strong>挂载根目录 注意/mnt前面有空格</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mount /dev/(就是你刚刚Linux filesystem的) /mnt</span><br></pre></td></tr></table></figure>
+<p><strong>挂载EFI分区 先创建boot目录 再里面创建EFI目录 注意/mnt前面还有空格</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir /mnt/boot</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir /mnt/boot/EFI</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mount /dev/xxx /mnt/boot/EFI       //xxx就是你刚刚EFI System的</span><br></pre></td></tr></table></figure>
+<h3 id="第九步-安装系统"><a href="#第九步-安装系统" class="headerlink" title="第九步 安装系统"></a>第九步 安装系统</h3><p><strong>这三个包必安装</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacstrap /mnt base linux linux-firmware</span><br></pre></td></tr></table></figure>
+<p><strong>然后安装功能性软件 联网的有dhcpcd iwd，编辑器有vim，提权有sudo</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacstrap /mnt dhcpcd iwd vim sudo</span><br></pre></td></tr></table></figure>
+<p><strong>然后定义etc分区</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
+<p><strong>以防万一还是检查一下</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
+<h3 id="第七步-把环境迁移到新系统"><a href="#第七步-把环境迁移到新系统" class="headerlink" title="第七步 把环境迁移到新系统"></a>第七步 把环境迁移到新系统</h3><p><strong>迁移命令</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ arch-chroot /mnt</span><br></pre></td></tr></table></figure>
+<p><strong>创建时区 例如: 上海</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ln -sf /usr.share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
+<p><strong>同步时区</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hwclock --systohc</span><br></pre></td></tr></table></figure>
+<p><strong>设置语言 留意en_US.UTF-8 UTF-8</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ vim /etc/locale.gen</span><br></pre></td></tr></table></figure>
+<p><strong>然后生成</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ locale-gen</span><br></pre></td></tr></table></figure>
+<p><strong>然后输入内容</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">&#x27;LANG=EN_us.utf-8 &gt; /etc/locale.conf&#x27;</span></span><br></pre></td></tr></table></figure>
+<p><strong>以防万一 检查一下</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat /etc/locale.conf</span><br></pre></td></tr></table></figure>
+<h3 id="第八步-用户设置"><a href="#第八步-用户设置" class="headerlink" title="第八步 用户设置"></a>第八步 用户设置</h3><p><strong>Root用户设置密码</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ passwd root</span><br></pre></td></tr></table></figure>
+<p><strong>intel英特尔CPU安装这个</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S intel-ucode</span><br></pre></td></tr></table></figure>
+<p><strong>AMD超微CPU安装这个</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S amd-ucode</span><br></pre></td></tr></table></figure>
+<h3 id="第九步-安装引导程序"><a href="#第九步-安装引导程序" class="headerlink" title="第九步 安装引导程序"></a>第九步 安装引导程序</h3><p><strong>安装grub引导</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S grub efibootmgr</span><br></pre></td></tr></table></figure>
+<p><strong>然后给grub引导取个名字</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ grub-install --target=x86_64-efi --efi-directory=/bootloader-id=Arch      //这里我起Arch 顺便起个名字就好了</span><br></pre></td></tr></table></figure>
+<p><strong>生成配置文件</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+<p><strong>退出安装环境</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+<p><strong>卸载分区</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ umount -R /mnt</span><br></pre></td></tr></table></figure>
+<p><strong>然后重启一下 可选择物理重启和命令重启</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ reboot</span><br></pre></td></tr></table></figure>
+<img src="/images/Arch傻瓜式安装/效果.jpg" style="width: 318px; height: 144px;">
+
+<h3 id="第九步-安装到此为止-安装桌面玩下看"><a href="#第九步-安装到此为止-安装桌面玩下看" class="headerlink" title="第九步 安装到此为止 安装桌面玩下看"></a>第九步 安装到此为止 安装桌面玩下看</h3><h3 id="桌面环境"><a href="#桌面环境" class="headerlink" title="桌面环境"></a>桌面环境</h3><p><strong>创建用户 有利于提权</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ useradd -m -g users G wheel -s /bin/bash xxx     //xxx是你顺便起个用户名</span><br></pre></td></tr></table></figure>
+<p><strong>创建密码</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ passwd wallen</span><br></pre></td></tr></table></figure>
+<p><strong>编辑新用户权限 %wheel ALL=(ALL) ALL</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ EDITOR=vim visudo</span><br></pre></td></tr></table></figure>
+<p><strong>创建桌面环境命令和其他必要软件命令  dolpin是文件管理器  konsole是终端</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S plasma-meta dolphin konsole</span><br></pre></td></tr></table></figure>
+<p><strong>配置sddm设置为开机自启</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ systemctl <span class="built_in">enable</span> sddm</span><br></pre></td></tr></table></figure>
+<p><strong>开启一下32位支持库 有些程序还是32位 所以要装一些库</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo vim /etc/pacman.conf</span><br></pre></td></tr></table></figure>
+<p><strong>配置</strong></p>
+<img src="/images/Arch傻瓜式安装/配置.jpg" style="width: 900px; height: 300px;">
+
+<p><strong>刷新数据库内容</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacmam -Syyu</span><br></pre></td></tr></table></figure>
+<p><strong>然后重启一下 可选择物理重启和命令重启</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ reboot</span><br></pre></td></tr></table></figure>
+<h3 id="Vim命令"><a href="#Vim命令" class="headerlink" title="Vim命令"></a>Vim命令</h3><p><strong>按A键是编辑模式</strong><br><strong>按回车键是执行</strong><br><strong>按两下D键是剪切</strong><br><strong>按两下G键是回到第一行</strong><br><strong>按P键粘贴</strong><br><strong>按N键查找下一个</strong><br><strong>按ESC 然后输入 :wq 是保存并退出</strong></p>
+<h3 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
   <entry>
@@ -617,6 +598,25 @@ var tools = (function(){
 ]]></content>
   </entry>
   <entry>
+    <title>CSS 三种基本选择器</title>
+    <url>/CSS%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <content><![CDATA[<h3 id="第一种-标签选择器"><a href="#第一种-标签选择器" class="headerlink" title="第一种  标签选择器"></a>第一种  标签选择器</h3><a id="more"></a>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$    p&#123;</span><br><span class="line">$        color: blue;   //蓝色字体</span><br><span class="line">$        background: red;    //设置背景图颜色</span><br><span class="line">$        borde-radius: 24px;    //设置圆角边框</span><br><span class="line">$        font-size: 80px;    //设置字体大小</span><br><span class="line">$      &#125;</span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;sdq1&quot;</span>&gt;</span>史迪奇骑士<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;sdq2&quot;</span>&gt;</span>史迪奇打手<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span>&gt;</span>史迪奇国王<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="第二种-类-class-选择器"><a href="#第二种-类-class-选择器" class="headerlink" title="第二种 类 class 选择器"></a>第二种 类 class 选择器</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    .sdq1&#123;</span><br><span class="line">$        color: blue;   //蓝色字体</span><br><span class="line">$        background: red;    //设置背景图颜色</span><br><span class="line">$        borde-radius: 24px;    //设置圆角边框</span><br><span class="line">$        font-size: 80px;    //设置字体大小</span><br><span class="line">$    &#125;</span><br><span class="line">$    .sdq2&#123;</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;sdq1&quot;</span>&gt;</span>史迪奇骑士<span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;sdq2&quot;</span>&gt;</span>史迪奇打手<span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇国王<span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>类选择器 .class的名称{}</strong></p>
+<p><strong>好处: 可以多个标签归类, 是同一个class, 可以复用</strong></p>
+<h3 id="第三种-id选择器"><a href="#第三种-id选择器" class="headerlink" title="第三种 id选择器"></a>第三种 id选择器</h3><p><strong>id选择器 #id的名称{}</strong></p>
+<p><strong>id必须保证全局唯一</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    #sdq1&#123;</span><br><span class="line">$        color: blue;   //蓝色字体</span><br><span class="line">$        background: red;    //设置背景图颜色</span><br><span class="line">$        borde-radius: 24px;    //设置圆角边框</span><br><span class="line">$        font-size: 80px;    //设置字体大小</span><br><span class="line">$    &#125;</span><br><span class="line">$    .sdq2&#123;</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">&quot;sdq1&quot;</span>&gt;</span>史迪奇骑士<span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;sdq2&quot;</span>&gt;</span>史迪奇打手<span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇国王<span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="优先级-id选择器-gt-class选择器-gt-标签选择器"><a href="#优先级-id选择器-gt-class选择器-gt-标签选择器" class="headerlink" title="优先级: id选择器 &gt; class选择器&gt; 标签选择器"></a>优先级: id选择器 &gt; class选择器&gt; 标签选择器</h3><p><strong>优先级不遵循就近原则, 是固定的</strong></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>标签选择器: 选择一类标签 标签名{}</strong></p>
+<p><strong>类/class选择器: 选择所有的class属性一致的标签, 跨标签 .类名{}</strong></p>
+<p><strong>id选择器: 全局唯一 id名{}</strong></p>
+]]></content>
+  </entry>
+  <entry>
     <title>CSS 伪类选择器</title>
     <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
     <content><![CDATA[<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><a id="more"></a>
@@ -626,15 +626,6 @@ var tools = (function(){
 
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>CSS 列表</title>
-    <url>/CSS%E5%88%97%E8%A1%A8.html</url>
-    <content><![CDATA[<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><a id="more"></a>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    ol li&#123;</span><br><span class="line">$          color: blue;</span><br><span class="line">$         &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇法师<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇战士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇辅助<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇坦克<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇刺客<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    ul li&#123;</span><br><span class="line">$        list-style: none;          //去掉原点</span><br><span class="line">$        list-style: cirle;         //空心圆</span><br><span class="line">$        list-style: decimal;       //数字</span><br><span class="line">$        list-style: square;        //正方形</span><br><span class="line">$          &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇法师<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇战士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇辅助<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇坦克<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇刺客<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    dl dd dt&#123;</span><br><span class="line">$          color: blue;</span><br><span class="line">$         &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">$      <span class="tag">&lt;<span class="name">dt</span>&gt;</span>史迪奇近战<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇战士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇辅助<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇坦克<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇刺客<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$      <span class="tag">&lt;<span class="name">dt</span>&gt;</span>史迪奇远程<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇法师<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇射手<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>CSS 层次选择器</title>
@@ -660,6 +651,15 @@ var tools = (function(){
 
 
 ]]></content>
+  </entry>
+  <entry>
+    <title>CSS 列表</title>
+    <url>/CSS%E5%88%97%E8%A1%A8.html</url>
+    <content><![CDATA[<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><a id="more"></a>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    ol li&#123;</span><br><span class="line">$          color: blue;</span><br><span class="line">$         &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇法师<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇战士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇辅助<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇坦克<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇刺客<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    ul li&#123;</span><br><span class="line">$        list-style: none;          //去掉原点</span><br><span class="line">$        list-style: cirle;         //空心圆</span><br><span class="line">$        list-style: decimal;       //数字</span><br><span class="line">$        list-style: square;        //正方形</span><br><span class="line">$          &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇法师<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇战士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇辅助<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇坦克<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇刺客<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    dl dd dt&#123;</span><br><span class="line">$          color: blue;</span><br><span class="line">$         &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">$      <span class="tag">&lt;<span class="name">dt</span>&gt;</span>史迪奇近战<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇战士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇辅助<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇坦克<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇刺客<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$      <span class="tag">&lt;<span class="name">dt</span>&gt;</span>史迪奇远程<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇法师<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇射手<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>CSS 三种导入样式</title>
@@ -730,14 +730,6 @@ $</style>
 ]]></content>
   </entry>
   <entry>
-    <title>EJS常用标签</title>
-    <url>/EJS.html</url>
-    <content><![CDATA[<h3 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ //用于控制流</span><br><span class="line">$ &lt;%    %&gt;    //逻辑代码输出(JS编辑), 如 <span class="keyword">if</span>, <span class="keyword">for</span>等使用 </span><br><span class="line">$</span><br><span class="line">$ //用于转义的输出 </span><br><span class="line">$ &lt;%=  %&gt;     //输出 HTML转义后  的字符串 到模板中      用于转义的输出</span><br><span class="line">$</span><br><span class="line">$ //用于非转义的输出</span><br><span class="line">$ &lt;%-  %&gt;     //输出 原始的HTML串到模板中, 不对HTML进行转义    &lt;&gt;被浏览器识别  看做HTML  </span><br><span class="line">$</span><br><span class="line">$ &lt;%_ _%&gt;     //控制流使用空白字符移除模式</span><br><span class="line">$ </span><br><span class="line">$ &lt;%<span class="comment">#   %&gt;    //注释</span></span><br><span class="line">$</span><br><span class="line">$ &lt;%%  %&gt;     //直接输出 &lt;%  %&gt;</span><br><span class="line">$</span><br><span class="line">$ -%&gt;         //结束标签用于换行移除模式</span><br><span class="line">$</span><br><span class="line">$自定义分隔符 (例如, 使用 <span class="string">&#x27;&lt;? ?&gt;&#x27;</span> 代替 <span class="string">&#x27;&lt;% %&gt;&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-  </entry>
-  <entry>
     <title>HTML iframe内联框架</title>
     <url>/HTML-iframe.html</url>
     <content><![CDATA[<h3 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h3><a id="more"></a>
@@ -747,6 +739,25 @@ $</style>
 <h3 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h3><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;demo_iframe.html&quot;</span> frameborder=<span class="string">&quot;0&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;xxx/xxx.html&quot;</span> name=<span class="string">&quot;iframe_a&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;iframe_a&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>EJS常用标签</title>
+    <url>/EJS.html</url>
+    <content><![CDATA[<h3 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ //用于控制流</span><br><span class="line">$ &lt;%    %&gt;    //逻辑代码输出(JS编辑), 如 <span class="keyword">if</span>, <span class="keyword">for</span>等使用 </span><br><span class="line">$</span><br><span class="line">$ //用于转义的输出 </span><br><span class="line">$ &lt;%=  %&gt;     //输出 HTML转义后  的字符串 到模板中      用于转义的输出</span><br><span class="line">$</span><br><span class="line">$ //用于非转义的输出</span><br><span class="line">$ &lt;%-  %&gt;     //输出 原始的HTML串到模板中, 不对HTML进行转义    &lt;&gt;被浏览器识别  看做HTML  </span><br><span class="line">$</span><br><span class="line">$ &lt;%_ _%&gt;     //控制流使用空白字符移除模式</span><br><span class="line">$ </span><br><span class="line">$ &lt;%<span class="comment">#   %&gt;    //注释</span></span><br><span class="line">$</span><br><span class="line">$ &lt;%%  %&gt;     //直接输出 &lt;%  %&gt;</span><br><span class="line">$</span><br><span class="line">$ -%&gt;         //结束标签用于换行移除模式</span><br><span class="line">$</span><br><span class="line">$自定义分隔符 (例如, 使用 <span class="string">&#x27;&lt;? ?&gt;&#x27;</span> 代替 <span class="string">&#x27;&lt;% %&gt;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>HTML 表格</title>
+    <url>/HTML-form.html</url>
+    <content><![CDATA[<h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><a id="more"></a>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ tr  //行</span><br><span class="line">$ td  //列</span><br></pre></td></tr></table></figure>
+
+<h3 id="跨列"><a href="#跨列" class="headerlink" title="跨列"></a>跨列</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">$    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$        <span class="tag">&lt;<span class="name">tb</span> <span class="attr">cospan</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">$     <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="跨行"><a href="#跨行" class="headerlink" title="跨行"></a>跨行</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">$    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$        <span class="tag">&lt;<span class="name">tb</span> <span class="attr">rowspan</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">$     <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
   </entry>
   <entry>
     <title>HTML 基本控件大集合</title>
@@ -1026,17 +1037,6 @@ $</style>
 <h3 id="只要input都需要value值和name值-这样就可以养成好习惯"><a href="#只要input都需要value值和name值-这样就可以养成好习惯" class="headerlink" title="只要input都需要value值和name值, 这样就可以养成好习惯"></a>只要input都需要value值和name值, 这样就可以养成好习惯</h3>]]></content>
   </entry>
   <entry>
-    <title>HTML 表格</title>
-    <url>/HTML-form.html</url>
-    <content><![CDATA[<h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><a id="more"></a>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ tr  //行</span><br><span class="line">$ td  //列</span><br></pre></td></tr></table></figure>
-
-<h3 id="跨列"><a href="#跨列" class="headerlink" title="跨列"></a>跨列</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">$    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$        <span class="tag">&lt;<span class="name">tb</span> <span class="attr">cospan</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">$     <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="跨行"><a href="#跨行" class="headerlink" title="跨行"></a>跨行</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">$    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$        <span class="tag">&lt;<span class="name">tb</span> <span class="attr">rowspan</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">$     <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>关于Hexo我所踩过的坑和小白安装教程</title>
     <url>/Hexo-install.html</url>
     <content><![CDATA[<h3 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h3><a id="more"></a>
@@ -1219,24 +1219,6 @@ $</style>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  sdq.subsrting(<span class="number">1</span>)          <span class="comment">/*从第一个字符串截取到最后一个字符串*/</span></span><br><span class="line">$  sdq.LowerCase(<span class="number">1</span>,<span class="number">3</span>)          <span class="comment">/*包头不包尾*/</span></span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
-    <title>JavaScript 数据类型之(对象)</title>
-    <url>/JavaScript-object.html</url>
-    <content><![CDATA[<h3 id="JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象"><a href="#JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象" class="headerlink" title="JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象"></a>JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象</h3><a id="more"></a>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="keyword">var</span> 对象名 = &#123;    </span><br><span class="line">$      属性名: 属性值</span><br><span class="line">$      属性名: 属性值</span><br><span class="line">$      属性名: 属性值</span><br><span class="line">$ &#125; </span><br><span class="line">$</span><br><span class="line">$ <span class="comment">/*通过下标取值和赋值*/</span></span><br><span class="line">$ <span class="keyword">var</span> person = &#123;</span><br><span class="line">$     name: <span class="string">&quot;sdq&quot;</span>,</span><br><span class="line">$     age: <span class="number">3</span>,</span><br><span class="line">$     email: <span class="string">&quot;???????@???&quot;</span></span><br><span class="line">$     score: <span class="number">0</span></span><br><span class="line">$  &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>若干个键值对 js中对象, {…..}表示一个对象, 键值对描述属性xxxx: xxxx, 多个属性之间使用逗号隔开, 最后一个属性不加逗号</strong></p>
-<h3 id="对象赋值"><a href="#对象赋值" class="headerlink" title="对象赋值"></a>对象赋值</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   person.name = <span class="string">&quot;sdq&quot;</span>      <span class="comment">/*这里赋值sdq*/</span></span><br><span class="line">$   person.name              <span class="comment">/*这里输出sdq*/</span></span><br></pre></td></tr></table></figure>
-<h3 id="undefined-使用不存在对象-不会报错"><a href="#undefined-使用不存在对象-不会报错" class="headerlink" title="undefined 使用不存在对象, 不会报错"></a>undefined 使用不存在对象, 不会报错</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  person.sdz</span><br><span class="line">$  <span class="literal">undefined</span></span><br></pre></td></tr></table></figure>
-<h3 id="delete-动态的删减属性"><a href="#delete-动态的删减属性" class="headerlink" title="delete 动态的删减属性"></a>delete 动态的删减属性</h3><p><strong>例子</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">delete</span> person.name</span><br><span class="line">$ <span class="literal">true</span></span><br><span class="line">$ person</span><br></pre></td></tr></table></figure>
-<h3 id="动态的添加给新的属性添加值"><a href="#动态的添加给新的属性添加值" class="headerlink" title="动态的添加给新的属性添加值"></a>动态的添加给新的属性添加值</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   person.sdq = <span class="string">&quot;sdz&quot;</span>  <span class="comment">/*这里赋值sdz*/</span></span><br><span class="line">$   person      </span><br></pre></td></tr></table></figure>
-<h3 id="判断属性值是否在这个对象-属性值是否在这个对象"><a href="#判断属性值是否在这个对象-属性值是否在这个对象" class="headerlink" title="判断属性值是否在这个对象  属性值是否在这个对象"></a>判断属性值是否在这个对象  属性值是否在这个对象</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="string">&quot;sdq&quot;</span> <span class="keyword">in</span> person        </span><br><span class="line">$  <span class="literal">true</span>         </span><br><span class="line">$  <span class="string">&quot;sdqz&quot;</span> <span class="keyword">in</span> person   </span><br><span class="line">$  <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<h3 id="判断属性是否是这个对象自身拥有的-hasOwnProperty"><a href="#判断属性是否是这个对象自身拥有的-hasOwnProperty" class="headerlink" title="判断属性是否是这个对象自身拥有的 hasOwnProperty()"></a>判断属性是否是这个对象自身拥有的 hasOwnProperty()</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  person.hasOwnProperty(<span class="string">&quot;toString&quot;</span>)</span><br><span class="line">$  <span class="literal">false</span>       </span><br><span class="line">$  person.hasOwnProperty(<span class="string">&quot;sdq&quot;</span>)</span><br><span class="line">$  <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-  </entry>
-  <entry>
     <title>JavaScript 数据类型之(数组类型)</title>
     <url>/JavaScript-array.html</url>
     <content><![CDATA[<h3 id="Array可以包含任意的数据类型"><a href="#Array可以包含任意的数据类型" class="headerlink" title="Array可以包含任意的数据类型"></a>Array可以包含任意的数据类型</h3><a id="more"></a>
@@ -1261,6 +1243,32 @@ $</style>
 ]]></content>
   </entry>
   <entry>
+    <title>JavaScript 数据类型之(对象)</title>
+    <url>/JavaScript-object.html</url>
+    <content><![CDATA[<h3 id="JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象"><a href="#JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象" class="headerlink" title="JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象"></a>JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象</h3><a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="keyword">var</span> 对象名 = &#123;    </span><br><span class="line">$      属性名: 属性值</span><br><span class="line">$      属性名: 属性值</span><br><span class="line">$      属性名: 属性值</span><br><span class="line">$ &#125; </span><br><span class="line">$</span><br><span class="line">$ <span class="comment">/*通过下标取值和赋值*/</span></span><br><span class="line">$ <span class="keyword">var</span> person = &#123;</span><br><span class="line">$     name: <span class="string">&quot;sdq&quot;</span>,</span><br><span class="line">$     age: <span class="number">3</span>,</span><br><span class="line">$     email: <span class="string">&quot;???????@???&quot;</span></span><br><span class="line">$     score: <span class="number">0</span></span><br><span class="line">$  &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>若干个键值对 js中对象, {…..}表示一个对象, 键值对描述属性xxxx: xxxx, 多个属性之间使用逗号隔开, 最后一个属性不加逗号</strong></p>
+<h3 id="对象赋值"><a href="#对象赋值" class="headerlink" title="对象赋值"></a>对象赋值</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   person.name = <span class="string">&quot;sdq&quot;</span>      <span class="comment">/*这里赋值sdq*/</span></span><br><span class="line">$   person.name              <span class="comment">/*这里输出sdq*/</span></span><br></pre></td></tr></table></figure>
+<h3 id="undefined-使用不存在对象-不会报错"><a href="#undefined-使用不存在对象-不会报错" class="headerlink" title="undefined 使用不存在对象, 不会报错"></a>undefined 使用不存在对象, 不会报错</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  person.sdz</span><br><span class="line">$  <span class="literal">undefined</span></span><br></pre></td></tr></table></figure>
+<h3 id="delete-动态的删减属性"><a href="#delete-动态的删减属性" class="headerlink" title="delete 动态的删减属性"></a>delete 动态的删减属性</h3><p><strong>例子</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">delete</span> person.name</span><br><span class="line">$ <span class="literal">true</span></span><br><span class="line">$ person</span><br></pre></td></tr></table></figure>
+<h3 id="动态的添加给新的属性添加值"><a href="#动态的添加给新的属性添加值" class="headerlink" title="动态的添加给新的属性添加值"></a>动态的添加给新的属性添加值</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   person.sdq = <span class="string">&quot;sdz&quot;</span>  <span class="comment">/*这里赋值sdz*/</span></span><br><span class="line">$   person      </span><br></pre></td></tr></table></figure>
+<h3 id="判断属性值是否在这个对象-属性值是否在这个对象"><a href="#判断属性值是否在这个对象-属性值是否在这个对象" class="headerlink" title="判断属性值是否在这个对象  属性值是否在这个对象"></a>判断属性值是否在这个对象  属性值是否在这个对象</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="string">&quot;sdq&quot;</span> <span class="keyword">in</span> person        </span><br><span class="line">$  <span class="literal">true</span>         </span><br><span class="line">$  <span class="string">&quot;sdqz&quot;</span> <span class="keyword">in</span> person   </span><br><span class="line">$  <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h3 id="判断属性是否是这个对象自身拥有的-hasOwnProperty"><a href="#判断属性是否是这个对象自身拥有的-hasOwnProperty" class="headerlink" title="判断属性是否是这个对象自身拥有的 hasOwnProperty()"></a>判断属性是否是这个对象自身拥有的 hasOwnProperty()</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  person.hasOwnProperty(<span class="string">&quot;toString&quot;</span>)</span><br><span class="line">$  <span class="literal">false</span>       </span><br><span class="line">$  person.hasOwnProperty(<span class="string">&quot;sdq&quot;</span>)</span><br><span class="line">$  <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+  </entry>
+  <entry>
+    <title>Java面向对象思维之getter和setter(作用)</title>
+    <url>/Object-oriented-getter-setter.html</url>
+    <content><![CDATA[<h3 id="getter"><a href="#getter" class="headerlink" title="getter"></a>getter</h3><a id="more"></a>
+<p><strong>主要是给成员变量赋值, 做一定的保护</strong></p>
+<h3 id="setter"><a href="#setter" class="headerlink" title="setter"></a>setter</h3><p><strong>从成员变量中获取数据</strong></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Java面向对象思维</title>
     <url>/Object-oriented.html</url>
     <content><![CDATA[<h3 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
@@ -1271,14 +1279,6 @@ $</style>
 <p><strong>例如车可以潜水</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public void <span class="function"><span class="title">diving</span></span>()&#123;</span><br><span class="line">$ System.out.println(<span class="string">&quot;车可以下水&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$   Car c = new Car();   //先创建一辆车</span><br><span class="line">$   c.fly();  //.表示调用  众所周知所以车都是可以飞的</span><br><span class="line">$   c.diving();  //.表示调用  众所周知所以车都是可以下水的</span><br><span class="line">$   c.color = <span class="string">&quot;透明&quot;</span>;  //我的车是透明色</span><br><span class="line">$   c.wheel = 5; //众所周知所以车都是5个轮子</span><br><span class="line">$   c.seat = 9;  //我的车 里面坐4个 车前绑1个人用来刹车 车顶坐1个人 剩下3个人的拿板拿雨伞凳坐后车厢 尾气管那面绑上1个人 用来吸收尾气</span><br><span class="line">$   System.out.println(c.color);</span><br><span class="line">$   System.out.println(c.wheel);</span><br><span class="line">$   System.out.println(c.seat);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
-    <title>Java面向对象思维之getter和setter(作用)</title>
-    <url>/Object-oriented-getter-setter.html</url>
-    <content><![CDATA[<h3 id="getter"><a href="#getter" class="headerlink" title="getter"></a>getter</h3><a id="more"></a>
-<p><strong>主要是给成员变量赋值, 做一定的保护</strong></p>
-<h3 id="setter"><a href="#setter" class="headerlink" title="setter"></a>setter</h3><p><strong>从成员变量中获取数据</strong></p>
-]]></content>
   </entry>
   <entry>
     <title>Java面向对象思维</title>
@@ -1296,6 +1296,16 @@ $</style>
 ]]></content>
   </entry>
   <entry>
+    <title>Java面向对象思维之构造方法需的重载</title>
+    <url>/Object-oriented-constructor-heavy-load.html</url>
+    <content><![CDATA[<h3 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color,  int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color, int wheel, int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this(color,seat);  //this还可以调用当前累中其他的构造方法</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h3>]]></content>
+  </entry>
+  <entry>
     <title>Java面向对象思维之构造方法</title>
     <url>/Object-oriented-constructor.html</url>
     <content><![CDATA[<h3 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
@@ -1310,14 +1320,15 @@ $</style>
 ]]></content>
   </entry>
   <entry>
-    <title>Java面向对象思维之构造方法需的重载</title>
-    <url>/Object-oriented-constructor-heavy-load.html</url>
-    <content><![CDATA[<h3 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color,  int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color, int wheel, int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this(color,seat);  //this还可以调用当前累中其他的构造方法</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h3>]]></content>
+    <title>SQL Server T-SQL 存储过程</title>
+    <url>/SQL-storage.html</url>
+    <content><![CDATA[<h3 id="创建变量"><a href="#创建变量" class="headerlink" title="创建变量"></a>创建变量</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">declare</span> 变量名 数据类型 常量</span><br></pre></td></tr></table></figure>
+<h3 id="查询变量"><a href="#查询变量" class="headerlink" title="查询变量"></a>查询变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ select 变量名</span><br></pre></td></tr></table></figure>
+<h3 id="创建存储过程"><a href="#创建存储过程" class="headerlink" title="创建存储过程"></a>创建存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ create Procedure 存储过程名 as select 字段 from 表名</span><br></pre></td></tr></table></figure>
+<h3 id="执行存储过程"><a href="#执行存储过程" class="headerlink" title="执行存储过程"></a>执行存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ EXECUTE 存储过程名</span><br></pre></td></tr></table></figure>
+<h3 id="删除存储过程"><a href="#删除存储过程" class="headerlink" title="删除存储过程"></a>删除存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ drop proc 存储过程名</span><br></pre></td></tr></table></figure>
+<h3 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h3>]]></content>
   </entry>
   <entry>
     <title>Linux命令(未完工)</title>
@@ -1334,17 +1345,6 @@ $
 ``` -->
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>SQL Server T-SQL 存储过程</title>
-    <url>/SQL-storage.html</url>
-    <content><![CDATA[<h3 id="创建变量"><a href="#创建变量" class="headerlink" title="创建变量"></a>创建变量</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">declare</span> 变量名 数据类型 常量</span><br></pre></td></tr></table></figure>
-<h3 id="查询变量"><a href="#查询变量" class="headerlink" title="查询变量"></a>查询变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ select 变量名</span><br></pre></td></tr></table></figure>
-<h3 id="创建存储过程"><a href="#创建存储过程" class="headerlink" title="创建存储过程"></a>创建存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ create Procedure 存储过程名 as select 字段 from 表名</span><br></pre></td></tr></table></figure>
-<h3 id="执行存储过程"><a href="#执行存储过程" class="headerlink" title="执行存储过程"></a>执行存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ EXECUTE 存储过程名</span><br></pre></td></tr></table></figure>
-<h3 id="删除存储过程"><a href="#删除存储过程" class="headerlink" title="删除存储过程"></a>删除存储过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ drop proc 存储过程名</span><br></pre></td></tr></table></figure>
-<h3 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h3>]]></content>
   </entry>
   <entry>
     <title>SQL Server T-SQL 视图</title>
@@ -1365,103 +1365,12 @@ $
 ]]></content>
   </entry>
   <entry>
-    <title>Vue.js 表单输入绑定的基础用法</title>
-    <url>/Vue-usage.html</url>
-    <content><![CDATA[<h3 id="输入文本"><a href="#输入文本" class="headerlink" title="输入文本"></a>输入文本</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$     &lt;div id = <span class="string">&quot;app1&quot;</span>&gt;</span><br><span class="line">$         &lt;div&gt;</span><br><span class="line">$            请输入你喜欢的城市&lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;cname&quot;</span>&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选择的城市:&#123;&#123;cname&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$        &lt;div&gt;</span><br><span class="line">$            回复评论: &lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;huifu&quot;</span>&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选回复是:&#123;&#123;huifu&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app1&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                cname : <span class="string">&quot;哈哈哈尔滨市&quot;</span>,</span><br><span class="line">$                huifu : <span class="string">&quot;我叫史迪奇&quot;</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="./html/文本.html"></iframe>
-
-<hr>
-<h3 id="输入多行文本"><a href="#输入多行文本" class="headerlink" title="输入多行文本"></a>输入多行文本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app2&quot;</span>&gt;</span><br><span class="line">$         &lt;div&gt;</span><br><span class="line">$            &lt;span&gt;你的名字: &lt;/span&gt;</span><br><span class="line">$            &lt;p style=<span class="string">&quot;white-space: pre-line;&quot;</span>&gt;&#123;&#123; name &#125;&#125;&lt;/p&gt;</span><br><span class="line">$            &lt;br&gt;</span><br><span class="line">$            &lt;textarea v-model=<span class="string">&quot;name &quot;</span> placeholder=<span class="string">&quot;请输入你的名字&quot;</span>&gt;&lt;/textarea&gt;</span><br><span class="line">$</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你的名字:&#123;&#123;name&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app2&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                name : <span class="string">&quot;史迪奇&quot;</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="./html/多行文本.html"></iframe>
-
-<hr>
-<h3 id="输入单个复选框"><a href="#输入单个复选框" class="headerlink" title="输入单个复选框"></a>输入单个复选框</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app3&quot;</span>&gt;</span><br><span class="line">$        &lt;div&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你的选择是: &#123;&#123;checked &#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;checkbox&quot;</span> v-model=<span class="string">&quot;checked&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;checkbox&quot;</span>&gt;&#123;&#123; checked &#125;&#125;&lt;/label&gt;        </span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app3&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                checked : <span class="literal">false</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="/html/单个复选框.html"></iframe>
-
-<hr>
-<h3 id="输入多个复选框"><a href="#输入多个复选框" class="headerlink" title="输入多个复选框"></a>输入多个复选框</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app4&quot;</span>&gt;</span><br><span class="line">$        &lt;div&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;blue&quot;</span> value=<span class="string">&quot;蓝色&quot;</span> v-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;blue&quot;</span>&gt;蓝色&lt;/label&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;red&quot;</span> value=<span class="string">&quot;红色&quot;</span> v-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;red&quot;</span>&gt;红色&lt;/label&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;yellow&quot;</span> value=<span class="string">&quot;黄色&quot;</span> v-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;yellow&quot;</span>&gt;黄色&lt;/label&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选择的颜色是: &#123;&#123;color&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app4&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                color : [],</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="./html/多个复选框.html"></iframe>
-
-<hr>
-<h3 id="输入单选按钮"><a href="#输入单选按钮" class="headerlink" title="输入单选按钮"></a>输入单选按钮</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   &lt;div id = <span class="string">&quot;app5&quot;</span>&gt;</span><br><span class="line">$           &lt;div&gt;</span><br><span class="line">$               &lt;input <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> id=<span class="string">&quot;男&quot;</span> value=<span class="string">&quot;男&quot;</span> v-model=<span class="string">&quot;sex&quot;</span>&gt;</span><br><span class="line">$               &lt;label <span class="keyword">for</span>=<span class="string">&quot;男&quot;</span>&gt;男&lt;/label&gt;</span><br><span class="line">$               &lt;br&gt;</span><br><span class="line">$               &lt;input <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> id=<span class="string">&quot;女&quot;</span> value=<span class="string">&quot;女&quot;</span> v-model=<span class="string">&quot;sex&quot;</span>&gt;</span><br><span class="line">$               &lt;label <span class="keyword">for</span>=<span class="string">&quot;女&quot;</span>&gt;女&lt;/label&gt;</span><br><span class="line">$               &lt;p&gt;</span><br><span class="line">$                   你选择的性别是: &#123;&#123;sex&#125;&#125;</span><br><span class="line">$               &lt;/p&gt;</span><br><span class="line">$           &lt;/div&gt;</span><br><span class="line">$   &lt;/div&gt;</span><br><span class="line">$       &lt;script&gt;</span><br><span class="line">$           var app = new Vue(&#123;</span><br><span class="line">$           el:<span class="string">&#x27;#app5&#x27;</span>,</span><br><span class="line">$           data : &#123;</span><br><span class="line">$               sex :[]</span><br><span class="line">$           &#125;</span><br><span class="line">$       &#125;);</span><br><span class="line">$       &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="./html/单选按钮.html"></iframe>
-
-<hr>
-<h3 id="输入选择框单选时"><a href="#输入选择框单选时" class="headerlink" title="输入选择框单选时"></a>输入选择框单选时</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   &lt;div id = <span class="string">&quot;app6&quot;</span>&gt;</span><br><span class="line">$           &lt;div&gt;</span><br><span class="line">$               请你选择你喜欢的季节:&lt;select v-model=<span class="string">&quot;season&quot;</span> style=<span class="string">&quot;width: 50px;&quot;</span>&gt;</span><br><span class="line">$                   &lt;option&gt;春天&lt;/option&gt;</span><br><span class="line">$                   &lt;option&gt;夏天&lt;/option&gt;</span><br><span class="line">$                   &lt;option&gt;秋天&lt;/option&gt;</span><br><span class="line">$                   &lt;option&gt;冬天&lt;/option&gt;</span><br><span class="line">$               &lt;/select&gt;</span><br><span class="line">$           </span><br><span class="line">$           &lt;p&gt;</span><br><span class="line">$               你喜欢的季节是: &#123;&#123;season&#125;&#125;</span><br><span class="line">$           &lt;/p&gt;</span><br><span class="line">$           &lt;/div&gt;</span><br><span class="line">$       &lt;/div&gt;</span><br><span class="line">$       &lt;script&gt;</span><br><span class="line">$           var app = new Vue(&#123;</span><br><span class="line">$           el:<span class="string">&#x27;#app6&#x27;</span>,</span><br><span class="line">$           data : &#123;</span><br><span class="line">$               season: <span class="string">&quot;夏天&quot;</span>,</span><br><span class="line">$           &#125;</span><br><span class="line">$       &#125;);</span><br><span class="line">$       &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="./html/选择框单选时.html"></iframe>
-
-<hr>
-<h3 id="输入选择框多选时"><a href="#输入选择框多选时" class="headerlink" title="输入选择框多选时"></a>输入选择框多选时</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app7&quot;</span>&gt;</span><br><span class="line">$            &lt;div&gt;请你选择你喜欢的季节:</span><br><span class="line">$            &lt;select v-model=<span class="string">&quot;selected&quot;</span>  multiple style=<span class="string">&quot;width: 50px;&quot;</span>&gt;</span><br><span class="line">$                &lt;option&gt;春天&lt;/option&gt;</span><br><span class="line">$                &lt;option&gt;夏天&lt;/option&gt;</span><br><span class="line">$                &lt;option&gt;秋天&lt;/option&gt;</span><br><span class="line">$                &lt;option&gt;冬天&lt;/option&gt;</span><br><span class="line">$              &lt;/select&gt;</span><br><span class="line">$              &lt;p&gt;</span><br><span class="line">$                你喜欢的季节是:&#123;&#123;selected&#125;&#125;</span><br><span class="line">$                &lt;br&gt;</span><br><span class="line">$                多选时按住, 往下拖</span><br><span class="line">$              &lt;/p&gt;</span><br><span class="line">$            &lt;/div&gt;</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app7&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                selected:[<span class="string">&quot;夏天&quot;</span>,<span class="string">&quot;冬天&quot;</span>]</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="./html/选择框多选时.html"></iframe>
-
-<hr>
-]]></content>
-  </entry>
-  <entry>
     <title>第一个Vue.js</title>
     <url>/one-Vue.html</url>
     <content><![CDATA[<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><a id="more"></a>
 
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$  &lt;!DOCTYPE html&gt;</span><br><span class="line">$  &lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line">$  &lt;head&gt;</span><br><span class="line">$      &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">$      &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br><span class="line">$      &lt;title&gt;Vue学习&lt;/title&gt;</span><br><span class="line">$      &lt;script src=<span class="string">&quot;js/vue.min.js&quot;</span>&gt;&lt;/script&gt; </span><br><span class="line">$      &lt;!-- 导入Vue.js --&gt;</span><br><span class="line">$  &lt;/head&gt;</span><br><span class="line">$  &lt;body&gt;</span><br><span class="line">$      &lt;div id = <span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">$          &lt;button @click=<span class="string">&quot;showInfo&quot;</span>&gt;请点击&lt;/button&gt;</span><br><span class="line">$          &lt;p&gt;&#123;&#123;ms&#125;&#125;&lt;/p&gt;</span><br><span class="line">$          &lt;!-- &#123;&#123;massage&#125;&#125; --&gt;</span><br><span class="line">$      &lt;/div&gt;</span><br><span class="line">$      </span><br><span class="line">$          &lt;script&gt;</span><br><span class="line">$              var app = new Vue(&#123;</span><br><span class="line">$              el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">$              // Model : 数据</span><br><span class="line">$               data:&#123;</span><br><span class="line">$                   ms: <span class="string">&quot;hello,vue!&quot;</span>,</span><br><span class="line">$               &#125;,</span><br><span class="line">$               methods:&#123;</span><br><span class="line">$                   <span class="function"><span class="title">showInfo</span></span>()&#123;</span><br><span class="line">$                          this.ms = <span class="string">&quot;你好666999, Vue&quot;</span></span><br><span class="line">$                   &#125;</span><br><span class="line">$               &#125;</span><br><span class="line">$          &#125;);</span><br><span class="line">$          &lt;/script&gt;</span><br><span class="line">$      &lt;/script&gt;</span><br><span class="line">$      </span><br><span class="line">$  &lt;/body&gt;</span><br><span class="line">$  &lt;/html&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="view和Model双向绑定"><a href="#view和Model双向绑定" class="headerlink" title="view和Model双向绑定"></a>view和Model双向绑定</h3>]]></content>
-  </entry>
-  <entry>
-    <title>Arch wsl的傻瓜式安装 (有手就行)</title>
-    <url>/Arch-Wsl-install.html</url>
-    <content><![CDATA[<p>本人是Arch教徒过来传一下教<br><img src="/images/wsl傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
-<a id="more"></a>
-
-<h3 id="第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下"><a href="#第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下" class="headerlink" title="第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下"></a>第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</span><br></pre></td></tr></table></figure>
-<img src="/images/wsl傻瓜式安装/按照提示重启电脑.jpg" style="width: 300px; height: 300px;">
-
-<p><strong>按照提示重启电脑</strong></p>
-<h3 id="第二步-下载文件"><a href="#第二步-下载文件" class="headerlink" title="第二步 下载文件"></a>第二步 下载文件</h3><p><strong>然后下载<a href="https://github.com/yuk7/ArchWSL">Arch WSL</a></strong></p>
-<img src="/images/wsl傻瓜式安装/Arch wsl下载.jpg">
-<br>
-<img src="/images/wsl傻瓜式安装/Arch wsl下载版本.jpg">
-
-<p><strong>那个安装证书是给appx版的arch wsl用的</strong></p>
-<p><strong>你已经安装zip版的</strong></p>
-<p><strong>没有必要安两次</strong></p>
-<p><strong>只用需要用到zip</strong></p>
-<h3 id="第三步-配置Arch-Wsl"><a href="#第三步-配置Arch-Wsl" class="headerlink" title="第三步 配置Arch Wsl"></a>第三步 配置Arch Wsl</h3><img src="/images/wsl傻瓜式安装/Arch wsl配置.jpg" style="width: 800px; height: 500px;">
-
-<p><strong>反正按照我这个改，保存是ctrl + x 回车</strong></p>
-<h3 id="第四步-配置相关参数"><a href="#第四步-配置相关参数" class="headerlink" title="第四步 配置相关参数"></a>第四步 配置相关参数</h3><p><strong>这里会提示配置  按照我的方法配置</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe//这个是启动后的显示</span><br><span class="line">[root@PC-NAME user]<span class="comment"># passwd       //这个是用户名输完名字输密码</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe</span><br><span class="line">[root@PC-NAME]<span class="comment"># EDITOR=nano visudo</span></span><br><span class="line">    %wheel      ALL=(ALL) ALL</span><br><span class="line">    (setup sudoers file.)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]<span class="comment"># useradd -m -G wheel -s /bin/bash &#123;username&#125;</span></span><br><span class="line">(add user)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># passwd &#123;username&#125;      //&#123;&#125;换成你的用户名,记住不需要打&#123;&#125;</span></span><br><span class="line">(<span class="built_in">set</span> default user password)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># exit  //退出</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe config --default-user &#123;username&#125;</span><br><span class="line">    (setting to default user)     //现在是root用户,不用加sudo</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [user@PC-NAME]$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]$ sudo pacman-key --populate</span><br></pre></td></tr></table></figure>
-<h3 id="第五步-安装完后操作"><a href="#第五步-安装完后操作" class="headerlink" title="第五步 安装完后操作"></a>第五步 安装完后操作</h3><p><strong>下面是<a href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/">换源</a></strong></p>
-<p><strong>打开nano /etc/pacman.d/mirrorlist 然后再最顶端添加 切记去##</strong></p>
-<img src="/images/wsl傻瓜式安装/Arch wsl配置文件.jpg" style="width: 800px; height: 500px;">
-<br>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Server = https:mirrors.tuna.tsinghua.edu.cn/archlinux/<span class="variable">$repo</span>/os/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
-**然后就可以 更新软件包缓存**
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman -Syy</span><br></pre></td></tr></table></figure>
-<h3 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
-<img src="/images/wsl傻瓜式安装/Arch wsl.jpg" style="width: 800px; height: 500px;">
-
-<h3 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h3><h3 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h3><h3 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h3>]]></content>
   </entry>
   <entry>
     <title>Android同步源码和编译ROM傻瓜式 (有手就行)</title>
@@ -1553,6 +1462,97 @@ $
 <h1 id="祝福大家能自己动手做出属于自己的ROM"><a href="#祝福大家能自己动手做出属于自己的ROM" class="headerlink" title="祝福大家能自己动手做出属于自己的ROM"></a>祝福大家能自己动手做出属于自己的ROM</h1>]]></content>
   </entry>
   <entry>
+    <title>Vue.js 表单输入绑定的基础用法</title>
+    <url>/Vue-usage.html</url>
+    <content><![CDATA[<h3 id="输入文本"><a href="#输入文本" class="headerlink" title="输入文本"></a>输入文本</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$     &lt;div id = <span class="string">&quot;app1&quot;</span>&gt;</span><br><span class="line">$         &lt;div&gt;</span><br><span class="line">$            请输入你喜欢的城市&lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;cname&quot;</span>&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选择的城市:&#123;&#123;cname&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$        &lt;div&gt;</span><br><span class="line">$            回复评论: &lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;huifu&quot;</span>&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选回复是:&#123;&#123;huifu&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app1&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                cname : <span class="string">&quot;哈哈哈尔滨市&quot;</span>,</span><br><span class="line">$                huifu : <span class="string">&quot;我叫史迪奇&quot;</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="./html/文本.html"></iframe>
+
+<hr>
+<h3 id="输入多行文本"><a href="#输入多行文本" class="headerlink" title="输入多行文本"></a>输入多行文本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app2&quot;</span>&gt;</span><br><span class="line">$         &lt;div&gt;</span><br><span class="line">$            &lt;span&gt;你的名字: &lt;/span&gt;</span><br><span class="line">$            &lt;p style=<span class="string">&quot;white-space: pre-line;&quot;</span>&gt;&#123;&#123; name &#125;&#125;&lt;/p&gt;</span><br><span class="line">$            &lt;br&gt;</span><br><span class="line">$            &lt;textarea v-model=<span class="string">&quot;name &quot;</span> placeholder=<span class="string">&quot;请输入你的名字&quot;</span>&gt;&lt;/textarea&gt;</span><br><span class="line">$</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你的名字:&#123;&#123;name&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app2&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                name : <span class="string">&quot;史迪奇&quot;</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="./html/多行文本.html"></iframe>
+
+<hr>
+<h3 id="输入单个复选框"><a href="#输入单个复选框" class="headerlink" title="输入单个复选框"></a>输入单个复选框</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app3&quot;</span>&gt;</span><br><span class="line">$        &lt;div&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你的选择是: &#123;&#123;checked &#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;checkbox&quot;</span> v-model=<span class="string">&quot;checked&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;checkbox&quot;</span>&gt;&#123;&#123; checked &#125;&#125;&lt;/label&gt;        </span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app3&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                checked : <span class="literal">false</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="/html/单个复选框.html"></iframe>
+
+<hr>
+<h3 id="输入多个复选框"><a href="#输入多个复选框" class="headerlink" title="输入多个复选框"></a>输入多个复选框</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app4&quot;</span>&gt;</span><br><span class="line">$        &lt;div&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;blue&quot;</span> value=<span class="string">&quot;蓝色&quot;</span> v-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;blue&quot;</span>&gt;蓝色&lt;/label&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;red&quot;</span> value=<span class="string">&quot;红色&quot;</span> v-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;red&quot;</span>&gt;红色&lt;/label&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;yellow&quot;</span> value=<span class="string">&quot;黄色&quot;</span> v-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;yellow&quot;</span>&gt;黄色&lt;/label&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选择的颜色是: &#123;&#123;color&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app4&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                color : [],</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="./html/多个复选框.html"></iframe>
+
+<hr>
+<h3 id="输入单选按钮"><a href="#输入单选按钮" class="headerlink" title="输入单选按钮"></a>输入单选按钮</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   &lt;div id = <span class="string">&quot;app5&quot;</span>&gt;</span><br><span class="line">$           &lt;div&gt;</span><br><span class="line">$               &lt;input <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> id=<span class="string">&quot;男&quot;</span> value=<span class="string">&quot;男&quot;</span> v-model=<span class="string">&quot;sex&quot;</span>&gt;</span><br><span class="line">$               &lt;label <span class="keyword">for</span>=<span class="string">&quot;男&quot;</span>&gt;男&lt;/label&gt;</span><br><span class="line">$               &lt;br&gt;</span><br><span class="line">$               &lt;input <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> id=<span class="string">&quot;女&quot;</span> value=<span class="string">&quot;女&quot;</span> v-model=<span class="string">&quot;sex&quot;</span>&gt;</span><br><span class="line">$               &lt;label <span class="keyword">for</span>=<span class="string">&quot;女&quot;</span>&gt;女&lt;/label&gt;</span><br><span class="line">$               &lt;p&gt;</span><br><span class="line">$                   你选择的性别是: &#123;&#123;sex&#125;&#125;</span><br><span class="line">$               &lt;/p&gt;</span><br><span class="line">$           &lt;/div&gt;</span><br><span class="line">$   &lt;/div&gt;</span><br><span class="line">$       &lt;script&gt;</span><br><span class="line">$           var app = new Vue(&#123;</span><br><span class="line">$           el:<span class="string">&#x27;#app5&#x27;</span>,</span><br><span class="line">$           data : &#123;</span><br><span class="line">$               sex :[]</span><br><span class="line">$           &#125;</span><br><span class="line">$       &#125;);</span><br><span class="line">$       &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="./html/单选按钮.html"></iframe>
+
+<hr>
+<h3 id="输入选择框单选时"><a href="#输入选择框单选时" class="headerlink" title="输入选择框单选时"></a>输入选择框单选时</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   &lt;div id = <span class="string">&quot;app6&quot;</span>&gt;</span><br><span class="line">$           &lt;div&gt;</span><br><span class="line">$               请你选择你喜欢的季节:&lt;select v-model=<span class="string">&quot;season&quot;</span> style=<span class="string">&quot;width: 50px;&quot;</span>&gt;</span><br><span class="line">$                   &lt;option&gt;春天&lt;/option&gt;</span><br><span class="line">$                   &lt;option&gt;夏天&lt;/option&gt;</span><br><span class="line">$                   &lt;option&gt;秋天&lt;/option&gt;</span><br><span class="line">$                   &lt;option&gt;冬天&lt;/option&gt;</span><br><span class="line">$               &lt;/select&gt;</span><br><span class="line">$           </span><br><span class="line">$           &lt;p&gt;</span><br><span class="line">$               你喜欢的季节是: &#123;&#123;season&#125;&#125;</span><br><span class="line">$           &lt;/p&gt;</span><br><span class="line">$           &lt;/div&gt;</span><br><span class="line">$       &lt;/div&gt;</span><br><span class="line">$       &lt;script&gt;</span><br><span class="line">$           var app = new Vue(&#123;</span><br><span class="line">$           el:<span class="string">&#x27;#app6&#x27;</span>,</span><br><span class="line">$           data : &#123;</span><br><span class="line">$               season: <span class="string">&quot;夏天&quot;</span>,</span><br><span class="line">$           &#125;</span><br><span class="line">$       &#125;);</span><br><span class="line">$       &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="./html/选择框单选时.html"></iframe>
+
+<hr>
+<h3 id="输入选择框多选时"><a href="#输入选择框多选时" class="headerlink" title="输入选择框多选时"></a>输入选择框多选时</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app7&quot;</span>&gt;</span><br><span class="line">$            &lt;div&gt;请你选择你喜欢的季节:</span><br><span class="line">$            &lt;select v-model=<span class="string">&quot;selected&quot;</span>  multiple style=<span class="string">&quot;width: 50px;&quot;</span>&gt;</span><br><span class="line">$                &lt;option&gt;春天&lt;/option&gt;</span><br><span class="line">$                &lt;option&gt;夏天&lt;/option&gt;</span><br><span class="line">$                &lt;option&gt;秋天&lt;/option&gt;</span><br><span class="line">$                &lt;option&gt;冬天&lt;/option&gt;</span><br><span class="line">$              &lt;/select&gt;</span><br><span class="line">$              &lt;p&gt;</span><br><span class="line">$                你喜欢的季节是:&#123;&#123;selected&#125;&#125;</span><br><span class="line">$                &lt;br&gt;</span><br><span class="line">$                多选时按住, 往下拖</span><br><span class="line">$              &lt;/p&gt;</span><br><span class="line">$            &lt;/div&gt;</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app7&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                selected:[<span class="string">&quot;夏天&quot;</span>,<span class="string">&quot;冬天&quot;</span>]</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="./html/选择框多选时.html"></iframe>
+
+<hr>
+]]></content>
+  </entry>
+  <entry>
+    <title>Arch wsl的傻瓜式安装 (有手就行)</title>
+    <url>/Arch-Wsl-install.html</url>
+    <content><![CDATA[<p>本人是Arch教徒过来传一下教<br><img src="/images/wsl傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
+<a id="more"></a>
+
+<h3 id="第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下"><a href="#第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下" class="headerlink" title="第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下"></a>第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</span><br></pre></td></tr></table></figure>
+<img src="/images/wsl傻瓜式安装/按照提示重启电脑.jpg" style="width: 300px; height: 300px;">
+
+<p><strong>按照提示重启电脑</strong></p>
+<h3 id="第二步-下载文件"><a href="#第二步-下载文件" class="headerlink" title="第二步 下载文件"></a>第二步 下载文件</h3><p><strong>然后下载<a href="https://github.com/yuk7/ArchWSL">Arch WSL</a></strong></p>
+<img src="/images/wsl傻瓜式安装/Arch wsl下载.jpg">
+<br>
+<img src="/images/wsl傻瓜式安装/Arch wsl下载版本.jpg">
+
+<p><strong>那个安装证书是给appx版的arch wsl用的</strong></p>
+<p><strong>你已经安装zip版的</strong></p>
+<p><strong>没有必要安两次</strong></p>
+<p><strong>只用需要用到zip</strong></p>
+<h3 id="第三步-配置Arch-Wsl"><a href="#第三步-配置Arch-Wsl" class="headerlink" title="第三步 配置Arch Wsl"></a>第三步 配置Arch Wsl</h3><img src="/images/wsl傻瓜式安装/Arch wsl配置.jpg" style="width: 800px; height: 500px;">
+
+<p><strong>反正按照我这个改，保存是ctrl + x 回车</strong></p>
+<h3 id="第四步-配置相关参数"><a href="#第四步-配置相关参数" class="headerlink" title="第四步 配置相关参数"></a>第四步 配置相关参数</h3><p><strong>这里会提示配置  按照我的方法配置</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe//这个是启动后的显示</span><br><span class="line">[root@PC-NAME user]<span class="comment"># passwd       //这个是用户名输完名字输密码</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe</span><br><span class="line">[root@PC-NAME]<span class="comment"># EDITOR=nano visudo</span></span><br><span class="line">    %wheel      ALL=(ALL) ALL</span><br><span class="line">    (setup sudoers file.)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]<span class="comment"># useradd -m -G wheel -s /bin/bash &#123;username&#125;</span></span><br><span class="line">(add user)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># passwd &#123;username&#125;      //&#123;&#125;换成你的用户名,记住不需要打&#123;&#125;</span></span><br><span class="line">(<span class="built_in">set</span> default user password)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># exit  //退出</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe config --default-user &#123;username&#125;</span><br><span class="line">    (setting to default user)     //现在是root用户,不用加sudo</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [user@PC-NAME]$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]$ sudo pacman-key --populate</span><br></pre></td></tr></table></figure>
+<h3 id="第五步-安装完后操作"><a href="#第五步-安装完后操作" class="headerlink" title="第五步 安装完后操作"></a>第五步 安装完后操作</h3><p><strong>下面是<a href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/">换源</a></strong></p>
+<p><strong>打开nano /etc/pacman.d/mirrorlist 然后再最顶端添加 切记去##</strong></p>
+<img src="/images/wsl傻瓜式安装/Arch wsl配置文件.jpg" style="width: 800px; height: 500px;">
+<br>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Server = https:mirrors.tuna.tsinghua.edu.cn/archlinux/<span class="variable">$repo</span>/os/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
+**然后就可以 更新软件包缓存**
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman -Syy</span><br></pre></td></tr></table></figure>
+<h3 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
+<img src="/images/wsl傻瓜式安装/Arch wsl.jpg" style="width: 800px; height: 500px;">
+
+<h3 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h3><h3 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h3><h3 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h3>]]></content>
+  </entry>
+  <entry>
     <title>职教星2.8.1(搬运软件)</title>
     <url>/zjx2.8.1.html</url>
     <content><![CDATA[<h3 id="职教星2-8-1"><a href="#职教星2-8-1" class="headerlink" title="职教星2.8.1"></a>职教星2.8.1</h3><a id="more"></a>
@@ -1563,6 +1563,25 @@ $
 <h1>拿走的请在下面评论区留言: "我遵守承诺"</h1>
 
 <h3 id="记住千万别成为那些盗取别人劳动成果来赚钱的人渣"><a href="#记住千万别成为那些盗取别人劳动成果来赚钱的人渣" class="headerlink" title="记住千万别成为那些盗取别人劳动成果来赚钱的人渣"></a>记住千万别成为那些盗取别人劳动成果来赚钱的人渣</h3><h3 id="因为有人违反约定-本文就不放链接-想要的话-自己来找我"><a href="#因为有人违反约定-本文就不放链接-想要的话-自己来找我" class="headerlink" title="因为有人违反约定, 本文就不放链接, 想要的话, 自己来找我"></a>因为有人违反约定, 本文就不放链接, 想要的话, 自己来找<a href="https://wpa.qq.com/msgrd?v=3&uin=3083329400&site=qq&menu=yes">我</a></h3>]]></content>
+  </entry>
+  <entry>
+    <title>百度搜索技巧</title>
+    <url>/baidu.html</url>
+    <content><![CDATA[<h1 id="精确匹配"><a href="#精确匹配" class="headerlink" title="精确匹配"></a>精确匹配</h1><p>搜索关键字加” “就行了 用法: “史迪奇”</p>
+<h1 id="消除无关性"><a href="#消除无关性" class="headerlink" title="消除无关性"></a>消除无关性</h1><p>搜索关键字加(-)就行了 用法: (-史迪奇)</p>
+<h1 id="并行搜索"><a href="#并行搜索" class="headerlink" title="并行搜索"></a>并行搜索</h1><p>搜索关键字加(|)就行了 用法: (史迪奇|史迪仔)</p>
+<h1 id="搜索范围限定在网页标题中"><a href="#搜索范围限定在网页标题中" class="headerlink" title="搜索范围限定在网页标题中"></a>搜索范围限定在网页标题中</h1><p>搜索关键字加intitle:就行了 用法: intitle:史迪奇</p>
+<h1 id="搜索范围限定在特定站点中"><a href="#搜索范围限定在特定站点中" class="headerlink" title="搜索范围限定在特定站点中"></a>搜索范围限定在特定站点中</h1><p>知道站点的前提下 site:站点域名就行了不要带http://  用法: intitle:<a href="https://sdq3.gitee.io/baidu.html">https://sdq3.gitee.io/baidu.html</a></p>
+<h1 id="搜索范围限定在url链接"><a href="#搜索范围限定在url链接" class="headerlink" title="搜索范围限定在url链接"></a>搜索范围限定在url链接</h1><p>搜索关键字加inurl: 就行了 用法:史迪奇 inurl:小怪物</p>
+<h1 id="特定格式的文档检索"><a href="#特定格式的文档检索" class="headerlink" title="特定格式的文档检索"></a>特定格式的文档检索</h1><p>搜索关键字加filetype: 就行了   用法:filetype:PDF 如PDF、DOC、XLS等</p>
+<h1 id="精确匹配-电影-小说"><a href="#精确匹配-电影-小说" class="headerlink" title="精确匹配 电影 小说"></a>精确匹配 电影 小说</h1><p>搜索关键字加&lt;&gt;就行了 用法: &lt;史迪奇&gt;</p>
+<h1 id="开始连接和正在连接"><a href="#开始连接和正在连接" class="headerlink" title="开始连接和正在连接"></a>开始连接和正在连接</h1><p>搜索关键字加(开始连接|正在连接)就行了  用法: 星际宝贝(开始连接|正在连接)</p>
+<h1 id="计算器功能"><a href="#计算器功能" class="headerlink" title="计算器功能"></a>计算器功能</h1><p>搜索关键字加数字加减就行了  用法: 史迪奇*3-2+1</p>
+<h1 id="仅搜索网站标题"><a href="#仅搜索网站标题" class="headerlink" title="仅搜索网站标题"></a>仅搜索网站标题</h1><p>搜索关键字加t:就行了 用法: t:史迪奇</p>
+<h1 id="仅搜索网站的网址"><a href="#仅搜索网站的网址" class="headerlink" title="仅搜索网站的网址"></a>仅搜索网站的网址</h1><p>搜索关键字加u:就行了 用法: u:sdq3.gitee.io</p>
+<h1 id="关键字都必须包含"><a href="#关键字都必须包含" class="headerlink" title="关键字都必须包含"></a>关键字都必须包含</h1><p>搜索关键字加 +就行了 用法: 史迪奇 +史迪仔 +是个人</p>
+<h1 id="减去想要去除的关键词"><a href="#减去想要去除的关键词" class="headerlink" title="减去想要去除的关键词"></a>减去想要去除的关键词</h1><p>搜索关键字加 -就行了 用法: 史迪奇 -不是个人</p>
+]]></content>
   </entry>
   <entry>
     <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
