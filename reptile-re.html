@@ -5,7 +5,7 @@
   
 
 <head>
-	<title> 我叫史迪奇</title>
+	<title>爬虫 re模块的使用(牢饭吃到饱) -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -644,501 +644,55 @@ var $main = document.querySelector('.main');
 
 
 
-
 <style>
-.sdq-post {
-	webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-}
-.sdq-post:hover{
-	webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-}
+	#sdqPost:hover{
+   		    background-color: rgba(255, 255, 255, 0.5)!important;
+	}	
 </style>
-
-
-<style>
-@media screen and (max-width: 1024px){
-	.sdq-more{    
-    opacity: 1!important;
-	}
-	.sdq-more{  
-		display: contents!important;	
-	}
-	.sdq-toping{
-		display: inline-block;
-		left: 10px;
-		top: 0;
-		z-index: 2;
-		color: #FFFFFF;
-		padding: 0 10px;
-		border-radius: 4px;
-		font-style: normal;
-		background-color: rgba(234, 67, 74, 0.7);
-	}
-	.sdq-post:hover .sdq-toping {display: inline-block!important;}
-}
-
-@media screen and (min-width: 1024px){
-	.sdq-toping{
-		display: none;
-		position: fixed;
-		left: 10px;
-		top: 0;
-		z-index: 2;color: #FFFFFF;
-		clip-path: polygon(100% 0, 100% 100%, 50% 70%, 0 100%, 0 0);
-		background-color: rgba(255, 0, 0, 0.51);    
-		background: -webkit-gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
-    	background: gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
-		height: 61px;
-		width: 41px;
-	}
-}
-	.sdq-more{   
-	display: inline-block;
-    float: right;
-    background-color: rgba(204, 196, 196, 0.45);
-    padding: .5rem 1rem;
-    border-radius: 4px;
-    color: #919191!important;
-    text-decoration: none;
-    opacity: 0;
-    -webkit-transition: opacity 1.2s;
-    transition: opacity 1.2s;
-    will-change: opacity;
-        -moz-user-select: none; /*火狐*/
-        -webkit-user-select: none; /*webkit浏览器*/
-        -ms-user-select: none; /*IE10*/
-        -khtml-user-select: none; /*早期浏览器*/
-        -o-user-select: none; /* Opera*/
-        user-select: none;
-	}
-	.sdq-post:hover .sdq-more {
-		opacity: 1;
-		animation: fade-in;
-		animation-duration: 0.6s;
-		-webkit-animation: fade-in 0.6s;
-	}
-	
-	@keyframes fade-in {  
-    0% {opacity: 0;}/*初始状态 透明度为0*/  
-    40% {opacity: 0;}/*过渡状态 透明度为0*/  
-    100% {opacity: 1;}/*结束状态 透明度为1*/  
-	}  
-	@-webkit-keyframes fade-in {/*针对webkit内核*/  
-		0% {opacity: 0;}  
-		40% {opacity: 0;}  
-		100% {opacity: 1;}  
-	}  
-	.sdq-post:hover .sdq-toping {display: block;}
-	.sdq-tags{
-	}
-	.sdq-tags a{
-		color: #fff; 
-		font-size: 15px; 
-	}
-	.sdq-tags a {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-	}
-	
-</style>
-
-
-<style>
-	
-@media screen and (min-width: 1024px){
-	.sdq-post:hover{
-   		border: none;
-		transform: translateY(-20px);
-		-webkit-transform: translateY(-20px);
-		-moz-transform: translateY(-20px);
-		background-color: rgba(255, 255, 255, 0.3);
-	}
-	.sdq-post{    
-		padding: 60px 70px!important;
-	}
-}
-	.sdq-post{    
-/*   		border: 1px #b8c7ff solid;*/
-		margin: 0px;    margin-bottom: 20px;
-        background-color: rgba(240, 248, 255, 0.4);
-	}
-</style>
-
-
-
-
-
-
 <div class="sdq">
-	<section class="sdq-posts">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/baidu.html">
-					<div class="sdq-title"> 
-						百度搜索技巧
-					</div>
-				</a>
-			</div>
-			
+	<div class="sdq-post" id="sdqPost">
+		<div class="sdq-title">
+			<h1>爬虫 re模块的使用(牢饭吃到饱)</h1>
 		</div>
+	  <div id="post" class="sdq-post-Statistics">
+            <a>2021年04月26日</a>
+		  	<a class="post-count">99 字</a>
+		
+		
+	  </div>
+		
+		
+<div id="modal" style="display:none">
 
-			<article>
-				
-				<h1 id="精确匹配"><a href="#精确匹配" class="headerlink" title="精确匹配"></a>精确匹配</h1>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年04月14日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/baidu.html"><div class="sdq-more">阅读更多...</div></a>
-		
+<aside id="article-toc" class="fixed-toc">
+    <div id="article-toc-inner">
+        <strong class="sidebar-title">目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0re%E6%A8%A1%E5%9D%97%E5%85%88%E5%AD%A6%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">学习re模块先学正则表达式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#findall"><span class="toc-text">findall</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#finditer"><span class="toc-text">finditer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#search"><span class="toc-text">search</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#match"><span class="toc-text">match</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%84%E5%8A%A0%E8%BD%BD%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">预加载正则表达式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%84%E5%8A%A0%E8%BD%BD%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-1"><span class="toc-text">预加载正则表达式</span></a></li></ol>
     </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/zjx2.8.1.html">
-					<div class="sdq-title"> 
-						职教星2.8.1(搬运软件)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<h3 id="职教星2-8-1"><a href="#职教星2-8-1" class="headerlink" title="职教星2.8.1"></a>职教星2.8.1</h3>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年04月14日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/zjx2.8.1.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Android-compile.html">
-					<div class="sdq-title"> 
-						Android同步源码和编译ROM傻瓜式 (有手就行)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p>本人是用Arch，顺便来传一下教<br><img src="/images/编译Android/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年04月14日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Android-compile.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Vue-usage.html">
-					<div class="sdq-title"> 
-						Vue.js 表单输入绑定的基础用法
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<h3 id="输入文本"><a href="#输入文本" class="headerlink" title="输入文本"></a>输入文本</h3>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年04月14日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Vue-usage.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Arch-Wsl-install.html">
-					<div class="sdq-title"> 
-						Arch wsl的傻瓜式安装 (有手就行)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p>本人是Arch教徒过来传一下教<br><img src="/images/wsl傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年04月14日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Arch-Wsl-install.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/one-Vue.html">
-					<div class="sdq-title"> 
-						第一个Vue.js
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年04月14日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/one-Vue.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/String-compare.html">
-					<div class="sdq-title"> 
-						String 比较
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<h3 id="String-比较"><a href="#String-比较" class="headerlink" title="String 比较"></a>String 比较</h3>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年04月14日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/String-compare.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/SQL-try.html">
-					<div class="sdq-title"> 
-						SQL Server T-SQL 视图
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<h3 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h3>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年04月14日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/SQL-try.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Linux-command.html">
-					<div class="sdq-title"> 
-						Linux命令(未完工)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<blockquote>
-<h3 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h3></blockquote>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年04月14日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Linux-command.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/SQL-storage.html">
-					<div class="sdq-title"> 
-						SQL Server T-SQL 存储过程
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<h3 id="创建变量"><a href="#创建变量" class="headerlink" title="创建变量"></a>创建变量</h3>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年04月14日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/SQL-storage.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-</section>
-	
-
-
-    <nav id="paging">
-      <a class="extend prev" rel="prev" href="/"><i class="sdqMsDanIconFont"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="sdqMsDanIconFont"></i></a>
-    </nav>
-  
-
-<!--
-        prev_text: '<i class="iconfont">&#xe617;</i>',
-        next_text: '<i class="iconfont">&#xe627;</i>'
--->
+</aside>
 </div>
 
 
+		
+			<a href="#modal" class="second">
+				<div class="i">
+						<i style="font-size:20px" class="sdq3 sdqfasong">
+						<span style="font-size:0px">
+						</i>
+				</div>
+			</a>
+
+
+
+
+<script>
+	$(".second .i").mouseover(function(){
+  $(".second .i span").css("font-size","18px");
+});
+	$(".second .i").mouseleave(function(){
+  $(".second .i span").css("font-size","0px");
+});
+</script>
 
 
 
@@ -1146,6 +700,132 @@ var $main = document.querySelector('.main');
 
 
 
+
+
+
+
+		<div>
+			  <article>
+				<h1 id="学习re模块先学正则表达式"><a href="#学习re模块先学正则表达式" class="headerlink" title="学习re模块先学正则表达式"></a>学习re模块先学正则表达式</h1><a id="more"></a>
+<h1 id="findall"><a href="#findall" class="headerlink" title="findall"></a>findall</h1><p><strong>匹配字符串中所有的符号正则的内容</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import re </span><br><span class="line"></span><br><span class="line">sdq &#x3D; re.findall(r&quot;\d+&quot;,613号实验品 亚亚,617号实验品 团团,618号实验品 红绿灯,619号实验品 火焰球,624号实验品 安琪,</span><br><span class="line">625号实验品 鲁本,626号实验品 史迪仔)</span><br><span class="line">print(sdq)</span><br></pre></td></tr></table></figure>
+<h1 id="finditer"><a href="#finditer" class="headerlink" title="finditer"></a>finditer</h1><p><strong>匹配字符串中所有的内容 [返回的是迭代器] 从迭代器中拿到内容需要.group</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import re </span><br><span class="line"></span><br><span class="line">sdq &#x3D; re.findall(r&quot;\d+&quot;,613号实验品 亚亚,617号实验品 团团,618号实验品 红绿灯,619号实验品 火焰球,624号实验品 安琪,</span><br><span class="line">625号实验品 鲁本,626号实验品 史迪仔)</span><br><span class="line">for i sdq:</span><br><span class="line">    print(sdq.group())</span><br></pre></td></tr></table></figure>
+<h1 id="search"><a href="#search" class="headerlink" title="search"></a>search</h1><p><strong>返回第一个拿到的结果, 返回的结果是match对象, .group()是拿数据</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import re </span><br><span class="line"></span><br><span class="line">sdq &#x3D; re.search(r&quot;\d+&quot;,613号实验品 亚亚,617号实验品 团团,618号实验品 红绿灯,619号实验品 火焰球,624号实验品 安琪,</span><br><span class="line">625号实验品 鲁本,626号实验品 史迪仔)</span><br><span class="line">print(sdq.group())</span><br></pre></td></tr></table></figure>
+<h1 id="match"><a href="#match" class="headerlink" title="match"></a>match</h1><p><strong>从头开始匹配, 前面没有就停止</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import re </span><br><span class="line"></span><br><span class="line">sdq &#x3D; re.search(r&quot;\d+&quot;,613号实验品 亚亚,617号实验品 团团,618号实验品 红绿灯,619号实验品 火焰球,624号实验品 安琪,</span><br><span class="line">625号实验品 鲁本,626号实验品 史迪仔)</span><br><span class="line">print(sdq.group())</span><br></pre></td></tr></table></figure>
+<h1 id="预加载正则表达式"><a href="#预加载正则表达式" class="headerlink" title="预加载正则表达式"></a>预加载正则表达式</h1><p><strong>从头开始匹配, 前面没有就停止</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import re </span><br><span class="line"></span><br><span class="line">sdq &#x3D; re.compile(r&quot;\d+&quot;)</span><br><span class="line"></span><br><span class="line">zdz &#x3D; sdq.finditer(&quot;613号实验品 亚亚,617号实验品 团团,618号实验品 红绿灯,619号实验品 火焰球,624号实验品 安琪,</span><br><span class="line">625号实验品 鲁本,626号实验品 史迪仔&quot;)</span><br><span class="line"></span><br><span class="line">for it in sdz</span><br><span class="line">    print(it.group())</span><br></pre></td></tr></table></figure>
+<h1 id="预加载正则表达式-1"><a href="#预加载正则表达式-1" class="headerlink" title="预加载正则表达式"></a>预加载正则表达式</h1><p><strong>从头开始匹配, 前面没有就停止</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import re </span><br><span class="line"></span><br><span class="line">&lt;div class&#x3D;&#39;yy&#39;&gt;&lt;span id&#x3D;&quot;613&quot;&gt;亚亚&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class&#x3D;&#39;tt&#39;&gt;&lt;span id&#x3D;&quot;617&quot;&gt;团团&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class&#x3D;&#39;hld&#39;&gt;&lt;span id&#x3D;&quot;618&quot;&gt;红绿灯&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class&#x3D;&#39;tt&#39;&gt;&lt;span id&#x3D;&quot;619&quot;&gt;团团&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class&#x3D;&#39;lb&#39;&gt;&lt;span id&#x3D;&quot;625&quot;&gt;鲁本&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class&#x3D;&#39;sdq&#39;&gt;&lt;span id&#x3D;&quot;626&quot;&gt;史迪奇&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line"># (?&lt;分组名字&gt;正则表达式)</span><br><span class="line">obj &#x3D; re.compile(r&quot;&lt;div class&#x3D;&#39;.*?&#39;&gt;&lt;span id&#x3D;&quot;(?&lt;id&gt;\d+)&quot;&gt;(?P&lt;name&gt;.*?)&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;, re.S)  # re.S: 让.能匹配换行符</span><br><span class="line"></span><br><span class="line">result &#x3D; obj.finditer(s)</span><br><span class="line"></span><br><span class="line">for it in sdz</span><br><span class="line">    print(it.group())</span><br></pre></td></tr></table></figure>
+
+			  </article>
+		</div>
+		
+		
+
+
+		 	
+				<style>
+.veditor {
+    background: url('images/评论区/史迪奇睡觉.gif') no-repeat #fcfcfc!important;
+    background-size: auto 130px!important;
+    background-position: right bottom!important;
+}
+</style>
+<div id="vcomments" class="comment">
+
+</div>
+<script>
+	window.valine = new Valine({
+		el: '#vcomments',
+		appId: 'QqqoNLFAJzeDU9WPBVYk7UBj-MdYXbMMI',
+		appKey: 'hzwk2U93vOE4IdBWQXvda2mJ',
+		avatar: 'robohash',
+		placeholder: '我叫史迪奇',
+		path: window.location.pathname,   //[重点] 记得添加path路径
+	});
+	
+    // 使用方法 https://valine.js.org/quickstart.html
+	/*
+		var $vcomments = document.querySelector('.comment');
+		var $div= document.createElement('div');
+		$div.setAttribute("id","#vcomments");
+		$vcomments.appendChild($div);
+    new Valine({
+        el: '#vcomments',
+        appId: 'QqqoNLFAJzeDU9WPBVYk7UBj-MdYXbMMI',
+        appKey: 'hzwk2U93vOE4IdBWQXvda2mJ',
+		avatar: 'robohash',
+        placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ',
+    });*/
+        //placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ',
+</script>
+
+<script>
+/*//$(function() 
+$(window).load(function(){
+	// 去valine版权
+	$('.info').css("display","none");
+	// 去valine位移
+	$('.vmeta').css("padding-right","66px");
+	$('.vcontrol').css("padding-right","66px");
+	$('.vctrl').css("padding-right","66px");
+	$('#veditor').removeAttr("placeholder");
+	$("#veditor").attr("placeholder","输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ");
+	$('.v .vwrap .vheader .vinput:nth-child(3)').removeAttr("placeholder");
+	$(".v .vwrap .vheader .vinput:nth-child(3)").attr("placeholder","你的HOME(例：https://www.baidu.com)");
+	$(".info").after(" <p>&copy; </p>");
+});*/
+</script>
+			
+		
+	  
+	
+		
+
+
+<div class="copy">
+<i></i>
+<strong>本文作者：</strong>
+	
+	 
+			史迪奇<br>
+        
+	
+<strong>本文链接：</strong>
+	<a href="https://sdq3.gitee.io/reptile-re.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;reptile-re.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;reptile-re.html</a><br>
+</div>
+
+	  
+	</div>
+</div>
+<script>
+	(function(){
+		var jmz = {};
+		jmz.GetLength = function(str) {
+			var realLength = 0, len = str.length, charCode = -1;
+			for (var i = 0; i < len; i++) {
+				charCode = str.charCodeAt(i);
+				if (charCode >= 0 && charCode <= 128) 
+					  realLength += 1;
+				else
+					  realLength += 1;
+			}
+			return realLength;
+		};
+		//console.log(str);
+		var article = document.querySelector('.sdq-post article').innerHTML.trim();
+
+		var b = article.replace(/<.*?>/ig,"");
+		
+		$('.post-count').html(jmz.GetLength(b)+"字");
+	})()
+
+
+
+</script>
 
 
     				
