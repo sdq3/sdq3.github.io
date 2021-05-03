@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>Oh&gt;..&lt; 无法访问! -  我叫史迪奇</title>
+	<title>archive：2021 -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -641,90 +641,239 @@ var $main = document.querySelector('.main');
 			<div class="main">
 				<div class="main-content">
 					
-<div class="sdq-post" id="Permalinks">
-  <article>
-    <style>
-    #no{
-    position: relative;
-        top: 30%;
-        left: 50%;
-        -webkit-transform: translate(-50%, 32%);
-        -moz-transform: translate(-50%, 32%);
-        -ms-transform: translate(-50%, 32%);
-        -o-transform: translate(-50%, 32%);
-        transform: translate(-50%, 32%);
-        font-size: 24px;
-    line-height: 72px;
-    margin-bottom: 36px;
-    white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
-</style>
-<div id="no">
-    404 Oh>..<  离家出走
-</div>
-  </article>
-	
-		
-		
 
 
-		 	
-				<style>
-.veditor {
-    background: url('images/评论区/史迪奇睡觉.gif') no-repeat #fcfcfc!important;
-    background-size: auto 130px!important;
-    background-position: right bottom!important;
+
+
+<style>
+.sdq-post {
+	webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+}
+.sdq-post:hover{
+	webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
 }
 </style>
-<div id="vcomments" class="comment">
 
-</div>
-<script>
-	window.valine = new Valine({
-		el: '#vcomments',
-		appId: 'QqqoNLFAJzeDU9WPBVYk7UBj-MdYXbMMI',
-		appKey: 'hzwk2U93vOE4IdBWQXvda2mJ',
-		avatar: 'robohash',
-		placeholder: '我叫史迪奇',
-		path: window.location.pathname,   //[重点] 记得添加path路径
-	});
+
+<style>
+@media screen and (max-width: 1024px){
+	.sdq-more{    
+    opacity: 1!important;
+	}
+	.sdq-more{  
+		display: contents!important;	
+	}
+	.sdq-toping{
+		display: inline-block;
+		left: 10px;
+		top: 0;
+		z-index: 2;
+		color: #FFFFFF;
+		padding: 0 10px;
+		border-radius: 4px;
+		font-style: normal;
+		background-color: rgba(234, 67, 74, 0.7);
+	}
+	.sdq-post:hover .sdq-toping {display: inline-block!important;}
+}
+
+@media screen and (min-width: 1024px){
+	.sdq-toping{
+		display: none;
+		position: fixed;
+		left: 10px;
+		top: 0;
+		z-index: 2;color: #FFFFFF;
+		clip-path: polygon(100% 0, 100% 100%, 50% 70%, 0 100%, 0 0);
+		background-color: rgba(255, 0, 0, 0.51);    
+		background: -webkit-gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
+    	background: gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
+		height: 61px;
+		width: 41px;
+	}
+}
+	.sdq-more{   
+	display: inline-block;
+    float: right;
+    background-color: rgba(204, 196, 196, 0.45);
+    padding: .5rem 1rem;
+    border-radius: 4px;
+    color: #919191!important;
+    text-decoration: none;
+    opacity: 0;
+    -webkit-transition: opacity 1.2s;
+    transition: opacity 1.2s;
+    will-change: opacity;
+        -moz-user-select: none; /*火狐*/
+        -webkit-user-select: none; /*webkit浏览器*/
+        -ms-user-select: none; /*IE10*/
+        -khtml-user-select: none; /*早期浏览器*/
+        -o-user-select: none; /* Opera*/
+        user-select: none;
+	}
+	.sdq-post:hover .sdq-more {
+		opacity: 1;
+		animation: fade-in;
+		animation-duration: 0.6s;
+		-webkit-animation: fade-in 0.6s;
+	}
 	
-    // 使用方法 https://valine.js.org/quickstart.html
-	/*
-		var $vcomments = document.querySelector('.comment');
-		var $div= document.createElement('div');
-		$div.setAttribute("id","#vcomments");
-		$vcomments.appendChild($div);
-    new Valine({
-        el: '#vcomments',
-        appId: 'QqqoNLFAJzeDU9WPBVYk7UBj-MdYXbMMI',
-        appKey: 'hzwk2U93vOE4IdBWQXvda2mJ',
-		avatar: 'robohash',
-        placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ',
-    });*/
-        //placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ',
-</script>
+	@keyframes fade-in {  
+    0% {opacity: 0;}/*初始状态 透明度为0*/  
+    40% {opacity: 0;}/*过渡状态 透明度为0*/  
+    100% {opacity: 1;}/*结束状态 透明度为1*/  
+	}  
+	@-webkit-keyframes fade-in {/*针对webkit内核*/  
+		0% {opacity: 0;}  
+		40% {opacity: 0;}  
+		100% {opacity: 1;}  
+	}  
+	.sdq-post:hover .sdq-toping {display: block;}
+	.sdq-tags{
+	}
+	.sdq-tags a{
+		color: #fff; 
+		font-size: 15px; 
+	}
+	.sdq-tags a {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+	}
+	
+</style>
 
-<script>
-/*//$(function() 
-$(window).load(function(){
-	// 去valine版权
-	$('.info').css("display","none");
-	// 去valine位移
-	$('.vmeta').css("padding-right","66px");
-	$('.vcontrol').css("padding-right","66px");
-	$('.vctrl').css("padding-right","66px");
-	$('#veditor').removeAttr("placeholder");
-	$("#veditor").attr("placeholder","输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ");
-	$('.v .vwrap .vheader .vinput:nth-child(3)').removeAttr("placeholder");
-	$(".v .vwrap .vheader .vinput:nth-child(3)").attr("placeholder","你的HOME(例：https://www.baidu.com)");
-	$(".info").after(" <p>&copy; </p>");
-});*/
-</script>
+
+<style>
+	
+@media screen and (min-width: 1024px){
+	.sdq-post:hover{
+   		border: none;
+		transform: translateY(-20px);
+		-webkit-transform: translateY(-20px);
+		-moz-transform: translateY(-20px);
+		background-color: rgba(255, 255, 255, 0.3);
+	}
+	.sdq-post{    
+		padding: 60px 70px!important;
+	}
+}
+	.sdq-post{    
+/*   		border: 1px #b8c7ff solid;*/
+		margin: 0px;    margin-bottom: 20px;
+        background-color: rgba(240, 248, 255, 0.4);
+	}
+</style>
+
+
+
+
+
+
+<div class="sdq">
+	<section class="sdq-posts">
+    
+    
+    
+    
+    
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/Arch-install.html">
+					<div class="sdq-title"> 
+						Arch系统包桌面傻瓜式安装 (有手就行)
+					</div>
+				</a>
+			</div>
 			
+		</div>
+
+			<article>
+				
+				<p>本人是Arch教徒过来传一下教<br><img src="/images/Arch傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年04月14日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/Arch-install.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
+	
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/Anroid-structure.html">
+					<div class="sdq-title"> 
+						Anroid 项目结构
+					</div>
+				</a>
+			</div>
+			
+		</div>
+
+			<article>
+				
+				<h3 id="Project-项目结构"><a href="#Project-项目结构" class="headerlink" title="Project 项目结构"></a>Project 项目结构</h3>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年04月14日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/Anroid-structure.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
+	
+    
+</section>
+	
+
+
+    <nav id="paging">
+      <a class="extend prev" rel="prev" href="/archives/2021/page/5/"><i class="sdqMsDanIconFont"></i></a><a class="page-number" href="/archives/2021/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2021/page/4/">4</a><a class="page-number" href="/archives/2021/page/5/">5</a><span class="page-number current">6</span>
+    </nav>
+  
+
+<!--
+        prev_text: '<i class="iconfont">&#xe617;</i>',
+        next_text: '<i class="iconfont">&#xe627;</i>'
+-->
 </div>
+
+
+
+
+
+
+
+
+
+
 
     				
 					

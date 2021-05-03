@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>Oh&gt;..&lt; 无法访问! -  我叫史迪奇</title>
+	<title>爬虫 爬小说(牢饭吃到饱)还没开始动 -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -641,31 +641,76 @@ var $main = document.querySelector('.main');
 			<div class="main">
 				<div class="main-content">
 					
-<div class="sdq-post" id="Permalinks">
-  <article>
-    <style>
-    #no{
-    position: relative;
-        top: 30%;
-        left: 50%;
-        -webkit-transform: translate(-50%, 32%);
-        -moz-transform: translate(-50%, 32%);
-        -ms-transform: translate(-50%, 32%);
-        -o-transform: translate(-50%, 32%);
-        transform: translate(-50%, 32%);
-        font-size: 24px;
-    line-height: 72px;
-    margin-bottom: 36px;
-    white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
+
+
+
+<style>
+	#sdqPost:hover{
+   		    background-color: rgba(255, 255, 255, 0.5)!important;
+	}	
 </style>
-<div id="no">
-    404 Oh>..<  离家出走
+<div class="sdq">
+	<div class="sdq-post" id="sdqPost">
+		<div class="sdq-title">
+			<h1>爬虫 爬小说(牢饭吃到饱)还没开始动</h1>
+		</div>
+	  <div id="post" class="sdq-post-Statistics">
+            <a>2021年05月02日</a>
+		  	<a class="post-count">99 字</a>
+		
+		
+	  </div>
+		
+		
+<div id="modal" style="display:none">
+
+<aside id="article-toc" class="fixed-toc">
+    <div id="article-toc-inner">
+        <strong class="sidebar-title">目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%88%AC%E5%B0%8F%E8%AF%B4%E7%9A%84%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4"><span class="toc-text">爬小说的详细步骤</span></a></li></ol>
+    </div>
+</aside>
 </div>
-  </article>
-	
+
+
+		
+			<a href="#modal" class="second">
+				<div class="i">
+						<i style="font-size:20px" class="sdq3 sdqfasong">
+						<span style="font-size:0px">
+						</i>
+				</div>
+			</a>
+
+
+
+
+<script>
+	$(".second .i").mouseover(function(){
+  $(".second .i span").css("font-size","18px");
+});
+	$(".second .i").mouseleave(function(){
+  $(".second .i span").css("font-size","0px");
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+		<div>
+			  <article>
+				<h1 id="爬小说的详细步骤"><a href="#爬小说的详细步骤" class="headerlink" title="爬小说的详细步骤"></a>爬小说的详细步骤</h1><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">feom bs4</span><br></pre></td></tr></table></figure>
+
+			  </article>
+		</div>
 		
 		
 
@@ -724,7 +769,53 @@ $(window).load(function(){
 });*/
 </script>
 			
+		
+	  
+	
+		
+
+
+<div class="copy">
+<i></i>
+<strong>本文作者：</strong>
+	
+	 
+			史迪奇<br>
+        
+	
+<strong>本文链接：</strong>
+	<a href="https://sdq3.gitee.io/reptile-novel.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;reptile-novel.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;reptile-novel.html</a><br>
 </div>
+
+	  
+	</div>
+</div>
+<script>
+	(function(){
+		var jmz = {};
+		jmz.GetLength = function(str) {
+			var realLength = 0, len = str.length, charCode = -1;
+			for (var i = 0; i < len; i++) {
+				charCode = str.charCodeAt(i);
+				if (charCode >= 0 && charCode <= 128) 
+					  realLength += 1;
+				else
+					  realLength += 1;
+			}
+			return realLength;
+		};
+		//console.log(str);
+		var article = document.querySelector('.sdq-post article').innerHTML.trim();
+
+		var b = article.replace(/<.*?>/ig,"");
+		
+		$('.post-count').html(jmz.GetLength(b)+"字");
+	})()
+
+
+
+</script>
+
 
     				
 					
