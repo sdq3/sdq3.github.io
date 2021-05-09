@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>Java面向对象思维之构造方法 -  我叫史迪奇</title>
+	<title>爬虫 bs4(牢饭吃到饱) -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -652,10 +652,10 @@ var $main = document.querySelector('.main');
 <div class="sdq">
 	<div class="sdq-post" id="sdqPost">
 		<div class="sdq-title">
-			<h1>Java面向对象思维之构造方法</h1>
+			<h1>爬虫 bs4(牢饭吃到饱)</h1>
 		</div>
 	  <div id="post" class="sdq-post-Statistics">
-            <a>2021年04月14日</a>
+            <a>2021年05月09日</a>
 		  	<a class="post-count">99 字</a>
 		
 		
@@ -667,7 +667,7 @@ var $main = document.querySelector('.main');
 <aside id="article-toc" class="fixed-toc">
     <div id="article-toc-inner">
         <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E5%A6%82%E9%80%A0%E4%B8%80%E8%BE%86%E8%BD%A6-%E8%80%8C%E8%BD%A6%E6%9C%89%E4%BB%80%E4%B9%88%E5%B1%9E%E6%80%A7%EF%BC%9F-%E4%BE%8B%E5%A6%82-%E8%BD%A6%E6%9C%89%E9%A2%9C%E8%89%B2-%E8%BD%A6%E6%9C%89%E8%BD%AE%E5%AD%90-%E8%BD%A6%E5%BA%A7%E4%BD%8D"><span class="toc-text">例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E4%BD%9C"><span class="toc-text">动作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8Cmain%E6%96%B9%E6%B3%95"><span class="toc-text">执行main方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F"><span class="toc-text">构造方法需要注意</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0"><span class="toc-text">综合练习</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#find"><span class="toc-text">find</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#find-all"><span class="toc-text">find_all</span></a></li></ol>
     </div>
 </aside>
 </div>
@@ -706,15 +706,12 @@ var $main = document.querySelector('.main');
 
 		<div>
 			  <article>
-				<h3 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ // 自动生成一个无参数的构造方法 public <span class="function"><span class="title">Car</span></span>() &#123; </span><br><span class="line">$ public Car(String color, int wheel, int seat) &#123; //这里给它添加参数  </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h3><p><strong>例如 车能飞</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">fly</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.color+<span class="string">&quot;车能飞&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>例如 车可以潜水</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">diving</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.diving+<span class="string">&quot;车可以下水&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,5,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     c1.fly();</span><br><span class="line">$     c1.diving();</span><br><span class="line">$ </span><br><span class="line">$     c2.fly();</span><br><span class="line">$     c2.diving();</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="构造方法需要注意"><a href="#构造方法需要注意" class="headerlink" title="构造方法需要注意"></a>构造方法需要注意</h3><p><strong>没有返回值这一项</strong><br><strong>在new的时候, 给对象设置属性信息</strong><br><strong>Java会默认自动的送每个类一个无参数的构造方法, 如果你写了构造方法, 那么Java就不送了</strong></p>
+				<h1 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h1><a id="more"></a>
+<p><strong>打开这个<a target="_blank" rel="noopener" href="https://www.umei.cc/bizhitupian/weimeibizhi/">网址</a></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"># 导入requests和bs4库</span><br><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">url &#x3D; &quot;https:&#x2F;&#x2F;www.umei.cc&#x2F;bizhitupian&#x2F;weimeibizhi&#x2F;&quot;</span><br><span class="line">resp &#x3D; requests.get(url)</span><br><span class="line">resp.encoding &#x3D; &#39;utf-8&#39;  # 处理乱码</span><br><span class="line"></span><br><span class="line"># print(resp.text)</span><br><span class="line"># 把源代码交给bs</span><br><span class="line">main_page &#x3D; BeautifulSoup(resp.text, &quot;html.parser&quot;)</span><br><span class="line">alist &#x3D; main_page.find(&quot;div&quot;, class_&#x3D;&quot;TypeList&quot;).find_all(&quot;a&quot;)</span><br><span class="line"># print(alist)</span><br><span class="line">for a in alist:</span><br><span class="line">    href &#x3D; a.get(&#39;href&#39;)  # 直接通过get就可以拿到属性的值</span><br><span class="line">    # 子页面的源代码</span><br><span class="line">    child_resp &#x3D; requests.get(href)</span><br><span class="line">    child_resp.encoding &#x3D; &#39;utf-8&#39;</span><br><span class="line">    child_text &#x3D; child_resp.text</span><br><span class="line">    # 从子页面中拿到图片的下载路径</span><br><span class="line">    child &#x3D; BeautifulSoup(child_text, &quot;html.parser&quot;)</span><br><span class="line">    p &#x3D; child.find(&quot;p&quot;, align&#x3D;&quot;center&quot;)</span><br><span class="line">    img &#x3D; p.find(&quot;img&quot;)</span><br><span class="line">    src &#x3D; img.get(&quot;src&quot;)</span><br><span class="line">    # 下载图片</span><br><span class="line">    img_resp &#x3D; requests.get(src)</span><br><span class="line">    # img_resp.content  # 这里拿到的是字节</span><br><span class="line">    img_name &#x3D; src.split(&quot;&#x2F;&quot;)[-1]  # 拿到url中的最后一个 &#x2F; 以后的内容-1代表最后一个</span><br><span class="line">    with open(&quot;img&#x2F;&quot;+img_name, mode&#x3D;&quot;wb&quot;) as f:</span><br><span class="line">        f.write(img_resp.content)  # 图片内容写入文件</span><br><span class="line"></span><br><span class="line">    print(&quot;正在下载&quot;, img_name)</span><br><span class="line">    time.sleep(1) #停1秒</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(&quot;下载完了&quot;)</span><br></pre></td></tr></table></figure>
+<h1 id="find"><a href="#find" class="headerlink" title="find"></a>find</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find(&quot;标签&quot;, 属性:id class) </span><br><span class="line">find(&quot;p&quot;, id&#x3D;&quot;sdq&quot;)</span><br></pre></td></tr></table></figure>
+<h1 id="find-all"><a href="#find-all" class="headerlink" title="find_all"></a>find_all</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find(&quot;标签&quot;, 属性:id class).find_all(&quot;标签&quot;)</span><br><span class="line">find(&quot;p&quot;, id&#x3D;&quot;sdq&quot;).find_all(&quot;a&quot;)</span><br></pre></td></tr></table></figure>
+
 
 			  </article>
 		</div>
@@ -791,7 +788,7 @@ $(window).load(function(){
         
 	
 <strong>本文链接：</strong>
-	<a href="https://sdq3.gitee.io/Object-oriented-constructor.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;Object-oriented-constructor.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;Object-oriented-constructor.html</a><br>
+	<a href="https://sdq3.gitee.io/reptile-bs4.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;reptile-bs4.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;reptile-bs4.html</a><br>
 </div>
 
 	  
