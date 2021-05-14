@@ -667,7 +667,7 @@ var $main = document.querySelector('.main');
 <aside id="article-toc" class="fixed-toc">
     <div id="article-toc-inner">
         <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%8F%98%E9%87%8F"><span class="toc-text">创建变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%8F%98%E9%87%8F"><span class="toc-text">查询变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="toc-text">创建存储过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="toc-text">执行存储过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="toc-text">删除存储过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Procedure-%E7%AE%80%E5%86%99%E4%B8%BA%EF%BC%9Aproc"><span class="toc-text">Procedure 简写为：proc</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%8F%98%E9%87%8F"><span class="toc-text">创建变量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%8F%98%E9%87%8F"><span class="toc-text">查询变量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="toc-text">创建存储过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="toc-text">执行存储过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="toc-text">删除存储过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Procedure-%E7%AE%80%E5%86%99%E4%B8%BA%EF%BC%9Aproc"><span class="toc-text">Procedure 简写为：proc</span></a></li></ol>
     </div>
 </aside>
 </div>
@@ -706,13 +706,13 @@ var $main = document.querySelector('.main');
 
 		<div>
 			  <article>
-				<h3 id="创建变量"><a href="#创建变量" class="headerlink" title="创建变量"></a>创建变量</h3><a id="more"></a>
+				<h1 id="创建变量"><a href="#创建变量" class="headerlink" title="创建变量"></a>创建变量</h1><a id="more"></a>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">declare</span> 变量名 数据类型 常量</span><br></pre></td></tr></table></figure>
-<h3 id="查询变量"><a href="#查询变量" class="headerlink" title="查询变量"></a>查询变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ select 变量名</span><br></pre></td></tr></table></figure>
-<h3 id="创建存储过程"><a href="#创建存储过程" class="headerlink" title="创建存储过程"></a>创建存储过程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ create Procedure 存储过程名 as select 字段 from 表名</span><br></pre></td></tr></table></figure>
-<h3 id="执行存储过程"><a href="#执行存储过程" class="headerlink" title="执行存储过程"></a>执行存储过程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ EXECUTE 存储过程名</span><br></pre></td></tr></table></figure>
-<h3 id="删除存储过程"><a href="#删除存储过程" class="headerlink" title="删除存储过程"></a>删除存储过程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ drop proc 存储过程名</span><br></pre></td></tr></table></figure>
-<h3 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h3>
+<h1 id="查询变量"><a href="#查询变量" class="headerlink" title="查询变量"></a>查询变量</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ select 变量名</span><br></pre></td></tr></table></figure>
+<h1 id="创建存储过程"><a href="#创建存储过程" class="headerlink" title="创建存储过程"></a>创建存储过程</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ create Procedure 存储过程名 as select 字段 from 表名</span><br></pre></td></tr></table></figure>
+<h1 id="执行存储过程"><a href="#执行存储过程" class="headerlink" title="执行存储过程"></a>执行存储过程</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ EXECUTE 存储过程名</span><br></pre></td></tr></table></figure>
+<h1 id="删除存储过程"><a href="#删除存储过程" class="headerlink" title="删除存储过程"></a>删除存储过程</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ drop proc 存储过程名</span><br></pre></td></tr></table></figure>
+<h1 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h1>
 			  </article>
 		</div>
 		
