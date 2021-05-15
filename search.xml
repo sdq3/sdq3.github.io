@@ -676,6 +676,21 @@ var tools = (function(){
 ]]></content>
   </entry>
   <entry>
+    <title>CSS 三种导入样式</title>
+    <url>/CSS-Import-styles.html</url>
+    <content><![CDATA[<h1 id="第一种-行内样式"><a href="#第一种-行内样式" class="headerlink" title="第一种  行内样式"></a>第一种  行内样式</h1><a id="more"></a>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">&quot;color: red&quot;</span>&gt;</span>行内样式<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E8%A1%8C%E5%86%85%E6%A0%B7%E5%BC%8F.jpg"></p>
+<h1 id="第二种-内部样式"><a href="#第二种-内部样式" class="headerlink" title="第二种 内部样式"></a>第二种 内部样式</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color: blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E5%86%85%E9%83%A8%E6%A0%B7%E5%BC%8F.jpg"></p>
+<h1 id="第三种-外部样式"><a href="#第三种-外部样式" class="headerlink" title="第三种 外部样式"></a>第三种 外部样式</h1><p><strong>另外一个css页面</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$   <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;css/style.css&quot;</span>&gt;</span>    //链接式  属于html</span><br><span class="line">$    @import url(&quot;css/style.css&quot;)          //导入式  属于CSS2.1 了解就可以</span><br><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color: blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E5%A4%96%E9%83%A8%E6%A0%B7%E5%BC%8F.jpg"></p>
+<h1 id="优先级-行内样式-gt-内部样式-gt-外部样式"><a href="#优先级-行内样式-gt-内部样式-gt-外部样式" class="headerlink" title="优先级: 行内样式 &gt; 内部样式 &gt; 外部样式"></a>优先级: 行内样式 &gt; 内部样式 &gt; 外部样式</h1><p><strong>优先级看就近原则</strong></p>
+]]></content>
+  </entry>
+  <entry>
     <title>CSS-边距-边框-阴影-浮动-定位-透明-z-index-动画</title>
     <url>/CSS8.html</url>
     <content><![CDATA[<h1 id="内外边距"><a href="#内外边距" class="headerlink" title="内外边距"></a>内外边距</h1><a id="more"></a>
@@ -715,21 +730,6 @@ $</style>
 ]]></content>
   </entry>
   <entry>
-    <title>CSS 三种导入样式</title>
-    <url>/CSS-Import-styles.html</url>
-    <content><![CDATA[<h1 id="第一种-行内样式"><a href="#第一种-行内样式" class="headerlink" title="第一种  行内样式"></a>第一种  行内样式</h1><a id="more"></a>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">&quot;color: red&quot;</span>&gt;</span>行内样式<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E8%A1%8C%E5%86%85%E6%A0%B7%E5%BC%8F.jpg"></p>
-<h1 id="第二种-内部样式"><a href="#第二种-内部样式" class="headerlink" title="第二种 内部样式"></a>第二种 内部样式</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color: blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E5%86%85%E9%83%A8%E6%A0%B7%E5%BC%8F.jpg"></p>
-<h1 id="第三种-外部样式"><a href="#第三种-外部样式" class="headerlink" title="第三种 外部样式"></a>第三种 外部样式</h1><p><strong>另外一个css页面</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$   <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;css/style.css&quot;</span>&gt;</span>    //链接式  属于html</span><br><span class="line">$    @import url(&quot;css/style.css&quot;)          //导入式  属于CSS2.1 了解就可以</span><br><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color: blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E5%A4%96%E9%83%A8%E6%A0%B7%E5%BC%8F.jpg"></p>
-<h1 id="优先级-行内样式-gt-内部样式-gt-外部样式"><a href="#优先级-行内样式-gt-内部样式-gt-外部样式" class="headerlink" title="优先级: 行内样式 &gt; 内部样式 &gt; 外部样式"></a>优先级: 行内样式 &gt; 内部样式 &gt; 外部样式</h1><p><strong>优先级看就近原则</strong></p>
-]]></content>
-  </entry>
-  <entry>
     <title>EJS常用标签</title>
     <url>/EJS.html</url>
     <content><![CDATA[<h1 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h1><a id="more"></a>
@@ -747,17 +747,6 @@ $</style>
 <h1 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h1><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;demo_iframe.html&quot;</span> frameborder=<span class="string">&quot;0&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
 <h1 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;xxx/xxx.html&quot;</span> name=<span class="string">&quot;iframe_a&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;iframe_a&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
-    <title>HTML 表格</title>
-    <url>/HTML-form.html</url>
-    <content><![CDATA[<h1 id="table"><a href="#table" class="headerlink" title="table"></a>table</h1><a id="more"></a>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ tr  //行</span><br><span class="line">$ td  //列</span><br></pre></td></tr></table></figure>
-
-<h1 id="跨列"><a href="#跨列" class="headerlink" title="跨列"></a>跨列</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">$    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$        <span class="tag">&lt;<span class="name">tb</span> <span class="attr">cospan</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">$     <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="跨行"><a href="#跨行" class="headerlink" title="跨行"></a>跨行</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">$    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$        <span class="tag">&lt;<span class="name">tb</span> <span class="attr">rowspan</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">$     <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
   </entry>
   <entry>
     <title>HTML 基本控件大集合</title>
@@ -1037,6 +1026,17 @@ $</style>
 <h1 id="只要input都需要value值和name值-这样就可以养成好习惯"><a href="#只要input都需要value值和name值-这样就可以养成好习惯" class="headerlink" title="只要input都需要value值和name值, 这样就可以养成好习惯"></a>只要input都需要value值和name值, 这样就可以养成好习惯</h1>]]></content>
   </entry>
   <entry>
+    <title>HTML 表格</title>
+    <url>/HTML-form.html</url>
+    <content><![CDATA[<h1 id="table"><a href="#table" class="headerlink" title="table"></a>table</h1><a id="more"></a>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ tr  //行</span><br><span class="line">$ td  //列</span><br></pre></td></tr></table></figure>
+
+<h1 id="跨列"><a href="#跨列" class="headerlink" title="跨列"></a>跨列</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">$    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$        <span class="tag">&lt;<span class="name">tb</span> <span class="attr">cospan</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">$     <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="跨行"><a href="#跨行" class="headerlink" title="跨行"></a>跨行</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">$    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$        <span class="tag">&lt;<span class="name">tb</span> <span class="attr">rowspan</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">$     <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>关于Hexo我所踩过的坑和小白安装教程</title>
     <url>/Hexo-install.html</url>
     <content><![CDATA[<h1 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h1><a id="more"></a>
@@ -1219,6 +1219,24 @@ $</style>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  sdq.subsrting(<span class="number">1</span>)          <span class="comment">/*从第一个字符串截取到最后一个字符串*/</span></span><br><span class="line">$  sdq.LowerCase(<span class="number">1</span>,<span class="number">3</span>)          <span class="comment">/*包头不包尾*/</span></span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
+    <title>JavaScript 数据类型之(对象)</title>
+    <url>/JavaScript-object.html</url>
+    <content><![CDATA[<h1 id="JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象"><a href="#JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象" class="headerlink" title="JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象"></a>JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象</h1><a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="keyword">var</span> 对象名 = &#123;    </span><br><span class="line">$      属性名: 属性值</span><br><span class="line">$      属性名: 属性值</span><br><span class="line">$      属性名: 属性值</span><br><span class="line">$ &#125; </span><br><span class="line">$</span><br><span class="line">$ <span class="comment">/*通过下标取值和赋值*/</span></span><br><span class="line">$ <span class="keyword">var</span> person = &#123;</span><br><span class="line">$     name: <span class="string">&quot;sdq&quot;</span>,</span><br><span class="line">$     age: <span class="number">3</span>,</span><br><span class="line">$     email: <span class="string">&quot;???????@???&quot;</span></span><br><span class="line">$     score: <span class="number">0</span></span><br><span class="line">$  &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>若干个键值对 js中对象, {…..}表示一个对象, 键值对描述属性xxxx: xxxx, 多个属性之间使用逗号隔开, 最后一个属性不加逗号</strong></p>
+<h1 id="对象赋值"><a href="#对象赋值" class="headerlink" title="对象赋值"></a>对象赋值</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   person.name = <span class="string">&quot;sdq&quot;</span>      <span class="comment">/*这里赋值sdq*/</span></span><br><span class="line">$   person.name              <span class="comment">/*这里输出sdq*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="undefined-使用不存在对象-不会报错"><a href="#undefined-使用不存在对象-不会报错" class="headerlink" title="undefined 使用不存在对象, 不会报错"></a>undefined 使用不存在对象, 不会报错</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  person.sdz</span><br><span class="line">$  <span class="literal">undefined</span></span><br></pre></td></tr></table></figure>
+<h1 id="delete-动态的删减属性"><a href="#delete-动态的删减属性" class="headerlink" title="delete 动态的删减属性"></a>delete 动态的删减属性</h1><p><strong>例子</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">delete</span> person.name</span><br><span class="line">$ <span class="literal">true</span></span><br><span class="line">$ person</span><br></pre></td></tr></table></figure>
+<h1 id="动态的添加给新的属性添加值"><a href="#动态的添加给新的属性添加值" class="headerlink" title="动态的添加给新的属性添加值"></a>动态的添加给新的属性添加值</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   person.sdq = <span class="string">&quot;sdz&quot;</span>  <span class="comment">/*这里赋值sdz*/</span></span><br><span class="line">$   person      </span><br></pre></td></tr></table></figure>
+<h1 id="判断属性值是否在这个对象-属性值是否在这个对象"><a href="#判断属性值是否在这个对象-属性值是否在这个对象" class="headerlink" title="判断属性值是否在这个对象  属性值是否在这个对象"></a>判断属性值是否在这个对象  属性值是否在这个对象</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="string">&quot;sdq&quot;</span> <span class="keyword">in</span> person        </span><br><span class="line">$  <span class="literal">true</span>         </span><br><span class="line">$  <span class="string">&quot;sdqz&quot;</span> <span class="keyword">in</span> person   </span><br><span class="line">$  <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h1 id="判断属性是否是这个对象自身拥有的-hasOwnProperty"><a href="#判断属性是否是这个对象自身拥有的-hasOwnProperty" class="headerlink" title="判断属性是否是这个对象自身拥有的 hasOwnProperty()"></a>判断属性是否是这个对象自身拥有的 hasOwnProperty()</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  person.hasOwnProperty(<span class="string">&quot;toString&quot;</span>)</span><br><span class="line">$  <span class="literal">false</span>       </span><br><span class="line">$  person.hasOwnProperty(<span class="string">&quot;sdq&quot;</span>)</span><br><span class="line">$  <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+  </entry>
+  <entry>
     <title>JavaScript 数据类型之(数组类型)</title>
     <url>/JavaScript-array.html</url>
     <content><![CDATA[<h1 id="Array可以包含任意的数据类型"><a href="#Array可以包含任意的数据类型" class="headerlink" title="Array可以包含任意的数据类型"></a>Array可以包含任意的数据类型</h1><a id="more"></a>
@@ -1237,24 +1255,6 @@ $</style>
 <h1 id="join-连接符"><a href="#join-连接符" class="headerlink" title="join 连接符"></a>join 连接符</h1><p><strong>例子</strong></p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  (<span class="number">3</span>)[<span class="string">&quot;C&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>] </span><br><span class="line">$  arr.join(<span class="string">&#x27;-&#x27;</span>)         <span class="comment">/*使用特定的字符串连接*/</span>   </span><br><span class="line">$  <span class="comment">/*结果输出&quot;C-B-A&quot;*/</span>       </span><br></pre></td></tr></table></figure>
 <h1 id="多位数组"><a href="#多位数组" class="headerlink" title="多位数组"></a>多位数组</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  arr = [[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>],[<span class="string">&quot;5&quot;</span>,<span class="string">&quot;6&quot;</span>]];</span><br><span class="line">$  arr[<span class="number">1</span>][<span class="number">1</span>]   </span><br><span class="line">$  <span class="comment">/*结果输出4*/</span>  </span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-  </entry>
-  <entry>
-    <title>JavaScript 数据类型之(对象)</title>
-    <url>/JavaScript-object.html</url>
-    <content><![CDATA[<h1 id="JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象"><a href="#JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象" class="headerlink" title="JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象"></a>JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象</h1><a id="more"></a>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="keyword">var</span> 对象名 = &#123;    </span><br><span class="line">$      属性名: 属性值</span><br><span class="line">$      属性名: 属性值</span><br><span class="line">$      属性名: 属性值</span><br><span class="line">$ &#125; </span><br><span class="line">$</span><br><span class="line">$ <span class="comment">/*通过下标取值和赋值*/</span></span><br><span class="line">$ <span class="keyword">var</span> person = &#123;</span><br><span class="line">$     name: <span class="string">&quot;sdq&quot;</span>,</span><br><span class="line">$     age: <span class="number">3</span>,</span><br><span class="line">$     email: <span class="string">&quot;???????@???&quot;</span></span><br><span class="line">$     score: <span class="number">0</span></span><br><span class="line">$  &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>若干个键值对 js中对象, {…..}表示一个对象, 键值对描述属性xxxx: xxxx, 多个属性之间使用逗号隔开, 最后一个属性不加逗号</strong></p>
-<h1 id="对象赋值"><a href="#对象赋值" class="headerlink" title="对象赋值"></a>对象赋值</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   person.name = <span class="string">&quot;sdq&quot;</span>      <span class="comment">/*这里赋值sdq*/</span></span><br><span class="line">$   person.name              <span class="comment">/*这里输出sdq*/</span></span><br></pre></td></tr></table></figure>
-<h1 id="undefined-使用不存在对象-不会报错"><a href="#undefined-使用不存在对象-不会报错" class="headerlink" title="undefined 使用不存在对象, 不会报错"></a>undefined 使用不存在对象, 不会报错</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  person.sdz</span><br><span class="line">$  <span class="literal">undefined</span></span><br></pre></td></tr></table></figure>
-<h1 id="delete-动态的删减属性"><a href="#delete-动态的删减属性" class="headerlink" title="delete 动态的删减属性"></a>delete 动态的删减属性</h1><p><strong>例子</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">delete</span> person.name</span><br><span class="line">$ <span class="literal">true</span></span><br><span class="line">$ person</span><br></pre></td></tr></table></figure>
-<h1 id="动态的添加给新的属性添加值"><a href="#动态的添加给新的属性添加值" class="headerlink" title="动态的添加给新的属性添加值"></a>动态的添加给新的属性添加值</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   person.sdq = <span class="string">&quot;sdz&quot;</span>  <span class="comment">/*这里赋值sdz*/</span></span><br><span class="line">$   person      </span><br></pre></td></tr></table></figure>
-<h1 id="判断属性值是否在这个对象-属性值是否在这个对象"><a href="#判断属性值是否在这个对象-属性值是否在这个对象" class="headerlink" title="判断属性值是否在这个对象  属性值是否在这个对象"></a>判断属性值是否在这个对象  属性值是否在这个对象</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="string">&quot;sdq&quot;</span> <span class="keyword">in</span> person        </span><br><span class="line">$  <span class="literal">true</span>         </span><br><span class="line">$  <span class="string">&quot;sdqz&quot;</span> <span class="keyword">in</span> person   </span><br><span class="line">$  <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<h1 id="判断属性是否是这个对象自身拥有的-hasOwnProperty"><a href="#判断属性是否是这个对象自身拥有的-hasOwnProperty" class="headerlink" title="判断属性是否是这个对象自身拥有的 hasOwnProperty()"></a>判断属性是否是这个对象自身拥有的 hasOwnProperty()</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  person.hasOwnProperty(<span class="string">&quot;toString&quot;</span>)</span><br><span class="line">$  <span class="literal">false</span>       </span><br><span class="line">$  person.hasOwnProperty(<span class="string">&quot;sdq&quot;</span>)</span><br><span class="line">$  <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
 
 
@@ -1310,15 +1310,14 @@ $</style>
 ]]></content>
   </entry>
   <entry>
-    <title>SQL Server T-SQL 存储过程</title>
-    <url>/SQL-storage.html</url>
-    <content><![CDATA[<h1 id="创建变量"><a href="#创建变量" class="headerlink" title="创建变量"></a>创建变量</h1><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">declare</span> 变量名 数据类型 常量</span><br></pre></td></tr></table></figure>
-<h1 id="查询变量"><a href="#查询变量" class="headerlink" title="查询变量"></a>查询变量</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ select 变量名</span><br></pre></td></tr></table></figure>
-<h1 id="创建存储过程"><a href="#创建存储过程" class="headerlink" title="创建存储过程"></a>创建存储过程</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ create Procedure 存储过程名 as select 字段 from 表名</span><br></pre></td></tr></table></figure>
-<h1 id="执行存储过程"><a href="#执行存储过程" class="headerlink" title="执行存储过程"></a>执行存储过程</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ EXECUTE 存储过程名</span><br></pre></td></tr></table></figure>
-<h1 id="删除存储过程"><a href="#删除存储过程" class="headerlink" title="删除存储过程"></a>删除存储过程</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ drop proc 存储过程名</span><br></pre></td></tr></table></figure>
-<h1 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h1>]]></content>
+    <title>Java面向对象思维之构造方法需的重载</title>
+    <url>/Object-oriented-constructor-heavy-load.html</url>
+    <content><![CDATA[<h1 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h1><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color,  int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color, int wheel, int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this(color,seat);  //this还可以调用当前累中其他的构造方法</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h1>]]></content>
   </entry>
   <entry>
     <title>Linux命令(未完工)</title>
@@ -1337,14 +1336,15 @@ $
 ]]></content>
   </entry>
   <entry>
-    <title>Java面向对象思维之构造方法需的重载</title>
-    <url>/Object-oriented-constructor-heavy-load.html</url>
-    <content><![CDATA[<h1 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h1><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color,  int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color, int wheel, int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this(color,seat);  //this还可以调用当前累中其他的构造方法</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h1>]]></content>
+    <title>SQL Server T-SQL 存储过程</title>
+    <url>/SQL-storage.html</url>
+    <content><![CDATA[<h1 id="创建变量"><a href="#创建变量" class="headerlink" title="创建变量"></a>创建变量</h1><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">declare</span> 变量名 数据类型 常量</span><br></pre></td></tr></table></figure>
+<h1 id="查询变量"><a href="#查询变量" class="headerlink" title="查询变量"></a>查询变量</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ select 变量名</span><br></pre></td></tr></table></figure>
+<h1 id="创建存储过程"><a href="#创建存储过程" class="headerlink" title="创建存储过程"></a>创建存储过程</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ create Procedure 存储过程名 as select 字段 from 表名</span><br></pre></td></tr></table></figure>
+<h1 id="执行存储过程"><a href="#执行存储过程" class="headerlink" title="执行存储过程"></a>执行存储过程</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ EXECUTE 存储过程名</span><br></pre></td></tr></table></figure>
+<h1 id="删除存储过程"><a href="#删除存储过程" class="headerlink" title="删除存储过程"></a>删除存储过程</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ drop proc 存储过程名</span><br></pre></td></tr></table></figure>
+<h1 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h1>]]></content>
   </entry>
   <entry>
     <title>SQL Server T-SQL 视图</title>
@@ -1425,52 +1425,6 @@ $
 
 <hr>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Arch wsl的傻瓜式安装 (有手就行)</title>
-    <url>/Arch-Wsl-install.html</url>
-    <content><![CDATA[<p>本人是Arch教徒过来传一下教<br><img src="/images/wsl傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
-<a id="more"></a>
-
-<h1 id="第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下"><a href="#第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下" class="headerlink" title="第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下"></a>第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</span><br></pre></td></tr></table></figure>
-<img src="/images/wsl傻瓜式安装/按照提示重启电脑.jpg" style="width: 300px; height: 300px;">
-
-<p><strong>按照提示重启电脑</strong></p>
-<h1 id="第二步-下载文件"><a href="#第二步-下载文件" class="headerlink" title="第二步 下载文件"></a>第二步 下载文件</h1><p><strong>然后下载<a href="https://github.com/yuk7/ArchWSL">Arch WSL</a></strong></p>
-<img src="/images/wsl傻瓜式安装/Arch wsl下载.jpg">
-<br>
-<img src="/images/wsl傻瓜式安装/Arch wsl下载版本.jpg">
-
-<p><strong>那个安装证书是给appx版的arch wsl用的</strong></p>
-<p><strong>你已经安装zip版的</strong></p>
-<p><strong>没有必要安两次</strong></p>
-<p><strong>只用需要用到zip</strong></p>
-<h1 id="第三步-配置Arch-Wsl"><a href="#第三步-配置Arch-Wsl" class="headerlink" title="第三步 配置Arch Wsl"></a>第三步 配置Arch Wsl</h1><img src="/images/wsl傻瓜式安装/Arch wsl配置.jpg" style="width: 800px; height: 500px;">
-
-<p><strong>反正按照我这个改，保存是ctrl + x 回车</strong></p>
-<h1 id="第四步-配置相关参数"><a href="#第四步-配置相关参数" class="headerlink" title="第四步 配置相关参数"></a>第四步 配置相关参数</h1><p><strong>这里会提示配置  按照我的方法配置</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe//这个是启动后的显示</span><br><span class="line">[root@PC-NAME user]<span class="comment"># passwd       //这个是用户名输完名字输密码</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe</span><br><span class="line">[root@PC-NAME]<span class="comment"># EDITOR=nano visudo</span></span><br><span class="line">    %wheel      ALL=(ALL) ALL</span><br><span class="line">    (setup sudoers file.)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]<span class="comment"># useradd -m -G wheel -s /bin/bash &#123;username&#125;</span></span><br><span class="line">(add user)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># passwd &#123;username&#125;      //&#123;&#125;换成你的用户名,记住不需要打&#123;&#125;</span></span><br><span class="line">(<span class="built_in">set</span> default user password)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># exit  //退出</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe config --default-user &#123;username&#125;</span><br><span class="line">    (setting to default user)     //现在是root用户,不用加sudo</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [user@PC-NAME]$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]$ sudo pacman-key --populate</span><br></pre></td></tr></table></figure>
-<h1 id="第五步-安装完后操作"><a href="#第五步-安装完后操作" class="headerlink" title="第五步 安装完后操作"></a>第五步 安装完后操作</h1><p><strong>下面是<a href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/">换源</a></strong></p>
-<p><strong>打开nano /etc/pacman.d/mirrorlist 然后再最顶端添加 切记去##</strong></p>
-<img src="/images/wsl傻瓜式安装/Arch wsl配置文件.jpg" style="width: 800px; height: 500px;">
-<br>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Server = https:mirrors.tuna.tsinghua.edu.cn/archlinux/<span class="variable">$repo</span>/os/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
-**然后就可以 更新软件包缓存**
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman -Syy</span><br></pre></td></tr></table></figure>
-<h1 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
-<img src="/images/wsl傻瓜式安装/Arch wsl.jpg" style="width: 800px; height: 500px;">
-
-<h1 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h1><h1 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h1><h1 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h1>]]></content>
   </entry>
   <entry>
     <title>Android同步源码和编译ROM傻瓜式 (有手就行)</title>
@@ -1562,6 +1516,52 @@ $
 <h1 id="祝福大家能自己动手做出属于自己的ROM"><a href="#祝福大家能自己动手做出属于自己的ROM" class="headerlink" title="祝福大家能自己动手做出属于自己的ROM"></a>祝福大家能自己动手做出属于自己的ROM</h1>]]></content>
   </entry>
   <entry>
+    <title>Arch wsl的傻瓜式安装 (有手就行)</title>
+    <url>/Arch-Wsl-install.html</url>
+    <content><![CDATA[<p>本人是Arch教徒过来传一下教<br><img src="/images/wsl傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
+<a id="more"></a>
+
+<h1 id="第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下"><a href="#第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下" class="headerlink" title="第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下"></a>第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</span><br></pre></td></tr></table></figure>
+<img src="/images/wsl傻瓜式安装/按照提示重启电脑.jpg" style="width: 300px; height: 300px;">
+
+<p><strong>按照提示重启电脑</strong></p>
+<h1 id="第二步-下载文件"><a href="#第二步-下载文件" class="headerlink" title="第二步 下载文件"></a>第二步 下载文件</h1><p><strong>然后下载<a href="https://github.com/yuk7/ArchWSL">Arch WSL</a></strong></p>
+<img src="/images/wsl傻瓜式安装/Arch wsl下载.jpg">
+<br>
+<img src="/images/wsl傻瓜式安装/Arch wsl下载版本.jpg">
+
+<p><strong>那个安装证书是给appx版的arch wsl用的</strong></p>
+<p><strong>你已经安装zip版的</strong></p>
+<p><strong>没有必要安两次</strong></p>
+<p><strong>只用需要用到zip</strong></p>
+<h1 id="第三步-配置Arch-Wsl"><a href="#第三步-配置Arch-Wsl" class="headerlink" title="第三步 配置Arch Wsl"></a>第三步 配置Arch Wsl</h1><img src="/images/wsl傻瓜式安装/Arch wsl配置.jpg" style="width: 800px; height: 500px;">
+
+<p><strong>反正按照我这个改，保存是ctrl + x 回车</strong></p>
+<h1 id="第四步-配置相关参数"><a href="#第四步-配置相关参数" class="headerlink" title="第四步 配置相关参数"></a>第四步 配置相关参数</h1><p><strong>这里会提示配置  按照我的方法配置</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe//这个是启动后的显示</span><br><span class="line">[root@PC-NAME user]<span class="comment"># passwd       //这个是用户名输完名字输密码</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe</span><br><span class="line">[root@PC-NAME]<span class="comment"># EDITOR=nano visudo</span></span><br><span class="line">    %wheel      ALL=(ALL) ALL</span><br><span class="line">    (setup sudoers file.)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]<span class="comment"># useradd -m -G wheel -s /bin/bash &#123;username&#125;</span></span><br><span class="line">(add user)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># passwd &#123;username&#125;      //&#123;&#125;换成你的用户名,记住不需要打&#123;&#125;</span></span><br><span class="line">(<span class="built_in">set</span> default user password)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># exit  //退出</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe config --default-user &#123;username&#125;</span><br><span class="line">    (setting to default user)     //现在是root用户,不用加sudo</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [user@PC-NAME]$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]$ sudo pacman-key --populate</span><br></pre></td></tr></table></figure>
+<h1 id="第五步-安装完后操作"><a href="#第五步-安装完后操作" class="headerlink" title="第五步 安装完后操作"></a>第五步 安装完后操作</h1><p><strong>下面是<a href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/">换源</a></strong></p>
+<p><strong>打开nano /etc/pacman.d/mirrorlist 然后再最顶端添加 切记去##</strong></p>
+<img src="/images/wsl傻瓜式安装/Arch wsl配置文件.jpg" style="width: 800px; height: 500px;">
+<br>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Server = https:mirrors.tuna.tsinghua.edu.cn/archlinux/<span class="variable">$repo</span>/os/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
+**然后就可以 更新软件包缓存**
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman -Syy</span><br></pre></td></tr></table></figure>
+<h1 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
+<img src="/images/wsl傻瓜式安装/Arch wsl.jpg" style="width: 800px; height: 500px;">
+
+<h1 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h1><h1 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h1><h1 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h1>]]></content>
+  </entry>
+  <entry>
     <title>python 字符串(我失忆了)</title>
     <url>/python-zfc.html</url>
     <content><![CDATA[<h1 id="以下全是字符串"><a href="#以下全是字符串" class="headerlink" title="以下全是字符串"></a>以下全是字符串</h1><a id="more"></a>
@@ -1579,16 +1579,6 @@ $
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;整数&#39;, 1)                          </span><br><span class="line">print(&#39;浮点数&#39;, 0.1)             </span><br><span class="line">print(&#39;布尔值&#39;, True) </span><br><span class="line">print(&#39;空&#39;, None)</span><br><span class="line">print(&#39;元组&#39;, (1, 2, 3)) #可以存放不同类型</span><br><span class="line">print(&#39;列表&#39;, [1, 2, 3])</span><br><span class="line">print(&#39;字典&#39;, &#123;&#39;a&#39;:&#39;d&#39;&#125;)   </span><br></pre></td></tr></table></figure>
 <h1 id="查询类型"><a href="#查询类型" class="headerlink" title="查询类型"></a>查询类型</h1><p><strong>例子</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(type(int))</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
-    <title>pdthon 基本运算符(我失忆了)</title>
-    <url>/pdthon-jjcc.html</url>
-    <content><![CDATA[<h1 id="pdtho基本运算符"><a href="#pdtho基本运算符" class="headerlink" title="pdtho基本运算符"></a>pdtho基本运算符</h1><a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;加&#39;, 2 + 3)</span><br><span class="line">print(&#39;减&#39;, 1 - 3)</span><br><span class="line">print(&#39;两个减号&#39;, 1 - -2)</span><br><span class="line">print(&#39;乘&#39;, 2 * 4)</span><br><span class="line">print(&#39;除&#39;, 9 &#x2F; 3)</span><br><span class="line">print(&#39;取整&#39;, 10 &#x2F;&#x2F; 3, 10 &#x2F;&#x2F; 4)</span><br><span class="line">print(&#39;取整1&#39;, 10 &#x2F; 3, 10 &#x2F; 4)</span><br><span class="line">print(&#39;模运算，取余数&#39;, 10 % 3)  </span><br></pre></td></tr></table></figure>
-<h1 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h1><p><strong>4舍6入5看齐,奇进偶不进,相比四舍五入更精确</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(round(1.2), round(1.5), round(2.5))</span><br></pre></td></tr></table></figure>
-<h1 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s, d, q, z &#x3D; 1, 2, 3, 1</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; d&#39;, s &#x3D;&#x3D; d)</span><br><span class="line">print(&#39;s !&#x3D; d&#39;, s !&#x3D; d)</span><br><span class="line">print(&#39;s &gt; d&#39;, s &gt; d)</span><br><span class="line">print(&#39;d &lt; z&#39;, d &lt; z)</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; z&#39;, s &#x3D;&#x3D; z)   #比较值</span><br><span class="line">print(&#39;s is z&#39;, s is z)   #比较地址</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
   <entry>
@@ -1625,6 +1615,16 @@ $
 
 
 
+]]></content>
+  </entry>
+  <entry>
+    <title>pdthon 基本运算符(我失忆了)</title>
+    <url>/pdthon-jjcc.html</url>
+    <content><![CDATA[<h1 id="pdtho基本运算符"><a href="#pdtho基本运算符" class="headerlink" title="pdtho基本运算符"></a>pdtho基本运算符</h1><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;加&#39;, 2 + 3)</span><br><span class="line">print(&#39;减&#39;, 1 - 3)</span><br><span class="line">print(&#39;两个减号&#39;, 1 - -2)</span><br><span class="line">print(&#39;乘&#39;, 2 * 4)</span><br><span class="line">print(&#39;除&#39;, 9 &#x2F; 3)</span><br><span class="line">print(&#39;取整&#39;, 10 &#x2F;&#x2F; 3, 10 &#x2F;&#x2F; 4)</span><br><span class="line">print(&#39;取整1&#39;, 10 &#x2F; 3, 10 &#x2F; 4)</span><br><span class="line">print(&#39;模运算，取余数&#39;, 10 % 3)  </span><br></pre></td></tr></table></figure>
+<h1 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h1><p><strong>4舍6入5看齐,奇进偶不进,相比四舍五入更精确</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(round(1.2), round(1.5), round(2.5))</span><br></pre></td></tr></table></figure>
+<h1 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s, d, q, z &#x3D; 1, 2, 3, 1</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; d&#39;, s &#x3D;&#x3D; d)</span><br><span class="line">print(&#39;s !&#x3D; d&#39;, s !&#x3D; d)</span><br><span class="line">print(&#39;s &gt; d&#39;, s &gt; d)</span><br><span class="line">print(&#39;d &lt; z&#39;, d &lt; z)</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; z&#39;, s &#x3D;&#x3D; z)   #比较值</span><br><span class="line">print(&#39;s is z&#39;, s is z)   #比较地址</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
   <entry>
@@ -1674,6 +1674,20 @@ $
 <h1 id="py代码"><a href="#py代码" class="headerlink" title="py代码"></a>py代码</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from lxml import etree</span><br><span class="line"></span><br><span class="line">tree &#x3D; etree.parse(&quot;sdq.html&quot;)</span><br><span class="line"># result &#x3D; tree.xpath(&#39;&#x2F;html&#39;)</span><br><span class="line"># result &#x3D; tree.xpath(&quot;&#x2F;html&#x2F;body&#x2F;ul&#x2F;li&#x2F;a&#x2F;text()&quot;)</span><br><span class="line"># result &#x3D; tree.xpath(&quot;&#x2F;html&#x2F;body&#x2F;ul&#x2F;li[1]&#x2F;a&#x2F;text()&quot;)  # xpath的顺序是从1开始数的, []表示索引</span><br><span class="line"></span><br><span class="line"># result &#x3D; tree.xpath(&quot;&#x2F;html&#x2F;body&#x2F;ol&#x2F;li&#x2F;a[@href&#x3D;&#39;dapao&#39;]&#x2F;text()&quot;)  # [@xxx&#x3D;xxx] 属性的筛选</span><br><span class="line"></span><br><span class="line"># print(result)</span><br><span class="line"></span><br><span class="line"># ol_li_list &#x3D; tree.xpath(&quot;&#x2F;html&#x2F;body&#x2F;ol&#x2F;li&quot;)</span><br><span class="line">#</span><br><span class="line"># for li in ol_li_list:</span><br><span class="line">#     # 从每一个li中提取到文字信息</span><br><span class="line">#     result &#x3D; li.xpath(&quot;.&#x2F;a&#x2F;text()&quot;)  # 在li中继续去寻找 相对查找</span><br><span class="line">#     print(result)</span><br><span class="line">#     result2 &#x3D; li.xpath(&quot;.&#x2F;a&#x2F;@href&quot;)  # @属性意思是拿到属性值</span><br><span class="line">#     print(result2)</span><br><span class="line">#</span><br><span class="line"># print(tree.xpath(&quot;&#x2F;html&#x2F;body&#x2F;ul&#x2F;li&#x2F;a&#x2F;@href&quot;))</span><br><span class="line"></span><br><span class="line">print(tree.xpath(&#39;&#x2F;html&#x2F;body&#x2F;div[1]&#x2F;text()&#39;))</span><br><span class="line">print(tree.xpath(&#39;&#x2F;html&#x2F;body&#x2F;ol&#x2F;li&#x2F;a&#x2F;text()&#39;))</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
+    <title>爬虫 正则表达式(牢饭吃到饱)</title>
+    <url>/reptile-RegEx.html</url>
+    <content><![CDATA[<h1 id="正则表达式的优点和缺点"><a href="#正则表达式的优点和缺点" class="headerlink" title="正则表达式的优点和缺点"></a>正则表达式的优点和缺点</h1><a id="more"></a>
+<p><strong>优点: 速度快, 效率高, 准确度高</strong></p>
+<p><strong>缺点: 优点老手福利, 新手? ? ?</strong></p>
+<h1 id="正则表达式的概念"><a href="#正则表达式的概念" class="headerlink" title="正则表达式的概念"></a>正则表达式的概念</h1><p><strong>使用元字符进行排列组合用来匹配字符串</strong></p>
+<h1 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h1><p><strong>常用元字符</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.          匹配除换行符以外的任意字符</span><br><span class="line">    </span><br><span class="line">\w         匹配字母或数字或下划线</span><br><span class="line">    </span><br><span class="line">\s         匹配任意的空白符</span><br><span class="line">    </span><br><span class="line">\d         匹配数字</span><br><span class="line">    </span><br><span class="line">\n         匹配一个换行符</span><br><span class="line">    </span><br><span class="line">\t         匹配一个制表符</span><br><span class="line">    </span><br><span class="line">^          匹配字符串的开始</span><br><span class="line">    </span><br><span class="line">$          匹配字符串的结尾</span><br><span class="line">    </span><br><span class="line">\w         匹配非字母或数字或下划线</span><br><span class="line">    </span><br><span class="line">\D         匹配非数字</span><br><span class="line">    </span><br><span class="line">\S         匹配非空白符</span><br><span class="line">    </span><br><span class="line">a|b        匹配字符a或字符b</span><br><span class="line">    </span><br><span class="line">()         匹配括号内的表达式, 也表示一个组</span><br><span class="line">    </span><br><span class="line">[]         匹配字符中的字符    例如 [a-zA-z0-9]</span><br><span class="line">    </span><br><span class="line">[^]        匹配除了字符组中字符的所有字符</span><br></pre></td></tr></table></figure>
+<p><strong>量词: 控制前面的元字符出现的次数</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*          重复零次或更多次 </span><br><span class="line"></span><br><span class="line">+          重复一次或更多次</span><br><span class="line"></span><br><span class="line">?          重复零次或一次  说白了就是出现或者不出现</span><br><span class="line"></span><br><span class="line">&#123;n&#125;        重复n次</span><br><span class="line"></span><br><span class="line">&#123;n,&#125;       重复n次或更多次</span><br><span class="line"></span><br><span class="line">&#123;n,m&#125;      重复n到m次</span><br></pre></td></tr></table></figure>
+<p><strong>贪婪匹配和惰性匹配</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.*          贪婪匹配      说白了就是尽可能多的匹配</span><br><span class="line"></span><br><span class="line">.*?         惰性匹配      说白了就是尽可能少的匹配</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
     <title>爬虫 概念(牢饭吃到饱)</title>
     <url>/reptile-concept.html</url>
     <content><![CDATA[<h1 id="服务器渲染"><a href="#服务器渲染" class="headerlink" title="服务器渲染"></a>服务器渲染</h1><a id="more"></a>
@@ -1701,27 +1715,6 @@ $
 ]]></content>
   </entry>
   <entry>
-    <title>爬虫 正则表达式(牢饭吃到饱)</title>
-    <url>/reptile-RegEx.html</url>
-    <content><![CDATA[<h1 id="正则表达式的优点和缺点"><a href="#正则表达式的优点和缺点" class="headerlink" title="正则表达式的优点和缺点"></a>正则表达式的优点和缺点</h1><a id="more"></a>
-<p><strong>优点: 速度快, 效率高, 准确度高</strong></p>
-<p><strong>缺点: 优点老手福利, 新手? ? ?</strong></p>
-<h1 id="正则表达式的概念"><a href="#正则表达式的概念" class="headerlink" title="正则表达式的概念"></a>正则表达式的概念</h1><p><strong>使用元字符进行排列组合用来匹配字符串</strong></p>
-<h1 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h1><p><strong>常用元字符</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.          匹配除换行符以外的任意字符</span><br><span class="line">    </span><br><span class="line">\w         匹配字母或数字或下划线</span><br><span class="line">    </span><br><span class="line">\s         匹配任意的空白符</span><br><span class="line">    </span><br><span class="line">\d         匹配数字</span><br><span class="line">    </span><br><span class="line">\n         匹配一个换行符</span><br><span class="line">    </span><br><span class="line">\t         匹配一个制表符</span><br><span class="line">    </span><br><span class="line">^          匹配字符串的开始</span><br><span class="line">    </span><br><span class="line">$          匹配字符串的结尾</span><br><span class="line">    </span><br><span class="line">\w         匹配非字母或数字或下划线</span><br><span class="line">    </span><br><span class="line">\D         匹配非数字</span><br><span class="line">    </span><br><span class="line">\S         匹配非空白符</span><br><span class="line">    </span><br><span class="line">a|b        匹配字符a或字符b</span><br><span class="line">    </span><br><span class="line">()         匹配括号内的表达式, 也表示一个组</span><br><span class="line">    </span><br><span class="line">[]         匹配字符中的字符    例如 [a-zA-z0-9]</span><br><span class="line">    </span><br><span class="line">[^]        匹配除了字符组中字符的所有字符</span><br></pre></td></tr></table></figure>
-<p><strong>量词: 控制前面的元字符出现的次数</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*          重复零次或更多次 </span><br><span class="line"></span><br><span class="line">+          重复一次或更多次</span><br><span class="line"></span><br><span class="line">?          重复零次或一次  说白了就是出现或者不出现</span><br><span class="line"></span><br><span class="line">&#123;n&#125;        重复n次</span><br><span class="line"></span><br><span class="line">&#123;n,&#125;       重复n次或更多次</span><br><span class="line"></span><br><span class="line">&#123;n,m&#125;      重复n到m次</span><br></pre></td></tr></table></figure>
-<p><strong>贪婪匹配和惰性匹配</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.*          贪婪匹配      说白了就是尽可能多的匹配</span><br><span class="line"></span><br><span class="line">.*?         惰性匹配      说白了就是尽可能少的匹配</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
-    <title>爬虫 比Python功能更加强大的node.js简介(牢饭吃到饱)未完待续</title>
-    <url>/reptile-python%E2%80%94node.js.html</url>
-    <content><![CDATA[<h1 id="node-js爬虫的详细步骤"><a href="#node-js爬虫的详细步骤" class="headerlink" title="node.js爬虫的详细步骤"></a>node.js爬虫的详细步骤</h1><a id="more"></a>
-<h1 id="第一步-发送http请求-获取整个网页的内容"><a href="#第一步-发送http请求-获取整个网页的内容" class="headerlink" title="第一步 发送http请求, 获取整个网页的内容"></a>第一步 发送http请求, 获取整个网页的内容</h1><h1 id="第二步-通过cheerio对爬取的网页内容进行分析"><a href="#第二步-通过cheerio对爬取的网页内容进行分析" class="headerlink" title="第二步 通过cheerio对爬取的网页内容进行分析"></a>第二步 通过cheerio对爬取的网页内容进行分析</h1><h1 id="第三步-提取关键信息"><a href="#第三步-提取关键信息" class="headerlink" title="第三步 提取关键信息"></a>第三步 提取关键信息</h1><h1 id="使用download库进行批量下载"><a href="#使用download库进行批量下载" class="headerlink" title="使用download库进行批量下载"></a>使用download库进行批量下载</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>爬虫 爬小说(牢饭吃到饱)未完待续</title>
     <url>/reptile-novel.html</url>
     <content><![CDATA[<h1 id="爬小说的详细步骤"><a href="#爬小说的详细步骤" class="headerlink" title="爬小说的详细步骤"></a>爬小说的详细步骤</h1><a id="more"></a>
@@ -1734,6 +1727,13 @@ $
     <content><![CDATA[<h1 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h1><a id="more"></a>
 <p><strong>打开这个<a href="http://www.ichong123.com/maomao">网址</a></strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 所有用到的库</span><br><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line"># 要爬的链接</span><br><span class="line">url &#x3D; &quot;http:&#x2F;&#x2F;www.ichong123.com&#x2F;maomao&quot;</span><br><span class="line"></span><br><span class="line"># 请求头</span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.72 Safari&#x2F;537.36&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">paqv &#x3D; requests.get( url&#x3D;url, headers&#x3D;headers )</span><br><span class="line"></span><br><span class="line"># 根据网站的编码来换</span><br><span class="line">paqv.encoding &#x3D; &#39;utf-8&#39;</span><br><span class="line"></span><br><span class="line"># xiazai &#x3D; paqv.text</span><br><span class="line"></span><br><span class="line"># print(xiazai)</span><br><span class="line">M</span><br><span class="line"># 正则表达式 re.S单行匹配(正则解析比较多) re.M多行匹配()</span><br><span class="line">sdq1 &#x3D; re.compile(r&#39;&lt;div class&#x3D;&quot;pet_s&quot;&gt;.*?&lt;img src&#x3D;(?P&lt;mao&gt;.*?)width&#39;,re.S)</span><br><span class="line">paq &#x3D; sdq1.finditer(paqv.text)</span><br><span class="line">a &#x3D; 1</span><br><span class="line"># 用循环来依次下载</span><br><span class="line">for it in paq:</span><br><span class="line">    time.sleep(3)  #休眠3秒</span><br><span class="line">    ul &#x3D; it.group(&#39;mao&#39;)</span><br><span class="line">    ul2 &#x3D; eval(ul)  #eval()函数用来执行一个字符串表达式，并返回表达式的值</span><br><span class="line">    sdz &#x3D; requests.get(ul2)</span><br><span class="line"></span><br><span class="line">    # 图片文件保存 选择路径</span><br><span class="line">    with open(f&quot;E:&#x2F;百度文档&#x2F;mao&#x2F;&#123;a&#125;.jpg&quot;,&quot;wb&quot;) as f:</span><br><span class="line">        f.write(sdz.content)</span><br><span class="line">        f.close()</span><br><span class="line">        a+&#x3D;1</span><br><span class="line">print(&quot;猫猫下载完了&quot;)</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>爬虫 比Python功能更加强大的node.js简介(牢饭吃到饱)未完待续</title>
+    <url>/reptile-python%E2%80%94node.js.html</url>
+    <content><![CDATA[<h1 id="node-js爬虫的详细步骤"><a href="#node-js爬虫的详细步骤" class="headerlink" title="node.js爬虫的详细步骤"></a>node.js爬虫的详细步骤</h1><a id="more"></a>
+<h1 id="第一步-发送http请求-获取整个网页的内容"><a href="#第一步-发送http请求-获取整个网页的内容" class="headerlink" title="第一步 发送http请求, 获取整个网页的内容"></a>第一步 发送http请求, 获取整个网页的内容</h1><h1 id="第二步-通过cheerio对爬取的网页内容进行分析"><a href="#第二步-通过cheerio对爬取的网页内容进行分析" class="headerlink" title="第二步 通过cheerio对爬取的网页内容进行分析"></a>第二步 通过cheerio对爬取的网页内容进行分析</h1><h1 id="第三步-提取关键信息"><a href="#第三步-提取关键信息" class="headerlink" title="第三步 提取关键信息"></a>第三步 提取关键信息</h1><h1 id="使用download库进行批量下载"><a href="#使用download库进行批量下载" class="headerlink" title="使用download库进行批量下载"></a>使用download库进行批量下载</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
   <entry>
@@ -1966,6 +1966,17 @@ $
 <h1 id="查看当前路径"><a href="#查看当前路径" class="headerlink" title="查看当前路径"></a>查看当前路径</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pwd</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
+    <title>跟我一起学数学</title>
+    <url>/mathematics.html</url>
+    <content><![CDATA[<h1 id="高斯算法"><a href="#高斯算法" class="headerlink" title="高斯算法"></a>高斯算法</h1><a id="more"></a>
+<p><strong>用于解决 1+2+3+4+5+6+7……一直加到n</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(首项 + 末项) * 项数 &#x2F; 2</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="衡量算法"><a href="#衡量算法" class="headerlink" title="衡量算法"></a>衡量算法</h1><p><strong>时间复杂度和空间复杂度</strong></p>
+]]></content>
+  </entry>
+  <entry>
     <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
     <url>/Thread-Process.html</url>
     <content><![CDATA[<h1 id="什么是线程-学习进程最重要的还是学习线程"><a href="#什么是线程-学习进程最重要的还是学习线程" class="headerlink" title="什么是线程(学习进程最重要的还是学习线程)"></a>什么是线程(学习进程最重要的还是学习线程)</h1><a id="more"></a>
@@ -1976,17 +1987,6 @@ $
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Process是进程的英文</span><br></pre></td></tr></table></figure>
 <h1 id="线程与进程到底是什么关系"><a href="#线程与进程到底是什么关系" class="headerlink" title="线程与进程到底是什么关系"></a>线程与进程到底是什么关系</h1><p><strong>一个进程里面可以包含若干个线程，一个进程里面必须要有一个线程，否则没有存在的意义</strong></p>
 <h1 id="注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行"><a href="#注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行" class="headerlink" title="注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行"></a>注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行</h1>]]></content>
-  </entry>
-  <entry>
-    <title>跟我一起学数学</title>
-    <url>/mathematics.html</url>
-    <content><![CDATA[<h1 id="高斯算法"><a href="#高斯算法" class="headerlink" title="高斯算法"></a>高斯算法</h1><a id="more"></a>
-<p><strong>用于解决 1+2+3+4+5+6+7……一直加到n</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(首项 + 末项) * 项数 &#x2F; 2</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="衡量算法"><a href="#衡量算法" class="headerlink" title="衡量算法"></a>衡量算法</h1><p><strong>时间复杂度和空间复杂度</strong></p>
-]]></content>
   </entry>
   <entry>
     <title>跟我一起学算法(概念章)</title>
