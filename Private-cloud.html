@@ -184,7 +184,7 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>59
+					<span>文章</span>69
 					<span>标签</span>0
 					<span>分类</span>0
 				</div>		
@@ -272,7 +272,7 @@
           </li>
         
           <li>
-            <a href="/Private-cloud.html">私有云配置(个人笔记)</a>
+            <a href="/mathematics.html">跟我一起学数学</a>
           </li>
         
           <li>
@@ -280,11 +280,11 @@
           </li>
         
           <li>
-            <a href="/mathematics.html">跟我一起学数学</a>
+            <a href="/Private-cloud.html">私有云配置(个人笔记)</a>
           </li>
         
           <li>
-            <a href="/reptile-Baidutranslate.html">爬虫 访问百度翻译(牢饭吃到饱)</a>
+            <a href="/baidu.html">百度搜索技巧</a>
           </li>
         
       </ul>
@@ -706,8 +706,11 @@ var $main = document.querySelector('.main');
 
 		<div>
 			  <article>
-				<h1 id="空白分区划分"><a href="#空白分区划分" class="headerlink" title="空白分区划分"></a>空白分区划分</h1><a id="more"></a>
-<p><strong>CentOS7的安装与CentOS6.5的安装有明显的区别。在CentOS7安装过程中，设置分区都需要一个挂载点，这样一来就无法创建两个空白的磁盘分区作为cinder服务和swift服务的存储磁盘了</strong></p>
+				<p><strong>要有Linux基础</strong></p>
+<a id="more"></a>
+
+
+<h1 id="空白分区划分"><a href="#空白分区划分" class="headerlink" title="空白分区划分"></a>空白分区划分</h1><p><strong>CentOS7的安装与CentOS6.5的安装有明显的区别。在CentOS7安装过程中，设置分区都需要一个挂载点，这样一来就无法创建两个空白的磁盘分区作为cinder服务和swift服务的存储磁盘了</strong></p>
 <p><strong>所以我们应该在系统安装过程中留下足够的磁盘大小，系统安装完成后，使用命令parted划分新分区，然后使用mkfs.xfs进行文件系统格式化，完成空白分区的划分  “强烈建议使用fdisk”</strong></p>
 <p><strong>parted具体命令如下: 不建议使用</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@compute ~]<span class="comment"># parted /dev/md126</span></span><br></pre></td></tr></table></figure>
