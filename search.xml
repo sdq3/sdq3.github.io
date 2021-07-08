@@ -103,7 +103,8 @@
       </ul></li>
  <ul>
 
-<h1 id="app里面的结构"><a href="#app里面的结构" class="headerlink" title="app里面的结构"></a>app里面的结构</h1><div id="treeView"></div>
+<!-- # app里面的结构
+<div id="treeView"></div>
 
 <script type="text/javascript">
 
@@ -436,7 +437,7 @@ var tools = (function(){
 }())
 
 
-</script>
+</script> -->
 </ul></ul></ul></ul>]]></content>
   </entry>
   <entry>
@@ -650,22 +651,6 @@ var tools = (function(){
 <h1 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    dl dd dt&#123;</span><br><span class="line">$          color: blue;</span><br><span class="line">$         &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">$      <span class="tag">&lt;<span class="name">dt</span>&gt;</span>史迪奇近战<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇战士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇辅助<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇坦克<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇刺客<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$      <span class="tag">&lt;<span class="name">dt</span>&gt;</span>史迪奇远程<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇法师<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇射手<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
-    <title>CSS 三种导入样式</title>
-    <url>/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F.html</url>
-    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="span标签"><a href="#span标签" class="headerlink" title="span标签"></a>span标签</h1><p><strong>span标签: 重点突出的字, 使用span套起来</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    #sdq1&#123;</span><br><span class="line">$        color: blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$ 我叫<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;sdq1&quot;</span>&gt;</span>史迪奇<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"> </span><br></pre></td></tr></table></figure>
-
-<h1 id="字体风格"><a href="#字体风格" class="headerlink" title="字体风格"></a>字体风格</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    body&#123;</span><br><span class="line">$        font-family: &quot;Arial Black&quot;, 楷体;   //字体</span><br><span class="line">$        color:blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$    h1&#123;</span><br><span class="line">$        font-size: 50px;    //字体大小</span><br><span class="line">$      &#125;</span><br><span class="line">$    .sdq1&#123;</span><br><span class="line">$        font-weight: bolder;  //粗体</span><br><span class="line">$      &#125;</span><br><span class="line">$    p&#123;</span><br><span class="line">$        font: oblique bolder 12px &quot;楷体&quot;;   //斜体oblique粗细bolder大小12px</span><br><span class="line">$        color:blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的故事<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;sdq1&quot;</span>&gt;</span>生物史迪奇<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span>5岁女孩莉萝聪明善良, 她最爱听猫王的老歌, 也一直梦想拥有一只属于自己的宠物狗<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span>史迪奇只能把自己的两只脚藏起来, 外表看起来和别的小狗一样<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span>当外星人终于在地球上发现了伪装的史迪奇时, 他们绑架了莉萝想逼史迪奇就范, 为了救回自己的好朋友, 也为了证明自己不是无可救药的危险分子, 史迪奇只有使出浑身解数, 放手一搏了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h1><p><strong>装饰</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color:blue;     //颜色</span><br><span class="line">$        text-align: center;  //文本对齐的方式 </span><br><span class="line">$        text-indent: 2em;     //首行缩进</span><br><span class="line">$        line-height: 20px;    //行高 </span><br><span class="line">$        text-decoration: overline;   //上划线</span><br><span class="line">$        text-decoration: line-through;   //中划线</span><br><span class="line">$        text-decoration: underline   //下划线</span><br><span class="line">$      &#125;</span><br><span class="line">$     img,span&#123;</span><br><span class="line">$               vertical-align: middle;</span><br><span class="line">$            &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$<span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的王国<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/x.jpg&quot;</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">span</span>&gt;</span>史迪奇<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="超链接伪类"><a href="#超链接伪类" class="headerlink" title="超链接伪类"></a>超链接伪类</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    //默认颜色</span><br><span class="line">$     a&#123;  </span><br><span class="line">$          text-decoration: none;</span><br><span class="line">$          color: #000000;</span><br><span class="line">$       &#125;  </span><br><span class="line">$     //鼠标悬浮状态 </span><br><span class="line">$     a:hover&#123;  </span><br><span class="line">$          color: blue;</span><br><span class="line">$       &#125;     </span><br><span class="line">$     //鼠标按住未释放状态 </span><br><span class="line">$     a:active&#123;  </span><br><span class="line">$          color: rad;</span><br><span class="line">$       &#125;      </span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$<span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的王国<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">a</span>&gt;</span>史迪奇<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    //默认颜色</span><br><span class="line">$     #sdq&#123;  </span><br><span class="line">$          text-shawdow: blue 10px 10px 10px;    //text-shawdow是阴影, 阴影颜色, 水平偏移, 垂直偏移, 阴影半径</span><br><span class="line">$       &#125;       </span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$<span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的王国<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">&quot;sdq&quot;</span>&gt;</span>史迪奇<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>CSS 层次选择器</title>
     <url>/CSS%E5%B1%82%E6%AC%A1%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
@@ -692,6 +677,22 @@ var tools = (function(){
 
 
 
+]]></content>
+  </entry>
+  <entry>
+    <title>CSS 三种导入样式</title>
+    <url>/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F.html</url>
+    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="span标签"><a href="#span标签" class="headerlink" title="span标签"></a>span标签</h1><p><strong>span标签: 重点突出的字, 使用span套起来</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    #sdq1&#123;</span><br><span class="line">$        color: blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$ 我叫<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;sdq1&quot;</span>&gt;</span>史迪奇<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<h1 id="字体风格"><a href="#字体风格" class="headerlink" title="字体风格"></a>字体风格</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    body&#123;</span><br><span class="line">$        font-family: &quot;Arial Black&quot;, 楷体;   //字体</span><br><span class="line">$        color:blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$    h1&#123;</span><br><span class="line">$        font-size: 50px;    //字体大小</span><br><span class="line">$      &#125;</span><br><span class="line">$    .sdq1&#123;</span><br><span class="line">$        font-weight: bolder;  //粗体</span><br><span class="line">$      &#125;</span><br><span class="line">$    p&#123;</span><br><span class="line">$        font: oblique bolder 12px &quot;楷体&quot;;   //斜体oblique粗细bolder大小12px</span><br><span class="line">$        color:blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的故事<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;sdq1&quot;</span>&gt;</span>生物史迪奇<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span>5岁女孩莉萝聪明善良, 她最爱听猫王的老歌, 也一直梦想拥有一只属于自己的宠物狗<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span>史迪奇只能把自己的两只脚藏起来, 外表看起来和别的小狗一样<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span>当外星人终于在地球上发现了伪装的史迪奇时, 他们绑架了莉萝想逼史迪奇就范, 为了救回自己的好朋友, 也为了证明自己不是无可救药的危险分子, 史迪奇只有使出浑身解数, 放手一搏了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h1><p><strong>装饰</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color:blue;     //颜色</span><br><span class="line">$        text-align: center;  //文本对齐的方式 </span><br><span class="line">$        text-indent: 2em;     //首行缩进</span><br><span class="line">$        line-height: 20px;    //行高 </span><br><span class="line">$        text-decoration: overline;   //上划线</span><br><span class="line">$        text-decoration: line-through;   //中划线</span><br><span class="line">$        text-decoration: underline   //下划线</span><br><span class="line">$      &#125;</span><br><span class="line">$     img,span&#123;</span><br><span class="line">$               vertical-align: middle;</span><br><span class="line">$            &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$<span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的王国<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/x.jpg&quot;</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">span</span>&gt;</span>史迪奇<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="超链接伪类"><a href="#超链接伪类" class="headerlink" title="超链接伪类"></a>超链接伪类</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    //默认颜色</span><br><span class="line">$     a&#123;  </span><br><span class="line">$          text-decoration: none;</span><br><span class="line">$          color: #000000;</span><br><span class="line">$       &#125;  </span><br><span class="line">$     //鼠标悬浮状态 </span><br><span class="line">$     a:hover&#123;  </span><br><span class="line">$          color: blue;</span><br><span class="line">$       &#125;     </span><br><span class="line">$     //鼠标按住未释放状态 </span><br><span class="line">$     a:active&#123;  </span><br><span class="line">$          color: rad;</span><br><span class="line">$       &#125;      </span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$<span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的王国<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">a</span>&gt;</span>史迪奇<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    //默认颜色</span><br><span class="line">$     #sdq&#123;  </span><br><span class="line">$          text-shawdow: blue 10px 10px 10px;    //text-shawdow是阴影, 阴影颜色, 水平偏移, 垂直偏移, 阴影半径</span><br><span class="line">$       &#125;       </span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$<span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的王国<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">&quot;sdq&quot;</span>&gt;</span>史迪奇<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
   <entry>
@@ -752,129 +753,6 @@ $</style>
 ]]></content>
   </entry>
   <entry>
-    <title>EJS常用标签</title>
-    <url>/EJS.html</url>
-    <content><![CDATA[<p><strong>EJS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ //用于控制流</span><br><span class="line">$ &lt;%    %&gt;    //逻辑代码输出(JS编辑), 如 <span class="keyword">if</span>, <span class="keyword">for</span>等使用 </span><br><span class="line">$</span><br><span class="line">$ //用于转义的输出 </span><br><span class="line">$ &lt;%=  %&gt;     //输出 HTML转义后  的字符串 到模板中      用于转义的输出</span><br><span class="line">$</span><br><span class="line">$ //用于非转义的输出</span><br><span class="line">$ &lt;%-  %&gt;     //输出 原始的HTML串到模板中, 不对HTML进行转义    &lt;&gt;被浏览器识别  看做HTML  </span><br><span class="line">$</span><br><span class="line">$ &lt;%_ _%&gt;     //控制流使用空白字符移除模式</span><br><span class="line">$ </span><br><span class="line">$ &lt;%<span class="comment">#   %&gt;    //注释</span></span><br><span class="line">$</span><br><span class="line">$ &lt;%%  %&gt;     //直接输出 &lt;%  %&gt;</span><br><span class="line">$</span><br><span class="line">$ -%&gt;         //结束标签用于换行移除模式</span><br><span class="line">$</span><br><span class="line">$自定义分隔符 (例如, 使用 <span class="string">&#x27;&lt;? ?&gt;&#x27;</span> 代替 <span class="string">&#x27;&lt;% %&gt;&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-  </entry>
-  <entry>
-    <title>关于Hexo搭建博客我所踩过的坑和小白安装教程</title>
-    <url>/Hexo-install.html</url>
-    <content><![CDATA[<p><strong>搭建博客笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h1><p>前提是需要安装 Node.js,不懂的可以百度下载然后按照<a href="https://www.bilibili.com/video/BV1wA411s7re?from=search&seid=11841654225437997570">B站的安装视频按照</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<h1 id="第二是-Hexo初始化博客"><a href="#第二是-Hexo初始化博客" class="headerlink" title="第二是 Hexo初始化博客"></a>第二是 Hexo初始化博客</h1><p><strong>cd 到你想存放博客源码的一个目录里面，这时会自动建立一个博客文件夹</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init blog  //hexo init (博客名字自定义)</span><br></pre></td></tr></table></figure>
-
-<h1 id="第三是-给安装博客依赖"><a href="#第三是-给安装博客依赖" class="headerlink" title="第三是 给安装博客依赖"></a>第三是 给安装博客依赖</h1><p><strong>cd 进刚创建的博客文件夹，安装依赖模块命令如下</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-<h1 id="第四是-找主题"><a href="#第四是-找主题" class="headerlink" title="第四是 找主题"></a>第四是 找主题</h1><p><strong>到这个 <a href="https://hexo.bootcss.com/themes/">Hexo网站</a> 去找主题</strong></p>
-<h1 id="第五是-清除静态文件"><a href="#第五是-清除静态文件" class="headerlink" title="第五是 清除静态文件"></a>第五是 清除静态文件</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
-<h1 id="第六是-生成静态文件和"><a href="#第六是-生成静态文件和" class="headerlink" title="第六是 生成静态文件和"></a>第六是 生成静态文件和</h1><p><strong>部署在GitHub 或者 Gitee服务器上，生成静态文件，生成的静态文件在博客工程的 public文件夹下 到哪里找就行了</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-<h1 id="第七是-部署"><a href="#第七是-部署" class="headerlink" title="第七是 部署"></a>第七是 部署</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<h1 id="第八是-本地运行"><a href="#第八是-本地运行" class="headerlink" title="第八是 本地运行"></a>第八是 本地运行</h1><p><strong>这里地址是localhost:4000</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<h1 id="查看你有没有被百度收录文章"><a href="#查看你有没有被百度收录文章" class="headerlink" title="查看你有没有被百度收录文章"></a>查看你有没有被百度收录文章</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ site:(你的博客)  //直接复制命令百度搜索</span><br></pre></td></tr></table></figure>
-<h1 id="amp-的作用"><a href="#amp-的作用" class="headerlink" title="&amp;的作用"></a>&amp;的作用</h1><p><strong>表示清除静态文件和部署</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean &amp; hexo d </span><br></pre></td></tr></table></figure>
-<h1 id="改变文章链接规则"><a href="#改变文章链接规则" class="headerlink" title="改变文章链接规则"></a>改变文章链接规则</h1><p><strong>Ctrl+f搜索 permalink</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ permalink: :id.html   //填入:id.html</span><br></pre></td></tr></table></figure>
-<p><strong>然后在指定位置填入id即可 数字随意，只要保证每篇文章里面的数字不要一样就行</strong></p>
-<img src="/images/Hexo博客/案例.jpg">]]></content>
-  </entry>
-  <entry>
-    <title>Java Swing 图形界面速背表(未完工)</title>
-    <url>/Java-Swing.html</url>
-    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
-<a id="more"></a>
-
-<blockquote>
-<h1 id="JavaSwing-布局管理器"><a href="#JavaSwing-布局管理器" class="headerlink" title="JavaSwing 布局管理器"></a>JavaSwing 布局管理器</h1></blockquote>
-<p>getWigth 得到宽度 或者 控件的高度<br>getHeight 得到高度 或者 控件的宽度<br>root.setLayout(layoutMgr) 给容器设置一个布局器<br>layoutMgr.layoutContainer(…) 当容器改变大小时，自动调用布局器重新布局<br>Perferred Size 指控件最佳大小<br>Dimension 表示尺寸信息 size.width/size.height</p>
-<h1 id="FlowLayout-流式布局"><a href="#FlowLayout-流式布局" class="headerlink" title="FlowLayout (流式布局)"></a>FlowLayout (流式布局)</h1><p>setPreferred Size() 控制每个控件的显示高度和宽度</p>
-<p>GridLayout (网格布局)</p>
-<p>GridBagLayout (网格袋布局)</p>
-<p>BoxLayout (箱式布局)</p>
-<p>GroupLayout (分组布局)</p>
-<p>AFXLayout  (水平布局)</p>
-<h1 id="AfAnyWhere-自由位置布局"><a href="#AfAnyWhere-自由位置布局" class="headerlink" title="AfAnyWhere (自由位置布局)"></a>AfAnyWhere (自由位置布局)</h1><p>new AfMargin(top,left,botton,right)</p>
-<h1 id="CardLayout-卡片布局"><a href="#CardLayout-卡片布局" class="headerlink" title="CardLayout (卡片布局)"></a>CardLayout (卡片布局)</h1><p>CardLayout.show(pane,”name”)</p>
-<h1 id="BorderLayout-边界布局"><a href="#BorderLayout-边界布局" class="headerlink" title="BorderLayout (边界布局)"></a>BorderLayout (边界布局)</h1><p>setPreferrendSize() 对于上下边界调高度，左右边界调宽度<br>PAGE_START 上边界<br>PAGE_END 下边界<br>LINE_START 左边界<br>LINE_END 右边<br>CENTER 中央</p>
-<p>SpringLayout (弹性布局)</p>
-<p>null (绝对布局)</p>
-<blockquote>
-<h1 id="JavaSwing-基本组件"><a href="#JavaSwing-基本组件" class="headerlink" title="JavaSwing 基本组件"></a>JavaSwing 基本组件</h1></blockquote>
-<h1 id="JLabel-标签"><a href="#JLabel-标签" class="headerlink" title="JLabel (标签)"></a>JLabel (标签)</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ JLabel x = new JLabel(<span class="string">&quot;我是JLabel&quot;</span>);</span><br><span class="line">$ contenntPane.add(x);</span><br><span class="line">$ //也可以用一行</span><br><span class="line">$ contenntPane.add(new JLabel(<span class="string">&quot;我是JLabel&quot;</span>);</span><br></pre></td></tr></table></figure>
-<p>JLabel 用于显示短文本或图标<br>setText() 设置文件<br>setFont() 设置字体<br>setForeground() 设置文件颜色<br>setToolTipText() 设置工具提示<br>getText() 取得用户输入</p>
-<h2 id="JButton-按钮"><a href="#JButton-按钮" class="headerlink" title="JButton (按钮)"></a>JButton (按钮)</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ JButton x = new JButton(<span class="string">&quot;我是JButton&quot;</span>);</span><br><span class="line">$ contenntPane.add(x);</span><br><span class="line">$ //也可以用一行</span><br><span class="line">$ contenntPane.add(new JButton(<span class="string">&quot;我是JButton&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>JRadioButton (单选按钮)</p>
-<h1 id="JCheckBox-复选框"><a href="#JCheckBox-复选框" class="headerlink" title="JCheckBox (复选框)"></a>JCheckBox (复选框)</h1><p>getSelected() 选中状态<br>setSelected() 设置<br>getText() 选项文字<br>addActionListener() 用户选中/取消时触发</p>
-<p>JToggleButton (开关按钮)</p>
-<h1 id="JTextField-文本框-或者-单行文本框"><a href="#JTextField-文本框-或者-单行文本框" class="headerlink" title="JTextField (文本框 或者 单行文本框)"></a>JTextField (文本框 或者 单行文本框)</h1><p>JTextField 用于显示单行文本<br>new JTextField(10) 其中,10用于表示列数，用于计算宽度(并不是字数限制)<br>setText() 设置文本<br>getText() 获取文本<br>setFont() 设置字体</p>
-<h1 id="JoptionPane-消息框"><a href="#JoptionPane-消息框" class="headerlink" title="JoptionPane 消息框"></a>JoptionPane 消息框</h1><p>JoptionPane.showMessageDialog() 提示消息框<br>showMessageDialog  简单消息提示<br>showConfirmDialog  简单消息确认<br>showInputDialog  简单数据输入<br>showoptionDialog  简单选择输入<br>Blocked 阻塞<br>JoptionPane.showInputDialog() 提示消息框</p>
-<p>JPasswordField (密码框)</p>
-<h2 id="JTextArea-文本区域-或者-多行文本框"><a href="#JTextArea-文本区域-或者-多行文本框" class="headerlink" title="JTextArea (文本区域 或者 多行文本框)"></a>JTextArea (文本区域 或者 多行文本框)</h2><p>JComboBox (下拉列表框)</p>
-<p>JList (列表框)</p>
-<p>JProgressBar (进度条)</p>
-<p>JSlider (滑块)</p>
-<blockquote>
-<h1 id="JavaSwing-面板组件"><a href="#JavaSwing-面板组件" class="headerlink" title="JavaSwing 面板组件"></a>JavaSwing 面板组件</h1></blockquote>
-<p>JPanel (面板)</p>
-<p>JScrollPane (滚动面板)</p>
-<p>JSplitPane (分隔面板)</p>
-<p>JTabbedPane (选项卡面板)</p>
-<p>JLayeredPane (层级面板)</p>
-<blockquote>
-<h1 id="JavaSwing-其他组件"><a href="#JavaSwing-其他组件" class="headerlink" title="JavaSwing 其他组件"></a>JavaSwing 其他组件</h1></blockquote>
-<p>JFrame (窗口)[一般存放标题]<br>setTitle  (设置标题)</p>
-<p>Container (内容面板)</p>
-<h1 id="setVisible-设置窗口大小-和-setVisble-显示窗口大小"><a href="#setVisible-设置窗口大小-和-setVisble-显示窗口大小" class="headerlink" title="setVisible (设置窗口大小) 和 setVisble(显示窗口大小)"></a>setVisible (设置窗口大小) 和 setVisble(显示窗口大小)</h1><p>setVisible(boolean)方法是用来显示/隐藏GUI组件的。<br>需要显示则使用true，需要隐藏则使用false</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ setVisible(<span class="literal">true</span>)  //例如这个</span><br></pre></td></tr></table></figure>
-<p>意思是说数据模型已经构造好了，允许JVM可以根据数据模型执行paint方法开始画图并显示到屏幕上了，并不是显示图形，而是可以运行开始画图，要把setVisible()方法放到最后面，代码是按顺序执行的 ，如果把setVisible()放在前边，后边再添加其他组件的时候，有可能不会显示出来</p>
-<p>JDialog, JOptionPane (对话框)</p>
-<p>JFileChooser (文件选择器)</p>
-<p>JColorChooser (颜色选择器)</p>
-<h1 id="JMenuBar-菜单栏"><a href="#JMenuBar-菜单栏" class="headerlink" title="JMenuBar (菜单栏)"></a>JMenuBar (菜单栏)</h1><p>JMenuBar (菜单项)<br>JMenu (菜单)<br>JMenuItem (菜单项)</p>
-<h1 id="JToolBar-工具栏"><a href="#JToolBar-工具栏" class="headerlink" title="JToolBar (工具栏)"></a>JToolBar (工具栏)</h1><p>JButton 工具按钮<br>setIcin() 图标<br>setAction Command() 命令<br>setToolTipText() 提示文字<br>add Action Listener() 事件处理</p>
-<p>JPopupMenu (弹出菜单 或者 上下文菜单 或者 右键菜单)<br>JPopupMenu 创建<br>JMenuItem  添加<br>添加鼠标右键的响应，显示窗口菜单<br>菜单项被点击时，执行事件处理</p>
-<p>JTable (表格)</p>
-<p>JTree (树)</p>
-<p>JInternalFrame (内部窗口)</p>
-<blockquote>
-<h1 id="JavaSwing-相关特性-了解就行"><a href="#JavaSwing-相关特性-了解就行" class="headerlink" title="JavaSwing 相关特性(了解就行)"></a>JavaSwing 相关特性(了解就行)</h1></blockquote>
-<p>组件的位置和尺寸</p>
-<h1 id="组件边框-Border"><a href="#组件边框-Border" class="headerlink" title="组件边框 (Border)"></a>组件边框 (Border)</h1><p>Border本身就是一个接口<br>Padding：边框与它的内容之间的间距<br>Margin：边框与它外面的容器之间的间距</p>
-<h1 id="AfBorder-添加边框和边距"><a href="#AfBorder-添加边框和边距" class="headerlink" title="AfBorder 添加边框和边距"></a>AfBorder 添加边框和边距</h1><p>addPadding() 内边距<br>addMargin() 外边距<br>addOuterBorder() 外边添加Border<br>addInnerBorder() 里面添加Border</p>
-<h1 id="AfPanel-用于快速布局"><a href="#AfPanel-用于快速布局" class="headerlink" title="AfPanel 用于快速布局"></a>AfPanel 用于快速布局</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ AfPanel p = new AfPanel();</span><br><span class="line">$ p.padding();  //设置内边距</span><br><span class="line">$ p.margin();  //设置外边距</span><br><span class="line">$ p.preferredWidth();  //设置PrefedSise的宽度</span><br><span class="line">$ p.preferredHeight();  //设置PrefedSise的高度</span><br></pre></td></tr></table></figure>
-<h1 id="图片缩放工具"><a href="#图片缩放工具" class="headerlink" title="图片缩放工具"></a>图片缩放工具</h1><p>fitXY()  XY方向拉伸占满<br>fitCenter()  居中显示，并保持长宽比<br>fitCenterInside() 如果图片较小，则居中显示，如果图片越出范围，则舒服显示</p>
-<h1 id="图片显示控件"><a href="#图片显示控件" class="headerlink" title="图片显示控件"></a>图片显示控件</h1><p>AfImageView  图片显示控件<br>setScaleType()  设置缩放类型<br>setImage()  显示图片<br>setBgColor()  设置背景图</p>
-<h1 id="鼠标事件-MouseEvent"><a href="#鼠标事件-MouseEvent" class="headerlink" title="鼠标事件 MouseEvent"></a>鼠标事件 MouseEvent</h1><p>addMouseliskener()<br>鼠标点击 mouseClicked<br>鼠标按下 mousePressed<br>鼠标抬起 mouseExited<br>鼠标移入 mouseEntered<br>鼠标移出 mouseExited<br>addMouseMotionliskener()<br>鼠标移动 mouseMoved<br>鼠标拖动 mouseDragged<br>addMouseWheelListener<br>鼠标滚动 mouseWheelMoved</p>
-<p>事件处理</p>
-<p>多线程并发与线程安全</p>
-<p>拖拽功能</p>
-<p>系统托盘 (System Tray)</p>
-<p>闪屏 (Splash Screen)</p>
-<h1 id="Java-AWT-Swing-其他相关"><a href="#Java-AWT-Swing-其他相关" class="headerlink" title="Java AWT/Swing 其他相关"></a>Java AWT/Swing 其他相关</h1><p>Java绘图: 使用Graphics类绘制线段, 矩形, 椭圆/圆弧/扇形, 图片, 文本</p>
-<p>Java图片操作 — 图片的读取, 绘制, 缩放, 裁剪, 保存</p>
-<p>Java代码截屏：使用 Java 代码截取电脑屏幕并保存</p>
-<p>Java模拟鼠标键盘输入事件 — Robot 类</p>
-<p>Java操作桌面应用 — Desktop 类</p>
-<p>Java操作系统剪贴板(Clipboard)实现复制和粘贴 –&gt;</p>
-<h1 id="特别提醒-AWT-例如-Label-Button"><a href="#特别提醒-AWT-例如-Label-Button" class="headerlink" title="特别提醒 AWT 例如: Label,Button"></a>特别提醒 AWT 例如: Label,Button</h1><h1 id="特别提醒-Swing-例如-JLabel-JButton-只要是以J开头的"><a href="#特别提醒-Swing-例如-JLabel-JButton-只要是以J开头的" class="headerlink" title="特别提醒 Swing 例如: JLabel,JButton 只要是以J开头的"></a>特别提醒 Swing 例如: JLabel,JButton 只要是以J开头的</h1><h1 id="ActionListener-是一个接口，所以派生时用impleme"><a href="#ActionListener-是一个接口，所以派生时用impleme" class="headerlink" title="ActionListener 是一个接口，所以派生时用impleme"></a>ActionListener 是一个接口，所以派生时用impleme</h1><p>addActionListener(…)  传入的参数</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Button.addActionListener(x);  //意思是把什么交给谁，例如button(按键) 和 x </span><br></pre></td></tr></table></figure>
-<h1 id="演示drawString（）方法的示例程序："><a href="#演示drawString（）方法的示例程序：" class="headerlink" title="演示drawString（）方法的示例程序："></a>演示drawString（）方法的示例程序：</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// drawString示例程序</span><br><span class="line"><span class="variable">$import</span> java.awt.*; </span><br><span class="line"><span class="variable">$import</span> java.applet.*; </span><br><span class="line"><span class="variable">$public</span> class HelloWorldApplet扩展Applet &#123;     </span><br><span class="line">$ public void paint(Graphics g)&#123;         </span><br><span class="line">$ g.drawString(<span class="string">&quot;Hello World&quot;</span>，100,100);</span><br></pre></td></tr></table></figure>
-<h1 id="显示消息对话框"><a href="#显示消息对话框" class="headerlink" title="显示消息对话框"></a>显示消息对话框</h1><p>showMessageDialog(“里面的文字”)<br>f.setVisible(true)<br>f.setTitle(“框框上的文字”)<br>charAt<br>看见actionPerformed 就要implements ActionListener<br><strong>(Button saveButton = new Button)</strong><br>saveButton.addActionListener(this);没什么加就this<br>(ActionListener=监听器)<br>(this=当前对象的意思)<br>(super是父级对象)<br><strong>如果Container contentPane = newContainer();</strong><br><strong>就Container contentPane = getContentPane();</strong><br>有Thread就想起Runnable</p>
-]]></content>
-  </entry>
-  <entry>
     <title>HTML iframe内联框架</title>
     <url>/HTML-iframe.html</url>
     <content><![CDATA[<p><strong>HTML个人整理</strong></p>
@@ -885,6 +763,16 @@ $</style>
 <h1 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h1><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;demo_iframe.html&quot;</span> frameborder=<span class="string">&quot;0&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
 <h1 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;xxx/xxx.html&quot;</span> name=<span class="string">&quot;iframe_a&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;iframe_a&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>EJS常用标签</title>
+    <url>/EJS.html</url>
+    <content><![CDATA[<p><strong>EJS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ //用于控制流</span><br><span class="line">$ &lt;%    %&gt;    //逻辑代码输出(JS编辑), 如 <span class="keyword">if</span>, <span class="keyword">for</span>等使用 </span><br><span class="line">$</span><br><span class="line">$ //用于转义的输出 </span><br><span class="line">$ &lt;%=  %&gt;     //输出 HTML转义后  的字符串 到模板中      用于转义的输出</span><br><span class="line">$</span><br><span class="line">$ //用于非转义的输出</span><br><span class="line">$ &lt;%-  %&gt;     //输出 原始的HTML串到模板中, 不对HTML进行转义    &lt;&gt;被浏览器识别  看做HTML  </span><br><span class="line">$</span><br><span class="line">$ &lt;%_ _%&gt;     //控制流使用空白字符移除模式</span><br><span class="line">$ </span><br><span class="line">$ &lt;%<span class="comment">#   %&gt;    //注释</span></span><br><span class="line">$</span><br><span class="line">$ &lt;%%  %&gt;     //直接输出 &lt;%  %&gt;</span><br><span class="line">$</span><br><span class="line">$ -%&gt;         //结束标签用于换行移除模式</span><br><span class="line">$</span><br><span class="line">$自定义分隔符 (例如, 使用 <span class="string">&#x27;&lt;? ?&gt;&#x27;</span> 代替 <span class="string">&#x27;&lt;% %&gt;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+]]></content>
   </entry>
   <entry>
     <title>HTML 基本控件大集合</title>
@@ -1177,6 +1065,119 @@ $</style>
 ]]></content>
   </entry>
   <entry>
+    <title>关于Hexo搭建博客我所踩过的坑和小白安装教程</title>
+    <url>/Hexo-install.html</url>
+    <content><![CDATA[<p><strong>搭建博客笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h1><p>前提是需要安装 Node.js,不懂的可以百度下载然后按照<a href="https://www.bilibili.com/video/BV1wA411s7re?from=search&seid=11841654225437997570">B站的安装视频按照</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<h1 id="第二是-Hexo初始化博客"><a href="#第二是-Hexo初始化博客" class="headerlink" title="第二是 Hexo初始化博客"></a>第二是 Hexo初始化博客</h1><p><strong>cd 到你想存放博客源码的一个目录里面，这时会自动建立一个博客文件夹</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init blog  //hexo init (博客名字自定义)</span><br></pre></td></tr></table></figure>
+
+<h1 id="第三是-给安装博客依赖"><a href="#第三是-给安装博客依赖" class="headerlink" title="第三是 给安装博客依赖"></a>第三是 给安装博客依赖</h1><p><strong>cd 进刚创建的博客文件夹，安装依赖模块命令如下</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<h1 id="第四是-找主题"><a href="#第四是-找主题" class="headerlink" title="第四是 找主题"></a>第四是 找主题</h1><p><strong>到这个 <a href="https://hexo.bootcss.com/themes/">Hexo网站</a> 去找主题</strong></p>
+<h1 id="第五是-清除静态文件"><a href="#第五是-清除静态文件" class="headerlink" title="第五是 清除静态文件"></a>第五是 清除静态文件</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+<h1 id="第六是-生成静态文件和"><a href="#第六是-生成静态文件和" class="headerlink" title="第六是 生成静态文件和"></a>第六是 生成静态文件和</h1><p><strong>部署在GitHub 或者 Gitee服务器上，生成静态文件，生成的静态文件在博客工程的 public文件夹下 到哪里找就行了</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<h1 id="第七是-部署"><a href="#第七是-部署" class="headerlink" title="第七是 部署"></a>第七是 部署</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<h1 id="第八是-本地运行"><a href="#第八是-本地运行" class="headerlink" title="第八是 本地运行"></a>第八是 本地运行</h1><p><strong>这里地址是localhost:4000</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h1 id="查看你有没有被百度收录文章"><a href="#查看你有没有被百度收录文章" class="headerlink" title="查看你有没有被百度收录文章"></a>查看你有没有被百度收录文章</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ site:(你的博客)  //直接复制命令百度搜索</span><br></pre></td></tr></table></figure>
+<h1 id="amp-的作用"><a href="#amp-的作用" class="headerlink" title="&amp;的作用"></a>&amp;的作用</h1><p><strong>表示清除静态文件和部署</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean &amp; hexo d </span><br></pre></td></tr></table></figure>
+<h1 id="改变文章链接规则"><a href="#改变文章链接规则" class="headerlink" title="改变文章链接规则"></a>改变文章链接规则</h1><p><strong>Ctrl+f搜索 permalink</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ permalink: :id.html   //填入:id.html</span><br></pre></td></tr></table></figure>
+<p><strong>然后在指定位置填入id即可 数字随意，只要保证每篇文章里面的数字不要一样就行</strong></p>
+<img src="/images/Hexo博客/案例.jpg">]]></content>
+  </entry>
+  <entry>
+    <title>Java Swing 图形界面速背表(未完工)</title>
+    <url>/Java-Swing.html</url>
+    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
+<a id="more"></a>
+
+<blockquote>
+<h1 id="JavaSwing-布局管理器"><a href="#JavaSwing-布局管理器" class="headerlink" title="JavaSwing 布局管理器"></a>JavaSwing 布局管理器</h1></blockquote>
+<p>getWigth 得到宽度 或者 控件的高度<br>getHeight 得到高度 或者 控件的宽度<br>root.setLayout(layoutMgr) 给容器设置一个布局器<br>layoutMgr.layoutContainer(…) 当容器改变大小时，自动调用布局器重新布局<br>Perferred Size 指控件最佳大小<br>Dimension 表示尺寸信息 size.width/size.height</p>
+<h1 id="FlowLayout-流式布局"><a href="#FlowLayout-流式布局" class="headerlink" title="FlowLayout (流式布局)"></a>FlowLayout (流式布局)</h1><p>setPreferred Size() 控制每个控件的显示高度和宽度</p>
+<p>GridLayout (网格布局)</p>
+<p>GridBagLayout (网格袋布局)</p>
+<p>BoxLayout (箱式布局)</p>
+<p>GroupLayout (分组布局)</p>
+<p>AFXLayout  (水平布局)</p>
+<h1 id="AfAnyWhere-自由位置布局"><a href="#AfAnyWhere-自由位置布局" class="headerlink" title="AfAnyWhere (自由位置布局)"></a>AfAnyWhere (自由位置布局)</h1><p>new AfMargin(top,left,botton,right)</p>
+<h1 id="CardLayout-卡片布局"><a href="#CardLayout-卡片布局" class="headerlink" title="CardLayout (卡片布局)"></a>CardLayout (卡片布局)</h1><p>CardLayout.show(pane,”name”)</p>
+<h1 id="BorderLayout-边界布局"><a href="#BorderLayout-边界布局" class="headerlink" title="BorderLayout (边界布局)"></a>BorderLayout (边界布局)</h1><p>setPreferrendSize() 对于上下边界调高度，左右边界调宽度<br>PAGE_START 上边界<br>PAGE_END 下边界<br>LINE_START 左边界<br>LINE_END 右边<br>CENTER 中央</p>
+<p>SpringLayout (弹性布局)</p>
+<p>null (绝对布局)</p>
+<blockquote>
+<h1 id="JavaSwing-基本组件"><a href="#JavaSwing-基本组件" class="headerlink" title="JavaSwing 基本组件"></a>JavaSwing 基本组件</h1></blockquote>
+<h1 id="JLabel-标签"><a href="#JLabel-标签" class="headerlink" title="JLabel (标签)"></a>JLabel (标签)</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ JLabel x = new JLabel(<span class="string">&quot;我是JLabel&quot;</span>);</span><br><span class="line">$ contenntPane.add(x);</span><br><span class="line">$ //也可以用一行</span><br><span class="line">$ contenntPane.add(new JLabel(<span class="string">&quot;我是JLabel&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>JLabel 用于显示短文本或图标<br>setText() 设置文件<br>setFont() 设置字体<br>setForeground() 设置文件颜色<br>setToolTipText() 设置工具提示<br>getText() 取得用户输入</p>
+<h2 id="JButton-按钮"><a href="#JButton-按钮" class="headerlink" title="JButton (按钮)"></a>JButton (按钮)</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ JButton x = new JButton(<span class="string">&quot;我是JButton&quot;</span>);</span><br><span class="line">$ contenntPane.add(x);</span><br><span class="line">$ //也可以用一行</span><br><span class="line">$ contenntPane.add(new JButton(<span class="string">&quot;我是JButton&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>JRadioButton (单选按钮)</p>
+<h1 id="JCheckBox-复选框"><a href="#JCheckBox-复选框" class="headerlink" title="JCheckBox (复选框)"></a>JCheckBox (复选框)</h1><p>getSelected() 选中状态<br>setSelected() 设置<br>getText() 选项文字<br>addActionListener() 用户选中/取消时触发</p>
+<p>JToggleButton (开关按钮)</p>
+<h1 id="JTextField-文本框-或者-单行文本框"><a href="#JTextField-文本框-或者-单行文本框" class="headerlink" title="JTextField (文本框 或者 单行文本框)"></a>JTextField (文本框 或者 单行文本框)</h1><p>JTextField 用于显示单行文本<br>new JTextField(10) 其中,10用于表示列数，用于计算宽度(并不是字数限制)<br>setText() 设置文本<br>getText() 获取文本<br>setFont() 设置字体</p>
+<h1 id="JoptionPane-消息框"><a href="#JoptionPane-消息框" class="headerlink" title="JoptionPane 消息框"></a>JoptionPane 消息框</h1><p>JoptionPane.showMessageDialog() 提示消息框<br>showMessageDialog  简单消息提示<br>showConfirmDialog  简单消息确认<br>showInputDialog  简单数据输入<br>showoptionDialog  简单选择输入<br>Blocked 阻塞<br>JoptionPane.showInputDialog() 提示消息框</p>
+<p>JPasswordField (密码框)</p>
+<h2 id="JTextArea-文本区域-或者-多行文本框"><a href="#JTextArea-文本区域-或者-多行文本框" class="headerlink" title="JTextArea (文本区域 或者 多行文本框)"></a>JTextArea (文本区域 或者 多行文本框)</h2><p>JComboBox (下拉列表框)</p>
+<p>JList (列表框)</p>
+<p>JProgressBar (进度条)</p>
+<p>JSlider (滑块)</p>
+<blockquote>
+<h1 id="JavaSwing-面板组件"><a href="#JavaSwing-面板组件" class="headerlink" title="JavaSwing 面板组件"></a>JavaSwing 面板组件</h1></blockquote>
+<p>JPanel (面板)</p>
+<p>JScrollPane (滚动面板)</p>
+<p>JSplitPane (分隔面板)</p>
+<p>JTabbedPane (选项卡面板)</p>
+<p>JLayeredPane (层级面板)</p>
+<blockquote>
+<h1 id="JavaSwing-其他组件"><a href="#JavaSwing-其他组件" class="headerlink" title="JavaSwing 其他组件"></a>JavaSwing 其他组件</h1></blockquote>
+<p>JFrame (窗口)[一般存放标题]<br>setTitle  (设置标题)</p>
+<p>Container (内容面板)</p>
+<h1 id="setVisible-设置窗口大小-和-setVisble-显示窗口大小"><a href="#setVisible-设置窗口大小-和-setVisble-显示窗口大小" class="headerlink" title="setVisible (设置窗口大小) 和 setVisble(显示窗口大小)"></a>setVisible (设置窗口大小) 和 setVisble(显示窗口大小)</h1><p>setVisible(boolean)方法是用来显示/隐藏GUI组件的。<br>需要显示则使用true，需要隐藏则使用false</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ setVisible(<span class="literal">true</span>)  //例如这个</span><br></pre></td></tr></table></figure>
+<p>意思是说数据模型已经构造好了，允许JVM可以根据数据模型执行paint方法开始画图并显示到屏幕上了，并不是显示图形，而是可以运行开始画图，要把setVisible()方法放到最后面，代码是按顺序执行的 ，如果把setVisible()放在前边，后边再添加其他组件的时候，有可能不会显示出来</p>
+<p>JDialog, JOptionPane (对话框)</p>
+<p>JFileChooser (文件选择器)</p>
+<p>JColorChooser (颜色选择器)</p>
+<h1 id="JMenuBar-菜单栏"><a href="#JMenuBar-菜单栏" class="headerlink" title="JMenuBar (菜单栏)"></a>JMenuBar (菜单栏)</h1><p>JMenuBar (菜单项)<br>JMenu (菜单)<br>JMenuItem (菜单项)</p>
+<h1 id="JToolBar-工具栏"><a href="#JToolBar-工具栏" class="headerlink" title="JToolBar (工具栏)"></a>JToolBar (工具栏)</h1><p>JButton 工具按钮<br>setIcin() 图标<br>setAction Command() 命令<br>setToolTipText() 提示文字<br>add Action Listener() 事件处理</p>
+<p>JPopupMenu (弹出菜单 或者 上下文菜单 或者 右键菜单)<br>JPopupMenu 创建<br>JMenuItem  添加<br>添加鼠标右键的响应，显示窗口菜单<br>菜单项被点击时，执行事件处理</p>
+<p>JTable (表格)</p>
+<p>JTree (树)</p>
+<p>JInternalFrame (内部窗口)</p>
+<blockquote>
+<h1 id="JavaSwing-相关特性-了解就行"><a href="#JavaSwing-相关特性-了解就行" class="headerlink" title="JavaSwing 相关特性(了解就行)"></a>JavaSwing 相关特性(了解就行)</h1></blockquote>
+<p>组件的位置和尺寸</p>
+<h1 id="组件边框-Border"><a href="#组件边框-Border" class="headerlink" title="组件边框 (Border)"></a>组件边框 (Border)</h1><p>Border本身就是一个接口<br>Padding：边框与它的内容之间的间距<br>Margin：边框与它外面的容器之间的间距</p>
+<h1 id="AfBorder-添加边框和边距"><a href="#AfBorder-添加边框和边距" class="headerlink" title="AfBorder 添加边框和边距"></a>AfBorder 添加边框和边距</h1><p>addPadding() 内边距<br>addMargin() 外边距<br>addOuterBorder() 外边添加Border<br>addInnerBorder() 里面添加Border</p>
+<h1 id="AfPanel-用于快速布局"><a href="#AfPanel-用于快速布局" class="headerlink" title="AfPanel 用于快速布局"></a>AfPanel 用于快速布局</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ AfPanel p = new AfPanel();</span><br><span class="line">$ p.padding();  //设置内边距</span><br><span class="line">$ p.margin();  //设置外边距</span><br><span class="line">$ p.preferredWidth();  //设置PrefedSise的宽度</span><br><span class="line">$ p.preferredHeight();  //设置PrefedSise的高度</span><br></pre></td></tr></table></figure>
+<h1 id="图片缩放工具"><a href="#图片缩放工具" class="headerlink" title="图片缩放工具"></a>图片缩放工具</h1><p>fitXY()  XY方向拉伸占满<br>fitCenter()  居中显示，并保持长宽比<br>fitCenterInside() 如果图片较小，则居中显示，如果图片越出范围，则舒服显示</p>
+<h1 id="图片显示控件"><a href="#图片显示控件" class="headerlink" title="图片显示控件"></a>图片显示控件</h1><p>AfImageView  图片显示控件<br>setScaleType()  设置缩放类型<br>setImage()  显示图片<br>setBgColor()  设置背景图</p>
+<h1 id="鼠标事件-MouseEvent"><a href="#鼠标事件-MouseEvent" class="headerlink" title="鼠标事件 MouseEvent"></a>鼠标事件 MouseEvent</h1><p>addMouseliskener()<br>鼠标点击 mouseClicked<br>鼠标按下 mousePressed<br>鼠标抬起 mouseExited<br>鼠标移入 mouseEntered<br>鼠标移出 mouseExited<br>addMouseMotionliskener()<br>鼠标移动 mouseMoved<br>鼠标拖动 mouseDragged<br>addMouseWheelListener<br>鼠标滚动 mouseWheelMoved</p>
+<p>事件处理</p>
+<p>多线程并发与线程安全</p>
+<p>拖拽功能</p>
+<p>系统托盘 (System Tray)</p>
+<p>闪屏 (Splash Screen)</p>
+<h1 id="Java-AWT-Swing-其他相关"><a href="#Java-AWT-Swing-其他相关" class="headerlink" title="Java AWT/Swing 其他相关"></a>Java AWT/Swing 其他相关</h1><p>Java绘图: 使用Graphics类绘制线段, 矩形, 椭圆/圆弧/扇形, 图片, 文本</p>
+<p>Java图片操作 — 图片的读取, 绘制, 缩放, 裁剪, 保存</p>
+<p>Java代码截屏：使用 Java 代码截取电脑屏幕并保存</p>
+<p>Java模拟鼠标键盘输入事件 — Robot 类</p>
+<p>Java操作桌面应用 — Desktop 类</p>
+<p>Java操作系统剪贴板(Clipboard)实现复制和粘贴 –&gt;</p>
+<h1 id="特别提醒-AWT-例如-Label-Button"><a href="#特别提醒-AWT-例如-Label-Button" class="headerlink" title="特别提醒 AWT 例如: Label,Button"></a>特别提醒 AWT 例如: Label,Button</h1><h1 id="特别提醒-Swing-例如-JLabel-JButton-只要是以J开头的"><a href="#特别提醒-Swing-例如-JLabel-JButton-只要是以J开头的" class="headerlink" title="特别提醒 Swing 例如: JLabel,JButton 只要是以J开头的"></a>特别提醒 Swing 例如: JLabel,JButton 只要是以J开头的</h1><h1 id="ActionListener-是一个接口，所以派生时用impleme"><a href="#ActionListener-是一个接口，所以派生时用impleme" class="headerlink" title="ActionListener 是一个接口，所以派生时用impleme"></a>ActionListener 是一个接口，所以派生时用impleme</h1><p>addActionListener(…)  传入的参数</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Button.addActionListener(x);  //意思是把什么交给谁，例如button(按键) 和 x </span><br></pre></td></tr></table></figure>
+<h1 id="演示drawString（）方法的示例程序："><a href="#演示drawString（）方法的示例程序：" class="headerlink" title="演示drawString（）方法的示例程序："></a>演示drawString（）方法的示例程序：</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// drawString示例程序</span><br><span class="line"><span class="variable">$import</span> java.awt.*; </span><br><span class="line"><span class="variable">$import</span> java.applet.*; </span><br><span class="line"><span class="variable">$public</span> class HelloWorldApplet扩展Applet &#123;     </span><br><span class="line">$ public void paint(Graphics g)&#123;         </span><br><span class="line">$ g.drawString(<span class="string">&quot;Hello World&quot;</span>，100,100);</span><br></pre></td></tr></table></figure>
+<h1 id="显示消息对话框"><a href="#显示消息对话框" class="headerlink" title="显示消息对话框"></a>显示消息对话框</h1><p>showMessageDialog(“里面的文字”)<br>f.setVisible(true)<br>f.setTitle(“框框上的文字”)<br>charAt<br>看见actionPerformed 就要implements ActionListener<br><strong>(Button saveButton = new Button)</strong><br>saveButton.addActionListener(this);没什么加就this<br>(ActionListener=监听器)<br>(this=当前对象的意思)<br>(super是父级对象)<br><strong>如果Container contentPane = newContainer();</strong><br><strong>就Container contentPane = getContentPane();</strong><br>有Thread就想起Runnable</p>
+]]></content>
+  </entry>
+  <entry>
     <title>JavaScript 数据类型之(Map和Set)</title>
     <url>/JavaScript-Map-Set.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
@@ -1212,20 +1213,6 @@ $</style>
 ]]></content>
   </entry>
   <entry>
-    <title>JavaScript 数据类型之(分支和循环)</title>
-    <url>/JavaScript-branch-loop.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="if-判断-循环"><a href="#if-判断-循环" class="headerlink" title="if 判断/循环"></a>if 判断/循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="keyword">var</span> age = <span class="number">3</span>;</span><br><span class="line">$  <span class="keyword">if</span>(sdq &gt; <span class="number">3</span>)&#123;    <span class="comment">/*第一个判断*/</span></span><br><span class="line">$   alert(<span class="string">&quot;史迪奇骑士&quot;</span>);</span><br><span class="line">$   &#125;</span><br><span class="line">$  <span class="keyword">else</span> <span class="keyword">if</span>(sdq &lt; <span class="number">5</span>)&#123;    <span class="comment">/*第二个判断*/</span></span><br><span class="line">$   alert(<span class="string">&quot;史迪奇国王&quot;</span>);</span><br><span class="line">$   &#125;</span><br><span class="line">$  <span class="keyword">else</span> &#123;               <span class="comment">/*否则*/</span></span><br><span class="line">$   alert(<span class="string">&quot;史迪奇战士&quot;</span>);</span><br><span class="line">$   &#125; </span><br></pre></td></tr></table></figure>
-<h1 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">while</span>(sdq &lt; <span class="number">100</span>)&#123;</span><br><span class="line">$        sdq = sdq + <span class="number">1</span>;</span><br><span class="line">$        <span class="built_in">console</span>.log(sdq)</span><br><span class="line">$        &#125;  </span><br></pre></td></tr></table></figure>
-<h1 id="do-while-循环"><a href="#do-while-循环" class="headerlink" title="do while 循环"></a>do while 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">do</span> &#123;</span><br><span class="line">$        sdq = sdq + <span class="number">1</span>;</span><br><span class="line">$        <span class="built_in">console</span>.log(sdq)</span><br><span class="line">$        &#125; </span><br><span class="line">$    <span class="keyword">while</span>(sdq &lt; <span class="number">100</span>) </span><br></pre></td></tr></table></figure>
-<h1 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++)&#123;</span><br><span class="line">$       <span class="built_in">console</span>.log(i)</span><br><span class="line">$  &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="forEach-循环"><a href="#forEach-循环" class="headerlink" title="forEach 循环"></a>forEach 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> sdq = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line">$   <span class="comment">/*函数*/</span></span><br><span class="line">$   sdq.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">$       <span class="built_in">console</span>.log(value)</span><br><span class="line">$   &#125;)</span><br></pre></td></tr></table></figure>
-<h1 id="for-…-in-循环"><a href="#for-…-in-循环" class="headerlink" title="for … in 循环"></a>for … in 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">for</span>(<span class="keyword">var</span> sdq <span class="keyword">in</span> age) &#123;</span><br><span class="line">$       <span class="keyword">if</span> (sdq.hasOwnProperty(sdz)) &#123;</span><br><span class="line">$           <span class="built_in">console</span>.log(<span class="string">&quot;存在&quot;</span>)</span><br><span class="line">$           <span class="built_in">console</span>.log(sdq[sdz])</span><br><span class="line">$       &#125;</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>JavaScript 数据类型之(Map和Set)</title>
     <url>/JavaScript-Map-Set.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
@@ -1239,6 +1226,20 @@ $</style>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">100</span>]]);</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> map)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
 <p><strong>遍历set</strong></p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> set = <span class="keyword">new</span> set([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">100</span>]]);</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> set)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>JavaScript 数据类型之(分支和循环)</title>
+    <url>/JavaScript-branch-loop.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="if-判断-循环"><a href="#if-判断-循环" class="headerlink" title="if 判断/循环"></a>if 判断/循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="keyword">var</span> age = <span class="number">3</span>;</span><br><span class="line">$  <span class="keyword">if</span>(sdq &gt; <span class="number">3</span>)&#123;    <span class="comment">/*第一个判断*/</span></span><br><span class="line">$   alert(<span class="string">&quot;史迪奇骑士&quot;</span>);</span><br><span class="line">$   &#125;</span><br><span class="line">$  <span class="keyword">else</span> <span class="keyword">if</span>(sdq &lt; <span class="number">5</span>)&#123;    <span class="comment">/*第二个判断*/</span></span><br><span class="line">$   alert(<span class="string">&quot;史迪奇国王&quot;</span>);</span><br><span class="line">$   &#125;</span><br><span class="line">$  <span class="keyword">else</span> &#123;               <span class="comment">/*否则*/</span></span><br><span class="line">$   alert(<span class="string">&quot;史迪奇战士&quot;</span>);</span><br><span class="line">$   &#125; </span><br></pre></td></tr></table></figure>
+<h1 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">while</span>(sdq &lt; <span class="number">100</span>)&#123;</span><br><span class="line">$        sdq = sdq + <span class="number">1</span>;</span><br><span class="line">$        <span class="built_in">console</span>.log(sdq)</span><br><span class="line">$        &#125;  </span><br></pre></td></tr></table></figure>
+<h1 id="do-while-循环"><a href="#do-while-循环" class="headerlink" title="do while 循环"></a>do while 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">do</span> &#123;</span><br><span class="line">$        sdq = sdq + <span class="number">1</span>;</span><br><span class="line">$        <span class="built_in">console</span>.log(sdq)</span><br><span class="line">$        &#125; </span><br><span class="line">$    <span class="keyword">while</span>(sdq &lt; <span class="number">100</span>) </span><br></pre></td></tr></table></figure>
+<h1 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++)&#123;</span><br><span class="line">$       <span class="built_in">console</span>.log(i)</span><br><span class="line">$  &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="forEach-循环"><a href="#forEach-循环" class="headerlink" title="forEach 循环"></a>forEach 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> sdq = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line">$   <span class="comment">/*函数*/</span></span><br><span class="line">$   sdq.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">$       <span class="built_in">console</span>.log(value)</span><br><span class="line">$   &#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="for-…-in-循环"><a href="#for-…-in-循环" class="headerlink" title="for … in 循环"></a>for … in 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">for</span>(<span class="keyword">var</span> sdq <span class="keyword">in</span> age) &#123;</span><br><span class="line">$       <span class="keyword">if</span> (sdq.hasOwnProperty(sdz)) &#123;</span><br><span class="line">$           <span class="built_in">console</span>.log(<span class="string">&quot;存在&quot;</span>)</span><br><span class="line">$           <span class="built_in">console</span>.log(sdq[sdz])</span><br><span class="line">$       &#125;</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
+]]></content>
   </entry>
   <entry>
     <title>JavaScript 数据类型之(字符串类型)</title>
@@ -1257,6 +1258,26 @@ $</style>
 <h1 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="comment">/*是方法不是属性*/</span></span><br><span class="line">$  sdq.toUpperCase()          <span class="comment">/*大写*/</span></span><br><span class="line">$  sdq.LowerCase()          <span class="comment">/*小写*/</span></span><br></pre></td></tr></table></figure>
 <h1 id="字符串截取"><a href="#字符串截取" class="headerlink" title="字符串截取"></a>字符串截取</h1><p><strong>subsrting</strong></p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  sdq.subsrting(<span class="number">1</span>)          <span class="comment">/*从第一个字符串截取到最后一个字符串*/</span></span><br><span class="line">$  sdq.LowerCase(<span class="number">1</span>,<span class="number">3</span>)          <span class="comment">/*包头不包尾*/</span></span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>JavaScript 数据类型之(对象)</title>
+    <url>/JavaScript-object.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象"><a href="#JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象" class="headerlink" title="JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象"></a>JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="keyword">var</span> 对象名 = &#123;    </span><br><span class="line">$      属性名: 属性值</span><br><span class="line">$      属性名: 属性值</span><br><span class="line">$      属性名: 属性值</span><br><span class="line">$ &#125; </span><br><span class="line">$</span><br><span class="line">$ <span class="comment">/*通过下标取值和赋值*/</span></span><br><span class="line">$ <span class="keyword">var</span> person = &#123;</span><br><span class="line">$     name: <span class="string">&quot;sdq&quot;</span>,</span><br><span class="line">$     age: <span class="number">3</span>,</span><br><span class="line">$     email: <span class="string">&quot;???????@???&quot;</span></span><br><span class="line">$     score: <span class="number">0</span></span><br><span class="line">$  &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>若干个键值对 js中对象, {…..}表示一个对象, 键值对描述属性xxxx: xxxx, 多个属性之间使用逗号隔开, 最后一个属性不加逗号</strong></p>
+<h1 id="对象赋值"><a href="#对象赋值" class="headerlink" title="对象赋值"></a>对象赋值</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   person.name = <span class="string">&quot;sdq&quot;</span>      <span class="comment">/*这里赋值sdq*/</span></span><br><span class="line">$   person.name              <span class="comment">/*这里输出sdq*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="undefined-使用不存在对象-不会报错"><a href="#undefined-使用不存在对象-不会报错" class="headerlink" title="undefined 使用不存在对象, 不会报错"></a>undefined 使用不存在对象, 不会报错</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  person.sdz</span><br><span class="line">$  <span class="literal">undefined</span></span><br></pre></td></tr></table></figure>
+<h1 id="delete-动态的删减属性"><a href="#delete-动态的删减属性" class="headerlink" title="delete 动态的删减属性"></a>delete 动态的删减属性</h1><p><strong>例子</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">delete</span> person.name</span><br><span class="line">$ <span class="literal">true</span></span><br><span class="line">$ person</span><br></pre></td></tr></table></figure>
+<h1 id="动态的添加给新的属性添加值"><a href="#动态的添加给新的属性添加值" class="headerlink" title="动态的添加给新的属性添加值"></a>动态的添加给新的属性添加值</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   person.sdq = <span class="string">&quot;sdz&quot;</span>  <span class="comment">/*这里赋值sdz*/</span></span><br><span class="line">$   person      </span><br></pre></td></tr></table></figure>
+<h1 id="判断属性值是否在这个对象-属性值是否在这个对象"><a href="#判断属性值是否在这个对象-属性值是否在这个对象" class="headerlink" title="判断属性值是否在这个对象  属性值是否在这个对象"></a>判断属性值是否在这个对象  属性值是否在这个对象</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="string">&quot;sdq&quot;</span> <span class="keyword">in</span> person        </span><br><span class="line">$  <span class="literal">true</span>         </span><br><span class="line">$  <span class="string">&quot;sdqz&quot;</span> <span class="keyword">in</span> person   </span><br><span class="line">$  <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h1 id="判断属性是否是这个对象自身拥有的-hasOwnProperty"><a href="#判断属性是否是这个对象自身拥有的-hasOwnProperty" class="headerlink" title="判断属性是否是这个对象自身拥有的 hasOwnProperty()"></a>判断属性是否是这个对象自身拥有的 hasOwnProperty()</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  person.hasOwnProperty(<span class="string">&quot;toString&quot;</span>)</span><br><span class="line">$  <span class="literal">false</span>       </span><br><span class="line">$  person.hasOwnProperty(<span class="string">&quot;sdq&quot;</span>)</span><br><span class="line">$  <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
   </entry>
   <entry>
     <title>JavaScript 数据类型之(数组类型)</title>
@@ -1285,26 +1306,6 @@ $</style>
 ]]></content>
   </entry>
   <entry>
-    <title>JavaScript 数据类型之(对象)</title>
-    <url>/JavaScript-object.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象"><a href="#JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象" class="headerlink" title="JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象"></a>JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="keyword">var</span> 对象名 = &#123;    </span><br><span class="line">$      属性名: 属性值</span><br><span class="line">$      属性名: 属性值</span><br><span class="line">$      属性名: 属性值</span><br><span class="line">$ &#125; </span><br><span class="line">$</span><br><span class="line">$ <span class="comment">/*通过下标取值和赋值*/</span></span><br><span class="line">$ <span class="keyword">var</span> person = &#123;</span><br><span class="line">$     name: <span class="string">&quot;sdq&quot;</span>,</span><br><span class="line">$     age: <span class="number">3</span>,</span><br><span class="line">$     email: <span class="string">&quot;???????@???&quot;</span></span><br><span class="line">$     score: <span class="number">0</span></span><br><span class="line">$  &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>若干个键值对 js中对象, {…..}表示一个对象, 键值对描述属性xxxx: xxxx, 多个属性之间使用逗号隔开, 最后一个属性不加逗号</strong></p>
-<h1 id="对象赋值"><a href="#对象赋值" class="headerlink" title="对象赋值"></a>对象赋值</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   person.name = <span class="string">&quot;sdq&quot;</span>      <span class="comment">/*这里赋值sdq*/</span></span><br><span class="line">$   person.name              <span class="comment">/*这里输出sdq*/</span></span><br></pre></td></tr></table></figure>
-<h1 id="undefined-使用不存在对象-不会报错"><a href="#undefined-使用不存在对象-不会报错" class="headerlink" title="undefined 使用不存在对象, 不会报错"></a>undefined 使用不存在对象, 不会报错</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  person.sdz</span><br><span class="line">$  <span class="literal">undefined</span></span><br></pre></td></tr></table></figure>
-<h1 id="delete-动态的删减属性"><a href="#delete-动态的删减属性" class="headerlink" title="delete 动态的删减属性"></a>delete 动态的删减属性</h1><p><strong>例子</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">delete</span> person.name</span><br><span class="line">$ <span class="literal">true</span></span><br><span class="line">$ person</span><br></pre></td></tr></table></figure>
-<h1 id="动态的添加给新的属性添加值"><a href="#动态的添加给新的属性添加值" class="headerlink" title="动态的添加给新的属性添加值"></a>动态的添加给新的属性添加值</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   person.sdq = <span class="string">&quot;sdz&quot;</span>  <span class="comment">/*这里赋值sdz*/</span></span><br><span class="line">$   person      </span><br></pre></td></tr></table></figure>
-<h1 id="判断属性值是否在这个对象-属性值是否在这个对象"><a href="#判断属性值是否在这个对象-属性值是否在这个对象" class="headerlink" title="判断属性值是否在这个对象  属性值是否在这个对象"></a>判断属性值是否在这个对象  属性值是否在这个对象</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="string">&quot;sdq&quot;</span> <span class="keyword">in</span> person        </span><br><span class="line">$  <span class="literal">true</span>         </span><br><span class="line">$  <span class="string">&quot;sdqz&quot;</span> <span class="keyword">in</span> person   </span><br><span class="line">$  <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<h1 id="判断属性是否是这个对象自身拥有的-hasOwnProperty"><a href="#判断属性是否是这个对象自身拥有的-hasOwnProperty" class="headerlink" title="判断属性是否是这个对象自身拥有的 hasOwnProperty()"></a>判断属性是否是这个对象自身拥有的 hasOwnProperty()</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  person.hasOwnProperty(<span class="string">&quot;toString&quot;</span>)</span><br><span class="line">$  <span class="literal">false</span>       </span><br><span class="line">$  person.hasOwnProperty(<span class="string">&quot;sdq&quot;</span>)</span><br><span class="line">$  <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-  </entry>
-  <entry>
     <title>Java面向对象思维</title>
     <url>/Object-oriented.html</url>
     <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
@@ -1327,18 +1328,6 @@ $</style>
 <h1 id="getter"><a href="#getter" class="headerlink" title="getter"></a>getter</h1><p><strong>主要是给成员变量赋值, 做一定的保护</strong></p>
 <h1 id="setter"><a href="#setter" class="headerlink" title="setter"></a>setter</h1><p><strong>从成员变量中获取数据</strong></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Java面向对象思维之构造方法需的重载</title>
-    <url>/Object-oriented-constructor-heavy-load.html</url>
-    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color,  int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color, int wheel, int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this(color,seat);  //this还可以调用当前累中其他的构造方法</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h1>]]></content>
   </entry>
   <entry>
     <title>Java面向对象思维</title>
@@ -1372,6 +1361,18 @@ $</style>
 <h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,5,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     c1.fly();</span><br><span class="line">$     c1.diving();</span><br><span class="line">$ </span><br><span class="line">$     c2.fly();</span><br><span class="line">$     c2.diving();</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <h1 id="构造方法需要注意"><a href="#构造方法需要注意" class="headerlink" title="构造方法需要注意"></a>构造方法需要注意</h1><p><strong>没有返回值这一项</strong><br><strong>在new的时候, 给对象设置属性信息</strong><br><strong>Java会默认自动的送每个类一个无参数的构造方法, 如果你写了构造方法, 那么Java就不送了</strong></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Java面向对象思维之构造方法需的重载</title>
+    <url>/Object-oriented-constructor-heavy-load.html</url>
+    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color,  int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color, int wheel, int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this(color,seat);  //this还可以调用当前累中其他的构造方法</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h1>]]></content>
   </entry>
   <entry>
     <title>Linux命令(未完工)</title>
@@ -1468,6 +1469,109 @@ $
 <p><font color="#DC143C">直接实战</font></p>
 <p><a href="./项目/项目工程.html" target="_blank">演示效果</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Vue.js 表单输入绑定的基础用法</title>
+    <url>/Vue-usage.html</url>
+    <content><![CDATA[<p><strong>Vue.js个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="输入文本"><a href="#输入文本" class="headerlink" title="输入文本"></a>输入文本</h1><!--more-->
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$     &lt;div id = <span class="string">&quot;app1&quot;</span>&gt;</span><br><span class="line">$         &lt;div&gt;</span><br><span class="line">$            请输入你喜欢的城市&lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;cname&quot;</span>&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选择的城市:&#123;&#123;cname&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$        &lt;div&gt;</span><br><span class="line">$            回复评论: &lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;huifu&quot;</span>&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选回复是:&#123;&#123;huifu&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app1&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                cname : <span class="string">&quot;哈哈哈尔滨市&quot;</span>,</span><br><span class="line">$                huifu : <span class="string">&quot;我叫史迪奇&quot;</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="./html/文本.html"></iframe>
+
+<hr>
+<h1 id="输入多行文本"><a href="#输入多行文本" class="headerlink" title="输入多行文本"></a>输入多行文本</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app2&quot;</span>&gt;</span><br><span class="line">$         &lt;div&gt;</span><br><span class="line">$            &lt;span&gt;你的名字: &lt;/span&gt;</span><br><span class="line">$            &lt;p style=<span class="string">&quot;white-space: pre-line;&quot;</span>&gt;&#123;&#123; name &#125;&#125;&lt;/p&gt;</span><br><span class="line">$            &lt;br&gt;</span><br><span class="line">$            &lt;textarea v-model=<span class="string">&quot;name &quot;</span> placeholder=<span class="string">&quot;请输入你的名字&quot;</span>&gt;&lt;/textarea&gt;</span><br><span class="line">$</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你的名字:&#123;&#123;name&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app2&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                name : <span class="string">&quot;史迪奇&quot;</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="./html/多行文本.html"></iframe>
+
+<hr>
+<h1 id="输入单个复选框"><a href="#输入单个复选框" class="headerlink" title="输入单个复选框"></a>输入单个复选框</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app3&quot;</span>&gt;</span><br><span class="line">$        &lt;div&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你的选择是: &#123;&#123;checked &#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;checkbox&quot;</span> v-model=<span class="string">&quot;checked&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;checkbox&quot;</span>&gt;&#123;&#123; checked &#125;&#125;&lt;/label&gt;        </span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app3&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                checked : <span class="literal">false</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="/html/单个复选框.html"></iframe>
+
+<hr>
+<h1 id="输入多个复选框"><a href="#输入多个复选框" class="headerlink" title="输入多个复选框"></a>输入多个复选框</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app4&quot;</span>&gt;</span><br><span class="line">$        &lt;div&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;blue&quot;</span> value=<span class="string">&quot;蓝色&quot;</span> v-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;blue&quot;</span>&gt;蓝色&lt;/label&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;red&quot;</span> value=<span class="string">&quot;红色&quot;</span> v-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;red&quot;</span>&gt;红色&lt;/label&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;yellow&quot;</span> value=<span class="string">&quot;黄色&quot;</span> v-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;yellow&quot;</span>&gt;黄色&lt;/label&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选择的颜色是: &#123;&#123;color&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app4&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                color : [],</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="./html/多个复选框.html"></iframe>
+
+<hr>
+<h1 id="输入单选按钮"><a href="#输入单选按钮" class="headerlink" title="输入单选按钮"></a>输入单选按钮</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   &lt;div id = <span class="string">&quot;app5&quot;</span>&gt;</span><br><span class="line">$           &lt;div&gt;</span><br><span class="line">$               &lt;input <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> id=<span class="string">&quot;男&quot;</span> value=<span class="string">&quot;男&quot;</span> v-model=<span class="string">&quot;sex&quot;</span>&gt;</span><br><span class="line">$               &lt;label <span class="keyword">for</span>=<span class="string">&quot;男&quot;</span>&gt;男&lt;/label&gt;</span><br><span class="line">$               &lt;br&gt;</span><br><span class="line">$               &lt;input <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> id=<span class="string">&quot;女&quot;</span> value=<span class="string">&quot;女&quot;</span> v-model=<span class="string">&quot;sex&quot;</span>&gt;</span><br><span class="line">$               &lt;label <span class="keyword">for</span>=<span class="string">&quot;女&quot;</span>&gt;女&lt;/label&gt;</span><br><span class="line">$               &lt;p&gt;</span><br><span class="line">$                   你选择的性别是: &#123;&#123;sex&#125;&#125;</span><br><span class="line">$               &lt;/p&gt;</span><br><span class="line">$           &lt;/div&gt;</span><br><span class="line">$   &lt;/div&gt;</span><br><span class="line">$       &lt;script&gt;</span><br><span class="line">$           var app = new Vue(&#123;</span><br><span class="line">$           el:<span class="string">&#x27;#app5&#x27;</span>,</span><br><span class="line">$           data : &#123;</span><br><span class="line">$               sex :[]</span><br><span class="line">$           &#125;</span><br><span class="line">$       &#125;);</span><br><span class="line">$       &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="./html/单选按钮.html"></iframe>
+
+<hr>
+<h1 id="输入选择框单选时"><a href="#输入选择框单选时" class="headerlink" title="输入选择框单选时"></a>输入选择框单选时</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   &lt;div id = <span class="string">&quot;app6&quot;</span>&gt;</span><br><span class="line">$           &lt;div&gt;</span><br><span class="line">$               请你选择你喜欢的季节:&lt;select v-model=<span class="string">&quot;season&quot;</span> style=<span class="string">&quot;width: 50px;&quot;</span>&gt;</span><br><span class="line">$                   &lt;option&gt;春天&lt;/option&gt;</span><br><span class="line">$                   &lt;option&gt;夏天&lt;/option&gt;</span><br><span class="line">$                   &lt;option&gt;秋天&lt;/option&gt;</span><br><span class="line">$                   &lt;option&gt;冬天&lt;/option&gt;</span><br><span class="line">$               &lt;/select&gt;</span><br><span class="line">$           </span><br><span class="line">$           &lt;p&gt;</span><br><span class="line">$               你喜欢的季节是: &#123;&#123;season&#125;&#125;</span><br><span class="line">$           &lt;/p&gt;</span><br><span class="line">$           &lt;/div&gt;</span><br><span class="line">$       &lt;/div&gt;</span><br><span class="line">$       &lt;script&gt;</span><br><span class="line">$           var app = new Vue(&#123;</span><br><span class="line">$           el:<span class="string">&#x27;#app6&#x27;</span>,</span><br><span class="line">$           data : &#123;</span><br><span class="line">$               season: <span class="string">&quot;夏天&quot;</span>,</span><br><span class="line">$           &#125;</span><br><span class="line">$       &#125;);</span><br><span class="line">$       &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="./html/选择框单选时.html"></iframe>
+
+<hr>
+<h1 id="输入选择框多选时"><a href="#输入选择框多选时" class="headerlink" title="输入选择框多选时"></a>输入选择框多选时</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app7&quot;</span>&gt;</span><br><span class="line">$            &lt;div&gt;请你选择你喜欢的季节:</span><br><span class="line">$            &lt;select v-model=<span class="string">&quot;selected&quot;</span>  multiple style=<span class="string">&quot;width: 50px;&quot;</span>&gt;</span><br><span class="line">$                &lt;option&gt;春天&lt;/option&gt;</span><br><span class="line">$                &lt;option&gt;夏天&lt;/option&gt;</span><br><span class="line">$                &lt;option&gt;秋天&lt;/option&gt;</span><br><span class="line">$                &lt;option&gt;冬天&lt;/option&gt;</span><br><span class="line">$              &lt;/select&gt;</span><br><span class="line">$              &lt;p&gt;</span><br><span class="line">$                你喜欢的季节是:&#123;&#123;selected&#125;&#125;</span><br><span class="line">$                &lt;br&gt;</span><br><span class="line">$                多选时按住, 往下拖</span><br><span class="line">$              &lt;/p&gt;</span><br><span class="line">$            &lt;/div&gt;</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app7&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                selected:[<span class="string">&quot;夏天&quot;</span>,<span class="string">&quot;冬天&quot;</span>]</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="./html/选择框多选时.html"></iframe>
+
+<hr>
+]]></content>
+  </entry>
+  <entry>
+    <title>下次一定</title>
+    <url>/xcyd.html</url>
+    <content><![CDATA[<p><strong>本人制作简单的一款软件</strong></p>
+<a id="more"></a>
+
+<h1 id="软件截图"><a href="#软件截图" class="headerlink" title="软件截图"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcydjt.jpg">软件截图</a></h1><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcyd.jpg">下载</a></h1><h1 id="声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡"><a href="#声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡" class="headerlink" title="声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡"></a>声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡</h1><h1 id="真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器"><a href="#真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器" class="headerlink" title="真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器"></a>真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器</h1><h1 id="除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了"><a href="#除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了" class="headerlink" title="除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了"></a>除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了</h1>]]></content>
+  </entry>
+  <entry>
+    <title>Arch wsl的傻瓜式安装 (有手就行)</title>
+    <url>/Arch-Wsl-install.html</url>
+    <content><![CDATA[<p><strong>本人是Arch教徒过来传一下教</strong> </p>
+<img src="/images/wsl傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;">
+<a id="more"></a>
+
+<h1 id="第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下"><a href="#第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下" class="headerlink" title="第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下"></a>第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</span><br></pre></td></tr></table></figure>
+<img src="/images/wsl傻瓜式安装/按照提示重启电脑.jpg" style="width: 300px; height: 300px;">
+
+<p><strong>按照提示重启电脑</strong></p>
+<h1 id="第二步-下载文件"><a href="#第二步-下载文件" class="headerlink" title="第二步 下载文件"></a>第二步 下载文件</h1><p><strong>然后下载<a href="https://github.com/yuk7/ArchWSL">Arch WSL</a></strong></p>
+<img src="/images/wsl傻瓜式安装/Arch wsl下载.jpg">
+<br>
+<img src="/images/wsl傻瓜式安装/Arch wsl下载版本.jpg">
+
+<p><strong>那个安装证书是给appx版的arch wsl用的</strong></p>
+<p><strong>你已经安装zip版的</strong></p>
+<p><strong>没有必要安两次</strong></p>
+<p><strong>只用需要用到zip</strong></p>
+<h1 id="第三步-配置Arch-Wsl"><a href="#第三步-配置Arch-Wsl" class="headerlink" title="第三步 配置Arch Wsl"></a>第三步 配置Arch Wsl</h1><img src="/images/wsl傻瓜式安装/Arch wsl配置.jpg" style="width: 800px; height: 500px;">
+
+<p><strong>反正按照我这个改，保存是ctrl + x 回车</strong></p>
+<h1 id="第四步-配置相关参数"><a href="#第四步-配置相关参数" class="headerlink" title="第四步 配置相关参数"></a>第四步 配置相关参数</h1><p><strong>这里会提示配置  按照我的方法配置</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe//这个是启动后的显示</span><br><span class="line">[root@PC-NAME user]<span class="comment"># passwd       //这个是用户名输完名字输密码</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe</span><br><span class="line">[root@PC-NAME]<span class="comment"># EDITOR=nano visudo</span></span><br><span class="line">    %wheel      ALL=(ALL) ALL</span><br><span class="line">    (setup sudoers file.)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]<span class="comment"># useradd -m -G wheel -s /bin/bash &#123;username&#125;</span></span><br><span class="line">(add user)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># passwd &#123;username&#125;      //&#123;&#125;换成你的用户名,记住不需要打&#123;&#125;</span></span><br><span class="line">(<span class="built_in">set</span> default user password)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># exit  //退出</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe config --default-user &#123;username&#125;</span><br><span class="line">    (setting to default user)     //现在是root用户,不用加sudo</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [user@PC-NAME]$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]$ sudo pacman-key --populate</span><br></pre></td></tr></table></figure>
+<h1 id="第五步-安装完后操作"><a href="#第五步-安装完后操作" class="headerlink" title="第五步 安装完后操作"></a>第五步 安装完后操作</h1><p><strong>下面是<a href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/">换源</a></strong></p>
+<p><strong>打开nano /etc/pacman.d/mirrorlist 然后再最顶端添加 切记去##</strong></p>
+<img src="/images/wsl傻瓜式安装/Arch wsl配置文件.jpg" style="width: 800px; height: 500px;">
+<br>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Server = https:mirrors.tuna.tsinghua.edu.cn/archlinux/<span class="variable">$repo</span>/os/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
+**然后就可以 更新软件包缓存**
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman -Syy</span><br></pre></td></tr></table></figure>
+<h1 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
+<img src="/images/wsl傻瓜式安装/Arch wsl.jpg" style="width: 800px; height: 500px;">
+
+<h1 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h1><h1 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h1><h1 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h1>]]></content>
   </entry>
   <entry>
     <title>轻松理解json与python关系</title>
@@ -1575,109 +1679,6 @@ python数据类型
        \                         json格式文件
         \__json.dupmps(obj,fp)__↗</code></pre>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Vue.js 表单输入绑定的基础用法</title>
-    <url>/Vue-usage.html</url>
-    <content><![CDATA[<p><strong>Vue.js个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="输入文本"><a href="#输入文本" class="headerlink" title="输入文本"></a>输入文本</h1><!--more-->
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$     &lt;div id = <span class="string">&quot;app1&quot;</span>&gt;</span><br><span class="line">$         &lt;div&gt;</span><br><span class="line">$            请输入你喜欢的城市&lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;cname&quot;</span>&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选择的城市:&#123;&#123;cname&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$        &lt;div&gt;</span><br><span class="line">$            回复评论: &lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;huifu&quot;</span>&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选回复是:&#123;&#123;huifu&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app1&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                cname : <span class="string">&quot;哈哈哈尔滨市&quot;</span>,</span><br><span class="line">$                huifu : <span class="string">&quot;我叫史迪奇&quot;</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="./html/文本.html"></iframe>
-
-<hr>
-<h1 id="输入多行文本"><a href="#输入多行文本" class="headerlink" title="输入多行文本"></a>输入多行文本</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app2&quot;</span>&gt;</span><br><span class="line">$         &lt;div&gt;</span><br><span class="line">$            &lt;span&gt;你的名字: &lt;/span&gt;</span><br><span class="line">$            &lt;p style=<span class="string">&quot;white-space: pre-line;&quot;</span>&gt;&#123;&#123; name &#125;&#125;&lt;/p&gt;</span><br><span class="line">$            &lt;br&gt;</span><br><span class="line">$            &lt;textarea v-model=<span class="string">&quot;name &quot;</span> placeholder=<span class="string">&quot;请输入你的名字&quot;</span>&gt;&lt;/textarea&gt;</span><br><span class="line">$</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你的名字:&#123;&#123;name&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app2&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                name : <span class="string">&quot;史迪奇&quot;</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="./html/多行文本.html"></iframe>
-
-<hr>
-<h1 id="输入单个复选框"><a href="#输入单个复选框" class="headerlink" title="输入单个复选框"></a>输入单个复选框</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app3&quot;</span>&gt;</span><br><span class="line">$        &lt;div&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你的选择是: &#123;&#123;checked &#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;checkbox&quot;</span> v-model=<span class="string">&quot;checked&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;checkbox&quot;</span>&gt;&#123;&#123; checked &#125;&#125;&lt;/label&gt;        </span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app3&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                checked : <span class="literal">false</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="/html/单个复选框.html"></iframe>
-
-<hr>
-<h1 id="输入多个复选框"><a href="#输入多个复选框" class="headerlink" title="输入多个复选框"></a>输入多个复选框</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app4&quot;</span>&gt;</span><br><span class="line">$        &lt;div&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;blue&quot;</span> value=<span class="string">&quot;蓝色&quot;</span> v-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;blue&quot;</span>&gt;蓝色&lt;/label&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;red&quot;</span> value=<span class="string">&quot;红色&quot;</span> v-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;red&quot;</span>&gt;红色&lt;/label&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;yellow&quot;</span> value=<span class="string">&quot;黄色&quot;</span> v-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;yellow&quot;</span>&gt;黄色&lt;/label&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选择的颜色是: &#123;&#123;color&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app4&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                color : [],</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="./html/多个复选框.html"></iframe>
-
-<hr>
-<h1 id="输入单选按钮"><a href="#输入单选按钮" class="headerlink" title="输入单选按钮"></a>输入单选按钮</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   &lt;div id = <span class="string">&quot;app5&quot;</span>&gt;</span><br><span class="line">$           &lt;div&gt;</span><br><span class="line">$               &lt;input <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> id=<span class="string">&quot;男&quot;</span> value=<span class="string">&quot;男&quot;</span> v-model=<span class="string">&quot;sex&quot;</span>&gt;</span><br><span class="line">$               &lt;label <span class="keyword">for</span>=<span class="string">&quot;男&quot;</span>&gt;男&lt;/label&gt;</span><br><span class="line">$               &lt;br&gt;</span><br><span class="line">$               &lt;input <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> id=<span class="string">&quot;女&quot;</span> value=<span class="string">&quot;女&quot;</span> v-model=<span class="string">&quot;sex&quot;</span>&gt;</span><br><span class="line">$               &lt;label <span class="keyword">for</span>=<span class="string">&quot;女&quot;</span>&gt;女&lt;/label&gt;</span><br><span class="line">$               &lt;p&gt;</span><br><span class="line">$                   你选择的性别是: &#123;&#123;sex&#125;&#125;</span><br><span class="line">$               &lt;/p&gt;</span><br><span class="line">$           &lt;/div&gt;</span><br><span class="line">$   &lt;/div&gt;</span><br><span class="line">$       &lt;script&gt;</span><br><span class="line">$           var app = new Vue(&#123;</span><br><span class="line">$           el:<span class="string">&#x27;#app5&#x27;</span>,</span><br><span class="line">$           data : &#123;</span><br><span class="line">$               sex :[]</span><br><span class="line">$           &#125;</span><br><span class="line">$       &#125;);</span><br><span class="line">$       &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="./html/单选按钮.html"></iframe>
-
-<hr>
-<h1 id="输入选择框单选时"><a href="#输入选择框单选时" class="headerlink" title="输入选择框单选时"></a>输入选择框单选时</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   &lt;div id = <span class="string">&quot;app6&quot;</span>&gt;</span><br><span class="line">$           &lt;div&gt;</span><br><span class="line">$               请你选择你喜欢的季节:&lt;select v-model=<span class="string">&quot;season&quot;</span> style=<span class="string">&quot;width: 50px;&quot;</span>&gt;</span><br><span class="line">$                   &lt;option&gt;春天&lt;/option&gt;</span><br><span class="line">$                   &lt;option&gt;夏天&lt;/option&gt;</span><br><span class="line">$                   &lt;option&gt;秋天&lt;/option&gt;</span><br><span class="line">$                   &lt;option&gt;冬天&lt;/option&gt;</span><br><span class="line">$               &lt;/select&gt;</span><br><span class="line">$           </span><br><span class="line">$           &lt;p&gt;</span><br><span class="line">$               你喜欢的季节是: &#123;&#123;season&#125;&#125;</span><br><span class="line">$           &lt;/p&gt;</span><br><span class="line">$           &lt;/div&gt;</span><br><span class="line">$       &lt;/div&gt;</span><br><span class="line">$       &lt;script&gt;</span><br><span class="line">$           var app = new Vue(&#123;</span><br><span class="line">$           el:<span class="string">&#x27;#app6&#x27;</span>,</span><br><span class="line">$           data : &#123;</span><br><span class="line">$               season: <span class="string">&quot;夏天&quot;</span>,</span><br><span class="line">$           &#125;</span><br><span class="line">$       &#125;);</span><br><span class="line">$       &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="./html/选择框单选时.html"></iframe>
-
-<hr>
-<h1 id="输入选择框多选时"><a href="#输入选择框多选时" class="headerlink" title="输入选择框多选时"></a>输入选择框多选时</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app7&quot;</span>&gt;</span><br><span class="line">$            &lt;div&gt;请你选择你喜欢的季节:</span><br><span class="line">$            &lt;select v-model=<span class="string">&quot;selected&quot;</span>  multiple style=<span class="string">&quot;width: 50px;&quot;</span>&gt;</span><br><span class="line">$                &lt;option&gt;春天&lt;/option&gt;</span><br><span class="line">$                &lt;option&gt;夏天&lt;/option&gt;</span><br><span class="line">$                &lt;option&gt;秋天&lt;/option&gt;</span><br><span class="line">$                &lt;option&gt;冬天&lt;/option&gt;</span><br><span class="line">$              &lt;/select&gt;</span><br><span class="line">$              &lt;p&gt;</span><br><span class="line">$                你喜欢的季节是:&#123;&#123;selected&#125;&#125;</span><br><span class="line">$                &lt;br&gt;</span><br><span class="line">$                多选时按住, 往下拖</span><br><span class="line">$              &lt;/p&gt;</span><br><span class="line">$            &lt;/div&gt;</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app7&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                selected:[<span class="string">&quot;夏天&quot;</span>,<span class="string">&quot;冬天&quot;</span>]</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="./html/选择框多选时.html"></iframe>
-
-<hr>
-]]></content>
-  </entry>
-  <entry>
-    <title>下次一定</title>
-    <url>/xcyd.html</url>
-    <content><![CDATA[<p><strong>本人制作简单的一款软件</strong></p>
-<a id="more"></a>
-
-<h1 id="软件截图"><a href="#软件截图" class="headerlink" title="软件截图"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcydjt.jpg">软件截图</a></h1><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcyd.jpg">下载</a></h1><h1 id="声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡"><a href="#声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡" class="headerlink" title="声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡"></a>声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡</h1><h1 id="真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器"><a href="#真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器" class="headerlink" title="真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器"></a>真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器</h1><h1 id="除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了"><a href="#除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了" class="headerlink" title="除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了"></a>除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了</h1>]]></content>
-  </entry>
-  <entry>
-    <title>Arch wsl的傻瓜式安装 (有手就行)</title>
-    <url>/Arch-Wsl-install.html</url>
-    <content><![CDATA[<p><strong>本人是Arch教徒过来传一下教</strong> </p>
-<img src="/images/wsl傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;">
-<a id="more"></a>
-
-<h1 id="第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下"><a href="#第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下" class="headerlink" title="第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下"></a>第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</span><br></pre></td></tr></table></figure>
-<img src="/images/wsl傻瓜式安装/按照提示重启电脑.jpg" style="width: 300px; height: 300px;">
-
-<p><strong>按照提示重启电脑</strong></p>
-<h1 id="第二步-下载文件"><a href="#第二步-下载文件" class="headerlink" title="第二步 下载文件"></a>第二步 下载文件</h1><p><strong>然后下载<a href="https://github.com/yuk7/ArchWSL">Arch WSL</a></strong></p>
-<img src="/images/wsl傻瓜式安装/Arch wsl下载.jpg">
-<br>
-<img src="/images/wsl傻瓜式安装/Arch wsl下载版本.jpg">
-
-<p><strong>那个安装证书是给appx版的arch wsl用的</strong></p>
-<p><strong>你已经安装zip版的</strong></p>
-<p><strong>没有必要安两次</strong></p>
-<p><strong>只用需要用到zip</strong></p>
-<h1 id="第三步-配置Arch-Wsl"><a href="#第三步-配置Arch-Wsl" class="headerlink" title="第三步 配置Arch Wsl"></a>第三步 配置Arch Wsl</h1><img src="/images/wsl傻瓜式安装/Arch wsl配置.jpg" style="width: 800px; height: 500px;">
-
-<p><strong>反正按照我这个改，保存是ctrl + x 回车</strong></p>
-<h1 id="第四步-配置相关参数"><a href="#第四步-配置相关参数" class="headerlink" title="第四步 配置相关参数"></a>第四步 配置相关参数</h1><p><strong>这里会提示配置  按照我的方法配置</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe//这个是启动后的显示</span><br><span class="line">[root@PC-NAME user]<span class="comment"># passwd       //这个是用户名输完名字输密码</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe</span><br><span class="line">[root@PC-NAME]<span class="comment"># EDITOR=nano visudo</span></span><br><span class="line">    %wheel      ALL=(ALL) ALL</span><br><span class="line">    (setup sudoers file.)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]<span class="comment"># useradd -m -G wheel -s /bin/bash &#123;username&#125;</span></span><br><span class="line">(add user)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># passwd &#123;username&#125;      //&#123;&#125;换成你的用户名,记住不需要打&#123;&#125;</span></span><br><span class="line">(<span class="built_in">set</span> default user password)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># exit  //退出</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe config --default-user &#123;username&#125;</span><br><span class="line">    (setting to default user)     //现在是root用户,不用加sudo</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [user@PC-NAME]$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]$ sudo pacman-key --populate</span><br></pre></td></tr></table></figure>
-<h1 id="第五步-安装完后操作"><a href="#第五步-安装完后操作" class="headerlink" title="第五步 安装完后操作"></a>第五步 安装完后操作</h1><p><strong>下面是<a href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/">换源</a></strong></p>
-<p><strong>打开nano /etc/pacman.d/mirrorlist 然后再最顶端添加 切记去##</strong></p>
-<img src="/images/wsl傻瓜式安装/Arch wsl配置文件.jpg" style="width: 800px; height: 500px;">
-<br>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Server = https:mirrors.tuna.tsinghua.edu.cn/archlinux/<span class="variable">$repo</span>/os/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
-**然后就可以 更新软件包缓存**
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman -Syy</span><br></pre></td></tr></table></figure>
-<h1 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
-<img src="/images/wsl傻瓜式安装/Arch wsl.jpg" style="width: 800px; height: 500px;">
-
-<h1 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h1><h1 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h1><h1 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h1>]]></content>
   </entry>
   <entry>
     <title>Android同步源码和编译ROM傻瓜式 (有手就行)</title>
@@ -1793,6 +1794,18 @@ python数据类型
 ]]></content>
   </entry>
   <entry>
+    <title>python 基本运算符(我失忆了)</title>
+    <url>/python-jjcc.html</url>
+    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
+<a id="more"></a>
+
+<h1 id="pdtho基本运算符"><a href="#pdtho基本运算符" class="headerlink" title="pdtho基本运算符"></a>pdtho基本运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;加&#39;, 2 + 3)</span><br><span class="line">print(&#39;减&#39;, 1 - 3)</span><br><span class="line">print(&#39;两个减号&#39;, 1 - -2)</span><br><span class="line">print(&#39;乘&#39;, 2 * 4)</span><br><span class="line">print(&#39;除&#39;, 9 &#x2F; 3)</span><br><span class="line">print(&#39;取整&#39;, 10 &#x2F;&#x2F; 3, 10 &#x2F;&#x2F; 4)</span><br><span class="line">print(&#39;取整1&#39;, 10 &#x2F; 3, 10 &#x2F; 4)</span><br><span class="line">print(&#39;模运算，取余数&#39;, 10 % 3)  </span><br></pre></td></tr></table></figure>
+<h1 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h1><p><strong>4舍6入5看齐,奇进偶不进,相比四舍五入更精确</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(round(1.2), round(1.5), round(2.5))</span><br></pre></td></tr></table></figure>
+<h1 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s, d, q, z &#x3D; 1, 2, 3, 1</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; d&#39;, s &#x3D;&#x3D; d)</span><br><span class="line">print(&#39;s !&#x3D; d&#39;, s !&#x3D; d)</span><br><span class="line">print(&#39;s &gt; d&#39;, s &gt; d)</span><br><span class="line">print(&#39;d &lt; z&#39;, d &lt; z)</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; z&#39;, s &#x3D;&#x3D; z)   #比较值</span><br><span class="line">print(&#39;s is z&#39;, s is z)   #比较地址</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>python 字符串(我失忆了)</title>
     <url>/python-zfc.html</url>
     <content><![CDATA[<p><strong>我真的失忆了</strong></p>
@@ -1804,18 +1817,6 @@ python数据类型
 <h1 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 切片 变量名[a:b] 同数学区间的[a,b)</span><br><span class="line">sdq &#x3D; &#39;0123456789&#39;</span><br><span class="line">print(&#39;sdq[0:3]&#39;, sdq[0:3])         #012</span><br><span class="line">print(&#39;sdq[1:]&#39;, sdq[1:])           #123456789</span><br><span class="line">print(&#39;sdq[:2]&#39;, sdq[:2])           #01</span><br><span class="line">print(&#39;sdq[:]&#39;, sdq[:])             #返回全部</span><br><span class="line">print(&#39;sdq[-4:-1]&#39;, sdq[-4:-1])     #678</span><br><span class="line">print(sdq[1:100])                   # 切片超出范围是不会报错的会返回全部</span><br></pre></td></tr></table></figure>
 <h1 id="代码格式化"><a href="#代码格式化" class="headerlink" title="代码格式化"></a>代码格式化</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># name &#x3D; &#39;史迪奇&#39;</span><br><span class="line"># number &#x3D; 626</span><br><span class="line"># print(name+&#39;是个&#39;+str(number)+&#39;号实验品&#39;)</span><br><span class="line"># print(&#39;&#123;&#125;是个&#123;&#125;号实验品&#39;.format(name, number))</span><br><span class="line"># print(&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;.format(name&#x3D;&#39;史迪奇&#39;, number&#x3D;626))</span><br><span class="line"># print(f&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;)</span><br><span class="line"># 在一些老的教程里会用%的形式格式化代码，在Python3里就不建议使用了</span><br></pre></td></tr></table></figure>
 <h1 id="字符串的一些使用方法"><a href="#字符串的一些使用方法" class="headerlink" title="字符串的一些使用方法"></a>字符串的一些使用方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sdq &#x3D; &#39;Stitch&#39;</span><br><span class="line">print(&#39;find第一次出现b的索引&#39;, sdq.find(&#39;h&#39;))  #看h的下标</span><br><span class="line">print(&#39;replace&#39;, sdq.replace(&#39;i&#39;, &#39;I&#39;))  #拿I替换i</span><br><span class="line">print(&#39;upper&#39;, sdq.upper()) #全大写</span><br><span class="line">print(&#39;lower&#39;, sdq.lower()) #全小写</span><br><span class="line">print(&#39;swapcase 对换&#39;, &#39;sdq&#39;.swapcase())  #反转字母大小写</span><br><span class="line">print(&#39;去前后空格&#39;, &#39; sdq &#39;.strip(), sep&#x3D;&#39;&#39;)  </span><br><span class="line">print(&#39;S t i t c h &#39;.replace(&#39; &#39;, &#39;&#39;))   #空格替换空字符串</span><br><span class="line"></span><br><span class="line">print(len(&#39;S t i t c h&#39;)) # 获取字符串长度 里面的空格也是计算长度的</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
-    <title>python 基本运算符(我失忆了)</title>
-    <url>/python-jjcc.html</url>
-    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
-<a id="more"></a>
-
-<h1 id="pdtho基本运算符"><a href="#pdtho基本运算符" class="headerlink" title="pdtho基本运算符"></a>pdtho基本运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;加&#39;, 2 + 3)</span><br><span class="line">print(&#39;减&#39;, 1 - 3)</span><br><span class="line">print(&#39;两个减号&#39;, 1 - -2)</span><br><span class="line">print(&#39;乘&#39;, 2 * 4)</span><br><span class="line">print(&#39;除&#39;, 9 &#x2F; 3)</span><br><span class="line">print(&#39;取整&#39;, 10 &#x2F;&#x2F; 3, 10 &#x2F;&#x2F; 4)</span><br><span class="line">print(&#39;取整1&#39;, 10 &#x2F; 3, 10 &#x2F; 4)</span><br><span class="line">print(&#39;模运算，取余数&#39;, 10 % 3)  </span><br></pre></td></tr></table></figure>
-<h1 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h1><p><strong>4舍6入5看齐,奇进偶不进,相比四舍五入更精确</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(round(1.2), round(1.5), round(2.5))</span><br></pre></td></tr></table></figure>
-<h1 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s, d, q, z &#x3D; 1, 2, 3, 1</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; d&#39;, s &#x3D;&#x3D; d)</span><br><span class="line">print(&#39;s !&#x3D; d&#39;, s !&#x3D; d)</span><br><span class="line">print(&#39;s &gt; d&#39;, s &gt; d)</span><br><span class="line">print(&#39;d &lt; z&#39;, d &lt; z)</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; z&#39;, s &#x3D;&#x3D; z)   #比较值</span><br><span class="line">print(&#39;s is z&#39;, s is z)   #比较地址</span><br></pre></td></tr></table></figure>
-]]></content>
   </entry>
   <entry>
     <title>职教星2.8.2(搬运软件)</title>
@@ -2346,6 +2347,23 @@ option && myChart.setOption(option);
 ]]></content>
   </entry>
   <entry>
+    <title>爬虫 正则表达式(牢饭吃到饱)</title>
+    <url>/reptile-RegEx.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+
+<h1 id="正则表达式的优点和缺点"><a href="#正则表达式的优点和缺点" class="headerlink" title="正则表达式的优点和缺点"></a>正则表达式的优点和缺点</h1><p><strong>优点: 速度快, 效率高, 准确度高</strong></p>
+<p><strong>缺点: 优点老手福利, 新手? ? ?</strong></p>
+<h1 id="正则表达式的概念"><a href="#正则表达式的概念" class="headerlink" title="正则表达式的概念"></a>正则表达式的概念</h1><p><strong>使用元字符进行排列组合用来匹配字符串</strong></p>
+<h1 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h1><p><strong>常用元字符</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.          匹配除换行符以外的任意字符</span><br><span class="line">    </span><br><span class="line">\w         匹配字母或数字或下划线</span><br><span class="line">    </span><br><span class="line">\s         匹配任意的空白符</span><br><span class="line">    </span><br><span class="line">\d         匹配数字</span><br><span class="line">    </span><br><span class="line">\n         匹配一个换行符</span><br><span class="line">    </span><br><span class="line">\t         匹配一个制表符</span><br><span class="line">    </span><br><span class="line">^          匹配字符串的开始</span><br><span class="line">    </span><br><span class="line">$          匹配字符串的结尾</span><br><span class="line">    </span><br><span class="line">\w         匹配非字母或数字或下划线</span><br><span class="line">    </span><br><span class="line">\D         匹配非数字</span><br><span class="line">    </span><br><span class="line">\S         匹配非空白符</span><br><span class="line">    </span><br><span class="line">a|b        匹配字符a或字符b</span><br><span class="line">    </span><br><span class="line">()         匹配括号内的表达式, 也表示一个组</span><br><span class="line">    </span><br><span class="line">[]         匹配字符中的字符    例如 [a-zA-z0-9]</span><br><span class="line">    </span><br><span class="line">[^]        匹配除了字符组中字符的所有字符</span><br></pre></td></tr></table></figure>
+<p><strong>量词: 控制前面的元字符出现的次数</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*          重复零次或更多次 </span><br><span class="line"></span><br><span class="line">+          重复一次或更多次</span><br><span class="line"></span><br><span class="line">?          重复零次或一次  说白了就是出现或者不出现</span><br><span class="line"></span><br><span class="line">&#123;n&#125;        重复n次</span><br><span class="line"></span><br><span class="line">&#123;n,&#125;       重复n次或更多次</span><br><span class="line"></span><br><span class="line">&#123;n,m&#125;      重复n到m次</span><br></pre></td></tr></table></figure>
+<p><strong>贪婪匹配和惰性匹配</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.*          贪婪匹配      说白了就是尽可能多的匹配</span><br><span class="line"></span><br><span class="line">.*?         惰性匹配      说白了就是尽可能少的匹配</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
     <title>爬虫 概念(牢饭吃到饱)</title>
     <url>/reptile-concept.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -2374,23 +2392,6 @@ option && myChart.setOption(option);
 <p><strong>bs4解析</strong></p>
 <p><strong>xpath解析</strong></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>爬虫 正则表达式(牢饭吃到饱)</title>
-    <url>/reptile-RegEx.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-
-<h1 id="正则表达式的优点和缺点"><a href="#正则表达式的优点和缺点" class="headerlink" title="正则表达式的优点和缺点"></a>正则表达式的优点和缺点</h1><p><strong>优点: 速度快, 效率高, 准确度高</strong></p>
-<p><strong>缺点: 优点老手福利, 新手? ? ?</strong></p>
-<h1 id="正则表达式的概念"><a href="#正则表达式的概念" class="headerlink" title="正则表达式的概念"></a>正则表达式的概念</h1><p><strong>使用元字符进行排列组合用来匹配字符串</strong></p>
-<h1 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h1><p><strong>常用元字符</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.          匹配除换行符以外的任意字符</span><br><span class="line">    </span><br><span class="line">\w         匹配字母或数字或下划线</span><br><span class="line">    </span><br><span class="line">\s         匹配任意的空白符</span><br><span class="line">    </span><br><span class="line">\d         匹配数字</span><br><span class="line">    </span><br><span class="line">\n         匹配一个换行符</span><br><span class="line">    </span><br><span class="line">\t         匹配一个制表符</span><br><span class="line">    </span><br><span class="line">^          匹配字符串的开始</span><br><span class="line">    </span><br><span class="line">$          匹配字符串的结尾</span><br><span class="line">    </span><br><span class="line">\w         匹配非字母或数字或下划线</span><br><span class="line">    </span><br><span class="line">\D         匹配非数字</span><br><span class="line">    </span><br><span class="line">\S         匹配非空白符</span><br><span class="line">    </span><br><span class="line">a|b        匹配字符a或字符b</span><br><span class="line">    </span><br><span class="line">()         匹配括号内的表达式, 也表示一个组</span><br><span class="line">    </span><br><span class="line">[]         匹配字符中的字符    例如 [a-zA-z0-9]</span><br><span class="line">    </span><br><span class="line">[^]        匹配除了字符组中字符的所有字符</span><br></pre></td></tr></table></figure>
-<p><strong>量词: 控制前面的元字符出现的次数</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*          重复零次或更多次 </span><br><span class="line"></span><br><span class="line">+          重复一次或更多次</span><br><span class="line"></span><br><span class="line">?          重复零次或一次  说白了就是出现或者不出现</span><br><span class="line"></span><br><span class="line">&#123;n&#125;        重复n次</span><br><span class="line"></span><br><span class="line">&#123;n,&#125;       重复n次或更多次</span><br><span class="line"></span><br><span class="line">&#123;n,m&#125;      重复n到m次</span><br></pre></td></tr></table></figure>
-<p><strong>贪婪匹配和惰性匹配</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.*          贪婪匹配      说白了就是尽可能多的匹配</span><br><span class="line"></span><br><span class="line">.*?         惰性匹配      说白了就是尽可能少的匹配</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>爬虫 比Python功能更加强大的node.js简介(牢饭吃到饱)未完待续</title>
@@ -2656,52 +2657,6 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 ]]></content>
   </entry>
   <entry>
-    <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
-    <url>/Thread-Process.html</url>
-    <content><![CDATA[<p><strong>概念</strong></p>
-<a id="more"></a>
-
-<h1 id="什么是线程-学习进程最重要的还是学习线程"><a href="#什么是线程-学习进程最重要的还是学习线程" class="headerlink" title="什么是线程(学习进程最重要的还是学习线程)"></a>什么是线程(学习进程最重要的还是学习线程)</h1><p><strong>线程就是独立执行的路径，就算在什么都不干的话，里面会有(主线程)main线程，Java里面还有个一个收垃圾的gc线程</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Thread是线程的英文</span><br></pre></td></tr></table></figure>
-
-<h1 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h1><p><strong>把程序跑起来才叫做进程，进程是执行程序的一次执行过程是一个动态的概念</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Process是进程的英文</span><br></pre></td></tr></table></figure>
-<h1 id="线程与进程到底是什么关系"><a href="#线程与进程到底是什么关系" class="headerlink" title="线程与进程到底是什么关系"></a>线程与进程到底是什么关系</h1><p><strong>一个进程里面可以包含若干个线程，一个进程里面必须要有一个线程，否则没有存在的意义</strong></p>
-<h1 id="注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行"><a href="#注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行" class="headerlink" title="注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行"></a>注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行</h1>]]></content>
-  </entry>
-  <entry>
-    <title>跟我一起学数学</title>
-    <url>/mathematics.html</url>
-    <content><![CDATA[<p><strong>走进数学的奇妙世界</strong></p>
-<a id="more"></a>
-
-<h1 id="高斯算法"><a href="#高斯算法" class="headerlink" title="高斯算法"></a>高斯算法</h1><p><strong>用于解决 1+2+3+4+5+6+7……一直加到n</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(首项 + 末项) * 项数 &#x2F; 2</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="衡量算法"><a href="#衡量算法" class="headerlink" title="衡量算法"></a>衡量算法</h1><p><strong>时间复杂度和空间复杂度</strong></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>跟我一起学算法(概念章)</title>
-    <url>/mathematics-concept.html</url>
-    <content><![CDATA[<p><strong>走进数学的奇妙世界</strong></p>
-<a id="more"></a>
-
-<h1 id="衡量算法"><a href="#衡量算法" class="headerlink" title="衡量算法"></a>衡量算法</h1><p><strong>时间复杂度和空间复杂度</strong></p>
-<h1 style="color:red;font-size:50px">时间复杂度: 程序的运行时间和效率</h1>
-
-<h1 style="color:red;font-size:50px">空间复杂度: 程序运行时所占用的内存空间</h1>
-
-<h1 id="什么是数据结构"><a href="#什么是数据结构" class="headerlink" title="什么是数据结构"></a>什么是数据结构</h1><p><strong>数据结构是数据的组织、管理和存储格式，其使用目的是为了高效地访问和修改数据</strong></p>
-<p><strong>数据结构包含数组、链表这样的线性数据结构，也包含树、图这样的复杂数据结构</strong></p>
-<h1 id="什么是时间复杂度"><a href="#什么是时间复杂度" class="headerlink" title="什么是时间复杂度"></a>什么是时间复杂度</h1><p><strong>时间复杂度是对一个算法运行时间长短的量度，用大O表示，记作T(n)=O(f(n))</strong></p>
-<p><strong>常见的时间复杂度按照从低到高的顺序，包括O(1)、O(logn)、O(n)、O(nlogn)、O(n2)等</strong></p>
-<h1 id="什么是空间复杂度"><a href="#什么是空间复杂度" class="headerlink" title="什么是空间复杂度"></a>什么是空间复杂度</h1><p><strong>空间复杂度是对一个算法在运行过程中临时占用存储空间大小的量度，用大O表示，记作S(n)=O(f(n))</strong></p>
-<p><strong>常见的空间复杂度按照从低到高的顺序，包括O(1)、O(n)、O(n2)等。其中递归算法的空间复杂度和递归深度成正比</strong></p>
-]]></content>
-  </entry>
-  <entry>
     <title>百度搜索技巧</title>
     <url>/baidu.html</url>
     <content><![CDATA[<p><strong>技巧</strong></p>
@@ -2922,5 +2877,51 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd &#x2F;home&#x2F;用户名</span><br><span class="line">ls -a</span><br><span class="line">cd .ssh</span><br></pre></td></tr></table></figure>
 <h1 id="查看文件"><a href="#查看文件" class="headerlink" title="查看文件"></a>查看文件</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat &#x2F;etc&#x2F;[路径]</span><br></pre></td></tr></table></figure>
 <h1 id="查看当前路径"><a href="#查看当前路径" class="headerlink" title="查看当前路径"></a>查看当前路径</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pwd</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
+    <url>/Thread-Process.html</url>
+    <content><![CDATA[<p><strong>概念</strong></p>
+<a id="more"></a>
+
+<h1 id="什么是线程-学习进程最重要的还是学习线程"><a href="#什么是线程-学习进程最重要的还是学习线程" class="headerlink" title="什么是线程(学习进程最重要的还是学习线程)"></a>什么是线程(学习进程最重要的还是学习线程)</h1><p><strong>线程就是独立执行的路径，就算在什么都不干的话，里面会有(主线程)main线程，Java里面还有个一个收垃圾的gc线程</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Thread是线程的英文</span><br></pre></td></tr></table></figure>
+
+<h1 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h1><p><strong>把程序跑起来才叫做进程，进程是执行程序的一次执行过程是一个动态的概念</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Process是进程的英文</span><br></pre></td></tr></table></figure>
+<h1 id="线程与进程到底是什么关系"><a href="#线程与进程到底是什么关系" class="headerlink" title="线程与进程到底是什么关系"></a>线程与进程到底是什么关系</h1><p><strong>一个进程里面可以包含若干个线程，一个进程里面必须要有一个线程，否则没有存在的意义</strong></p>
+<h1 id="注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行"><a href="#注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行" class="headerlink" title="注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行"></a>注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行</h1>]]></content>
+  </entry>
+  <entry>
+    <title>跟我一起学数学</title>
+    <url>/mathematics.html</url>
+    <content><![CDATA[<p><strong>走进数学的奇妙世界</strong></p>
+<a id="more"></a>
+
+<h1 id="高斯算法"><a href="#高斯算法" class="headerlink" title="高斯算法"></a>高斯算法</h1><p><strong>用于解决 1+2+3+4+5+6+7……一直加到n</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(首项 + 末项) * 项数 &#x2F; 2</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="衡量算法"><a href="#衡量算法" class="headerlink" title="衡量算法"></a>衡量算法</h1><p><strong>时间复杂度和空间复杂度</strong></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>跟我一起学算法(概念章)</title>
+    <url>/mathematics-concept.html</url>
+    <content><![CDATA[<p><strong>走进数学的奇妙世界</strong></p>
+<a id="more"></a>
+
+<h1 id="衡量算法"><a href="#衡量算法" class="headerlink" title="衡量算法"></a>衡量算法</h1><p><strong>时间复杂度和空间复杂度</strong></p>
+<h1 style="color:red;font-size:50px">时间复杂度: 程序的运行时间和效率</h1>
+
+<h1 style="color:red;font-size:50px">空间复杂度: 程序运行时所占用的内存空间</h1>
+
+<h1 id="什么是数据结构"><a href="#什么是数据结构" class="headerlink" title="什么是数据结构"></a>什么是数据结构</h1><p><strong>数据结构是数据的组织、管理和存储格式，其使用目的是为了高效地访问和修改数据</strong></p>
+<p><strong>数据结构包含数组、链表这样的线性数据结构，也包含树、图这样的复杂数据结构</strong></p>
+<h1 id="什么是时间复杂度"><a href="#什么是时间复杂度" class="headerlink" title="什么是时间复杂度"></a>什么是时间复杂度</h1><p><strong>时间复杂度是对一个算法运行时间长短的量度，用大O表示，记作T(n)=O(f(n))</strong></p>
+<p><strong>常见的时间复杂度按照从低到高的顺序，包括O(1)、O(logn)、O(n)、O(nlogn)、O(n2)等</strong></p>
+<h1 id="什么是空间复杂度"><a href="#什么是空间复杂度" class="headerlink" title="什么是空间复杂度"></a>什么是空间复杂度</h1><p><strong>空间复杂度是对一个算法在运行过程中临时占用存储空间大小的量度，用大O表示，记作S(n)=O(f(n))</strong></p>
+<p><strong>常见的空间复杂度按照从低到高的顺序，包括O(1)、O(n)、O(n2)等。其中递归算法的空间复杂度和递归深度成正比</strong></p>
+]]></content>
   </entry>
 </search>
