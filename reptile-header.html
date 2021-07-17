@@ -667,7 +667,7 @@ var $main = document.querySelector('.main');
 <aside id="article-toc" class="fixed-toc">
     <div id="article-toc-inner">
         <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#response-text%E5%92%8Cresponse-content%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">response.text和response.content的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#response%E5%93%8D%E5%BA%94%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%85%B6%E5%AE%83%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%E6%88%96%E6%96%B9%E6%B3%95"><span class="toc-text">response响应对象的其它常用属性或方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#post%E6%96%B9%E6%B3%95"><span class="toc-text">post方法</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#response-text%E5%92%8Cresponse-content%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">response.text和response.content的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#response%E5%93%8D%E5%BA%94%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%85%B6%E5%AE%83%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%E6%88%96%E6%96%B9%E6%B3%95"><span class="toc-text">response响应对象的其它常用属性或方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#post%E6%96%B9%E6%B3%95"><span class="toc-text">post方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#requests-session"><span class="toc-text">requests.session</span></a></li></ol>
     </div>
 </aside>
 </div>
@@ -761,6 +761,49 @@ var $main = document.querySelector('.main');
 
 <h1 id="post方法"><a href="#post方法" class="headerlink" title="post方法"></a>post方法</h1><p><strong>实现方法</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># data通常是一个字典</span><br><span class="line">requests.post(uel,data)</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>post数据来源</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>固定值</td>
+<td>抓包比较不变值</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>输入值</td>
+<td>抓包比较根据自身变化值</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>预设值-静态文件</td>
+<td>需要提前从惊天html中获取</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>预设值-发请求</td>
+<td>需要对指定地址发送请求获取数据</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>在客户端生成的</td>
+<td>发现js模拟生成数据</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="requests-session"><a href="#requests-session" class="headerlink" title="requests.session"></a>requests.session</h1><p><strong>自动保存或者处理cookie</strong></p>
+
 			  </article>
 		</div>
 		
