@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>Oh&gt;..&lt; 无法访问! -  我叫史迪奇</title>
+	<title>爬虫 数据提取(吃牢饭集合) -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -641,31 +641,83 @@ var $main = document.querySelector('.main');
 			<div class="main">
 				<div class="main-content">
 					
-<div class="sdq-post" id="Permalinks">
-  <article>
-    <style>
-    #no{
-    position: relative;
-        top: 30%;
-        left: 50%;
-        -webkit-transform: translate(-50%, 32%);
-        -moz-transform: translate(-50%, 32%);
-        -ms-transform: translate(-50%, 32%);
-        -o-transform: translate(-50%, 32%);
-        transform: translate(-50%, 32%);
-        font-size: 24px;
-    line-height: 72px;
-    margin-bottom: 36px;
-    white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
+
+
+
+<style>
+	#sdqPost:hover{
+   		    background-color: rgba(255, 255, 255, 0.5)!important;
+	}	
 </style>
-<div id="no">
-    404 Oh>..<  离家出走
+<div class="sdq">
+	<div class="sdq-post" id="sdqPost">
+		<div class="sdq-title">
+			<h1>爬虫 数据提取(吃牢饭集合)</h1>
+		</div>
+	  <div id="post" class="sdq-post-Statistics">
+            <a>2021年07月18日</a>
+		  	<a class="post-count">99 字</a>
+		
+		
+	  </div>
+		
+		
+<div id="modal" style="display:none">
+
+<aside id="article-toc" class="fixed-toc">
+    <div id="article-toc-inner">
+        <strong class="sidebar-title">目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E5%86%85%E5%AE%B9%E5%88%86%E7%B1%BB"><span class="toc-text">响应内容分类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E5%8C%96%E7%9A%84%E5%93%8D%E5%BA%94%E5%86%85%E5%AE%B9"><span class="toc-text">结构化的响应内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#json%E5%AD%97%E7%AC%A6%E4%B8%B2-%E9%AB%98%E9%A2%91%E5%87%BA%E7%8E%B0"><span class="toc-text">json字符串(高频出现)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xml%E6%95%B0%E6%8D%AE-%E4%BD%8E%E9%A2%91%E5%87%BA%E7%8E%B0"><span class="toc-text">xml数据(低频出现)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E7%BB%93%E6%9E%84%E5%8C%96%E7%9A%84%E5%93%8D%E5%BA%94%E5%86%85%E5%AE%B9"><span class="toc-text">非结构化的响应内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#html%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">html字符串</span></a></li></ol></li></ol></li></ol>
+    </div>
+</aside>
 </div>
-  </article>
-	
+
+
+		
+			<a href="#modal" class="second">
+				<div class="i">
+						<i style="font-size:20px" class="sdq3 sdqfasong">
+						<span style="font-size:0px">
+						</i>
+				</div>
+			</a>
+
+
+
+
+<script>
+	$(".second .i").mouseover(function(){
+  $(".second .i span").css("font-size","18px");
+});
+	$(".second .i").mouseleave(function(){
+  $(".second .i span").css("font-size","0px");
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+		<div>
+			  <article>
+				<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="响应内容分类"><a href="#响应内容分类" class="headerlink" title="响应内容分类"></a>响应内容分类</h1><h2 id="结构化的响应内容"><a href="#结构化的响应内容" class="headerlink" title="结构化的响应内容"></a>结构化的响应内容</h2><h3 id="json字符串-高频出现"><a href="#json字符串-高频出现" class="headerlink" title="json字符串(高频出现)"></a>json字符串(高频出现)</h3><ul>
+<li>可以使用re,json等模块来提取特定数据</li>
+</ul>
+<h3 id="xml数据-低频出现"><a href="#xml数据-低频出现" class="headerlink" title="xml数据(低频出现)"></a>xml数据(低频出现)</h3><h2 id="非结构化的响应内容"><a href="#非结构化的响应内容" class="headerlink" title="非结构化的响应内容"></a>非结构化的响应内容</h2><h3 id="html字符串"><a href="#html字符串" class="headerlink" title="html字符串"></a>html字符串</h3><ul>
+<li>可以使用re,lxml等模块来提取特定数据</li>
+</ul>
+
+			  </article>
+		</div>
 		
 		
 
@@ -725,7 +777,53 @@ $(window).load(function(){
 });*/
 </script>
 			
+		
+	  
+	
+		
+
+
+<div class="copy">
+<i></i>
+<strong>本文作者：</strong>
+	
+	 
+			史迪奇<br>
+        
+	
+<strong>本文链接：</strong>
+	<a href="https://sdq3.gitee.io/reptile-Extraction.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;reptile-Extraction.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;reptile-Extraction.html</a><br>
 </div>
+
+	  
+	</div>
+</div>
+<script>
+	(function(){
+		var jmz = {};
+		jmz.GetLength = function(str) {
+			var realLength = 0, len = str.length, charCode = -1;
+			for (var i = 0; i < len; i++) {
+				charCode = str.charCodeAt(i);
+				if (charCode >= 0 && charCode <= 128) 
+					  realLength += 1;
+				else
+					  realLength += 1;
+			}
+			return realLength;
+		};
+		//console.log(str);
+		var article = document.querySelector('.sdq-post article').innerHTML.trim();
+
+		var b = article.replace(/<.*?>/ig,"");
+		
+		$('.post-count').html(jmz.GetLength(b)+"字");
+	})()
+
+
+
+</script>
+
 
     				
 					
