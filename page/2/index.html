@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>时间轴 -  我叫史迪奇</title>
+	<title> 我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -643,1915 +643,510 @@ var $main = document.querySelector('.main');
 					
 
 
-        <a href="/axis.html">
-            <div class="sdq-title"> 
-				时间轴
-            </div>
-        </a>
-	
-<div class="sdq-post" id="axis">
- 
-            
 
-	
-	
-	
 
 <style>
+.sdq-post {
+	webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+}
+.sdq-post:hover{
+	webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+}
+</style>
 
-@media screen and (max-width: 1024px) {
-	.sdq-post:hover {
-		box-shadow: 0 4px 24px rgb(255, 255, 255);
-		z-index: 50!important;
-		padding: 15px!important;
+
+<style>
+@media screen and (max-width: 1024px){
+	.sdq-more{    
+    opacity: 1!important;
+	}
+	.sdq-more{  
+		display: contents!important;	
+	}
+	.sdq-toping{
+		display: inline-block;
+		left: 10px;
+		top: 0;
+		z-index: 2;
+		color: #FFFFFF;
+		padding: 0 10px;
+		border-radius: 4px;
+		font-style: normal;
+		background-color: rgba(234, 67, 74, 0.7);
+	}
+	.sdq-post:hover .sdq-toping {display: inline-block!important;}
+}
+
+@media screen and (min-width: 1024px){
+	.sdq-toping{
+		display: none;
+		position: fixed;
+		left: 10px;
+		top: 0;
+		z-index: 2;color: #FFFFFF;
+		clip-path: polygon(100% 0, 100% 100%, 50% 70%, 0 100%, 0 0);
+		background-color: rgba(255, 0, 0, 0.51);    
+		background: -webkit-gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
+    	background: gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
+		height: 61px;
+		width: 41px;
 	}
 }
-	.sdq-axis-img img{
-		width: 15%;
-        border-radius: 15px 15px;
+	.sdq-more{   
+	display: inline-block;
+    float: right;
+    background-color: rgba(204, 196, 196, 0.45);
+    padding: .5rem 1rem;
+    border-radius: 4px;
+    color: #919191!important;
+    text-decoration: none;
+    opacity: 0;
+    -webkit-transition: opacity 1.2s;
+    transition: opacity 1.2s;
+    will-change: opacity;
+        -moz-user-select: none; /*火狐*/
+        -webkit-user-select: none; /*webkit浏览器*/
+        -ms-user-select: none; /*IE10*/
+        -khtml-user-select: none; /*早期浏览器*/
+        -o-user-select: none; /* Opera*/
+        user-select: none;
 	}
-	#history  li::before{
-	content: "";
-    width: 14px;
-    height: 14px;
-    background: #fff;
-    display: inline-block;
-    vertical-align: middle;
-    margin-top: -2px;
-    margin-right: 11px;
-    border-radius: 100%;
-    border: 3px solid rgb(41, 215, 255);
-    z-index: 100;
-    position: relative;
+	.sdq-post:hover .sdq-more {
+		opacity: 1;
+		animation: fade-in;
+		animation-duration: 0.6s;
+		-webkit-animation: fade-in 0.6s;
 	}
-	#history li::after {
-    content: "";
-    height: 100%;
-    width: 2px;
-    background: rgba(96, 195, 255, 0.48);
-    position: absolute;
-    left: 6px;
-    top: 20px;
+	
+	@keyframes fade-in {  
+    0% {opacity: 0;}/*初始状态 透明度为0*/  
+    40% {opacity: 0;}/*过渡状态 透明度为0*/  
+    100% {opacity: 1;}/*结束状态 透明度为1*/  
+	}  
+	@-webkit-keyframes fade-in {/*针对webkit内核*/  
+		0% {opacity: 0;}  
+		40% {opacity: 0;}  
+		100% {opacity: 1;}  
+	}  
+	.sdq-post:hover .sdq-toping {display: block;}
+	.sdq-tags{
+	}
+	.sdq-tags a{
+		color: #fff; 
+		font-size: 15px; 
+	}
+	.sdq-tags a {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+	}
+	
+</style>
+
+
+<style>
+	
+@media screen and (min-width: 1024px){
+	.sdq-post:hover{
+   		border: none;
+		transform: translateY(-20px);
+		-webkit-transform: translateY(-20px);
+		-moz-transform: translateY(-20px);
+		background-color: rgba(255, 255, 255, 0.3);
+	}
+	.sdq-post{    
+		padding: 60px 70px!important;
+	}
 }
-	#history  li{
-	position: relative;
-    padding: 10px 0;
-    line-height: 24px;
-	}
-	#history #listul{
-     /*display:block;*/
-	}
-	#history #listul:nth-child(2){
-    /*display:block;*/
-	}
-	#history .content{
-    position: relative;
-    margin-left: 25px;
-	}
-	#history .title{
-    margin-top: 22px;
+	.sdq-post{    
+/*   		border: 1px #b8c7ff solid;*/
+		margin: 0px;    margin-bottom: 20px;
+        background-color: rgba(240, 248, 255, 0.4);
 	}
 </style>
+
+
+
+
+
+
+<div class="sdq">
+	<section class="sdq-posts">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/reptile-novel.html">
+					<div class="sdq-title"> 
+						爬虫 爬小说(牢饭吃到饱)未完待续
+					</div>
+				</a>
+			</div>
+			
+		</div>
+
+			<article>
+				
+				<p><strong>每天一个入狱小技巧</strong></p>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年07月09日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/reptile-novel.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
 	
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/reptile-python%E2%80%94node.js.html">
+					<div class="sdq-title"> 
+						爬虫 比Python功能更加强大的node.js简介(牢饭吃到饱)未完待续
+					</div>
+				</a>
+			</div>
+			
+		</div>
+
+			<article>
+				
+				<p><strong>每天一个入狱小技巧</strong></p>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年07月09日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/reptile-python%E2%80%94node.js.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
+	
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/reptile-RegEx.html">
+					<div class="sdq-title"> 
+						爬虫 正则表达式(牢饭吃到饱)
+					</div>
+				</a>
+			</div>
+			
+		</div>
+
+			<article>
+				
+				<p><strong>每天一个入狱小技巧</strong></p>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年07月09日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/reptile-RegEx.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
+	
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/reptile-concept.html">
+					<div class="sdq-title"> 
+						爬虫 概念(牢饭吃到饱)
+					</div>
+				</a>
+			</div>
+			
+		</div>
+
+			<article>
+				
+				<p><strong>每天一个入狱小技巧</strong></p>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年07月09日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/reptile-concept.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
+	
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/reptile-message.html">
+					<div class="sdq-title"> 
+						爬虫 报文(吃牢饭集合)
+					</div>
+				</a>
+			</div>
+			
+		</div>
+
+			<article>
+				
+				<p><strong>每天一个入狱小技巧</strong></p>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年07月09日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/reptile-message.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
+	
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/reptile-agent.html">
+					<div class="sdq-title"> 
+						爬虫 代理(吃牢饭集合)
+					</div>
+				</a>
+			</div>
+			
+		</div>
+
+			<article>
+				
+				<p><strong>每天一个入狱小技巧</strong></p>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年07月09日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/reptile-agent.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
+	
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/reptile-xpath.html">
+					<div class="sdq-title"> 
+						爬虫 xpath(牢饭吃到饱)
+					</div>
+				</a>
+			</div>
+			
+		</div>
+
+			<article>
+				
+				<p><strong>每天一个入狱小技巧</strong></p>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年07月09日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/reptile-xpath.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
+	
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/reptile-verify-CA.html">
+					<div class="sdq-title"> 
+						爬虫 verify参数与CA证书(吃牢饭集合)
+					</div>
+				</a>
+			</div>
+			
+		</div>
+
+			<article>
+				
+				<p><strong>每天一个入狱小技巧</strong></p>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年07月09日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/reptile-verify-CA.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
+	
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/reptile-re.html">
+					<div class="sdq-title"> 
+						爬虫 re模块的使用(牢饭吃到饱)
+					</div>
+				</a>
+			</div>
+			
+		</div>
+
+			<article>
+				
+				<p><strong>每天一个入狱小技巧</strong></p>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年07月09日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/reptile-re.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
+	
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/reptile-header.html">
+					<div class="sdq-title"> 
+						爬虫 requests模块(吃牢饭集合)
+					</div>
+				</a>
+			</div>
+			
+		</div>
+
+			<article>
+				
+				<p><strong>每天一个入狱小技巧</strong></p>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年07月09日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/reptile-header.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
+	
+    
+</section>
 	
 
-	  
-<div id="history">
 
-		<div class="title"><b>2021</b></div>
-	<div id="listul">
-	
-		<ul>
-            
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-18</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/reptile-Extraction.html">
-								爬虫 数据提取(吃牢饭集合)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>每天一个入狱小技巧</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/mathematics-concept.html">
-								跟我一起学算法(概念章)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>走进数学的奇妙世界</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/mathematics.html">
-								跟我一起学数学</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>走进数学的奇妙世界</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/Thread-Process.html">
-								什么是线程?什么是进程?线程与进程到底是什么关系</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>概念</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/Private-cloud.html">
-								私有云配置(个人笔记)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>要有Linux基础</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/baidu.html">
-								百度搜索技巧</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>技巧</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/reptile-Baidutranslate.html">
-								爬虫 访问百度翻译(牢饭吃到饱)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>每天一个入狱小技巧</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/reptile-header.html">
-								爬虫 请求头和响应头(吃牢饭集合)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>每天一个入狱小技巧</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/reptile-state.html">
-								爬虫 状态码(吃牢饭集合)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>每天一个入狱小技巧</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/reptile-mao.html">
-								爬虫 爬猫猫图片(牢饭吃到饱)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>每天一个入狱小技巧</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/reptile-novel.html">
-								爬虫 爬小说(牢饭吃到饱)未完待续</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>每天一个入狱小技巧</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/reptile-python—node.js.html">
-								爬虫 比Python功能更加强大的node.js简介(牢饭吃到饱)未完待续</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>每天一个入狱小技巧</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/reptile-RegEx.html">
-								爬虫 正则表达式(牢饭吃到饱)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>每天一个入狱小技巧</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/reptile-concept.html">
-								爬虫 概念(牢饭吃到饱)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>每天一个入狱小技巧</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/reptile-message.html">
-								爬虫 报文(吃牢饭集合)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>每天一个入狱小技巧</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/reptile-agent.html">
-								爬虫 代理(吃牢饭集合)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>每天一个入狱小技巧</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/reptile-xpath.html">
-								爬虫 xpath(牢饭吃到饱)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>每天一个入狱小技巧</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/reptile-verify-CA.html">
-								爬虫 verify参数与CA证书(吃牢饭集合)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>每天一个入狱小技巧</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/reptile-re.html">
-								爬虫 re模块的使用(牢饭吃到饱)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>每天一个入狱小技巧</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/reptile-header.html">
-								爬虫 requests模块(吃牢饭集合)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>每天一个入狱小技巧</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/reptile-cookie.html">
-								爬虫 cookie(吃牢饭集合)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>每天一个入狱小技巧</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/reptile-http-https.html">
-								爬虫 http和https(吃牢饭集合)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>每天一个入狱小技巧</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/reptile-bs4-lxml.html">
-								爬虫 Beautiful Soup(牢饭吃到饱)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>每天一个入狱小技巧</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/zjx2.8.1.html">
-								职教星2.8.2(搬运软件)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>职教星2.8.2</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/python-jjcc.html">
-								python 基本运算符(我失忆了)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>我真的失忆了</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/python-zfc.html">
-								python 字符串(我失忆了)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>我真的失忆了</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/python-type.html">
-								python 数据类型(我失忆了)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>我真的失忆了</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/python-zfc.html">
-								python 字符串(我失忆了)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>我真的失忆了</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/Android-compile.html">
-								Android同步源码和编译ROM傻瓜式 (有手就行)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>本人是用Arch，顺便来传一下教</strong><br><img src="/images/编译Android/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/xcyd.html">
-								下次一定</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>本人制作简单的一款软件</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/Arch-Wsl-install.html">
-								Arch wsl的傻瓜式安装 (有手就行)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>本人是Arch教徒过来传一下教</strong> </p>
-<img src="/images/wsl傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;">
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/Vue-usage.html">
-								Vue.js 表单输入绑定的基础用法</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>Vue.js个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/Vue-network-books.html">
-								Vue.js 网页笔记本</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>Vue.js个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/one-Vue.html">
-								第一个Vue.js</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>Vue.js个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/String-compare.html">
-								String 比较</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>个人笔记</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/SQL-try.html">
-								SQL Server T-SQL 视图</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>SQL Server个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/SQL-storage.html">
-								SQL Server T-SQL 存储过程</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>SQL Server个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/SQL-kbl.html">
-								SQL Server T-SQL 从创建数据库到创建数据表到插入数据</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>SQL Server个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/Linux-command.html">
-								Linux命令(未完工)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>Linux基本命令</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/json-python.html">
-								轻松理解json与python关系</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>json笔记</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/Object-oriented-constructor-heavy-load.html">
-								Java面向对象思维之构造方法需的重载</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>学习Java个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/Object-oriented-constructor.html">
-								Java面向对象思维之构造方法</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>学习Java个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/Object-oriented-this.html">
-								Java面向对象思维</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>学习Java个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/Object-oriented-getter-setter.html">
-								Java面向对象思维之getter和setter(作用)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>学习Java个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/Object-oriented.html">
-								Java面向对象思维</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>学习Java个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/JavaScript-array.html">
-								JavaScript 数据类型之(数组类型)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>JavaScript个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/JavaScript-object.html">
-								JavaScript 数据类型之(对象)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>JavaScript个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/JavaScript-string.html">
-								JavaScript 数据类型之(字符串类型)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>JavaScript个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/JavaScript-branch-loop.html">
-								JavaScript 数据类型之(分支和循环)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>JavaScript个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/JavaScript-Map-Set.html">
-								JavaScript 数据类型之(Map和Set)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>JavaScript个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/JavaScript-definition-obtain.html">
-								JavaScript JavaScript (函数之定义和获取)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>JavaScript个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/JavaScript-Map-Set.html">
-								JavaScript 数据类型之(Map和Set)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>JavaScript个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/Java-Swing.html">
-								Java Swing 图形界面速背表(未完工)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>学习Java个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/HTML-form.html">
-								HTML 表格</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>HTML个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/HTML-operation.html">
-								HTML 基本控件大集合</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>HTML个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/HTML-iframe.html">
-								HTML iframe内联框架</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>HTML个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/Hexo-install.html">
-								关于Hexo搭建博客我所踩过的坑和小白安装教程</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>搭建博客笔记</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/EJS.html">
-								EJS常用标签</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>EJS个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/CSS-Import-styles.html">
-								CSS 三种导入样式</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>CSS个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/CSS8.html">
-								CSS-边距-边框-阴影-浮动-定位-透明-z-index-动画</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>CSS个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/CSS三种导入样式.html">
-								CSS 三种导入样式</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>CSS个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/CSS属性选择器.html">
-								CSS 属性选择器(常用)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>CSS个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/CSS层次选择器.html">
-								CSS 层次选择器</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>CSS个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/CSS列表.html">
-								CSS 列表</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>CSS个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/CSS伪类选择器.html">
-								CSS 伪类选择器</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>CSS个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/CSS三种基本选择器.html">
-								CSS 三种基本选择器</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>CSS个人整理</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/Bodhi-Linux.html">
-								Bodhi Linux安装教程(老电脑的福利)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/Arch-install.html">
-								Arch系统包桌面傻瓜式安装 (有手就行)</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>本人是Arch教徒过来传一下教</strong> </p>
-<img src="/images/Arch傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;">
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/Anroid-structure.html">
-								Anroid 项目结构</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>未完待续</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-			<li>
-				<div class="content">
-					<div>
-						<div>
-							<span>07-09</span>
-						</div>
-					</div>
-					
-
-					<div >
-
-						<div>
-							<a href="/HelloWorld.html">
-								33种编程语言的HelloWorld</a>
-						</div>
-						<div class="sdq-axis-img">
-							<p><strong>我的核心代码</strong></p>
-							
-						</div>
-
-					</div>
-
-				</div>
-
-			</li>
-                
-		</ul>
-	</div>
-
-
+    <nav id="paging">
+      <a class="extend prev" rel="prev" href="/"><i class="sdqMsDanIconFont"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/"><i class="sdqMsDanIconFont"></i></a>
+    </nav>
+  
+
+<!--
+        prev_text: '<i class="iconfont">&#xe617;</i>',
+        next_text: '<i class="iconfont">&#xe627;</i>'
+-->
 </div>
 
-</div>
+
+
+
+
+
+
+
+
+
+
     				
 					
 	
