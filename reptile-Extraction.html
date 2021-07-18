@@ -667,7 +667,7 @@ var $main = document.querySelector('.main');
 <aside id="article-toc" class="fixed-toc">
     <div id="article-toc-inner">
         <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E5%86%85%E5%AE%B9%E5%88%86%E7%B1%BB"><span class="toc-text">响应内容分类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E5%8C%96%E7%9A%84%E5%93%8D%E5%BA%94%E5%86%85%E5%AE%B9"><span class="toc-text">结构化的响应内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#json%E5%AD%97%E7%AC%A6%E4%B8%B2-%E9%AB%98%E9%A2%91%E5%87%BA%E7%8E%B0"><span class="toc-text">json字符串(高频出现)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xml%E6%95%B0%E6%8D%AE-%E4%BD%8E%E9%A2%91%E5%87%BA%E7%8E%B0"><span class="toc-text">xml数据(低频出现)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E7%BB%93%E6%9E%84%E5%8C%96%E7%9A%84%E5%93%8D%E5%BA%94%E5%86%85%E5%AE%B9"><span class="toc-text">非结构化的响应内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#html%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">html字符串</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E5%86%85%E5%AE%B9%E5%88%86%E7%B1%BB"><span class="toc-text">响应内容分类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E5%8C%96%E7%9A%84%E5%93%8D%E5%BA%94%E5%86%85%E5%AE%B9"><span class="toc-text">结构化的响应内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#json%E5%AD%97%E7%AC%A6%E4%B8%B2-%E9%AB%98%E9%A2%91%E5%87%BA%E7%8E%B0"><span class="toc-text">json字符串(高频出现)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xml%E6%95%B0%E6%8D%AE-%E4%BD%8E%E9%A2%91%E5%87%BA%E7%8E%B0"><span class="toc-text">xml数据(低频出现)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E7%BB%93%E6%9E%84%E5%8C%96%E7%9A%84%E5%93%8D%E5%BA%94%E5%86%85%E5%AE%B9"><span class="toc-text">非结构化的响应内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#html%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">html字符串</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#xml%E4%B8%8Ehtml%E5%8C%BA%E5%88%AB"><span class="toc-text">xml与html区别</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#xml"><span class="toc-text">xml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html"><span class="toc-text">html</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90%E6%96%B9%E6%B3%95"><span class="toc-text">常用的数据解析方法</span></a></li></ol>
     </div>
 </aside>
 </div>
@@ -718,6 +718,49 @@ var $main = document.querySelector('.main');
 <h2 id="非结构化的响应内容"><a href="#非结构化的响应内容" class="headerlink" title="非结构化的响应内容"></a>非结构化的响应内容</h2><h3 id="html字符串"><a href="#html字符串" class="headerlink" title="html字符串"></a>html字符串</h3><ul>
 <li>可以使用re,lxml等模块来提取特定数据</li>
 </ul>
+<h1 id="xml与html区别"><a href="#xml与html区别" class="headerlink" title="xml与html区别"></a>xml与html区别</h1><table>
+<thead>
+<tr>
+<th align="center">数据格式</th>
+<th align="center">描述</th>
+<th align="center">设计目标</th>
+<th align="center">个人总结</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">XML</td>
+<td align="center">Extensible Markup Language(可扩展标记语言)</td>
+<td align="center">被设计为传输和存储数据, 其焦点是数据的内容</td>
+<td align="center">xml传输和储存数据</td>
+</tr>
+<tr>
+<td align="center">HTML</td>
+<td align="center">HyperText Markup Language(超文本标记语言)</td>
+<td align="center">显示数据已经然后更好显示数据</td>
+<td align="center">html展示数据</td>
+</tr>
+</tbody></table>
+<h2 id="xml"><a href="#xml" class="headerlink" title="xml"></a>xml</h2><ul>
+<li>可扩展标记语言</li>
+<li>为了传输和储存数据, 侧重点是在于数据内容本身</li>
+<li>xml是一种可扩展标记语言, 样子和html很像, 功能更专注对传输和储存数据</li>
+</ul>
+<p>_</p>
+<h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><ul>
+<li>超文本记语言</li>
+<li>为了更好的显示数据, 侧重点是为显示</li>
+<li>html是显示效果更好, 用于展示数据</li>
+</ul>
+<h1 id="常用的数据解析方法"><a href="#常用的数据解析方法" class="headerlink" title="常用的数据解析方法"></a>常用的数据解析方法</h1><pre><code>                                        /   json模块
+                              /   jspn |
+                             /          \   jsonpath模块
+             数据化数据      /
+         /￣￣￣￣￣￣￣￣￣￣\
+        /                     \         /   re模块    正则语法
+       /                       \  xml  |
+      /                                 \   lxml模块  xpath语法
+     /                                 </code></pre>
+<p>  数据解析<br>         \<br>          \                                 /   re模块    正则语法<br>           \                               /    lxml模块  xpath语法<br>            \                             /<br>             _<strong><strong><strong><strong>__</strong></strong></strong></strong>   html |      beautifulsoup  xpath语法 正则语法 css选择器<br>                 非结构化数据              \<br>                                           <br>                                            \   pyquery   css选择器</p>
 
 			  </article>
 		</div>

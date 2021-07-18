@@ -710,9 +710,11 @@ var $main = document.querySelector('.main');
 <a id="more"></a>
 <h1 id="理解使用代理的过程"><a href="#理解使用代理的过程" class="headerlink" title="理解使用代理的过程"></a>理解使用代理的过程</h1><p><strong>代理ip是一个ip, 指向的是一个代理服务器</strong></p>
 <p><strong>代理服务器能够帮我们向目标服务器转发请求</strong></p>
-<pre><code>   ↗￣request￣￣↘   ↗￣request￣￣↘
-浏览器             代理              Web server
-   ↖__response__ ↙   ↖__response__↙</code></pre>
+<pre><code>      request         request
+   ↗￣￣￣￣￣↘   ↗￣￣￣￣￣↘
+浏览器         代理              Web server
+   ↖_________↙   ↖_________↙
+     response        response</code></pre>
 <h1 id="正向代理"><a href="#正向代理" class="headerlink" title="正向代理"></a>正向代理</h1><p><strong>为浏览器或客户端(发送请求的一方)转发请求的, 叫做正向代理</strong></p>
 <ul>
 <li>浏览器知道最终处理请求服务器的真实ip地址, 例如vpn</li>
