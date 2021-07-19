@@ -67,44 +67,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Bodhi Linux安装教程(老电脑的福利)</title>
-    <url>/Bodhi-Linux.html</url>
-    <content><![CDATA[<p><strong>本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版</strong></p>
-<a id="more"></a>
-
-<p><strong>以下是我的电脑的参数</strong></p>
-<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%81%94%E6%83%B3G430.jpg"></p>
-<h1 id="第一步-安装Bodhi-Linux"><a href="#第一步-安装Bodhi-Linux" class="headerlink" title="第一步 安装Bodhi Linux"></a>第一步 安装Bodhi Linux</h1><p><strong>Bodhi Linux<a href="https://nchc.dl.sourceforge.net/project/bodhilinux/5.1.0/bodhi-5.1.0-64.iso">个人建议Standard版本</a>如果你想选择别的版本到<a href="https://www.bodhilinux.com/download/">官网找</a></strong></p>
-<p><a href="https://www.bilibili.com/video/BV1aW411C7NR">安装视频参考Ubantu的, 都是可视化界面安装</a></p>
-<h1 id="第二步-老电脑无法连接WIFI-所以终端输入以下命令"><a href="#第二步-老电脑无法连接WIFI-所以终端输入以下命令" class="headerlink" title="第二步 老电脑无法连接WIFI 所以终端输入以下命令"></a>第二步 老电脑无法连接WIFI 所以终端输入以下命令</h1><p><strong>建议用网线装机</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install bcmwl-kernel-source</span><br></pre></td></tr></table></figure>
-
-<p><strong>仍然没有的话 就在终端输入以下命令</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo nano /etc/modprobe.d/blacklist.conf   //nano命令ctrl+x退出，选择y后保存</span><br><span class="line">$ blacklist acer-wmi   //最后一行加入</span><br></pre></td></tr></table></figure>
-
-<h1 id="第三步-安装安装中文环境"><a href="#第三步-安装安装中文环境" class="headerlink" title="第三步 安装安装中文环境"></a>第三步 安装安装中文环境</h1><p><strong>安装中文字体和中文语言包</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install -y language-pack-zh-hans language-pack-zh-hans-base language-pack-gnome-zh-hans language-pack-gnome-zh-hans-base fonts-wqy-microhei</span><br></pre></td></tr></table></figure>
-
-<p><strong>然后按照以下打开步骤</strong></p>
-<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%871.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%872.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%873.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%874.jpg"></p>
-<h1 id="第四步安装输入法"><a href="#第四步安装输入法" class="headerlink" title="第四步安装输入法"></a>第四步安装输入法</h1><p><strong>这里<a href="https://pinyin.sogou.com/linux/">安装搜狗输入法</a></strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install fonts-droid-fallback zip   //安装它的依赖包</span><br><span class="line">$ sudo dpkg -i xxx    //xxx为下载的包名 后缀名也要</span><br></pre></td></tr></table></figure>
-<h1 id="第五步安装一些常用软件"><a href="#第五步安装一些常用软件" class="headerlink" title="第五步安装一些常用软件"></a>第五步安装一些常用软件</h1><p><strong>例如安装vim</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install vim   //vim是文本编辑软件</span><br></pre></td></tr></table></figure>
-<p><strong>例如浏览器 它自身也有web浏览器 看个人喜欢</strong></p>
-<p><strong>安装火狐浏览器和中文语言包</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get remove firefox</span><br><span class="line">$ sudo apt-get install -y firefox firefox-locale-zh-hans</span><br></pre></td></tr></table></figure>
-<p><strong>安装谷歌浏览器</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/</span><br><span class="line">wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -     //先添加源</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install google-chrome-stable     //安装谷歌浏览器</span><br></pre></td></tr></table></figure>
-<h1 id="安装neofetch"><a href="#安装neofetch" class="headerlink" title="安装neofetch"></a>安装neofetch</h1><p><strong>终端输入以下命令</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:dawidd0811/neofetch</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install neofetch</span><br><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
-<p><strong>本人试了(CrunchBang Linux), (Zenix Linux), (antiX Linux), (Zenwalk Linux), (Xubuntu Linux), (Lubuntu Linux), (Tiny Core Linux), (SliTaz Linux), (Porteus Linux), (Puppy Linux), (Silverblue Linux), (4MLinux)等等带桌面的发行版然后就唯独Bodhi Linux最满意</strong></p>
-<p><strong>至于为什么要带桌面的发行版, 因为要日用偶尔看看B站什么的</strong></p>
-<p><strong>关于这台电脑用的硬盘 大小80G 有9724个坏道 拆掉坏掉的戴尔一条三星的DDR2 才有2G内存可以体验</strong></p>
-<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E5%9D%8F%E9%81%93.jpg"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Arch系统包桌面傻瓜式安装 (有手就行)</title>
     <url>/Arch-install.html</url>
     <content><![CDATA[<p><strong>本人是Arch教徒过来传一下教</strong> </p>
@@ -605,6 +567,44 @@ var tools = (function(){
 
 </script> -->
 </ul></ul></ul></ul>]]></content>
+  </entry>
+  <entry>
+    <title>Bodhi Linux安装教程(老电脑的福利)</title>
+    <url>/Bodhi-Linux.html</url>
+    <content><![CDATA[<p><strong>本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版</strong></p>
+<a id="more"></a>
+
+<p><strong>以下是我的电脑的参数</strong></p>
+<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%81%94%E6%83%B3G430.jpg"></p>
+<h1 id="第一步-安装Bodhi-Linux"><a href="#第一步-安装Bodhi-Linux" class="headerlink" title="第一步 安装Bodhi Linux"></a>第一步 安装Bodhi Linux</h1><p><strong>Bodhi Linux<a href="https://nchc.dl.sourceforge.net/project/bodhilinux/5.1.0/bodhi-5.1.0-64.iso">个人建议Standard版本</a>如果你想选择别的版本到<a href="https://www.bodhilinux.com/download/">官网找</a></strong></p>
+<p><a href="https://www.bilibili.com/video/BV1aW411C7NR">安装视频参考Ubantu的, 都是可视化界面安装</a></p>
+<h1 id="第二步-老电脑无法连接WIFI-所以终端输入以下命令"><a href="#第二步-老电脑无法连接WIFI-所以终端输入以下命令" class="headerlink" title="第二步 老电脑无法连接WIFI 所以终端输入以下命令"></a>第二步 老电脑无法连接WIFI 所以终端输入以下命令</h1><p><strong>建议用网线装机</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install bcmwl-kernel-source</span><br></pre></td></tr></table></figure>
+
+<p><strong>仍然没有的话 就在终端输入以下命令</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo nano /etc/modprobe.d/blacklist.conf   //nano命令ctrl+x退出，选择y后保存</span><br><span class="line">$ blacklist acer-wmi   //最后一行加入</span><br></pre></td></tr></table></figure>
+
+<h1 id="第三步-安装安装中文环境"><a href="#第三步-安装安装中文环境" class="headerlink" title="第三步 安装安装中文环境"></a>第三步 安装安装中文环境</h1><p><strong>安装中文字体和中文语言包</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install -y language-pack-zh-hans language-pack-zh-hans-base language-pack-gnome-zh-hans language-pack-gnome-zh-hans-base fonts-wqy-microhei</span><br></pre></td></tr></table></figure>
+
+<p><strong>然后按照以下打开步骤</strong></p>
+<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%871.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%872.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%873.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%874.jpg"></p>
+<h1 id="第四步安装输入法"><a href="#第四步安装输入法" class="headerlink" title="第四步安装输入法"></a>第四步安装输入法</h1><p><strong>这里<a href="https://pinyin.sogou.com/linux/">安装搜狗输入法</a></strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install fonts-droid-fallback zip   //安装它的依赖包</span><br><span class="line">$ sudo dpkg -i xxx    //xxx为下载的包名 后缀名也要</span><br></pre></td></tr></table></figure>
+<h1 id="第五步安装一些常用软件"><a href="#第五步安装一些常用软件" class="headerlink" title="第五步安装一些常用软件"></a>第五步安装一些常用软件</h1><p><strong>例如安装vim</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install vim   //vim是文本编辑软件</span><br></pre></td></tr></table></figure>
+<p><strong>例如浏览器 它自身也有web浏览器 看个人喜欢</strong></p>
+<p><strong>安装火狐浏览器和中文语言包</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get remove firefox</span><br><span class="line">$ sudo apt-get install -y firefox firefox-locale-zh-hans</span><br></pre></td></tr></table></figure>
+<p><strong>安装谷歌浏览器</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/</span><br><span class="line">wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -     //先添加源</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install google-chrome-stable     //安装谷歌浏览器</span><br></pre></td></tr></table></figure>
+<h1 id="安装neofetch"><a href="#安装neofetch" class="headerlink" title="安装neofetch"></a>安装neofetch</h1><p><strong>终端输入以下命令</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:dawidd0811/neofetch</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install neofetch</span><br><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
+<p><strong>本人试了(CrunchBang Linux), (Zenix Linux), (antiX Linux), (Zenwalk Linux), (Xubuntu Linux), (Lubuntu Linux), (Tiny Core Linux), (SliTaz Linux), (Porteus Linux), (Puppy Linux), (Silverblue Linux), (4MLinux)等等带桌面的发行版然后就唯独Bodhi Linux最满意</strong></p>
+<p><strong>至于为什么要带桌面的发行版, 因为要日用偶尔看看B站什么的</strong></p>
+<p><strong>关于这台电脑用的硬盘 大小80G 有9724个坏道 拆掉坏掉的戴尔一条三星的DDR2 才有2G内存可以体验</strong></p>
+<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E5%9D%8F%E9%81%93.jpg"></p>
+]]></content>
   </entry>
   <entry>
     <title>CSS 三种基本选择器</title>
@@ -1228,6 +1228,20 @@ $</style>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> set = <span class="keyword">new</span> set([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">100</span>]]);</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> set)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
+    <title>JavaScript 数据类型之(分支和循环)</title>
+    <url>/JavaScript-branch-loop.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="if-判断-循环"><a href="#if-判断-循环" class="headerlink" title="if 判断/循环"></a>if 判断/循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="keyword">var</span> age = <span class="number">3</span>;</span><br><span class="line">$  <span class="keyword">if</span>(sdq &gt; <span class="number">3</span>)&#123;    <span class="comment">/*第一个判断*/</span></span><br><span class="line">$   alert(<span class="string">&quot;史迪奇骑士&quot;</span>);</span><br><span class="line">$   &#125;</span><br><span class="line">$  <span class="keyword">else</span> <span class="keyword">if</span>(sdq &lt; <span class="number">5</span>)&#123;    <span class="comment">/*第二个判断*/</span></span><br><span class="line">$   alert(<span class="string">&quot;史迪奇国王&quot;</span>);</span><br><span class="line">$   &#125;</span><br><span class="line">$  <span class="keyword">else</span> &#123;               <span class="comment">/*否则*/</span></span><br><span class="line">$   alert(<span class="string">&quot;史迪奇战士&quot;</span>);</span><br><span class="line">$   &#125; </span><br></pre></td></tr></table></figure>
+<h1 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">while</span>(sdq &lt; <span class="number">100</span>)&#123;</span><br><span class="line">$        sdq = sdq + <span class="number">1</span>;</span><br><span class="line">$        <span class="built_in">console</span>.log(sdq)</span><br><span class="line">$        &#125;  </span><br></pre></td></tr></table></figure>
+<h1 id="do-while-循环"><a href="#do-while-循环" class="headerlink" title="do while 循环"></a>do while 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">do</span> &#123;</span><br><span class="line">$        sdq = sdq + <span class="number">1</span>;</span><br><span class="line">$        <span class="built_in">console</span>.log(sdq)</span><br><span class="line">$        &#125; </span><br><span class="line">$    <span class="keyword">while</span>(sdq &lt; <span class="number">100</span>) </span><br></pre></td></tr></table></figure>
+<h1 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++)&#123;</span><br><span class="line">$       <span class="built_in">console</span>.log(i)</span><br><span class="line">$  &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="forEach-循环"><a href="#forEach-循环" class="headerlink" title="forEach 循环"></a>forEach 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> sdq = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line">$   <span class="comment">/*函数*/</span></span><br><span class="line">$   sdq.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">$       <span class="built_in">console</span>.log(value)</span><br><span class="line">$   &#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="for-…-in-循环"><a href="#for-…-in-循环" class="headerlink" title="for … in 循环"></a>for … in 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">for</span>(<span class="keyword">var</span> sdq <span class="keyword">in</span> age) &#123;</span><br><span class="line">$       <span class="keyword">if</span> (sdq.hasOwnProperty(sdz)) &#123;</span><br><span class="line">$           <span class="built_in">console</span>.log(<span class="string">&quot;存在&quot;</span>)</span><br><span class="line">$           <span class="built_in">console</span>.log(sdq[sdz])</span><br><span class="line">$       &#125;</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>JavaScript 数据类型之(字符串类型)</title>
     <url>/JavaScript-string.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
@@ -1244,20 +1258,6 @@ $</style>
 <h1 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="comment">/*是方法不是属性*/</span></span><br><span class="line">$  sdq.toUpperCase()          <span class="comment">/*大写*/</span></span><br><span class="line">$  sdq.LowerCase()          <span class="comment">/*小写*/</span></span><br></pre></td></tr></table></figure>
 <h1 id="字符串截取"><a href="#字符串截取" class="headerlink" title="字符串截取"></a>字符串截取</h1><p><strong>subsrting</strong></p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  sdq.subsrting(<span class="number">1</span>)          <span class="comment">/*从第一个字符串截取到最后一个字符串*/</span></span><br><span class="line">$  sdq.LowerCase(<span class="number">1</span>,<span class="number">3</span>)          <span class="comment">/*包头不包尾*/</span></span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
-    <title>JavaScript 数据类型之(分支和循环)</title>
-    <url>/JavaScript-branch-loop.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="if-判断-循环"><a href="#if-判断-循环" class="headerlink" title="if 判断/循环"></a>if 判断/循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="keyword">var</span> age = <span class="number">3</span>;</span><br><span class="line">$  <span class="keyword">if</span>(sdq &gt; <span class="number">3</span>)&#123;    <span class="comment">/*第一个判断*/</span></span><br><span class="line">$   alert(<span class="string">&quot;史迪奇骑士&quot;</span>);</span><br><span class="line">$   &#125;</span><br><span class="line">$  <span class="keyword">else</span> <span class="keyword">if</span>(sdq &lt; <span class="number">5</span>)&#123;    <span class="comment">/*第二个判断*/</span></span><br><span class="line">$   alert(<span class="string">&quot;史迪奇国王&quot;</span>);</span><br><span class="line">$   &#125;</span><br><span class="line">$  <span class="keyword">else</span> &#123;               <span class="comment">/*否则*/</span></span><br><span class="line">$   alert(<span class="string">&quot;史迪奇战士&quot;</span>);</span><br><span class="line">$   &#125; </span><br></pre></td></tr></table></figure>
-<h1 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">while</span>(sdq &lt; <span class="number">100</span>)&#123;</span><br><span class="line">$        sdq = sdq + <span class="number">1</span>;</span><br><span class="line">$        <span class="built_in">console</span>.log(sdq)</span><br><span class="line">$        &#125;  </span><br></pre></td></tr></table></figure>
-<h1 id="do-while-循环"><a href="#do-while-循环" class="headerlink" title="do while 循环"></a>do while 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">do</span> &#123;</span><br><span class="line">$        sdq = sdq + <span class="number">1</span>;</span><br><span class="line">$        <span class="built_in">console</span>.log(sdq)</span><br><span class="line">$        &#125; </span><br><span class="line">$    <span class="keyword">while</span>(sdq &lt; <span class="number">100</span>) </span><br></pre></td></tr></table></figure>
-<h1 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++)&#123;</span><br><span class="line">$       <span class="built_in">console</span>.log(i)</span><br><span class="line">$  &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="forEach-循环"><a href="#forEach-循环" class="headerlink" title="forEach 循环"></a>forEach 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> sdq = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line">$   <span class="comment">/*函数*/</span></span><br><span class="line">$   sdq.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">$       <span class="built_in">console</span>.log(value)</span><br><span class="line">$   &#125;)</span><br></pre></td></tr></table></figure>
-<h1 id="for-…-in-循环"><a href="#for-…-in-循环" class="headerlink" title="for … in 循环"></a>for … in 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">for</span>(<span class="keyword">var</span> sdq <span class="keyword">in</span> age) &#123;</span><br><span class="line">$       <span class="keyword">if</span> (sdq.hasOwnProperty(sdz)) &#123;</span><br><span class="line">$           <span class="built_in">console</span>.log(<span class="string">&quot;存在&quot;</span>)</span><br><span class="line">$           <span class="built_in">console</span>.log(sdq[sdz])</span><br><span class="line">$       &#125;</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
-]]></content>
   </entry>
   <entry>
     <title>JavaScript 数据类型之(对象)</title>
@@ -1988,27 +1988,6 @@ python数据类型
 ]]></content>
   </entry>
   <entry>
-    <title>爬虫 re模块的使用(牢饭吃到饱)</title>
-    <url>/reptile-re.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-
-<h1 id="学习re模块先学正则表达式"><a href="#学习re模块先学正则表达式" class="headerlink" title="学习re模块先学正则表达式"></a>学习re模块先学正则表达式</h1><h1 id="findall"><a href="#findall" class="headerlink" title="findall"></a>findall</h1><p><strong>匹配字符串中所有的符号正则的内容</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import re </span><br><span class="line"></span><br><span class="line">sdq &#x3D; re.findall(r&quot;\d+&quot;,613号实验品 亚亚,617号实验品 团团,618号实验品 红绿灯,619号实验品 火焰球,624号实验品 安琪,</span><br><span class="line">625号实验品 鲁本,626号实验品 史迪仔)</span><br><span class="line">print(sdq)</span><br></pre></td></tr></table></figure>
-<h1 id="finditer"><a href="#finditer" class="headerlink" title="finditer"></a>finditer</h1><p><strong>匹配字符串中所有的内容 [返回的是迭代器] 从迭代器中拿到内容需要.group</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import re </span><br><span class="line"></span><br><span class="line">sdq &#x3D; re.findall(r&quot;\d+&quot;,613号实验品 亚亚,617号实验品 团团,618号实验品 红绿灯,619号实验品 火焰球,624号实验品 安琪,</span><br><span class="line">625号实验品 鲁本,626号实验品 史迪仔)</span><br><span class="line">for i sdq:</span><br><span class="line">    print(sdq.group())</span><br></pre></td></tr></table></figure>
-<h1 id="search"><a href="#search" class="headerlink" title="search"></a>search</h1><p><strong>返回第一个拿到的结果, 返回的结果是match对象, .group()是拿数据</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import re </span><br><span class="line"></span><br><span class="line">sdq &#x3D; re.search(r&quot;\d+&quot;,613号实验品 亚亚,617号实验品 团团,618号实验品 红绿灯,619号实验品 火焰球,624号实验品 安琪,</span><br><span class="line">625号实验品 鲁本,626号实验品 史迪仔)</span><br><span class="line">print(sdq.group())</span><br></pre></td></tr></table></figure>
-<h1 id="match"><a href="#match" class="headerlink" title="match"></a>match</h1><p><strong>从头开始匹配, 前面没有就停止</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import re </span><br><span class="line"></span><br><span class="line">sdq &#x3D; re.search(r&quot;\d+&quot;,613号实验品 亚亚,617号实验品 团团,618号实验品 红绿灯,619号实验品 火焰球,624号实验品 安琪,</span><br><span class="line">625号实验品 鲁本,626号实验品 史迪仔)</span><br><span class="line">print(sdq.group())</span><br></pre></td></tr></table></figure>
-<h1 id="预加载正则表达式"><a href="#预加载正则表达式" class="headerlink" title="预加载正则表达式"></a>预加载正则表达式</h1><p><strong>从头开始匹配, 前面没有就停止</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import re </span><br><span class="line"></span><br><span class="line">sdq &#x3D; re.compile(r&quot;\d+&quot;)</span><br><span class="line"></span><br><span class="line">zdz &#x3D; sdq.finditer(&quot;613号实验品 亚亚,617号实验品 团团,618号实验品 红绿灯,619号实验品 火焰球,624号实验品 安琪,</span><br><span class="line">625号实验品 鲁本,626号实验品 史迪仔&quot;)</span><br><span class="line"></span><br><span class="line">for it in sdz</span><br><span class="line">    print(it.group())</span><br></pre></td></tr></table></figure>
-<h1 id="预加载正则表达式-1"><a href="#预加载正则表达式-1" class="headerlink" title="预加载正则表达式"></a>预加载正则表达式</h1><p><strong>从头开始匹配, 前面没有就停止</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import re </span><br><span class="line"></span><br><span class="line">&lt;div class&#x3D;&#39;yy&#39;&gt;&lt;span id&#x3D;&quot;613&quot;&gt;亚亚&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class&#x3D;&#39;tt&#39;&gt;&lt;span id&#x3D;&quot;617&quot;&gt;团团&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class&#x3D;&#39;hld&#39;&gt;&lt;span id&#x3D;&quot;618&quot;&gt;红绿灯&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class&#x3D;&#39;tt&#39;&gt;&lt;span id&#x3D;&quot;619&quot;&gt;团团&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class&#x3D;&#39;lb&#39;&gt;&lt;span id&#x3D;&quot;625&quot;&gt;鲁本&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class&#x3D;&#39;sdq&#39;&gt;&lt;span id&#x3D;&quot;626&quot;&gt;史迪奇&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line"># (?&lt;分组名字&gt;正则表达式)</span><br><span class="line">obj &#x3D; re.compile(r&quot;&lt;div class&#x3D;&#39;.*?&#39;&gt;&lt;span id&#x3D;&quot;(?&lt;id&gt;\d+)&quot;&gt;(?P&lt;name&gt;.*?)&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;, re.S)  # re.S: 让.能匹配换行符</span><br><span class="line"></span><br><span class="line">result &#x3D; obj.finditer(s)</span><br><span class="line"></span><br><span class="line">for it in sdz</span><br><span class="line">    print(it.group())</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>爬虫 requests模块(吃牢饭集合)</title>
     <url>/reptile-header.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -2123,6 +2102,27 @@ python数据类型
 ]]></content>
   </entry>
   <entry>
+    <title>爬虫 re模块的使用(牢饭吃到饱)</title>
+    <url>/reptile-re.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+
+<h1 id="学习re模块先学正则表达式"><a href="#学习re模块先学正则表达式" class="headerlink" title="学习re模块先学正则表达式"></a>学习re模块先学正则表达式</h1><h1 id="findall"><a href="#findall" class="headerlink" title="findall"></a>findall</h1><p><strong>匹配字符串中所有的符号正则的内容</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import re </span><br><span class="line"></span><br><span class="line">sdq &#x3D; re.findall(r&quot;\d+&quot;,613号实验品 亚亚,617号实验品 团团,618号实验品 红绿灯,619号实验品 火焰球,624号实验品 安琪,</span><br><span class="line">625号实验品 鲁本,626号实验品 史迪仔)</span><br><span class="line">print(sdq)</span><br></pre></td></tr></table></figure>
+<h1 id="finditer"><a href="#finditer" class="headerlink" title="finditer"></a>finditer</h1><p><strong>匹配字符串中所有的内容 [返回的是迭代器] 从迭代器中拿到内容需要.group</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import re </span><br><span class="line"></span><br><span class="line">sdq &#x3D; re.findall(r&quot;\d+&quot;,613号实验品 亚亚,617号实验品 团团,618号实验品 红绿灯,619号实验品 火焰球,624号实验品 安琪,</span><br><span class="line">625号实验品 鲁本,626号实验品 史迪仔)</span><br><span class="line">for i sdq:</span><br><span class="line">    print(sdq.group())</span><br></pre></td></tr></table></figure>
+<h1 id="search"><a href="#search" class="headerlink" title="search"></a>search</h1><p><strong>返回第一个拿到的结果, 返回的结果是match对象, .group()是拿数据</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import re </span><br><span class="line"></span><br><span class="line">sdq &#x3D; re.search(r&quot;\d+&quot;,613号实验品 亚亚,617号实验品 团团,618号实验品 红绿灯,619号实验品 火焰球,624号实验品 安琪,</span><br><span class="line">625号实验品 鲁本,626号实验品 史迪仔)</span><br><span class="line">print(sdq.group())</span><br></pre></td></tr></table></figure>
+<h1 id="match"><a href="#match" class="headerlink" title="match"></a>match</h1><p><strong>从头开始匹配, 前面没有就停止</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import re </span><br><span class="line"></span><br><span class="line">sdq &#x3D; re.search(r&quot;\d+&quot;,613号实验品 亚亚,617号实验品 团团,618号实验品 红绿灯,619号实验品 火焰球,624号实验品 安琪,</span><br><span class="line">625号实验品 鲁本,626号实验品 史迪仔)</span><br><span class="line">print(sdq.group())</span><br></pre></td></tr></table></figure>
+<h1 id="预加载正则表达式"><a href="#预加载正则表达式" class="headerlink" title="预加载正则表达式"></a>预加载正则表达式</h1><p><strong>从头开始匹配, 前面没有就停止</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import re </span><br><span class="line"></span><br><span class="line">sdq &#x3D; re.compile(r&quot;\d+&quot;)</span><br><span class="line"></span><br><span class="line">zdz &#x3D; sdq.finditer(&quot;613号实验品 亚亚,617号实验品 团团,618号实验品 红绿灯,619号实验品 火焰球,624号实验品 安琪,</span><br><span class="line">625号实验品 鲁本,626号实验品 史迪仔&quot;)</span><br><span class="line"></span><br><span class="line">for it in sdz</span><br><span class="line">    print(it.group())</span><br></pre></td></tr></table></figure>
+<h1 id="预加载正则表达式-1"><a href="#预加载正则表达式-1" class="headerlink" title="预加载正则表达式"></a>预加载正则表达式</h1><p><strong>从头开始匹配, 前面没有就停止</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import re </span><br><span class="line"></span><br><span class="line">&lt;div class&#x3D;&#39;yy&#39;&gt;&lt;span id&#x3D;&quot;613&quot;&gt;亚亚&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class&#x3D;&#39;tt&#39;&gt;&lt;span id&#x3D;&quot;617&quot;&gt;团团&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class&#x3D;&#39;hld&#39;&gt;&lt;span id&#x3D;&quot;618&quot;&gt;红绿灯&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class&#x3D;&#39;tt&#39;&gt;&lt;span id&#x3D;&quot;619&quot;&gt;团团&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class&#x3D;&#39;lb&#39;&gt;&lt;span id&#x3D;&quot;625&quot;&gt;鲁本&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class&#x3D;&#39;sdq&#39;&gt;&lt;span id&#x3D;&quot;626&quot;&gt;史迪奇&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line"># (?&lt;分组名字&gt;正则表达式)</span><br><span class="line">obj &#x3D; re.compile(r&quot;&lt;div class&#x3D;&#39;.*?&#39;&gt;&lt;span id&#x3D;&quot;(?&lt;id&gt;\d+)&quot;&gt;(?P&lt;name&gt;.*?)&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;, re.S)  # re.S: 让.能匹配换行符</span><br><span class="line"></span><br><span class="line">result &#x3D; obj.finditer(s)</span><br><span class="line"></span><br><span class="line">for it in sdz</span><br><span class="line">    print(it.group())</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>爬虫 verify参数与CA证书(吃牢饭集合)</title>
     <url>/reptile-verify-CA.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -2220,6 +2220,60 @@ python数据类型
 <h3 id="通过属性值修饰节点"><a href="#通过属性值修饰节点" class="headerlink" title="通过属性值修饰节点"></a>通过属性值修饰节点</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;div[@id&#x3D;&quot;sdq&quot;]&#x2F;div&#x2F;@id     出现在[]中@是使用标签属性名和属性值修饰节点 出现在结尾的&#x2F;@是取属性值</span><br></pre></td></tr></table></figure>
 <h3 id="通过子节点的值修饰节点"><a href="#通过子节点的值修饰节点" class="headerlink" title="通过子节点的值修饰节点"></a>通过子节点的值修饰节点</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//span[i&gt;333]   i是标签</span><br><span class="line">//div[span[2]&gt;9.3]   span是标签</span><br></pre></td></tr></table></figure>
 <h3 id="通过包含修饰"><a href="#通过包含修饰" class="headerlink" title="通过包含修饰"></a>通过包含修饰</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;div[contains(@id,&quot;sd&quot;)]       找出sdq通过属性名和大概的属性值 </span><br><span class="line">&#x2F;&#x2F;div[contains(text(),&quot;下一页&quot;)]     通过文本内容包含有下一页的字  </span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>爬虫 数据提取(吃牢饭集合)</title>
+    <url>/reptile-Extraction.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="响应内容分类"><a href="#响应内容分类" class="headerlink" title="响应内容分类"></a>响应内容分类</h1><h2 id="结构化的响应内容"><a href="#结构化的响应内容" class="headerlink" title="结构化的响应内容"></a>结构化的响应内容</h2><h3 id="json字符串-高频出现"><a href="#json字符串-高频出现" class="headerlink" title="json字符串(高频出现)"></a>json字符串(高频出现)</h3><ul>
+<li>可以使用re,json等模块来提取特定数据</li>
+</ul>
+<h3 id="xml数据-低频出现"><a href="#xml数据-低频出现" class="headerlink" title="xml数据(低频出现)"></a>xml数据(低频出现)</h3><ul>
+<li>可以使用re,lxml等模块来提取特定数据</li>
+</ul>
+<h2 id="非结构化的响应内容"><a href="#非结构化的响应内容" class="headerlink" title="非结构化的响应内容"></a>非结构化的响应内容</h2><h3 id="html字符串"><a href="#html字符串" class="headerlink" title="html字符串"></a>html字符串</h3><ul>
+<li>可以使用re,lxml等模块来提取特定数据</li>
+</ul>
+<h1 id="xml与html区别"><a href="#xml与html区别" class="headerlink" title="xml与html区别"></a>xml与html区别</h1><table>
+<thead>
+<tr>
+<th align="center">数据格式</th>
+<th align="center">描述</th>
+<th align="center">设计目标</th>
+<th align="center">个人总结</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">XML</td>
+<td align="center">Extensible Markup Language(可扩展标记语言)</td>
+<td align="center">被设计为传输和存储数据, 其焦点是数据的内容</td>
+<td align="center">xml传输和储存数据</td>
+</tr>
+<tr>
+<td align="center">HTML</td>
+<td align="center">HyperText Markup Language(超文本标记语言)</td>
+<td align="center">显示数据已经然后更好显示数据</td>
+<td align="center">html展示数据</td>
+</tr>
+</tbody></table>
+<h2 id="xml"><a href="#xml" class="headerlink" title="xml"></a>xml</h2><ul>
+<li>可扩展标记语言</li>
+<li>为了传输和储存数据, 侧重点是在于数据内容本身</li>
+<li>xml是一种可扩展标记语言, 样子和html很像, 功能更专注对传输和储存数据</li>
+</ul>
+<p>_</p>
+<h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><ul>
+<li>超文本记语言</li>
+<li>为了更好的显示数据, 侧重点是为显示</li>
+<li>html是显示效果更好, 用于展示数据</li>
+</ul>
+<h1 id="常用的数据解析方法"><a href="#常用的数据解析方法" class="headerlink" title="常用的数据解析方法"></a>常用的数据解析方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">                                          &#x2F;   json模块</span><br><span class="line">                                &#x2F;   json |</span><br><span class="line">                               &#x2F;          \   jsonpath模块</span><br><span class="line">               数据化数据      &#x2F;</span><br><span class="line">           &#x2F;￣￣￣￣￣￣￣￣￣￣\</span><br><span class="line">          &#x2F;                     \         &#x2F;   re模块    正则语法</span><br><span class="line">         &#x2F;                       \  xml  |</span><br><span class="line">        &#x2F;                                 \   lxml模块  xpath语法</span><br><span class="line">       &#x2F;                                 </span><br><span class="line">数据解析</span><br><span class="line">       \ </span><br><span class="line">        \                                 &#x2F;   re模块    正则语法         </span><br><span class="line">         \                               &#x2F;    lxml模块  xpath语法</span><br><span class="line">          \                             &#x2F;</span><br><span class="line">           \_____________________ html |      beautifulsoup  xpath语法 正则语法 css选择器</span><br><span class="line">               非结构化数据              \     </span><br><span class="line">                                         \</span><br><span class="line">                                          \   pyquery   css选择器</span><br></pre></td></tr></table></figure>
+
+<h1 id="jsonpath模块"><a href="#jsonpath模块" class="headerlink" title="jsonpath模块"></a>jsonpath模块</h1><p><a href="https://sdq3.gitee.io/reptile-jsonpath.html">详细说明</a></p>
+<h1 id="lxml模块"><a href="#lxml模块" class="headerlink" title="lxml模块"></a>lxml模块</h1><p><a href="https://sdq3.gitee.io/reptile-xpath.html">详细说明</a></p>
+]]></content>
   </entry>
   <entry>
     <title>爬虫 代理(吃牢饭集合)</title>
@@ -2553,60 +2607,6 @@ option && myChart.setOption(option);
 ]]></content>
   </entry>
   <entry>
-    <title>爬虫 数据提取(吃牢饭集合)</title>
-    <url>/reptile-Extraction.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="响应内容分类"><a href="#响应内容分类" class="headerlink" title="响应内容分类"></a>响应内容分类</h1><h2 id="结构化的响应内容"><a href="#结构化的响应内容" class="headerlink" title="结构化的响应内容"></a>结构化的响应内容</h2><h3 id="json字符串-高频出现"><a href="#json字符串-高频出现" class="headerlink" title="json字符串(高频出现)"></a>json字符串(高频出现)</h3><ul>
-<li>可以使用re,json等模块来提取特定数据</li>
-</ul>
-<h3 id="xml数据-低频出现"><a href="#xml数据-低频出现" class="headerlink" title="xml数据(低频出现)"></a>xml数据(低频出现)</h3><ul>
-<li>可以使用re,lxml等模块来提取特定数据</li>
-</ul>
-<h2 id="非结构化的响应内容"><a href="#非结构化的响应内容" class="headerlink" title="非结构化的响应内容"></a>非结构化的响应内容</h2><h3 id="html字符串"><a href="#html字符串" class="headerlink" title="html字符串"></a>html字符串</h3><ul>
-<li>可以使用re,lxml等模块来提取特定数据</li>
-</ul>
-<h1 id="xml与html区别"><a href="#xml与html区别" class="headerlink" title="xml与html区别"></a>xml与html区别</h1><table>
-<thead>
-<tr>
-<th align="center">数据格式</th>
-<th align="center">描述</th>
-<th align="center">设计目标</th>
-<th align="center">个人总结</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">XML</td>
-<td align="center">Extensible Markup Language(可扩展标记语言)</td>
-<td align="center">被设计为传输和存储数据, 其焦点是数据的内容</td>
-<td align="center">xml传输和储存数据</td>
-</tr>
-<tr>
-<td align="center">HTML</td>
-<td align="center">HyperText Markup Language(超文本标记语言)</td>
-<td align="center">显示数据已经然后更好显示数据</td>
-<td align="center">html展示数据</td>
-</tr>
-</tbody></table>
-<h2 id="xml"><a href="#xml" class="headerlink" title="xml"></a>xml</h2><ul>
-<li>可扩展标记语言</li>
-<li>为了传输和储存数据, 侧重点是在于数据内容本身</li>
-<li>xml是一种可扩展标记语言, 样子和html很像, 功能更专注对传输和储存数据</li>
-</ul>
-<p>_</p>
-<h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><ul>
-<li>超文本记语言</li>
-<li>为了更好的显示数据, 侧重点是为显示</li>
-<li>html是显示效果更好, 用于展示数据</li>
-</ul>
-<h1 id="常用的数据解析方法"><a href="#常用的数据解析方法" class="headerlink" title="常用的数据解析方法"></a>常用的数据解析方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">                                          &#x2F;   json模块</span><br><span class="line">                                &#x2F;   json |</span><br><span class="line">                               &#x2F;          \   jsonpath模块</span><br><span class="line">               数据化数据      &#x2F;</span><br><span class="line">           &#x2F;￣￣￣￣￣￣￣￣￣￣\</span><br><span class="line">          &#x2F;                     \         &#x2F;   re模块    正则语法</span><br><span class="line">         &#x2F;                       \  xml  |</span><br><span class="line">        &#x2F;                                 \   lxml模块  xpath语法</span><br><span class="line">       &#x2F;                                 </span><br><span class="line">数据解析</span><br><span class="line">       \ </span><br><span class="line">        \                                 &#x2F;   re模块    正则语法         </span><br><span class="line">         \                               &#x2F;    lxml模块  xpath语法</span><br><span class="line">          \                             &#x2F;</span><br><span class="line">           \_____________________ html |      beautifulsoup  xpath语法 正则语法 css选择器</span><br><span class="line">               非结构化数据              \     </span><br><span class="line">                                         \</span><br><span class="line">                                          \   pyquery   css选择器</span><br></pre></td></tr></table></figure>
-
-<h1 id="jsonpath模块"><a href="#jsonpath模块" class="headerlink" title="jsonpath模块"></a>jsonpath模块</h1><p><a href="https://sdq3.gitee.io/reptile-jsonpath.html">详细说明</a></p>
-<h1 id="lxml模块"><a href="#lxml模块" class="headerlink" title="lxml模块"></a>lxml模块</h1><p><a href="https://sdq3.gitee.io/reptile-xpath.html">详细说明</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>爬虫 概念(牢饭吃到饱)</title>
     <url>/reptile-concept.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -2671,6 +2671,16 @@ option && myChart.setOption(option);
 
 
 <h1 id="爬小说的详细步骤"><a href="#爬小说的详细步骤" class="headerlink" title="爬小说的详细步骤"></a>爬小说的详细步骤</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import time</span><br><span class="line">feom bs4</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>爬虫 爬猫猫图片(牢饭吃到饱)</title>
+    <url>/reptile-mao.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h1><p><strong>打开这个<a href="http://www.ichong123.com/maomao">网址</a></strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 所有用到的库</span><br><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line"># 要爬的链接</span><br><span class="line">url &#x3D; &quot;http:&#x2F;&#x2F;www.ichong123.com&#x2F;maomao&quot;</span><br><span class="line"></span><br><span class="line"># 请求头</span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.72 Safari&#x2F;537.36&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">paqv &#x3D; requests.get( url&#x3D;url, headers&#x3D;headers )</span><br><span class="line"></span><br><span class="line"># 根据网站的编码来换</span><br><span class="line">paqv.encoding &#x3D; &#39;utf-8&#39;</span><br><span class="line"></span><br><span class="line"># xiazai &#x3D; paqv.text</span><br><span class="line"></span><br><span class="line"># print(xiazai)</span><br><span class="line"></span><br><span class="line"># 正则表达式 re.S单行匹配(正则解析比较多) re.M多行匹配()</span><br><span class="line">sdq1 &#x3D; re.compile(r&#39;&lt;div class&#x3D;&quot;pet_s&quot;&gt;.*?&lt;img src&#x3D;(?P&lt;mao&gt;.*?)width&#39;,re.S)</span><br><span class="line">paq &#x3D; sdq1.finditer(paqv.text)</span><br><span class="line">a &#x3D; 1</span><br><span class="line"># 用循环来依次下载</span><br><span class="line">for it in paq:</span><br><span class="line">    time.sleep(3)  #休眠3秒</span><br><span class="line">    ul &#x3D; it.group(&#39;mao&#39;)</span><br><span class="line">    ul2 &#x3D; eval(ul)  #eval()函数用来执行一个字符串表达式，并返回表达式的值</span><br><span class="line">    sdz &#x3D; requests.get(ul2)</span><br><span class="line"></span><br><span class="line">    # 图片文件保存 选择路径</span><br><span class="line">    with open(f&quot;E:&#x2F;百度文档&#x2F;mao&#x2F;&#123;a&#125;.jpg&quot;,&quot;wb&quot;) as f:</span><br><span class="line">        f.write(sdz.content)</span><br><span class="line">        f.close()</span><br><span class="line">        a+&#x3D;1</span><br><span class="line">print(&quot;猫猫下载完了&quot;)</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
   <entry>
@@ -2788,16 +2798,6 @@ option && myChart.setOption(option);
 </tr>
 </tbody></table>
 <p><strong>抓包过程: 根据发送请求的流程分别在 骨骼 / 肌肉 / 皮肤 响应中查找数据</strong></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>爬虫 爬猫猫图片(牢饭吃到饱)</title>
-    <url>/reptile-mao.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h1><p><strong>打开这个<a href="http://www.ichong123.com/maomao">网址</a></strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 所有用到的库</span><br><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line"># 要爬的链接</span><br><span class="line">url &#x3D; &quot;http:&#x2F;&#x2F;www.ichong123.com&#x2F;maomao&quot;</span><br><span class="line"></span><br><span class="line"># 请求头</span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.72 Safari&#x2F;537.36&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">paqv &#x3D; requests.get( url&#x3D;url, headers&#x3D;headers )</span><br><span class="line"></span><br><span class="line"># 根据网站的编码来换</span><br><span class="line">paqv.encoding &#x3D; &#39;utf-8&#39;</span><br><span class="line"></span><br><span class="line"># xiazai &#x3D; paqv.text</span><br><span class="line"></span><br><span class="line"># print(xiazai)</span><br><span class="line"></span><br><span class="line"># 正则表达式 re.S单行匹配(正则解析比较多) re.M多行匹配()</span><br><span class="line">sdq1 &#x3D; re.compile(r&#39;&lt;div class&#x3D;&quot;pet_s&quot;&gt;.*?&lt;img src&#x3D;(?P&lt;mao&gt;.*?)width&#39;,re.S)</span><br><span class="line">paq &#x3D; sdq1.finditer(paqv.text)</span><br><span class="line">a &#x3D; 1</span><br><span class="line"># 用循环来依次下载</span><br><span class="line">for it in paq:</span><br><span class="line">    time.sleep(3)  #休眠3秒</span><br><span class="line">    ul &#x3D; it.group(&#39;mao&#39;)</span><br><span class="line">    ul2 &#x3D; eval(ul)  #eval()函数用来执行一个字符串表达式，并返回表达式的值</span><br><span class="line">    sdz &#x3D; requests.get(ul2)</span><br><span class="line"></span><br><span class="line">    # 图片文件保存 选择路径</span><br><span class="line">    with open(f&quot;E:&#x2F;百度文档&#x2F;mao&#x2F;&#123;a&#125;.jpg&quot;,&quot;wb&quot;) as f:</span><br><span class="line">        f.write(sdz.content)</span><br><span class="line">        f.close()</span><br><span class="line">        a+&#x3D;1</span><br><span class="line">print(&quot;猫猫下载完了&quot;)</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
   <entry>
@@ -3139,19 +3139,6 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 <h1 id="查看当前路径"><a href="#查看当前路径" class="headerlink" title="查看当前路径"></a>查看当前路径</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pwd</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
-    <title>跟我一起学数学</title>
-    <url>/mathematics.html</url>
-    <content><![CDATA[<p><strong>走进数学的奇妙世界</strong></p>
-<a id="more"></a>
-
-<h1 id="高斯算法"><a href="#高斯算法" class="headerlink" title="高斯算法"></a>高斯算法</h1><p><strong>用于解决 1+2+3+4+5+6+7……一直加到n</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(首项 + 末项) * 项数 &#x2F; 2</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="衡量算法"><a href="#衡量算法" class="headerlink" title="衡量算法"></a>衡量算法</h1><p><strong>时间复杂度和空间复杂度</strong></p>
-]]></content>
-  </entry>
-  <entry>
     <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
     <url>/Thread-Process.html</url>
     <content><![CDATA[<p><strong>概念</strong></p>
@@ -3164,6 +3151,19 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Process是进程的英文</span><br></pre></td></tr></table></figure>
 <h1 id="线程与进程到底是什么关系"><a href="#线程与进程到底是什么关系" class="headerlink" title="线程与进程到底是什么关系"></a>线程与进程到底是什么关系</h1><p><strong>一个进程里面可以包含若干个线程，一个进程里面必须要有一个线程，否则没有存在的意义</strong></p>
 <h1 id="注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行"><a href="#注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行" class="headerlink" title="注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行"></a>注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行</h1>]]></content>
+  </entry>
+  <entry>
+    <title>跟我一起学数学</title>
+    <url>/mathematics.html</url>
+    <content><![CDATA[<p><strong>走进数学的奇妙世界</strong></p>
+<a id="more"></a>
+
+<h1 id="高斯算法"><a href="#高斯算法" class="headerlink" title="高斯算法"></a>高斯算法</h1><p><strong>用于解决 1+2+3+4+5+6+7……一直加到n</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(首项 + 末项) * 项数 &#x2F; 2</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="衡量算法"><a href="#衡量算法" class="headerlink" title="衡量算法"></a>衡量算法</h1><p><strong>时间复杂度和空间复杂度</strong></p>
+]]></content>
   </entry>
   <entry>
     <title>跟我一起学算法(概念章)</title>
