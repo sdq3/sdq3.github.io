@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>Java面向对象思维之构造方法需的重载 -  我叫史迪奇</title>
+	<title>archive -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -644,183 +644,201 @@ var $main = document.querySelector('.main');
 
 
 
+
 <style>
-	#sdqPost:hover{
-   		    background-color: rgba(255, 255, 255, 0.5)!important;
-	}	
-</style>
-<div class="sdq">
-	<div class="sdq-post" id="sdqPost">
-		<div class="sdq-title">
-			<h1>Java面向对象思维之构造方法需的重载</h1>
-		</div>
-	  <div id="post" class="sdq-post-Statistics">
-            <a>2021年07月09日</a>
-		  	<a class="post-count">99 字</a>
-		
-		
-	  </div>
-		
-		
-<div id="modal" style="display:none">
-
-<aside id="article-toc" class="fixed-toc">
-    <div id="article-toc-inner">
-        <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BE%8B%E5%A6%82%E9%80%A0%E4%B8%80%E8%BE%86%E8%BD%A6-%E4%BE%8B%E5%A6%82-%E8%BD%A6%E6%9C%89%E9%A2%9C%E8%89%B2-%E8%BD%A6%E6%9C%89%E8%BD%AE%E5%AD%90-%E8%BD%A6%E5%BA%A7%E4%BD%8D"><span class="toc-text">例如造一辆车 例如 车有颜色 车有轮子 车座位</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%A7%E8%A1%8Cmain%E6%96%B9%E6%B3%95"><span class="toc-text">执行main方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E6%98%AFthis-%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE%E5%85%B6%E4%BB%96%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-text">注意是this()可以访问其他构造方法</span></a></li></ol>
-    </div>
-</aside>
-</div>
-
-
-		
-			<a href="#modal" class="second">
-				<div class="i">
-						<i style="font-size:20px" class="sdq3 sdqfasong">
-						<span style="font-size:0px">
-						</i>
-				</div>
-			</a>
-
-
-
-
-<script>
-	$(".second .i").mouseover(function(){
-  $(".second .i span").css("font-size","18px");
-});
-	$(".second .i").mouseleave(function(){
-  $(".second .i span").css("font-size","0px");
-});
-</script>
-
-
-
-
-
-
-
-
-
-
-
-		<div>
-			  <article>
-				<p><strong>学习Java个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ public Car(String color,  int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ public Car(String color, int wheel, int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this(color,seat);  //this还可以调用当前累中其他的构造方法</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h1>
-			  </article>
-		</div>
-		
-		
-
-
-		 	
-				<style>
-.veditor {
-    background: url('images/评论区/史迪奇睡觉.gif') no-repeat #fcfcfc!important;
-    background-size: auto 130px!important;
-    background-position: right bottom!important;
+.sdq-post {
+	webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+}
+.sdq-post:hover{
+	webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
 }
 </style>
-<div id="vcomments" class="comment">
 
-</div>
-<script>
-	window.valine = new Valine({
-		el: '#vcomments',
-		appId: 'QqqoNLFAJzeDU9WPBVYk7UBj-MdYXbMMI',
-		appKey: 'hzwk2U93vOE4IdBWQXvda2mJ',
-		avatar: 'robohash',
-		placeholder: '我叫史迪奇',
-		path: window.location.pathname,   //[重点] 记得添加path路径
-		enableQQ:'true'
-	});
+
+<style>
+@media screen and (max-width: 1024px){
+	.sdq-more{    
+    opacity: 1!important;
+	}
+	.sdq-more{  
+		display: contents!important;	
+	}
+	.sdq-toping{
+		display: inline-block;
+		left: 10px;
+		top: 0;
+		z-index: 2;
+		color: #FFFFFF;
+		padding: 0 10px;
+		border-radius: 4px;
+		font-style: normal;
+		background-color: rgba(234, 67, 74, 0.7);
+	}
+	.sdq-post:hover .sdq-toping {display: inline-block!important;}
+}
+
+@media screen and (min-width: 1024px){
+	.sdq-toping{
+		display: none;
+		position: fixed;
+		left: 10px;
+		top: 0;
+		z-index: 2;color: #FFFFFF;
+		clip-path: polygon(100% 0, 100% 100%, 50% 70%, 0 100%, 0 0);
+		background-color: rgba(255, 0, 0, 0.51);    
+		background: -webkit-gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
+    	background: gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
+		height: 61px;
+		width: 41px;
+	}
+}
+	.sdq-more{   
+	display: inline-block;
+    float: right;
+    background-color: rgba(204, 196, 196, 0.45);
+    padding: .5rem 1rem;
+    border-radius: 4px;
+    color: #919191!important;
+    text-decoration: none;
+    opacity: 0;
+    -webkit-transition: opacity 1.2s;
+    transition: opacity 1.2s;
+    will-change: opacity;
+        -moz-user-select: none; /*火狐*/
+        -webkit-user-select: none; /*webkit浏览器*/
+        -ms-user-select: none; /*IE10*/
+        -khtml-user-select: none; /*早期浏览器*/
+        -o-user-select: none; /* Opera*/
+        user-select: none;
+	}
+	.sdq-post:hover .sdq-more {
+		opacity: 1;
+		animation: fade-in;
+		animation-duration: 0.6s;
+		-webkit-animation: fade-in 0.6s;
+	}
 	
-    // 使用方法 https://valine.js.org/quickstart.html
-	/*
-		var $vcomments = document.querySelector('.comment');
-		var $div= document.createElement('div');
-		$div.setAttribute("id","#vcomments");
-		$vcomments.appendChild($div);
-    new Valine({
-        el: '#vcomments',
-        appId: 'QqqoNLFAJzeDU9WPBVYk7UBj-MdYXbMMI',
-        appKey: 'hzwk2U93vOE4IdBWQXvda2mJ',
-		avatar: 'robohash',
-        placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ',
-    });*/
-        //placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ',
-</script>
+	@keyframes fade-in {  
+    0% {opacity: 0;}/*初始状态 透明度为0*/  
+    40% {opacity: 0;}/*过渡状态 透明度为0*/  
+    100% {opacity: 1;}/*结束状态 透明度为1*/  
+	}  
+	@-webkit-keyframes fade-in {/*针对webkit内核*/  
+		0% {opacity: 0;}  
+		40% {opacity: 0;}  
+		100% {opacity: 1;}  
+	}  
+	.sdq-post:hover .sdq-toping {display: block;}
+	.sdq-tags{
+	}
+	.sdq-tags a{
+		color: #fff; 
+		font-size: 15px; 
+	}
+	.sdq-tags a {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+	}
+	
+</style>
 
-<script>
-/*//$(function() 
-$(window).load(function(){
-	// 去valine版权
-	$('.info').css("display","none");
-	// 去valine位移
-	$('.vmeta').css("padding-right","66px");
-	$('.vcontrol').css("padding-right","66px");
-	$('.vctrl').css("padding-right","66px");
-	$('#veditor').removeAttr("placeholder");
-	$("#veditor").attr("placeholder","输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ");
-	$('.v .vwrap .vheader .vinput:nth-child(3)').removeAttr("placeholder");
-	$(".v .vwrap .vheader .vinput:nth-child(3)").attr("placeholder","你的HOME(例：https://www.baidu.com)");
-	$(".info").after(" <p>&copy; </p>");
-});*/
-</script>
+
+<style>
+	
+@media screen and (min-width: 1024px){
+	.sdq-post:hover{
+   		border: none;
+		transform: translateY(-20px);
+		-webkit-transform: translateY(-20px);
+		-moz-transform: translateY(-20px);
+		background-color: rgba(255, 255, 255, 0.3);
+	}
+	.sdq-post{    
+		padding: 60px 70px!important;
+	}
+}
+	.sdq-post{    
+/*   		border: 1px #b8c7ff solid;*/
+		margin: 0px;    margin-bottom: 20px;
+        background-color: rgba(240, 248, 255, 0.4);
+	}
+</style>
+
+
+
+
+
+
+<div class="sdq">
+	<section class="sdq-posts">
+    
+    
+    
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/HelloWorld.html">
+					<div class="sdq-title"> 
+						33种编程语言的HelloWorld
+					</div>
+				</a>
+			</div>
 			
+		</div>
+
+			<article>
+				
+				<p><strong>我的核心代码</strong></p>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年07月09日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/HelloWorld.html"><div class="sdq-more">阅读更多...</div></a>
 		
-	  
+    </div>
+    
 	
-		
+    
+</section>
+	
 
 
-<div class="copy">
-<i></i>
-<strong>本文作者：</strong>
-	
-	 
-			史迪奇<br>
-        
-	
-<strong>本文链接：</strong>
-	<a href="https://sdq3.gitee.io/Object-oriented-constructor-heavy-load.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;Object-oriented-constructor-heavy-load.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;Object-oriented-constructor-heavy-load.html</a><br>
+    <nav id="paging">
+      <a class="extend prev" rel="prev" href="/archives/page/7/"><i class="sdqMsDanIconFont"></i></a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="page-number current">8</span>
+    </nav>
+  
+
+<!--
+        prev_text: '<i class="iconfont">&#xe617;</i>',
+        next_text: '<i class="iconfont">&#xe627;</i>'
+-->
 </div>
 
-	  
-	</div>
-</div>
-<script>
-	(function(){
-		var jmz = {};
-		jmz.GetLength = function(str) {
-			var realLength = 0, len = str.length, charCode = -1;
-			for (var i = 0; i < len; i++) {
-				charCode = str.charCodeAt(i);
-				if (charCode >= 0 && charCode <= 128) 
-					  realLength += 1;
-				else
-					  realLength += 1;
-			}
-			return realLength;
-		};
-		//console.log(str);
-		var article = document.querySelector('.sdq-post article').innerHTML.trim();
-
-		var b = article.replace(/<.*?>/ig,"");
-		
-		$('.post-count').html(jmz.GetLength(b)+"字");
-	})()
 
 
 
-</script>
+
+
+
+
+
 
 
     				

@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>Java面向对象思维之构造方法需的重载 -  我叫史迪奇</title>
+	<title>爬虫 jsonpath模块(吃牢饭集合) -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -652,10 +652,10 @@ var $main = document.querySelector('.main');
 <div class="sdq">
 	<div class="sdq-post" id="sdqPost">
 		<div class="sdq-title">
-			<h1>Java面向对象思维之构造方法需的重载</h1>
+			<h1>爬虫 jsonpath模块(吃牢饭集合)</h1>
 		</div>
 	  <div id="post" class="sdq-post-Statistics">
-            <a>2021年07月09日</a>
+            <a>2021年07月19日</a>
 		  	<a class="post-count">99 字</a>
 		
 		
@@ -667,7 +667,7 @@ var $main = document.querySelector('.main');
 <aside id="article-toc" class="fixed-toc">
     <div id="article-toc-inner">
         <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BE%8B%E5%A6%82%E9%80%A0%E4%B8%80%E8%BE%86%E8%BD%A6-%E4%BE%8B%E5%A6%82-%E8%BD%A6%E6%9C%89%E9%A2%9C%E8%89%B2-%E8%BD%A6%E6%9C%89%E8%BD%AE%E5%AD%90-%E8%BD%A6%E5%BA%A7%E4%BD%8D"><span class="toc-text">例如造一辆车 例如 车有颜色 车有轮子 车座位</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%A7%E8%A1%8Cmain%E6%96%B9%E6%B3%95"><span class="toc-text">执行main方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E6%98%AFthis-%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE%E5%85%B6%E4%BB%96%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-text">注意是this()可以访问其他构造方法</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#jsonpath%E6%A8%A1%E5%9D%97"><span class="toc-text">jsonpath模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#jsonpath%E6%A8%A1%E5%9D%97%E7%9A%84%E5%AE%89%E8%A3%85"><span class="toc-text">jsonpath模块的安装</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8F%90%E5%8F%96%E6%95%B0%E6%8D%AE%E6%96%B9%E6%B3%95"><span class="toc-text">提取数据方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99"><span class="toc-text">语法规则</span></a></li></ol>
     </div>
 </aside>
 </div>
@@ -706,14 +706,98 @@ var $main = document.querySelector('.main');
 
 		<div>
 			  <article>
-				<p><strong>学习Java个人整理</strong></p>
+				<p><strong>每天一个入狱小技巧</strong></p>
 <a id="more"></a>
 
-<h1 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ public Car(String color,  int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ public Car(String color, int wheel, int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this(color,seat);  //this还可以调用当前累中其他的构造方法</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h1>
+<h1 id="jsonpath模块"><a href="#jsonpath模块" class="headerlink" title="jsonpath模块"></a>jsonpath模块</h1><p><strong>使用场景: 例如多层嵌套的复杂字典, 要根据key和下标来批量提取value就可以用到jsonpath模块</strong></p>
+<h3 id="jsonpath模块的安装"><a href="#jsonpath模块的安装" class="headerlink" title="jsonpath模块的安装"></a>jsonpath模块的安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install jsonpath</span><br></pre></td></tr></table></figure>
+<h1 id="提取数据方法"><a href="#提取数据方法" class="headerlink" title="提取数据方法"></a>提取数据方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from jsonpath import jsonpath</span><br><span class="line">ret &#x3D; jsonpath(a,&#39;jsonpath语法规则字符串&#39;)</span><br></pre></td></tr></table></figure>
+<h1 id="语法规则"><a href="#语法规则" class="headerlink" title="语法规则"></a>语法规则</h1><table>
+<thead>
+<tr>
+<th align="center">jsonpath</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$</td>
+<td align="center">根节点</td>
+</tr>
+<tr>
+<td align="center">@</td>
+<td align="center">现行节点</td>
+</tr>
+<tr>
+<td align="center">. or []</td>
+<td align="center">取子节点</td>
+</tr>
+<tr>
+<td align="center">n/a</td>
+<td align="center">取父节点, jsonpath未支持</td>
+</tr>
+<tr>
+<td align="center">..</td>
+<td align="center">就是不管位置, 选择所有符合条件的条件</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">匹配所有元素节点</td>
+</tr>
+<tr>
+<td align="center">n/a</td>
+<td align="center">根据属性访问, json不支持, 因为json是个Key-value递归结构, 不需要属性访问</td>
+</tr>
+<tr>
+<td align="center">[]</td>
+<td align="center">迭代器标准(可以在里边做简单的迭代操作, 如数组下标, 根据内容选值等)</td>
+</tr>
+<tr>
+<td align="center">[,]</td>
+<td align="center">支持迭代器中做多选</td>
+</tr>
+<tr>
+<td align="center">?()</td>
+<td align="center">支持过滤操作</td>
+</tr>
+<tr>
+<td align="center">()</td>
+<td align="center">支持过表达式计算</td>
+</tr>
+<tr>
+<td align="center">n/a</td>
+<td align="center">分组, jsonpath不支持</td>
+</tr>
+</tbody></table>
+<p><strong>常用的</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">常用jsonpath</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$</td>
+<td align="center">根节点(最外层大括号)</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td align="center">子节点</td>
+</tr>
+<tr>
+<td align="center">..</td>
+<td align="center">子孙节点(内部任意位置, 选择所有符合条件的条件)</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">匹配所有元素节点</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import jsonpath</span><br><span class="line">import json</span><br><span class="line"></span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.72 Safari&#x2F;537.36&quot;</span><br><span class="line">&#125;</span><br><span class="line">response &#x3D; requests.get(&#39;https:&#x2F;&#x2F;www.lagou.com&#x2F;lbs&#x2F;getAllCitySearchLabels.json&#39;,headers&#x3D;headers)</span><br><span class="line"></span><br><span class="line">dict_data &#x3D; json.loads(response.content)</span><br><span class="line"></span><br><span class="line">print(jsonpath.jsonpath(dict_data,&#39;$..name&#39;))</span><br></pre></td></tr></table></figure>
+
+
+
+
 			  </article>
 		</div>
 		
@@ -790,7 +874,7 @@ $(window).load(function(){
         
 	
 <strong>本文链接：</strong>
-	<a href="https://sdq3.gitee.io/Object-oriented-constructor-heavy-load.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;Object-oriented-constructor-heavy-load.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;Object-oriented-constructor-heavy-load.html</a><br>
+	<a href="https://sdq3.gitee.io/reptile-jsonpath.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;reptile-jsonpath.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;reptile-jsonpath.html</a><br>
 </div>
 
 	  

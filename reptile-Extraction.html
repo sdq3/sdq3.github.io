@@ -184,7 +184,7 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>70
+					<span>文章</span>71
 					<span>标签</span>0
 					<span>分类</span>0
 				</div>		
@@ -268,6 +268,10 @@
       <ul>
         
           <li>
+            <a href="/reptile-jsonpath.html">爬虫 jsonpath模块(吃牢饭集合)</a>
+          </li>
+        
+          <li>
             <a href="/reptile-Extraction.html">爬虫 数据提取(吃牢饭集合)</a>
           </li>
         
@@ -281,10 +285,6 @@
         
           <li>
             <a href="/Thread-Process.html">什么是线程?什么是进程?线程与进程到底是什么关系</a>
-          </li>
-        
-          <li>
-            <a href="/Private-cloud.html">私有云配置(个人笔记)</a>
           </li>
         
       </ul>
@@ -667,7 +667,7 @@ var $main = document.querySelector('.main');
 <aside id="article-toc" class="fixed-toc">
     <div id="article-toc-inner">
         <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E5%86%85%E5%AE%B9%E5%88%86%E7%B1%BB"><span class="toc-text">响应内容分类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E5%8C%96%E7%9A%84%E5%93%8D%E5%BA%94%E5%86%85%E5%AE%B9"><span class="toc-text">结构化的响应内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#json%E5%AD%97%E7%AC%A6%E4%B8%B2-%E9%AB%98%E9%A2%91%E5%87%BA%E7%8E%B0"><span class="toc-text">json字符串(高频出现)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xml%E6%95%B0%E6%8D%AE-%E4%BD%8E%E9%A2%91%E5%87%BA%E7%8E%B0"><span class="toc-text">xml数据(低频出现)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E7%BB%93%E6%9E%84%E5%8C%96%E7%9A%84%E5%93%8D%E5%BA%94%E5%86%85%E5%AE%B9"><span class="toc-text">非结构化的响应内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#html%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">html字符串</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#xml%E4%B8%8Ehtml%E5%8C%BA%E5%88%AB"><span class="toc-text">xml与html区别</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#xml"><span class="toc-text">xml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html"><span class="toc-text">html</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90%E6%96%B9%E6%B3%95"><span class="toc-text">常用的数据解析方法</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E5%86%85%E5%AE%B9%E5%88%86%E7%B1%BB"><span class="toc-text">响应内容分类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E5%8C%96%E7%9A%84%E5%93%8D%E5%BA%94%E5%86%85%E5%AE%B9"><span class="toc-text">结构化的响应内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#json%E5%AD%97%E7%AC%A6%E4%B8%B2-%E9%AB%98%E9%A2%91%E5%87%BA%E7%8E%B0"><span class="toc-text">json字符串(高频出现)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xml%E6%95%B0%E6%8D%AE-%E4%BD%8E%E9%A2%91%E5%87%BA%E7%8E%B0"><span class="toc-text">xml数据(低频出现)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E7%BB%93%E6%9E%84%E5%8C%96%E7%9A%84%E5%93%8D%E5%BA%94%E5%86%85%E5%AE%B9"><span class="toc-text">非结构化的响应内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#html%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">html字符串</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#xml%E4%B8%8Ehtml%E5%8C%BA%E5%88%AB"><span class="toc-text">xml与html区别</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#xml"><span class="toc-text">xml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html"><span class="toc-text">html</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90%E6%96%B9%E6%B3%95"><span class="toc-text">常用的数据解析方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#jsonpath%E6%A8%A1%E5%9D%97"><span class="toc-text">jsonpath模块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#lxml%E6%A8%A1%E5%9D%97"><span class="toc-text">lxml模块</span></a></li></ol>
     </div>
 </aside>
 </div>
@@ -751,9 +751,10 @@ var $main = document.querySelector('.main');
 <li>为了更好的显示数据, 侧重点是为显示</li>
 <li>html是显示效果更好, 用于展示数据</li>
 </ul>
-<h1 id="常用的数据解析方法"><a href="#常用的数据解析方法" class="headerlink" title="常用的数据解析方法"></a>常用的数据解析方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">                                          &#x2F;   json模块</span><br><span class="line">                                &#x2F;   json |</span><br><span class="line">                               &#x2F;          \   jsonpath模块</span><br><span class="line">               数据化数据      &#x2F;</span><br><span class="line">           &#x2F;￣￣￣￣￣￣￣￣￣￣\</span><br><span class="line">          &#x2F;                     \         &#x2F;   re模块    正则语法</span><br><span class="line">         &#x2F;                       \  xml  |</span><br><span class="line">        &#x2F;                                 \   lxml模块  xpath语法</span><br><span class="line">       &#x2F;                                 </span><br><span class="line">数据解析</span><br><span class="line">       \ </span><br><span class="line">        \                                 &#x2F;   re模块    正则语法         </span><br><span class="line">         \                               &#x2F;    lxml模块  xpath语法</span><br><span class="line">          \                             &#x2F;</span><br><span class="line">           \___________________   html |      beautifulsoup  xpath语法 正则语法 css选择器</span><br><span class="line">               非结构化数据              \     </span><br><span class="line">                                         \</span><br><span class="line">                                          \   pyquery   css选择器</span><br></pre></td></tr></table></figure>
+<h1 id="常用的数据解析方法"><a href="#常用的数据解析方法" class="headerlink" title="常用的数据解析方法"></a>常用的数据解析方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">                                          &#x2F;   json模块</span><br><span class="line">                                &#x2F;   json |</span><br><span class="line">                               &#x2F;          \   jsonpath模块</span><br><span class="line">               数据化数据      &#x2F;</span><br><span class="line">           &#x2F;￣￣￣￣￣￣￣￣￣￣\</span><br><span class="line">          &#x2F;                     \         &#x2F;   re模块    正则语法</span><br><span class="line">         &#x2F;                       \  xml  |</span><br><span class="line">        &#x2F;                                 \   lxml模块  xpath语法</span><br><span class="line">       &#x2F;                                 </span><br><span class="line">数据解析</span><br><span class="line">       \ </span><br><span class="line">        \                                 &#x2F;   re模块    正则语法         </span><br><span class="line">         \                               &#x2F;    lxml模块  xpath语法</span><br><span class="line">          \                             &#x2F;</span><br><span class="line">           \_____________________ html |      beautifulsoup  xpath语法 正则语法 css选择器</span><br><span class="line">               非结构化数据              \     </span><br><span class="line">                                         \</span><br><span class="line">                                          \   pyquery   css选择器</span><br></pre></td></tr></table></figure>
 
-
+<h1 id="jsonpath模块"><a href="#jsonpath模块" class="headerlink" title="jsonpath模块"></a>jsonpath模块</h1><p><a href>详细说明</a></p>
+<h1 id="lxml模块"><a href="#lxml模块" class="headerlink" title="lxml模块"></a>lxml模块</h1><p><a href>详细说明</a></p>
 
 			  </article>
 		</div>
