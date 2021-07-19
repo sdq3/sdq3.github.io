@@ -1,6 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Arch系统包桌面傻瓜式安装 (有手就行)</title>
+    <url>/Arch-install.html</url>
+    <content><![CDATA[<p><strong>本人是Arch教徒过来传一下教</strong> </p>
+<img src="/images/Arch傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;">
+<a id="more"></a>
+
+<p><strong>在Windows里用DiskGenius转GPT之后 删除你所要安装Arch的分区</strong></p>
+<img src="/images/Arch傻瓜式安装/转GPT格式.jpg" style="width: 300px; height: 150px;">
+
+<p><strong>磁盘变更还可以用Lixux命令来 不建议使用</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ partrd /dev/xxx  //你要变更的磁盘</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gpt</span><br></pre></td></tr></table></figure>
+<p>然后退出</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ quit</span><br></pre></td></tr></table></figure>
+<h1 id="第一步-先要有一个启动盘-这里推荐清华大学开源软件镜像站"><a href="#第一步-先要有一个启动盘-这里推荐清华大学开源软件镜像站" class="headerlink" title="第一步 先要有一个启动盘 这里推荐清华大学开源软件镜像站"></a>第一步 先要有一个启动盘 这里推荐<a href="https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/">清华大学开源软件镜像站</a></h1><h1 id="第二步-引导界面选择第一个-进入U盘"><a href="#第二步-引导界面选择第一个-进入U盘" class="headerlink" title="第二步 引导界面选择第一个 进入U盘"></a>第二步 引导界面选择第一个 进入U盘</h1><p><strong>先检查一下是不是UEFI启动,输入以下命令，有输出就代码是UEFI启动，检查BIOS设置是否为UEFI, BIOS设置每个机型都不一样</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ls /sys/firmware/efi/efivars</span><br></pre></td></tr></table></figure>
+<h1 id="第三步-检查网络连接"><a href="#第三步-检查网络连接" class="headerlink" title="第三步 检查网络连接"></a>第三步 检查网络连接</h1><p><strong>建议直接插网线，然后ping一下百度，有反应继续 没反应检查网线</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ping www.baidu.com</span><br></pre></td></tr></table></figure>
+
+<p>然后CTRL+Z退出</p>
+<p><strong>如果你想用WIFI就执行以下步骤</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ iwctl</span><br></pre></td></tr></table></figure>
+<p><strong>查看网卡 通常都是wlan0</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ device list</span><br></pre></td></tr></table></figure>
+<p><strong>以下命令是扫描你范围内的无线网卡</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ station wlan0 get-networks</span><br></pre></td></tr></table></figure>
+
+<p><strong>找到你的WIFI</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ station wlan0 connect xxx    //无线网卡名字通常是wlan0，WIFI名字xxx</span><br></pre></td></tr></table></figure>
+<p><strong>Passphrase:是让你输密码</strong></p>
+<p><strong>然后以下命令退出</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+<h1 id="第四步-设置系统时钟更新-与网络时间同步"><a href="#第四步-设置系统时钟更新-与网络时间同步" class="headerlink" title="第四步 设置系统时钟更新 与网络时间同步"></a>第四步 设置系统时钟更新 与网络时间同步</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ timedatectl set-ntp <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p><strong>查看是否执行完同步</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ timedatectl status</span><br></pre></td></tr></table></figure>
+<h1 id="第五步-更换镜像源"><a href="#第五步-更换镜像源" class="headerlink" title="第五步 更换镜像源"></a>第五步 更换镜像源</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ vim /etc/pamcan.d/mtrrorlist</span><br></pre></td></tr></table></figure>
+<p><strong>查找: Server = <a href="https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch">https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch</a></strong></p>
+<h1 id="第六步-分区"><a href="#第六步-分区" class="headerlink" title="第六步 分区"></a>第六步 分区</h1><p><strong>查看分区</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ lsblk</span><br></pre></td></tr></table></figure>
+<p><strong>然后正式分区</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cfdisk /dev/xxx   //你要变更的磁盘</span><br></pre></td></tr></table></figure>
+<p><strong>终于到这里了 这里是图形化界面很好查找</strong><br><img src="/images/Arch傻瓜式安装/图形化界面.jpg" style="width: 750px; height: 100px;"></p>
+<p><strong>(New是新建) (Resize是调整大小) (Quit是退出) (Type是类型) (Heip是帮助) (Wrire是保存) (Dump是丢弃)</strong></p>
+<p><strong>步骤: 先点New建一个300M的文件，然后点Type选择EFI System点击，再点New建一个2G的文件，然后点Type选择Linux swap点击，最后点New建一个(根目录)主分区把剩下的所有内存用上，然后点Type选择Linux filesystem点击，然后Wrire回车，并输入yes，然后拍照，点击Quit退出</strong></p>
+<img src="/images/Arch傻瓜式安装/例子.jpg" style="width: 900px; height: 300px;">
+
+<p><strong>以防万一，检查一下</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cfdisk -l</span><br></pre></td></tr></table></figure>
+<h1 id="第七步-格式化操作"><a href="#第七步-格式化操作" class="headerlink" title="第七步 格式化操作"></a>第七步 格式化操作</h1><p><strong>格式化主分区(根目录)</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkfs.ext4 /dev/xxx   //就是你刚刚Linux filesystem的</span><br></pre></td></tr></table></figure>
+<p><strong>格式化EFI分区</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkfs.vfat /dev/xxx     //就是你刚刚EFI System的</span><br></pre></td></tr></table></figure>
+<p><strong>格式化swap分区</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkfswap -f /dev/xxx     //就是你刚刚Linux swap的</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ swapon /dev/xxx     //就是你刚刚Linux swap的</span><br></pre></td></tr></table></figure>
+<h1 id="第八步-挂载"><a href="#第八步-挂载" class="headerlink" title="第八步 挂载"></a>第八步 挂载</h1><p><strong>挂载根目录 注意/mnt前面有空格</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mount /dev/(就是你刚刚Linux filesystem的) /mnt</span><br></pre></td></tr></table></figure>
+<p><strong>挂载EFI分区 先创建boot目录 再里面创建EFI目录 注意/mnt前面还有空格</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir /mnt/boot</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir /mnt/boot/EFI</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mount /dev/xxx /mnt/boot/EFI       //xxx就是你刚刚EFI System的</span><br></pre></td></tr></table></figure>
+<h1 id="第九步-安装系统"><a href="#第九步-安装系统" class="headerlink" title="第九步 安装系统"></a>第九步 安装系统</h1><p><strong>这三个包必安装</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacstrap /mnt base linux linux-firmware</span><br></pre></td></tr></table></figure>
+<p><strong>然后安装功能性软件 联网的有dhcpcd iwd，编辑器有vim，提权有sudo</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacstrap /mnt dhcpcd iwd vim sudo</span><br></pre></td></tr></table></figure>
+<p><strong>然后定义etc分区</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
+<p><strong>以防万一还是检查一下</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
+<h1 id="第七步-把环境迁移到新系统"><a href="#第七步-把环境迁移到新系统" class="headerlink" title="第七步 把环境迁移到新系统"></a>第七步 把环境迁移到新系统</h1><p><strong>迁移命令</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ arch-chroot /mnt</span><br></pre></td></tr></table></figure>
+<p><strong>创建时区 例如: 上海</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ln -sf /usr.share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
+<p><strong>同步时区</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hwclock --systohc</span><br></pre></td></tr></table></figure>
+<p><strong>设置语言 留意en_US.UTF-8 UTF-8</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ vim /etc/locale.gen</span><br></pre></td></tr></table></figure>
+<p><strong>然后生成</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ locale-gen</span><br></pre></td></tr></table></figure>
+<p><strong>然后输入内容</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">&#x27;LANG=EN_us.utf-8 &gt; /etc/locale.conf&#x27;</span></span><br></pre></td></tr></table></figure>
+<p><strong>以防万一 检查一下</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat /etc/locale.conf</span><br></pre></td></tr></table></figure>
+<h1 id="第八步-用户设置"><a href="#第八步-用户设置" class="headerlink" title="第八步 用户设置"></a>第八步 用户设置</h1><p><strong>Root用户设置密码</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ passwd root</span><br></pre></td></tr></table></figure>
+<p><strong>intel英特尔CPU安装这个</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S intel-ucode</span><br></pre></td></tr></table></figure>
+<p><strong>AMD超微CPU安装这个</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S amd-ucode</span><br></pre></td></tr></table></figure>
+<h1 id="第九步-安装引导程序"><a href="#第九步-安装引导程序" class="headerlink" title="第九步 安装引导程序"></a>第九步 安装引导程序</h1><p><strong>安装grub引导</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S grub efibootmgr</span><br></pre></td></tr></table></figure>
+<p><strong>然后给grub引导取个名字</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ grub-install --target=x86_64-efi --efi-directory=/bootloader-id=Arch      //这里我起Arch 顺便起个名字就好了</span><br></pre></td></tr></table></figure>
+<p><strong>生成配置文件</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+<p><strong>退出安装环境</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+<p><strong>卸载分区</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ umount -R /mnt</span><br></pre></td></tr></table></figure>
+<p><strong>然后重启一下 可选择物理重启和命令重启</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ reboot</span><br></pre></td></tr></table></figure>
+<img src="/images/Arch傻瓜式安装/效果.jpg" style="width: 318px; height: 144px;">
+
+<h1 id="第九步-安装到此为止-安装桌面玩下看"><a href="#第九步-安装到此为止-安装桌面玩下看" class="headerlink" title="第九步 安装到此为止 安装桌面玩下看"></a>第九步 安装到此为止 安装桌面玩下看</h1><h1 id="桌面环境"><a href="#桌面环境" class="headerlink" title="桌面环境"></a>桌面环境</h1><p><strong>创建用户 有利于提权</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ useradd -m -g users G wheel -s /bin/bash xxx     //xxx是你顺便起个用户名</span><br></pre></td></tr></table></figure>
+<p><strong>创建密码</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ passwd wallen</span><br></pre></td></tr></table></figure>
+<p><strong>编辑新用户权限 %wheel ALL=(ALL) ALL</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ EDITOR=vim visudo</span><br></pre></td></tr></table></figure>
+<p><strong>创建桌面环境命令和其他必要软件命令  dolpin是文件管理器  konsole是终端</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S plasma-meta dolphin konsole</span><br></pre></td></tr></table></figure>
+<p><strong>配置sddm设置为开机自启</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ systemctl <span class="built_in">enable</span> sddm</span><br></pre></td></tr></table></figure>
+<p><strong>开启一下32位支持库 有些程序还是32位 所以要装一些库</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo vim /etc/pacman.conf</span><br></pre></td></tr></table></figure>
+<p><strong>配置</strong></p>
+<img src="/images/Arch傻瓜式安装/配置.jpg" style="width: 900px; height: 300px;">
+
+<p><strong>刷新数据库内容</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacmam -Syyu</span><br></pre></td></tr></table></figure>
+<p><strong>然后重启一下 可选择物理重启和命令重启</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ reboot</span><br></pre></td></tr></table></figure>
+<h1 id="Vim命令"><a href="#Vim命令" class="headerlink" title="Vim命令"></a>Vim命令</h1><p><strong>按A键是编辑模式</strong><br><strong>按回车键是执行</strong><br><strong>按两下D键是剪切</strong><br><strong>按两下G键是回到第一行</strong><br><strong>按P键粘贴</strong><br><strong>按N键查找下一个</strong><br><strong>按ESC 然后输入 :wq 是保存并退出</strong></p>
+<h1 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>33种编程语言的HelloWorld</title>
     <url>/HelloWorld.html</url>
     <content><![CDATA[<p><strong>我的核心代码</strong></p>
@@ -441,134 +569,6 @@ var tools = (function(){
 </ul></ul></ul></ul>]]></content>
   </entry>
   <entry>
-    <title>Arch系统包桌面傻瓜式安装 (有手就行)</title>
-    <url>/Arch-install.html</url>
-    <content><![CDATA[<p><strong>本人是Arch教徒过来传一下教</strong> </p>
-<img src="/images/Arch傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;">
-<a id="more"></a>
-
-<p><strong>在Windows里用DiskGenius转GPT之后 删除你所要安装Arch的分区</strong></p>
-<img src="/images/Arch傻瓜式安装/转GPT格式.jpg" style="width: 300px; height: 150px;">
-
-<p><strong>磁盘变更还可以用Lixux命令来 不建议使用</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ partrd /dev/xxx  //你要变更的磁盘</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gpt</span><br></pre></td></tr></table></figure>
-<p>然后退出</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ quit</span><br></pre></td></tr></table></figure>
-<h1 id="第一步-先要有一个启动盘-这里推荐清华大学开源软件镜像站"><a href="#第一步-先要有一个启动盘-这里推荐清华大学开源软件镜像站" class="headerlink" title="第一步 先要有一个启动盘 这里推荐清华大学开源软件镜像站"></a>第一步 先要有一个启动盘 这里推荐<a href="https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/">清华大学开源软件镜像站</a></h1><h1 id="第二步-引导界面选择第一个-进入U盘"><a href="#第二步-引导界面选择第一个-进入U盘" class="headerlink" title="第二步 引导界面选择第一个 进入U盘"></a>第二步 引导界面选择第一个 进入U盘</h1><p><strong>先检查一下是不是UEFI启动,输入以下命令，有输出就代码是UEFI启动，检查BIOS设置是否为UEFI, BIOS设置每个机型都不一样</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ls /sys/firmware/efi/efivars</span><br></pre></td></tr></table></figure>
-<h1 id="第三步-检查网络连接"><a href="#第三步-检查网络连接" class="headerlink" title="第三步 检查网络连接"></a>第三步 检查网络连接</h1><p><strong>建议直接插网线，然后ping一下百度，有反应继续 没反应检查网线</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ping www.baidu.com</span><br></pre></td></tr></table></figure>
-
-<p>然后CTRL+Z退出</p>
-<p><strong>如果你想用WIFI就执行以下步骤</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ iwctl</span><br></pre></td></tr></table></figure>
-<p><strong>查看网卡 通常都是wlan0</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ device list</span><br></pre></td></tr></table></figure>
-<p><strong>以下命令是扫描你范围内的无线网卡</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ station wlan0 get-networks</span><br></pre></td></tr></table></figure>
-
-<p><strong>找到你的WIFI</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ station wlan0 connect xxx    //无线网卡名字通常是wlan0，WIFI名字xxx</span><br></pre></td></tr></table></figure>
-<p><strong>Passphrase:是让你输密码</strong></p>
-<p><strong>然后以下命令退出</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
-<h1 id="第四步-设置系统时钟更新-与网络时间同步"><a href="#第四步-设置系统时钟更新-与网络时间同步" class="headerlink" title="第四步 设置系统时钟更新 与网络时间同步"></a>第四步 设置系统时钟更新 与网络时间同步</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ timedatectl set-ntp <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p><strong>查看是否执行完同步</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ timedatectl status</span><br></pre></td></tr></table></figure>
-<h1 id="第五步-更换镜像源"><a href="#第五步-更换镜像源" class="headerlink" title="第五步 更换镜像源"></a>第五步 更换镜像源</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ vim /etc/pamcan.d/mtrrorlist</span><br></pre></td></tr></table></figure>
-<p><strong>查找: Server = <a href="https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch">https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch</a></strong></p>
-<h1 id="第六步-分区"><a href="#第六步-分区" class="headerlink" title="第六步 分区"></a>第六步 分区</h1><p><strong>查看分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ lsblk</span><br></pre></td></tr></table></figure>
-<p><strong>然后正式分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cfdisk /dev/xxx   //你要变更的磁盘</span><br></pre></td></tr></table></figure>
-<p><strong>终于到这里了 这里是图形化界面很好查找</strong><br><img src="/images/Arch傻瓜式安装/图形化界面.jpg" style="width: 750px; height: 100px;"></p>
-<p><strong>(New是新建) (Resize是调整大小) (Quit是退出) (Type是类型) (Heip是帮助) (Wrire是保存) (Dump是丢弃)</strong></p>
-<p><strong>步骤: 先点New建一个300M的文件，然后点Type选择EFI System点击，再点New建一个2G的文件，然后点Type选择Linux swap点击，最后点New建一个(根目录)主分区把剩下的所有内存用上，然后点Type选择Linux filesystem点击，然后Wrire回车，并输入yes，然后拍照，点击Quit退出</strong></p>
-<img src="/images/Arch傻瓜式安装/例子.jpg" style="width: 900px; height: 300px;">
-
-<p><strong>以防万一，检查一下</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cfdisk -l</span><br></pre></td></tr></table></figure>
-<h1 id="第七步-格式化操作"><a href="#第七步-格式化操作" class="headerlink" title="第七步 格式化操作"></a>第七步 格式化操作</h1><p><strong>格式化主分区(根目录)</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkfs.ext4 /dev/xxx   //就是你刚刚Linux filesystem的</span><br></pre></td></tr></table></figure>
-<p><strong>格式化EFI分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkfs.vfat /dev/xxx     //就是你刚刚EFI System的</span><br></pre></td></tr></table></figure>
-<p><strong>格式化swap分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkfswap -f /dev/xxx     //就是你刚刚Linux swap的</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ swapon /dev/xxx     //就是你刚刚Linux swap的</span><br></pre></td></tr></table></figure>
-<h1 id="第八步-挂载"><a href="#第八步-挂载" class="headerlink" title="第八步 挂载"></a>第八步 挂载</h1><p><strong>挂载根目录 注意/mnt前面有空格</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mount /dev/(就是你刚刚Linux filesystem的) /mnt</span><br></pre></td></tr></table></figure>
-<p><strong>挂载EFI分区 先创建boot目录 再里面创建EFI目录 注意/mnt前面还有空格</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir /mnt/boot</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir /mnt/boot/EFI</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mount /dev/xxx /mnt/boot/EFI       //xxx就是你刚刚EFI System的</span><br></pre></td></tr></table></figure>
-<h1 id="第九步-安装系统"><a href="#第九步-安装系统" class="headerlink" title="第九步 安装系统"></a>第九步 安装系统</h1><p><strong>这三个包必安装</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacstrap /mnt base linux linux-firmware</span><br></pre></td></tr></table></figure>
-<p><strong>然后安装功能性软件 联网的有dhcpcd iwd，编辑器有vim，提权有sudo</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacstrap /mnt dhcpcd iwd vim sudo</span><br></pre></td></tr></table></figure>
-<p><strong>然后定义etc分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
-<p><strong>以防万一还是检查一下</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
-<h1 id="第七步-把环境迁移到新系统"><a href="#第七步-把环境迁移到新系统" class="headerlink" title="第七步 把环境迁移到新系统"></a>第七步 把环境迁移到新系统</h1><p><strong>迁移命令</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ arch-chroot /mnt</span><br></pre></td></tr></table></figure>
-<p><strong>创建时区 例如: 上海</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ln -sf /usr.share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
-<p><strong>同步时区</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hwclock --systohc</span><br></pre></td></tr></table></figure>
-<p><strong>设置语言 留意en_US.UTF-8 UTF-8</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ vim /etc/locale.gen</span><br></pre></td></tr></table></figure>
-<p><strong>然后生成</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ locale-gen</span><br></pre></td></tr></table></figure>
-<p><strong>然后输入内容</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">&#x27;LANG=EN_us.utf-8 &gt; /etc/locale.conf&#x27;</span></span><br></pre></td></tr></table></figure>
-<p><strong>以防万一 检查一下</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat /etc/locale.conf</span><br></pre></td></tr></table></figure>
-<h1 id="第八步-用户设置"><a href="#第八步-用户设置" class="headerlink" title="第八步 用户设置"></a>第八步 用户设置</h1><p><strong>Root用户设置密码</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ passwd root</span><br></pre></td></tr></table></figure>
-<p><strong>intel英特尔CPU安装这个</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S intel-ucode</span><br></pre></td></tr></table></figure>
-<p><strong>AMD超微CPU安装这个</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S amd-ucode</span><br></pre></td></tr></table></figure>
-<h1 id="第九步-安装引导程序"><a href="#第九步-安装引导程序" class="headerlink" title="第九步 安装引导程序"></a>第九步 安装引导程序</h1><p><strong>安装grub引导</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S grub efibootmgr</span><br></pre></td></tr></table></figure>
-<p><strong>然后给grub引导取个名字</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ grub-install --target=x86_64-efi --efi-directory=/bootloader-id=Arch      //这里我起Arch 顺便起个名字就好了</span><br></pre></td></tr></table></figure>
-<p><strong>生成配置文件</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
-<p><strong>退出安装环境</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
-<p><strong>卸载分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ umount -R /mnt</span><br></pre></td></tr></table></figure>
-<p><strong>然后重启一下 可选择物理重启和命令重启</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ reboot</span><br></pre></td></tr></table></figure>
-<img src="/images/Arch傻瓜式安装/效果.jpg" style="width: 318px; height: 144px;">
-
-<h1 id="第九步-安装到此为止-安装桌面玩下看"><a href="#第九步-安装到此为止-安装桌面玩下看" class="headerlink" title="第九步 安装到此为止 安装桌面玩下看"></a>第九步 安装到此为止 安装桌面玩下看</h1><h1 id="桌面环境"><a href="#桌面环境" class="headerlink" title="桌面环境"></a>桌面环境</h1><p><strong>创建用户 有利于提权</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ useradd -m -g users G wheel -s /bin/bash xxx     //xxx是你顺便起个用户名</span><br></pre></td></tr></table></figure>
-<p><strong>创建密码</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ passwd wallen</span><br></pre></td></tr></table></figure>
-<p><strong>编辑新用户权限 %wheel ALL=(ALL) ALL</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ EDITOR=vim visudo</span><br></pre></td></tr></table></figure>
-<p><strong>创建桌面环境命令和其他必要软件命令  dolpin是文件管理器  konsole是终端</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S plasma-meta dolphin konsole</span><br></pre></td></tr></table></figure>
-<p><strong>配置sddm设置为开机自启</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ systemctl <span class="built_in">enable</span> sddm</span><br></pre></td></tr></table></figure>
-<p><strong>开启一下32位支持库 有些程序还是32位 所以要装一些库</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo vim /etc/pacman.conf</span><br></pre></td></tr></table></figure>
-<p><strong>配置</strong></p>
-<img src="/images/Arch傻瓜式安装/配置.jpg" style="width: 900px; height: 300px;">
-
-<p><strong>刷新数据库内容</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacmam -Syyu</span><br></pre></td></tr></table></figure>
-<p><strong>然后重启一下 可选择物理重启和命令重启</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ reboot</span><br></pre></td></tr></table></figure>
-<h1 id="Vim命令"><a href="#Vim命令" class="headerlink" title="Vim命令"></a>Vim命令</h1><p><strong>按A键是编辑模式</strong><br><strong>按回车键是执行</strong><br><strong>按两下D键是剪切</strong><br><strong>按两下G键是回到第一行</strong><br><strong>按P键粘贴</strong><br><strong>按N键查找下一个</strong><br><strong>按ESC 然后输入 :wq 是保存并退出</strong></p>
-<h1 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>Bodhi Linux安装教程(老电脑的福利)</title>
     <url>/Bodhi-Linux.html</url>
     <content><![CDATA[<p><strong>本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版</strong></p>
@@ -667,6 +667,19 @@ var tools = (function(){
 ]]></content>
   </entry>
   <entry>
+    <title>CSS 属性选择器(常用)</title>
+    <url>/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$</span><br><span class="line">$  .sdq1 a&#123; </span><br><span class="line">$       float: left;  //left往左float浮动</span><br><span class="line">$       dispay: block;  //dispay规定元素应该生成的框的类型block此元素将显示为块级元素，此元素前后会带有换行符。</span><br><span class="line">$       heigh: 50px;  //heigh高度</span><br><span class="line">$       width: 50px;  //width宽度</span><br><span class="line">$       border-radius: 10px;  //border-radius圆角边框</span><br><span class="line">$       </span><br><span class="line">$       text-align: center;   //text-align对齐center剧中</span><br><span class="line">$       color: yellow;  //color文字颜色</span><br><span class="line">$       text-decoration: none;  //text-decoration下划线none不显示</span><br><span class="line">$       margin-right: 5px;    //margin-right外边距向右</span><br><span class="line">$       font: bold 20px/50px Arial;   //font设置文字的字体bold字体大小20px字体的大小50px行高Arial是一种字体</span><br><span class="line">$   &#125;</span><br><span class="line">$    //格式a[]&#123;&#125;  存在id的属性的元素  </span><br><span class="line">$   a[class*=first]&#123;        //=是绝对等于  *=是包含这个元素</span><br><span class="line">$       background: yellow;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href^=xxy]&#123;          //^=表示以什么开头     </span><br><span class="line">$       background: green;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href$=ghfgh]&#123;          //$=表示以什么结尾     </span><br><span class="line">$       background: powder;</span><br><span class="line">$   &#125;</span><br><span class="line">$    </span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxy.fgdhrth&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item first&quot;</span> <span class="attr">id</span>=<span class="string">&quot;first&quot;</span>&gt;</span>史迪奇<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪仔<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇骑士<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇国王<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇勇士<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;hh.ghfgh&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇巫师<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+]]></content>
+  </entry>
+  <entry>
     <title>CSS 三种导入样式</title>
     <url>/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
@@ -680,19 +693,6 @@ var tools = (function(){
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color:blue;     //颜色</span><br><span class="line">$        text-align: center;  //文本对齐的方式 </span><br><span class="line">$        text-indent: 2em;     //首行缩进</span><br><span class="line">$        line-height: 20px;    //行高 </span><br><span class="line">$        text-decoration: overline;   //上划线</span><br><span class="line">$        text-decoration: line-through;   //中划线</span><br><span class="line">$        text-decoration: underline   //下划线</span><br><span class="line">$      &#125;</span><br><span class="line">$     img,span&#123;</span><br><span class="line">$               vertical-align: middle;</span><br><span class="line">$            &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$<span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的王国<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/x.jpg&quot;</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">span</span>&gt;</span>史迪奇<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h1 id="超链接伪类"><a href="#超链接伪类" class="headerlink" title="超链接伪类"></a>超链接伪类</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    //默认颜色</span><br><span class="line">$     a&#123;  </span><br><span class="line">$          text-decoration: none;</span><br><span class="line">$          color: #000000;</span><br><span class="line">$       &#125;  </span><br><span class="line">$     //鼠标悬浮状态 </span><br><span class="line">$     a:hover&#123;  </span><br><span class="line">$          color: blue;</span><br><span class="line">$       &#125;     </span><br><span class="line">$     //鼠标按住未释放状态 </span><br><span class="line">$     a:active&#123;  </span><br><span class="line">$          color: rad;</span><br><span class="line">$       &#125;      </span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$<span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的王国<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">a</span>&gt;</span>史迪奇<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h1 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    //默认颜色</span><br><span class="line">$     #sdq&#123;  </span><br><span class="line">$          text-shawdow: blue 10px 10px 10px;    //text-shawdow是阴影, 阴影颜色, 水平偏移, 垂直偏移, 阴影半径</span><br><span class="line">$       &#125;       </span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$<span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的王国<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">&quot;sdq&quot;</span>&gt;</span>史迪奇<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
-    <title>CSS 属性选择器(常用)</title>
-    <url>/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
-    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$</span><br><span class="line">$  .sdq1 a&#123; </span><br><span class="line">$       float: left;  //left往左float浮动</span><br><span class="line">$       dispay: block;  //dispay规定元素应该生成的框的类型block此元素将显示为块级元素，此元素前后会带有换行符。</span><br><span class="line">$       heigh: 50px;  //heigh高度</span><br><span class="line">$       width: 50px;  //width宽度</span><br><span class="line">$       border-radius: 10px;  //border-radius圆角边框</span><br><span class="line">$       </span><br><span class="line">$       text-align: center;   //text-align对齐center剧中</span><br><span class="line">$       color: yellow;  //color文字颜色</span><br><span class="line">$       text-decoration: none;  //text-decoration下划线none不显示</span><br><span class="line">$       margin-right: 5px;    //margin-right外边距向右</span><br><span class="line">$       font: bold 20px/50px Arial;   //font设置文字的字体bold字体大小20px字体的大小50px行高Arial是一种字体</span><br><span class="line">$   &#125;</span><br><span class="line">$    //格式a[]&#123;&#125;  存在id的属性的元素  </span><br><span class="line">$   a[class*=first]&#123;        //=是绝对等于  *=是包含这个元素</span><br><span class="line">$       background: yellow;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href^=xxy]&#123;          //^=表示以什么开头     </span><br><span class="line">$       background: green;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href$=ghfgh]&#123;          //$=表示以什么结尾     </span><br><span class="line">$       background: powder;</span><br><span class="line">$   &#125;</span><br><span class="line">$    </span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxy.fgdhrth&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item first&quot;</span> <span class="attr">id</span>=<span class="string">&quot;first&quot;</span>&gt;</span>史迪奇<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪仔<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇骑士<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇国王<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇勇士<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;hh.ghfgh&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇巫师<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
 ]]></content>
   </entry>
   <entry>
@@ -1053,18 +1053,6 @@ $</style>
 <h1 id="只要input都需要value值和name值-这样就可以养成好习惯"><a href="#只要input都需要value值和name值-这样就可以养成好习惯" class="headerlink" title="只要input都需要value值和name值, 这样就可以养成好习惯"></a>只要input都需要value值和name值, 这样就可以养成好习惯</h1>]]></content>
   </entry>
   <entry>
-    <title>HTML 表格</title>
-    <url>/HTML-form.html</url>
-    <content><![CDATA[<p><strong>HTML个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="table"><a href="#table" class="headerlink" title="table"></a>table</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ tr  //行</span><br><span class="line">$ td  //列</span><br></pre></td></tr></table></figure>
-
-<h1 id="跨列"><a href="#跨列" class="headerlink" title="跨列"></a>跨列</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">$    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$        <span class="tag">&lt;<span class="name">tb</span> <span class="attr">cospan</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">$     <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="跨行"><a href="#跨行" class="headerlink" title="跨行"></a>跨行</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">$    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$        <span class="tag">&lt;<span class="name">tb</span> <span class="attr">rowspan</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">$     <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>关于Hexo搭建博客我所踩过的坑和小白安装教程</title>
     <url>/Hexo-install.html</url>
     <content><![CDATA[<p><strong>搭建博客笔记</strong></p>
@@ -1091,6 +1079,18 @@ $</style>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ permalink: :id.html   //填入:id.html</span><br></pre></td></tr></table></figure>
 <p><strong>然后在指定位置填入id即可 数字随意，只要保证每篇文章里面的数字不要一样就行</strong></p>
 <img src="/images/Hexo博客/案例.jpg">]]></content>
+  </entry>
+  <entry>
+    <title>HTML 表格</title>
+    <url>/HTML-form.html</url>
+    <content><![CDATA[<p><strong>HTML个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="table"><a href="#table" class="headerlink" title="table"></a>table</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ tr  //行</span><br><span class="line">$ td  //列</span><br></pre></td></tr></table></figure>
+
+<h1 id="跨列"><a href="#跨列" class="headerlink" title="跨列"></a>跨列</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">$    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$        <span class="tag">&lt;<span class="name">tb</span> <span class="attr">cospan</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">$     <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="跨行"><a href="#跨行" class="headerlink" title="跨行"></a>跨行</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">$    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$        <span class="tag">&lt;<span class="name">tb</span> <span class="attr">rowspan</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">$     <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
   </entry>
   <entry>
     <title>Java Swing 图形界面速背表(未完工)</title>
@@ -1306,6 +1306,16 @@ $</style>
 ]]></content>
   </entry>
   <entry>
+    <title>Java面向对象思维之getter和setter(作用)</title>
+    <url>/Object-oriented-getter-setter.html</url>
+    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="getter"><a href="#getter" class="headerlink" title="getter"></a>getter</h1><p><strong>主要是给成员变量赋值, 做一定的保护</strong></p>
+<h1 id="setter"><a href="#setter" class="headerlink" title="setter"></a>setter</h1><p><strong>从成员变量中获取数据</strong></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Java面向对象思维</title>
     <url>/Object-oriented.html</url>
     <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
@@ -1334,16 +1344,6 @@ $</style>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">diving</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.color+<span class="string">&quot;车可以下水&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$ 	  Car c1 = new Car();   //先创建一辆车</span><br><span class="line">$ 	  c1.color = <span class="string">&quot;透明&quot;</span>;  //我的车是透明色</span><br><span class="line">$ 	  c1.wheel = 5;  //众所周知所以车都是5个轮子</span><br><span class="line">$      c1.seat = 9; //我的车 里面坐4个 车前绑1个人用来刹车 车顶坐1个人</span><br><span class="line">$      c1.run();</span><br><span class="line">$      c1.fly();</span><br><span class="line">$      c1.diving();</span><br><span class="line">$</span><br><span class="line">$      Car c2 = new Car();   //先创建一辆车</span><br><span class="line">$	  c2.color = <span class="string">&quot;黄&quot;</span>;  //我的车是屎黄</span><br><span class="line">$	  c2.wheel = 5;  //众所周知所以车都是5个轮子</span><br><span class="line">$      c2.seat = 9; //我的车 里面坐4个 车前绑1个人用来刹车 车顶坐1个人</span><br><span class="line">$      c2.run();</span><br><span class="line">$      c2.fly();</span><br><span class="line">$      c2.diving();</span><br><span class="line">$	&#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <h1 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h1><p><strong>this: 当前类的对象</strong><br><strong>this可以在方法内部获取到对象中的属性信息</strong><br><strong>this还可以区分局部变量和成员变量</strong></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Java面向对象思维之getter和setter(作用)</title>
-    <url>/Object-oriented-getter-setter.html</url>
-    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="getter"><a href="#getter" class="headerlink" title="getter"></a>getter</h1><p><strong>主要是给成员变量赋值, 做一定的保护</strong></p>
-<h1 id="setter"><a href="#setter" class="headerlink" title="setter"></a>setter</h1><p><strong>从成员变量中获取数据</strong></p>
 ]]></content>
   </entry>
   <entry>
@@ -1566,6 +1566,192 @@ $
 <h1 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h1><h1 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h1><h1 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h1>]]></content>
   </entry>
   <entry>
+    <title>下次一定</title>
+    <url>/xcyd.html</url>
+    <content><![CDATA[<p><strong>本人制作简单的一款软件</strong></p>
+<a id="more"></a>
+
+<h1 id="软件截图"><a href="#软件截图" class="headerlink" title="软件截图"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcydjt.jpg">软件截图</a></h1><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcyd.jpg">下载</a></h1><h1 id="声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡"><a href="#声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡" class="headerlink" title="声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡"></a>声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡</h1><h1 id="真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器"><a href="#真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器" class="headerlink" title="真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器"></a>真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器</h1><h1 id="除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了"><a href="#除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了" class="headerlink" title="除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了"></a>除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了</h1>]]></content>
+  </entry>
+  <entry>
+    <title>Android同步源码和编译ROM傻瓜式 (有手就行)</title>
+    <url>/Android-compile.html</url>
+    <content><![CDATA[<p><strong>本人是用Arch，顺便来传一下教</strong><br><img src="/images/编译Android/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
+<a id="more"></a>
+
+<h1 id="第一是-安装Linux-我以Ubuntu和deepin为例子，建议新手用deepin"><a href="#第一是-安装Linux-我以Ubuntu和deepin为例子，建议新手用deepin" class="headerlink" title="第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin"></a>第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin</h1><p><a href="https://www.bilibili.com/video/BV1aW411C7NR">Ubantu的安装视频</a><br><a href="https://www.bilibili.com/video/BV1HW411Y73e">Deepin的安装视频</a></p>
+<h1 id="第二是-环境搭载"><a href="#第二是-环境搭载" class="headerlink" title="第二是 环境搭载"></a>第二是 环境搭载</h1><p><strong>1.明确自己要开发的android版本 参考 lineageos官方的wiki：<a href="https://wiki.lineageos.org/">https://wiki.lineageos.org</a> 选择合适的linux发行版(推荐ubuntu 16)推荐而已，你可以是别的Linux,都没问题</strong></p>
+<p><strong>2.更新自身ubuntu的软件源  替换到etc/apt/sources.list替换完毕后执行</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update //如果自身网速不好建议换国内源(清华 中科大 阿里)</span><br></pre></td></tr></table></figure>
+<p><strong><a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">个人建议清华</a></strong><br><strong>deepin就更简单，直接设置里面换</strong></p>
+<p><strong>3.安装jdk，需要根据开发的android版本选择</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure>
+
+<p><strong>4.安装 软件依赖</strong></p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev</span><br></pre></td></tr></table></figure>
+<p><strong>4.安装jdk，需要根据开发的android版本选择</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install openjdk-x-jdk    //x 为jdk版本数字</span><br></pre></td></tr></table></figure>
+<p><strong>LineageOS 14.1-15.1: OpenJDK 1.8</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ install openjdk-8-jdk</span><br></pre></td></tr></table></figure>
+<p><strong>LineageOS 11.0-13.0: OpenJDK 1.7</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ install openjdk-7-jdk</span><br></pre></td></tr></table></figure>
+<h1 id="第三是-安装repo"><a href="#第三是-安装repo" class="headerlink" title="第三是 安装repo"></a>第三是 安装repo</h1><p><strong>(1) 推荐使用mokee开源的 <a href="https://bbs.mokeedev.com/t/topic/21">mokee repo1</a> 或者 <a href="https://tacke.wodemo.com/entry/466371">mokee repo2</a></strong></p>
+<p><strong>(2)在终端中输入以下内容，新建bin文件夹</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir ~/bin</span><br></pre></td></tr></table></figure>
+<p><strong>(3)输入以下内容，将bin文件夹添加到环境变量中</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ PATH=~/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+<p><strong>(4)接着输入以下内容，下载repo文件到bin文件夹 输入这个请省略下面那一步</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo &gt; ~/bin/repo</span><br></pre></td></tr></table></figure>
+
+<p><strong>如果你是欧洲人，有钱买梯子 就省略上步直接输入以下命令</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo</span><br></pre></td></tr></table></figure>
+<p><strong>(5)最后输入以下内容，为repo文件添加运行权限</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ chmod a+x ~&#x2F;bin&#x2F;repo</span><br></pre></td></tr></table></figure>
+<h1 id="第四是-同步源码"><a href="#第四是-同步源码" class="headerlink" title="第四是 同步源码"></a>第四是 同步源码</h1><p><strong>(1) win+alt+t打开终端，输入如下，创建一个文件夹</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir ~/los      //例如: los  名字你可以顺便起</span><br></pre></td></tr></table></figure>
+<p><strong>(2) 进入(自己起好名字的文件夹)的文件夹，输入如下</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/los         //例如: los 你随便起名字的文件夹</span><br></pre></td></tr></table></figure>
+<p><strong>(3) 由于使用repo拉取源码时，会尝试访问官方的git源更新自己，但由于是谷歌，就无法正常访问，所以在正式拉取前，我们需要先做点修改打开主目录，按组合键ctrl+H，在显示的隐藏文件中，打开.bashrc文件，将如下内容复制到你的~/.bashrc最后一行，保存退出</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> REPO_URL=<span class="string">&#x27;https://mirrors.tuna.tsinghua.edu.cn/git/git-repo&#x27;</span></span><br></pre></td></tr></table></figure>
+<p><strong>(4) 获取源码拉取地址</strong><br>访问<a href="https://github.com/LineageOS">lineage的开源地址库</a>点击android，进入如下界面，这里就看到了拉取lineage-x.x的命令</p>
+<p><strong>(5) 获取源码default</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ repo init -u git://github.com/los/android.git -b lineage-x.x       //例如: los 你随便起名字的文件夹和lineage版本</span><br></pre></td></tr></table></figure>
+<p><strong>(6) 输入邮箱和昵称</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.email xxxxxx@xxxx   //你的邮箱</span><br><span class="line">$ git config --global user.name xxxxxxxxx     //随便起一个英文昵称</span><br></pre></td></tr></table></figure>
+<p><strong>打开lineageOS文件夹 (如果是空的按组合键ctrl+H，显示隐藏内容)**</strong></p>
+<p><img src="/images/%E7%BC%96%E8%AF%91Android/%E5%90%8C%E6%AD%A5%E6%BA%90%E7%A0%81.png"></p>
+<p>然后更改<a href="https://mirrors.tuna.tsinghua.edu.cn/help/lineageOS/">链接</a></p>
+<h1 id="第五是-拉取源码"><a href="#第五是-拉取源码" class="headerlink" title="第五是 拉取源码"></a>第五是 拉取源码</h1><p><strong>输入</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ repo sync</span><br></pre></td></tr></table></figure>
+<p><strong>或者</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ repo sync -c -f -j8 --force-sync --no-clone-bundle</span><br></pre></td></tr></table></figure>
+<h1 id="第六是-获取机型device"><a href="#第六是-获取机型device" class="headerlink" title="第六是 获取机型device"></a>第六是 获取机型device</h1><p><strong>(1) 我们进入<a href="https://github.com/LineageOS">lineage的开源项目网站</a></strong></p>
+<p><strong>(2) 在搜索框中输入(设备代号)，会看到android_device_(品牌)_(设备代号)这一项</strong></p>
+<p><strong>(3) 点击android_device_(品牌)_(设备代号)，就可以看到device的所有内容</strong></p>
+<p><strong>(4) 点击右边的Clone or download，然后复制如图中的蓝色内容，这就是此device的下载地址</strong></p>
+<p><strong>(5) 组合键ctrl+alt+t，打开终端</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/los             //例如: los  你随便起名字的文件夹</span><br></pre></td></tr></table></figure>
+<p><strong>(6) 输入如下命令，回车开始同步</strong></p>
+<p>解释一下:git clone就是拷贝到本地的命令，那段网址就是我们上面复制的地址，-b后面的lineage-x.x,表示lineage-x.x的分支；device/(品牌)/(设备代号)就是要下载到地方的路径</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/LineageOS/android_device_(品牌)_(设备代号).git -b lineage-x.x device/(品牌)/(设备代号) depth=1(可加可不加，加入同步源码会小点)</span><br></pre></td></tr></table></figure>
+<p><strong>(7) 我们需要拉取的项目如下</strong></p>
+<img src="/images/编译Android/找机型.jpg">
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ android_device_(品牌)_(设备代号)</span><br><span class="line"></span><br><span class="line">$ android_device_(品牌)_(处理器代号)-common</span><br><span class="line"></span><br><span class="line">$ android_device_(品牌)_(厂家)_common</span><br><span class="line"></span><br><span class="line">$ android_kernel_(品牌)_(处理器代号)</span><br><span class="line"></span><br><span class="line">$ proprietary_vendor_(品牌) </span><br></pre></td></tr></table></figure>
+<p><strong>(8) <a href="https://github.com/TheMuppets">vendor需要访问地址</a>然后搜索(你的品牌)就可以找到</strong></p>
+<p><strong>(9) 同样和同步其他项目一样</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/TheMuppets/proprietary_vendor_(品牌).git -b lineage-x.x vendor/(品牌)</span><br></pre></td></tr></table></figure>
+<h1 id="第七是-执行编译"><a href="#第七是-执行编译" class="headerlink" title="第七是 执行编译"></a>第七是 执行编译</h1><p><strong>(1)如果你退出了，你就按组合键ctrl+alt+t，打开终端，输入以下命令，回车，进入los             //你随便起名字的文件夹，没有的话跳过这个环节</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/los    //例如: los 你随便起名字的文件夹</span><br></pre></td></tr></table></figure>
+<p><strong>(2) 初始化</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ . build/envsetup.sh</span><br></pre></td></tr></table></figure>
+<p><strong>(3) 输入如下命令，回车</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ breakfast xxx  //自己的机型</span><br></pre></td></tr></table></figure>
+<p>如果有错误，就根据错误提示到lineageOS目录检查device, kernel和vendor等是否正确</p>
+<p><strong>(4) 输入，回车，进行编译</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ brunch xxx    //自己的机型</span><br></pre></td></tr></table></figure>
+<p>编译耗费的时间取决于你的电脑配置情况，所以我不建议用虚拟机，如果你电脑配置相当牛逼，当我没说</p>
+<p><strong>(5)在我编译时出现了 fatal error: openssl/opensslv.h: No such file or directory 原因是libssl-dev没有安装</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install libssl-dev</span><br></pre></td></tr></table></figure>
+<p><strong>(6) 回到正在编译的终端中，重新输入如下命令，等待编译的完成</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ brunch //自己的机型</span><br></pre></td></tr></table></figure>
+<p><strong>(7) 编译完成后</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ 进入主目录\(你随便起名字的文件夹)\out\target\product\(设备代号)中就可以看到我们编译好的ROM了，可以复制到手机刷入了</span><br></pre></td></tr></table></figure>
+<h1 id="另外设置ccache提高编译速度"><a href="#另外设置ccache提高编译速度" class="headerlink" title="另外设置ccache提高编译速度"></a>另外设置ccache提高编译速度</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> USE_CCACHE=1 </span><br><span class="line">$ <span class="built_in">export</span> CCACHE_COMPRESS=1</span><br><span class="line">$ ccache -M 50G 或者100G</span><br></pre></td></tr></table></figure>
+<p><strong>防止低内存编译出错 设置大小为</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> ANDROID_JACK_VM_ARGS=<span class="string">&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G&quot;</span></span><br></pre></td></tr></table></figure>
+<h1 id="祝福大家能自己动手做出属于自己的ROM"><a href="#祝福大家能自己动手做出属于自己的ROM" class="headerlink" title="祝福大家能自己动手做出属于自己的ROM"></a>祝福大家能自己动手做出属于自己的ROM</h1>]]></content>
+  </entry>
+  <entry>
+    <title>python 字符串(我失忆了)</title>
+    <url>/python-zfc.html</url>
+    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
+<a id="more"></a>
+
+<h1 id="以下全是字符串"><a href="#以下全是字符串" class="headerlink" title="以下全是字符串"></a>以下全是字符串</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s &#x3D; &#39;s&#39;</span><br><span class="line">d &#x3D; &quot;d&quot;</span><br><span class="line">q &#x3D; &#39;&#39;&#39;q&#39;&#39;&#39;</span><br><span class="line">sdq &#x3D; &quot;d &#39;s&#39; &quot;</span><br><span class="line">sdz &#x3D; &#39;&#39;&#39; &quot;s&#39;d&#39;&quot; q&#39;&#39;&#39;</span><br><span class="line">print(s, d, sdq, q, sdz, sep&#x3D;&#39;\n&#39;)</span><br></pre></td></tr></table></figure>
+<h1 id="字符串拼接操作"><a href="#字符串拼接操作" class="headerlink" title="字符串拼接操作"></a>字符串拼接操作</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 字符串拼接</span><br><span class="line"># print(&#39;s&#39; + &#39;d&#39; + &#39;q&#39;)</span><br><span class="line"># 字符串和数字是不能拼接的</span><br><span class="line"># print(&#39;sdq&#39; + 3)</span><br><span class="line"># 连续打印5次史迪奇</span><br><span class="line"># print(5 * &#39;sdq&#39;)</span><br></pre></td></tr></table></figure>
+<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 索引 变量名[] 表索引 编程语言都是从0开始计数的</span><br><span class="line">sdq&#x3D; &#39;我叫史迪奇&#39;</span><br><span class="line">print(str1[0], str1[3], str1[-1])</span><br><span class="line">print(str1[10])  #超出会报错</span><br></pre></td></tr></table></figure>
+<h1 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 切片 变量名[a:b] 同数学区间的[a,b)</span><br><span class="line">sdq &#x3D; &#39;0123456789&#39;</span><br><span class="line">print(&#39;sdq[0:3]&#39;, sdq[0:3])         #012</span><br><span class="line">print(&#39;sdq[1:]&#39;, sdq[1:])           #123456789</span><br><span class="line">print(&#39;sdq[:2]&#39;, sdq[:2])           #01</span><br><span class="line">print(&#39;sdq[:]&#39;, sdq[:])             #返回全部</span><br><span class="line">print(&#39;sdq[-4:-1]&#39;, sdq[-4:-1])     #678</span><br><span class="line">print(sdq[1:100])                   # 切片超出范围是不会报错的会返回全部</span><br></pre></td></tr></table></figure>
+<h1 id="代码格式化"><a href="#代码格式化" class="headerlink" title="代码格式化"></a>代码格式化</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># name &#x3D; &#39;史迪奇&#39;</span><br><span class="line"># number &#x3D; 626</span><br><span class="line"># print(name+&#39;是个&#39;+str(number)+&#39;号实验品&#39;)</span><br><span class="line"># print(&#39;&#123;&#125;是个&#123;&#125;号实验品&#39;.format(name, number))</span><br><span class="line"># print(&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;.format(name&#x3D;&#39;史迪奇&#39;, number&#x3D;626))</span><br><span class="line"># print(f&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;)</span><br><span class="line"># 在一些老的教程里会用%的形式格式化代码，在Python3里就不建议使用了</span><br></pre></td></tr></table></figure>
+<h1 id="字符串的一些使用方法"><a href="#字符串的一些使用方法" class="headerlink" title="字符串的一些使用方法"></a>字符串的一些使用方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sdq &#x3D; &#39;Stitch&#39;</span><br><span class="line">print(&#39;find第一次出现b的索引&#39;, sdq.find(&#39;h&#39;))  #看h的下标</span><br><span class="line">print(&#39;replace&#39;, sdq.replace(&#39;i&#39;, &#39;I&#39;))  #拿I替换i</span><br><span class="line">print(&#39;upper&#39;, sdq.upper()) #全大写</span><br><span class="line">print(&#39;lower&#39;, sdq.lower()) #全小写</span><br><span class="line">print(&#39;swapcase 对换&#39;, &#39;sdq&#39;.swapcase())  #反转字母大小写</span><br><span class="line">print(&#39;去前后空格&#39;, &#39; sdq &#39;.strip(), sep&#x3D;&#39;&#39;)  </span><br><span class="line">print(&#39;S t i t c h &#39;.replace(&#39; &#39;, &#39;&#39;))   #空格替换空字符串</span><br><span class="line"></span><br><span class="line">print(len(&#39;S t i t c h&#39;)) # 获取字符串长度 里面的空格也是计算长度的</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>python 数据类型(我失忆了)</title>
+    <url>/python-type.html</url>
+    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
+<a id="more"></a>
+
+<h1 id="python基本数据类型"><a href="#python基本数据类型" class="headerlink" title="python基本数据类型"></a>python基本数据类型</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;整数&#39;, 1)                          </span><br><span class="line">print(&#39;浮点数&#39;, 0.1)             </span><br><span class="line">print(&#39;布尔值&#39;, True) </span><br><span class="line">print(&#39;空&#39;, None)</span><br><span class="line">print(&#39;元组&#39;, (1, 2, 3)) #可以存放不同类型</span><br><span class="line">print(&#39;列表&#39;, [1, 2, 3])</span><br><span class="line">print(&#39;字典&#39;, &#123;&#39;a&#39;:&#39;d&#39;&#125;)   </span><br></pre></td></tr></table></figure>
+<h1 id="查询类型"><a href="#查询类型" class="headerlink" title="查询类型"></a>查询类型</h1><p><strong>例子</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(type(int))</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>python 字符串(我失忆了)</title>
+    <url>/python-zfc.html</url>
+    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
+<a id="more"></a>
+
+<h1 id="以下全是字符串"><a href="#以下全是字符串" class="headerlink" title="以下全是字符串"></a>以下全是字符串</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s &#x3D; &#39;s&#39;</span><br><span class="line">d &#x3D; &quot;d&quot;</span><br><span class="line">q &#x3D; &#39;&#39;&#39;q&#39;&#39;&#39;</span><br><span class="line">sdq &#x3D; &quot;d &#39;s&#39; &quot;</span><br><span class="line">sdz &#x3D; &#39;&#39;&#39; &quot;s&#39;d&#39;&quot; q&#39;&#39;&#39;</span><br><span class="line">print(s, d, sdq, q, sdz, sep&#x3D;&#39;\n&#39;)</span><br></pre></td></tr></table></figure>
+<h1 id="字符串拼接操作"><a href="#字符串拼接操作" class="headerlink" title="字符串拼接操作"></a>字符串拼接操作</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 字符串拼接</span><br><span class="line"># print(&#39;s&#39; + &#39;d&#39; + &#39;q&#39;)</span><br><span class="line"># 字符串和数字是不能拼接的</span><br><span class="line"># print(&#39;sdq&#39; + 3)</span><br><span class="line"># 连续打印5次史迪奇</span><br><span class="line"># print(5 * &#39;sdq&#39;)</span><br></pre></td></tr></table></figure>
+<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 索引 变量名[] 表索引 编程语言都是从0开始计数的</span><br><span class="line">sdq&#x3D; &#39;我叫史迪奇&#39;</span><br><span class="line">print(str1[0], str1[3], str1[-1])</span><br><span class="line">print(str1[10])  #超出会报错</span><br></pre></td></tr></table></figure>
+<h1 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 切片 变量名[a:b] 同数学区间的[a,b)</span><br><span class="line">sdq &#x3D; &#39;0123456789&#39;</span><br><span class="line">print(&#39;sdq[0:3]&#39;, sdq[0:3])         #012</span><br><span class="line">print(&#39;sdq[1:]&#39;, sdq[1:])           #123456789</span><br><span class="line">print(&#39;sdq[:2]&#39;, sdq[:2])           #01</span><br><span class="line">print(&#39;sdq[:]&#39;, sdq[:])             #返回全部</span><br><span class="line">print(&#39;sdq[-4:-1]&#39;, sdq[-4:-1])     #678</span><br><span class="line">print(sdq[1:100])                   # 切片超出范围是不会报错的会返回全部</span><br></pre></td></tr></table></figure>
+<h1 id="代码格式化"><a href="#代码格式化" class="headerlink" title="代码格式化"></a>代码格式化</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># name &#x3D; &#39;史迪奇&#39;</span><br><span class="line"># number &#x3D; 626</span><br><span class="line"># print(name+&#39;是个&#39;+str(number)+&#39;号实验品&#39;)</span><br><span class="line"># print(&#39;&#123;&#125;是个&#123;&#125;号实验品&#39;.format(name, number))</span><br><span class="line"># print(&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;.format(name&#x3D;&#39;史迪奇&#39;, number&#x3D;626))</span><br><span class="line"># print(f&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;)</span><br><span class="line"># 在一些老的教程里会用%的形式格式化代码，在Python3里就不建议使用了</span><br></pre></td></tr></table></figure>
+<h1 id="字符串的一些使用方法"><a href="#字符串的一些使用方法" class="headerlink" title="字符串的一些使用方法"></a>字符串的一些使用方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sdq &#x3D; &#39;Stitch&#39;</span><br><span class="line">print(&#39;find第一次出现b的索引&#39;, sdq.find(&#39;h&#39;))  #看h的下标</span><br><span class="line">print(&#39;replace&#39;, sdq.replace(&#39;i&#39;, &#39;I&#39;))  #拿I替换i</span><br><span class="line">print(&#39;upper&#39;, sdq.upper()) #全大写</span><br><span class="line">print(&#39;lower&#39;, sdq.lower()) #全小写</span><br><span class="line">print(&#39;swapcase 对换&#39;, &#39;sdq&#39;.swapcase())  #反转字母大小写</span><br><span class="line">print(&#39;去前后空格&#39;, &#39; sdq &#39;.strip(), sep&#x3D;&#39;&#39;)  </span><br><span class="line">print(&#39;S t i t c h &#39;.replace(&#39; &#39;, &#39;&#39;))   #空格替换空字符串</span><br><span class="line"></span><br><span class="line">print(len(&#39;S t i t c h&#39;)) # 获取字符串长度 里面的空格也是计算长度的</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>python 基本运算符(我失忆了)</title>
+    <url>/python-jjcc.html</url>
+    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
+<a id="more"></a>
+
+<h1 id="pdtho基本运算符"><a href="#pdtho基本运算符" class="headerlink" title="pdtho基本运算符"></a>pdtho基本运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;加&#39;, 2 + 3)</span><br><span class="line">print(&#39;减&#39;, 1 - 3)</span><br><span class="line">print(&#39;两个减号&#39;, 1 - -2)</span><br><span class="line">print(&#39;乘&#39;, 2 * 4)</span><br><span class="line">print(&#39;除&#39;, 9 &#x2F; 3)</span><br><span class="line">print(&#39;取整&#39;, 10 &#x2F;&#x2F; 3, 10 &#x2F;&#x2F; 4)</span><br><span class="line">print(&#39;取整1&#39;, 10 &#x2F; 3, 10 &#x2F; 4)</span><br><span class="line">print(&#39;模运算，取余数&#39;, 10 % 3)  </span><br></pre></td></tr></table></figure>
+<h1 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h1><p><strong>4舍6入5看齐,奇进偶不进,相比四舍五入更精确</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(round(1.2), round(1.5), round(2.5))</span><br></pre></td></tr></table></figure>
+<h1 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s, d, q, z &#x3D; 1, 2, 3, 1</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; d&#39;, s &#x3D;&#x3D; d)</span><br><span class="line">print(&#39;s !&#x3D; d&#39;, s !&#x3D; d)</span><br><span class="line">print(&#39;s &gt; d&#39;, s &gt; d)</span><br><span class="line">print(&#39;d &lt; z&#39;, d &lt; z)</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; z&#39;, s &#x3D;&#x3D; z)   #比较值</span><br><span class="line">print(&#39;s is z&#39;, s is z)   #比较地址</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>职教星2.8.2(搬运软件)</title>
+    <url>/zjx2.8.1.html</url>
+    <content><![CDATA[<p><strong>职教星2.8.2</strong></p>
+<a id="more"></a>
+
+<p><strong>本人找了3天, 相当不容易</strong></p>
+<p><strong>有的人甚至拿别人的软件来卖钱, 拿着别人的劳动成果来赚钱, 实在容忍不了越想越气</strong></p>
+<h1 id="在我这里拿走职教星2-8-2有两点要求"><a href="#在我这里拿走职教星2-8-2有两点要求" class="headerlink" title="在我这里拿走职教星2.8.2有两点要求"></a>在我这里拿走职教星2.8.2有两点要求</h1><p><strong>1. 不能大势宣传 因为怕职教云知道就会做出应对措施</strong></p>
+<p><strong>2. 帮助别人别谈钱, 帮助别人, 别人会看在心里, 然后别人会以你为榜样的去帮助那些需要帮助的人</strong></p>
+<h1>拿走的请在下面评论区留言: "我遵守承诺"</h1>
+
+<h1 id="记住千万别成为那些盗取别人劳动成果来赚钱的人渣"><a href="#记住千万别成为那些盗取别人劳动成果来赚钱的人渣" class="headerlink" title="记住千万别成为那些盗取别人劳动成果来赚钱的人渣"></a>记住千万别成为那些盗取别人劳动成果来赚钱的人渣</h1><h1 style="color:red;font-size:50px">这个是承诺的格式, 这是承诺请, 认真对待</h1>
+
+<p><img src="/images/%E8%81%8C%E6%95%99%E6%98%9F/%E6%89%BF%E8%AF%BA.jpg"></p>
+<h1 style="color:red;font-size:50px">截图一定要让我看见QQ头像, 记住使用之前把所有安全软件都关了, 自带的也要</h1>
+
+<p><img src="/images/%E8%81%8C%E6%95%99%E6%98%9F/%E6%88%AA%E5%9B%BE%E6%A0%BC%E5%BC%8F.jpg"></p>
+<h1 id="本放链接-想要的话-自己带着承诺完的截图来找我-我给你密码"><a href="#本放链接-想要的话-自己带着承诺完的截图来找我-我给你密码" class="headerlink" title="本放链接!!! 想要的话, 自己带着承诺完的截图来找我, 我给你密码"></a>本放<a href="https://wwr.lanzoui.com/iRu7Bqsx7od">链接</a>!!! 想要的话, 自己带着承诺完的截图来找<a href="https://wpa.qq.com/msgrd?v=3&uin=3083329400&site=qq&menu=yes">我</a>, 我给你密码</h1>]]></content>
+  </entry>
+  <entry>
+    <title>爬虫 Beautiful Soup(牢饭吃到饱)</title>
+    <url>/reptile-bs4-lxml.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1>Beautiful Soup4<h1>
+
+<h1 id="安装bs4"><a href="#安装bs4" class="headerlink" title="安装bs4"></a>安装bs4</h1><p><strong>打开cmd 输入以下内容</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip install lxml</span><br></pre></td></tr></table></figure>
+<h1 id="find用法"><a href="#find用法" class="headerlink" title="find用法"></a>find用法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">find(&quot;标签&quot;, 属性:id class) </span><br><span class="line">find(&quot;p&quot;, id&#x3D;&quot;sdq&quot;)</span><br></pre></td></tr></table></figure>
+<h1 id="find-all用法"><a href="#find-all用法" class="headerlink" title="find_all用法"></a>find_all用法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">find(&quot;标签&quot;, 属性:id class).find_all(&quot;标签&quot;)</span><br><span class="line">find(&quot;p&quot;, id&#x3D;&quot;sdq&quot;).find_all(&quot;a&quot;)</span><br></pre></td></tr></table></figure>
+<h1 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h1><p><strong>打开这个<a href="https://www.umei.cc/bizhitupian/weimeibizhi/">网址</a></strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 导入requests和bs4库</span><br><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">url &#x3D; &quot;https:&#x2F;&#x2F;www.umei.cc&#x2F;bizhitupian&#x2F;weimeibizhi&#x2F;&quot;</span><br><span class="line">resp &#x3D; requests.get(url)</span><br><span class="line">resp.encoding &#x3D; &#39;utf-8&#39;  # 处理乱码</span><br><span class="line"></span><br><span class="line"># print(resp.text)</span><br><span class="line"># 把源代码交给bs</span><br><span class="line">main_page &#x3D; BeautifulSoup(resp.text, &quot;html.parser&quot;)</span><br><span class="line">alist &#x3D; main_page.find(&quot;div&quot;, class_&#x3D;&quot;TypeList&quot;).find_all(&quot;a&quot;)</span><br><span class="line"># print(alist)</span><br><span class="line">for a in alist:</span><br><span class="line">    href &#x3D; a.get(&#39;href&#39;)  # 直接通过get就可以拿到属性的值</span><br><span class="line">    # 子页面的源代码</span><br><span class="line">    child_resp &#x3D; requests.get(href)</span><br><span class="line">    child_resp.encoding &#x3D; &#39;utf-8&#39;</span><br><span class="line">    child_text &#x3D; child_resp.text</span><br><span class="line">    # 从子页面中拿到图片的下载路径</span><br><span class="line">    child &#x3D; BeautifulSoup(child_text, &quot;html.parser&quot;)</span><br><span class="line">    p &#x3D; child.find(&quot;p&quot;, align&#x3D;&quot;center&quot;)</span><br><span class="line">    img &#x3D; p.find(&quot;img&quot;)</span><br><span class="line">    src &#x3D; img.get(&quot;src&quot;)</span><br><span class="line">    # 下载图片</span><br><span class="line">    img_resp &#x3D; requests.get(src)</span><br><span class="line">    # img_resp.content  # 这里拿到的是字节</span><br><span class="line">    img_name &#x3D; src.split(&quot;&#x2F;&quot;)[-1]  # 拿到url中的最后一个 &#x2F; 以后的内容-1代表最后一个</span><br><span class="line">    with open(&quot;img&#x2F;&quot;+img_name, mode&#x3D;&quot;wb&quot;) as f:</span><br><span class="line">        f.write(img_resp.content)  # 图片内容写入文件</span><br><span class="line"></span><br><span class="line">    print(&quot;正在下载&quot;, img_name)</span><br><span class="line">    time.sleep(1) #停1秒</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(&quot;下载完了&quot;)</span><br></pre></td></tr></table></figure>
+<!-- <h1>lxml<h1> -->
+
+
+
+</h1></h1>]]></content>
+  </entry>
+  <entry>
     <title>轻松理解json与python关系</title>
     <url>/json-python.html</url>
     <content><![CDATA[<p><strong>json笔记</strong></p>
@@ -1671,180 +1857,6 @@ python数据类型
        \                         json格式文件
         \__json.dupmps(obj,fp)__↗</code></pre>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Android同步源码和编译ROM傻瓜式 (有手就行)</title>
-    <url>/Android-compile.html</url>
-    <content><![CDATA[<p><strong>本人是用Arch，顺便来传一下教</strong><br><img src="/images/编译Android/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
-<a id="more"></a>
-
-<h1 id="第一是-安装Linux-我以Ubuntu和deepin为例子，建议新手用deepin"><a href="#第一是-安装Linux-我以Ubuntu和deepin为例子，建议新手用deepin" class="headerlink" title="第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin"></a>第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin</h1><p><a href="https://www.bilibili.com/video/BV1aW411C7NR">Ubantu的安装视频</a><br><a href="https://www.bilibili.com/video/BV1HW411Y73e">Deepin的安装视频</a></p>
-<h1 id="第二是-环境搭载"><a href="#第二是-环境搭载" class="headerlink" title="第二是 环境搭载"></a>第二是 环境搭载</h1><p><strong>1.明确自己要开发的android版本 参考 lineageos官方的wiki：<a href="https://wiki.lineageos.org/">https://wiki.lineageos.org</a> 选择合适的linux发行版(推荐ubuntu 16)推荐而已，你可以是别的Linux,都没问题</strong></p>
-<p><strong>2.更新自身ubuntu的软件源  替换到etc/apt/sources.list替换完毕后执行</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update //如果自身网速不好建议换国内源(清华 中科大 阿里)</span><br></pre></td></tr></table></figure>
-<p><strong><a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">个人建议清华</a></strong><br><strong>deepin就更简单，直接设置里面换</strong></p>
-<p><strong>3.安装jdk，需要根据开发的android版本选择</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure>
-
-<p><strong>4.安装 软件依赖</strong></p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev</span><br></pre></td></tr></table></figure>
-<p><strong>4.安装jdk，需要根据开发的android版本选择</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install openjdk-x-jdk    //x 为jdk版本数字</span><br></pre></td></tr></table></figure>
-<p><strong>LineageOS 14.1-15.1: OpenJDK 1.8</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ install openjdk-8-jdk</span><br></pre></td></tr></table></figure>
-<p><strong>LineageOS 11.0-13.0: OpenJDK 1.7</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ install openjdk-7-jdk</span><br></pre></td></tr></table></figure>
-<h1 id="第三是-安装repo"><a href="#第三是-安装repo" class="headerlink" title="第三是 安装repo"></a>第三是 安装repo</h1><p><strong>(1) 推荐使用mokee开源的 <a href="https://bbs.mokeedev.com/t/topic/21">mokee repo1</a> 或者 <a href="https://tacke.wodemo.com/entry/466371">mokee repo2</a></strong></p>
-<p><strong>(2)在终端中输入以下内容，新建bin文件夹</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir ~/bin</span><br></pre></td></tr></table></figure>
-<p><strong>(3)输入以下内容，将bin文件夹添加到环境变量中</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ PATH=~/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
-<p><strong>(4)接着输入以下内容，下载repo文件到bin文件夹 输入这个请省略下面那一步</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo &gt; ~/bin/repo</span><br></pre></td></tr></table></figure>
-
-<p><strong>如果你是欧洲人，有钱买梯子 就省略上步直接输入以下命令</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo</span><br></pre></td></tr></table></figure>
-<p><strong>(5)最后输入以下内容，为repo文件添加运行权限</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ chmod a+x ~&#x2F;bin&#x2F;repo</span><br></pre></td></tr></table></figure>
-<h1 id="第四是-同步源码"><a href="#第四是-同步源码" class="headerlink" title="第四是 同步源码"></a>第四是 同步源码</h1><p><strong>(1) win+alt+t打开终端，输入如下，创建一个文件夹</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir ~/los      //例如: los  名字你可以顺便起</span><br></pre></td></tr></table></figure>
-<p><strong>(2) 进入(自己起好名字的文件夹)的文件夹，输入如下</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/los         //例如: los 你随便起名字的文件夹</span><br></pre></td></tr></table></figure>
-<p><strong>(3) 由于使用repo拉取源码时，会尝试访问官方的git源更新自己，但由于是谷歌，就无法正常访问，所以在正式拉取前，我们需要先做点修改打开主目录，按组合键ctrl+H，在显示的隐藏文件中，打开.bashrc文件，将如下内容复制到你的~/.bashrc最后一行，保存退出</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> REPO_URL=<span class="string">&#x27;https://mirrors.tuna.tsinghua.edu.cn/git/git-repo&#x27;</span></span><br></pre></td></tr></table></figure>
-<p><strong>(4) 获取源码拉取地址</strong><br>访问<a href="https://github.com/LineageOS">lineage的开源地址库</a>点击android，进入如下界面，这里就看到了拉取lineage-x.x的命令</p>
-<p><strong>(5) 获取源码default</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ repo init -u git://github.com/los/android.git -b lineage-x.x       //例如: los 你随便起名字的文件夹和lineage版本</span><br></pre></td></tr></table></figure>
-<p><strong>(6) 输入邮箱和昵称</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.email xxxxxx@xxxx   //你的邮箱</span><br><span class="line">$ git config --global user.name xxxxxxxxx     //随便起一个英文昵称</span><br></pre></td></tr></table></figure>
-<p><strong>打开lineageOS文件夹 (如果是空的按组合键ctrl+H，显示隐藏内容)**</strong></p>
-<p><img src="/images/%E7%BC%96%E8%AF%91Android/%E5%90%8C%E6%AD%A5%E6%BA%90%E7%A0%81.png"></p>
-<p>然后更改<a href="https://mirrors.tuna.tsinghua.edu.cn/help/lineageOS/">链接</a></p>
-<h1 id="第五是-拉取源码"><a href="#第五是-拉取源码" class="headerlink" title="第五是 拉取源码"></a>第五是 拉取源码</h1><p><strong>输入</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ repo sync</span><br></pre></td></tr></table></figure>
-<p><strong>或者</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ repo sync -c -f -j8 --force-sync --no-clone-bundle</span><br></pre></td></tr></table></figure>
-<h1 id="第六是-获取机型device"><a href="#第六是-获取机型device" class="headerlink" title="第六是 获取机型device"></a>第六是 获取机型device</h1><p><strong>(1) 我们进入<a href="https://github.com/LineageOS">lineage的开源项目网站</a></strong></p>
-<p><strong>(2) 在搜索框中输入(设备代号)，会看到android_device_(品牌)_(设备代号)这一项</strong></p>
-<p><strong>(3) 点击android_device_(品牌)_(设备代号)，就可以看到device的所有内容</strong></p>
-<p><strong>(4) 点击右边的Clone or download，然后复制如图中的蓝色内容，这就是此device的下载地址</strong></p>
-<p><strong>(5) 组合键ctrl+alt+t，打开终端</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/los             //例如: los  你随便起名字的文件夹</span><br></pre></td></tr></table></figure>
-<p><strong>(6) 输入如下命令，回车开始同步</strong></p>
-<p>解释一下:git clone就是拷贝到本地的命令，那段网址就是我们上面复制的地址，-b后面的lineage-x.x,表示lineage-x.x的分支；device/(品牌)/(设备代号)就是要下载到地方的路径</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/LineageOS/android_device_(品牌)_(设备代号).git -b lineage-x.x device/(品牌)/(设备代号) depth=1(可加可不加，加入同步源码会小点)</span><br></pre></td></tr></table></figure>
-<p><strong>(7) 我们需要拉取的项目如下</strong></p>
-<img src="/images/编译Android/找机型.jpg">
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ android_device_(品牌)_(设备代号)</span><br><span class="line"></span><br><span class="line">$ android_device_(品牌)_(处理器代号)-common</span><br><span class="line"></span><br><span class="line">$ android_device_(品牌)_(厂家)_common</span><br><span class="line"></span><br><span class="line">$ android_kernel_(品牌)_(处理器代号)</span><br><span class="line"></span><br><span class="line">$ proprietary_vendor_(品牌) </span><br></pre></td></tr></table></figure>
-<p><strong>(8) <a href="https://github.com/TheMuppets">vendor需要访问地址</a>然后搜索(你的品牌)就可以找到</strong></p>
-<p><strong>(9) 同样和同步其他项目一样</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/TheMuppets/proprietary_vendor_(品牌).git -b lineage-x.x vendor/(品牌)</span><br></pre></td></tr></table></figure>
-<h1 id="第七是-执行编译"><a href="#第七是-执行编译" class="headerlink" title="第七是 执行编译"></a>第七是 执行编译</h1><p><strong>(1)如果你退出了，你就按组合键ctrl+alt+t，打开终端，输入以下命令，回车，进入los             //你随便起名字的文件夹，没有的话跳过这个环节</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/los    //例如: los 你随便起名字的文件夹</span><br></pre></td></tr></table></figure>
-<p><strong>(2) 初始化</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ . build/envsetup.sh</span><br></pre></td></tr></table></figure>
-<p><strong>(3) 输入如下命令，回车</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ breakfast xxx  //自己的机型</span><br></pre></td></tr></table></figure>
-<p>如果有错误，就根据错误提示到lineageOS目录检查device, kernel和vendor等是否正确</p>
-<p><strong>(4) 输入，回车，进行编译</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ brunch xxx    //自己的机型</span><br></pre></td></tr></table></figure>
-<p>编译耗费的时间取决于你的电脑配置情况，所以我不建议用虚拟机，如果你电脑配置相当牛逼，当我没说</p>
-<p><strong>(5)在我编译时出现了 fatal error: openssl/opensslv.h: No such file or directory 原因是libssl-dev没有安装</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install libssl-dev</span><br></pre></td></tr></table></figure>
-<p><strong>(6) 回到正在编译的终端中，重新输入如下命令，等待编译的完成</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ brunch //自己的机型</span><br></pre></td></tr></table></figure>
-<p><strong>(7) 编译完成后</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ 进入主目录\(你随便起名字的文件夹)\out\target\product\(设备代号)中就可以看到我们编译好的ROM了，可以复制到手机刷入了</span><br></pre></td></tr></table></figure>
-<h1 id="另外设置ccache提高编译速度"><a href="#另外设置ccache提高编译速度" class="headerlink" title="另外设置ccache提高编译速度"></a>另外设置ccache提高编译速度</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> USE_CCACHE=1 </span><br><span class="line">$ <span class="built_in">export</span> CCACHE_COMPRESS=1</span><br><span class="line">$ ccache -M 50G 或者100G</span><br></pre></td></tr></table></figure>
-<p><strong>防止低内存编译出错 设置大小为</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> ANDROID_JACK_VM_ARGS=<span class="string">&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G&quot;</span></span><br></pre></td></tr></table></figure>
-<h1 id="祝福大家能自己动手做出属于自己的ROM"><a href="#祝福大家能自己动手做出属于自己的ROM" class="headerlink" title="祝福大家能自己动手做出属于自己的ROM"></a>祝福大家能自己动手做出属于自己的ROM</h1>]]></content>
-  </entry>
-  <entry>
-    <title>下次一定</title>
-    <url>/xcyd.html</url>
-    <content><![CDATA[<p><strong>本人制作简单的一款软件</strong></p>
-<a id="more"></a>
-
-<h1 id="软件截图"><a href="#软件截图" class="headerlink" title="软件截图"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcydjt.jpg">软件截图</a></h1><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcyd.jpg">下载</a></h1><h1 id="声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡"><a href="#声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡" class="headerlink" title="声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡"></a>声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡</h1><h1 id="真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器"><a href="#真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器" class="headerlink" title="真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器"></a>真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器</h1><h1 id="除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了"><a href="#除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了" class="headerlink" title="除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了"></a>除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了</h1>]]></content>
-  </entry>
-  <entry>
-    <title>python 字符串(我失忆了)</title>
-    <url>/python-zfc.html</url>
-    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
-<a id="more"></a>
-
-<h1 id="以下全是字符串"><a href="#以下全是字符串" class="headerlink" title="以下全是字符串"></a>以下全是字符串</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s &#x3D; &#39;s&#39;</span><br><span class="line">d &#x3D; &quot;d&quot;</span><br><span class="line">q &#x3D; &#39;&#39;&#39;q&#39;&#39;&#39;</span><br><span class="line">sdq &#x3D; &quot;d &#39;s&#39; &quot;</span><br><span class="line">sdz &#x3D; &#39;&#39;&#39; &quot;s&#39;d&#39;&quot; q&#39;&#39;&#39;</span><br><span class="line">print(s, d, sdq, q, sdz, sep&#x3D;&#39;\n&#39;)</span><br></pre></td></tr></table></figure>
-<h1 id="字符串拼接操作"><a href="#字符串拼接操作" class="headerlink" title="字符串拼接操作"></a>字符串拼接操作</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 字符串拼接</span><br><span class="line"># print(&#39;s&#39; + &#39;d&#39; + &#39;q&#39;)</span><br><span class="line"># 字符串和数字是不能拼接的</span><br><span class="line"># print(&#39;sdq&#39; + 3)</span><br><span class="line"># 连续打印5次史迪奇</span><br><span class="line"># print(5 * &#39;sdq&#39;)</span><br></pre></td></tr></table></figure>
-<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 索引 变量名[] 表索引 编程语言都是从0开始计数的</span><br><span class="line">sdq&#x3D; &#39;我叫史迪奇&#39;</span><br><span class="line">print(str1[0], str1[3], str1[-1])</span><br><span class="line">print(str1[10])  #超出会报错</span><br></pre></td></tr></table></figure>
-<h1 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 切片 变量名[a:b] 同数学区间的[a,b)</span><br><span class="line">sdq &#x3D; &#39;0123456789&#39;</span><br><span class="line">print(&#39;sdq[0:3]&#39;, sdq[0:3])         #012</span><br><span class="line">print(&#39;sdq[1:]&#39;, sdq[1:])           #123456789</span><br><span class="line">print(&#39;sdq[:2]&#39;, sdq[:2])           #01</span><br><span class="line">print(&#39;sdq[:]&#39;, sdq[:])             #返回全部</span><br><span class="line">print(&#39;sdq[-4:-1]&#39;, sdq[-4:-1])     #678</span><br><span class="line">print(sdq[1:100])                   # 切片超出范围是不会报错的会返回全部</span><br></pre></td></tr></table></figure>
-<h1 id="代码格式化"><a href="#代码格式化" class="headerlink" title="代码格式化"></a>代码格式化</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># name &#x3D; &#39;史迪奇&#39;</span><br><span class="line"># number &#x3D; 626</span><br><span class="line"># print(name+&#39;是个&#39;+str(number)+&#39;号实验品&#39;)</span><br><span class="line"># print(&#39;&#123;&#125;是个&#123;&#125;号实验品&#39;.format(name, number))</span><br><span class="line"># print(&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;.format(name&#x3D;&#39;史迪奇&#39;, number&#x3D;626))</span><br><span class="line"># print(f&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;)</span><br><span class="line"># 在一些老的教程里会用%的形式格式化代码，在Python3里就不建议使用了</span><br></pre></td></tr></table></figure>
-<h1 id="字符串的一些使用方法"><a href="#字符串的一些使用方法" class="headerlink" title="字符串的一些使用方法"></a>字符串的一些使用方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sdq &#x3D; &#39;Stitch&#39;</span><br><span class="line">print(&#39;find第一次出现b的索引&#39;, sdq.find(&#39;h&#39;))  #看h的下标</span><br><span class="line">print(&#39;replace&#39;, sdq.replace(&#39;i&#39;, &#39;I&#39;))  #拿I替换i</span><br><span class="line">print(&#39;upper&#39;, sdq.upper()) #全大写</span><br><span class="line">print(&#39;lower&#39;, sdq.lower()) #全小写</span><br><span class="line">print(&#39;swapcase 对换&#39;, &#39;sdq&#39;.swapcase())  #反转字母大小写</span><br><span class="line">print(&#39;去前后空格&#39;, &#39; sdq &#39;.strip(), sep&#x3D;&#39;&#39;)  </span><br><span class="line">print(&#39;S t i t c h &#39;.replace(&#39; &#39;, &#39;&#39;))   #空格替换空字符串</span><br><span class="line"></span><br><span class="line">print(len(&#39;S t i t c h&#39;)) # 获取字符串长度 里面的空格也是计算长度的</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
-    <title>python 数据类型(我失忆了)</title>
-    <url>/python-type.html</url>
-    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
-<a id="more"></a>
-
-<h1 id="python基本数据类型"><a href="#python基本数据类型" class="headerlink" title="python基本数据类型"></a>python基本数据类型</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;整数&#39;, 1)                          </span><br><span class="line">print(&#39;浮点数&#39;, 0.1)             </span><br><span class="line">print(&#39;布尔值&#39;, True) </span><br><span class="line">print(&#39;空&#39;, None)</span><br><span class="line">print(&#39;元组&#39;, (1, 2, 3)) #可以存放不同类型</span><br><span class="line">print(&#39;列表&#39;, [1, 2, 3])</span><br><span class="line">print(&#39;字典&#39;, &#123;&#39;a&#39;:&#39;d&#39;&#125;)   </span><br></pre></td></tr></table></figure>
-<h1 id="查询类型"><a href="#查询类型" class="headerlink" title="查询类型"></a>查询类型</h1><p><strong>例子</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(type(int))</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
-    <title>python 字符串(我失忆了)</title>
-    <url>/python-zfc.html</url>
-    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
-<a id="more"></a>
-
-<h1 id="以下全是字符串"><a href="#以下全是字符串" class="headerlink" title="以下全是字符串"></a>以下全是字符串</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s &#x3D; &#39;s&#39;</span><br><span class="line">d &#x3D; &quot;d&quot;</span><br><span class="line">q &#x3D; &#39;&#39;&#39;q&#39;&#39;&#39;</span><br><span class="line">sdq &#x3D; &quot;d &#39;s&#39; &quot;</span><br><span class="line">sdz &#x3D; &#39;&#39;&#39; &quot;s&#39;d&#39;&quot; q&#39;&#39;&#39;</span><br><span class="line">print(s, d, sdq, q, sdz, sep&#x3D;&#39;\n&#39;)</span><br></pre></td></tr></table></figure>
-<h1 id="字符串拼接操作"><a href="#字符串拼接操作" class="headerlink" title="字符串拼接操作"></a>字符串拼接操作</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 字符串拼接</span><br><span class="line"># print(&#39;s&#39; + &#39;d&#39; + &#39;q&#39;)</span><br><span class="line"># 字符串和数字是不能拼接的</span><br><span class="line"># print(&#39;sdq&#39; + 3)</span><br><span class="line"># 连续打印5次史迪奇</span><br><span class="line"># print(5 * &#39;sdq&#39;)</span><br></pre></td></tr></table></figure>
-<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 索引 变量名[] 表索引 编程语言都是从0开始计数的</span><br><span class="line">sdq&#x3D; &#39;我叫史迪奇&#39;</span><br><span class="line">print(str1[0], str1[3], str1[-1])</span><br><span class="line">print(str1[10])  #超出会报错</span><br></pre></td></tr></table></figure>
-<h1 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 切片 变量名[a:b] 同数学区间的[a,b)</span><br><span class="line">sdq &#x3D; &#39;0123456789&#39;</span><br><span class="line">print(&#39;sdq[0:3]&#39;, sdq[0:3])         #012</span><br><span class="line">print(&#39;sdq[1:]&#39;, sdq[1:])           #123456789</span><br><span class="line">print(&#39;sdq[:2]&#39;, sdq[:2])           #01</span><br><span class="line">print(&#39;sdq[:]&#39;, sdq[:])             #返回全部</span><br><span class="line">print(&#39;sdq[-4:-1]&#39;, sdq[-4:-1])     #678</span><br><span class="line">print(sdq[1:100])                   # 切片超出范围是不会报错的会返回全部</span><br></pre></td></tr></table></figure>
-<h1 id="代码格式化"><a href="#代码格式化" class="headerlink" title="代码格式化"></a>代码格式化</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># name &#x3D; &#39;史迪奇&#39;</span><br><span class="line"># number &#x3D; 626</span><br><span class="line"># print(name+&#39;是个&#39;+str(number)+&#39;号实验品&#39;)</span><br><span class="line"># print(&#39;&#123;&#125;是个&#123;&#125;号实验品&#39;.format(name, number))</span><br><span class="line"># print(&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;.format(name&#x3D;&#39;史迪奇&#39;, number&#x3D;626))</span><br><span class="line"># print(f&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;)</span><br><span class="line"># 在一些老的教程里会用%的形式格式化代码，在Python3里就不建议使用了</span><br></pre></td></tr></table></figure>
-<h1 id="字符串的一些使用方法"><a href="#字符串的一些使用方法" class="headerlink" title="字符串的一些使用方法"></a>字符串的一些使用方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sdq &#x3D; &#39;Stitch&#39;</span><br><span class="line">print(&#39;find第一次出现b的索引&#39;, sdq.find(&#39;h&#39;))  #看h的下标</span><br><span class="line">print(&#39;replace&#39;, sdq.replace(&#39;i&#39;, &#39;I&#39;))  #拿I替换i</span><br><span class="line">print(&#39;upper&#39;, sdq.upper()) #全大写</span><br><span class="line">print(&#39;lower&#39;, sdq.lower()) #全小写</span><br><span class="line">print(&#39;swapcase 对换&#39;, &#39;sdq&#39;.swapcase())  #反转字母大小写</span><br><span class="line">print(&#39;去前后空格&#39;, &#39; sdq &#39;.strip(), sep&#x3D;&#39;&#39;)  </span><br><span class="line">print(&#39;S t i t c h &#39;.replace(&#39; &#39;, &#39;&#39;))   #空格替换空字符串</span><br><span class="line"></span><br><span class="line">print(len(&#39;S t i t c h&#39;)) # 获取字符串长度 里面的空格也是计算长度的</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
-    <title>职教星2.8.2(搬运软件)</title>
-    <url>/zjx2.8.1.html</url>
-    <content><![CDATA[<p><strong>职教星2.8.2</strong></p>
-<a id="more"></a>
-
-<p><strong>本人找了3天, 相当不容易</strong></p>
-<p><strong>有的人甚至拿别人的软件来卖钱, 拿着别人的劳动成果来赚钱, 实在容忍不了越想越气</strong></p>
-<h1 id="在我这里拿走职教星2-8-2有两点要求"><a href="#在我这里拿走职教星2-8-2有两点要求" class="headerlink" title="在我这里拿走职教星2.8.2有两点要求"></a>在我这里拿走职教星2.8.2有两点要求</h1><p><strong>1. 不能大势宣传 因为怕职教云知道就会做出应对措施</strong></p>
-<p><strong>2. 帮助别人别谈钱, 帮助别人, 别人会看在心里, 然后别人会以你为榜样的去帮助那些需要帮助的人</strong></p>
-<h1>拿走的请在下面评论区留言: "我遵守承诺"</h1>
-
-<h1 id="记住千万别成为那些盗取别人劳动成果来赚钱的人渣"><a href="#记住千万别成为那些盗取别人劳动成果来赚钱的人渣" class="headerlink" title="记住千万别成为那些盗取别人劳动成果来赚钱的人渣"></a>记住千万别成为那些盗取别人劳动成果来赚钱的人渣</h1><h1 style="color:red;font-size:50px">这个是承诺的格式, 这是承诺请, 认真对待</h1>
-
-<p><img src="/images/%E8%81%8C%E6%95%99%E6%98%9F/%E6%89%BF%E8%AF%BA.jpg"></p>
-<h1 style="color:red;font-size:50px">截图一定要让我看见QQ头像, 记住使用之前把所有安全软件都关了, 自带的也要</h1>
-
-<p><img src="/images/%E8%81%8C%E6%95%99%E6%98%9F/%E6%88%AA%E5%9B%BE%E6%A0%BC%E5%BC%8F.jpg"></p>
-<h1 id="本放链接-想要的话-自己带着承诺完的截图来找我-我给你密码"><a href="#本放链接-想要的话-自己带着承诺完的截图来找我-我给你密码" class="headerlink" title="本放链接!!! 想要的话, 自己带着承诺完的截图来找我, 我给你密码"></a>本放<a href="https://wwr.lanzoui.com/iRu7Bqsx7od">链接</a>!!! 想要的话, 自己带着承诺完的截图来找<a href="https://wpa.qq.com/msgrd?v=3&uin=3083329400&site=qq&menu=yes">我</a>, 我给你密码</h1>]]></content>
-  </entry>
-  <entry>
-    <title>爬虫 Beautiful Soup(牢饭吃到饱)</title>
-    <url>/reptile-bs4-lxml.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1>Beautiful Soup4<h1>
-
-<h1 id="安装bs4"><a href="#安装bs4" class="headerlink" title="安装bs4"></a>安装bs4</h1><p><strong>打开cmd 输入以下内容</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip install lxml</span><br></pre></td></tr></table></figure>
-<h1 id="find用法"><a href="#find用法" class="headerlink" title="find用法"></a>find用法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">find(&quot;标签&quot;, 属性:id class) </span><br><span class="line">find(&quot;p&quot;, id&#x3D;&quot;sdq&quot;)</span><br></pre></td></tr></table></figure>
-<h1 id="find-all用法"><a href="#find-all用法" class="headerlink" title="find_all用法"></a>find_all用法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">find(&quot;标签&quot;, 属性:id class).find_all(&quot;标签&quot;)</span><br><span class="line">find(&quot;p&quot;, id&#x3D;&quot;sdq&quot;).find_all(&quot;a&quot;)</span><br></pre></td></tr></table></figure>
-<h1 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h1><p><strong>打开这个<a href="https://www.umei.cc/bizhitupian/weimeibizhi/">网址</a></strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 导入requests和bs4库</span><br><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">url &#x3D; &quot;https:&#x2F;&#x2F;www.umei.cc&#x2F;bizhitupian&#x2F;weimeibizhi&#x2F;&quot;</span><br><span class="line">resp &#x3D; requests.get(url)</span><br><span class="line">resp.encoding &#x3D; &#39;utf-8&#39;  # 处理乱码</span><br><span class="line"></span><br><span class="line"># print(resp.text)</span><br><span class="line"># 把源代码交给bs</span><br><span class="line">main_page &#x3D; BeautifulSoup(resp.text, &quot;html.parser&quot;)</span><br><span class="line">alist &#x3D; main_page.find(&quot;div&quot;, class_&#x3D;&quot;TypeList&quot;).find_all(&quot;a&quot;)</span><br><span class="line"># print(alist)</span><br><span class="line">for a in alist:</span><br><span class="line">    href &#x3D; a.get(&#39;href&#39;)  # 直接通过get就可以拿到属性的值</span><br><span class="line">    # 子页面的源代码</span><br><span class="line">    child_resp &#x3D; requests.get(href)</span><br><span class="line">    child_resp.encoding &#x3D; &#39;utf-8&#39;</span><br><span class="line">    child_text &#x3D; child_resp.text</span><br><span class="line">    # 从子页面中拿到图片的下载路径</span><br><span class="line">    child &#x3D; BeautifulSoup(child_text, &quot;html.parser&quot;)</span><br><span class="line">    p &#x3D; child.find(&quot;p&quot;, align&#x3D;&quot;center&quot;)</span><br><span class="line">    img &#x3D; p.find(&quot;img&quot;)</span><br><span class="line">    src &#x3D; img.get(&quot;src&quot;)</span><br><span class="line">    # 下载图片</span><br><span class="line">    img_resp &#x3D; requests.get(src)</span><br><span class="line">    # img_resp.content  # 这里拿到的是字节</span><br><span class="line">    img_name &#x3D; src.split(&quot;&#x2F;&quot;)[-1]  # 拿到url中的最后一个 &#x2F; 以后的内容-1代表最后一个</span><br><span class="line">    with open(&quot;img&#x2F;&quot;+img_name, mode&#x3D;&quot;wb&quot;) as f:</span><br><span class="line">        f.write(img_resp.content)  # 图片内容写入文件</span><br><span class="line"></span><br><span class="line">    print(&quot;正在下载&quot;, img_name)</span><br><span class="line">    time.sleep(1) #停1秒</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(&quot;下载完了&quot;)</span><br></pre></td></tr></table></figure>
-<!-- <h1>lxml<h1> -->
-
-
-
-</h1></h1>]]></content>
   </entry>
   <entry>
     <title>爬虫 cookie(吃牢饭集合)</title>
@@ -2087,18 +2099,6 @@ python数据类型
 
 
 
-]]></content>
-  </entry>
-  <entry>
-    <title>python 基本运算符(我失忆了)</title>
-    <url>/python-jjcc.html</url>
-    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
-<a id="more"></a>
-
-<h1 id="pdtho基本运算符"><a href="#pdtho基本运算符" class="headerlink" title="pdtho基本运算符"></a>pdtho基本运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;加&#39;, 2 + 3)</span><br><span class="line">print(&#39;减&#39;, 1 - 3)</span><br><span class="line">print(&#39;两个减号&#39;, 1 - -2)</span><br><span class="line">print(&#39;乘&#39;, 2 * 4)</span><br><span class="line">print(&#39;除&#39;, 9 &#x2F; 3)</span><br><span class="line">print(&#39;取整&#39;, 10 &#x2F;&#x2F; 3, 10 &#x2F;&#x2F; 4)</span><br><span class="line">print(&#39;取整1&#39;, 10 &#x2F; 3, 10 &#x2F; 4)</span><br><span class="line">print(&#39;模运算，取余数&#39;, 10 % 3)  </span><br></pre></td></tr></table></figure>
-<h1 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h1><p><strong>4舍6入5看齐,奇进偶不进,相比四舍五入更精确</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(round(1.2), round(1.5), round(2.5))</span><br></pre></td></tr></table></figure>
-<h1 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s, d, q, z &#x3D; 1, 2, 3, 1</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; d&#39;, s &#x3D;&#x3D; d)</span><br><span class="line">print(&#39;s !&#x3D; d&#39;, s !&#x3D; d)</span><br><span class="line">print(&#39;s &gt; d&#39;, s &gt; d)</span><br><span class="line">print(&#39;d &lt; z&#39;, d &lt; z)</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; z&#39;, s &#x3D;&#x3D; z)   #比较值</span><br><span class="line">print(&#39;s is z&#39;, s is z)   #比较地址</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
   <entry>
