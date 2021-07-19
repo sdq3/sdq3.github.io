@@ -651,19 +651,6 @@ var tools = (function(){
 <h1 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    dl dd dt&#123;</span><br><span class="line">$          color: blue;</span><br><span class="line">$         &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">$      <span class="tag">&lt;<span class="name">dt</span>&gt;</span>史迪奇近战<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇战士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇辅助<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇坦克<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇刺客<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$      <span class="tag">&lt;<span class="name">dt</span>&gt;</span>史迪奇远程<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇法师<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇射手<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
-    <title>CSS 属性选择器(常用)</title>
-    <url>/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
-    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$</span><br><span class="line">$  .sdq1 a&#123; </span><br><span class="line">$       float: left;  //left往左float浮动</span><br><span class="line">$       dispay: block;  //dispay规定元素应该生成的框的类型block此元素将显示为块级元素，此元素前后会带有换行符。</span><br><span class="line">$       heigh: 50px;  //heigh高度</span><br><span class="line">$       width: 50px;  //width宽度</span><br><span class="line">$       border-radius: 10px;  //border-radius圆角边框</span><br><span class="line">$       </span><br><span class="line">$       text-align: center;   //text-align对齐center剧中</span><br><span class="line">$       color: yellow;  //color文字颜色</span><br><span class="line">$       text-decoration: none;  //text-decoration下划线none不显示</span><br><span class="line">$       margin-right: 5px;    //margin-right外边距向右</span><br><span class="line">$       font: bold 20px/50px Arial;   //font设置文字的字体bold字体大小20px字体的大小50px行高Arial是一种字体</span><br><span class="line">$   &#125;</span><br><span class="line">$    //格式a[]&#123;&#125;  存在id的属性的元素  </span><br><span class="line">$   a[class*=first]&#123;        //=是绝对等于  *=是包含这个元素</span><br><span class="line">$       background: yellow;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href^=xxy]&#123;          //^=表示以什么开头     </span><br><span class="line">$       background: green;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href$=ghfgh]&#123;          //$=表示以什么结尾     </span><br><span class="line">$       background: powder;</span><br><span class="line">$   &#125;</span><br><span class="line">$    </span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxy.fgdhrth&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item first&quot;</span> <span class="attr">id</span>=<span class="string">&quot;first&quot;</span>&gt;</span>史迪奇<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪仔<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇骑士<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇国王<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇勇士<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;hh.ghfgh&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇巫师<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-]]></content>
-  </entry>
-  <entry>
     <title>CSS 层次选择器</title>
     <url>/CSS%E5%B1%82%E6%AC%A1%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
@@ -680,19 +667,16 @@ var tools = (function(){
 ]]></content>
   </entry>
   <entry>
-    <title>CSS 三种导入样式</title>
-    <url>/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F.html</url>
+    <title>CSS 属性选择器(常用)</title>
+    <url>/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
 <a id="more"></a>
 
-<h1 id="span标签"><a href="#span标签" class="headerlink" title="span标签"></a>span标签</h1><p><strong>span标签: 重点突出的字, 使用span套起来</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    #sdq1&#123;</span><br><span class="line">$        color: blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$ 我叫<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;sdq1&quot;</span>&gt;</span>史迪奇<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$</span><br><span class="line">$  .sdq1 a&#123; </span><br><span class="line">$       float: left;  //left往左float浮动</span><br><span class="line">$       dispay: block;  //dispay规定元素应该生成的框的类型block此元素将显示为块级元素，此元素前后会带有换行符。</span><br><span class="line">$       heigh: 50px;  //heigh高度</span><br><span class="line">$       width: 50px;  //width宽度</span><br><span class="line">$       border-radius: 10px;  //border-radius圆角边框</span><br><span class="line">$       </span><br><span class="line">$       text-align: center;   //text-align对齐center剧中</span><br><span class="line">$       color: yellow;  //color文字颜色</span><br><span class="line">$       text-decoration: none;  //text-decoration下划线none不显示</span><br><span class="line">$       margin-right: 5px;    //margin-right外边距向右</span><br><span class="line">$       font: bold 20px/50px Arial;   //font设置文字的字体bold字体大小20px字体的大小50px行高Arial是一种字体</span><br><span class="line">$   &#125;</span><br><span class="line">$    //格式a[]&#123;&#125;  存在id的属性的元素  </span><br><span class="line">$   a[class*=first]&#123;        //=是绝对等于  *=是包含这个元素</span><br><span class="line">$       background: yellow;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href^=xxy]&#123;          //^=表示以什么开头     </span><br><span class="line">$       background: green;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href$=ghfgh]&#123;          //$=表示以什么结尾     </span><br><span class="line">$       background: powder;</span><br><span class="line">$   &#125;</span><br><span class="line">$    </span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxy.fgdhrth&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item first&quot;</span> <span class="attr">id</span>=<span class="string">&quot;first&quot;</span>&gt;</span>史迪奇<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪仔<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇骑士<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇国王<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇勇士<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;hh.ghfgh&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇巫师<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="字体风格"><a href="#字体风格" class="headerlink" title="字体风格"></a>字体风格</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    body&#123;</span><br><span class="line">$        font-family: &quot;Arial Black&quot;, 楷体;   //字体</span><br><span class="line">$        color:blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$    h1&#123;</span><br><span class="line">$        font-size: 50px;    //字体大小</span><br><span class="line">$      &#125;</span><br><span class="line">$    .sdq1&#123;</span><br><span class="line">$        font-weight: bolder;  //粗体</span><br><span class="line">$      &#125;</span><br><span class="line">$    p&#123;</span><br><span class="line">$        font: oblique bolder 12px &quot;楷体&quot;;   //斜体oblique粗细bolder大小12px</span><br><span class="line">$        color:blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的故事<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;sdq1&quot;</span>&gt;</span>生物史迪奇<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span>5岁女孩莉萝聪明善良, 她最爱听猫王的老歌, 也一直梦想拥有一只属于自己的宠物狗<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span>史迪奇只能把自己的两只脚藏起来, 外表看起来和别的小狗一样<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span>当外星人终于在地球上发现了伪装的史迪奇时, 他们绑架了莉萝想逼史迪奇就范, 为了救回自己的好朋友, 也为了证明自己不是无可救药的危险分子, 史迪奇只有使出浑身解数, 放手一搏了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h1><p><strong>装饰</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color:blue;     //颜色</span><br><span class="line">$        text-align: center;  //文本对齐的方式 </span><br><span class="line">$        text-indent: 2em;     //首行缩进</span><br><span class="line">$        line-height: 20px;    //行高 </span><br><span class="line">$        text-decoration: overline;   //上划线</span><br><span class="line">$        text-decoration: line-through;   //中划线</span><br><span class="line">$        text-decoration: underline   //下划线</span><br><span class="line">$      &#125;</span><br><span class="line">$     img,span&#123;</span><br><span class="line">$               vertical-align: middle;</span><br><span class="line">$            &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$<span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的王国<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/x.jpg&quot;</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">span</span>&gt;</span>史迪奇<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="超链接伪类"><a href="#超链接伪类" class="headerlink" title="超链接伪类"></a>超链接伪类</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    //默认颜色</span><br><span class="line">$     a&#123;  </span><br><span class="line">$          text-decoration: none;</span><br><span class="line">$          color: #000000;</span><br><span class="line">$       &#125;  </span><br><span class="line">$     //鼠标悬浮状态 </span><br><span class="line">$     a:hover&#123;  </span><br><span class="line">$          color: blue;</span><br><span class="line">$       &#125;     </span><br><span class="line">$     //鼠标按住未释放状态 </span><br><span class="line">$     a:active&#123;  </span><br><span class="line">$          color: rad;</span><br><span class="line">$       &#125;      </span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$<span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的王国<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">a</span>&gt;</span>史迪奇<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    //默认颜色</span><br><span class="line">$     #sdq&#123;  </span><br><span class="line">$          text-shawdow: blue 10px 10px 10px;    //text-shawdow是阴影, 阴影颜色, 水平偏移, 垂直偏移, 阴影半径</span><br><span class="line">$       &#125;       </span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$<span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的王国<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">&quot;sdq&quot;</span>&gt;</span>史迪奇<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
 ]]></content>
   </entry>
   <entry>
@@ -750,6 +734,22 @@ $</style>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$   <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;css/style.css&quot;</span>&gt;</span>    //链接式  属于html</span><br><span class="line">$    @import url(&quot;css/style.css&quot;)          //导入式  属于CSS2.1 了解就可以</span><br><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color: blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E5%A4%96%E9%83%A8%E6%A0%B7%E5%BC%8F.jpg"></p>
 <h1 id="优先级-行内样式-gt-内部样式-gt-外部样式"><a href="#优先级-行内样式-gt-内部样式-gt-外部样式" class="headerlink" title="优先级: 行内样式 &gt; 内部样式 &gt; 外部样式"></a>优先级: 行内样式 &gt; 内部样式 &gt; 外部样式</h1><p><strong>优先级看就近原则</strong></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>CSS 三种导入样式</title>
+    <url>/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F.html</url>
+    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="span标签"><a href="#span标签" class="headerlink" title="span标签"></a>span标签</h1><p><strong>span标签: 重点突出的字, 使用span套起来</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    #sdq1&#123;</span><br><span class="line">$        color: blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$ 我叫<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;sdq1&quot;</span>&gt;</span>史迪奇<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<h1 id="字体风格"><a href="#字体风格" class="headerlink" title="字体风格"></a>字体风格</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    body&#123;</span><br><span class="line">$        font-family: &quot;Arial Black&quot;, 楷体;   //字体</span><br><span class="line">$        color:blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$    h1&#123;</span><br><span class="line">$        font-size: 50px;    //字体大小</span><br><span class="line">$      &#125;</span><br><span class="line">$    .sdq1&#123;</span><br><span class="line">$        font-weight: bolder;  //粗体</span><br><span class="line">$      &#125;</span><br><span class="line">$    p&#123;</span><br><span class="line">$        font: oblique bolder 12px &quot;楷体&quot;;   //斜体oblique粗细bolder大小12px</span><br><span class="line">$        color:blue;</span><br><span class="line">$      &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的故事<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;sdq1&quot;</span>&gt;</span>生物史迪奇<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span>5岁女孩莉萝聪明善良, 她最爱听猫王的老歌, 也一直梦想拥有一只属于自己的宠物狗<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span>史迪奇只能把自己的两只脚藏起来, 外表看起来和别的小狗一样<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span>当外星人终于在地球上发现了伪装的史迪奇时, 他们绑架了莉萝想逼史迪奇就范, 为了救回自己的好朋友, 也为了证明自己不是无可救药的危险分子, 史迪奇只有使出浑身解数, 放手一搏了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h1><p><strong>装饰</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color:blue;     //颜色</span><br><span class="line">$        text-align: center;  //文本对齐的方式 </span><br><span class="line">$        text-indent: 2em;     //首行缩进</span><br><span class="line">$        line-height: 20px;    //行高 </span><br><span class="line">$        text-decoration: overline;   //上划线</span><br><span class="line">$        text-decoration: line-through;   //中划线</span><br><span class="line">$        text-decoration: underline   //下划线</span><br><span class="line">$      &#125;</span><br><span class="line">$     img,span&#123;</span><br><span class="line">$               vertical-align: middle;</span><br><span class="line">$            &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$<span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的王国<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/x.jpg&quot;</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">span</span>&gt;</span>史迪奇<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="超链接伪类"><a href="#超链接伪类" class="headerlink" title="超链接伪类"></a>超链接伪类</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    //默认颜色</span><br><span class="line">$     a&#123;  </span><br><span class="line">$          text-decoration: none;</span><br><span class="line">$          color: #000000;</span><br><span class="line">$       &#125;  </span><br><span class="line">$     //鼠标悬浮状态 </span><br><span class="line">$     a:hover&#123;  </span><br><span class="line">$          color: blue;</span><br><span class="line">$       &#125;     </span><br><span class="line">$     //鼠标按住未释放状态 </span><br><span class="line">$     a:active&#123;  </span><br><span class="line">$          color: rad;</span><br><span class="line">$       &#125;      </span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$<span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的王国<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">a</span>&gt;</span>史迪奇<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    //默认颜色</span><br><span class="line">$     #sdq&#123;  </span><br><span class="line">$          text-shawdow: blue 10px 10px 10px;    //text-shawdow是阴影, 阴影颜色, 水平偏移, 垂直偏移, 阴影半径</span><br><span class="line">$       &#125;       </span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$<span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的王国<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">&quot;sdq&quot;</span>&gt;</span>史迪奇<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
   <entry>
@@ -1065,49 +1065,6 @@ $</style>
 ]]></content>
   </entry>
   <entry>
-    <title>关于Hexo搭建博客我所踩过的坑和小白安装教程</title>
-    <url>/Hexo-install.html</url>
-    <content><![CDATA[<p><strong>搭建博客笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h1><p>前提是需要安装 Node.js,不懂的可以百度下载然后按照<a href="https://www.bilibili.com/video/BV1wA411s7re?from=search&seid=11841654225437997570">B站的安装视频按照</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<h1 id="第二是-Hexo初始化博客"><a href="#第二是-Hexo初始化博客" class="headerlink" title="第二是 Hexo初始化博客"></a>第二是 Hexo初始化博客</h1><p><strong>cd 到你想存放博客源码的一个目录里面，这时会自动建立一个博客文件夹</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init blog  //hexo init (博客名字自定义)</span><br></pre></td></tr></table></figure>
-
-<h1 id="第三是-给安装博客依赖"><a href="#第三是-给安装博客依赖" class="headerlink" title="第三是 给安装博客依赖"></a>第三是 给安装博客依赖</h1><p><strong>cd 进刚创建的博客文件夹，安装依赖模块命令如下</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-<h1 id="第四是-找主题"><a href="#第四是-找主题" class="headerlink" title="第四是 找主题"></a>第四是 找主题</h1><p><strong>到这个 <a href="https://hexo.bootcss.com/themes/">Hexo网站</a> 去找主题</strong></p>
-<h1 id="第五是-清除静态文件"><a href="#第五是-清除静态文件" class="headerlink" title="第五是 清除静态文件"></a>第五是 清除静态文件</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
-<h1 id="第六是-生成静态文件和"><a href="#第六是-生成静态文件和" class="headerlink" title="第六是 生成静态文件和"></a>第六是 生成静态文件和</h1><p><strong>部署在GitHub 或者 Gitee服务器上，生成静态文件，生成的静态文件在博客工程的 public文件夹下 到哪里找就行了</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-<h1 id="第七是-部署"><a href="#第七是-部署" class="headerlink" title="第七是 部署"></a>第七是 部署</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<h1 id="第八是-本地运行"><a href="#第八是-本地运行" class="headerlink" title="第八是 本地运行"></a>第八是 本地运行</h1><p><strong>这里地址是localhost:4000</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<h1 id="查看你有没有被百度收录文章"><a href="#查看你有没有被百度收录文章" class="headerlink" title="查看你有没有被百度收录文章"></a>查看你有没有被百度收录文章</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ site:(你的博客)  //直接复制命令百度搜索</span><br></pre></td></tr></table></figure>
-<h1 id="amp-的作用"><a href="#amp-的作用" class="headerlink" title="&amp;的作用"></a>&amp;的作用</h1><p><strong>表示清除静态文件和部署</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean &amp; hexo d </span><br></pre></td></tr></table></figure>
-<h1 id="改变文章链接规则"><a href="#改变文章链接规则" class="headerlink" title="改变文章链接规则"></a>改变文章链接规则</h1><p><strong>Ctrl+f搜索 permalink</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ permalink: :id.html   //填入:id.html</span><br></pre></td></tr></table></figure>
-<p><strong>然后在指定位置填入id即可 数字随意，只要保证每篇文章里面的数字不要一样就行</strong></p>
-<img src="/images/Hexo博客/案例.jpg">]]></content>
-  </entry>
-  <entry>
-    <title>JavaScript 数据类型之(Map和Set)</title>
-    <url>/JavaScript-Map-Set.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="comment">/*ES6 Map*/</span></span><br><span class="line">$  <span class="comment">/*学生的成绩, 学生的名字 两种方式*/</span></span><br><span class="line">$  <span class="keyword">var</span> names = [<span class="string">&quot;史迪奇&quot;</span>,<span class="string">&quot;史迪仔&quot;</span>,<span class="string">&quot;强霸&quot;</span>];</span><br><span class="line">$  <span class="keyword">var</span> scores = [<span class="number">100</span>,<span class="number">100</span>,<span class="number">36</span>]</span><br><span class="line">$  <span class="comment">/*另一种*/</span></span><br><span class="line">$  <span class="keyword">var</span> map = naw <span class="built_in">Map</span>([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">36</span>]]);</span><br><span class="line">$  <span class="keyword">var</span> name = map.get(<span class="string">&quot;史迪奇&quot;</span>);    <span class="comment">/*通过key获得value*/</span> </span><br><span class="line">$  map.set(<span class="string">&quot;独眼霹雳&quot;</span>,<span class="number">60</span>);          <span class="comment">/*新增或修改*/</span> </span><br><span class="line">$  map.delete(<span class="string">&quot;强霸&quot;</span>);              <span class="comment">/*删除*/</span></span><br></pre></td></tr></table></figure>
-<h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   set.add(<span class="number">3</span>)                 <span class="comment">/*添加*/</span>  </span><br><span class="line">$   set.delete(<span class="string">&quot;强霸&quot;</span>);        <span class="comment">/*删除*/</span></span><br><span class="line">$   <span class="built_in">console</span>.log(set.has(<span class="number">3</span>))    <span class="comment">/*是否包含某个元素*/</span></span><br></pre></td></tr></table></figure>
-<h1 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h1><p><strong>遍历数组</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="comment">/*通过for of, for in 下标 */</span>  </span><br><span class="line">$   <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> arr)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>遍历map</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">100</span>]]);</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> map)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>遍历set</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> set = <span class="keyword">new</span> set([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">100</span>]]);</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> set)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
     <title>Java Swing 图形界面速背表(未完工)</title>
     <url>/Java-Swing.html</url>
     <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
@@ -1193,6 +1150,49 @@ $</style>
 ]]></content>
   </entry>
   <entry>
+    <title>关于Hexo搭建博客我所踩过的坑和小白安装教程</title>
+    <url>/Hexo-install.html</url>
+    <content><![CDATA[<p><strong>搭建博客笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h1><p>前提是需要安装 Node.js,不懂的可以百度下载然后按照<a href="https://www.bilibili.com/video/BV1wA411s7re?from=search&seid=11841654225437997570">B站的安装视频按照</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<h1 id="第二是-Hexo初始化博客"><a href="#第二是-Hexo初始化博客" class="headerlink" title="第二是 Hexo初始化博客"></a>第二是 Hexo初始化博客</h1><p><strong>cd 到你想存放博客源码的一个目录里面，这时会自动建立一个博客文件夹</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init blog  //hexo init (博客名字自定义)</span><br></pre></td></tr></table></figure>
+
+<h1 id="第三是-给安装博客依赖"><a href="#第三是-给安装博客依赖" class="headerlink" title="第三是 给安装博客依赖"></a>第三是 给安装博客依赖</h1><p><strong>cd 进刚创建的博客文件夹，安装依赖模块命令如下</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<h1 id="第四是-找主题"><a href="#第四是-找主题" class="headerlink" title="第四是 找主题"></a>第四是 找主题</h1><p><strong>到这个 <a href="https://hexo.bootcss.com/themes/">Hexo网站</a> 去找主题</strong></p>
+<h1 id="第五是-清除静态文件"><a href="#第五是-清除静态文件" class="headerlink" title="第五是 清除静态文件"></a>第五是 清除静态文件</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+<h1 id="第六是-生成静态文件和"><a href="#第六是-生成静态文件和" class="headerlink" title="第六是 生成静态文件和"></a>第六是 生成静态文件和</h1><p><strong>部署在GitHub 或者 Gitee服务器上，生成静态文件，生成的静态文件在博客工程的 public文件夹下 到哪里找就行了</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<h1 id="第七是-部署"><a href="#第七是-部署" class="headerlink" title="第七是 部署"></a>第七是 部署</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<h1 id="第八是-本地运行"><a href="#第八是-本地运行" class="headerlink" title="第八是 本地运行"></a>第八是 本地运行</h1><p><strong>这里地址是localhost:4000</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h1 id="查看你有没有被百度收录文章"><a href="#查看你有没有被百度收录文章" class="headerlink" title="查看你有没有被百度收录文章"></a>查看你有没有被百度收录文章</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ site:(你的博客)  //直接复制命令百度搜索</span><br></pre></td></tr></table></figure>
+<h1 id="amp-的作用"><a href="#amp-的作用" class="headerlink" title="&amp;的作用"></a>&amp;的作用</h1><p><strong>表示清除静态文件和部署</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean &amp; hexo d </span><br></pre></td></tr></table></figure>
+<h1 id="改变文章链接规则"><a href="#改变文章链接规则" class="headerlink" title="改变文章链接规则"></a>改变文章链接规则</h1><p><strong>Ctrl+f搜索 permalink</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ permalink: :id.html   //填入:id.html</span><br></pre></td></tr></table></figure>
+<p><strong>然后在指定位置填入id即可 数字随意，只要保证每篇文章里面的数字不要一样就行</strong></p>
+<img src="/images/Hexo博客/案例.jpg">]]></content>
+  </entry>
+  <entry>
+    <title>JavaScript 数据类型之(Map和Set)</title>
+    <url>/JavaScript-Map-Set.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="comment">/*ES6 Map*/</span></span><br><span class="line">$  <span class="comment">/*学生的成绩, 学生的名字 两种方式*/</span></span><br><span class="line">$  <span class="keyword">var</span> names = [<span class="string">&quot;史迪奇&quot;</span>,<span class="string">&quot;史迪仔&quot;</span>,<span class="string">&quot;强霸&quot;</span>];</span><br><span class="line">$  <span class="keyword">var</span> scores = [<span class="number">100</span>,<span class="number">100</span>,<span class="number">36</span>]</span><br><span class="line">$  <span class="comment">/*另一种*/</span></span><br><span class="line">$  <span class="keyword">var</span> map = naw <span class="built_in">Map</span>([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">36</span>]]);</span><br><span class="line">$  <span class="keyword">var</span> name = map.get(<span class="string">&quot;史迪奇&quot;</span>);    <span class="comment">/*通过key获得value*/</span> </span><br><span class="line">$  map.set(<span class="string">&quot;独眼霹雳&quot;</span>,<span class="number">60</span>);          <span class="comment">/*新增或修改*/</span> </span><br><span class="line">$  map.delete(<span class="string">&quot;强霸&quot;</span>);              <span class="comment">/*删除*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   set.add(<span class="number">3</span>)                 <span class="comment">/*添加*/</span>  </span><br><span class="line">$   set.delete(<span class="string">&quot;强霸&quot;</span>);        <span class="comment">/*删除*/</span></span><br><span class="line">$   <span class="built_in">console</span>.log(set.has(<span class="number">3</span>))    <span class="comment">/*是否包含某个元素*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h1><p><strong>遍历数组</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="comment">/*通过for of, for in 下标 */</span>  </span><br><span class="line">$   <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> arr)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>遍历map</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">100</span>]]);</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> map)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>遍历set</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> set = <span class="keyword">new</span> set([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">100</span>]]);</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> set)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
     <title>JavaScript JavaScript (函数之定义和获取)</title>
     <url>/JavaScript-definition-obtain.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
@@ -1242,24 +1242,6 @@ $</style>
 ]]></content>
   </entry>
   <entry>
-    <title>JavaScript 数据类型之(字符串类型)</title>
-    <url>/JavaScript-string.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="字符串常用"><a href="#字符串常用" class="headerlink" title="字符串常用"></a>字符串常用</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ <span class="string">&quot;字符串&quot;</span>     <span class="comment">/*双引号包裹*/</span></span><br><span class="line">$ <span class="string">&#x27;字符串&#x27;</span>     <span class="comment">/*单引号包裹*/</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  \<span class="string">&#x27;           /*代表它是一个字符串*/</span></span><br><span class="line"><span class="string">$  \n           /*换行*/</span></span><br><span class="line"><span class="string">$  \t           /*tab*/</span></span><br><span class="line"><span class="string">$  \u5d3d       /*Unicode字符*/</span></span><br><span class="line"><span class="string">$  \x45         /*Asll字符*/</span></span><br></pre></td></tr></table></figure>
-<h1 id="多行字符串编写"><a href="#多行字符串编写" class="headerlink" title="多行字符串编写"></a>多行字符串编写</h1><p><strong>例子</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ <span class="comment">/*tab键上面  esc键下面*/</span></span><br><span class="line">$    <span class="keyword">var</span> msg =</span><br><span class="line">$        haha</span><br><span class="line">$   哈哈</span><br><span class="line">$   蛤蛤  </span><br></pre></td></tr></table></figure>
-<h1 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h1><p><strong>例子</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ <span class="comment">/*tab键上面  esc键下面*/</span></span><br><span class="line">$    <span class="keyword">let</span> sdq = <span class="string">&quot;史迪奇&quot;</span>;</span><br><span class="line">$    <span class="keyword">let</span> sdz = <span class="string">&quot;史迪仔&quot;</span>;</span><br><span class="line">$    <span class="keyword">let</span> age = <span class="number">119</span>;</span><br><span class="line">$    <span class="keyword">let</span> sdqz = <span class="string">&#x27;我叫.$&#123;sdq&#125;&#x27;</span>;</span><br></pre></td></tr></table></figure>
-<h1 id="字符串长度"><a href="#字符串长度" class="headerlink" title="字符串长度"></a>字符串长度</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   str.length</span><br></pre></td></tr></table></figure>
-<h1 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="comment">/*是方法不是属性*/</span></span><br><span class="line">$  sdq.toUpperCase()          <span class="comment">/*大写*/</span></span><br><span class="line">$  sdq.LowerCase()          <span class="comment">/*小写*/</span></span><br></pre></td></tr></table></figure>
-<h1 id="字符串截取"><a href="#字符串截取" class="headerlink" title="字符串截取"></a>字符串截取</h1><p><strong>subsrting</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  sdq.subsrting(<span class="number">1</span>)          <span class="comment">/*从第一个字符串截取到最后一个字符串*/</span></span><br><span class="line">$  sdq.LowerCase(<span class="number">1</span>,<span class="number">3</span>)          <span class="comment">/*包头不包尾*/</span></span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
     <title>JavaScript 数据类型之(对象)</title>
     <url>/JavaScript-object.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
@@ -1278,6 +1260,24 @@ $</style>
 
 
 ]]></content>
+  </entry>
+  <entry>
+    <title>JavaScript 数据类型之(字符串类型)</title>
+    <url>/JavaScript-string.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="字符串常用"><a href="#字符串常用" class="headerlink" title="字符串常用"></a>字符串常用</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ <span class="string">&quot;字符串&quot;</span>     <span class="comment">/*双引号包裹*/</span></span><br><span class="line">$ <span class="string">&#x27;字符串&#x27;</span>     <span class="comment">/*单引号包裹*/</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  \<span class="string">&#x27;           /*代表它是一个字符串*/</span></span><br><span class="line"><span class="string">$  \n           /*换行*/</span></span><br><span class="line"><span class="string">$  \t           /*tab*/</span></span><br><span class="line"><span class="string">$  \u5d3d       /*Unicode字符*/</span></span><br><span class="line"><span class="string">$  \x45         /*Asll字符*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="多行字符串编写"><a href="#多行字符串编写" class="headerlink" title="多行字符串编写"></a>多行字符串编写</h1><p><strong>例子</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ <span class="comment">/*tab键上面  esc键下面*/</span></span><br><span class="line">$    <span class="keyword">var</span> msg =</span><br><span class="line">$        haha</span><br><span class="line">$   哈哈</span><br><span class="line">$   蛤蛤  </span><br></pre></td></tr></table></figure>
+<h1 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h1><p><strong>例子</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ <span class="comment">/*tab键上面  esc键下面*/</span></span><br><span class="line">$    <span class="keyword">let</span> sdq = <span class="string">&quot;史迪奇&quot;</span>;</span><br><span class="line">$    <span class="keyword">let</span> sdz = <span class="string">&quot;史迪仔&quot;</span>;</span><br><span class="line">$    <span class="keyword">let</span> age = <span class="number">119</span>;</span><br><span class="line">$    <span class="keyword">let</span> sdqz = <span class="string">&#x27;我叫.$&#123;sdq&#125;&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="字符串长度"><a href="#字符串长度" class="headerlink" title="字符串长度"></a>字符串长度</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   str.length</span><br></pre></td></tr></table></figure>
+<h1 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="comment">/*是方法不是属性*/</span></span><br><span class="line">$  sdq.toUpperCase()          <span class="comment">/*大写*/</span></span><br><span class="line">$  sdq.LowerCase()          <span class="comment">/*小写*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="字符串截取"><a href="#字符串截取" class="headerlink" title="字符串截取"></a>字符串截取</h1><p><strong>subsrting</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  sdq.subsrting(<span class="number">1</span>)          <span class="comment">/*从第一个字符串截取到最后一个字符串*/</span></span><br><span class="line">$  sdq.LowerCase(<span class="number">1</span>,<span class="number">3</span>)          <span class="comment">/*包头不包尾*/</span></span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>JavaScript 数据类型之(数组类型)</title>
@@ -1347,18 +1347,6 @@ $</style>
 ]]></content>
   </entry>
   <entry>
-    <title>Java面向对象思维之构造方法需的重载</title>
-    <url>/Object-oriented-constructor-heavy-load.html</url>
-    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color,  int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color, int wheel, int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this(color,seat);  //this还可以调用当前累中其他的构造方法</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h1>]]></content>
-  </entry>
-  <entry>
     <title>Java面向对象思维之构造方法</title>
     <url>/Object-oriented-constructor.html</url>
     <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
@@ -1373,6 +1361,18 @@ $</style>
 <h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,5,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     c1.fly();</span><br><span class="line">$     c1.diving();</span><br><span class="line">$ </span><br><span class="line">$     c2.fly();</span><br><span class="line">$     c2.diving();</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <h1 id="构造方法需要注意"><a href="#构造方法需要注意" class="headerlink" title="构造方法需要注意"></a>构造方法需要注意</h1><p><strong>没有返回值这一项</strong><br><strong>在new的时候, 给对象设置属性信息</strong><br><strong>Java会默认自动的送每个类一个无参数的构造方法, 如果你写了构造方法, 那么Java就不送了</strong></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Java面向对象思维之构造方法需的重载</title>
+    <url>/Object-oriented-constructor-heavy-load.html</url>
+    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color,  int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color, int wheel, int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this(color,seat);  //this还可以调用当前累中其他的构造方法</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h1>]]></content>
   </entry>
   <entry>
     <title>Linux命令(未完工)</title>
@@ -1451,6 +1451,15 @@ $
 ]]></content>
   </entry>
   <entry>
+    <title>第一个Vue.js</title>
+    <url>/one-Vue.html</url>
+    <content><![CDATA[<p><strong>Vue.js个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$  &lt;!DOCTYPE html&gt;</span><br><span class="line">$  &lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line">$  &lt;head&gt;</span><br><span class="line">$      &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">$      &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br><span class="line">$      &lt;title&gt;Vue学习&lt;/title&gt;</span><br><span class="line">$      &lt;script src=<span class="string">&quot;js/vue.min.js&quot;</span>&gt;&lt;/script&gt; </span><br><span class="line">$      &lt;!-- 导入Vue.js --&gt;</span><br><span class="line">$  &lt;/head&gt;</span><br><span class="line">$  &lt;body&gt;</span><br><span class="line">$      &lt;div id = <span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">$          &lt;button @click=<span class="string">&quot;showInfo&quot;</span>&gt;请点击&lt;/button&gt;</span><br><span class="line">$          &lt;p&gt;&#123;&#123;ms&#125;&#125;&lt;/p&gt;</span><br><span class="line">$          &lt;!-- &#123;&#123;massage&#125;&#125; --&gt;</span><br><span class="line">$      &lt;/div&gt;</span><br><span class="line">$      </span><br><span class="line">$          &lt;script&gt;</span><br><span class="line">$              var app = new Vue(&#123;</span><br><span class="line">$              el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">$              // Model : 数据</span><br><span class="line">$               data:&#123;</span><br><span class="line">$                   ms: <span class="string">&quot;hello,vue!&quot;</span>,</span><br><span class="line">$               &#125;,</span><br><span class="line">$               methods:&#123;</span><br><span class="line">$                   <span class="function"><span class="title">showInfo</span></span>()&#123;</span><br><span class="line">$                          this.ms = <span class="string">&quot;你好666999, Vue&quot;</span></span><br><span class="line">$                   &#125;</span><br><span class="line">$               &#125;</span><br><span class="line">$          &#125;);</span><br><span class="line">$          &lt;/script&gt;</span><br><span class="line">$      &lt;/script&gt;</span><br><span class="line">$      </span><br><span class="line">$  &lt;/body&gt;</span><br><span class="line">$  &lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="view和Model双向绑定"><a href="#view和Model双向绑定" class="headerlink" title="view和Model双向绑定"></a>view和Model双向绑定</h1>]]></content>
+  </entry>
+  <entry>
     <title>Vue.js 网页笔记本</title>
     <url>/Vue-network-books.html</url>
     <content><![CDATA[<p><strong>Vue.js个人整理</strong></p>
@@ -1460,15 +1469,6 @@ $
 <p><font color="#DC143C">直接实战</font></p>
 <p><a href="./项目/项目工程.html" target="_blank">演示效果</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>第一个Vue.js</title>
-    <url>/one-Vue.html</url>
-    <content><![CDATA[<p><strong>Vue.js个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$  &lt;!DOCTYPE html&gt;</span><br><span class="line">$  &lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line">$  &lt;head&gt;</span><br><span class="line">$      &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">$      &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br><span class="line">$      &lt;title&gt;Vue学习&lt;/title&gt;</span><br><span class="line">$      &lt;script src=<span class="string">&quot;js/vue.min.js&quot;</span>&gt;&lt;/script&gt; </span><br><span class="line">$      &lt;!-- 导入Vue.js --&gt;</span><br><span class="line">$  &lt;/head&gt;</span><br><span class="line">$  &lt;body&gt;</span><br><span class="line">$      &lt;div id = <span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">$          &lt;button @click=<span class="string">&quot;showInfo&quot;</span>&gt;请点击&lt;/button&gt;</span><br><span class="line">$          &lt;p&gt;&#123;&#123;ms&#125;&#125;&lt;/p&gt;</span><br><span class="line">$          &lt;!-- &#123;&#123;massage&#125;&#125; --&gt;</span><br><span class="line">$      &lt;/div&gt;</span><br><span class="line">$      </span><br><span class="line">$          &lt;script&gt;</span><br><span class="line">$              var app = new Vue(&#123;</span><br><span class="line">$              el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">$              // Model : 数据</span><br><span class="line">$               data:&#123;</span><br><span class="line">$                   ms: <span class="string">&quot;hello,vue!&quot;</span>,</span><br><span class="line">$               &#125;,</span><br><span class="line">$               methods:&#123;</span><br><span class="line">$                   <span class="function"><span class="title">showInfo</span></span>()&#123;</span><br><span class="line">$                          this.ms = <span class="string">&quot;你好666999, Vue&quot;</span></span><br><span class="line">$                   &#125;</span><br><span class="line">$               &#125;</span><br><span class="line">$          &#125;);</span><br><span class="line">$          &lt;/script&gt;</span><br><span class="line">$      &lt;/script&gt;</span><br><span class="line">$      </span><br><span class="line">$  &lt;/body&gt;</span><br><span class="line">$  &lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="view和Model双向绑定"><a href="#view和Model双向绑定" class="headerlink" title="view和Model双向绑定"></a>view和Model双向绑定</h1>]]></content>
   </entry>
   <entry>
     <title>Vue.js 表单输入绑定的基础用法</title>
@@ -1564,103 +1564,6 @@ $
 <img src="/images/wsl傻瓜式安装/Arch wsl.jpg" style="width: 800px; height: 500px;">
 
 <h1 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h1><h1 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h1><h1 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h1>]]></content>
-  </entry>
-  <entry>
-    <title>Android同步源码和编译ROM傻瓜式 (有手就行)</title>
-    <url>/Android-compile.html</url>
-    <content><![CDATA[<p><strong>本人是用Arch，顺便来传一下教</strong><br><img src="/images/编译Android/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
-<a id="more"></a>
-
-<h1 id="第一是-安装Linux-我以Ubuntu和deepin为例子，建议新手用deepin"><a href="#第一是-安装Linux-我以Ubuntu和deepin为例子，建议新手用deepin" class="headerlink" title="第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin"></a>第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin</h1><p><a href="https://www.bilibili.com/video/BV1aW411C7NR">Ubantu的安装视频</a><br><a href="https://www.bilibili.com/video/BV1HW411Y73e">Deepin的安装视频</a></p>
-<h1 id="第二是-环境搭载"><a href="#第二是-环境搭载" class="headerlink" title="第二是 环境搭载"></a>第二是 环境搭载</h1><p><strong>1.明确自己要开发的android版本 参考 lineageos官方的wiki：<a href="https://wiki.lineageos.org/">https://wiki.lineageos.org</a> 选择合适的linux发行版(推荐ubuntu 16)推荐而已，你可以是别的Linux,都没问题</strong></p>
-<p><strong>2.更新自身ubuntu的软件源  替换到etc/apt/sources.list替换完毕后执行</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update //如果自身网速不好建议换国内源(清华 中科大 阿里)</span><br></pre></td></tr></table></figure>
-<p><strong><a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">个人建议清华</a></strong><br><strong>deepin就更简单，直接设置里面换</strong></p>
-<p><strong>3.安装jdk，需要根据开发的android版本选择</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure>
-
-<p><strong>4.安装 软件依赖</strong></p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev</span><br></pre></td></tr></table></figure>
-<p><strong>4.安装jdk，需要根据开发的android版本选择</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install openjdk-x-jdk    //x 为jdk版本数字</span><br></pre></td></tr></table></figure>
-<p><strong>LineageOS 14.1-15.1: OpenJDK 1.8</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ install openjdk-8-jdk</span><br></pre></td></tr></table></figure>
-<p><strong>LineageOS 11.0-13.0: OpenJDK 1.7</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ install openjdk-7-jdk</span><br></pre></td></tr></table></figure>
-<h1 id="第三是-安装repo"><a href="#第三是-安装repo" class="headerlink" title="第三是 安装repo"></a>第三是 安装repo</h1><p><strong>(1) 推荐使用mokee开源的 <a href="https://bbs.mokeedev.com/t/topic/21">mokee repo1</a> 或者 <a href="https://tacke.wodemo.com/entry/466371">mokee repo2</a></strong></p>
-<p><strong>(2)在终端中输入以下内容，新建bin文件夹</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir ~/bin</span><br></pre></td></tr></table></figure>
-<p><strong>(3)输入以下内容，将bin文件夹添加到环境变量中</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ PATH=~/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
-<p><strong>(4)接着输入以下内容，下载repo文件到bin文件夹 输入这个请省略下面那一步</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo &gt; ~/bin/repo</span><br></pre></td></tr></table></figure>
-
-<p><strong>如果你是欧洲人，有钱买梯子 就省略上步直接输入以下命令</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo</span><br></pre></td></tr></table></figure>
-<p><strong>(5)最后输入以下内容，为repo文件添加运行权限</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ chmod a+x ~&#x2F;bin&#x2F;repo</span><br></pre></td></tr></table></figure>
-<h1 id="第四是-同步源码"><a href="#第四是-同步源码" class="headerlink" title="第四是 同步源码"></a>第四是 同步源码</h1><p><strong>(1) win+alt+t打开终端，输入如下，创建一个文件夹</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir ~/los      //例如: los  名字你可以顺便起</span><br></pre></td></tr></table></figure>
-<p><strong>(2) 进入(自己起好名字的文件夹)的文件夹，输入如下</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/los         //例如: los 你随便起名字的文件夹</span><br></pre></td></tr></table></figure>
-<p><strong>(3) 由于使用repo拉取源码时，会尝试访问官方的git源更新自己，但由于是谷歌，就无法正常访问，所以在正式拉取前，我们需要先做点修改打开主目录，按组合键ctrl+H，在显示的隐藏文件中，打开.bashrc文件，将如下内容复制到你的~/.bashrc最后一行，保存退出</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> REPO_URL=<span class="string">&#x27;https://mirrors.tuna.tsinghua.edu.cn/git/git-repo&#x27;</span></span><br></pre></td></tr></table></figure>
-<p><strong>(4) 获取源码拉取地址</strong><br>访问<a href="https://github.com/LineageOS">lineage的开源地址库</a>点击android，进入如下界面，这里就看到了拉取lineage-x.x的命令</p>
-<p><strong>(5) 获取源码default</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ repo init -u git://github.com/los/android.git -b lineage-x.x       //例如: los 你随便起名字的文件夹和lineage版本</span><br></pre></td></tr></table></figure>
-<p><strong>(6) 输入邮箱和昵称</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.email xxxxxx@xxxx   //你的邮箱</span><br><span class="line">$ git config --global user.name xxxxxxxxx     //随便起一个英文昵称</span><br></pre></td></tr></table></figure>
-<p><strong>打开lineageOS文件夹 (如果是空的按组合键ctrl+H，显示隐藏内容)**</strong></p>
-<p><img src="/images/%E7%BC%96%E8%AF%91Android/%E5%90%8C%E6%AD%A5%E6%BA%90%E7%A0%81.png"></p>
-<p>然后更改<a href="https://mirrors.tuna.tsinghua.edu.cn/help/lineageOS/">链接</a></p>
-<h1 id="第五是-拉取源码"><a href="#第五是-拉取源码" class="headerlink" title="第五是 拉取源码"></a>第五是 拉取源码</h1><p><strong>输入</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ repo sync</span><br></pre></td></tr></table></figure>
-<p><strong>或者</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ repo sync -c -f -j8 --force-sync --no-clone-bundle</span><br></pre></td></tr></table></figure>
-<h1 id="第六是-获取机型device"><a href="#第六是-获取机型device" class="headerlink" title="第六是 获取机型device"></a>第六是 获取机型device</h1><p><strong>(1) 我们进入<a href="https://github.com/LineageOS">lineage的开源项目网站</a></strong></p>
-<p><strong>(2) 在搜索框中输入(设备代号)，会看到android_device_(品牌)_(设备代号)这一项</strong></p>
-<p><strong>(3) 点击android_device_(品牌)_(设备代号)，就可以看到device的所有内容</strong></p>
-<p><strong>(4) 点击右边的Clone or download，然后复制如图中的蓝色内容，这就是此device的下载地址</strong></p>
-<p><strong>(5) 组合键ctrl+alt+t，打开终端</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/los             //例如: los  你随便起名字的文件夹</span><br></pre></td></tr></table></figure>
-<p><strong>(6) 输入如下命令，回车开始同步</strong></p>
-<p>解释一下:git clone就是拷贝到本地的命令，那段网址就是我们上面复制的地址，-b后面的lineage-x.x,表示lineage-x.x的分支；device/(品牌)/(设备代号)就是要下载到地方的路径</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/LineageOS/android_device_(品牌)_(设备代号).git -b lineage-x.x device/(品牌)/(设备代号) depth=1(可加可不加，加入同步源码会小点)</span><br></pre></td></tr></table></figure>
-<p><strong>(7) 我们需要拉取的项目如下</strong></p>
-<img src="/images/编译Android/找机型.jpg">
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ android_device_(品牌)_(设备代号)</span><br><span class="line"></span><br><span class="line">$ android_device_(品牌)_(处理器代号)-common</span><br><span class="line"></span><br><span class="line">$ android_device_(品牌)_(厂家)_common</span><br><span class="line"></span><br><span class="line">$ android_kernel_(品牌)_(处理器代号)</span><br><span class="line"></span><br><span class="line">$ proprietary_vendor_(品牌) </span><br></pre></td></tr></table></figure>
-<p><strong>(8) <a href="https://github.com/TheMuppets">vendor需要访问地址</a>然后搜索(你的品牌)就可以找到</strong></p>
-<p><strong>(9) 同样和同步其他项目一样</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/TheMuppets/proprietary_vendor_(品牌).git -b lineage-x.x vendor/(品牌)</span><br></pre></td></tr></table></figure>
-<h1 id="第七是-执行编译"><a href="#第七是-执行编译" class="headerlink" title="第七是 执行编译"></a>第七是 执行编译</h1><p><strong>(1)如果你退出了，你就按组合键ctrl+alt+t，打开终端，输入以下命令，回车，进入los             //你随便起名字的文件夹，没有的话跳过这个环节</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/los    //例如: los 你随便起名字的文件夹</span><br></pre></td></tr></table></figure>
-<p><strong>(2) 初始化</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ . build/envsetup.sh</span><br></pre></td></tr></table></figure>
-<p><strong>(3) 输入如下命令，回车</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ breakfast xxx  //自己的机型</span><br></pre></td></tr></table></figure>
-<p>如果有错误，就根据错误提示到lineageOS目录检查device, kernel和vendor等是否正确</p>
-<p><strong>(4) 输入，回车，进行编译</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ brunch xxx    //自己的机型</span><br></pre></td></tr></table></figure>
-<p>编译耗费的时间取决于你的电脑配置情况，所以我不建议用虚拟机，如果你电脑配置相当牛逼，当我没说</p>
-<p><strong>(5)在我编译时出现了 fatal error: openssl/opensslv.h: No such file or directory 原因是libssl-dev没有安装</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install libssl-dev</span><br></pre></td></tr></table></figure>
-<p><strong>(6) 回到正在编译的终端中，重新输入如下命令，等待编译的完成</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ brunch //自己的机型</span><br></pre></td></tr></table></figure>
-<p><strong>(7) 编译完成后</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ 进入主目录\(你随便起名字的文件夹)\out\target\product\(设备代号)中就可以看到我们编译好的ROM了，可以复制到手机刷入了</span><br></pre></td></tr></table></figure>
-<h1 id="另外设置ccache提高编译速度"><a href="#另外设置ccache提高编译速度" class="headerlink" title="另外设置ccache提高编译速度"></a>另外设置ccache提高编译速度</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> USE_CCACHE=1 </span><br><span class="line">$ <span class="built_in">export</span> CCACHE_COMPRESS=1</span><br><span class="line">$ ccache -M 50G 或者100G</span><br></pre></td></tr></table></figure>
-<p><strong>防止低内存编译出错 设置大小为</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> ANDROID_JACK_VM_ARGS=<span class="string">&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G&quot;</span></span><br></pre></td></tr></table></figure>
-<h1 id="祝福大家能自己动手做出属于自己的ROM"><a href="#祝福大家能自己动手做出属于自己的ROM" class="headerlink" title="祝福大家能自己动手做出属于自己的ROM"></a>祝福大家能自己动手做出属于自己的ROM</h1>]]></content>
-  </entry>
-  <entry>
-    <title>下次一定</title>
-    <url>/xcyd.html</url>
-    <content><![CDATA[<p><strong>本人制作简单的一款软件</strong></p>
-<a id="more"></a>
-
-<h1 id="软件截图"><a href="#软件截图" class="headerlink" title="软件截图"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcydjt.jpg">软件截图</a></h1><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcyd.jpg">下载</a></h1><h1 id="声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡"><a href="#声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡" class="headerlink" title="声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡"></a>声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡</h1><h1 id="真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器"><a href="#真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器" class="headerlink" title="真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器"></a>真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器</h1><h1 id="除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了"><a href="#除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了" class="headerlink" title="除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了"></a>除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了</h1>]]></content>
   </entry>
   <entry>
     <title>轻松理解json与python关系</title>
@@ -1770,6 +1673,103 @@ python数据类型
 ]]></content>
   </entry>
   <entry>
+    <title>下次一定</title>
+    <url>/xcyd.html</url>
+    <content><![CDATA[<p><strong>本人制作简单的一款软件</strong></p>
+<a id="more"></a>
+
+<h1 id="软件截图"><a href="#软件截图" class="headerlink" title="软件截图"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcydjt.jpg">软件截图</a></h1><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcyd.jpg">下载</a></h1><h1 id="声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡"><a href="#声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡" class="headerlink" title="声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡"></a>声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡</h1><h1 id="真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器"><a href="#真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器" class="headerlink" title="真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器"></a>真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器</h1><h1 id="除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了"><a href="#除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了" class="headerlink" title="除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了"></a>除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了</h1>]]></content>
+  </entry>
+  <entry>
+    <title>Android同步源码和编译ROM傻瓜式 (有手就行)</title>
+    <url>/Android-compile.html</url>
+    <content><![CDATA[<p><strong>本人是用Arch，顺便来传一下教</strong><br><img src="/images/编译Android/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
+<a id="more"></a>
+
+<h1 id="第一是-安装Linux-我以Ubuntu和deepin为例子，建议新手用deepin"><a href="#第一是-安装Linux-我以Ubuntu和deepin为例子，建议新手用deepin" class="headerlink" title="第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin"></a>第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin</h1><p><a href="https://www.bilibili.com/video/BV1aW411C7NR">Ubantu的安装视频</a><br><a href="https://www.bilibili.com/video/BV1HW411Y73e">Deepin的安装视频</a></p>
+<h1 id="第二是-环境搭载"><a href="#第二是-环境搭载" class="headerlink" title="第二是 环境搭载"></a>第二是 环境搭载</h1><p><strong>1.明确自己要开发的android版本 参考 lineageos官方的wiki：<a href="https://wiki.lineageos.org/">https://wiki.lineageos.org</a> 选择合适的linux发行版(推荐ubuntu 16)推荐而已，你可以是别的Linux,都没问题</strong></p>
+<p><strong>2.更新自身ubuntu的软件源  替换到etc/apt/sources.list替换完毕后执行</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update //如果自身网速不好建议换国内源(清华 中科大 阿里)</span><br></pre></td></tr></table></figure>
+<p><strong><a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">个人建议清华</a></strong><br><strong>deepin就更简单，直接设置里面换</strong></p>
+<p><strong>3.安装jdk，需要根据开发的android版本选择</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure>
+
+<p><strong>4.安装 软件依赖</strong></p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev</span><br></pre></td></tr></table></figure>
+<p><strong>4.安装jdk，需要根据开发的android版本选择</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install openjdk-x-jdk    //x 为jdk版本数字</span><br></pre></td></tr></table></figure>
+<p><strong>LineageOS 14.1-15.1: OpenJDK 1.8</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ install openjdk-8-jdk</span><br></pre></td></tr></table></figure>
+<p><strong>LineageOS 11.0-13.0: OpenJDK 1.7</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ install openjdk-7-jdk</span><br></pre></td></tr></table></figure>
+<h1 id="第三是-安装repo"><a href="#第三是-安装repo" class="headerlink" title="第三是 安装repo"></a>第三是 安装repo</h1><p><strong>(1) 推荐使用mokee开源的 <a href="https://bbs.mokeedev.com/t/topic/21">mokee repo1</a> 或者 <a href="https://tacke.wodemo.com/entry/466371">mokee repo2</a></strong></p>
+<p><strong>(2)在终端中输入以下内容，新建bin文件夹</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir ~/bin</span><br></pre></td></tr></table></figure>
+<p><strong>(3)输入以下内容，将bin文件夹添加到环境变量中</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ PATH=~/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+<p><strong>(4)接着输入以下内容，下载repo文件到bin文件夹 输入这个请省略下面那一步</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo &gt; ~/bin/repo</span><br></pre></td></tr></table></figure>
+
+<p><strong>如果你是欧洲人，有钱买梯子 就省略上步直接输入以下命令</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo</span><br></pre></td></tr></table></figure>
+<p><strong>(5)最后输入以下内容，为repo文件添加运行权限</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ chmod a+x ~&#x2F;bin&#x2F;repo</span><br></pre></td></tr></table></figure>
+<h1 id="第四是-同步源码"><a href="#第四是-同步源码" class="headerlink" title="第四是 同步源码"></a>第四是 同步源码</h1><p><strong>(1) win+alt+t打开终端，输入如下，创建一个文件夹</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir ~/los      //例如: los  名字你可以顺便起</span><br></pre></td></tr></table></figure>
+<p><strong>(2) 进入(自己起好名字的文件夹)的文件夹，输入如下</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/los         //例如: los 你随便起名字的文件夹</span><br></pre></td></tr></table></figure>
+<p><strong>(3) 由于使用repo拉取源码时，会尝试访问官方的git源更新自己，但由于是谷歌，就无法正常访问，所以在正式拉取前，我们需要先做点修改打开主目录，按组合键ctrl+H，在显示的隐藏文件中，打开.bashrc文件，将如下内容复制到你的~/.bashrc最后一行，保存退出</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> REPO_URL=<span class="string">&#x27;https://mirrors.tuna.tsinghua.edu.cn/git/git-repo&#x27;</span></span><br></pre></td></tr></table></figure>
+<p><strong>(4) 获取源码拉取地址</strong><br>访问<a href="https://github.com/LineageOS">lineage的开源地址库</a>点击android，进入如下界面，这里就看到了拉取lineage-x.x的命令</p>
+<p><strong>(5) 获取源码default</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ repo init -u git://github.com/los/android.git -b lineage-x.x       //例如: los 你随便起名字的文件夹和lineage版本</span><br></pre></td></tr></table></figure>
+<p><strong>(6) 输入邮箱和昵称</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.email xxxxxx@xxxx   //你的邮箱</span><br><span class="line">$ git config --global user.name xxxxxxxxx     //随便起一个英文昵称</span><br></pre></td></tr></table></figure>
+<p><strong>打开lineageOS文件夹 (如果是空的按组合键ctrl+H，显示隐藏内容)**</strong></p>
+<p><img src="/images/%E7%BC%96%E8%AF%91Android/%E5%90%8C%E6%AD%A5%E6%BA%90%E7%A0%81.png"></p>
+<p>然后更改<a href="https://mirrors.tuna.tsinghua.edu.cn/help/lineageOS/">链接</a></p>
+<h1 id="第五是-拉取源码"><a href="#第五是-拉取源码" class="headerlink" title="第五是 拉取源码"></a>第五是 拉取源码</h1><p><strong>输入</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ repo sync</span><br></pre></td></tr></table></figure>
+<p><strong>或者</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ repo sync -c -f -j8 --force-sync --no-clone-bundle</span><br></pre></td></tr></table></figure>
+<h1 id="第六是-获取机型device"><a href="#第六是-获取机型device" class="headerlink" title="第六是 获取机型device"></a>第六是 获取机型device</h1><p><strong>(1) 我们进入<a href="https://github.com/LineageOS">lineage的开源项目网站</a></strong></p>
+<p><strong>(2) 在搜索框中输入(设备代号)，会看到android_device_(品牌)_(设备代号)这一项</strong></p>
+<p><strong>(3) 点击android_device_(品牌)_(设备代号)，就可以看到device的所有内容</strong></p>
+<p><strong>(4) 点击右边的Clone or download，然后复制如图中的蓝色内容，这就是此device的下载地址</strong></p>
+<p><strong>(5) 组合键ctrl+alt+t，打开终端</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/los             //例如: los  你随便起名字的文件夹</span><br></pre></td></tr></table></figure>
+<p><strong>(6) 输入如下命令，回车开始同步</strong></p>
+<p>解释一下:git clone就是拷贝到本地的命令，那段网址就是我们上面复制的地址，-b后面的lineage-x.x,表示lineage-x.x的分支；device/(品牌)/(设备代号)就是要下载到地方的路径</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/LineageOS/android_device_(品牌)_(设备代号).git -b lineage-x.x device/(品牌)/(设备代号) depth=1(可加可不加，加入同步源码会小点)</span><br></pre></td></tr></table></figure>
+<p><strong>(7) 我们需要拉取的项目如下</strong></p>
+<img src="/images/编译Android/找机型.jpg">
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ android_device_(品牌)_(设备代号)</span><br><span class="line"></span><br><span class="line">$ android_device_(品牌)_(处理器代号)-common</span><br><span class="line"></span><br><span class="line">$ android_device_(品牌)_(厂家)_common</span><br><span class="line"></span><br><span class="line">$ android_kernel_(品牌)_(处理器代号)</span><br><span class="line"></span><br><span class="line">$ proprietary_vendor_(品牌) </span><br></pre></td></tr></table></figure>
+<p><strong>(8) <a href="https://github.com/TheMuppets">vendor需要访问地址</a>然后搜索(你的品牌)就可以找到</strong></p>
+<p><strong>(9) 同样和同步其他项目一样</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/TheMuppets/proprietary_vendor_(品牌).git -b lineage-x.x vendor/(品牌)</span><br></pre></td></tr></table></figure>
+<h1 id="第七是-执行编译"><a href="#第七是-执行编译" class="headerlink" title="第七是 执行编译"></a>第七是 执行编译</h1><p><strong>(1)如果你退出了，你就按组合键ctrl+alt+t，打开终端，输入以下命令，回车，进入los             //你随便起名字的文件夹，没有的话跳过这个环节</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/los    //例如: los 你随便起名字的文件夹</span><br></pre></td></tr></table></figure>
+<p><strong>(2) 初始化</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ . build/envsetup.sh</span><br></pre></td></tr></table></figure>
+<p><strong>(3) 输入如下命令，回车</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ breakfast xxx  //自己的机型</span><br></pre></td></tr></table></figure>
+<p>如果有错误，就根据错误提示到lineageOS目录检查device, kernel和vendor等是否正确</p>
+<p><strong>(4) 输入，回车，进行编译</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ brunch xxx    //自己的机型</span><br></pre></td></tr></table></figure>
+<p>编译耗费的时间取决于你的电脑配置情况，所以我不建议用虚拟机，如果你电脑配置相当牛逼，当我没说</p>
+<p><strong>(5)在我编译时出现了 fatal error: openssl/opensslv.h: No such file or directory 原因是libssl-dev没有安装</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install libssl-dev</span><br></pre></td></tr></table></figure>
+<p><strong>(6) 回到正在编译的终端中，重新输入如下命令，等待编译的完成</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ brunch //自己的机型</span><br></pre></td></tr></table></figure>
+<p><strong>(7) 编译完成后</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ 进入主目录\(你随便起名字的文件夹)\out\target\product\(设备代号)中就可以看到我们编译好的ROM了，可以复制到手机刷入了</span><br></pre></td></tr></table></figure>
+<h1 id="另外设置ccache提高编译速度"><a href="#另外设置ccache提高编译速度" class="headerlink" title="另外设置ccache提高编译速度"></a>另外设置ccache提高编译速度</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> USE_CCACHE=1 </span><br><span class="line">$ <span class="built_in">export</span> CCACHE_COMPRESS=1</span><br><span class="line">$ ccache -M 50G 或者100G</span><br></pre></td></tr></table></figure>
+<p><strong>防止低内存编译出错 设置大小为</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> ANDROID_JACK_VM_ARGS=<span class="string">&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G&quot;</span></span><br></pre></td></tr></table></figure>
+<h1 id="祝福大家能自己动手做出属于自己的ROM"><a href="#祝福大家能自己动手做出属于自己的ROM" class="headerlink" title="祝福大家能自己动手做出属于自己的ROM"></a>祝福大家能自己动手做出属于自己的ROM</h1>]]></content>
+  </entry>
+  <entry>
     <title>python 字符串(我失忆了)</title>
     <url>/python-zfc.html</url>
     <content><![CDATA[<p><strong>我真的失忆了</strong></p>
@@ -1792,6 +1792,19 @@ python数据类型
 <h1 id="查询类型"><a href="#查询类型" class="headerlink" title="查询类型"></a>查询类型</h1><p><strong>例子</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(type(int))</span><br></pre></td></tr></table></figure>
 ]]></content>
+  </entry>
+  <entry>
+    <title>python 字符串(我失忆了)</title>
+    <url>/python-zfc.html</url>
+    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
+<a id="more"></a>
+
+<h1 id="以下全是字符串"><a href="#以下全是字符串" class="headerlink" title="以下全是字符串"></a>以下全是字符串</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s &#x3D; &#39;s&#39;</span><br><span class="line">d &#x3D; &quot;d&quot;</span><br><span class="line">q &#x3D; &#39;&#39;&#39;q&#39;&#39;&#39;</span><br><span class="line">sdq &#x3D; &quot;d &#39;s&#39; &quot;</span><br><span class="line">sdz &#x3D; &#39;&#39;&#39; &quot;s&#39;d&#39;&quot; q&#39;&#39;&#39;</span><br><span class="line">print(s, d, sdq, q, sdz, sep&#x3D;&#39;\n&#39;)</span><br></pre></td></tr></table></figure>
+<h1 id="字符串拼接操作"><a href="#字符串拼接操作" class="headerlink" title="字符串拼接操作"></a>字符串拼接操作</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 字符串拼接</span><br><span class="line"># print(&#39;s&#39; + &#39;d&#39; + &#39;q&#39;)</span><br><span class="line"># 字符串和数字是不能拼接的</span><br><span class="line"># print(&#39;sdq&#39; + 3)</span><br><span class="line"># 连续打印5次史迪奇</span><br><span class="line"># print(5 * &#39;sdq&#39;)</span><br></pre></td></tr></table></figure>
+<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 索引 变量名[] 表索引 编程语言都是从0开始计数的</span><br><span class="line">sdq&#x3D; &#39;我叫史迪奇&#39;</span><br><span class="line">print(str1[0], str1[3], str1[-1])</span><br><span class="line">print(str1[10])  #超出会报错</span><br></pre></td></tr></table></figure>
+<h1 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 切片 变量名[a:b] 同数学区间的[a,b)</span><br><span class="line">sdq &#x3D; &#39;0123456789&#39;</span><br><span class="line">print(&#39;sdq[0:3]&#39;, sdq[0:3])         #012</span><br><span class="line">print(&#39;sdq[1:]&#39;, sdq[1:])           #123456789</span><br><span class="line">print(&#39;sdq[:2]&#39;, sdq[:2])           #01</span><br><span class="line">print(&#39;sdq[:]&#39;, sdq[:])             #返回全部</span><br><span class="line">print(&#39;sdq[-4:-1]&#39;, sdq[-4:-1])     #678</span><br><span class="line">print(sdq[1:100])                   # 切片超出范围是不会报错的会返回全部</span><br></pre></td></tr></table></figure>
+<h1 id="代码格式化"><a href="#代码格式化" class="headerlink" title="代码格式化"></a>代码格式化</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># name &#x3D; &#39;史迪奇&#39;</span><br><span class="line"># number &#x3D; 626</span><br><span class="line"># print(name+&#39;是个&#39;+str(number)+&#39;号实验品&#39;)</span><br><span class="line"># print(&#39;&#123;&#125;是个&#123;&#125;号实验品&#39;.format(name, number))</span><br><span class="line"># print(&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;.format(name&#x3D;&#39;史迪奇&#39;, number&#x3D;626))</span><br><span class="line"># print(f&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;)</span><br><span class="line"># 在一些老的教程里会用%的形式格式化代码，在Python3里就不建议使用了</span><br></pre></td></tr></table></figure>
+<h1 id="字符串的一些使用方法"><a href="#字符串的一些使用方法" class="headerlink" title="字符串的一些使用方法"></a>字符串的一些使用方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sdq &#x3D; &#39;Stitch&#39;</span><br><span class="line">print(&#39;find第一次出现b的索引&#39;, sdq.find(&#39;h&#39;))  #看h的下标</span><br><span class="line">print(&#39;replace&#39;, sdq.replace(&#39;i&#39;, &#39;I&#39;))  #拿I替换i</span><br><span class="line">print(&#39;upper&#39;, sdq.upper()) #全大写</span><br><span class="line">print(&#39;lower&#39;, sdq.lower()) #全小写</span><br><span class="line">print(&#39;swapcase 对换&#39;, &#39;sdq&#39;.swapcase())  #反转字母大小写</span><br><span class="line">print(&#39;去前后空格&#39;, &#39; sdq &#39;.strip(), sep&#x3D;&#39;&#39;)  </span><br><span class="line">print(&#39;S t i t c h &#39;.replace(&#39; &#39;, &#39;&#39;))   #空格替换空字符串</span><br><span class="line"></span><br><span class="line">print(len(&#39;S t i t c h&#39;)) # 获取字符串长度 里面的空格也是计算长度的</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>python 基本运算符(我失忆了)</title>
@@ -1826,19 +1839,6 @@ python数据类型
 <h1 id="本放链接-想要的话-自己带着承诺完的截图来找我-我给你密码"><a href="#本放链接-想要的话-自己带着承诺完的截图来找我-我给你密码" class="headerlink" title="本放链接!!! 想要的话, 自己带着承诺完的截图来找我, 我给你密码"></a>本放<a href="https://wwr.lanzoui.com/iRu7Bqsx7od">链接</a>!!! 想要的话, 自己带着承诺完的截图来找<a href="https://wpa.qq.com/msgrd?v=3&uin=3083329400&site=qq&menu=yes">我</a>, 我给你密码</h1>]]></content>
   </entry>
   <entry>
-    <title>python 字符串(我失忆了)</title>
-    <url>/python-zfc.html</url>
-    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
-<a id="more"></a>
-
-<h1 id="以下全是字符串"><a href="#以下全是字符串" class="headerlink" title="以下全是字符串"></a>以下全是字符串</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s &#x3D; &#39;s&#39;</span><br><span class="line">d &#x3D; &quot;d&quot;</span><br><span class="line">q &#x3D; &#39;&#39;&#39;q&#39;&#39;&#39;</span><br><span class="line">sdq &#x3D; &quot;d &#39;s&#39; &quot;</span><br><span class="line">sdz &#x3D; &#39;&#39;&#39; &quot;s&#39;d&#39;&quot; q&#39;&#39;&#39;</span><br><span class="line">print(s, d, sdq, q, sdz, sep&#x3D;&#39;\n&#39;)</span><br></pre></td></tr></table></figure>
-<h1 id="字符串拼接操作"><a href="#字符串拼接操作" class="headerlink" title="字符串拼接操作"></a>字符串拼接操作</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 字符串拼接</span><br><span class="line"># print(&#39;s&#39; + &#39;d&#39; + &#39;q&#39;)</span><br><span class="line"># 字符串和数字是不能拼接的</span><br><span class="line"># print(&#39;sdq&#39; + 3)</span><br><span class="line"># 连续打印5次史迪奇</span><br><span class="line"># print(5 * &#39;sdq&#39;)</span><br></pre></td></tr></table></figure>
-<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 索引 变量名[] 表索引 编程语言都是从0开始计数的</span><br><span class="line">sdq&#x3D; &#39;我叫史迪奇&#39;</span><br><span class="line">print(str1[0], str1[3], str1[-1])</span><br><span class="line">print(str1[10])  #超出会报错</span><br></pre></td></tr></table></figure>
-<h1 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 切片 变量名[a:b] 同数学区间的[a,b)</span><br><span class="line">sdq &#x3D; &#39;0123456789&#39;</span><br><span class="line">print(&#39;sdq[0:3]&#39;, sdq[0:3])         #012</span><br><span class="line">print(&#39;sdq[1:]&#39;, sdq[1:])           #123456789</span><br><span class="line">print(&#39;sdq[:2]&#39;, sdq[:2])           #01</span><br><span class="line">print(&#39;sdq[:]&#39;, sdq[:])             #返回全部</span><br><span class="line">print(&#39;sdq[-4:-1]&#39;, sdq[-4:-1])     #678</span><br><span class="line">print(sdq[1:100])                   # 切片超出范围是不会报错的会返回全部</span><br></pre></td></tr></table></figure>
-<h1 id="代码格式化"><a href="#代码格式化" class="headerlink" title="代码格式化"></a>代码格式化</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># name &#x3D; &#39;史迪奇&#39;</span><br><span class="line"># number &#x3D; 626</span><br><span class="line"># print(name+&#39;是个&#39;+str(number)+&#39;号实验品&#39;)</span><br><span class="line"># print(&#39;&#123;&#125;是个&#123;&#125;号实验品&#39;.format(name, number))</span><br><span class="line"># print(&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;.format(name&#x3D;&#39;史迪奇&#39;, number&#x3D;626))</span><br><span class="line"># print(f&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;)</span><br><span class="line"># 在一些老的教程里会用%的形式格式化代码，在Python3里就不建议使用了</span><br></pre></td></tr></table></figure>
-<h1 id="字符串的一些使用方法"><a href="#字符串的一些使用方法" class="headerlink" title="字符串的一些使用方法"></a>字符串的一些使用方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sdq &#x3D; &#39;Stitch&#39;</span><br><span class="line">print(&#39;find第一次出现b的索引&#39;, sdq.find(&#39;h&#39;))  #看h的下标</span><br><span class="line">print(&#39;replace&#39;, sdq.replace(&#39;i&#39;, &#39;I&#39;))  #拿I替换i</span><br><span class="line">print(&#39;upper&#39;, sdq.upper()) #全大写</span><br><span class="line">print(&#39;lower&#39;, sdq.lower()) #全小写</span><br><span class="line">print(&#39;swapcase 对换&#39;, &#39;sdq&#39;.swapcase())  #反转字母大小写</span><br><span class="line">print(&#39;去前后空格&#39;, &#39; sdq &#39;.strip(), sep&#x3D;&#39;&#39;)  </span><br><span class="line">print(&#39;S t i t c h &#39;.replace(&#39; &#39;, &#39;&#39;))   #空格替换空字符串</span><br><span class="line"></span><br><span class="line">print(len(&#39;S t i t c h&#39;)) # 获取字符串长度 里面的空格也是计算长度的</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
     <title>爬虫 Beautiful Soup(牢饭吃到饱)</title>
     <url>/reptile-bs4-lxml.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -1870,6 +1870,26 @@ python数据类型
 <h1 id="cookieJar对象转换成cookie字典方法"><a href="#cookieJar对象转换成cookie字典方法" class="headerlink" title="cookieJar对象转换成cookie字典方法"></a>cookieJar对象转换成cookie字典方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;www.baidu.com&#39;</span><br><span class="line"></span><br><span class="line"># 设置(timeout)访问时长为3秒, 然后就断开</span><br><span class="line">response &#x3D; response.get(url, timeout&#x3D;3)</span><br><span class="line"></span><br><span class="line">print(response.cookies)</span><br><span class="line"></span><br><span class="line"># 将对象转字典</span><br><span class="line">dict_cookie &#x3D; requests.utils.dict_from_cookiejar(response.cookies)</span><br><span class="line">print(dict_cookie)</span><br><span class="line"></span><br><span class="line"># 将字典转换为对象</span><br><span class="line">jar_cookies &#x3D; requests.utils.cookiejar_from_dict(dict_cookies)</span><br><span class="line">print(jar_cookies)</span><br></pre></td></tr></table></figure>
 <!--副作用丢失域名 这个不要紧我们自己知道这个cookie对应哪个域名的-->
 ]]></content>
+  </entry>
+  <entry>
+    <title>爬虫 http和https(吃牢饭集合)</title>
+    <url>/reptile-http-https.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1><p><strong>HTTP: 超文本传输协议, 默认端口号是80</strong></p>
+<ul>
+<li>超文本: 是指超过文本, 不仅限于文本; 还包含图片, 音频等文件</li>
+<li>传输协议: 是指使用共用约定的固定格式来传递转换成字符串的超文本内容</li>
+</ul>
+
+<p><strong>HTTPS: HTTP + SSL(安全套接字层), 即带有安全套接字层的超文本传输协议, 默认端口号: 443</strong></p>
+<ul>
+<li>SSL对传输的内容(超文本, 也就是请求体或响应体)进行加密</li>
+</ul>
+
+<p><strong>可以打开浏览器访问一个url, 右键检查, 点击network, 点选一个url, 查看http协议的形式</strong></p>
+<h1 id="HTTPS因为要加密缘故相比HTTP较慢一些-性能低一些-但是比HTTP更安全"><a href="#HTTPS因为要加密缘故相比HTTP较慢一些-性能低一些-但是比HTTP更安全" class="headerlink" title="HTTPS因为要加密缘故相比HTTP较慢一些,性能低一些, 但是比HTTP更安全"></a>HTTPS因为要加密缘故相比HTTP较慢一些,性能低一些, 但是比HTTP更安全</h1>]]></content>
   </entry>
   <entry>
     <title>爬虫 jsonpath模块(吃牢饭集合)</title>
@@ -1966,26 +1986,6 @@ python数据类型
 
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>爬虫 http和https(吃牢饭集合)</title>
-    <url>/reptile-http-https.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1><p><strong>HTTP: 超文本传输协议, 默认端口号是80</strong></p>
-<ul>
-<li>超文本: 是指超过文本, 不仅限于文本; 还包含图片, 音频等文件</li>
-<li>传输协议: 是指使用共用约定的固定格式来传递转换成字符串的超文本内容</li>
-</ul>
-
-<p><strong>HTTPS: HTTP + SSL(安全套接字层), 即带有安全套接字层的超文本传输协议, 默认端口号: 443</strong></p>
-<ul>
-<li>SSL对传输的内容(超文本, 也就是请求体或响应体)进行加密</li>
-</ul>
-
-<p><strong>可以打开浏览器访问一个url, 右键检查, 点击network, 点选一个url, 查看http协议的形式</strong></p>
-<h1 id="HTTPS因为要加密缘故相比HTTP较慢一些-性能低一些-但是比HTTP更安全"><a href="#HTTPS因为要加密缘故相比HTTP较慢一些-性能低一些-但是比HTTP更安全" class="headerlink" title="HTTPS因为要加密缘故相比HTTP较慢一些,性能低一些, 但是比HTTP更安全"></a>HTTPS因为要加密缘故相比HTTP较慢一些,性能低一些, 但是比HTTP更安全</h1>]]></content>
   </entry>
   <entry>
     <title>爬虫 requests模块(吃牢饭集合)</title>
@@ -2128,59 +2128,6 @@ python数据类型
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
 <a id="more"></a>
 <h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line"># 例如校园网</span><br><span class="line">url &#x3D; &quot;https:&#x2F;&#x2F;sam.huat.edu.cn:8443&#x2F;selfservice&#x2F;&quot;</span><br><span class="line"></span><br><span class="line">response &#x3D; requests.get(url, verify&#x3D;False)</span><br><span class="line"></span><br><span class="line">print(response.content)</span><br><span class="line">print(response.text)</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
-    <title>爬虫 xpath(牢饭吃到饱)</title>
-    <url>/reptile-xpath.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-
-<h1 id="xpath-是在XML文档中搜索内容的一门语言-可以用绝对定位和相对定位"><a href="#xpath-是在XML文档中搜索内容的一门语言-可以用绝对定位和相对定位" class="headerlink" title="xpath 是在XML文档中搜索内容的一门语言 可以用绝对定位和相对定位"></a>xpath 是在XML文档中搜索内容的一门语言 可以用绝对定位和相对定位</h1><p><strong>html是xml的一个子集</strong></p>
-<h1 id="安装xpath"><a href="#安装xpath" class="headerlink" title="安装xpath"></a>安装xpath</h1><p><strong>打开cmd 输入以下内容</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install xpath</span><br></pre></td></tr></table></figure>
-<h1 id="xpath语法"><a href="#xpath语法" class="headerlink" title="xpath语法"></a>xpath语法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">主要分为3大类</span><br><span class="line"></span><br><span class="line">层级:   &#x2F; 直接子集   &#x2F;&#x2F; 跳级     斜杠隔开的是节点</span><br><span class="line"></span><br><span class="line">属性:   @ 属性访问  如&#x2F;&#x2F;link&#x2F;@href 从选中的节点标签中获取指定的值</span><br><span class="line"></span><br><span class="line">函数:   contains() 包含   text()文本 等...  如&#x2F;&#x2F;title&#x2F;text() 从开闭标签之间去文本内容</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th align="center">表达式</th>
-<th align="center">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">nodename</td>
-<td align="center">选中该元素</td>
-</tr>
-<tr>
-<td align="center">/</td>
-<td align="center">从根节点选取或者是元素和元素间的过度</td>
-</tr>
-<tr>
-<td align="center">//</td>
-<td align="center">从匹配选择的当前节点选择文档的节点而不用考虑它们的位置</td>
-</tr>
-<tr>
-<td align="center">@</td>
-<td align="center">选取属性</td>
-</tr>
-<tr>
-<td align="center">.</td>
-<td align="center">选取当前节点</td>
-</tr>
-<tr>
-<td align="center">..</td>
-<td align="center">选取当前节点的父节点</td>
-</tr>
-<tr>
-<td align="center">text()</td>
-<td align="center">选取文本</td>
-</tr>
-</tbody></table>
-<h1 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h1><p><strong>打开这个<a href="https://www.umei.cc/bizhitupian/weimeibizhi/">网址</a></strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 导入xpath</span></span><br><span class="line">from lxml import etree</span><br><span class="line"></span><br><span class="line">xml = <span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">&lt;book&gt;</span></span><br><span class="line"><span class="string">    &lt;id&gt;???&lt;/id&gt;</span></span><br><span class="line"><span class="string">    &lt;name&gt;星际宝贝&lt;/name&gt;</span></span><br><span class="line"><span class="string">    &lt;price&gt;!!!&lt;/price&gt;</span></span><br><span class="line"><span class="string">    &lt;nick&gt;实验品&lt;/nick&gt;</span></span><br><span class="line"><span class="string">    &lt;author&gt;</span></span><br><span class="line"><span class="string">        &lt;nick id=&quot;</span>624<span class="string">&quot;&gt;安琪&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;nick id=&quot;</span>625<span class="string">&quot;&gt;鲁本&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;nick id=&quot;</span>626<span class="string">&quot;&gt;史迪奇&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;nick class=&quot;</span>221<span class="string">&quot;&gt;小火花&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;div&gt;</span></span><br><span class="line"><span class="string">            &lt;nick&gt;搞破坏&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;span&gt;</span></span><br><span class="line"><span class="string">            &lt;nick&gt;吃饭&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;/span&gt;</span></span><br><span class="line"><span class="string">    &lt;/author&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &lt;partner&gt;</span></span><br><span class="line"><span class="string">        &lt;nick id=&quot;</span>029<span class="string">&quot;&gt;跳棋&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;nick id=&quot;</span>001<span class="string">&quot;&gt;史灵可&lt;/nick&gt;</span></span><br><span class="line"><span class="string">    &lt;/partner&gt;</span></span><br><span class="line"><span class="string">&lt;/book&gt;</span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">tree = etree.HTML(html.text)   <span class="comment">#加载爬取下来的源码</span></span><br><span class="line"><span class="comment"># tree = etree.parse(paese)   #加载文件</span></span><br><span class="line"><span class="comment"># tree = etree.XML(xml)       #加载XML</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">result = tree.xpath(<span class="string">&quot;/book//nick/text().extract&quot;</span>) <span class="comment">#text()就是文字 .extract就是提取</span></span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
-<h1 id="HTML代码-保存sdq-html"><a href="#HTML代码-保存sdq-html" class="headerlink" title="HTML代码 保存sdq.html"></a>HTML代码 保存sdq.html</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset&#x3D;&quot;UTF-8&quot; &#x2F;&gt;</span><br><span class="line">        &lt;title&gt;Title&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;&#x2F;head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;http:&#x2F;&#x2F;www.baidu.com&quot;&gt;百度&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;http:&#x2F;&#x2F;www.google.com&quot;&gt;谷歌&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;http:&#x2F;&#x2F;www.sogou.com&quot;&gt;搜狗&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">        &lt;&#x2F;ul&gt;</span><br><span class="line">        &lt;ol&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;Stitch&quot;&gt;Stitch&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;sdq&quot;&gt;史迪奇&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;sdz&quot;&gt;史迪仔&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">        &lt;&#x2F;ol&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;Lilo&quot;&gt;莉萝&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;Nani&quot;&gt;兰莉&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="py代码"><a href="#py代码" class="headerlink" title="py代码"></a>py代码</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">from lxml import etree</span><br><span class="line"></span><br><span class="line">tree = etree.parse(<span class="string">&quot;sdq.html&quot;</span>)</span><br><span class="line"><span class="comment"># result = tree.xpath(&#x27;/html&#x27;)</span></span><br><span class="line"><span class="comment"># result = tree.xpath(&quot;/html/body/ul/li/a/text()&quot;)</span></span><br><span class="line"><span class="comment"># result = tree.xpath(&quot;/html/body/ul/li[1]/a/text()&quot;)  # xpath的顺序是从1开始数的, []表示索引</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># result = tree.xpath(&quot;/html/body/ol/li/a[@href=&#x27;dapao&#x27;]/text()&quot;)  # [@xxx=xxx] 属性的筛选</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># print(result)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ol_li_list = tree.xpath(&quot;/html/body/ol/li&quot;)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># for li in ol_li_list:</span></span><br><span class="line"><span class="comment">#     # 从每一个li中提取到文字信息</span></span><br><span class="line"><span class="comment">#     result = li.xpath(&quot;./a/text()&quot;)  # 在li中继续去寻找 相对查找</span></span><br><span class="line"><span class="comment">#     print(result)</span></span><br><span class="line"><span class="comment">#     result2 = li.xpath(&quot;./a/@href&quot;)  # @属性意思是拿到属性值</span></span><br><span class="line"><span class="comment">#     print(result2)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># print(tree.xpath(&quot;/html/body/ul/li/a/@href&quot;))</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(tree.xpath(<span class="string">&#x27;/html/body/div[1]/text().extract&#x27;</span>))       <span class="comment">#text()就是文字 .extract就是提取</span></span><br><span class="line"><span class="built_in">print</span>(tree.xpath(<span class="string">&#x27;/html/body/ol/li/a/text().extract&#x27;</span>))      <span class="comment">#text()就是文字 .extract就是提取</span></span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 选取特定节点的语法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### 通过索引修饰节点</span></span><br><span class="line"></span><br><span class="line">| 路径表达式 | 结果 | </span><br><span class="line">| :----: | :----: |</span><br><span class="line">| //title[@lang=<span class="string">&quot;eng&quot;</span>] | 选择lang属性值为eng的所有title元素 |</span><br><span class="line">| /bookstore/book[1] | 选择属于bookstore子元素的第一个book元素 |</span><br><span class="line">| /bookstore/book[last()] | 选择属于bookstore子元素的最后一个book元素 |</span><br><span class="line">| /bookstore/book[last()-1] | 选择属于bookstore子元素的倒数第二个book元素 |</span><br><span class="line">| /bookstore/book[position()&gt;1] | 选择bookstore下面的book元素从第二个开始选择 |</span><br><span class="line">| //book/title[text()=<span class="string">&quot;sdq&quot;</span>] | 选择所有book下的title元素仅仅选择文本为sdq的title元素 |</span><br><span class="line">| /bookstore/book[price&gt;33.33] | 选取bookstore元素中book元素的所有title元素且其中price元素的值必须大于33.33 |</span><br><span class="line"></span><br><span class="line"><span class="comment">### 通过属性值修饰节点</span></span><br><span class="line"></span><br><span class="line">~~~</span><br><span class="line">//div[@id=<span class="string">&quot;sdq&quot;</span>]/div/@id     出现在[]中@是使用标签属性名和属性值修饰节点 出现在结尾的/@是取属性值</span><br><span class="line">~~~</span><br><span class="line"></span><br><span class="line"><span class="comment">### 通过子节点的值修饰节点</span></span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">//span[i&gt;333]   i是标签</span><br><span class="line">//div[span[2]&gt;9.3]   span是标签</span><br></pre></td></tr></table></figure>
-<h3 id="通过包含修饰"><a href="#通过包含修饰" class="headerlink" title="通过包含修饰"></a>通过包含修饰</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;div[contains(@id,&quot;sd&quot;)]       找出sdq通过属性名和大概的属性值 </span><br><span class="line">&#x2F;&#x2F;div[contains(text(),&quot;下一页&quot;)]     通过文本内容包含有下一页的字  </span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>爬虫 代理(吃牢饭集合)</title>
@@ -2399,6 +2346,59 @@ option = {
 
 option && myChart.setOption(option);
 </script> -->]]></content>
+  </entry>
+  <entry>
+    <title>爬虫 xpath(牢饭吃到饱)</title>
+    <url>/reptile-xpath.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+
+<h1 id="xpath-是在XML文档中搜索内容的一门语言-可以用绝对定位和相对定位"><a href="#xpath-是在XML文档中搜索内容的一门语言-可以用绝对定位和相对定位" class="headerlink" title="xpath 是在XML文档中搜索内容的一门语言 可以用绝对定位和相对定位"></a>xpath 是在XML文档中搜索内容的一门语言 可以用绝对定位和相对定位</h1><p><strong>html是xml的一个子集</strong></p>
+<h1 id="安装xpath"><a href="#安装xpath" class="headerlink" title="安装xpath"></a>安装xpath</h1><p><strong>打开cmd 输入以下内容</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install xpath</span><br></pre></td></tr></table></figure>
+<h1 id="xpath语法"><a href="#xpath语法" class="headerlink" title="xpath语法"></a>xpath语法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">主要分为3大类</span><br><span class="line"></span><br><span class="line">层级:   &#x2F; 直接子集   &#x2F;&#x2F; 跳级     斜杠隔开的是节点</span><br><span class="line"></span><br><span class="line">属性:   @ 属性访问  如&#x2F;&#x2F;link&#x2F;@href 从选中的节点标签中获取指定的值</span><br><span class="line"></span><br><span class="line">函数:   contains() 包含   text()文本 等...  如&#x2F;&#x2F;title&#x2F;text() 从开闭标签之间去文本内容</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">表达式</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">nodename</td>
+<td align="center">选中该元素</td>
+</tr>
+<tr>
+<td align="center">/</td>
+<td align="center">从根节点选取或者是元素和元素间的过度</td>
+</tr>
+<tr>
+<td align="center">//</td>
+<td align="center">从匹配选择的当前节点选择文档的节点而不用考虑它们的位置</td>
+</tr>
+<tr>
+<td align="center">@</td>
+<td align="center">选取属性</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td align="center">选取当前节点</td>
+</tr>
+<tr>
+<td align="center">..</td>
+<td align="center">选取当前节点的父节点</td>
+</tr>
+<tr>
+<td align="center">text()</td>
+<td align="center">选取文本</td>
+</tr>
+</tbody></table>
+<h1 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h1><p><strong>打开这个<a href="https://www.umei.cc/bizhitupian/weimeibizhi/">网址</a></strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 导入xpath</span></span><br><span class="line">from lxml import etree</span><br><span class="line"></span><br><span class="line">xml = <span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">&lt;book&gt;</span></span><br><span class="line"><span class="string">    &lt;id&gt;???&lt;/id&gt;</span></span><br><span class="line"><span class="string">    &lt;name&gt;星际宝贝&lt;/name&gt;</span></span><br><span class="line"><span class="string">    &lt;price&gt;!!!&lt;/price&gt;</span></span><br><span class="line"><span class="string">    &lt;nick&gt;实验品&lt;/nick&gt;</span></span><br><span class="line"><span class="string">    &lt;author&gt;</span></span><br><span class="line"><span class="string">        &lt;nick id=&quot;</span>624<span class="string">&quot;&gt;安琪&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;nick id=&quot;</span>625<span class="string">&quot;&gt;鲁本&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;nick id=&quot;</span>626<span class="string">&quot;&gt;史迪奇&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;nick class=&quot;</span>221<span class="string">&quot;&gt;小火花&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;div&gt;</span></span><br><span class="line"><span class="string">            &lt;nick&gt;搞破坏&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;span&gt;</span></span><br><span class="line"><span class="string">            &lt;nick&gt;吃饭&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;/span&gt;</span></span><br><span class="line"><span class="string">    &lt;/author&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &lt;partner&gt;</span></span><br><span class="line"><span class="string">        &lt;nick id=&quot;</span>029<span class="string">&quot;&gt;跳棋&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;nick id=&quot;</span>001<span class="string">&quot;&gt;史灵可&lt;/nick&gt;</span></span><br><span class="line"><span class="string">    &lt;/partner&gt;</span></span><br><span class="line"><span class="string">&lt;/book&gt;</span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">tree = etree.HTML(html.text)   <span class="comment">#加载爬取下来的源码</span></span><br><span class="line"><span class="comment"># tree = etree.parse(paese)   #加载文件</span></span><br><span class="line"><span class="comment"># tree = etree.XML(xml)       #加载XML</span></span><br><span class="line"></span><br><span class="line">result = tree.xpath(<span class="string">&quot;/book//nick/text().extract&quot;</span>) <span class="comment">#text()就是文字 .extract就是提取</span></span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
+<h1 id="HTML代码-保存sdq-html"><a href="#HTML代码-保存sdq-html" class="headerlink" title="HTML代码 保存sdq.html"></a>HTML代码 保存sdq.html</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset&#x3D;&quot;UTF-8&quot; &#x2F;&gt;</span><br><span class="line">        &lt;title&gt;Title&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;&#x2F;head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;http:&#x2F;&#x2F;www.baidu.com&quot;&gt;百度&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;http:&#x2F;&#x2F;www.google.com&quot;&gt;谷歌&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;http:&#x2F;&#x2F;www.sogou.com&quot;&gt;搜狗&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">        &lt;&#x2F;ul&gt;</span><br><span class="line">        &lt;ol&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;Stitch&quot;&gt;Stitch&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;sdq&quot;&gt;史迪奇&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;sdz&quot;&gt;史迪仔&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">        &lt;&#x2F;ol&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;Lilo&quot;&gt;莉萝&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;Nani&quot;&gt;兰莉&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="py代码"><a href="#py代码" class="headerlink" title="py代码"></a>py代码</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">from lxml import etree</span><br><span class="line"></span><br><span class="line">tree = etree.parse(<span class="string">&quot;sdq.html&quot;</span>)</span><br><span class="line"><span class="comment"># result = tree.xpath(&#x27;/html&#x27;)</span></span><br><span class="line"><span class="comment"># result = tree.xpath(&quot;/html/body/ul/li/a/text()&quot;)</span></span><br><span class="line"><span class="comment"># result = tree.xpath(&quot;/html/body/ul/li[1]/a/text()&quot;)  # xpath的顺序是从1开始数的, []表示索引</span></span><br><span class="line"><span class="comment"># result = tree.xpath(&quot;/html/body/ol/li/a[@href=&#x27;dapao&#x27;]/text()&quot;)  # [@xxx=xxx] 属性的筛选</span></span><br><span class="line"><span class="comment"># print(result)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ol_li_list = tree.xpath(&quot;/html/body/ol/li&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># for li in ol_li_list:</span></span><br><span class="line"><span class="comment">#     # 从每一个li中提取到文字信息</span></span><br><span class="line"><span class="comment">#     result = li.xpath(&quot;./a/text()&quot;)  # 在li中继续去寻找 相对查找</span></span><br><span class="line"><span class="comment">#     print(result)</span></span><br><span class="line"><span class="comment">#     result2 = li.xpath(&quot;./a/@href&quot;)  # @属性意思是拿到属性值</span></span><br><span class="line"><span class="comment">#     print(result2)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># print(tree.xpath(&quot;/html/body/ul/li/a/@href&quot;))</span></span><br><span class="line"><span class="built_in">print</span>(tree.xpath(<span class="string">&#x27;/html/body/div[1]/text().extract&#x27;</span>))       <span class="comment">#text()就是文字 .extract就是提取</span></span><br><span class="line"><span class="built_in">print</span>(tree.xpath(<span class="string">&#x27;/html/body/ol/li/a/text().extract&#x27;</span>))      <span class="comment">#text()就是文字 .extract就是提取</span></span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 选取特定节点的语法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### 通过索引修饰节点</span></span><br><span class="line"></span><br><span class="line">| 路径表达式 | 结果 | </span><br><span class="line">| :----: | :----: |</span><br><span class="line">| //title[@lang=<span class="string">&quot;eng&quot;</span>] | 选择lang属性值为eng的所有title元素 |</span><br><span class="line">| /bookstore/book[1] | 选择属于bookstore子元素的第一个book元素 |</span><br><span class="line">| /bookstore/book[last()] | 选择属于bookstore子元素的最后一个book元素 |</span><br><span class="line">| /bookstore/book[last()-1] | 选择属于bookstore子元素的倒数第二个book元素 |</span><br><span class="line">| /bookstore/book[position()&gt;1] | 选择bookstore下面的book元素从第二个开始选择 |</span><br><span class="line">| //book/title[text()=<span class="string">&quot;sdq&quot;</span>] | 选择所有book下的title元素仅仅选择文本为sdq的title元素 |</span><br><span class="line">| /bookstore/book[price&gt;33.33] | 选取bookstore元素中book元素的所有title元素且其中price元素的值必须大于33.33 |</span><br><span class="line"></span><br><span class="line"><span class="comment">### 通过属性值修饰节点</span></span><br><span class="line"></span><br><span class="line">~~~</span><br><span class="line">//div[@id=<span class="string">&quot;sdq&quot;</span>]/div/@id     出现在[]中@是使用标签属性名和属性值修饰节点 出现在结尾的/@是取属性值</span><br><span class="line">~~~</span><br><span class="line"></span><br><span class="line"><span class="comment">### 通过子节点的值修饰节点</span></span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">//span[i&gt;333]   i是标签</span><br><span class="line">//div[span[2]&gt;9.3]   span是标签</span><br></pre></td></tr></table></figure>
+<h3 id="通过包含修饰"><a href="#通过包含修饰" class="headerlink" title="通过包含修饰"></a>通过包含修饰</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;div[contains(@id,&quot;sd&quot;)]       找出sdq通过属性名和大概的属性值 </span><br><span class="line">&#x2F;&#x2F;div[contains(text(),&quot;下一页&quot;)]     通过文本内容包含有下一页的字  </span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>爬虫 报文(吃牢饭集合)</title>
