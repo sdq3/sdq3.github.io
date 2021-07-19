@@ -627,19 +627,6 @@ var tools = (function(){
 ]]></content>
   </entry>
   <entry>
-    <title>CSS 伪类选择器</title>
-    <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
-    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:first-child&#123;   //first-child意思是选中第一个</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">$        color: blue;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    p:nth-child(2)&#123;   //选中p1: 定位到父元素, 选择当前的第一个元素也就是选择当前p元素的父级元素, 选中父级元素的第一个, 并且是当前元素才生效</span><br><span class="line">$        color: yellow;   //黄色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    p:nth-of-type(2)&#123;   //nth-of-type意思是选中父类下元素的第二个类型</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span>&gt;</span>p1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span>&gt;</span>p2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span>&gt;</span>p3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇骑士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇打手<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇国王<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-]]></content>
-  </entry>
-  <entry>
     <title>CSS 列表</title>
     <url>/CSS%E5%88%97%E8%A1%A8.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
@@ -664,6 +651,19 @@ var tools = (function(){
 <p><strong>相邻兄弟选择器: 只有一个, 相邻(向下)</strong></p>
 <h1 id="通用选择器"><a href="#通用选择器" class="headerlink" title="通用选择器"></a>通用选择器</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    &#125;</span><br><span class="line">$    .sdq~h1&#123;</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇骑士<span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;sdq1&quot;</span>&gt;</span>史迪奇打手<span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇国王<span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><strong>通用选择器: 当前选中元素的向下的所有兄弟元素</strong></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>CSS 伪类选择器</title>
+    <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:first-child&#123;   //first-child意思是选中第一个</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">$        color: blue;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    p:nth-child(2)&#123;   //选中p1: 定位到父元素, 选择当前的第一个元素也就是选择当前p元素的父级元素, 选中父级元素的第一个, 并且是当前元素才生效</span><br><span class="line">$        color: yellow;   //黄色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    p:nth-of-type(2)&#123;   //nth-of-type意思是选中父类下元素的第二个类型</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span>&gt;</span>p1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span>&gt;</span>p2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span>&gt;</span>p3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇骑士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇打手<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇国王<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
 ]]></content>
   </entry>
   <entry>
@@ -753,6 +753,16 @@ $</style>
 ]]></content>
   </entry>
   <entry>
+    <title>EJS常用标签</title>
+    <url>/EJS.html</url>
+    <content><![CDATA[<p><strong>EJS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ //用于控制流</span><br><span class="line">$ &lt;%    %&gt;    //逻辑代码输出(JS编辑), 如 <span class="keyword">if</span>, <span class="keyword">for</span>等使用 </span><br><span class="line">$</span><br><span class="line">$ //用于转义的输出 </span><br><span class="line">$ &lt;%=  %&gt;     //输出 HTML转义后  的字符串 到模板中      用于转义的输出</span><br><span class="line">$</span><br><span class="line">$ //用于非转义的输出</span><br><span class="line">$ &lt;%-  %&gt;     //输出 原始的HTML串到模板中, 不对HTML进行转义    &lt;&gt;被浏览器识别  看做HTML  </span><br><span class="line">$</span><br><span class="line">$ &lt;%_ _%&gt;     //控制流使用空白字符移除模式</span><br><span class="line">$ </span><br><span class="line">$ &lt;%<span class="comment">#   %&gt;    //注释</span></span><br><span class="line">$</span><br><span class="line">$ &lt;%%  %&gt;     //直接输出 &lt;%  %&gt;</span><br><span class="line">$</span><br><span class="line">$ -%&gt;         //结束标签用于换行移除模式</span><br><span class="line">$</span><br><span class="line">$自定义分隔符 (例如, 使用 <span class="string">&#x27;&lt;? ?&gt;&#x27;</span> 代替 <span class="string">&#x27;&lt;% %&gt;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
     <title>HTML iframe内联框架</title>
     <url>/HTML-iframe.html</url>
     <content><![CDATA[<p><strong>HTML个人整理</strong></p>
@@ -763,16 +773,6 @@ $</style>
 <h1 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h1><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;demo_iframe.html&quot;</span> frameborder=<span class="string">&quot;0&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
 <h1 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;xxx/xxx.html&quot;</span> name=<span class="string">&quot;iframe_a&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;iframe_a&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
-    <title>EJS常用标签</title>
-    <url>/EJS.html</url>
-    <content><![CDATA[<p><strong>EJS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ //用于控制流</span><br><span class="line">$ &lt;%    %&gt;    //逻辑代码输出(JS编辑), 如 <span class="keyword">if</span>, <span class="keyword">for</span>等使用 </span><br><span class="line">$</span><br><span class="line">$ //用于转义的输出 </span><br><span class="line">$ &lt;%=  %&gt;     //输出 HTML转义后  的字符串 到模板中      用于转义的输出</span><br><span class="line">$</span><br><span class="line">$ //用于非转义的输出</span><br><span class="line">$ &lt;%-  %&gt;     //输出 原始的HTML串到模板中, 不对HTML进行转义    &lt;&gt;被浏览器识别  看做HTML  </span><br><span class="line">$</span><br><span class="line">$ &lt;%_ _%&gt;     //控制流使用空白字符移除模式</span><br><span class="line">$ </span><br><span class="line">$ &lt;%<span class="comment">#   %&gt;    //注释</span></span><br><span class="line">$</span><br><span class="line">$ &lt;%%  %&gt;     //直接输出 &lt;%  %&gt;</span><br><span class="line">$</span><br><span class="line">$ -%&gt;         //结束标签用于换行移除模式</span><br><span class="line">$</span><br><span class="line">$自定义分隔符 (例如, 使用 <span class="string">&#x27;&lt;? ?&gt;&#x27;</span> 代替 <span class="string">&#x27;&lt;% %&gt;&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-]]></content>
   </entry>
   <entry>
     <title>HTML 基本控件大集合</title>
@@ -1178,6 +1178,21 @@ $</style>
 ]]></content>
   </entry>
   <entry>
+    <title>JavaScript 数据类型之(Map和Set)</title>
+    <url>/JavaScript-Map-Set.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="comment">/*ES6 Map*/</span></span><br><span class="line">$  <span class="comment">/*学生的成绩, 学生的名字 两种方式*/</span></span><br><span class="line">$  <span class="keyword">var</span> names = [<span class="string">&quot;史迪奇&quot;</span>,<span class="string">&quot;史迪仔&quot;</span>,<span class="string">&quot;强霸&quot;</span>];</span><br><span class="line">$  <span class="keyword">var</span> scores = [<span class="number">100</span>,<span class="number">100</span>,<span class="number">36</span>]</span><br><span class="line">$  <span class="comment">/*另一种*/</span></span><br><span class="line">$  <span class="keyword">var</span> map = naw <span class="built_in">Map</span>([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">36</span>]]);</span><br><span class="line">$  <span class="keyword">var</span> name = map.get(<span class="string">&quot;史迪奇&quot;</span>);    <span class="comment">/*通过key获得value*/</span> </span><br><span class="line">$  map.set(<span class="string">&quot;独眼霹雳&quot;</span>,<span class="number">60</span>);          <span class="comment">/*新增或修改*/</span> </span><br><span class="line">$  map.delete(<span class="string">&quot;强霸&quot;</span>);              <span class="comment">/*删除*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   set.add(<span class="number">3</span>)                 <span class="comment">/*添加*/</span>  </span><br><span class="line">$   set.delete(<span class="string">&quot;强霸&quot;</span>);        <span class="comment">/*删除*/</span></span><br><span class="line">$   <span class="built_in">console</span>.log(set.has(<span class="number">3</span>))    <span class="comment">/*是否包含某个元素*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h1><p><strong>遍历数组</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="comment">/*通过for of, for in 下标 */</span>  </span><br><span class="line">$   <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> arr)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>遍历map</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">100</span>]]);</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> map)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>遍历set</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> set = <span class="keyword">new</span> set([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">100</span>]]);</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> set)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
     <title>JavaScript JavaScript (函数之定义和获取)</title>
     <url>/JavaScript-definition-obtain.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
@@ -1213,6 +1228,20 @@ $</style>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> set = <span class="keyword">new</span> set([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">100</span>]]);</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> set)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
+    <title>JavaScript 数据类型之(分支和循环)</title>
+    <url>/JavaScript-branch-loop.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="if-判断-循环"><a href="#if-判断-循环" class="headerlink" title="if 判断/循环"></a>if 判断/循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="keyword">var</span> age = <span class="number">3</span>;</span><br><span class="line">$  <span class="keyword">if</span>(sdq &gt; <span class="number">3</span>)&#123;    <span class="comment">/*第一个判断*/</span></span><br><span class="line">$   alert(<span class="string">&quot;史迪奇骑士&quot;</span>);</span><br><span class="line">$   &#125;</span><br><span class="line">$  <span class="keyword">else</span> <span class="keyword">if</span>(sdq &lt; <span class="number">5</span>)&#123;    <span class="comment">/*第二个判断*/</span></span><br><span class="line">$   alert(<span class="string">&quot;史迪奇国王&quot;</span>);</span><br><span class="line">$   &#125;</span><br><span class="line">$  <span class="keyword">else</span> &#123;               <span class="comment">/*否则*/</span></span><br><span class="line">$   alert(<span class="string">&quot;史迪奇战士&quot;</span>);</span><br><span class="line">$   &#125; </span><br></pre></td></tr></table></figure>
+<h1 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">while</span>(sdq &lt; <span class="number">100</span>)&#123;</span><br><span class="line">$        sdq = sdq + <span class="number">1</span>;</span><br><span class="line">$        <span class="built_in">console</span>.log(sdq)</span><br><span class="line">$        &#125;  </span><br></pre></td></tr></table></figure>
+<h1 id="do-while-循环"><a href="#do-while-循环" class="headerlink" title="do while 循环"></a>do while 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">do</span> &#123;</span><br><span class="line">$        sdq = sdq + <span class="number">1</span>;</span><br><span class="line">$        <span class="built_in">console</span>.log(sdq)</span><br><span class="line">$        &#125; </span><br><span class="line">$    <span class="keyword">while</span>(sdq &lt; <span class="number">100</span>) </span><br></pre></td></tr></table></figure>
+<h1 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++)&#123;</span><br><span class="line">$       <span class="built_in">console</span>.log(i)</span><br><span class="line">$  &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="forEach-循环"><a href="#forEach-循环" class="headerlink" title="forEach 循环"></a>forEach 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> sdq = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line">$   <span class="comment">/*函数*/</span></span><br><span class="line">$   sdq.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">$       <span class="built_in">console</span>.log(value)</span><br><span class="line">$   &#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="for-…-in-循环"><a href="#for-…-in-循环" class="headerlink" title="for … in 循环"></a>for … in 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">for</span>(<span class="keyword">var</span> sdq <span class="keyword">in</span> age) &#123;</span><br><span class="line">$       <span class="keyword">if</span> (sdq.hasOwnProperty(sdz)) &#123;</span><br><span class="line">$           <span class="built_in">console</span>.log(<span class="string">&quot;存在&quot;</span>)</span><br><span class="line">$           <span class="built_in">console</span>.log(sdq[sdz])</span><br><span class="line">$       &#125;</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>JavaScript 数据类型之(字符串类型)</title>
     <url>/JavaScript-string.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
@@ -1229,35 +1258,6 @@ $</style>
 <h1 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="comment">/*是方法不是属性*/</span></span><br><span class="line">$  sdq.toUpperCase()          <span class="comment">/*大写*/</span></span><br><span class="line">$  sdq.LowerCase()          <span class="comment">/*小写*/</span></span><br></pre></td></tr></table></figure>
 <h1 id="字符串截取"><a href="#字符串截取" class="headerlink" title="字符串截取"></a>字符串截取</h1><p><strong>subsrting</strong></p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  sdq.subsrting(<span class="number">1</span>)          <span class="comment">/*从第一个字符串截取到最后一个字符串*/</span></span><br><span class="line">$  sdq.LowerCase(<span class="number">1</span>,<span class="number">3</span>)          <span class="comment">/*包头不包尾*/</span></span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
-    <title>JavaScript 数据类型之(Map和Set)</title>
-    <url>/JavaScript-Map-Set.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="comment">/*ES6 Map*/</span></span><br><span class="line">$  <span class="comment">/*学生的成绩, 学生的名字 两种方式*/</span></span><br><span class="line">$  <span class="keyword">var</span> names = [<span class="string">&quot;史迪奇&quot;</span>,<span class="string">&quot;史迪仔&quot;</span>,<span class="string">&quot;强霸&quot;</span>];</span><br><span class="line">$  <span class="keyword">var</span> scores = [<span class="number">100</span>,<span class="number">100</span>,<span class="number">36</span>]</span><br><span class="line">$  <span class="comment">/*另一种*/</span></span><br><span class="line">$  <span class="keyword">var</span> map = naw <span class="built_in">Map</span>([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">36</span>]]);</span><br><span class="line">$  <span class="keyword">var</span> name = map.get(<span class="string">&quot;史迪奇&quot;</span>);    <span class="comment">/*通过key获得value*/</span> </span><br><span class="line">$  map.set(<span class="string">&quot;独眼霹雳&quot;</span>,<span class="number">60</span>);          <span class="comment">/*新增或修改*/</span> </span><br><span class="line">$  map.delete(<span class="string">&quot;强霸&quot;</span>);              <span class="comment">/*删除*/</span></span><br></pre></td></tr></table></figure>
-<h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   set.add(<span class="number">3</span>)                 <span class="comment">/*添加*/</span>  </span><br><span class="line">$   set.delete(<span class="string">&quot;强霸&quot;</span>);        <span class="comment">/*删除*/</span></span><br><span class="line">$   <span class="built_in">console</span>.log(set.has(<span class="number">3</span>))    <span class="comment">/*是否包含某个元素*/</span></span><br></pre></td></tr></table></figure>
-<h1 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h1><p><strong>遍历数组</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="comment">/*通过for of, for in 下标 */</span>  </span><br><span class="line">$   <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> arr)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>遍历map</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">100</span>]]);</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> map)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>遍历set</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> set = <span class="keyword">new</span> set([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">100</span>]]);</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> set)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
-    <title>JavaScript 数据类型之(分支和循环)</title>
-    <url>/JavaScript-branch-loop.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="if-判断-循环"><a href="#if-判断-循环" class="headerlink" title="if 判断/循环"></a>if 判断/循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="keyword">var</span> age = <span class="number">3</span>;</span><br><span class="line">$  <span class="keyword">if</span>(sdq &gt; <span class="number">3</span>)&#123;    <span class="comment">/*第一个判断*/</span></span><br><span class="line">$   alert(<span class="string">&quot;史迪奇骑士&quot;</span>);</span><br><span class="line">$   &#125;</span><br><span class="line">$  <span class="keyword">else</span> <span class="keyword">if</span>(sdq &lt; <span class="number">5</span>)&#123;    <span class="comment">/*第二个判断*/</span></span><br><span class="line">$   alert(<span class="string">&quot;史迪奇国王&quot;</span>);</span><br><span class="line">$   &#125;</span><br><span class="line">$  <span class="keyword">else</span> &#123;               <span class="comment">/*否则*/</span></span><br><span class="line">$   alert(<span class="string">&quot;史迪奇战士&quot;</span>);</span><br><span class="line">$   &#125; </span><br></pre></td></tr></table></figure>
-<h1 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">while</span>(sdq &lt; <span class="number">100</span>)&#123;</span><br><span class="line">$        sdq = sdq + <span class="number">1</span>;</span><br><span class="line">$        <span class="built_in">console</span>.log(sdq)</span><br><span class="line">$        &#125;  </span><br></pre></td></tr></table></figure>
-<h1 id="do-while-循环"><a href="#do-while-循环" class="headerlink" title="do while 循环"></a>do while 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">do</span> &#123;</span><br><span class="line">$        sdq = sdq + <span class="number">1</span>;</span><br><span class="line">$        <span class="built_in">console</span>.log(sdq)</span><br><span class="line">$        &#125; </span><br><span class="line">$    <span class="keyword">while</span>(sdq &lt; <span class="number">100</span>) </span><br></pre></td></tr></table></figure>
-<h1 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++)&#123;</span><br><span class="line">$       <span class="built_in">console</span>.log(i)</span><br><span class="line">$  &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="forEach-循环"><a href="#forEach-循环" class="headerlink" title="forEach 循环"></a>forEach 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> sdq = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line">$   <span class="comment">/*函数*/</span></span><br><span class="line">$   sdq.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">$       <span class="built_in">console</span>.log(value)</span><br><span class="line">$   &#125;)</span><br></pre></td></tr></table></figure>
-<h1 id="for-…-in-循环"><a href="#for-…-in-循环" class="headerlink" title="for … in 循环"></a>for … in 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">for</span>(<span class="keyword">var</span> sdq <span class="keyword">in</span> age) &#123;</span><br><span class="line">$       <span class="keyword">if</span> (sdq.hasOwnProperty(sdz)) &#123;</span><br><span class="line">$           <span class="built_in">console</span>.log(<span class="string">&quot;存在&quot;</span>)</span><br><span class="line">$           <span class="built_in">console</span>.log(sdq[sdz])</span><br><span class="line">$       &#125;</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
-]]></content>
   </entry>
   <entry>
     <title>JavaScript 数据类型之(对象)</title>
@@ -1316,6 +1316,22 @@ $</style>
 ]]></content>
   </entry>
   <entry>
+    <title>Java面向对象思维之构造方法</title>
+    <url>/Object-oriented-constructor.html</url>
+    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ // 自动生成一个无参数的构造方法 public <span class="function"><span class="title">Car</span></span>() &#123; </span><br><span class="line">$ public Car(String color, int wheel, int seat) &#123; //这里给它添加参数  </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h1><p><strong>例如 车能飞</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">fly</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.color+<span class="string">&quot;车能飞&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>例如 车可以潜水</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">diving</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.diving+<span class="string">&quot;车可以下水&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,5,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     c1.fly();</span><br><span class="line">$     c1.diving();</span><br><span class="line">$ </span><br><span class="line">$     c2.fly();</span><br><span class="line">$     c2.diving();</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="构造方法需要注意"><a href="#构造方法需要注意" class="headerlink" title="构造方法需要注意"></a>构造方法需要注意</h1><p><strong>没有返回值这一项</strong><br><strong>在new的时候, 给对象设置属性信息</strong><br><strong>Java会默认自动的送每个类一个无参数的构造方法, 如果你写了构造方法, 那么Java就不送了</strong></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Java面向对象思维</title>
     <url>/Object-oriented.html</url>
     <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
@@ -1347,22 +1363,6 @@ $</style>
 ]]></content>
   </entry>
   <entry>
-    <title>Java面向对象思维之构造方法</title>
-    <url>/Object-oriented-constructor.html</url>
-    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ // 自动生成一个无参数的构造方法 public <span class="function"><span class="title">Car</span></span>() &#123; </span><br><span class="line">$ public Car(String color, int wheel, int seat) &#123; //这里给它添加参数  </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h1><p><strong>例如 车能飞</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">fly</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.color+<span class="string">&quot;车能飞&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>例如 车可以潜水</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">diving</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.diving+<span class="string">&quot;车可以下水&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,5,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     c1.fly();</span><br><span class="line">$     c1.diving();</span><br><span class="line">$ </span><br><span class="line">$     c2.fly();</span><br><span class="line">$     c2.diving();</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="构造方法需要注意"><a href="#构造方法需要注意" class="headerlink" title="构造方法需要注意"></a>构造方法需要注意</h1><p><strong>没有返回值这一项</strong><br><strong>在new的时候, 给对象设置属性信息</strong><br><strong>Java会默认自动的送每个类一个无参数的构造方法, 如果你写了构造方法, 那么Java就不送了</strong></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Java面向对象思维之构造方法需的重载</title>
     <url>/Object-oriented-constructor-heavy-load.html</url>
     <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
@@ -1373,29 +1373,6 @@ $</style>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color, int wheel, int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this(color,seat);  //this还可以调用当前累中其他的构造方法</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <h1 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h1>]]></content>
-  </entry>
-  <entry>
-    <title>SQL Server T-SQL 从创建数据库到创建数据表到插入数据</title>
-    <url>/SQL-kbl.html</url>
-    <content><![CDATA[<p><strong>SQL Server个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CREATE DATABASE 数据库名;</span><br></pre></td></tr></table></figure>
-<p><strong>例子</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CREATE DATABASE sdz;</span><br></pre></td></tr></table></figure>
-<h1 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">create table 表名(</span><br><span class="line">	参数 类型(位数),</span><br><span class="line">	参数 类型(位数),</span><br><span class="line">	参数 类型(位数),</span><br><span class="line">	参数 类型(位数)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<p><strong>例子在sdz数据库创建sdq这个表</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">use sdq;</span><br><span class="line">CREATE TABLE bbs (</span><br><span class="line">  id int(11) ,</span><br><span class="line">  name varchar(200) ,</span><br><span class="line">  sex varchar(200) ,</span><br><span class="line">  age int(11)  ,</span><br><span class="line">  classid int(11) </span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h1 id="插入数据表内容"><a href="#插入数据表内容" class="headerlink" title="插入数据表内容"></a>插入数据表内容</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">INSERT INTO 数据表 (参数, 参数, 参数)</span><br><span class="line">VALUES (参数, 参数, 参数); </span><br></pre></td></tr></table></figure>
-<p><strong>例子</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">INSERT INTO bbs (id,name,sex,age,classid) VALUES</span><br><span class="line">(1, <span class="string">&#x27;sdqz&#x27;</span>, NULL, NULL, 2),</span><br><span class="line">(2, <span class="string">&#x27;sdq&#x27;</span>, NULL,  NULL,  3),</span><br><span class="line">(3, <span class="string">&#x27;sdz&#x27;</span>, NULL,  NULL,  4);</span><br></pre></td></tr></table></figure>
-
-<h1 id="查看数据表"><a href="#查看数据表" class="headerlink" title="查看数据表"></a>查看数据表</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ elect * from sdq</span><br></pre></td></tr></table></figure>
-<h1 id="删除数据表"><a href="#删除数据表" class="headerlink" title="删除数据表"></a>删除数据表</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ DROP TABLE 表名;</span><br></pre></td></tr></table></figure>
-<p><strong>例子</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ DROP TABLE sdq;</span><br></pre></td></tr></table></figure>
-]]></content>
   </entry>
   <entry>
     <title>Linux命令(未完工)</title>
@@ -1429,6 +1406,29 @@ $
 <h1 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h1>]]></content>
   </entry>
   <entry>
+    <title>SQL Server T-SQL 从创建数据库到创建数据表到插入数据</title>
+    <url>/SQL-kbl.html</url>
+    <content><![CDATA[<p><strong>SQL Server个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CREATE DATABASE 数据库名;</span><br></pre></td></tr></table></figure>
+<p><strong>例子</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CREATE DATABASE sdz;</span><br></pre></td></tr></table></figure>
+<h1 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">create table 表名(</span><br><span class="line">	参数 类型(位数),</span><br><span class="line">	参数 类型(位数),</span><br><span class="line">	参数 类型(位数),</span><br><span class="line">	参数 类型(位数)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p><strong>例子在sdz数据库创建sdq这个表</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">use sdq;</span><br><span class="line">CREATE TABLE bbs (</span><br><span class="line">  id int(11) ,</span><br><span class="line">  name varchar(200) ,</span><br><span class="line">  sex varchar(200) ,</span><br><span class="line">  age int(11)  ,</span><br><span class="line">  classid int(11) </span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h1 id="插入数据表内容"><a href="#插入数据表内容" class="headerlink" title="插入数据表内容"></a>插入数据表内容</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">INSERT INTO 数据表 (参数, 参数, 参数)</span><br><span class="line">VALUES (参数, 参数, 参数); </span><br></pre></td></tr></table></figure>
+<p><strong>例子</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">INSERT INTO bbs (id,name,sex,age,classid) VALUES</span><br><span class="line">(1, <span class="string">&#x27;sdqz&#x27;</span>, NULL, NULL, 2),</span><br><span class="line">(2, <span class="string">&#x27;sdq&#x27;</span>, NULL,  NULL,  3),</span><br><span class="line">(3, <span class="string">&#x27;sdz&#x27;</span>, NULL,  NULL,  4);</span><br></pre></td></tr></table></figure>
+
+<h1 id="查看数据表"><a href="#查看数据表" class="headerlink" title="查看数据表"></a>查看数据表</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ elect * from sdq</span><br></pre></td></tr></table></figure>
+<h1 id="删除数据表"><a href="#删除数据表" class="headerlink" title="删除数据表"></a>删除数据表</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ DROP TABLE 表名;</span><br></pre></td></tr></table></figure>
+<p><strong>例子</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ DROP TABLE sdq;</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>SQL Server T-SQL 视图</title>
     <url>/SQL-try.html</url>
     <content><![CDATA[<p><strong>SQL Server个人整理</strong></p>
@@ -1440,15 +1440,6 @@ $
 <h1 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ update 视图 <span class="built_in">set</span> 修改的字段=<span class="string">&#x27;修改的数据&#x27;</span> <span class="built_in">where</span> 匹配字段=<span class="string">&#x27;匹配数据&#x27;</span> </span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
-    <title>第一个Vue.js</title>
-    <url>/one-Vue.html</url>
-    <content><![CDATA[<p><strong>Vue.js个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$  &lt;!DOCTYPE html&gt;</span><br><span class="line">$  &lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line">$  &lt;head&gt;</span><br><span class="line">$      &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">$      &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br><span class="line">$      &lt;title&gt;Vue学习&lt;/title&gt;</span><br><span class="line">$      &lt;script src=<span class="string">&quot;js/vue.min.js&quot;</span>&gt;&lt;/script&gt; </span><br><span class="line">$      &lt;!-- 导入Vue.js --&gt;</span><br><span class="line">$  &lt;/head&gt;</span><br><span class="line">$  &lt;body&gt;</span><br><span class="line">$      &lt;div id = <span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">$          &lt;button @click=<span class="string">&quot;showInfo&quot;</span>&gt;请点击&lt;/button&gt;</span><br><span class="line">$          &lt;p&gt;&#123;&#123;ms&#125;&#125;&lt;/p&gt;</span><br><span class="line">$          &lt;!-- &#123;&#123;massage&#125;&#125; --&gt;</span><br><span class="line">$      &lt;/div&gt;</span><br><span class="line">$      </span><br><span class="line">$          &lt;script&gt;</span><br><span class="line">$              var app = new Vue(&#123;</span><br><span class="line">$              el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">$              // Model : 数据</span><br><span class="line">$               data:&#123;</span><br><span class="line">$                   ms: <span class="string">&quot;hello,vue!&quot;</span>,</span><br><span class="line">$               &#125;,</span><br><span class="line">$               methods:&#123;</span><br><span class="line">$                   <span class="function"><span class="title">showInfo</span></span>()&#123;</span><br><span class="line">$                          this.ms = <span class="string">&quot;你好666999, Vue&quot;</span></span><br><span class="line">$                   &#125;</span><br><span class="line">$               &#125;</span><br><span class="line">$          &#125;);</span><br><span class="line">$          &lt;/script&gt;</span><br><span class="line">$      &lt;/script&gt;</span><br><span class="line">$      </span><br><span class="line">$  &lt;/body&gt;</span><br><span class="line">$  &lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="view和Model双向绑定"><a href="#view和Model双向绑定" class="headerlink" title="view和Model双向绑定"></a>view和Model双向绑定</h1>]]></content>
-  </entry>
-  <entry>
     <title>String 比较</title>
     <url>/String-compare.html</url>
     <content><![CDATA[<p><strong>个人笔记</strong></p>
@@ -1458,6 +1449,15 @@ $
 <p><strong>因为equals是String类重写后的用于比较字符串内容的方法</strong></p>
 <p><strong>为什么不用==进行比较, 因为==是用于比较地址值</strong></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>第一个Vue.js</title>
+    <url>/one-Vue.html</url>
+    <content><![CDATA[<p><strong>Vue.js个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$  &lt;!DOCTYPE html&gt;</span><br><span class="line">$  &lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line">$  &lt;head&gt;</span><br><span class="line">$      &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">$      &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br><span class="line">$      &lt;title&gt;Vue学习&lt;/title&gt;</span><br><span class="line">$      &lt;script src=<span class="string">&quot;js/vue.min.js&quot;</span>&gt;&lt;/script&gt; </span><br><span class="line">$      &lt;!-- 导入Vue.js --&gt;</span><br><span class="line">$  &lt;/head&gt;</span><br><span class="line">$  &lt;body&gt;</span><br><span class="line">$      &lt;div id = <span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">$          &lt;button @click=<span class="string">&quot;showInfo&quot;</span>&gt;请点击&lt;/button&gt;</span><br><span class="line">$          &lt;p&gt;&#123;&#123;ms&#125;&#125;&lt;/p&gt;</span><br><span class="line">$          &lt;!-- &#123;&#123;massage&#125;&#125; --&gt;</span><br><span class="line">$      &lt;/div&gt;</span><br><span class="line">$      </span><br><span class="line">$          &lt;script&gt;</span><br><span class="line">$              var app = new Vue(&#123;</span><br><span class="line">$              el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">$              // Model : 数据</span><br><span class="line">$               data:&#123;</span><br><span class="line">$                   ms: <span class="string">&quot;hello,vue!&quot;</span>,</span><br><span class="line">$               &#125;,</span><br><span class="line">$               methods:&#123;</span><br><span class="line">$                   <span class="function"><span class="title">showInfo</span></span>()&#123;</span><br><span class="line">$                          this.ms = <span class="string">&quot;你好666999, Vue&quot;</span></span><br><span class="line">$                   &#125;</span><br><span class="line">$               &#125;</span><br><span class="line">$          &#125;);</span><br><span class="line">$          &lt;/script&gt;</span><br><span class="line">$      &lt;/script&gt;</span><br><span class="line">$      </span><br><span class="line">$  &lt;/body&gt;</span><br><span class="line">$  &lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="view和Model双向绑定"><a href="#view和Model双向绑定" class="headerlink" title="view和Model双向绑定"></a>view和Model双向绑定</h1>]]></content>
   </entry>
   <entry>
     <title>Vue.js 表单输入绑定的基础用法</title>
@@ -1508,17 +1508,6 @@ $
 ]]></content>
   </entry>
   <entry>
-    <title>Vue.js 网页笔记本</title>
-    <url>/Vue-network-books.html</url>
-    <content><![CDATA[<p><strong>Vue.js个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="演示代码"><a href="#演示代码" class="headerlink" title="演示代码"></a>演示代码</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;js/vue.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;js/marked.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;js/moment.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;css/icon.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;css/style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;notebook&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;side-bar&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;toolbar&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;addNote&quot;</span> <span class="attr">v-bind:title</span>=<span class="string">&quot;addButtonTitle&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;material-icons&quot;</span>&gt;</span>add_box<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">                    新建笔记</span><br><span class="line">                <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;notes&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">&quot;note in notes&quot;</span> <span class="attr">class</span>=<span class="string">&quot;note&quot;</span> <span class="attr">v-on:click</span>=<span class="string">&quot;selectNote(note)&quot;</span> <span class="attr">v-bind:class</span>=<span class="string">&quot;&#123;selected:note === selectedNote&#125;&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;icon material-icons&quot;</span> <span class="attr">v-if</span>=<span class="string">&quot;note.favorite&quot;</span>&gt;</span>star<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">                    &#123;&#123;note.title&#125;&#125;</span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">&quot;selectedNote&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">&quot;main&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;toolbar&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;selectedNote.title&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入笔记标题&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;removeNote&quot;</span> <span class="attr">title</span>=<span class="string">&quot;删除笔记&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;material-icons&quot;</span>&gt;</span>delete<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;favoriteNote&quot;</span> <span class="attr">title</span>=<span class="string">&quot;收藏笔记&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;material-icons&quot;</span>&gt;</span>&#123;&#123;selectedNote.favorite?&#x27;star&#x27;:&#x27;star_border&#x27;&#125;&#125;<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">button</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">v-model</span>=<span class="string">&quot;selectedNote.content&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;toolbar status-bar&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;date&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;label&quot;</span>&gt;</span>创建日期: <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;value&quot;</span>&gt;</span>&#123;&#123;selectedNote.created | changeDate&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;lines&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;label&quot;</span>&gt;</span>行数: <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;value&quot;</span>&gt;</span>&#123;&#123;linesCount&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;words&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;label&quot;</span>&gt;</span>单词数: <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;value&quot;</span>&gt;</span>&#123;&#123;wordsCount&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;characters&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;label&quot;</span>&gt;</span>字符数: <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;value&quot;</span>&gt;</span>&#123;&#123;charactersCount&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;preview&quot;</span> <span class="attr">v-html</span>=<span class="string">&quot;notePreview&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> app=<span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">        el:<span class="string">&#x27;#notebook&#x27;</span>,</span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="javascript">                notes:<span class="built_in">JSON</span>.parse(<span class="built_in">localStorage</span>.getItem(<span class="string">&#x27;notes&#x27;</span>)) || [],</span></span><br><span class="line"><span class="javascript">                selectedId:<span class="built_in">localStorage</span>.getItem(<span class="string">&quot;selected-id&quot;</span>) || <span class="literal">null</span>,</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line"><span class="javascript">                    <span class="function"><span class="title">saveNote</span>(<span class="params">v</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="built_in">localStorage</span>.setItem(<span class="string">&#x27;notes&#x27;</span>,<span class="built_in">JSON</span>.stringify(<span class="built_in">this</span>.notes))</span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(<span class="string">&quot;笔记已经保存! &quot;</span>,<span class="keyword">new</span> <span class="built_in">Date</span>())</span></span><br><span class="line">                    &#125;,</span><br><span class="line"><span class="javascript">                    <span class="function"><span class="title">addNote</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">const</span> time = <span class="built_in">Date</span>.now()</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">const</span> note = </span></span><br><span class="line">                        &#123;</span><br><span class="line"><span class="javascript">                            id:<span class="built_in">String</span>(time),</span></span><br><span class="line"><span class="javascript">                            title:<span class="string">&#x27;New Note&#x27;</span> + (<span class="built_in">this</span>.notes.length+<span class="number">1</span>),</span></span><br><span class="line"><span class="javascript">                            content:<span class="string">&#x27;Hi,Wellcome to write a new note!&#x27;</span>,</span></span><br><span class="line">                            created:time,</span><br><span class="line"><span class="javascript">                            favorite:<span class="literal">false</span>,</span></span><br><span class="line">                        &#125;</span><br><span class="line"><span class="javascript">                        <span class="built_in">this</span>.notes.push(note)</span></span><br><span class="line">                    &#125;,</span><br><span class="line"><span class="javascript">                    <span class="function"><span class="title">selectNote</span>(<span class="params">v</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="built_in">this</span>.selectedId=v.id</span></span><br><span class="line">                    &#125;,</span><br><span class="line"><span class="javascript">                    <span class="function"><span class="title">removeNote</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">if</span> (<span class="built_in">this</span>.selectedNote &amp;&amp; confirm(<span class="string">&#x27;确定删除笔记?&#x27;</span>))</span></span><br><span class="line">                        &#123;</span><br><span class="line"><span class="javascript">                            <span class="keyword">const</span> index = <span class="built_in">this</span>.notes.indexOf(<span class="built_in">this</span>.selectedNote)</span></span><br><span class="line"><span class="javascript">                            <span class="keyword">if</span>(index !== -<span class="number">1</span>)</span></span><br><span class="line">                            &#123;</span><br><span class="line"><span class="javascript">                                <span class="built_in">this</span>.notes.splice(index,<span class="number">1</span>)&#125;</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    </span><br><span class="line">                    favoriteNote()</span><br><span class="line">                    &#123;</span><br><span class="line"><span class="javascript">                        <span class="built_in">this</span>.selectedNote.favorite=!<span class="built_in">this</span>.selectedNote.favorite</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">        computed:&#123;</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">notePreview</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> <span class="built_in">this</span>.selectedNote?marked(<span class="built_in">this</span>.selectedNote.content):<span class="string">&#x27;&#x27;</span></span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">addButtonTitle</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> <span class="built_in">this</span>.notes.length+<span class="string">&#x27; note(s) already&#x27;</span></span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">selectedNote</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> <span class="built_in">this</span>.notes.find(<span class="function"><span class="params">note</span>=&gt;</span>note.id===<span class="built_in">this</span>.selectedId)</span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">sortedNotes</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> <span class="built_in">this</span>.notes.slice().sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>a.created-b.created).sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>(a.favorite===b.favorite)?<span class="number">0</span>:a.favorite?-<span class="number">1</span>:<span class="number">1</span>)</span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">linesCount</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">if</span>(<span class="built_in">this</span>.selectedNote)</span></span><br><span class="line">                    &#123;</span><br><span class="line"><span class="javascript">                        <span class="keyword">return</span> <span class="built_in">this</span>.selectedNote.content.split(<span class="regexp">/\r\n|\r|\n/</span>).length</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">            <span class="function"><span class="title">wordsCount</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span>(<span class="built_in">this</span>.selectedNote)&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">var</span> s = <span class="built_in">this</span>.selectedNote.content;</span></span><br><span class="line"><span class="javascript">                    s = s.replace(<span class="regexp">/\n/g</span>,<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="javascript">                    s = s.replace(<span class="regexp">/(^\s*)|(\s*$)/gi</span>,<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="javascript">                    s = s.replace(<span class="regexp">/\s\s+/gi</span>,<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> s.split(<span class="string">&#x27; &#x27;</span>).length</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line"><span class="javascript">                    <span class="function"><span class="title">charactersCount</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">if</span>(<span class="built_in">this</span>.selectedNote)&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">return</span> <span class="built_in">this</span>.selectedNote.content.split(<span class="string">&#x27;&#x27;</span>).length</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            watch:&#123;</span><br><span class="line">                notes:&#123;</span><br><span class="line"><span class="javascript">                    handler:<span class="string">&#x27;saveNote&#x27;</span>,</span></span><br><span class="line"><span class="javascript">                    deep:<span class="literal">true</span>,</span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">selectedId</span>(<span class="params">v</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="built_in">localStorage</span>.setItem(<span class="string">&#x27;selected-id&#x27;</span>,v)</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            filters:&#123;</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">changeDate</span>(<span class="params">v</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> moment(v).format(<span class="string">&#x27;YYYY-MM-DD&#x27;</span>)</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><font color="#DC143C">直接实战</font></p>
-<p><a href="./项目/项目工程.html" target="_blank">演示效果</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Arch wsl的傻瓜式安装 (有手就行)</title>
     <url>/Arch-Wsl-install.html</url>
     <content><![CDATA[<p><strong>本人是Arch教徒过来传一下教</strong> </p>
@@ -1566,12 +1555,15 @@ $
 <h1 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h1><h1 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h1><h1 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h1>]]></content>
   </entry>
   <entry>
-    <title>下次一定</title>
-    <url>/xcyd.html</url>
-    <content><![CDATA[<p><strong>本人制作简单的一款软件</strong></p>
+    <title>Vue.js 网页笔记本</title>
+    <url>/Vue-network-books.html</url>
+    <content><![CDATA[<p><strong>Vue.js个人整理</strong></p>
 <a id="more"></a>
 
-<h1 id="软件截图"><a href="#软件截图" class="headerlink" title="软件截图"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcydjt.jpg">软件截图</a></h1><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcyd.jpg">下载</a></h1><h1 id="声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡"><a href="#声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡" class="headerlink" title="声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡"></a>声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡</h1><h1 id="真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器"><a href="#真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器" class="headerlink" title="真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器"></a>真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器</h1><h1 id="除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了"><a href="#除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了" class="headerlink" title="除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了"></a>除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了</h1>]]></content>
+<h1 id="演示代码"><a href="#演示代码" class="headerlink" title="演示代码"></a>演示代码</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;js/vue.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;js/marked.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;js/moment.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;css/icon.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;css/style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;notebook&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;side-bar&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;toolbar&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;addNote&quot;</span> <span class="attr">v-bind:title</span>=<span class="string">&quot;addButtonTitle&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;material-icons&quot;</span>&gt;</span>add_box<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">                    新建笔记</span><br><span class="line">                <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;notes&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">&quot;note in notes&quot;</span> <span class="attr">class</span>=<span class="string">&quot;note&quot;</span> <span class="attr">v-on:click</span>=<span class="string">&quot;selectNote(note)&quot;</span> <span class="attr">v-bind:class</span>=<span class="string">&quot;&#123;selected:note === selectedNote&#125;&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;icon material-icons&quot;</span> <span class="attr">v-if</span>=<span class="string">&quot;note.favorite&quot;</span>&gt;</span>star<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">                    &#123;&#123;note.title&#125;&#125;</span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">&quot;selectedNote&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">&quot;main&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;toolbar&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;selectedNote.title&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入笔记标题&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;removeNote&quot;</span> <span class="attr">title</span>=<span class="string">&quot;删除笔记&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;material-icons&quot;</span>&gt;</span>delete<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;favoriteNote&quot;</span> <span class="attr">title</span>=<span class="string">&quot;收藏笔记&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;material-icons&quot;</span>&gt;</span>&#123;&#123;selectedNote.favorite?&#x27;star&#x27;:&#x27;star_border&#x27;&#125;&#125;<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">button</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">v-model</span>=<span class="string">&quot;selectedNote.content&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;toolbar status-bar&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;date&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;label&quot;</span>&gt;</span>创建日期: <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;value&quot;</span>&gt;</span>&#123;&#123;selectedNote.created | changeDate&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;lines&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;label&quot;</span>&gt;</span>行数: <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;value&quot;</span>&gt;</span>&#123;&#123;linesCount&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;words&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;label&quot;</span>&gt;</span>单词数: <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;value&quot;</span>&gt;</span>&#123;&#123;wordsCount&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;characters&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;label&quot;</span>&gt;</span>字符数: <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;value&quot;</span>&gt;</span>&#123;&#123;charactersCount&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;preview&quot;</span> <span class="attr">v-html</span>=<span class="string">&quot;notePreview&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> app=<span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">        el:<span class="string">&#x27;#notebook&#x27;</span>,</span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="javascript">                notes:<span class="built_in">JSON</span>.parse(<span class="built_in">localStorage</span>.getItem(<span class="string">&#x27;notes&#x27;</span>)) || [],</span></span><br><span class="line"><span class="javascript">                selectedId:<span class="built_in">localStorage</span>.getItem(<span class="string">&quot;selected-id&quot;</span>) || <span class="literal">null</span>,</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line"><span class="javascript">                    <span class="function"><span class="title">saveNote</span>(<span class="params">v</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="built_in">localStorage</span>.setItem(<span class="string">&#x27;notes&#x27;</span>,<span class="built_in">JSON</span>.stringify(<span class="built_in">this</span>.notes))</span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(<span class="string">&quot;笔记已经保存! &quot;</span>,<span class="keyword">new</span> <span class="built_in">Date</span>())</span></span><br><span class="line">                    &#125;,</span><br><span class="line"><span class="javascript">                    <span class="function"><span class="title">addNote</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">const</span> time = <span class="built_in">Date</span>.now()</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">const</span> note = </span></span><br><span class="line">                        &#123;</span><br><span class="line"><span class="javascript">                            id:<span class="built_in">String</span>(time),</span></span><br><span class="line"><span class="javascript">                            title:<span class="string">&#x27;New Note&#x27;</span> + (<span class="built_in">this</span>.notes.length+<span class="number">1</span>),</span></span><br><span class="line"><span class="javascript">                            content:<span class="string">&#x27;Hi,Wellcome to write a new note!&#x27;</span>,</span></span><br><span class="line">                            created:time,</span><br><span class="line"><span class="javascript">                            favorite:<span class="literal">false</span>,</span></span><br><span class="line">                        &#125;</span><br><span class="line"><span class="javascript">                        <span class="built_in">this</span>.notes.push(note)</span></span><br><span class="line">                    &#125;,</span><br><span class="line"><span class="javascript">                    <span class="function"><span class="title">selectNote</span>(<span class="params">v</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="built_in">this</span>.selectedId=v.id</span></span><br><span class="line">                    &#125;,</span><br><span class="line"><span class="javascript">                    <span class="function"><span class="title">removeNote</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">if</span> (<span class="built_in">this</span>.selectedNote &amp;&amp; confirm(<span class="string">&#x27;确定删除笔记?&#x27;</span>))</span></span><br><span class="line">                        &#123;</span><br><span class="line"><span class="javascript">                            <span class="keyword">const</span> index = <span class="built_in">this</span>.notes.indexOf(<span class="built_in">this</span>.selectedNote)</span></span><br><span class="line"><span class="javascript">                            <span class="keyword">if</span>(index !== -<span class="number">1</span>)</span></span><br><span class="line">                            &#123;</span><br><span class="line"><span class="javascript">                                <span class="built_in">this</span>.notes.splice(index,<span class="number">1</span>)&#125;</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    </span><br><span class="line">                    favoriteNote()</span><br><span class="line">                    &#123;</span><br><span class="line"><span class="javascript">                        <span class="built_in">this</span>.selectedNote.favorite=!<span class="built_in">this</span>.selectedNote.favorite</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">        computed:&#123;</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">notePreview</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> <span class="built_in">this</span>.selectedNote?marked(<span class="built_in">this</span>.selectedNote.content):<span class="string">&#x27;&#x27;</span></span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">addButtonTitle</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> <span class="built_in">this</span>.notes.length+<span class="string">&#x27; note(s) already&#x27;</span></span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">selectedNote</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> <span class="built_in">this</span>.notes.find(<span class="function"><span class="params">note</span>=&gt;</span>note.id===<span class="built_in">this</span>.selectedId)</span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">sortedNotes</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> <span class="built_in">this</span>.notes.slice().sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>a.created-b.created).sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>(a.favorite===b.favorite)?<span class="number">0</span>:a.favorite?-<span class="number">1</span>:<span class="number">1</span>)</span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">linesCount</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">if</span>(<span class="built_in">this</span>.selectedNote)</span></span><br><span class="line">                    &#123;</span><br><span class="line"><span class="javascript">                        <span class="keyword">return</span> <span class="built_in">this</span>.selectedNote.content.split(<span class="regexp">/\r\n|\r|\n/</span>).length</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">            <span class="function"><span class="title">wordsCount</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span>(<span class="built_in">this</span>.selectedNote)&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">var</span> s = <span class="built_in">this</span>.selectedNote.content;</span></span><br><span class="line"><span class="javascript">                    s = s.replace(<span class="regexp">/\n/g</span>,<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="javascript">                    s = s.replace(<span class="regexp">/(^\s*)|(\s*$)/gi</span>,<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="javascript">                    s = s.replace(<span class="regexp">/\s\s+/gi</span>,<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> s.split(<span class="string">&#x27; &#x27;</span>).length</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line"><span class="javascript">                    <span class="function"><span class="title">charactersCount</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">if</span>(<span class="built_in">this</span>.selectedNote)&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">return</span> <span class="built_in">this</span>.selectedNote.content.split(<span class="string">&#x27;&#x27;</span>).length</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            watch:&#123;</span><br><span class="line">                notes:&#123;</span><br><span class="line"><span class="javascript">                    handler:<span class="string">&#x27;saveNote&#x27;</span>,</span></span><br><span class="line"><span class="javascript">                    deep:<span class="literal">true</span>,</span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">selectedId</span>(<span class="params">v</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="built_in">localStorage</span>.setItem(<span class="string">&#x27;selected-id&#x27;</span>,v)</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            filters:&#123;</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">changeDate</span>(<span class="params">v</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> moment(v).format(<span class="string">&#x27;YYYY-MM-DD&#x27;</span>)</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><font color="#DC143C">直接实战</font></p>
+<p><a href="./项目/项目工程.html" target="_blank">演示效果</a></p>
+]]></content>
   </entry>
   <entry>
     <title>轻松理解json与python关系</title>
@@ -1681,17 +1673,12 @@ python数据类型
 ]]></content>
   </entry>
   <entry>
-    <title>python 字符串(我失忆了)</title>
-    <url>/python-zfc.html</url>
-    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
+    <title>下次一定</title>
+    <url>/xcyd.html</url>
+    <content><![CDATA[<p><strong>本人制作简单的一款软件</strong></p>
 <a id="more"></a>
 
-<h1 id="以下全是字符串"><a href="#以下全是字符串" class="headerlink" title="以下全是字符串"></a>以下全是字符串</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s &#x3D; &#39;s&#39;</span><br><span class="line">d &#x3D; &quot;d&quot;</span><br><span class="line">q &#x3D; &#39;&#39;&#39;q&#39;&#39;&#39;</span><br><span class="line">sdq &#x3D; &quot;d &#39;s&#39; &quot;</span><br><span class="line">sdz &#x3D; &#39;&#39;&#39; &quot;s&#39;d&#39;&quot; q&#39;&#39;&#39;</span><br><span class="line">print(s, d, sdq, q, sdz, sep&#x3D;&#39;\n&#39;)</span><br></pre></td></tr></table></figure>
-<h1 id="字符串拼接操作"><a href="#字符串拼接操作" class="headerlink" title="字符串拼接操作"></a>字符串拼接操作</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 字符串拼接</span><br><span class="line"># print(&#39;s&#39; + &#39;d&#39; + &#39;q&#39;)</span><br><span class="line"># 字符串和数字是不能拼接的</span><br><span class="line"># print(&#39;sdq&#39; + 3)</span><br><span class="line"># 连续打印5次史迪奇</span><br><span class="line"># print(5 * &#39;sdq&#39;)</span><br></pre></td></tr></table></figure>
-<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 索引 变量名[] 表索引 编程语言都是从0开始计数的</span><br><span class="line">sdq&#x3D; &#39;我叫史迪奇&#39;</span><br><span class="line">print(str1[0], str1[3], str1[-1])</span><br><span class="line">print(str1[10])  #超出会报错</span><br></pre></td></tr></table></figure>
-<h1 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 切片 变量名[a:b] 同数学区间的[a,b)</span><br><span class="line">sdq &#x3D; &#39;0123456789&#39;</span><br><span class="line">print(&#39;sdq[0:3]&#39;, sdq[0:3])         #012</span><br><span class="line">print(&#39;sdq[1:]&#39;, sdq[1:])           #123456789</span><br><span class="line">print(&#39;sdq[:2]&#39;, sdq[:2])           #01</span><br><span class="line">print(&#39;sdq[:]&#39;, sdq[:])             #返回全部</span><br><span class="line">print(&#39;sdq[-4:-1]&#39;, sdq[-4:-1])     #678</span><br><span class="line">print(sdq[1:100])                   # 切片超出范围是不会报错的会返回全部</span><br></pre></td></tr></table></figure>
-<h1 id="代码格式化"><a href="#代码格式化" class="headerlink" title="代码格式化"></a>代码格式化</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># name &#x3D; &#39;史迪奇&#39;</span><br><span class="line"># number &#x3D; 626</span><br><span class="line"># print(name+&#39;是个&#39;+str(number)+&#39;号实验品&#39;)</span><br><span class="line"># print(&#39;&#123;&#125;是个&#123;&#125;号实验品&#39;.format(name, number))</span><br><span class="line"># print(&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;.format(name&#x3D;&#39;史迪奇&#39;, number&#x3D;626))</span><br><span class="line"># print(f&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;)</span><br><span class="line"># 在一些老的教程里会用%的形式格式化代码，在Python3里就不建议使用了</span><br></pre></td></tr></table></figure>
-<h1 id="字符串的一些使用方法"><a href="#字符串的一些使用方法" class="headerlink" title="字符串的一些使用方法"></a>字符串的一些使用方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sdq &#x3D; &#39;Stitch&#39;</span><br><span class="line">print(&#39;find第一次出现b的索引&#39;, sdq.find(&#39;h&#39;))  #看h的下标</span><br><span class="line">print(&#39;replace&#39;, sdq.replace(&#39;i&#39;, &#39;I&#39;))  #拿I替换i</span><br><span class="line">print(&#39;upper&#39;, sdq.upper()) #全大写</span><br><span class="line">print(&#39;lower&#39;, sdq.lower()) #全小写</span><br><span class="line">print(&#39;swapcase 对换&#39;, &#39;sdq&#39;.swapcase())  #反转字母大小写</span><br><span class="line">print(&#39;去前后空格&#39;, &#39; sdq &#39;.strip(), sep&#x3D;&#39;&#39;)  </span><br><span class="line">print(&#39;S t i t c h &#39;.replace(&#39; &#39;, &#39;&#39;))   #空格替换空字符串</span><br><span class="line"></span><br><span class="line">print(len(&#39;S t i t c h&#39;)) # 获取字符串长度 里面的空格也是计算长度的</span><br></pre></td></tr></table></figure>]]></content>
+<h1 id="软件截图"><a href="#软件截图" class="headerlink" title="软件截图"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcydjt.jpg">软件截图</a></h1><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcyd.jpg">下载</a></h1><h1 id="声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡"><a href="#声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡" class="headerlink" title="声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡"></a>声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡</h1><h1 id="真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器"><a href="#真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器" class="headerlink" title="真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器"></a>真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器</h1><h1 id="除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了"><a href="#除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了" class="headerlink" title="除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了"></a>除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了</h1>]]></content>
   </entry>
   <entry>
     <title>Android同步源码和编译ROM傻瓜式 (有手就行)</title>
@@ -1796,6 +1783,19 @@ python数据类型
 <h1 id="字符串的一些使用方法"><a href="#字符串的一些使用方法" class="headerlink" title="字符串的一些使用方法"></a>字符串的一些使用方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sdq &#x3D; &#39;Stitch&#39;</span><br><span class="line">print(&#39;find第一次出现b的索引&#39;, sdq.find(&#39;h&#39;))  #看h的下标</span><br><span class="line">print(&#39;replace&#39;, sdq.replace(&#39;i&#39;, &#39;I&#39;))  #拿I替换i</span><br><span class="line">print(&#39;upper&#39;, sdq.upper()) #全大写</span><br><span class="line">print(&#39;lower&#39;, sdq.lower()) #全小写</span><br><span class="line">print(&#39;swapcase 对换&#39;, &#39;sdq&#39;.swapcase())  #反转字母大小写</span><br><span class="line">print(&#39;去前后空格&#39;, &#39; sdq &#39;.strip(), sep&#x3D;&#39;&#39;)  </span><br><span class="line">print(&#39;S t i t c h &#39;.replace(&#39; &#39;, &#39;&#39;))   #空格替换空字符串</span><br><span class="line"></span><br><span class="line">print(len(&#39;S t i t c h&#39;)) # 获取字符串长度 里面的空格也是计算长度的</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
+    <title>python 字符串(我失忆了)</title>
+    <url>/python-zfc.html</url>
+    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
+<a id="more"></a>
+
+<h1 id="以下全是字符串"><a href="#以下全是字符串" class="headerlink" title="以下全是字符串"></a>以下全是字符串</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s &#x3D; &#39;s&#39;</span><br><span class="line">d &#x3D; &quot;d&quot;</span><br><span class="line">q &#x3D; &#39;&#39;&#39;q&#39;&#39;&#39;</span><br><span class="line">sdq &#x3D; &quot;d &#39;s&#39; &quot;</span><br><span class="line">sdz &#x3D; &#39;&#39;&#39; &quot;s&#39;d&#39;&quot; q&#39;&#39;&#39;</span><br><span class="line">print(s, d, sdq, q, sdz, sep&#x3D;&#39;\n&#39;)</span><br></pre></td></tr></table></figure>
+<h1 id="字符串拼接操作"><a href="#字符串拼接操作" class="headerlink" title="字符串拼接操作"></a>字符串拼接操作</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 字符串拼接</span><br><span class="line"># print(&#39;s&#39; + &#39;d&#39; + &#39;q&#39;)</span><br><span class="line"># 字符串和数字是不能拼接的</span><br><span class="line"># print(&#39;sdq&#39; + 3)</span><br><span class="line"># 连续打印5次史迪奇</span><br><span class="line"># print(5 * &#39;sdq&#39;)</span><br></pre></td></tr></table></figure>
+<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 索引 变量名[] 表索引 编程语言都是从0开始计数的</span><br><span class="line">sdq&#x3D; &#39;我叫史迪奇&#39;</span><br><span class="line">print(str1[0], str1[3], str1[-1])</span><br><span class="line">print(str1[10])  #超出会报错</span><br></pre></td></tr></table></figure>
+<h1 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 切片 变量名[a:b] 同数学区间的[a,b)</span><br><span class="line">sdq &#x3D; &#39;0123456789&#39;</span><br><span class="line">print(&#39;sdq[0:3]&#39;, sdq[0:3])         #012</span><br><span class="line">print(&#39;sdq[1:]&#39;, sdq[1:])           #123456789</span><br><span class="line">print(&#39;sdq[:2]&#39;, sdq[:2])           #01</span><br><span class="line">print(&#39;sdq[:]&#39;, sdq[:])             #返回全部</span><br><span class="line">print(&#39;sdq[-4:-1]&#39;, sdq[-4:-1])     #678</span><br><span class="line">print(sdq[1:100])                   # 切片超出范围是不会报错的会返回全部</span><br></pre></td></tr></table></figure>
+<h1 id="代码格式化"><a href="#代码格式化" class="headerlink" title="代码格式化"></a>代码格式化</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># name &#x3D; &#39;史迪奇&#39;</span><br><span class="line"># number &#x3D; 626</span><br><span class="line"># print(name+&#39;是个&#39;+str(number)+&#39;号实验品&#39;)</span><br><span class="line"># print(&#39;&#123;&#125;是个&#123;&#125;号实验品&#39;.format(name, number))</span><br><span class="line"># print(&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;.format(name&#x3D;&#39;史迪奇&#39;, number&#x3D;626))</span><br><span class="line"># print(f&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;)</span><br><span class="line"># 在一些老的教程里会用%的形式格式化代码，在Python3里就不建议使用了</span><br></pre></td></tr></table></figure>
+<h1 id="字符串的一些使用方法"><a href="#字符串的一些使用方法" class="headerlink" title="字符串的一些使用方法"></a>字符串的一些使用方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sdq &#x3D; &#39;Stitch&#39;</span><br><span class="line">print(&#39;find第一次出现b的索引&#39;, sdq.find(&#39;h&#39;))  #看h的下标</span><br><span class="line">print(&#39;replace&#39;, sdq.replace(&#39;i&#39;, &#39;I&#39;))  #拿I替换i</span><br><span class="line">print(&#39;upper&#39;, sdq.upper()) #全大写</span><br><span class="line">print(&#39;lower&#39;, sdq.lower()) #全小写</span><br><span class="line">print(&#39;swapcase 对换&#39;, &#39;sdq&#39;.swapcase())  #反转字母大小写</span><br><span class="line">print(&#39;去前后空格&#39;, &#39; sdq &#39;.strip(), sep&#x3D;&#39;&#39;)  </span><br><span class="line">print(&#39;S t i t c h &#39;.replace(&#39; &#39;, &#39;&#39;))   #空格替换空字符串</span><br><span class="line"></span><br><span class="line">print(len(&#39;S t i t c h&#39;)) # 获取字符串长度 里面的空格也是计算长度的</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
     <title>python 数据类型(我失忆了)</title>
     <url>/python-type.html</url>
     <content><![CDATA[<p><strong>我真的失忆了</strong></p>
@@ -1804,51 +1804,6 @@ python数据类型
 <h1 id="python基本数据类型"><a href="#python基本数据类型" class="headerlink" title="python基本数据类型"></a>python基本数据类型</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;整数&#39;, 1)                          </span><br><span class="line">print(&#39;浮点数&#39;, 0.1)             </span><br><span class="line">print(&#39;布尔值&#39;, True) </span><br><span class="line">print(&#39;空&#39;, None)</span><br><span class="line">print(&#39;元组&#39;, (1, 2, 3)) #可以存放不同类型</span><br><span class="line">print(&#39;列表&#39;, [1, 2, 3])</span><br><span class="line">print(&#39;字典&#39;, &#123;&#39;a&#39;:&#39;d&#39;&#125;)   </span><br></pre></td></tr></table></figure>
 <h1 id="查询类型"><a href="#查询类型" class="headerlink" title="查询类型"></a>查询类型</h1><p><strong>例子</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(type(int))</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
-    <title>爬虫 cookie(吃牢饭集合)</title>
-    <url>/reptile-cookie.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="headers中携带cookie"><a href="#headers中携带cookie" class="headerlink" title="headers中携带cookie"></a>headers中携带cookie</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;github.com&#x2F;sdqOS&#39;</span><br><span class="line"></span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.72 Safari&#x2F;537.36&quot;,</span><br><span class="line">    &quot;Cookie&quot;: &quot;_octo&#x3D;GH1.1.1829904439.1611247247; _device_id&#x3D;326c46400086ed13ec278dc836662948; _locale&#x3D;ko; _locale_experiment&#x3D;ko; tz&#x3D;Asia%2FShanghai; has_recent_activity&#x3D;1; user_session&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz&#x3D;Asia%2FShanghai; color_mode&#x3D;%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in&#x3D;yes; dotcom_user&#x3D;sdqOS; _gh_sess&#x3D;l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">respinse &#x3D; requests.get(url, headers&#x3D;headers,)</span><br><span class="line"></span><br><span class="line"># 看看是给谁发请求</span><br><span class="line">print(respinse.url)</span><br><span class="line"></span><br><span class="line">with open(&#39;github.html&#39;, &#39;wb&#39;)as f:</span><br><span class="line">    f.write(respinse.content)</span><br></pre></td></tr></table></figure>
-<p>#构建cookie字典</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;github.com&#x2F;sdqOS&#39;</span><br><span class="line"></span><br><span class="line"># 构造请求头字典</span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.72 Safari&#x2F;537.36&quot;,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">temp &#x3D; &quot;_octo&#x3D;GH1.1.1829904439.1611247247; _device_id&#x3D;326c46400086ed13ec278dc836662948; _locale&#x3D;ko; _locale_experiment&#x3D;ko; tz&#x3D;Asia%2FShanghai; has_recent_activity&#x3D;1; user_session&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz&#x3D;Asia%2FShanghai; color_mode&#x3D;%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in&#x3D;yes; dotcom_user&#x3D;sdqOS; _gh_sess&#x3D;l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cookie_list &#x3D; temp.split(&#39;; &#39;)</span><br><span class="line"></span><br><span class="line"># 熟练方案</span><br><span class="line">cookies &#x3D; &#123; cookie.split(&#39;&#x3D;&#39;)[0]:cookie.split(&#39;&#x3D;&#39;)[-1] for cookie in cookie_list&#125;</span><br><span class="line"></span><br><span class="line"># 稳妥方案</span><br><span class="line"># cookies &#x3D; &#123;&#125;</span><br><span class="line"></span><br><span class="line"># for cookie in cookie_list:</span><br><span class="line">#     cookies[cookie.split(&#39;&#x3D;&#39;)[0]] &#x3D; cookie.split(&#39;&#x3D;&#39;)[-1]</span><br><span class="line"></span><br><span class="line"># print(cookies)</span><br><span class="line"></span><br><span class="line"># # 构造cookie字典</span><br><span class="line"></span><br><span class="line">response &#x3D; requests.get(url, headers&#x3D;headers,cookies&#x3D;cookies)</span><br><span class="line"></span><br><span class="line"># 看看是给谁发请求</span><br><span class="line">print(response.url)</span><br><span class="line"></span><br><span class="line">with open(&#39;github3.html&#39;, &#39;wb&#39;)as f:</span><br><span class="line">    f.write(response.content)</span><br></pre></td></tr></table></figure>
-<h1 id="cookieJar对象转换成cookie字典方法"><a href="#cookieJar对象转换成cookie字典方法" class="headerlink" title="cookieJar对象转换成cookie字典方法"></a>cookieJar对象转换成cookie字典方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;www.baidu.com&#39;</span><br><span class="line"></span><br><span class="line"># 设置(timeout)访问时长为3秒, 然后就断开</span><br><span class="line">response &#x3D; response.get(url, timeout&#x3D;3)</span><br><span class="line"></span><br><span class="line">print(response.cookies)</span><br><span class="line"></span><br><span class="line"># 将对象转字典</span><br><span class="line">dict_cookie &#x3D; requests.utils.dict_from_cookiejar(response.cookies)</span><br><span class="line">print(dict_cookie)</span><br><span class="line"></span><br><span class="line"># 将字典转换为对象</span><br><span class="line">jar_cookies &#x3D; requests.utils.cookiejar_from_dict(dict_cookies)</span><br><span class="line">print(jar_cookies)</span><br></pre></td></tr></table></figure>
-<!--副作用丢失域名 这个不要紧我们自己知道这个cookie对应哪个域名的-->
-]]></content>
-  </entry>
-  <entry>
-    <title>爬虫 Beautiful Soup(牢饭吃到饱)</title>
-    <url>/reptile-bs4-lxml.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1>Beautiful Soup4<h1>
-
-<h1 id="安装bs4"><a href="#安装bs4" class="headerlink" title="安装bs4"></a>安装bs4</h1><p><strong>打开cmd 输入以下内容</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip install lxml</span><br></pre></td></tr></table></figure>
-<h1 id="find用法"><a href="#find用法" class="headerlink" title="find用法"></a>find用法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">find(&quot;标签&quot;, 属性:id class) </span><br><span class="line">find(&quot;p&quot;, id&#x3D;&quot;sdq&quot;)</span><br></pre></td></tr></table></figure>
-<h1 id="find-all用法"><a href="#find-all用法" class="headerlink" title="find_all用法"></a>find_all用法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">find(&quot;标签&quot;, 属性:id class).find_all(&quot;标签&quot;)</span><br><span class="line">find(&quot;p&quot;, id&#x3D;&quot;sdq&quot;).find_all(&quot;a&quot;)</span><br></pre></td></tr></table></figure>
-<h1 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h1><p><strong>打开这个<a href="https://www.umei.cc/bizhitupian/weimeibizhi/">网址</a></strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 导入requests和bs4库</span><br><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">url &#x3D; &quot;https:&#x2F;&#x2F;www.umei.cc&#x2F;bizhitupian&#x2F;weimeibizhi&#x2F;&quot;</span><br><span class="line">resp &#x3D; requests.get(url)</span><br><span class="line">resp.encoding &#x3D; &#39;utf-8&#39;  # 处理乱码</span><br><span class="line"></span><br><span class="line"># print(resp.text)</span><br><span class="line"># 把源代码交给bs</span><br><span class="line">main_page &#x3D; BeautifulSoup(resp.text, &quot;html.parser&quot;)</span><br><span class="line">alist &#x3D; main_page.find(&quot;div&quot;, class_&#x3D;&quot;TypeList&quot;).find_all(&quot;a&quot;)</span><br><span class="line"># print(alist)</span><br><span class="line">for a in alist:</span><br><span class="line">    href &#x3D; a.get(&#39;href&#39;)  # 直接通过get就可以拿到属性的值</span><br><span class="line">    # 子页面的源代码</span><br><span class="line">    child_resp &#x3D; requests.get(href)</span><br><span class="line">    child_resp.encoding &#x3D; &#39;utf-8&#39;</span><br><span class="line">    child_text &#x3D; child_resp.text</span><br><span class="line">    # 从子页面中拿到图片的下载路径</span><br><span class="line">    child &#x3D; BeautifulSoup(child_text, &quot;html.parser&quot;)</span><br><span class="line">    p &#x3D; child.find(&quot;p&quot;, align&#x3D;&quot;center&quot;)</span><br><span class="line">    img &#x3D; p.find(&quot;img&quot;)</span><br><span class="line">    src &#x3D; img.get(&quot;src&quot;)</span><br><span class="line">    # 下载图片</span><br><span class="line">    img_resp &#x3D; requests.get(src)</span><br><span class="line">    # img_resp.content  # 这里拿到的是字节</span><br><span class="line">    img_name &#x3D; src.split(&quot;&#x2F;&quot;)[-1]  # 拿到url中的最后一个 &#x2F; 以后的内容-1代表最后一个</span><br><span class="line">    with open(&quot;img&#x2F;&quot;+img_name, mode&#x3D;&quot;wb&quot;) as f:</span><br><span class="line">        f.write(img_resp.content)  # 图片内容写入文件</span><br><span class="line"></span><br><span class="line">    print(&quot;正在下载&quot;, img_name)</span><br><span class="line">    time.sleep(1) #停1秒</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(&quot;下载完了&quot;)</span><br></pre></td></tr></table></figure>
-<!-- <h1>lxml<h1> -->
-
-
-
-</h1></h1>]]></content>
-  </entry>
-  <entry>
-    <title>python 基本运算符(我失忆了)</title>
-    <url>/python-jjcc.html</url>
-    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
-<a id="more"></a>
-
-<h1 id="pdtho基本运算符"><a href="#pdtho基本运算符" class="headerlink" title="pdtho基本运算符"></a>pdtho基本运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;加&#39;, 2 + 3)</span><br><span class="line">print(&#39;减&#39;, 1 - 3)</span><br><span class="line">print(&#39;两个减号&#39;, 1 - -2)</span><br><span class="line">print(&#39;乘&#39;, 2 * 4)</span><br><span class="line">print(&#39;除&#39;, 9 &#x2F; 3)</span><br><span class="line">print(&#39;取整&#39;, 10 &#x2F;&#x2F; 3, 10 &#x2F;&#x2F; 4)</span><br><span class="line">print(&#39;取整1&#39;, 10 &#x2F; 3, 10 &#x2F; 4)</span><br><span class="line">print(&#39;模运算，取余数&#39;, 10 % 3)  </span><br></pre></td></tr></table></figure>
-<h1 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h1><p><strong>4舍6入5看齐,奇进偶不进,相比四舍五入更精确</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(round(1.2), round(1.5), round(2.5))</span><br></pre></td></tr></table></figure>
-<h1 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s, d, q, z &#x3D; 1, 2, 3, 1</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; d&#39;, s &#x3D;&#x3D; d)</span><br><span class="line">print(&#39;s !&#x3D; d&#39;, s !&#x3D; d)</span><br><span class="line">print(&#39;s &gt; d&#39;, s &gt; d)</span><br><span class="line">print(&#39;d &lt; z&#39;, d &lt; z)</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; z&#39;, s &#x3D;&#x3D; z)   #比较值</span><br><span class="line">print(&#39;s is z&#39;, s is z)   #比较地址</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
   <entry>
@@ -1872,6 +1827,51 @@ python数据类型
 <h1 id="本放链接-想要的话-自己带着承诺完的截图来找我-我给你密码"><a href="#本放链接-想要的话-自己带着承诺完的截图来找我-我给你密码" class="headerlink" title="本放链接!!! 想要的话, 自己带着承诺完的截图来找我, 我给你密码"></a>本放<a href="https://wwr.lanzoui.com/iRu7Bqsx7od">链接</a>!!! 想要的话, 自己带着承诺完的截图来找<a href="https://wpa.qq.com/msgrd?v=3&uin=3083329400&site=qq&menu=yes">我</a>, 我给你密码</h1>]]></content>
   </entry>
   <entry>
+    <title>python 基本运算符(我失忆了)</title>
+    <url>/python-jjcc.html</url>
+    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
+<a id="more"></a>
+
+<h1 id="pdtho基本运算符"><a href="#pdtho基本运算符" class="headerlink" title="pdtho基本运算符"></a>pdtho基本运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;加&#39;, 2 + 3)</span><br><span class="line">print(&#39;减&#39;, 1 - 3)</span><br><span class="line">print(&#39;两个减号&#39;, 1 - -2)</span><br><span class="line">print(&#39;乘&#39;, 2 * 4)</span><br><span class="line">print(&#39;除&#39;, 9 &#x2F; 3)</span><br><span class="line">print(&#39;取整&#39;, 10 &#x2F;&#x2F; 3, 10 &#x2F;&#x2F; 4)</span><br><span class="line">print(&#39;取整1&#39;, 10 &#x2F; 3, 10 &#x2F; 4)</span><br><span class="line">print(&#39;模运算，取余数&#39;, 10 % 3)  </span><br></pre></td></tr></table></figure>
+<h1 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h1><p><strong>4舍6入5看齐,奇进偶不进,相比四舍五入更精确</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(round(1.2), round(1.5), round(2.5))</span><br></pre></td></tr></table></figure>
+<h1 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s, d, q, z &#x3D; 1, 2, 3, 1</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; d&#39;, s &#x3D;&#x3D; d)</span><br><span class="line">print(&#39;s !&#x3D; d&#39;, s !&#x3D; d)</span><br><span class="line">print(&#39;s &gt; d&#39;, s &gt; d)</span><br><span class="line">print(&#39;d &lt; z&#39;, d &lt; z)</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; z&#39;, s &#x3D;&#x3D; z)   #比较值</span><br><span class="line">print(&#39;s is z&#39;, s is z)   #比较地址</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>爬虫 Beautiful Soup(牢饭吃到饱)</title>
+    <url>/reptile-bs4-lxml.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1>Beautiful Soup4<h1>
+
+<h1 id="安装bs4"><a href="#安装bs4" class="headerlink" title="安装bs4"></a>安装bs4</h1><p><strong>打开cmd 输入以下内容</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip install lxml</span><br></pre></td></tr></table></figure>
+<h1 id="find用法"><a href="#find用法" class="headerlink" title="find用法"></a>find用法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">find(&quot;标签&quot;, 属性:id class) </span><br><span class="line">find(&quot;p&quot;, id&#x3D;&quot;sdq&quot;)</span><br></pre></td></tr></table></figure>
+<h1 id="find-all用法"><a href="#find-all用法" class="headerlink" title="find_all用法"></a>find_all用法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">find(&quot;标签&quot;, 属性:id class).find_all(&quot;标签&quot;)</span><br><span class="line">find(&quot;p&quot;, id&#x3D;&quot;sdq&quot;).find_all(&quot;a&quot;)</span><br></pre></td></tr></table></figure>
+<h1 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h1><p><strong>打开这个<a href="https://www.umei.cc/bizhitupian/weimeibizhi/">网址</a></strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 导入requests和bs4库</span><br><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">url &#x3D; &quot;https:&#x2F;&#x2F;www.umei.cc&#x2F;bizhitupian&#x2F;weimeibizhi&#x2F;&quot;</span><br><span class="line">resp &#x3D; requests.get(url)</span><br><span class="line">resp.encoding &#x3D; &#39;utf-8&#39;  # 处理乱码</span><br><span class="line"></span><br><span class="line"># print(resp.text)</span><br><span class="line"># 把源代码交给bs</span><br><span class="line">main_page &#x3D; BeautifulSoup(resp.text, &quot;html.parser&quot;)</span><br><span class="line">alist &#x3D; main_page.find(&quot;div&quot;, class_&#x3D;&quot;TypeList&quot;).find_all(&quot;a&quot;)</span><br><span class="line"># print(alist)</span><br><span class="line">for a in alist:</span><br><span class="line">    href &#x3D; a.get(&#39;href&#39;)  # 直接通过get就可以拿到属性的值</span><br><span class="line">    # 子页面的源代码</span><br><span class="line">    child_resp &#x3D; requests.get(href)</span><br><span class="line">    child_resp.encoding &#x3D; &#39;utf-8&#39;</span><br><span class="line">    child_text &#x3D; child_resp.text</span><br><span class="line">    # 从子页面中拿到图片的下载路径</span><br><span class="line">    child &#x3D; BeautifulSoup(child_text, &quot;html.parser&quot;)</span><br><span class="line">    p &#x3D; child.find(&quot;p&quot;, align&#x3D;&quot;center&quot;)</span><br><span class="line">    img &#x3D; p.find(&quot;img&quot;)</span><br><span class="line">    src &#x3D; img.get(&quot;src&quot;)</span><br><span class="line">    # 下载图片</span><br><span class="line">    img_resp &#x3D; requests.get(src)</span><br><span class="line">    # img_resp.content  # 这里拿到的是字节</span><br><span class="line">    img_name &#x3D; src.split(&quot;&#x2F;&quot;)[-1]  # 拿到url中的最后一个 &#x2F; 以后的内容-1代表最后一个</span><br><span class="line">    with open(&quot;img&#x2F;&quot;+img_name, mode&#x3D;&quot;wb&quot;) as f:</span><br><span class="line">        f.write(img_resp.content)  # 图片内容写入文件</span><br><span class="line"></span><br><span class="line">    print(&quot;正在下载&quot;, img_name)</span><br><span class="line">    time.sleep(1) #停1秒</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(&quot;下载完了&quot;)</span><br></pre></td></tr></table></figure>
+<!-- <h1>lxml<h1> -->
+
+
+
+</h1></h1>]]></content>
+  </entry>
+  <entry>
+    <title>爬虫 cookie(吃牢饭集合)</title>
+    <url>/reptile-cookie.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="headers中携带cookie"><a href="#headers中携带cookie" class="headerlink" title="headers中携带cookie"></a>headers中携带cookie</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;github.com&#x2F;sdqOS&#39;</span><br><span class="line"></span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.72 Safari&#x2F;537.36&quot;,</span><br><span class="line">    &quot;Cookie&quot;: &quot;_octo&#x3D;GH1.1.1829904439.1611247247; _device_id&#x3D;326c46400086ed13ec278dc836662948; _locale&#x3D;ko; _locale_experiment&#x3D;ko; tz&#x3D;Asia%2FShanghai; has_recent_activity&#x3D;1; user_session&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz&#x3D;Asia%2FShanghai; color_mode&#x3D;%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in&#x3D;yes; dotcom_user&#x3D;sdqOS; _gh_sess&#x3D;l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">respinse &#x3D; requests.get(url, headers&#x3D;headers,)</span><br><span class="line"></span><br><span class="line"># 看看是给谁发请求</span><br><span class="line">print(respinse.url)</span><br><span class="line"></span><br><span class="line">with open(&#39;github.html&#39;, &#39;wb&#39;)as f:</span><br><span class="line">    f.write(respinse.content)</span><br></pre></td></tr></table></figure>
+<p>#构建cookie字典</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;github.com&#x2F;sdqOS&#39;</span><br><span class="line"></span><br><span class="line"># 构造请求头字典</span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.72 Safari&#x2F;537.36&quot;,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">temp &#x3D; &quot;_octo&#x3D;GH1.1.1829904439.1611247247; _device_id&#x3D;326c46400086ed13ec278dc836662948; _locale&#x3D;ko; _locale_experiment&#x3D;ko; tz&#x3D;Asia%2FShanghai; has_recent_activity&#x3D;1; user_session&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz&#x3D;Asia%2FShanghai; color_mode&#x3D;%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in&#x3D;yes; dotcom_user&#x3D;sdqOS; _gh_sess&#x3D;l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cookie_list &#x3D; temp.split(&#39;; &#39;)</span><br><span class="line"></span><br><span class="line"># 熟练方案</span><br><span class="line">cookies &#x3D; &#123; cookie.split(&#39;&#x3D;&#39;)[0]:cookie.split(&#39;&#x3D;&#39;)[-1] for cookie in cookie_list&#125;</span><br><span class="line"></span><br><span class="line"># 稳妥方案</span><br><span class="line"># cookies &#x3D; &#123;&#125;</span><br><span class="line"></span><br><span class="line"># for cookie in cookie_list:</span><br><span class="line">#     cookies[cookie.split(&#39;&#x3D;&#39;)[0]] &#x3D; cookie.split(&#39;&#x3D;&#39;)[-1]</span><br><span class="line"></span><br><span class="line"># print(cookies)</span><br><span class="line"></span><br><span class="line"># # 构造cookie字典</span><br><span class="line"></span><br><span class="line">response &#x3D; requests.get(url, headers&#x3D;headers,cookies&#x3D;cookies)</span><br><span class="line"></span><br><span class="line"># 看看是给谁发请求</span><br><span class="line">print(response.url)</span><br><span class="line"></span><br><span class="line">with open(&#39;github3.html&#39;, &#39;wb&#39;)as f:</span><br><span class="line">    f.write(response.content)</span><br></pre></td></tr></table></figure>
+<h1 id="cookieJar对象转换成cookie字典方法"><a href="#cookieJar对象转换成cookie字典方法" class="headerlink" title="cookieJar对象转换成cookie字典方法"></a>cookieJar对象转换成cookie字典方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;www.baidu.com&#39;</span><br><span class="line"></span><br><span class="line"># 设置(timeout)访问时长为3秒, 然后就断开</span><br><span class="line">response &#x3D; response.get(url, timeout&#x3D;3)</span><br><span class="line"></span><br><span class="line">print(response.cookies)</span><br><span class="line"></span><br><span class="line"># 将对象转字典</span><br><span class="line">dict_cookie &#x3D; requests.utils.dict_from_cookiejar(response.cookies)</span><br><span class="line">print(dict_cookie)</span><br><span class="line"></span><br><span class="line"># 将字典转换为对象</span><br><span class="line">jar_cookies &#x3D; requests.utils.cookiejar_from_dict(dict_cookies)</span><br><span class="line">print(jar_cookies)</span><br></pre></td></tr></table></figure>
+<!--副作用丢失域名 这个不要紧我们自己知道这个cookie对应哪个域名的-->
+]]></content>
+  </entry>
+  <entry>
     <title>爬虫 http和https(吃牢饭集合)</title>
     <url>/reptile-http-https.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -1890,6 +1890,102 @@ python数据类型
 
 <p><strong>可以打开浏览器访问一个url, 右键检查, 点击network, 点选一个url, 查看http协议的形式</strong></p>
 <h1 id="HTTPS因为要加密缘故相比HTTP较慢一些-性能低一些-但是比HTTP更安全"><a href="#HTTPS因为要加密缘故相比HTTP较慢一些-性能低一些-但是比HTTP更安全" class="headerlink" title="HTTPS因为要加密缘故相比HTTP较慢一些,性能低一些, 但是比HTTP更安全"></a>HTTPS因为要加密缘故相比HTTP较慢一些,性能低一些, 但是比HTTP更安全</h1>]]></content>
+  </entry>
+  <entry>
+    <title>爬虫 jsonpath模块(吃牢饭集合)</title>
+    <url>/reptile-jsonpath.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="jsonpath模块"><a href="#jsonpath模块" class="headerlink" title="jsonpath模块"></a>jsonpath模块</h1><p><strong>使用场景: 例如多层嵌套的复杂字典, 要根据key和下标来批量提取value就可以用到jsonpath模块</strong></p>
+<h3 id="jsonpath模块的安装"><a href="#jsonpath模块的安装" class="headerlink" title="jsonpath模块的安装"></a>jsonpath模块的安装</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip install jsonpath</span><br></pre></td></tr></table></figure>
+<h1 id="提取数据方法"><a href="#提取数据方法" class="headerlink" title="提取数据方法"></a>提取数据方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from jsonpath import jsonpath</span><br><span class="line">ret &#x3D; jsonpath(a,&#39;jsonpath语法规则字符串&#39;)</span><br></pre></td></tr></table></figure>
+<h1 id="语法规则"><a href="#语法规则" class="headerlink" title="语法规则"></a>语法规则</h1><table>
+<thead>
+<tr>
+<th align="center">jsonpath</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$</td>
+<td align="center">根节点</td>
+</tr>
+<tr>
+<td align="center">@</td>
+<td align="center">现行节点</td>
+</tr>
+<tr>
+<td align="center">. or []</td>
+<td align="center">取子节点</td>
+</tr>
+<tr>
+<td align="center">n/a</td>
+<td align="center">取父节点, jsonpath未支持</td>
+</tr>
+<tr>
+<td align="center">..</td>
+<td align="center">就是不管位置, 选择所有符合条件的条件</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">匹配所有元素节点</td>
+</tr>
+<tr>
+<td align="center">n/a</td>
+<td align="center">根据属性访问, json不支持, 因为json是个Key-value递归结构, 不需要属性访问</td>
+</tr>
+<tr>
+<td align="center">[]</td>
+<td align="center">迭代器标准(可以在里边做简单的迭代操作, 如数组下标, 根据内容选值等)</td>
+</tr>
+<tr>
+<td align="center">[,]</td>
+<td align="center">支持迭代器中做多选</td>
+</tr>
+<tr>
+<td align="center">?()</td>
+<td align="center">支持过滤操作</td>
+</tr>
+<tr>
+<td align="center">()</td>
+<td align="center">支持过表达式计算</td>
+</tr>
+<tr>
+<td align="center">n/a</td>
+<td align="center">分组, jsonpath不支持</td>
+</tr>
+</tbody></table>
+<p><strong>常用的</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">常用jsonpath</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$</td>
+<td align="center">根节点(最外层大括号)</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td align="center">子节点</td>
+</tr>
+<tr>
+<td align="center">..</td>
+<td align="center">子孙节点(内部任意位置, 选择所有符合条件的条件)</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">匹配所有元素节点</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import jsonpath</span><br><span class="line">import json</span><br><span class="line"></span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.72 Safari&#x2F;537.36&quot;</span><br><span class="line">&#125;</span><br><span class="line">response &#x3D; requests.get(&#39;https:&#x2F;&#x2F;www.lagou.com&#x2F;lbs&#x2F;getAllCitySearchLabels.json&#39;,headers&#x3D;headers)</span><br><span class="line"></span><br><span class="line">dict_data &#x3D; json.loads(response.content)</span><br><span class="line"></span><br><span class="line">print(jsonpath.jsonpath(dict_data,&#39;$..name&#39;))</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
   </entry>
   <entry>
     <title>爬虫 requests模块(吃牢饭集合)</title>
@@ -2000,102 +2096,6 @@ python数据类型
 </ul>
 <p><strong>使用方法 注意: sesson对象发送get或post请求参数, 与reques模块发送请求的参数完全一致</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">session &#x3D; requests.session() #实例化session对象</span><br><span class="line"></span><br><span class="line">response &#x3D; session.get(url, headers, ...)</span><br><span class="line"></span><br><span class="line">response &#x3D; session.post(url, data, ...)</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-  </entry>
-  <entry>
-    <title>爬虫 jsonpath模块(吃牢饭集合)</title>
-    <url>/reptile-jsonpath.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="jsonpath模块"><a href="#jsonpath模块" class="headerlink" title="jsonpath模块"></a>jsonpath模块</h1><p><strong>使用场景: 例如多层嵌套的复杂字典, 要根据key和下标来批量提取value就可以用到jsonpath模块</strong></p>
-<h3 id="jsonpath模块的安装"><a href="#jsonpath模块的安装" class="headerlink" title="jsonpath模块的安装"></a>jsonpath模块的安装</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip install jsonpath</span><br></pre></td></tr></table></figure>
-<h1 id="提取数据方法"><a href="#提取数据方法" class="headerlink" title="提取数据方法"></a>提取数据方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from jsonpath import jsonpath</span><br><span class="line">ret &#x3D; jsonpath(a,&#39;jsonpath语法规则字符串&#39;)</span><br></pre></td></tr></table></figure>
-<h1 id="语法规则"><a href="#语法规则" class="headerlink" title="语法规则"></a>语法规则</h1><table>
-<thead>
-<tr>
-<th align="center">jsonpath</th>
-<th align="center">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">$</td>
-<td align="center">根节点</td>
-</tr>
-<tr>
-<td align="center">@</td>
-<td align="center">现行节点</td>
-</tr>
-<tr>
-<td align="center">. or []</td>
-<td align="center">取子节点</td>
-</tr>
-<tr>
-<td align="center">n/a</td>
-<td align="center">取父节点, jsonpath未支持</td>
-</tr>
-<tr>
-<td align="center">..</td>
-<td align="center">就是不管位置, 选择所有符合条件的条件</td>
-</tr>
-<tr>
-<td align="center">*</td>
-<td align="center">匹配所有元素节点</td>
-</tr>
-<tr>
-<td align="center">n/a</td>
-<td align="center">根据属性访问, json不支持, 因为json是个Key-value递归结构, 不需要属性访问</td>
-</tr>
-<tr>
-<td align="center">[]</td>
-<td align="center">迭代器标准(可以在里边做简单的迭代操作, 如数组下标, 根据内容选值等)</td>
-</tr>
-<tr>
-<td align="center">[,]</td>
-<td align="center">支持迭代器中做多选</td>
-</tr>
-<tr>
-<td align="center">?()</td>
-<td align="center">支持过滤操作</td>
-</tr>
-<tr>
-<td align="center">()</td>
-<td align="center">支持过表达式计算</td>
-</tr>
-<tr>
-<td align="center">n/a</td>
-<td align="center">分组, jsonpath不支持</td>
-</tr>
-</tbody></table>
-<p><strong>常用的</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">常用jsonpath</th>
-<th align="center">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">$</td>
-<td align="center">根节点(最外层大括号)</td>
-</tr>
-<tr>
-<td align="center">.</td>
-<td align="center">子节点</td>
-</tr>
-<tr>
-<td align="center">..</td>
-<td align="center">子孙节点(内部任意位置, 选择所有符合条件的条件)</td>
-</tr>
-<tr>
-<td align="center">*</td>
-<td align="center">匹配所有元素节点</td>
-</tr>
-</tbody></table>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import jsonpath</span><br><span class="line">import json</span><br><span class="line"></span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.72 Safari&#x2F;537.36&quot;</span><br><span class="line">&#125;</span><br><span class="line">response &#x3D; requests.get(&#39;https:&#x2F;&#x2F;www.lagou.com&#x2F;lbs&#x2F;getAllCitySearchLabels.json&#39;,headers&#x3D;headers)</span><br><span class="line"></span><br><span class="line">dict_data &#x3D; json.loads(response.content)</span><br><span class="line"></span><br><span class="line">print(jsonpath.jsonpath(dict_data,&#39;$..name&#39;))</span><br></pre></td></tr></table></figure>
 
 
 
@@ -2440,60 +2440,6 @@ option && myChart.setOption(option);
 </script> -->]]></content>
   </entry>
   <entry>
-    <title>爬虫 数据提取(吃牢饭集合)</title>
-    <url>/reptile-Extraction.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="响应内容分类"><a href="#响应内容分类" class="headerlink" title="响应内容分类"></a>响应内容分类</h1><h2 id="结构化的响应内容"><a href="#结构化的响应内容" class="headerlink" title="结构化的响应内容"></a>结构化的响应内容</h2><h3 id="json字符串-高频出现"><a href="#json字符串-高频出现" class="headerlink" title="json字符串(高频出现)"></a>json字符串(高频出现)</h3><ul>
-<li>可以使用re,json等模块来提取特定数据</li>
-</ul>
-<h3 id="xml数据-低频出现"><a href="#xml数据-低频出现" class="headerlink" title="xml数据(低频出现)"></a>xml数据(低频出现)</h3><ul>
-<li>可以使用re,lxml等模块来提取特定数据</li>
-</ul>
-<h2 id="非结构化的响应内容"><a href="#非结构化的响应内容" class="headerlink" title="非结构化的响应内容"></a>非结构化的响应内容</h2><h3 id="html字符串"><a href="#html字符串" class="headerlink" title="html字符串"></a>html字符串</h3><ul>
-<li>可以使用re,lxml等模块来提取特定数据</li>
-</ul>
-<h1 id="xml与html区别"><a href="#xml与html区别" class="headerlink" title="xml与html区别"></a>xml与html区别</h1><table>
-<thead>
-<tr>
-<th align="center">数据格式</th>
-<th align="center">描述</th>
-<th align="center">设计目标</th>
-<th align="center">个人总结</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">XML</td>
-<td align="center">Extensible Markup Language(可扩展标记语言)</td>
-<td align="center">被设计为传输和存储数据, 其焦点是数据的内容</td>
-<td align="center">xml传输和储存数据</td>
-</tr>
-<tr>
-<td align="center">HTML</td>
-<td align="center">HyperText Markup Language(超文本标记语言)</td>
-<td align="center">显示数据已经然后更好显示数据</td>
-<td align="center">html展示数据</td>
-</tr>
-</tbody></table>
-<h2 id="xml"><a href="#xml" class="headerlink" title="xml"></a>xml</h2><ul>
-<li>可扩展标记语言</li>
-<li>为了传输和储存数据, 侧重点是在于数据内容本身</li>
-<li>xml是一种可扩展标记语言, 样子和html很像, 功能更专注对传输和储存数据</li>
-</ul>
-<p>_</p>
-<h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><ul>
-<li>超文本记语言</li>
-<li>为了更好的显示数据, 侧重点是为显示</li>
-<li>html是显示效果更好, 用于展示数据</li>
-</ul>
-<h1 id="常用的数据解析方法"><a href="#常用的数据解析方法" class="headerlink" title="常用的数据解析方法"></a>常用的数据解析方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">                                          &#x2F;   json模块</span><br><span class="line">                                &#x2F;   json |</span><br><span class="line">                               &#x2F;          \   jsonpath模块</span><br><span class="line">               数据化数据      &#x2F;</span><br><span class="line">           &#x2F;￣￣￣￣￣￣￣￣￣￣\</span><br><span class="line">          &#x2F;                     \         &#x2F;   re模块    正则语法</span><br><span class="line">         &#x2F;                       \  xml  |</span><br><span class="line">        &#x2F;                                 \   lxml模块  xpath语法</span><br><span class="line">       &#x2F;                                 </span><br><span class="line">数据解析</span><br><span class="line">       \ </span><br><span class="line">        \                                 &#x2F;   re模块    正则语法         </span><br><span class="line">         \                               &#x2F;    lxml模块  xpath语法</span><br><span class="line">          \                             &#x2F;</span><br><span class="line">           \_____________________ html |      beautifulsoup  xpath语法 正则语法 css选择器</span><br><span class="line">               非结构化数据              \     </span><br><span class="line">                                         \</span><br><span class="line">                                          \   pyquery   css选择器</span><br></pre></td></tr></table></figure>
-
-<h1 id="jsonpath模块"><a href="#jsonpath模块" class="headerlink" title="jsonpath模块"></a>jsonpath模块</h1><p><a href="https://sdq3.gitee.io/reptile-jsonpath.html">详细说明</a></p>
-<h1 id="lxml模块"><a href="#lxml模块" class="headerlink" title="lxml模块"></a>lxml模块</h1><p><a href="https://sdq3.gitee.io/reptile-xpath.html">详细说明</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>爬虫 报文(吃牢饭集合)</title>
     <url>/reptile-message.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -2607,6 +2553,60 @@ option && myChart.setOption(option);
 ]]></content>
   </entry>
   <entry>
+    <title>爬虫 数据提取(吃牢饭集合)</title>
+    <url>/reptile-Extraction.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="响应内容分类"><a href="#响应内容分类" class="headerlink" title="响应内容分类"></a>响应内容分类</h1><h2 id="结构化的响应内容"><a href="#结构化的响应内容" class="headerlink" title="结构化的响应内容"></a>结构化的响应内容</h2><h3 id="json字符串-高频出现"><a href="#json字符串-高频出现" class="headerlink" title="json字符串(高频出现)"></a>json字符串(高频出现)</h3><ul>
+<li>可以使用re,json等模块来提取特定数据</li>
+</ul>
+<h3 id="xml数据-低频出现"><a href="#xml数据-低频出现" class="headerlink" title="xml数据(低频出现)"></a>xml数据(低频出现)</h3><ul>
+<li>可以使用re,lxml等模块来提取特定数据</li>
+</ul>
+<h2 id="非结构化的响应内容"><a href="#非结构化的响应内容" class="headerlink" title="非结构化的响应内容"></a>非结构化的响应内容</h2><h3 id="html字符串"><a href="#html字符串" class="headerlink" title="html字符串"></a>html字符串</h3><ul>
+<li>可以使用re,lxml等模块来提取特定数据</li>
+</ul>
+<h1 id="xml与html区别"><a href="#xml与html区别" class="headerlink" title="xml与html区别"></a>xml与html区别</h1><table>
+<thead>
+<tr>
+<th align="center">数据格式</th>
+<th align="center">描述</th>
+<th align="center">设计目标</th>
+<th align="center">个人总结</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">XML</td>
+<td align="center">Extensible Markup Language(可扩展标记语言)</td>
+<td align="center">被设计为传输和存储数据, 其焦点是数据的内容</td>
+<td align="center">xml传输和储存数据</td>
+</tr>
+<tr>
+<td align="center">HTML</td>
+<td align="center">HyperText Markup Language(超文本标记语言)</td>
+<td align="center">显示数据已经然后更好显示数据</td>
+<td align="center">html展示数据</td>
+</tr>
+</tbody></table>
+<h2 id="xml"><a href="#xml" class="headerlink" title="xml"></a>xml</h2><ul>
+<li>可扩展标记语言</li>
+<li>为了传输和储存数据, 侧重点是在于数据内容本身</li>
+<li>xml是一种可扩展标记语言, 样子和html很像, 功能更专注对传输和储存数据</li>
+</ul>
+<p>_</p>
+<h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><ul>
+<li>超文本记语言</li>
+<li>为了更好的显示数据, 侧重点是为显示</li>
+<li>html是显示效果更好, 用于展示数据</li>
+</ul>
+<h1 id="常用的数据解析方法"><a href="#常用的数据解析方法" class="headerlink" title="常用的数据解析方法"></a>常用的数据解析方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">                                          &#x2F;   json模块</span><br><span class="line">                                &#x2F;   json |</span><br><span class="line">                               &#x2F;          \   jsonpath模块</span><br><span class="line">               数据化数据      &#x2F;</span><br><span class="line">           &#x2F;￣￣￣￣￣￣￣￣￣￣\</span><br><span class="line">          &#x2F;                     \         &#x2F;   re模块    正则语法</span><br><span class="line">         &#x2F;                       \  xml  |</span><br><span class="line">        &#x2F;                                 \   lxml模块  xpath语法</span><br><span class="line">       &#x2F;                                 </span><br><span class="line">数据解析</span><br><span class="line">       \ </span><br><span class="line">        \                                 &#x2F;   re模块    正则语法         </span><br><span class="line">         \                               &#x2F;    lxml模块  xpath语法</span><br><span class="line">          \                             &#x2F;</span><br><span class="line">           \_____________________ html |      beautifulsoup  xpath语法 正则语法 css选择器</span><br><span class="line">               非结构化数据              \     </span><br><span class="line">                                         \</span><br><span class="line">                                          \   pyquery   css选择器</span><br></pre></td></tr></table></figure>
+
+<h1 id="jsonpath模块"><a href="#jsonpath模块" class="headerlink" title="jsonpath模块"></a>jsonpath模块</h1><p><a href="https://sdq3.gitee.io/reptile-jsonpath.html">详细说明</a></p>
+<h1 id="lxml模块"><a href="#lxml模块" class="headerlink" title="lxml模块"></a>lxml模块</h1><p><a href="https://sdq3.gitee.io/reptile-xpath.html">详细说明</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>爬虫 概念(牢饭吃到饱)</title>
     <url>/reptile-concept.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -2654,16 +2654,6 @@ option && myChart.setOption(option);
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.*          贪婪匹配      说白了就是尽可能多的匹配</span><br><span class="line"></span><br><span class="line">.*?         惰性匹配      说白了就是尽可能少的匹配</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
-    <title>爬虫 爬小说(牢饭吃到饱)未完待续</title>
-    <url>/reptile-novel.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-
-<h1 id="爬小说的详细步骤"><a href="#爬小说的详细步骤" class="headerlink" title="爬小说的详细步骤"></a>爬小说的详细步骤</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import time</span><br><span class="line">feom bs4</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>爬虫 比Python功能更加强大的node.js简介(牢饭吃到饱)未完待续</title>
     <url>/reptile-python%E2%80%94node.js.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -2674,6 +2664,16 @@ option && myChart.setOption(option);
 ]]></content>
   </entry>
   <entry>
+    <title>爬虫 爬小说(牢饭吃到饱)未完待续</title>
+    <url>/reptile-novel.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+
+<h1 id="爬小说的详细步骤"><a href="#爬小说的详细步骤" class="headerlink" title="爬小说的详细步骤"></a>爬小说的详细步骤</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import time</span><br><span class="line">feom bs4</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>爬虫 爬猫猫图片(牢饭吃到饱)</title>
     <url>/reptile-mao.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -2681,106 +2681,6 @@ option && myChart.setOption(option);
 
 <h1 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h1><p><strong>打开这个<a href="http://www.ichong123.com/maomao">网址</a></strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 所有用到的库</span><br><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line"># 要爬的链接</span><br><span class="line">url &#x3D; &quot;http:&#x2F;&#x2F;www.ichong123.com&#x2F;maomao&quot;</span><br><span class="line"></span><br><span class="line"># 请求头</span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.72 Safari&#x2F;537.36&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">paqv &#x3D; requests.get( url&#x3D;url, headers&#x3D;headers )</span><br><span class="line"></span><br><span class="line"># 根据网站的编码来换</span><br><span class="line">paqv.encoding &#x3D; &#39;utf-8&#39;</span><br><span class="line"></span><br><span class="line"># xiazai &#x3D; paqv.text</span><br><span class="line"></span><br><span class="line"># print(xiazai)</span><br><span class="line"></span><br><span class="line"># 正则表达式 re.S单行匹配(正则解析比较多) re.M多行匹配()</span><br><span class="line">sdq1 &#x3D; re.compile(r&#39;&lt;div class&#x3D;&quot;pet_s&quot;&gt;.*?&lt;img src&#x3D;(?P&lt;mao&gt;.*?)width&#39;,re.S)</span><br><span class="line">paq &#x3D; sdq1.finditer(paqv.text)</span><br><span class="line">a &#x3D; 1</span><br><span class="line"># 用循环来依次下载</span><br><span class="line">for it in paq:</span><br><span class="line">    time.sleep(3)  #休眠3秒</span><br><span class="line">    ul &#x3D; it.group(&#39;mao&#39;)</span><br><span class="line">    ul2 &#x3D; eval(ul)  #eval()函数用来执行一个字符串表达式，并返回表达式的值</span><br><span class="line">    sdz &#x3D; requests.get(ul2)</span><br><span class="line"></span><br><span class="line">    # 图片文件保存 选择路径</span><br><span class="line">    with open(f&quot;E:&#x2F;百度文档&#x2F;mao&#x2F;&#123;a&#125;.jpg&quot;,&quot;wb&quot;) as f:</span><br><span class="line">        f.write(sdz.content)</span><br><span class="line">        f.close()</span><br><span class="line">        a+&#x3D;1</span><br><span class="line">print(&quot;猫猫下载完了&quot;)</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
-    <title>爬虫 请求头和响应头(吃牢饭集合)</title>
-    <url>/reptile-header.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="请求头"><a href="#请求头" class="headerlink" title="请求头"></a>请求头</h1><h1 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h1><p><strong>301是永久重定向, 之后的请求中客户端应该使用新的URI(即, 可以被浏览器缓存), 对于POST/PUT/DELETE请求 客户端不应该自动的重定向</strong></p>
-<p><strong>302是由于未知原因重定向, 之后的请求中客户端不应该用新的URI, 对于POST/PUT/DELETE请求 客户端不应该自动重定向</strong></p>
-<p><strong>303是由于未知原因重定向, 之后的请求中客户端不应该用新的URI, 对于POST/PUT/DELETE请求 客户端应该使用GET请求来替代</strong></p>
-<p><strong>307是临时重定向, 之后资源可能会回到这个位置, 之后的请求中客户端应该使用旧的URI, 对于POST/PUT/DELETE请求 客户端不应该自动重定向</strong></p>
-<!-- # 查看报文
-
-**点击Request Headers旁边的view parsed**
-
-**注意: view parsed没点之前其实是给你优化过的**
-
-# 报文格式
-
-GET|HTTP|1.1|Host|
--|-|-|-|
-方法 | 路径 | 协议版本 |发送请求的域名
-
-<ul>
-<li>Content-Type</li>
-<li>Host (主机和端口号)</li>
-<li>Connection (链接类型/常链接)</li>
-<li>UPgrade-Insecure-Requests (升级为HTTPS请求)</li>
-<li>User-Agent (用户代理 提供系统信息和浏览器信息)</li>
-<li>Referer (页面跳转处)</li>
-<li>Cookie (Cookie数据非常重要,)</li>
-<li>Authorization (表示HTTP协议中需要认证资源的认证信息, 例如用于jwt认证)</li>
-</ul>
-
-**请求头表格形式**
-
- 特别关注|以下几个请求头|| |
--|-|-|-|
-Host | 域名 |  |
-Connection | 常链接 |  |
-UPgrade-Insecure-Requests | 升级为HTTPS请求 |  |
-User-Agent | 用户代理|  |
-Refrer | 页面跳转处, 防盗链 |  |
-Cookie | 保持状态, 用于跳过账号密码 |  |
-
-**响应头表格形式**
-
- 特别关注|以下几个请求头|| |
--|-|-|-|
-HTTP/1.1 | 协议 |  |
-200 | 状态码 |  |
-Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密码 |  |
-
-# 状态码
-
-**常见的状态码 (了解就行)**
-
-<ul>
-<li>200: 成功</li>
-<li>302: 跳转, 新的url在响应的Location头中给出</li>
-<li>303: 浏览器对于POST的响应进行重新定向至新的url</li>
-<li>307: 浏览器对应GET响应进行重新定向至新的url</li>
-<li>403: 资源不可用; 服务器理解客户的请求, 但拒绝处理它(没有权限)</li>
-<li>404: 找不到资源</li>
-<li>500: 服务器内部错误</li>
-<li>503: 服务器又有维护或者负载过重未能应答, 在响应中可能会携带Retry-After响应头; 有可能是因为爬虫频繁访问url, 使得服务器忽视爬虫的请求, 最终返回503响应状态码</li>
-</ul>
-
-**常见状态码表格形式 (了解就行)**
-
- 状态码|代表意思|| |
--|-|-|-|
-200 | 成功 |  |
-302 | 跳转, 新的url在响应的Location头中给出 |  |
-303 | 浏览器对于POST的响应进行重新定向至新的url |  |
-307 | 浏览器对应GET响应进行重新定向至新的url |  |
-403 | 资源不可用; 服务器理解客户的请求, 但拒绝处理它(没有权限) |  |
-404 | 找不到资源 |  |
-500 | 服务器内部错误 |  |
-503 | 服务器又有维护或者负载过重未能应答, 在响应中可能会携带Retry-After响应头; 有可能是因为爬虫频繁访问url, 使得服务器忽视爬虫的请求, 最终返回503响应状态码 |  |
-
-**总结 所有的状态码都不可信, 一切以是否从抓包得到的响应中获得到的数据为准 network中抓包得到的源码才是判断依据, elements中的源码是渲染之后的源码**
-
- 请求过程||
--|-|
- 浏览器| 发送所有请求, 进行渲染 |  
-  爬虫| 发送所有请求, 不会渲染 |  
-
-
- 请页面可分为||
--|-|
-骨骼文件| html静态文件 |  
-肌肉文件| js/ajax请求 | 
-皮肤文件| css/font/图片等 |  
-
-**抓包过程: 根据发送请求的流程分别在 骨骼 / 肌肉 / 皮肤 响应中查找数据**
-
-
- -->
 ]]></content>
   </entry>
   <entry>
@@ -2917,6 +2817,106 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 ]]></content>
   </entry>
   <entry>
+    <title>爬虫 请求头和响应头(吃牢饭集合)</title>
+    <url>/reptile-header.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="请求头"><a href="#请求头" class="headerlink" title="请求头"></a>请求头</h1><h1 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h1><p><strong>301是永久重定向, 之后的请求中客户端应该使用新的URI(即, 可以被浏览器缓存), 对于POST/PUT/DELETE请求 客户端不应该自动的重定向</strong></p>
+<p><strong>302是由于未知原因重定向, 之后的请求中客户端不应该用新的URI, 对于POST/PUT/DELETE请求 客户端不应该自动重定向</strong></p>
+<p><strong>303是由于未知原因重定向, 之后的请求中客户端不应该用新的URI, 对于POST/PUT/DELETE请求 客户端应该使用GET请求来替代</strong></p>
+<p><strong>307是临时重定向, 之后资源可能会回到这个位置, 之后的请求中客户端应该使用旧的URI, 对于POST/PUT/DELETE请求 客户端不应该自动重定向</strong></p>
+<!-- # 查看报文
+
+**点击Request Headers旁边的view parsed**
+
+**注意: view parsed没点之前其实是给你优化过的**
+
+# 报文格式
+
+GET|HTTP|1.1|Host|
+-|-|-|-|
+方法 | 路径 | 协议版本 |发送请求的域名
+
+<ul>
+<li>Content-Type</li>
+<li>Host (主机和端口号)</li>
+<li>Connection (链接类型/常链接)</li>
+<li>UPgrade-Insecure-Requests (升级为HTTPS请求)</li>
+<li>User-Agent (用户代理 提供系统信息和浏览器信息)</li>
+<li>Referer (页面跳转处)</li>
+<li>Cookie (Cookie数据非常重要,)</li>
+<li>Authorization (表示HTTP协议中需要认证资源的认证信息, 例如用于jwt认证)</li>
+</ul>
+
+**请求头表格形式**
+
+ 特别关注|以下几个请求头|| |
+-|-|-|-|
+Host | 域名 |  |
+Connection | 常链接 |  |
+UPgrade-Insecure-Requests | 升级为HTTPS请求 |  |
+User-Agent | 用户代理|  |
+Refrer | 页面跳转处, 防盗链 |  |
+Cookie | 保持状态, 用于跳过账号密码 |  |
+
+**响应头表格形式**
+
+ 特别关注|以下几个请求头|| |
+-|-|-|-|
+HTTP/1.1 | 协议 |  |
+200 | 状态码 |  |
+Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密码 |  |
+
+# 状态码
+
+**常见的状态码 (了解就行)**
+
+<ul>
+<li>200: 成功</li>
+<li>302: 跳转, 新的url在响应的Location头中给出</li>
+<li>303: 浏览器对于POST的响应进行重新定向至新的url</li>
+<li>307: 浏览器对应GET响应进行重新定向至新的url</li>
+<li>403: 资源不可用; 服务器理解客户的请求, 但拒绝处理它(没有权限)</li>
+<li>404: 找不到资源</li>
+<li>500: 服务器内部错误</li>
+<li>503: 服务器又有维护或者负载过重未能应答, 在响应中可能会携带Retry-After响应头; 有可能是因为爬虫频繁访问url, 使得服务器忽视爬虫的请求, 最终返回503响应状态码</li>
+</ul>
+
+**常见状态码表格形式 (了解就行)**
+
+ 状态码|代表意思|| |
+-|-|-|-|
+200 | 成功 |  |
+302 | 跳转, 新的url在响应的Location头中给出 |  |
+303 | 浏览器对于POST的响应进行重新定向至新的url |  |
+307 | 浏览器对应GET响应进行重新定向至新的url |  |
+403 | 资源不可用; 服务器理解客户的请求, 但拒绝处理它(没有权限) |  |
+404 | 找不到资源 |  |
+500 | 服务器内部错误 |  |
+503 | 服务器又有维护或者负载过重未能应答, 在响应中可能会携带Retry-After响应头; 有可能是因为爬虫频繁访问url, 使得服务器忽视爬虫的请求, 最终返回503响应状态码 |  |
+
+**总结 所有的状态码都不可信, 一切以是否从抓包得到的响应中获得到的数据为准 network中抓包得到的源码才是判断依据, elements中的源码是渲染之后的源码**
+
+ 请求过程||
+-|-|
+ 浏览器| 发送所有请求, 进行渲染 |  
+  爬虫| 发送所有请求, 不会渲染 |  
+
+
+ 请页面可分为||
+-|-|
+骨骼文件| html静态文件 |  
+肌肉文件| js/ajax请求 | 
+皮肤文件| css/font/图片等 |  
+
+**抓包过程: 根据发送请求的流程分别在 骨骼 / 肌肉 / 皮肤 响应中查找数据**
+
+
+ -->
+]]></content>
+  </entry>
+  <entry>
     <title>百度搜索技巧</title>
     <url>/baidu.html</url>
     <content><![CDATA[<p><strong>技巧</strong></p>
@@ -2937,20 +2937,6 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 <h1 id="关键字都必须包含"><a href="#关键字都必须包含" class="headerlink" title="关键字都必须包含"></a>关键字都必须包含</h1><p>搜索关键字加 +就行了 用法: 史迪奇 +史迪仔 +是个人</p>
 <h1 id="减去想要去除的关键词"><a href="#减去想要去除的关键词" class="headerlink" title="减去想要去除的关键词"></a>减去想要去除的关键词</h1><p>搜索关键字加 -就行了 用法: 史迪奇 -不是个人</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
-    <url>/Thread-Process.html</url>
-    <content><![CDATA[<p><strong>概念</strong></p>
-<a id="more"></a>
-
-<h1 id="什么是线程-学习进程最重要的还是学习线程"><a href="#什么是线程-学习进程最重要的还是学习线程" class="headerlink" title="什么是线程(学习进程最重要的还是学习线程)"></a>什么是线程(学习进程最重要的还是学习线程)</h1><p><strong>线程就是独立执行的路径，就算在什么都不干的话，里面会有(主线程)main线程，Java里面还有个一个收垃圾的gc线程</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Thread是线程的英文</span><br></pre></td></tr></table></figure>
-
-<h1 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h1><p><strong>把程序跑起来才叫做进程，进程是执行程序的一次执行过程是一个动态的概念</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Process是进程的英文</span><br></pre></td></tr></table></figure>
-<h1 id="线程与进程到底是什么关系"><a href="#线程与进程到底是什么关系" class="headerlink" title="线程与进程到底是什么关系"></a>线程与进程到底是什么关系</h1><p><strong>一个进程里面可以包含若干个线程，一个进程里面必须要有一个线程，否则没有存在的意义</strong></p>
-<h1 id="注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行"><a href="#注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行" class="headerlink" title="注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行"></a>注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行</h1>]]></content>
   </entry>
   <entry>
     <title>私有云配置(个人笔记)</title>
@@ -3153,17 +3139,18 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 <h1 id="查看当前路径"><a href="#查看当前路径" class="headerlink" title="查看当前路径"></a>查看当前路径</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pwd</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
-    <title>跟我一起学数学</title>
-    <url>/mathematics.html</url>
-    <content><![CDATA[<p><strong>走进数学的奇妙世界</strong></p>
+    <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
+    <url>/Thread-Process.html</url>
+    <content><![CDATA[<p><strong>概念</strong></p>
 <a id="more"></a>
 
-<h1 id="高斯算法"><a href="#高斯算法" class="headerlink" title="高斯算法"></a>高斯算法</h1><p><strong>用于解决 1+2+3+4+5+6+7……一直加到n</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(首项 + 末项) * 项数 &#x2F; 2</span><br></pre></td></tr></table></figure>
+<h1 id="什么是线程-学习进程最重要的还是学习线程"><a href="#什么是线程-学习进程最重要的还是学习线程" class="headerlink" title="什么是线程(学习进程最重要的还是学习线程)"></a>什么是线程(学习进程最重要的还是学习线程)</h1><p><strong>线程就是独立执行的路径，就算在什么都不干的话，里面会有(主线程)main线程，Java里面还有个一个收垃圾的gc线程</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Thread是线程的英文</span><br></pre></td></tr></table></figure>
 
-
-<h1 id="衡量算法"><a href="#衡量算法" class="headerlink" title="衡量算法"></a>衡量算法</h1><p><strong>时间复杂度和空间复杂度</strong></p>
-]]></content>
+<h1 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h1><p><strong>把程序跑起来才叫做进程，进程是执行程序的一次执行过程是一个动态的概念</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Process是进程的英文</span><br></pre></td></tr></table></figure>
+<h1 id="线程与进程到底是什么关系"><a href="#线程与进程到底是什么关系" class="headerlink" title="线程与进程到底是什么关系"></a>线程与进程到底是什么关系</h1><p><strong>一个进程里面可以包含若干个线程，一个进程里面必须要有一个线程，否则没有存在的意义</strong></p>
+<h1 id="注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行"><a href="#注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行" class="headerlink" title="注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行"></a>注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行</h1>]]></content>
   </entry>
   <entry>
     <title>跟我一起学算法(概念章)</title>
@@ -3182,6 +3169,19 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 <p><strong>常见的时间复杂度按照从低到高的顺序，包括O(1)、O(logn)、O(n)、O(nlogn)、O(n2)等</strong></p>
 <h1 id="什么是空间复杂度"><a href="#什么是空间复杂度" class="headerlink" title="什么是空间复杂度"></a>什么是空间复杂度</h1><p><strong>空间复杂度是对一个算法在运行过程中临时占用存储空间大小的量度，用大O表示，记作S(n)=O(f(n))</strong></p>
 <p><strong>常见的空间复杂度按照从低到高的顺序，包括O(1)、O(n)、O(n2)等。其中递归算法的空间复杂度和递归深度成正比</strong></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>跟我一起学数学</title>
+    <url>/mathematics.html</url>
+    <content><![CDATA[<p><strong>走进数学的奇妙世界</strong></p>
+<a id="more"></a>
+
+<h1 id="高斯算法"><a href="#高斯算法" class="headerlink" title="高斯算法"></a>高斯算法</h1><p><strong>用于解决 1+2+3+4+5+6+7……一直加到n</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(首项 + 末项) * 项数 &#x2F; 2</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="衡量算法"><a href="#衡量算法" class="headerlink" title="衡量算法"></a>衡量算法</h1><p><strong>时间复杂度和空间复杂度</strong></p>
 ]]></content>
   </entry>
 </search>
