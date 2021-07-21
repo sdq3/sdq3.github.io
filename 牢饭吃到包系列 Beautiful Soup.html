@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>爬虫 访问百度翻译(牢饭吃到饱) -  我叫史迪奇</title>
+	<title>爬虫 Beautiful Soup(牢饭吃到饱) -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -652,10 +652,10 @@ var $main = document.querySelector('.main');
 <div class="sdq">
 	<div class="sdq-post" id="sdqPost">
 		<div class="sdq-title">
-			<h1>爬虫 访问百度翻译(牢饭吃到饱)</h1>
+			<h1>爬虫 Beautiful Soup(牢饭吃到饱)</h1>
 		</div>
 	  <div id="post" class="sdq-post-Statistics">
-            <a>2021年07月09日</a>
+            <a>2021年07月20日</a>
 		  	<a class="post-count">99 字</a>
 		
 		
@@ -667,7 +667,199 @@ var $main = document.querySelector('.main');
 <aside id="article-toc" class="fixed-toc">
     <div id="article-toc-inner">
         <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5requests"><span class="toc-text">导入requests</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%99%BE%E5%BA%A6%E7%BF%BB%E8%AF%91%E6%A1%88%E4%BE%8B"><span class="toc-text">百度翻译案例</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">Beautiful Soup4
+
+安装bs4打开cmd 输入以下内容
+1
+pip install lxml
+
+find用法1
+2
+find(&quot;标签&quot;, 属性:id class) 
+find(&quot;p&quot;, id&#x3D;&quot;sdq&quot;)
+
+find_all用法1
+2
+find(&quot;标签&quot;, 属性:id class).find_all(&quot;标签&quot;)
+find(&quot;p&quot;, id&#x3D;&quot;sdq&quot;).find_all(&quot;a&quot;)
+
+综合练习打开这个网址
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+# 导入requests和bs4库
+import requests
+from bs4 import BeautifulSoup
+import time
+
+url &#x3D; &quot;https:&#x2F;&#x2F;www.umei.cc&#x2F;bizhitupian&#x2F;weimeibizhi&#x2F;&quot;
+resp &#x3D; requests.get(url)
+resp.encoding &#x3D; &#39;utf-8&#39;  # 处理乱码
+
+# print(resp.text)
+# 把源代码交给bs
+main_page &#x3D; BeautifulSoup(resp.text, &quot;html.parser&quot;)
+alist &#x3D; main_page.find(&quot;div&quot;, class_&#x3D;&quot;TypeList&quot;).find_all(&quot;a&quot;)
+# print(alist)
+for a in alist:
+    href &#x3D; a.get(&#39;href&#39;)  # 直接通过get就可以拿到属性的值
+    # 子页面的源代码
+    child_resp &#x3D; requests.get(href)
+    child_resp.encoding &#x3D; &#39;utf-8&#39;
+    child_text &#x3D; child_resp.text
+    # 从子页面中拿到图片的下载路径
+    child &#x3D; BeautifulSoup(child_text, &quot;html.parser&quot;)
+    p &#x3D; child.find(&quot;p&quot;, align&#x3D;&quot;center&quot;)
+    img &#x3D; p.find(&quot;img&quot;)
+    src &#x3D; img.get(&quot;src&quot;)
+    # 下载图片
+    img_resp &#x3D; requests.get(src)
+    # img_resp.content  # 这里拿到的是字节
+    img_name &#x3D; src.split(&quot;&#x2F;&quot;)[-1]  # 拿到url中的最后一个 &#x2F; 以后的内容-1代表最后一个
+    with open(&quot;img&#x2F;&quot;+img_name, mode&#x3D;&quot;wb&quot;) as f:
+        f.write(img_resp.content)  # 图片内容写入文件
+
+    print(&quot;正在下载&quot;, img_name)
+    time.sleep(1) #停1秒
+
+
+print(&quot;下载完了&quot;)
+
+
+
+
+
+</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">
+
+安装bs4打开cmd 输入以下内容
+1
+pip install lxml
+
+find用法1
+2
+find(&quot;标签&quot;, 属性:id class) 
+find(&quot;p&quot;, id&#x3D;&quot;sdq&quot;)
+
+find_all用法1
+2
+find(&quot;标签&quot;, 属性:id class).find_all(&quot;标签&quot;)
+find(&quot;p&quot;, id&#x3D;&quot;sdq&quot;).find_all(&quot;a&quot;)
+
+综合练习打开这个网址
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+# 导入requests和bs4库
+import requests
+from bs4 import BeautifulSoup
+import time
+
+url &#x3D; &quot;https:&#x2F;&#x2F;www.umei.cc&#x2F;bizhitupian&#x2F;weimeibizhi&#x2F;&quot;
+resp &#x3D; requests.get(url)
+resp.encoding &#x3D; &#39;utf-8&#39;  # 处理乱码
+
+# print(resp.text)
+# 把源代码交给bs
+main_page &#x3D; BeautifulSoup(resp.text, &quot;html.parser&quot;)
+alist &#x3D; main_page.find(&quot;div&quot;, class_&#x3D;&quot;TypeList&quot;).find_all(&quot;a&quot;)
+# print(alist)
+for a in alist:
+    href &#x3D; a.get(&#39;href&#39;)  # 直接通过get就可以拿到属性的值
+    # 子页面的源代码
+    child_resp &#x3D; requests.get(href)
+    child_resp.encoding &#x3D; &#39;utf-8&#39;
+    child_text &#x3D; child_resp.text
+    # 从子页面中拿到图片的下载路径
+    child &#x3D; BeautifulSoup(child_text, &quot;html.parser&quot;)
+    p &#x3D; child.find(&quot;p&quot;, align&#x3D;&quot;center&quot;)
+    img &#x3D; p.find(&quot;img&quot;)
+    src &#x3D; img.get(&quot;src&quot;)
+    # 下载图片
+    img_resp &#x3D; requests.get(src)
+    # img_resp.content  # 这里拿到的是字节
+    img_name &#x3D; src.split(&quot;&#x2F;&quot;)[-1]  # 拿到url中的最后一个 &#x2F; 以后的内容-1代表最后一个
+    with open(&quot;img&#x2F;&quot;+img_name, mode&#x3D;&quot;wb&quot;) as f:
+        f.write(img_resp.content)  # 图片内容写入文件
+
+    print(&quot;正在下载&quot;, img_name)
+    time.sleep(1) #停1秒
+
+
+print(&quot;下载完了&quot;)
+
+
+
+
+
+</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85bs4"><span class="toc-text">安装bs4</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#find%E7%94%A8%E6%B3%95"><span class="toc-text">find用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#find-all%E7%94%A8%E6%B3%95"><span class="toc-text">find_all用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0"><span class="toc-text">综合练习</span></a></li></ol>
     </div>
 </aside>
 </div>
@@ -709,15 +901,19 @@ var $main = document.querySelector('.main');
 				<p><strong>每天一个入狱小技巧</strong></p>
 <a id="more"></a>
 
+<h1>Beautiful Soup4<h1>
 
-<h1 id="导入requests"><a href="#导入requests" class="headerlink" title="导入requests"></a>导入requests</h1><!--more-->
-<p><strong>打开cmd输入以下代码</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install requests</span><br></pre></td></tr></table></figure>
-<h1 id="百度翻译案例"><a href="#百度翻译案例" class="headerlink" title="百度翻译案例"></a>百度翻译案例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &quot;https:&#x2F;&#x2F;fanyi.baidu.com&#x2F;sug&quot;</span><br><span class="line"></span><br><span class="line">s &#x3D; input(&quot;请输入你要翻译的英文单词&quot;)</span><br><span class="line"></span><br><span class="line">dat &#x3D; &#123;</span><br><span class="line">        &quot;kw&quot;:s</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">tou &#x3D; &#123;</span><br><span class="line">    &quot;user-agent&quot;: &quot;Mozilla&#x2F;5.0 (Linux; Android 6.0; Nexus 5 Build&#x2F;MRA58N) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.85 Mobile Safari&#x2F;537.36&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">pachon &#x3D; requests.post(url,headers&#x3D;tou,data&#x3D;dat)</span><br><span class="line"></span><br><span class="line">print(pachon)</span><br><span class="line"></span><br><span class="line">print(pachon.json())</span><br><span class="line"></span><br><span class="line">pachon.close()  #断开&#x2F;关闭连接, 一定要断开</span><br></pre></td></tr></table></figure>
+<h1 id="安装bs4"><a href="#安装bs4" class="headerlink" title="安装bs4"></a>安装bs4</h1><p><strong>打开cmd 输入以下内容</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install lxml</span><br></pre></td></tr></table></figure>
+<h1 id="find用法"><a href="#find用法" class="headerlink" title="find用法"></a>find用法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find(&quot;标签&quot;, 属性:id class) </span><br><span class="line">find(&quot;p&quot;, id&#x3D;&quot;sdq&quot;)</span><br></pre></td></tr></table></figure>
+<h1 id="find-all用法"><a href="#find-all用法" class="headerlink" title="find_all用法"></a>find_all用法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find(&quot;标签&quot;, 属性:id class).find_all(&quot;标签&quot;)</span><br><span class="line">find(&quot;p&quot;, id&#x3D;&quot;sdq&quot;).find_all(&quot;a&quot;)</span><br></pre></td></tr></table></figure>
+<h1 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h1><p><strong>打开这个<a target="_blank" rel="noopener" href="https://www.umei.cc/bizhitupian/weimeibizhi/">网址</a></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"># 导入requests和bs4库</span><br><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">url &#x3D; &quot;https:&#x2F;&#x2F;www.umei.cc&#x2F;bizhitupian&#x2F;weimeibizhi&#x2F;&quot;</span><br><span class="line">resp &#x3D; requests.get(url)</span><br><span class="line">resp.encoding &#x3D; &#39;utf-8&#39;  # 处理乱码</span><br><span class="line"></span><br><span class="line"># print(resp.text)</span><br><span class="line"># 把源代码交给bs</span><br><span class="line">main_page &#x3D; BeautifulSoup(resp.text, &quot;html.parser&quot;)</span><br><span class="line">alist &#x3D; main_page.find(&quot;div&quot;, class_&#x3D;&quot;TypeList&quot;).find_all(&quot;a&quot;)</span><br><span class="line"># print(alist)</span><br><span class="line">for a in alist:</span><br><span class="line">    href &#x3D; a.get(&#39;href&#39;)  # 直接通过get就可以拿到属性的值</span><br><span class="line">    # 子页面的源代码</span><br><span class="line">    child_resp &#x3D; requests.get(href)</span><br><span class="line">    child_resp.encoding &#x3D; &#39;utf-8&#39;</span><br><span class="line">    child_text &#x3D; child_resp.text</span><br><span class="line">    # 从子页面中拿到图片的下载路径</span><br><span class="line">    child &#x3D; BeautifulSoup(child_text, &quot;html.parser&quot;)</span><br><span class="line">    p &#x3D; child.find(&quot;p&quot;, align&#x3D;&quot;center&quot;)</span><br><span class="line">    img &#x3D; p.find(&quot;img&quot;)</span><br><span class="line">    src &#x3D; img.get(&quot;src&quot;)</span><br><span class="line">    # 下载图片</span><br><span class="line">    img_resp &#x3D; requests.get(src)</span><br><span class="line">    # img_resp.content  # 这里拿到的是字节</span><br><span class="line">    img_name &#x3D; src.split(&quot;&#x2F;&quot;)[-1]  # 拿到url中的最后一个 &#x2F; 以后的内容-1代表最后一个</span><br><span class="line">    with open(&quot;img&#x2F;&quot;+img_name, mode&#x3D;&quot;wb&quot;) as f:</span><br><span class="line">        f.write(img_resp.content)  # 图片内容写入文件</span><br><span class="line"></span><br><span class="line">    print(&quot;正在下载&quot;, img_name)</span><br><span class="line">    time.sleep(1) #停1秒</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(&quot;下载完了&quot;)</span><br></pre></td></tr></table></figure>
+<!-- <h1>lxml<h1> -->
 
 
 
-
+</h1></h1>
 			  </article>
 		</div>
 		
@@ -794,7 +990,7 @@ $(window).load(function(){
         
 	
 <strong>本文链接：</strong>
-	<a href="https://sdq3.gitee.io/reptile-Baidutranslate.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;reptile-Baidutranslate.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;reptile-Baidutranslate.html</a><br>
+	<a href="https://sdq3.gitee.io/%E7%89%A2%E9%A5%AD%E5%90%83%E5%88%B0%E5%8C%85%E7%B3%BB%E5%88%97%20Beautiful%20Soup.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;%E7%89%A2%E9%A5%AD%E5%90%83%E5%88%B0%E5%8C%85%E7%B3%BB%E5%88%97%20Beautiful%20Soup.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;%E7%89%A2%E9%A5%AD%E5%90%83%E5%88%B0%E5%8C%85%E7%B3%BB%E5%88%97%20Beautiful%20Soup.html</a><br>
 </div>
 
 	  
