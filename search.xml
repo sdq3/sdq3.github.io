@@ -607,6 +607,19 @@ var tools = (function(){
 ]]></content>
   </entry>
   <entry>
+    <title>CSS 伪类选择器</title>
+    <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:first-child&#123;   //first-child意思是选中第一个</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">$        color: blue;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    p:nth-child(2)&#123;   //选中p1: 定位到父元素, 选择当前的第一个元素也就是选择当前p元素的父级元素, 选中父级元素的第一个, 并且是当前元素才生效</span><br><span class="line">$        color: yellow;   //黄色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    p:nth-of-type(2)&#123;   //nth-of-type意思是选中父类下元素的第二个类型</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span>&gt;</span>p1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span>&gt;</span>p2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span>&gt;</span>p3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇骑士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇打手<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇国王<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+]]></content>
+  </entry>
+  <entry>
     <title>CSS 三种基本选择器</title>
     <url>/CSS%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
@@ -627,30 +640,6 @@ var tools = (function(){
 ]]></content>
   </entry>
   <entry>
-    <title>CSS 伪类选择器</title>
-    <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
-    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:first-child&#123;   //first-child意思是选中第一个</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">$        color: blue;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    p:nth-child(2)&#123;   //选中p1: 定位到父元素, 选择当前的第一个元素也就是选择当前p元素的父级元素, 选中父级元素的第一个, 并且是当前元素才生效</span><br><span class="line">$        color: yellow;   //黄色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$    p:nth-of-type(2)&#123;   //nth-of-type意思是选中父类下元素的第二个类型</span><br><span class="line">$        color: red;   //红色字体</span><br><span class="line">$    &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span>&gt;</span>p1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span>&gt;</span>p2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span>&gt;</span>p3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇骑士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇打手<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇国王<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-]]></content>
-  </entry>
-  <entry>
-    <title>CSS 列表</title>
-    <url>/CSS%E5%88%97%E8%A1%A8.html</url>
-    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    ol li&#123;</span><br><span class="line">$          color: blue;</span><br><span class="line">$         &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇法师<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇战士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇辅助<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇坦克<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇刺客<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    ul li&#123;</span><br><span class="line">$        list-style: none;          //去掉原点</span><br><span class="line">$        list-style: cirle;         //空心圆</span><br><span class="line">$        list-style: decimal;       //数字</span><br><span class="line">$        list-style: square;        //正方形</span><br><span class="line">$          &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇法师<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇战士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇辅助<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇坦克<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇刺客<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    dl dd dt&#123;</span><br><span class="line">$          color: blue;</span><br><span class="line">$         &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">$      <span class="tag">&lt;<span class="name">dt</span>&gt;</span>史迪奇近战<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇战士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇辅助<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇坦克<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇刺客<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$      <span class="tag">&lt;<span class="name">dt</span>&gt;</span>史迪奇远程<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇法师<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇射手<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
     <title>CSS 层次选择器</title>
     <url>/CSS%E5%B1%82%E6%AC%A1%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
@@ -667,17 +656,15 @@ var tools = (function(){
 ]]></content>
   </entry>
   <entry>
-    <title>CSS 属性选择器(常用)</title>
-    <url>/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <title>CSS 列表</title>
+    <url>/CSS%E5%88%97%E8%A1%A8.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
 <a id="more"></a>
 
-<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$</span><br><span class="line">$  .sdq1 a&#123; </span><br><span class="line">$       float: left;  //left往左float浮动</span><br><span class="line">$       dispay: block;  //dispay规定元素应该生成的框的类型block此元素将显示为块级元素，此元素前后会带有换行符。</span><br><span class="line">$       heigh: 50px;  //heigh高度</span><br><span class="line">$       width: 50px;  //width宽度</span><br><span class="line">$       border-radius: 10px;  //border-radius圆角边框</span><br><span class="line">$       </span><br><span class="line">$       text-align: center;   //text-align对齐center剧中</span><br><span class="line">$       color: yellow;  //color文字颜色</span><br><span class="line">$       text-decoration: none;  //text-decoration下划线none不显示</span><br><span class="line">$       margin-right: 5px;    //margin-right外边距向右</span><br><span class="line">$       font: bold 20px/50px Arial;   //font设置文字的字体bold字体大小20px字体的大小50px行高Arial是一种字体</span><br><span class="line">$   &#125;</span><br><span class="line">$    //格式a[]&#123;&#125;  存在id的属性的元素  </span><br><span class="line">$   a[class*=first]&#123;        //=是绝对等于  *=是包含这个元素</span><br><span class="line">$       background: yellow;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href^=xxy]&#123;          //^=表示以什么开头     </span><br><span class="line">$       background: green;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href$=ghfgh]&#123;          //$=表示以什么结尾     </span><br><span class="line">$       background: powder;</span><br><span class="line">$   &#125;</span><br><span class="line">$    </span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxy.fgdhrth&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item first&quot;</span> <span class="attr">id</span>=<span class="string">&quot;first&quot;</span>&gt;</span>史迪奇<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪仔<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇骑士<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇国王<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇勇士<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;hh.ghfgh&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇巫师<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    ol li&#123;</span><br><span class="line">$          color: blue;</span><br><span class="line">$         &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇法师<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇战士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇辅助<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇坦克<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇刺客<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-
-
-
-]]></content>
+<h1 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    ul li&#123;</span><br><span class="line">$        list-style: none;          //去掉原点</span><br><span class="line">$        list-style: cirle;         //空心圆</span><br><span class="line">$        list-style: decimal;       //数字</span><br><span class="line">$        list-style: square;        //正方形</span><br><span class="line">$          &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇法师<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇战士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇辅助<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇坦克<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$       <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇刺客<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    dl dd dt&#123;</span><br><span class="line">$          color: blue;</span><br><span class="line">$         &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">$      <span class="tag">&lt;<span class="name">dt</span>&gt;</span>史迪奇近战<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇战士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇辅助<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇坦克<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇刺客<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$      <span class="tag">&lt;<span class="name">dt</span>&gt;</span>史迪奇远程<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇法师<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$          <span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇射手<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>CSS 三种导入样式</title>
@@ -693,6 +680,19 @@ var tools = (function(){
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    h1&#123;</span><br><span class="line">$        color:blue;     //颜色</span><br><span class="line">$        text-align: center;  //文本对齐的方式 </span><br><span class="line">$        text-indent: 2em;     //首行缩进</span><br><span class="line">$        line-height: 20px;    //行高 </span><br><span class="line">$        text-decoration: overline;   //上划线</span><br><span class="line">$        text-decoration: line-through;   //中划线</span><br><span class="line">$        text-decoration: underline   //下划线</span><br><span class="line">$      &#125;</span><br><span class="line">$     img,span&#123;</span><br><span class="line">$               vertical-align: middle;</span><br><span class="line">$            &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$<span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的王国<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/x.jpg&quot;</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">span</span>&gt;</span>史迪奇<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h1 id="超链接伪类"><a href="#超链接伪类" class="headerlink" title="超链接伪类"></a>超链接伪类</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    //默认颜色</span><br><span class="line">$     a&#123;  </span><br><span class="line">$          text-decoration: none;</span><br><span class="line">$          color: #000000;</span><br><span class="line">$       &#125;  </span><br><span class="line">$     //鼠标悬浮状态 </span><br><span class="line">$     a:hover&#123;  </span><br><span class="line">$          color: blue;</span><br><span class="line">$       &#125;     </span><br><span class="line">$     //鼠标按住未释放状态 </span><br><span class="line">$     a:active&#123;  </span><br><span class="line">$          color: rad;</span><br><span class="line">$       &#125;      </span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$<span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的王国<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">a</span>&gt;</span>史迪奇<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h1 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$    //默认颜色</span><br><span class="line">$     #sdq&#123;  </span><br><span class="line">$          text-shawdow: blue 10px 10px 10px;    //text-shawdow是阴影, 阴影颜色, 水平偏移, 垂直偏移, 阴影半径</span><br><span class="line">$       &#125;       </span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$<span class="tag">&lt;<span class="name">h1</span>&gt;</span>史迪奇的王国<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">&quot;sdq&quot;</span>&gt;</span>史迪奇<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>CSS 属性选择器(常用)</title>
+    <url>/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$</span><br><span class="line">$  .sdq1 a&#123; </span><br><span class="line">$       float: left;  //left往左float浮动</span><br><span class="line">$       dispay: block;  //dispay规定元素应该生成的框的类型block此元素将显示为块级元素，此元素前后会带有换行符。</span><br><span class="line">$       heigh: 50px;  //heigh高度</span><br><span class="line">$       width: 50px;  //width宽度</span><br><span class="line">$       border-radius: 10px;  //border-radius圆角边框</span><br><span class="line">$       </span><br><span class="line">$       text-align: center;   //text-align对齐center剧中</span><br><span class="line">$       color: yellow;  //color文字颜色</span><br><span class="line">$       text-decoration: none;  //text-decoration下划线none不显示</span><br><span class="line">$       margin-right: 5px;    //margin-right外边距向右</span><br><span class="line">$       font: bold 20px/50px Arial;   //font设置文字的字体bold字体大小20px字体的大小50px行高Arial是一种字体</span><br><span class="line">$   &#125;</span><br><span class="line">$    //格式a[]&#123;&#125;  存在id的属性的元素  </span><br><span class="line">$   a[class*=first]&#123;        //=是绝对等于  *=是包含这个元素</span><br><span class="line">$       background: yellow;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href^=xxy]&#123;          //^=表示以什么开头     </span><br><span class="line">$       background: green;</span><br><span class="line">$   &#125;</span><br><span class="line">$   a[href$=ghfgh]&#123;          //$=表示以什么结尾     </span><br><span class="line">$       background: powder;</span><br><span class="line">$   &#125;</span><br><span class="line">$    </span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxy.fgdhrth&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item first&quot;</span> <span class="attr">id</span>=<span class="string">&quot;first&quot;</span>&gt;</span>史迪奇<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪仔<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇骑士<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇国王<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;xxx&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇勇士<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;hh.ghfgh&quot;</span> <span class="attr">class</span>=<span class="string">&quot;links item&quot;</span>&gt;</span>史迪奇巫师<span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">$  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
 ]]></content>
   </entry>
   <entry>
@@ -1178,21 +1178,6 @@ $</style>
 ]]></content>
   </entry>
   <entry>
-    <title>JavaScript 数据类型之(Map和Set)</title>
-    <url>/JavaScript-Map-Set.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="comment">/*ES6 Map*/</span></span><br><span class="line">$  <span class="comment">/*学生的成绩, 学生的名字 两种方式*/</span></span><br><span class="line">$  <span class="keyword">var</span> names = [<span class="string">&quot;史迪奇&quot;</span>,<span class="string">&quot;史迪仔&quot;</span>,<span class="string">&quot;强霸&quot;</span>];</span><br><span class="line">$  <span class="keyword">var</span> scores = [<span class="number">100</span>,<span class="number">100</span>,<span class="number">36</span>]</span><br><span class="line">$  <span class="comment">/*另一种*/</span></span><br><span class="line">$  <span class="keyword">var</span> map = naw <span class="built_in">Map</span>([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">36</span>]]);</span><br><span class="line">$  <span class="keyword">var</span> name = map.get(<span class="string">&quot;史迪奇&quot;</span>);    <span class="comment">/*通过key获得value*/</span> </span><br><span class="line">$  map.set(<span class="string">&quot;独眼霹雳&quot;</span>,<span class="number">60</span>);          <span class="comment">/*新增或修改*/</span> </span><br><span class="line">$  map.delete(<span class="string">&quot;强霸&quot;</span>);              <span class="comment">/*删除*/</span></span><br></pre></td></tr></table></figure>
-<h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   set.add(<span class="number">3</span>)                 <span class="comment">/*添加*/</span>  </span><br><span class="line">$   set.delete(<span class="string">&quot;强霸&quot;</span>);        <span class="comment">/*删除*/</span></span><br><span class="line">$   <span class="built_in">console</span>.log(set.has(<span class="number">3</span>))    <span class="comment">/*是否包含某个元素*/</span></span><br></pre></td></tr></table></figure>
-<h1 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h1><p><strong>遍历数组</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="comment">/*通过for of, for in 下标 */</span>  </span><br><span class="line">$   <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> arr)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>遍历map</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">100</span>]]);</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> map)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>遍历set</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> set = <span class="keyword">new</span> set([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">100</span>]]);</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> set)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
     <title>JavaScript JavaScript (函数之定义和获取)</title>
     <url>/JavaScript-definition-obtain.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
@@ -1211,6 +1196,21 @@ $</style>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="function"><span class="keyword">function</span> <span class="title">sdq</span>(<span class="params">s,d,q,... rest</span>) </span>&#123;&#125;</span><br><span class="line">$       <span class="built_in">console</span>.log(<span class="string">&quot;s=&gt;&quot;</span>+s);</span><br><span class="line">$       <span class="built_in">console</span>.log(<span class="string">&quot;d=&gt;&quot;</span>+d);</span><br><span class="line">$       <span class="built_in">console</span>.log(<span class="string">&quot;q=&gt;&quot;</span>+q);</span><br><span class="line">$       <span class="built_in">console</span>.log(rest);</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
 <p><strong>rest参数只能写在最后面, 必须用…标识</strong></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>JavaScript 数据类型之(Map和Set)</title>
+    <url>/JavaScript-Map-Set.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="comment">/*ES6 Map*/</span></span><br><span class="line">$  <span class="comment">/*学生的成绩, 学生的名字 两种方式*/</span></span><br><span class="line">$  <span class="keyword">var</span> names = [<span class="string">&quot;史迪奇&quot;</span>,<span class="string">&quot;史迪仔&quot;</span>,<span class="string">&quot;强霸&quot;</span>];</span><br><span class="line">$  <span class="keyword">var</span> scores = [<span class="number">100</span>,<span class="number">100</span>,<span class="number">36</span>]</span><br><span class="line">$  <span class="comment">/*另一种*/</span></span><br><span class="line">$  <span class="keyword">var</span> map = naw <span class="built_in">Map</span>([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">36</span>]]);</span><br><span class="line">$  <span class="keyword">var</span> name = map.get(<span class="string">&quot;史迪奇&quot;</span>);    <span class="comment">/*通过key获得value*/</span> </span><br><span class="line">$  map.set(<span class="string">&quot;独眼霹雳&quot;</span>,<span class="number">60</span>);          <span class="comment">/*新增或修改*/</span> </span><br><span class="line">$  map.delete(<span class="string">&quot;强霸&quot;</span>);              <span class="comment">/*删除*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   set.add(<span class="number">3</span>)                 <span class="comment">/*添加*/</span>  </span><br><span class="line">$   set.delete(<span class="string">&quot;强霸&quot;</span>);        <span class="comment">/*删除*/</span></span><br><span class="line">$   <span class="built_in">console</span>.log(set.has(<span class="number">3</span>))    <span class="comment">/*是否包含某个元素*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h1><p><strong>遍历数组</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="comment">/*通过for of, for in 下标 */</span>  </span><br><span class="line">$   <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> arr)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>遍历map</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">100</span>]]);</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> map)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>遍历set</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> set = <span class="keyword">new</span> set([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">100</span>]]);</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> set)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>JavaScript 数据类型之(Map和Set)</title>
@@ -1330,6 +1330,22 @@ $</style>
 ]]></content>
   </entry>
   <entry>
+    <title>Java面向对象思维之构造方法</title>
+    <url>/Object-oriented-constructor.html</url>
+    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ // 自动生成一个无参数的构造方法 public <span class="function"><span class="title">Car</span></span>() &#123; </span><br><span class="line">$ public Car(String color, int wheel, int seat) &#123; //这里给它添加参数  </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h1><p><strong>例如 车能飞</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">fly</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.color+<span class="string">&quot;车能飞&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>例如 车可以潜水</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">diving</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.diving+<span class="string">&quot;车可以下水&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,5,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     c1.fly();</span><br><span class="line">$     c1.diving();</span><br><span class="line">$ </span><br><span class="line">$     c2.fly();</span><br><span class="line">$     c2.diving();</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="构造方法需要注意"><a href="#构造方法需要注意" class="headerlink" title="构造方法需要注意"></a>构造方法需要注意</h1><p><strong>没有返回值这一项</strong><br><strong>在new的时候, 给对象设置属性信息</strong><br><strong>Java会默认自动的送每个类一个无参数的构造方法, 如果你写了构造方法, 那么Java就不送了</strong></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Java面向对象思维</title>
     <url>/Object-oriented-this.html</url>
     <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
@@ -1344,22 +1360,6 @@ $</style>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">diving</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.color+<span class="string">&quot;车可以下水&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$ 	  Car c1 = new Car();   //先创建一辆车</span><br><span class="line">$ 	  c1.color = <span class="string">&quot;透明&quot;</span>;  //我的车是透明色</span><br><span class="line">$ 	  c1.wheel = 5;  //众所周知所以车都是5个轮子</span><br><span class="line">$      c1.seat = 9; //我的车 里面坐4个 车前绑1个人用来刹车 车顶坐1个人</span><br><span class="line">$      c1.run();</span><br><span class="line">$      c1.fly();</span><br><span class="line">$      c1.diving();</span><br><span class="line">$</span><br><span class="line">$      Car c2 = new Car();   //先创建一辆车</span><br><span class="line">$	  c2.color = <span class="string">&quot;黄&quot;</span>;  //我的车是屎黄</span><br><span class="line">$	  c2.wheel = 5;  //众所周知所以车都是5个轮子</span><br><span class="line">$      c2.seat = 9; //我的车 里面坐4个 车前绑1个人用来刹车 车顶坐1个人</span><br><span class="line">$      c2.run();</span><br><span class="line">$      c2.fly();</span><br><span class="line">$      c2.diving();</span><br><span class="line">$	&#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <h1 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h1><p><strong>this: 当前类的对象</strong><br><strong>this可以在方法内部获取到对象中的属性信息</strong><br><strong>this还可以区分局部变量和成员变量</strong></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Java面向对象思维之构造方法</title>
-    <url>/Object-oriented-constructor.html</url>
-    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ // 自动生成一个无参数的构造方法 public <span class="function"><span class="title">Car</span></span>() &#123; </span><br><span class="line">$ public Car(String color, int wheel, int seat) &#123; //这里给它添加参数  </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h1><p><strong>例如 车能飞</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">fly</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.color+<span class="string">&quot;车能飞&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>例如 车可以潜水</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">diving</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.diving+<span class="string">&quot;车可以下水&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,5,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     c1.fly();</span><br><span class="line">$     c1.diving();</span><br><span class="line">$ </span><br><span class="line">$     c2.fly();</span><br><span class="line">$     c2.diving();</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="构造方法需要注意"><a href="#构造方法需要注意" class="headerlink" title="构造方法需要注意"></a>构造方法需要注意</h1><p><strong>没有返回值这一项</strong><br><strong>在new的时候, 给对象设置属性信息</strong><br><strong>Java会默认自动的送每个类一个无参数的构造方法, 如果你写了构造方法, 那么Java就不送了</strong></p>
 ]]></content>
   </entry>
   <entry>
@@ -1429,6 +1429,17 @@ $
 <h1 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h1>]]></content>
   </entry>
   <entry>
+    <title>SQL Server T-SQL 视图</title>
+    <url>/SQL-try.html</url>
+    <content><![CDATA[<p><strong>SQL Server个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ create view 视图(字段别名) as select 字段 from 表 WITH CHECK OPTION</span><br></pre></td></tr></table></figure>
+<h1 id="向视图插入数据"><a href="#向视图插入数据" class="headerlink" title="向视图插入数据"></a>向视图插入数据</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ insert 视图 values(<span class="string">&#x27;数据&#x27;</span>) </span><br></pre></td></tr></table></figure>
+<h1 id="查询视图数据"><a href="#查询视图数据" class="headerlink" title="查询视图数据"></a>查询视图数据</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ select 字段 from 视图</span><br></pre></td></tr></table></figure>
+<h1 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ update 视图 <span class="built_in">set</span> 修改的字段=<span class="string">&#x27;修改的数据&#x27;</span> <span class="built_in">where</span> 匹配字段=<span class="string">&#x27;匹配数据&#x27;</span> </span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
     <title>String 比较</title>
     <url>/String-compare.html</url>
     <content><![CDATA[<p><strong>个人笔记</strong></p>
@@ -1437,63 +1448,6 @@ $
 <h1 id="String-比较"><a href="#String-比较" class="headerlink" title="String 比较"></a>String 比较</h1><p><strong>当String进行比较时应该用equals</strong></p>
 <p><strong>因为equals是String类重写后的用于比较字符串内容的方法</strong></p>
 <p><strong>为什么不用==进行比较, 因为==是用于比较地址值</strong></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>第一个Vue.js</title>
-    <url>/one-Vue.html</url>
-    <content><![CDATA[<p><strong>Vue.js个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$  &lt;!DOCTYPE html&gt;</span><br><span class="line">$  &lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line">$  &lt;head&gt;</span><br><span class="line">$      &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">$      &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br><span class="line">$      &lt;title&gt;Vue学习&lt;/title&gt;</span><br><span class="line">$      &lt;script src=<span class="string">&quot;js/vue.min.js&quot;</span>&gt;&lt;/script&gt; </span><br><span class="line">$      &lt;!-- 导入Vue.js --&gt;</span><br><span class="line">$  &lt;/head&gt;</span><br><span class="line">$  &lt;body&gt;</span><br><span class="line">$      &lt;div id = <span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">$          &lt;button @click=<span class="string">&quot;showInfo&quot;</span>&gt;请点击&lt;/button&gt;</span><br><span class="line">$          &lt;p&gt;&#123;&#123;ms&#125;&#125;&lt;/p&gt;</span><br><span class="line">$          &lt;!-- &#123;&#123;massage&#125;&#125; --&gt;</span><br><span class="line">$      &lt;/div&gt;</span><br><span class="line">$      </span><br><span class="line">$          &lt;script&gt;</span><br><span class="line">$              var app = new Vue(&#123;</span><br><span class="line">$              el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">$              // Model : 数据</span><br><span class="line">$               data:&#123;</span><br><span class="line">$                   ms: <span class="string">&quot;hello,vue!&quot;</span>,</span><br><span class="line">$               &#125;,</span><br><span class="line">$               methods:&#123;</span><br><span class="line">$                   <span class="function"><span class="title">showInfo</span></span>()&#123;</span><br><span class="line">$                          this.ms = <span class="string">&quot;你好666999, Vue&quot;</span></span><br><span class="line">$                   &#125;</span><br><span class="line">$               &#125;</span><br><span class="line">$          &#125;);</span><br><span class="line">$          &lt;/script&gt;</span><br><span class="line">$      &lt;/script&gt;</span><br><span class="line">$      </span><br><span class="line">$  &lt;/body&gt;</span><br><span class="line">$  &lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="view和Model双向绑定"><a href="#view和Model双向绑定" class="headerlink" title="view和Model双向绑定"></a>view和Model双向绑定</h1>]]></content>
-  </entry>
-  <entry>
-    <title>Vue.js 表单输入绑定的基础用法</title>
-    <url>/Vue-usage.html</url>
-    <content><![CDATA[<p><strong>Vue.js个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="输入文本"><a href="#输入文本" class="headerlink" title="输入文本"></a>输入文本</h1><!--more-->
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$     &lt;div id = <span class="string">&quot;app1&quot;</span>&gt;</span><br><span class="line">$         &lt;div&gt;</span><br><span class="line">$            请输入你喜欢的城市&lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;cname&quot;</span>&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选择的城市:&#123;&#123;cname&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$        &lt;div&gt;</span><br><span class="line">$            回复评论: &lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;huifu&quot;</span>&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选回复是:&#123;&#123;huifu&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app1&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                cname : <span class="string">&quot;哈哈哈尔滨市&quot;</span>,</span><br><span class="line">$                huifu : <span class="string">&quot;我叫史迪奇&quot;</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="./html/文本.html"></iframe>
-
-<hr>
-<h1 id="输入多行文本"><a href="#输入多行文本" class="headerlink" title="输入多行文本"></a>输入多行文本</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app2&quot;</span>&gt;</span><br><span class="line">$         &lt;div&gt;</span><br><span class="line">$            &lt;span&gt;你的名字: &lt;/span&gt;</span><br><span class="line">$            &lt;p style=<span class="string">&quot;white-space: pre-line;&quot;</span>&gt;&#123;&#123; name &#125;&#125;&lt;/p&gt;</span><br><span class="line">$            &lt;br&gt;</span><br><span class="line">$            &lt;textarea v-model=<span class="string">&quot;name &quot;</span> placeholder=<span class="string">&quot;请输入你的名字&quot;</span>&gt;&lt;/textarea&gt;</span><br><span class="line">$</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你的名字:&#123;&#123;name&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app2&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                name : <span class="string">&quot;史迪奇&quot;</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="./html/多行文本.html"></iframe>
-
-<hr>
-<h1 id="输入单个复选框"><a href="#输入单个复选框" class="headerlink" title="输入单个复选框"></a>输入单个复选框</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app3&quot;</span>&gt;</span><br><span class="line">$        &lt;div&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你的选择是: &#123;&#123;checked &#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;checkbox&quot;</span> v-model=<span class="string">&quot;checked&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;checkbox&quot;</span>&gt;&#123;&#123; checked &#125;&#125;&lt;/label&gt;        </span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app3&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                checked : <span class="literal">false</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="/html/单个复选框.html"></iframe>
-
-<hr>
-<h1 id="输入多个复选框"><a href="#输入多个复选框" class="headerlink" title="输入多个复选框"></a>输入多个复选框</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app4&quot;</span>&gt;</span><br><span class="line">$        &lt;div&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;blue&quot;</span> value=<span class="string">&quot;蓝色&quot;</span> v-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;blue&quot;</span>&gt;蓝色&lt;/label&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;red&quot;</span> value=<span class="string">&quot;红色&quot;</span> v-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;red&quot;</span>&gt;红色&lt;/label&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;yellow&quot;</span> value=<span class="string">&quot;黄色&quot;</span> v-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;yellow&quot;</span>&gt;黄色&lt;/label&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选择的颜色是: &#123;&#123;color&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app4&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                color : [],</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="./html/多个复选框.html"></iframe>
-
-<hr>
-<h1 id="输入单选按钮"><a href="#输入单选按钮" class="headerlink" title="输入单选按钮"></a>输入单选按钮</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   &lt;div id = <span class="string">&quot;app5&quot;</span>&gt;</span><br><span class="line">$           &lt;div&gt;</span><br><span class="line">$               &lt;input <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> id=<span class="string">&quot;男&quot;</span> value=<span class="string">&quot;男&quot;</span> v-model=<span class="string">&quot;sex&quot;</span>&gt;</span><br><span class="line">$               &lt;label <span class="keyword">for</span>=<span class="string">&quot;男&quot;</span>&gt;男&lt;/label&gt;</span><br><span class="line">$               &lt;br&gt;</span><br><span class="line">$               &lt;input <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> id=<span class="string">&quot;女&quot;</span> value=<span class="string">&quot;女&quot;</span> v-model=<span class="string">&quot;sex&quot;</span>&gt;</span><br><span class="line">$               &lt;label <span class="keyword">for</span>=<span class="string">&quot;女&quot;</span>&gt;女&lt;/label&gt;</span><br><span class="line">$               &lt;p&gt;</span><br><span class="line">$                   你选择的性别是: &#123;&#123;sex&#125;&#125;</span><br><span class="line">$               &lt;/p&gt;</span><br><span class="line">$           &lt;/div&gt;</span><br><span class="line">$   &lt;/div&gt;</span><br><span class="line">$       &lt;script&gt;</span><br><span class="line">$           var app = new Vue(&#123;</span><br><span class="line">$           el:<span class="string">&#x27;#app5&#x27;</span>,</span><br><span class="line">$           data : &#123;</span><br><span class="line">$               sex :[]</span><br><span class="line">$           &#125;</span><br><span class="line">$       &#125;);</span><br><span class="line">$       &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="./html/单选按钮.html"></iframe>
-
-<hr>
-<h1 id="输入选择框单选时"><a href="#输入选择框单选时" class="headerlink" title="输入选择框单选时"></a>输入选择框单选时</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   &lt;div id = <span class="string">&quot;app6&quot;</span>&gt;</span><br><span class="line">$           &lt;div&gt;</span><br><span class="line">$               请你选择你喜欢的季节:&lt;select v-model=<span class="string">&quot;season&quot;</span> style=<span class="string">&quot;width: 50px;&quot;</span>&gt;</span><br><span class="line">$                   &lt;option&gt;春天&lt;/option&gt;</span><br><span class="line">$                   &lt;option&gt;夏天&lt;/option&gt;</span><br><span class="line">$                   &lt;option&gt;秋天&lt;/option&gt;</span><br><span class="line">$                   &lt;option&gt;冬天&lt;/option&gt;</span><br><span class="line">$               &lt;/select&gt;</span><br><span class="line">$           </span><br><span class="line">$           &lt;p&gt;</span><br><span class="line">$               你喜欢的季节是: &#123;&#123;season&#125;&#125;</span><br><span class="line">$           &lt;/p&gt;</span><br><span class="line">$           &lt;/div&gt;</span><br><span class="line">$       &lt;/div&gt;</span><br><span class="line">$       &lt;script&gt;</span><br><span class="line">$           var app = new Vue(&#123;</span><br><span class="line">$           el:<span class="string">&#x27;#app6&#x27;</span>,</span><br><span class="line">$           data : &#123;</span><br><span class="line">$               season: <span class="string">&quot;夏天&quot;</span>,</span><br><span class="line">$           &#125;</span><br><span class="line">$       &#125;);</span><br><span class="line">$       &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="./html/选择框单选时.html"></iframe>
-
-<hr>
-<h1 id="输入选择框多选时"><a href="#输入选择框多选时" class="headerlink" title="输入选择框多选时"></a>输入选择框多选时</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app7&quot;</span>&gt;</span><br><span class="line">$            &lt;div&gt;请你选择你喜欢的季节:</span><br><span class="line">$            &lt;select v-model=<span class="string">&quot;selected&quot;</span>  multiple style=<span class="string">&quot;width: 50px;&quot;</span>&gt;</span><br><span class="line">$                &lt;option&gt;春天&lt;/option&gt;</span><br><span class="line">$                &lt;option&gt;夏天&lt;/option&gt;</span><br><span class="line">$                &lt;option&gt;秋天&lt;/option&gt;</span><br><span class="line">$                &lt;option&gt;冬天&lt;/option&gt;</span><br><span class="line">$              &lt;/select&gt;</span><br><span class="line">$              &lt;p&gt;</span><br><span class="line">$                你喜欢的季节是:&#123;&#123;selected&#125;&#125;</span><br><span class="line">$                &lt;br&gt;</span><br><span class="line">$                多选时按住, 往下拖</span><br><span class="line">$              &lt;/p&gt;</span><br><span class="line">$            &lt;/div&gt;</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app7&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                selected:[<span class="string">&quot;夏天&quot;</span>,<span class="string">&quot;冬天&quot;</span>]</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="./html/选择框多选时.html"></iframe>
-
-<hr>
 ]]></content>
   </entry>
   <entry>
@@ -1506,6 +1460,15 @@ $
 <p><font color="#DC143C">直接实战</font></p>
 <p><a href="./项目/项目工程.html" target="_blank">演示效果</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>第一个Vue.js</title>
+    <url>/one-Vue.html</url>
+    <content><![CDATA[<p><strong>Vue.js个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$  &lt;!DOCTYPE html&gt;</span><br><span class="line">$  &lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line">$  &lt;head&gt;</span><br><span class="line">$      &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">$      &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br><span class="line">$      &lt;title&gt;Vue学习&lt;/title&gt;</span><br><span class="line">$      &lt;script src=<span class="string">&quot;js/vue.min.js&quot;</span>&gt;&lt;/script&gt; </span><br><span class="line">$      &lt;!-- 导入Vue.js --&gt;</span><br><span class="line">$  &lt;/head&gt;</span><br><span class="line">$  &lt;body&gt;</span><br><span class="line">$      &lt;div id = <span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">$          &lt;button @click=<span class="string">&quot;showInfo&quot;</span>&gt;请点击&lt;/button&gt;</span><br><span class="line">$          &lt;p&gt;&#123;&#123;ms&#125;&#125;&lt;/p&gt;</span><br><span class="line">$          &lt;!-- &#123;&#123;massage&#125;&#125; --&gt;</span><br><span class="line">$      &lt;/div&gt;</span><br><span class="line">$      </span><br><span class="line">$          &lt;script&gt;</span><br><span class="line">$              var app = new Vue(&#123;</span><br><span class="line">$              el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">$              // Model : 数据</span><br><span class="line">$               data:&#123;</span><br><span class="line">$                   ms: <span class="string">&quot;hello,vue!&quot;</span>,</span><br><span class="line">$               &#125;,</span><br><span class="line">$               methods:&#123;</span><br><span class="line">$                   <span class="function"><span class="title">showInfo</span></span>()&#123;</span><br><span class="line">$                          this.ms = <span class="string">&quot;你好666999, Vue&quot;</span></span><br><span class="line">$                   &#125;</span><br><span class="line">$               &#125;</span><br><span class="line">$          &#125;);</span><br><span class="line">$          &lt;/script&gt;</span><br><span class="line">$      &lt;/script&gt;</span><br><span class="line">$      </span><br><span class="line">$  &lt;/body&gt;</span><br><span class="line">$  &lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="view和Model双向绑定"><a href="#view和Model双向绑定" class="headerlink" title="view和Model双向绑定"></a>view和Model双向绑定</h1>]]></content>
   </entry>
   <entry>
     <title>轻松理解json与python关系</title>
@@ -1615,15 +1578,12 @@ python数据类型
 ]]></content>
   </entry>
   <entry>
-    <title>SQL Server T-SQL 视图</title>
-    <url>/SQL-try.html</url>
-    <content><![CDATA[<p><strong>SQL Server个人整理</strong></p>
+    <title>下次一定</title>
+    <url>/xcyd.html</url>
+    <content><![CDATA[<p><strong>本人制作简单的一款软件</strong></p>
 <a id="more"></a>
 
-<h1 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ create view 视图(字段别名) as select 字段 from 表 WITH CHECK OPTION</span><br></pre></td></tr></table></figure>
-<h1 id="向视图插入数据"><a href="#向视图插入数据" class="headerlink" title="向视图插入数据"></a>向视图插入数据</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ insert 视图 values(<span class="string">&#x27;数据&#x27;</span>) </span><br></pre></td></tr></table></figure>
-<h1 id="查询视图数据"><a href="#查询视图数据" class="headerlink" title="查询视图数据"></a>查询视图数据</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ select 字段 from 视图</span><br></pre></td></tr></table></figure>
-<h1 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ update 视图 <span class="built_in">set</span> 修改的字段=<span class="string">&#x27;修改的数据&#x27;</span> <span class="built_in">where</span> 匹配字段=<span class="string">&#x27;匹配数据&#x27;</span> </span><br></pre></td></tr></table></figure>]]></content>
+<h1 id="软件截图"><a href="#软件截图" class="headerlink" title="软件截图"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcydjt.jpg">软件截图</a></h1><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcyd.jpg">下载</a></h1><h1 id="声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡"><a href="#声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡" class="headerlink" title="声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡"></a>声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡</h1><h1 id="真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器"><a href="#真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器" class="headerlink" title="真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器"></a>真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器</h1><h1 id="除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了"><a href="#除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了" class="headerlink" title="除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了"></a>除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了</h1>]]></content>
   </entry>
   <entry>
     <title>Arch wsl的傻瓜式安装 (有手就行)</title>
@@ -1673,12 +1633,52 @@ python数据类型
 <h1 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h1><h1 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h1><h1 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h1>]]></content>
   </entry>
   <entry>
-    <title>下次一定</title>
-    <url>/xcyd.html</url>
-    <content><![CDATA[<p><strong>本人制作简单的一款软件</strong></p>
+    <title>Vue.js 表单输入绑定的基础用法</title>
+    <url>/Vue-usage.html</url>
+    <content><![CDATA[<p><strong>Vue.js个人整理</strong></p>
 <a id="more"></a>
 
-<h1 id="软件截图"><a href="#软件截图" class="headerlink" title="软件截图"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcydjt.jpg">软件截图</a></h1><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcyd.jpg">下载</a></h1><h1 id="声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡"><a href="#声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡" class="headerlink" title="声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡"></a>声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡</h1><h1 id="真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器"><a href="#真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器" class="headerlink" title="真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器"></a>真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器</h1><h1 id="除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了"><a href="#除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了" class="headerlink" title="除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了"></a>除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了</h1>]]></content>
+<h1 id="输入文本"><a href="#输入文本" class="headerlink" title="输入文本"></a>输入文本</h1><!--more-->
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$     &lt;div id = <span class="string">&quot;app1&quot;</span>&gt;</span><br><span class="line">$         &lt;div&gt;</span><br><span class="line">$            请输入你喜欢的城市&lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;cname&quot;</span>&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选择的城市:&#123;&#123;cname&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$        &lt;div&gt;</span><br><span class="line">$            回复评论: &lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;huifu&quot;</span>&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选回复是:&#123;&#123;huifu&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app1&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                cname : <span class="string">&quot;哈哈哈尔滨市&quot;</span>,</span><br><span class="line">$                huifu : <span class="string">&quot;我叫史迪奇&quot;</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="./html/文本.html"></iframe>
+
+<hr>
+<h1 id="输入多行文本"><a href="#输入多行文本" class="headerlink" title="输入多行文本"></a>输入多行文本</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app2&quot;</span>&gt;</span><br><span class="line">$         &lt;div&gt;</span><br><span class="line">$            &lt;span&gt;你的名字: &lt;/span&gt;</span><br><span class="line">$            &lt;p style=<span class="string">&quot;white-space: pre-line;&quot;</span>&gt;&#123;&#123; name &#125;&#125;&lt;/p&gt;</span><br><span class="line">$            &lt;br&gt;</span><br><span class="line">$            &lt;textarea v-model=<span class="string">&quot;name &quot;</span> placeholder=<span class="string">&quot;请输入你的名字&quot;</span>&gt;&lt;/textarea&gt;</span><br><span class="line">$</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你的名字:&#123;&#123;name&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app2&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                name : <span class="string">&quot;史迪奇&quot;</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="./html/多行文本.html"></iframe>
+
+<hr>
+<h1 id="输入单个复选框"><a href="#输入单个复选框" class="headerlink" title="输入单个复选框"></a>输入单个复选框</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app3&quot;</span>&gt;</span><br><span class="line">$        &lt;div&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你的选择是: &#123;&#123;checked &#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;checkbox&quot;</span> v-model=<span class="string">&quot;checked&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;checkbox&quot;</span>&gt;&#123;&#123; checked &#125;&#125;&lt;/label&gt;        </span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app3&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                checked : <span class="literal">false</span>,</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="/html/单个复选框.html"></iframe>
+
+<hr>
+<h1 id="输入多个复选框"><a href="#输入多个复选框" class="headerlink" title="输入多个复选框"></a>输入多个复选框</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app4&quot;</span>&gt;</span><br><span class="line">$        &lt;div&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;blue&quot;</span> value=<span class="string">&quot;蓝色&quot;</span> v-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;blue&quot;</span>&gt;蓝色&lt;/label&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;red&quot;</span> value=<span class="string">&quot;红色&quot;</span> v-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;red&quot;</span>&gt;红色&lt;/label&gt;</span><br><span class="line">$            &lt;input <span class="built_in">type</span>=<span class="string">&quot;checkbox&quot;</span> id=<span class="string">&quot;yellow&quot;</span> value=<span class="string">&quot;黄色&quot;</span> v-model=<span class="string">&quot;color&quot;</span>&gt;</span><br><span class="line">$            &lt;label <span class="keyword">for</span>=<span class="string">&quot;yellow&quot;</span>&gt;黄色&lt;/label&gt;</span><br><span class="line">$            &lt;p&gt;</span><br><span class="line">$                你选择的颜色是: &#123;&#123;color&#125;&#125;</span><br><span class="line">$            &lt;/p&gt;</span><br><span class="line">$        &lt;/div&gt;</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app4&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                color : [],</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="./html/多个复选框.html"></iframe>
+
+<hr>
+<h1 id="输入单选按钮"><a href="#输入单选按钮" class="headerlink" title="输入单选按钮"></a>输入单选按钮</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   &lt;div id = <span class="string">&quot;app5&quot;</span>&gt;</span><br><span class="line">$           &lt;div&gt;</span><br><span class="line">$               &lt;input <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> id=<span class="string">&quot;男&quot;</span> value=<span class="string">&quot;男&quot;</span> v-model=<span class="string">&quot;sex&quot;</span>&gt;</span><br><span class="line">$               &lt;label <span class="keyword">for</span>=<span class="string">&quot;男&quot;</span>&gt;男&lt;/label&gt;</span><br><span class="line">$               &lt;br&gt;</span><br><span class="line">$               &lt;input <span class="built_in">type</span>=<span class="string">&quot;radio&quot;</span> id=<span class="string">&quot;女&quot;</span> value=<span class="string">&quot;女&quot;</span> v-model=<span class="string">&quot;sex&quot;</span>&gt;</span><br><span class="line">$               &lt;label <span class="keyword">for</span>=<span class="string">&quot;女&quot;</span>&gt;女&lt;/label&gt;</span><br><span class="line">$               &lt;p&gt;</span><br><span class="line">$                   你选择的性别是: &#123;&#123;sex&#125;&#125;</span><br><span class="line">$               &lt;/p&gt;</span><br><span class="line">$           &lt;/div&gt;</span><br><span class="line">$   &lt;/div&gt;</span><br><span class="line">$       &lt;script&gt;</span><br><span class="line">$           var app = new Vue(&#123;</span><br><span class="line">$           el:<span class="string">&#x27;#app5&#x27;</span>,</span><br><span class="line">$           data : &#123;</span><br><span class="line">$               sex :[]</span><br><span class="line">$           &#125;</span><br><span class="line">$       &#125;);</span><br><span class="line">$       &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="./html/单选按钮.html"></iframe>
+
+<hr>
+<h1 id="输入选择框单选时"><a href="#输入选择框单选时" class="headerlink" title="输入选择框单选时"></a>输入选择框单选时</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   &lt;div id = <span class="string">&quot;app6&quot;</span>&gt;</span><br><span class="line">$           &lt;div&gt;</span><br><span class="line">$               请你选择你喜欢的季节:&lt;select v-model=<span class="string">&quot;season&quot;</span> style=<span class="string">&quot;width: 50px;&quot;</span>&gt;</span><br><span class="line">$                   &lt;option&gt;春天&lt;/option&gt;</span><br><span class="line">$                   &lt;option&gt;夏天&lt;/option&gt;</span><br><span class="line">$                   &lt;option&gt;秋天&lt;/option&gt;</span><br><span class="line">$                   &lt;option&gt;冬天&lt;/option&gt;</span><br><span class="line">$               &lt;/select&gt;</span><br><span class="line">$           </span><br><span class="line">$           &lt;p&gt;</span><br><span class="line">$               你喜欢的季节是: &#123;&#123;season&#125;&#125;</span><br><span class="line">$           &lt;/p&gt;</span><br><span class="line">$           &lt;/div&gt;</span><br><span class="line">$       &lt;/div&gt;</span><br><span class="line">$       &lt;script&gt;</span><br><span class="line">$           var app = new Vue(&#123;</span><br><span class="line">$           el:<span class="string">&#x27;#app6&#x27;</span>,</span><br><span class="line">$           data : &#123;</span><br><span class="line">$               season: <span class="string">&quot;夏天&quot;</span>,</span><br><span class="line">$           &#125;</span><br><span class="line">$       &#125;);</span><br><span class="line">$       &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="./html/选择框单选时.html"></iframe>
+
+<hr>
+<h1 id="输入选择框多选时"><a href="#输入选择框多选时" class="headerlink" title="输入选择框多选时"></a>输入选择框多选时</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$    &lt;div id = <span class="string">&quot;app7&quot;</span>&gt;</span><br><span class="line">$            &lt;div&gt;请你选择你喜欢的季节:</span><br><span class="line">$            &lt;select v-model=<span class="string">&quot;selected&quot;</span>  multiple style=<span class="string">&quot;width: 50px;&quot;</span>&gt;</span><br><span class="line">$                &lt;option&gt;春天&lt;/option&gt;</span><br><span class="line">$                &lt;option&gt;夏天&lt;/option&gt;</span><br><span class="line">$                &lt;option&gt;秋天&lt;/option&gt;</span><br><span class="line">$                &lt;option&gt;冬天&lt;/option&gt;</span><br><span class="line">$              &lt;/select&gt;</span><br><span class="line">$              &lt;p&gt;</span><br><span class="line">$                你喜欢的季节是:&#123;&#123;selected&#125;&#125;</span><br><span class="line">$                &lt;br&gt;</span><br><span class="line">$                多选时按住, 往下拖</span><br><span class="line">$              &lt;/p&gt;</span><br><span class="line">$            &lt;/div&gt;</span><br><span class="line">$    &lt;/div&gt;</span><br><span class="line">$        &lt;script&gt;</span><br><span class="line">$            var app = new Vue(&#123;</span><br><span class="line">$            el:<span class="string">&#x27;#app7&#x27;</span>,</span><br><span class="line">$            data : &#123;</span><br><span class="line">$                selected:[<span class="string">&quot;夏天&quot;</span>,<span class="string">&quot;冬天&quot;</span>]</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;);</span><br><span class="line">$        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="./html/选择框多选时.html"></iframe>
+
+<hr>
+]]></content>
   </entry>
   <entry>
     <title>Android同步源码和编译ROM傻瓜式 (有手就行)</title>
@@ -1807,18 +1807,6 @@ python数据类型
 <h1 id="字符串的一些使用方法"><a href="#字符串的一些使用方法" class="headerlink" title="字符串的一些使用方法"></a>字符串的一些使用方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sdq &#x3D; &#39;Stitch&#39;</span><br><span class="line">print(&#39;find第一次出现b的索引&#39;, sdq.find(&#39;h&#39;))  #看h的下标</span><br><span class="line">print(&#39;replace&#39;, sdq.replace(&#39;i&#39;, &#39;I&#39;))  #拿I替换i</span><br><span class="line">print(&#39;upper&#39;, sdq.upper()) #全大写</span><br><span class="line">print(&#39;lower&#39;, sdq.lower()) #全小写</span><br><span class="line">print(&#39;swapcase 对换&#39;, &#39;sdq&#39;.swapcase())  #反转字母大小写</span><br><span class="line">print(&#39;去前后空格&#39;, &#39; sdq &#39;.strip(), sep&#x3D;&#39;&#39;)  </span><br><span class="line">print(&#39;S t i t c h &#39;.replace(&#39; &#39;, &#39;&#39;))   #空格替换空字符串</span><br><span class="line"></span><br><span class="line">print(len(&#39;S t i t c h&#39;)) # 获取字符串长度 里面的空格也是计算长度的</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
-    <title>python 基本运算符(我失忆了)</title>
-    <url>/python-jjcc.html</url>
-    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
-<a id="more"></a>
-
-<h1 id="pdtho基本运算符"><a href="#pdtho基本运算符" class="headerlink" title="pdtho基本运算符"></a>pdtho基本运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;加&#39;, 2 + 3)</span><br><span class="line">print(&#39;减&#39;, 1 - 3)</span><br><span class="line">print(&#39;两个减号&#39;, 1 - -2)</span><br><span class="line">print(&#39;乘&#39;, 2 * 4)</span><br><span class="line">print(&#39;除&#39;, 9 &#x2F; 3)</span><br><span class="line">print(&#39;取整&#39;, 10 &#x2F;&#x2F; 3, 10 &#x2F;&#x2F; 4)</span><br><span class="line">print(&#39;取整1&#39;, 10 &#x2F; 3, 10 &#x2F; 4)</span><br><span class="line">print(&#39;模运算，取余数&#39;, 10 % 3)  </span><br></pre></td></tr></table></figure>
-<h1 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h1><p><strong>4舍6入5看齐,奇进偶不进,相比四舍五入更精确</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(round(1.2), round(1.5), round(2.5))</span><br></pre></td></tr></table></figure>
-<h1 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s, d, q, z &#x3D; 1, 2, 3, 1</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; d&#39;, s &#x3D;&#x3D; d)</span><br><span class="line">print(&#39;s !&#x3D; d&#39;, s !&#x3D; d)</span><br><span class="line">print(&#39;s &gt; d&#39;, s &gt; d)</span><br><span class="line">print(&#39;d &lt; z&#39;, d &lt; z)</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; z&#39;, s &#x3D;&#x3D; z)   #比较值</span><br><span class="line">print(&#39;s is z&#39;, s is z)   #比较地址</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>职教星2.8.2(搬运软件)</title>
     <url>/zjx2.8.1.html</url>
     <content><![CDATA[<p><strong>职教星2.8.2</strong></p>
@@ -1837,6 +1825,31 @@ python数据类型
 
 <p><img src="/images/%E8%81%8C%E6%95%99%E6%98%9F/%E6%88%AA%E5%9B%BE%E6%A0%BC%E5%BC%8F.jpg"></p>
 <h1 id="本放链接-想要的话-自己带着承诺完的截图来找我-我给你密码"><a href="#本放链接-想要的话-自己带着承诺完的截图来找我-我给你密码" class="headerlink" title="本放链接!!! 想要的话, 自己带着承诺完的截图来找我, 我给你密码"></a>本放<a href="https://wwr.lanzoui.com/iRu7Bqsx7od">链接</a>!!! 想要的话, 自己带着承诺完的截图来找<a href="https://wpa.qq.com/msgrd?v=3&uin=3083329400&site=qq&menu=yes">我</a>, 我给你密码</h1>]]></content>
+  </entry>
+  <entry>
+    <title>python 基本运算符(我失忆了)</title>
+    <url>/python-jjcc.html</url>
+    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
+<a id="more"></a>
+
+<h1 id="pdtho基本运算符"><a href="#pdtho基本运算符" class="headerlink" title="pdtho基本运算符"></a>pdtho基本运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;加&#39;, 2 + 3)</span><br><span class="line">print(&#39;减&#39;, 1 - 3)</span><br><span class="line">print(&#39;两个减号&#39;, 1 - -2)</span><br><span class="line">print(&#39;乘&#39;, 2 * 4)</span><br><span class="line">print(&#39;除&#39;, 9 &#x2F; 3)</span><br><span class="line">print(&#39;取整&#39;, 10 &#x2F;&#x2F; 3, 10 &#x2F;&#x2F; 4)</span><br><span class="line">print(&#39;取整1&#39;, 10 &#x2F; 3, 10 &#x2F; 4)</span><br><span class="line">print(&#39;模运算，取余数&#39;, 10 % 3)  </span><br></pre></td></tr></table></figure>
+<h1 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h1><p><strong>4舍6入5看齐,奇进偶不进,相比四舍五入更精确</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(round(1.2), round(1.5), round(2.5))</span><br></pre></td></tr></table></figure>
+<h1 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s, d, q, z &#x3D; 1, 2, 3, 1</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; d&#39;, s &#x3D;&#x3D; d)</span><br><span class="line">print(&#39;s !&#x3D; d&#39;, s !&#x3D; d)</span><br><span class="line">print(&#39;s &gt; d&#39;, s &gt; d)</span><br><span class="line">print(&#39;d &lt; z&#39;, d &lt; z)</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; z&#39;, s &#x3D;&#x3D; z)   #比较值</span><br><span class="line">print(&#39;s is z&#39;, s is z)   #比较地址</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>爬虫 cookie(吃牢饭集合)</title>
+    <url>/reptile-cookie.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="headers中携带cookie"><a href="#headers中携带cookie" class="headerlink" title="headers中携带cookie"></a>headers中携带cookie</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;github.com&#x2F;sdqOS&#39;</span><br><span class="line"></span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.72 Safari&#x2F;537.36&quot;,</span><br><span class="line">    &quot;Cookie&quot;: &quot;_octo&#x3D;GH1.1.1829904439.1611247247; _device_id&#x3D;326c46400086ed13ec278dc836662948; _locale&#x3D;ko; _locale_experiment&#x3D;ko; tz&#x3D;Asia%2FShanghai; has_recent_activity&#x3D;1; user_session&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz&#x3D;Asia%2FShanghai; color_mode&#x3D;%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in&#x3D;yes; dotcom_user&#x3D;sdqOS; _gh_sess&#x3D;l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">respinse &#x3D; requests.get(url, headers&#x3D;headers,)</span><br><span class="line"></span><br><span class="line"># 看看是给谁发请求</span><br><span class="line">print(respinse.url)</span><br><span class="line"></span><br><span class="line">with open(&#39;github.html&#39;, &#39;wb&#39;)as f:</span><br><span class="line">    f.write(respinse.content)</span><br></pre></td></tr></table></figure>
+<p>#构建cookie字典</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;github.com&#x2F;sdqOS&#39;</span><br><span class="line"></span><br><span class="line"># 构造请求头字典</span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.72 Safari&#x2F;537.36&quot;,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">temp &#x3D; &quot;_octo&#x3D;GH1.1.1829904439.1611247247; _device_id&#x3D;326c46400086ed13ec278dc836662948; _locale&#x3D;ko; _locale_experiment&#x3D;ko; tz&#x3D;Asia%2FShanghai; has_recent_activity&#x3D;1; user_session&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz&#x3D;Asia%2FShanghai; color_mode&#x3D;%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in&#x3D;yes; dotcom_user&#x3D;sdqOS; _gh_sess&#x3D;l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cookie_list &#x3D; temp.split(&#39;; &#39;)</span><br><span class="line"></span><br><span class="line"># 熟练方案</span><br><span class="line">cookies &#x3D; &#123; cookie.split(&#39;&#x3D;&#39;)[0]:cookie.split(&#39;&#x3D;&#39;)[-1] for cookie in cookie_list&#125;</span><br><span class="line"></span><br><span class="line"># 稳妥方案</span><br><span class="line"># cookies &#x3D; &#123;&#125;</span><br><span class="line"></span><br><span class="line"># for cookie in cookie_list:</span><br><span class="line">#     cookies[cookie.split(&#39;&#x3D;&#39;)[0]] &#x3D; cookie.split(&#39;&#x3D;&#39;)[-1]</span><br><span class="line"></span><br><span class="line"># print(cookies)</span><br><span class="line"></span><br><span class="line"># # 构造cookie字典</span><br><span class="line"></span><br><span class="line">response &#x3D; requests.get(url, headers&#x3D;headers,cookies&#x3D;cookies)</span><br><span class="line"></span><br><span class="line"># 看看是给谁发请求</span><br><span class="line">print(response.url)</span><br><span class="line"></span><br><span class="line">with open(&#39;github3.html&#39;, &#39;wb&#39;)as f:</span><br><span class="line">    f.write(response.content)</span><br></pre></td></tr></table></figure>
+<h1 id="cookieJar对象转换成cookie字典方法"><a href="#cookieJar对象转换成cookie字典方法" class="headerlink" title="cookieJar对象转换成cookie字典方法"></a>cookieJar对象转换成cookie字典方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;www.baidu.com&#39;</span><br><span class="line"></span><br><span class="line"># 设置(timeout)访问时长为3秒, 然后就断开</span><br><span class="line">response &#x3D; response.get(url, timeout&#x3D;3)</span><br><span class="line"></span><br><span class="line">print(response.cookies)</span><br><span class="line"></span><br><span class="line"># 将对象转字典</span><br><span class="line">dict_cookie &#x3D; requests.utils.dict_from_cookiejar(response.cookies)</span><br><span class="line">print(dict_cookie)</span><br><span class="line"></span><br><span class="line"># 将字典转换为对象</span><br><span class="line">jar_cookies &#x3D; requests.utils.cookiejar_from_dict(dict_cookies)</span><br><span class="line">print(jar_cookies)</span><br></pre></td></tr></table></figure>
+<!--副作用丢失域名 这个不要紧我们自己知道这个cookie对应哪个域名的-->
+]]></content>
   </entry>
   <entry>
     <title>爬虫 Beautiful Soup(牢饭吃到饱)</title>
@@ -1884,17 +1897,24 @@ python数据类型
 </h1></h1>]]></content>
   </entry>
   <entry>
-    <title>爬虫 cookie(吃牢饭集合)</title>
-    <url>/reptile-cookie.html</url>
+    <title>爬虫 http和https(吃牢饭集合)</title>
+    <url>/reptile-http-https.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
 <a id="more"></a>
 
-<h1 id="headers中携带cookie"><a href="#headers中携带cookie" class="headerlink" title="headers中携带cookie"></a>headers中携带cookie</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;github.com&#x2F;sdqOS&#39;</span><br><span class="line"></span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.72 Safari&#x2F;537.36&quot;,</span><br><span class="line">    &quot;Cookie&quot;: &quot;_octo&#x3D;GH1.1.1829904439.1611247247; _device_id&#x3D;326c46400086ed13ec278dc836662948; _locale&#x3D;ko; _locale_experiment&#x3D;ko; tz&#x3D;Asia%2FShanghai; has_recent_activity&#x3D;1; user_session&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz&#x3D;Asia%2FShanghai; color_mode&#x3D;%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in&#x3D;yes; dotcom_user&#x3D;sdqOS; _gh_sess&#x3D;l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">respinse &#x3D; requests.get(url, headers&#x3D;headers,)</span><br><span class="line"></span><br><span class="line"># 看看是给谁发请求</span><br><span class="line">print(respinse.url)</span><br><span class="line"></span><br><span class="line">with open(&#39;github.html&#39;, &#39;wb&#39;)as f:</span><br><span class="line">    f.write(respinse.content)</span><br></pre></td></tr></table></figure>
-<p>#构建cookie字典</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;github.com&#x2F;sdqOS&#39;</span><br><span class="line"></span><br><span class="line"># 构造请求头字典</span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.72 Safari&#x2F;537.36&quot;,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">temp &#x3D; &quot;_octo&#x3D;GH1.1.1829904439.1611247247; _device_id&#x3D;326c46400086ed13ec278dc836662948; _locale&#x3D;ko; _locale_experiment&#x3D;ko; tz&#x3D;Asia%2FShanghai; has_recent_activity&#x3D;1; user_session&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz&#x3D;Asia%2FShanghai; color_mode&#x3D;%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in&#x3D;yes; dotcom_user&#x3D;sdqOS; _gh_sess&#x3D;l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cookie_list &#x3D; temp.split(&#39;; &#39;)</span><br><span class="line"></span><br><span class="line"># 熟练方案</span><br><span class="line">cookies &#x3D; &#123; cookie.split(&#39;&#x3D;&#39;)[0]:cookie.split(&#39;&#x3D;&#39;)[-1] for cookie in cookie_list&#125;</span><br><span class="line"></span><br><span class="line"># 稳妥方案</span><br><span class="line"># cookies &#x3D; &#123;&#125;</span><br><span class="line"></span><br><span class="line"># for cookie in cookie_list:</span><br><span class="line">#     cookies[cookie.split(&#39;&#x3D;&#39;)[0]] &#x3D; cookie.split(&#39;&#x3D;&#39;)[-1]</span><br><span class="line"></span><br><span class="line"># print(cookies)</span><br><span class="line"></span><br><span class="line"># # 构造cookie字典</span><br><span class="line"></span><br><span class="line">response &#x3D; requests.get(url, headers&#x3D;headers,cookies&#x3D;cookies)</span><br><span class="line"></span><br><span class="line"># 看看是给谁发请求</span><br><span class="line">print(response.url)</span><br><span class="line"></span><br><span class="line">with open(&#39;github3.html&#39;, &#39;wb&#39;)as f:</span><br><span class="line">    f.write(response.content)</span><br></pre></td></tr></table></figure>
-<h1 id="cookieJar对象转换成cookie字典方法"><a href="#cookieJar对象转换成cookie字典方法" class="headerlink" title="cookieJar对象转换成cookie字典方法"></a>cookieJar对象转换成cookie字典方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;www.baidu.com&#39;</span><br><span class="line"></span><br><span class="line"># 设置(timeout)访问时长为3秒, 然后就断开</span><br><span class="line">response &#x3D; response.get(url, timeout&#x3D;3)</span><br><span class="line"></span><br><span class="line">print(response.cookies)</span><br><span class="line"></span><br><span class="line"># 将对象转字典</span><br><span class="line">dict_cookie &#x3D; requests.utils.dict_from_cookiejar(response.cookies)</span><br><span class="line">print(dict_cookie)</span><br><span class="line"></span><br><span class="line"># 将字典转换为对象</span><br><span class="line">jar_cookies &#x3D; requests.utils.cookiejar_from_dict(dict_cookies)</span><br><span class="line">print(jar_cookies)</span><br></pre></td></tr></table></figure>
-<!--副作用丢失域名 这个不要紧我们自己知道这个cookie对应哪个域名的-->
-]]></content>
+<h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1><p><strong>HTTP: 超文本传输协议, 默认端口号是80</strong></p>
+<ul>
+<li>超文本: 是指超过文本, 不仅限于文本; 还包含图片, 音频等文件</li>
+<li>传输协议: 是指使用共用约定的固定格式来传递转换成字符串的超文本内容</li>
+</ul>
+
+<p><strong>HTTPS: HTTP + SSL(安全套接字层), 即带有安全套接字层的超文本传输协议, 默认端口号: 443</strong></p>
+<ul>
+<li>SSL对传输的内容(超文本, 也就是请求体或响应体)进行加密</li>
+</ul>
+
+<p><strong>可以打开浏览器访问一个url, 右键检查, 点击network, 点选一个url, 查看http协议的形式</strong></p>
+<h1 id="HTTPS因为要加密缘故相比HTTP较慢一些-性能低一些-但是比HTTP更安全"><a href="#HTTPS因为要加密缘故相比HTTP较慢一些-性能低一些-但是比HTTP更安全" class="headerlink" title="HTTPS因为要加密缘故相比HTTP较慢一些,性能低一些, 但是比HTTP更安全"></a>HTTPS因为要加密缘故相比HTTP较慢一些,性能低一些, 但是比HTTP更安全</h1>]]></content>
   </entry>
   <entry>
     <title>爬虫 jsonpath模块(吃牢饭集合)</title>
@@ -1991,26 +2011,6 @@ python数据类型
 
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>爬虫 http和https(吃牢饭集合)</title>
-    <url>/reptile-http-https.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1><p><strong>HTTP: 超文本传输协议, 默认端口号是80</strong></p>
-<ul>
-<li>超文本: 是指超过文本, 不仅限于文本; 还包含图片, 音频等文件</li>
-<li>传输协议: 是指使用共用约定的固定格式来传递转换成字符串的超文本内容</li>
-</ul>
-
-<p><strong>HTTPS: HTTP + SSL(安全套接字层), 即带有安全套接字层的超文本传输协议, 默认端口号: 443</strong></p>
-<ul>
-<li>SSL对传输的内容(超文本, 也就是请求体或响应体)进行加密</li>
-</ul>
-
-<p><strong>可以打开浏览器访问一个url, 右键检查, 点击network, 点选一个url, 查看http协议的形式</strong></p>
-<h1 id="HTTPS因为要加密缘故相比HTTP较慢一些-性能低一些-但是比HTTP更安全"><a href="#HTTPS因为要加密缘故相比HTTP较慢一些-性能低一些-但是比HTTP更安全" class="headerlink" title="HTTPS因为要加密缘故相比HTTP较慢一些,性能低一些, 但是比HTTP更安全"></a>HTTPS因为要加密缘故相比HTTP较慢一些,性能低一些, 但是比HTTP更安全</h1>]]></content>
   </entry>
   <entry>
     <title>爬虫 requests模块(吃牢饭集合)</title>
@@ -2357,119 +2357,6 @@ python数据类型
 ]]></content>
   </entry>
   <entry>
-    <title>爬虫 报文(吃牢饭集合)</title>
-    <url>/reptile-message.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="查看报文"><a href="#查看报文" class="headerlink" title="查看报文"></a>查看报文</h1><p><strong>点击Request Headers旁边的view parsed</strong></p>
-<p><strong>注意: view parsed没点之前其实是给你优化过的</strong></p>
-<h1 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h1><table>
-<thead>
-<tr>
-<th>GET</th>
-<th>HTTP</th>
-<th>1.1</th>
-<th>Host</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>方法</td>
-<td>路径</td>
-<td>协议版本</td>
-<td>发送请求的域名</td>
-</tr>
-</tbody></table>
-<ul>
-<li>Content-Type</li>
-<li>Host (主机和端口号)</li>
-<li>Connection (链接类型/常链接)</li>
-<li>UPgrade-Insecure-Requests (升级为HTTPS请求)</li>
-<li>User-Agent (用户代理 提供系统信息和浏览器信息)</li>
-<li>Referer (页面跳转处)</li>
-<li>Cookie (Cookie数据非常重要,)</li>
-<li>Authorization (表示HTTP协议中需要认证资源的认证信息, 例如用于jwt认证)</li>
-</ul>
-
-<p><strong>请求头表格形式</strong></p>
-<table>
-<thead>
-<tr>
-<th>特别关注</th>
-<th>以下几个请求头</th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Host</td>
-<td>域名</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Connection</td>
-<td>常链接</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>UPgrade-Insecure-Requests</td>
-<td>升级为HTTPS请求</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>User-Agent</td>
-<td>用户代理</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Refrer</td>
-<td>页面跳转处, 防盗链</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Cookie</td>
-<td>保持状态, 用于跳过账号密码</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p><strong>响应头表格形式</strong></p>
-<table>
-<thead>
-<tr>
-<th>特别关注</th>
-<th>以下几个请求头</th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>HTTP/1.1</td>
-<td>协议</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>200</td>
-<td>状态码</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Set-Cookie</td>
-<td>cookie到用户浏览器的缓存非常重要用于跳过账号密码</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-]]></content>
-  </entry>
-  <entry>
     <title>爬虫 代理(吃牢饭集合)</title>
     <url>/reptile-agent.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -2688,33 +2575,116 @@ option && myChart.setOption(option);
 </script> -->]]></content>
   </entry>
   <entry>
-    <title>爬虫 概念(牢饭吃到饱)</title>
-    <url>/reptile-concept.html</url>
+    <title>爬虫 报文(吃牢饭集合)</title>
+    <url>/reptile-message.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
 <a id="more"></a>
 
+<h1 id="查看报文"><a href="#查看报文" class="headerlink" title="查看报文"></a>查看报文</h1><p><strong>点击Request Headers旁边的view parsed</strong></p>
+<p><strong>注意: view parsed没点之前其实是给你优化过的</strong></p>
+<h1 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h1><table>
+<thead>
+<tr>
+<th>GET</th>
+<th>HTTP</th>
+<th>1.1</th>
+<th>Host</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>方法</td>
+<td>路径</td>
+<td>协议版本</td>
+<td>发送请求的域名</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Content-Type</li>
+<li>Host (主机和端口号)</li>
+<li>Connection (链接类型/常链接)</li>
+<li>UPgrade-Insecure-Requests (升级为HTTPS请求)</li>
+<li>User-Agent (用户代理 提供系统信息和浏览器信息)</li>
+<li>Referer (页面跳转处)</li>
+<li>Cookie (Cookie数据非常重要,)</li>
+<li>Authorization (表示HTTP协议中需要认证资源的认证信息, 例如用于jwt认证)</li>
+</ul>
 
-<h1 id="服务器渲染"><a href="#服务器渲染" class="headerlink" title="服务器渲染"></a>服务器渲染</h1><p><strong>其实就是在服务器那边直接把数据和HTMl整合在一起, 统一返回浏览器, 其实源代码就是网站的基本面貌, 之所以有可视化界面都是浏览器的功劳</strong></p>
-<h1 id="客户端渲染"><a href="#客户端渲染" class="headerlink" title="客户端渲染"></a>客户端渲染</h1><p><strong>第一次只是请求HTMl骨架, 第二次请求拿到数据, 然后在你的浏览器中组合变形</strong></p>
-<h1 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h1><p><strong>HTTP协议传输的就是网站源代码</strong></p>
-<h1 id="HTTP协议把一条消息分为三大块内容"><a href="#HTTP协议把一条消息分为三大块内容" class="headerlink" title="HTTP协议把一条消息分为三大块内容"></a>HTTP协议把一条消息分为三大块内容</h1><h1>请求: </h1>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">请求行 -&gt; 请求方式(get&#x2F;post) 请求url地址 协议</span><br><span class="line"></span><br><span class="line">请求头 -&gt; 放一些服务器要使用的附加信息</span><br><span class="line"></span><br><span class="line">请求体 -&gt; 一般放一些请求参数</span><br></pre></td></tr></table></figure>
-<h1>响应: </h1>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">状态行 -&gt;  协议 状态码 例如:404</span><br><span class="line"></span><br><span class="line">响应头 -&gt; 放一些客户端要使用的附加信息</span><br><span class="line"></span><br><span class="line">响应体 -&gt; 服务器返回的真正客户端要使用的内容 例如:HTML, json等等</span><br></pre></td></tr></table></figure>
-<h1 id="请求头中最常见的一些重要内容"><a href="#请求头中最常见的一些重要内容" class="headerlink" title="请求头中最常见的一些重要内容"></a>请求头中最常见的一些重要内容</h1><p><strong>User-Agent: 请求载体的身份标识(用啥发送的请求)</strong></p>
-<p><strong>Referer: 防盗链(这次请求是从哪个页面来的? 防爬会用到)</strong></p>
-<p><strong>cookie: 本地字符串数据信息(用户登陆信息, 防爬的token)</strong></p>
-<h1 id="响应头中一些重要的内容"><a href="#响应头中一些重要的内容" class="headerlink" title="响应头中一些重要的内容"></a>响应头中一些重要的内容</h1><p><strong>cookie: 本地字符串数据信息(用户登陆信息, 防爬的token)</strong></p>
-<p><strong>各种神奇的莫名其妙的字符串(一般都是yoken字样,防止各种攻击和防爬)</strong></p>
-<h1 id="请求方式"><a href="#请求方式" class="headerlink" title="请求方式"></a>请求方式</h1><p><strong>GET: 显示提交</strong></p>
-<p>查询用的多</p>
-<p><strong>POST: 隐示提交</strong></p>
-<p>增加,修改,上传服务器里面的数据</p>
-<h1 id="数据解析的三种方式"><a href="#数据解析的三种方式" class="headerlink" title="数据解析的三种方式"></a>数据解析的三种方式</h1><p><strong>re解析</strong></p>
-<p><strong>bs4解析</strong></p>
-<p><strong>xpath解析</strong></p>
+<p><strong>请求头表格形式</strong></p>
+<table>
+<thead>
+<tr>
+<th>特别关注</th>
+<th>以下几个请求头</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Host</td>
+<td>域名</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Connection</td>
+<td>常链接</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>UPgrade-Insecure-Requests</td>
+<td>升级为HTTPS请求</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>User-Agent</td>
+<td>用户代理</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Refrer</td>
+<td>页面跳转处, 防盗链</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Cookie</td>
+<td>保持状态, 用于跳过账号密码</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>响应头表格形式</strong></p>
+<table>
+<thead>
+<tr>
+<th>特别关注</th>
+<th>以下几个请求头</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HTTP/1.1</td>
+<td>协议</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>200</td>
+<td>状态码</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Set-Cookie</td>
+<td>cookie到用户浏览器的缓存非常重要用于跳过账号密码</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
 ]]></content>
   </entry>
   <entry>
@@ -2773,6 +2743,46 @@ option && myChart.setOption(option);
 ]]></content>
   </entry>
   <entry>
+    <title>爬虫 概念(牢饭吃到饱)</title>
+    <url>/reptile-concept.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+
+<h1 id="服务器渲染"><a href="#服务器渲染" class="headerlink" title="服务器渲染"></a>服务器渲染</h1><p><strong>其实就是在服务器那边直接把数据和HTMl整合在一起, 统一返回浏览器, 其实源代码就是网站的基本面貌, 之所以有可视化界面都是浏览器的功劳</strong></p>
+<h1 id="客户端渲染"><a href="#客户端渲染" class="headerlink" title="客户端渲染"></a>客户端渲染</h1><p><strong>第一次只是请求HTMl骨架, 第二次请求拿到数据, 然后在你的浏览器中组合变形</strong></p>
+<h1 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h1><p><strong>HTTP协议传输的就是网站源代码</strong></p>
+<h1 id="HTTP协议把一条消息分为三大块内容"><a href="#HTTP协议把一条消息分为三大块内容" class="headerlink" title="HTTP协议把一条消息分为三大块内容"></a>HTTP协议把一条消息分为三大块内容</h1><h1>请求: </h1>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">请求行 -&gt; 请求方式(get&#x2F;post) 请求url地址 协议</span><br><span class="line"></span><br><span class="line">请求头 -&gt; 放一些服务器要使用的附加信息</span><br><span class="line"></span><br><span class="line">请求体 -&gt; 一般放一些请求参数</span><br></pre></td></tr></table></figure>
+<h1>响应: </h1>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">状态行 -&gt;  协议 状态码 例如:404</span><br><span class="line"></span><br><span class="line">响应头 -&gt; 放一些客户端要使用的附加信息</span><br><span class="line"></span><br><span class="line">响应体 -&gt; 服务器返回的真正客户端要使用的内容 例如:HTML, json等等</span><br></pre></td></tr></table></figure>
+<h1 id="请求头中最常见的一些重要内容"><a href="#请求头中最常见的一些重要内容" class="headerlink" title="请求头中最常见的一些重要内容"></a>请求头中最常见的一些重要内容</h1><p><strong>User-Agent: 请求载体的身份标识(用啥发送的请求)</strong></p>
+<p><strong>Referer: 防盗链(这次请求是从哪个页面来的? 防爬会用到)</strong></p>
+<p><strong>cookie: 本地字符串数据信息(用户登陆信息, 防爬的token)</strong></p>
+<h1 id="响应头中一些重要的内容"><a href="#响应头中一些重要的内容" class="headerlink" title="响应头中一些重要的内容"></a>响应头中一些重要的内容</h1><p><strong>cookie: 本地字符串数据信息(用户登陆信息, 防爬的token)</strong></p>
+<p><strong>各种神奇的莫名其妙的字符串(一般都是yoken字样,防止各种攻击和防爬)</strong></p>
+<h1 id="请求方式"><a href="#请求方式" class="headerlink" title="请求方式"></a>请求方式</h1><p><strong>GET: 显示提交</strong></p>
+<p>查询用的多</p>
+<p><strong>POST: 隐示提交</strong></p>
+<p>增加,修改,上传服务器里面的数据</p>
+<h1 id="数据解析的三种方式"><a href="#数据解析的三种方式" class="headerlink" title="数据解析的三种方式"></a>数据解析的三种方式</h1><p><strong>re解析</strong></p>
+<p><strong>bs4解析</strong></p>
+<p><strong>xpath解析</strong></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>爬虫 爬小说(牢饭吃到饱)未完待续</title>
+    <url>/reptile-novel.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+
+<h1 id="爬小说的详细步骤"><a href="#爬小说的详细步骤" class="headerlink" title="爬小说的详细步骤"></a>爬小说的详细步骤</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import time</span><br><span class="line">feom bs4</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>爬虫 正则表达式(牢饭吃到饱)</title>
     <url>/reptile-RegEx.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -2797,16 +2807,6 @@ option && myChart.setOption(option);
 
 
 <h1 id="node-js爬虫的详细步骤"><a href="#node-js爬虫的详细步骤" class="headerlink" title="node.js爬虫的详细步骤"></a>node.js爬虫的详细步骤</h1><h1 id="第一步-发送http请求-获取整个网页的内容"><a href="#第一步-发送http请求-获取整个网页的内容" class="headerlink" title="第一步 发送http请求, 获取整个网页的内容"></a>第一步 发送http请求, 获取整个网页的内容</h1><h1 id="第二步-通过cheerio对爬取的网页内容进行分析"><a href="#第二步-通过cheerio对爬取的网页内容进行分析" class="headerlink" title="第二步 通过cheerio对爬取的网页内容进行分析"></a>第二步 通过cheerio对爬取的网页内容进行分析</h1><h1 id="第三步-提取关键信息"><a href="#第三步-提取关键信息" class="headerlink" title="第三步 提取关键信息"></a>第三步 提取关键信息</h1><h1 id="使用download库进行批量下载"><a href="#使用download库进行批量下载" class="headerlink" title="使用download库进行批量下载"></a>使用download库进行批量下载</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
-    <title>爬虫 爬小说(牢饭吃到饱)未完待续</title>
-    <url>/reptile-novel.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-
-<h1 id="爬小说的详细步骤"><a href="#爬小说的详细步骤" class="headerlink" title="爬小说的详细步骤"></a>爬小说的详细步骤</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import time</span><br><span class="line">feom bs4</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
   <entry>
@@ -3075,6 +3075,20 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 ]]></content>
   </entry>
   <entry>
+    <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
+    <url>/Thread-Process.html</url>
+    <content><![CDATA[<p><strong>概念</strong></p>
+<a id="more"></a>
+
+<h1 id="什么是线程-学习进程最重要的还是学习线程"><a href="#什么是线程-学习进程最重要的还是学习线程" class="headerlink" title="什么是线程(学习进程最重要的还是学习线程)"></a>什么是线程(学习进程最重要的还是学习线程)</h1><p><strong>线程就是独立执行的路径，就算在什么都不干的话，里面会有(主线程)main线程，Java里面还有个一个收垃圾的gc线程</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Thread是线程的英文</span><br></pre></td></tr></table></figure>
+
+<h1 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h1><p><strong>把程序跑起来才叫做进程，进程是执行程序的一次执行过程是一个动态的概念</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Process是进程的英文</span><br></pre></td></tr></table></figure>
+<h1 id="线程与进程到底是什么关系"><a href="#线程与进程到底是什么关系" class="headerlink" title="线程与进程到底是什么关系"></a>线程与进程到底是什么关系</h1><p><strong>一个进程里面可以包含若干个线程，一个进程里面必须要有一个线程，否则没有存在的意义</strong></p>
+<h1 id="注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行"><a href="#注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行" class="headerlink" title="注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行"></a>注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行</h1>]]></content>
+  </entry>
+  <entry>
     <title>私有云配置(个人笔记)</title>
     <url>/Private-cloud.html</url>
     <content><![CDATA[<p><strong>要有Linux基础</strong></p>
@@ -3275,20 +3289,6 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 <h1 id="查看当前路径"><a href="#查看当前路径" class="headerlink" title="查看当前路径"></a>查看当前路径</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pwd</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
-    <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
-    <url>/Thread-Process.html</url>
-    <content><![CDATA[<p><strong>概念</strong></p>
-<a id="more"></a>
-
-<h1 id="什么是线程-学习进程最重要的还是学习线程"><a href="#什么是线程-学习进程最重要的还是学习线程" class="headerlink" title="什么是线程(学习进程最重要的还是学习线程)"></a>什么是线程(学习进程最重要的还是学习线程)</h1><p><strong>线程就是独立执行的路径，就算在什么都不干的话，里面会有(主线程)main线程，Java里面还有个一个收垃圾的gc线程</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Thread是线程的英文</span><br></pre></td></tr></table></figure>
-
-<h1 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h1><p><strong>把程序跑起来才叫做进程，进程是执行程序的一次执行过程是一个动态的概念</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Process是进程的英文</span><br></pre></td></tr></table></figure>
-<h1 id="线程与进程到底是什么关系"><a href="#线程与进程到底是什么关系" class="headerlink" title="线程与进程到底是什么关系"></a>线程与进程到底是什么关系</h1><p><strong>一个进程里面可以包含若干个线程，一个进程里面必须要有一个线程，否则没有存在的意义</strong></p>
-<h1 id="注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行"><a href="#注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行" class="headerlink" title="注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行"></a>注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行</h1>]]></content>
-  </entry>
-  <entry>
     <title>跟我一起学数学</title>
     <url>/mathematics.html</url>
     <content><![CDATA[<p><strong>走进数学的奇妙世界</strong></p>
@@ -3328,8 +3328,13 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 
 <h1 id="C-C-代码迁移"><a href="#C-C-代码迁移" class="headerlink" title="C/C++代码迁移"></a>C/C++代码迁移</h1><h2 id="编译型语言"><a href="#编译型语言" class="headerlink" title="编译型语言"></a>编译型语言</h2><ul>
 <li>典型的如C/C++/Go语言, 都属于编译型语言, 编译型语言开发的程序从x86处理器迁移到鲲鹏处理器时, 必须经过重新编译才能运行</li>
+</ul>
+<ul>
 <li>从源码到程序的过程<ul>
-<li>源码需要由编译器, 汇编器翻译成机器指令, 再通过链接器链接库函数生成机器语言程序</li>
+<li>源码需要由编译器, 汇编器翻译成机器指令, 再通过链接器链接库函数生成机器语言程序<br>
+<br>
+
+</li>
 </ul>
 </li>
 </ul>
