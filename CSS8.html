@@ -3438,36 +3438,36 @@ var index = Math.floor((Math.random()*arr.length));
 		
 	
 /*页面载入完成后，创建复制按钮*/
-// function copycodes(){
+function copycodes(){
 	
-// 	/* 代码高度 判断 */
+	/* 代码高度 判断 */
 	
-// 	 $("figure td pre").scroll(function(){
-//         $("figure td:nth-child(1) pre").scrollTop($(this).scrollTop()); // 纵向滚动条
-//         $("figure td:nth-child(2) pre").scrollLeft($(this).scrollLeft()); // 横向滚动条
-//     });
+	//  $("figure td pre").scroll(function(){
+    //     $("figure td:nth-child(1) pre").scrollTop($(this).scrollTop()); // 纵向滚动条
+    //     $("figure td:nth-child(2) pre").scrollLeft($(this).scrollLeft()); // 横向滚动条
+    // });
 	
-// 		!function (e, t, a) {
-// 		  /* code */
-// 		  var initCopyCode = function(){
-// 			var copyHtml = '';
-// 			copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-// 			copyHtml += '  <i class="fa fa-globe"></i><span>copy</span>';
-// 			copyHtml += '</button>';
-// 			  // 设置 放置位置↓
-// 			$("figure td:nth-child(2) pre").before(copyHtml);
-// 			  		//$("figure td:nth-child(2) pre").wrap("<div></div>");
-// 			new ClipboardJS('.btn-copy', {
-// 				target: function(trigger) {
-// 					return trigger.nextElementSibling;
-// 				}
-// 			});
-// 		  }
-// 		  initCopyCode();
+		!function (e, t, a) {
+		  /* code */
+		  var initCopyCode = function(){
+			var copyHtml = '';
+			copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+			copyHtml += '  <i class="fa fa-globe"></i><span>复制</span>';
+			copyHtml += '</button>';
+			  // 设置 放置位置↓
+			$("figure td:nth-child(2) pre").before(copyHtml);
+			  		//$("figure td:nth-child(2) pre").wrap("<div></div>");
+			new ClipboardJS('.btn-copy', {
+				target: function(trigger) {
+					return trigger.nextElementSibling;
+				}
+			});
+		  }
+		  initCopyCode();
 			
 			
-// 		}(window, document);
-// } /* end copycodes  */	
+		}(window, document);
+} /* end copycodes  */	
 	
 
 /* 目录  */
