@@ -667,7 +667,7 @@ var $main = document.querySelector('.main');
 <aside id="article-toc" class="fixed-toc">
     <div id="article-toc-inner">
         <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C-C-%E4%BB%A3%E7%A0%81%E8%BF%81%E7%A7%BB"><span class="toc-text">C&#x2F;C++代码迁移</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%9E%8B%E8%AF%AD%E8%A8%80"><span class="toc-text">编译型语言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-C-%E4%BB%A3%E7%A0%81%E9%9C%80%E8%A6%81%E8%BF%81%E7%A7%BB%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="toc-text">C&#x2F;C++代码需要迁移的原因</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C-C-%E4%BB%A3%E7%A0%81%E8%BF%81%E7%A7%BB"><span class="toc-text">C&#x2F;C++代码迁移</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%9E%8B%E8%AF%AD%E8%A8%80"><span class="toc-text">编译型语言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-C-%E4%BB%A3%E7%A0%81%E9%9C%80%E8%A6%81%E8%BF%81%E7%A7%BB%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="toc-text">C&#x2F;C++代码需要迁移的原因</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#C-C-%E4%BB%A3%E7%A0%81%E6%9E%84%E5%BB%BA%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B"><span class="toc-text">C&#x2F;C++代码构建编译过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#C-C-%E4%BB%A3%E7%A0%81%E5%B7%A5%E7%A8%8B%E4%B8%BB%E8%A6%81%E5%8C%85%E6%8B%AC%E4%B8%A4%E7%B1%BB%E6%96%87%E4%BB%B6"><span class="toc-text">C&#x2F;C++代码工程主要包括两类文件:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E8%83%BD%E6%B6%89%E5%8F%8A%E5%88%B0%E7%9A%84%E7%A7%BB%E6%A4%8D%E9%A1%B9"><span class="toc-text">可能涉及到的移植项</span></a></li></ol></li></ol>
     </div>
 </aside>
 </div>
@@ -721,7 +721,7 @@ var $main = document.querySelector('.main');
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">源码  ---------&gt;  预处理  ---------&gt;  预编译文件  ---------&gt;  编译  ---------&gt;  汇编代码    -----------&gt;  汇编  ---------&gt;  目标文件  ---------&gt;  链接  ---------&gt;  可执行文件</span><br><span class="line"></span><br><span class="line">test.c      gcc -E test.c -o test.i      text.i       gcc -S test.io test.s      text.s          gcc -S test.so test.o       test.o        gcc -S test.so test.o     text</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">源码  ---------&gt;  预处理  ---------&gt;  预编译文件  ---------&gt;  编译  ---------&gt;  汇编代码    -----------&gt;  汇编  ---------&gt;  目标文件  ---------&gt;  链接  ---------&gt;  可执行文件</span><br><span class="line"></span><br><span class="line">test.c      gcc -E test.c -o test.i      text.i       gcc -S test.io test.s      text.s          gcc -S test.so test.o     test.o       gcc -S test.so test.o     text</span><br></pre></td></tr></table></figure>
 <h2 id="C-C-代码需要迁移的原因"><a href="#C-C-代码需要迁移的原因" class="headerlink" title="C/C++代码需要迁移的原因"></a>C/C++代码需要迁移的原因</h2><ul>
 <li>架构差异:<ul>
 <li>x86和鲲鹏处理器(aarch64)属于不同架构</li>
@@ -738,6 +738,33 @@ var $main = document.querySelector('.main');
 <ul>
 <li>向量寄存器的差异:<ul>
 <li>x86和鲲鹏处理器(aarch64)使用向量寄存器不同, 向量指令集也存在差异</li>
+</ul>
+</li>
+</ul>
+<h1 id="C-C-代码构建编译过程"><a href="#C-C-代码构建编译过程" class="headerlink" title="C/C++代码构建编译过程"></a>C/C++代码构建编译过程</h1><h2 id="C-C-代码工程主要包括两类文件"><a href="#C-C-代码工程主要包括两类文件" class="headerlink" title="C/C++代码工程主要包括两类文件:"></a>C/C++代码工程主要包括两类文件:</h2><ul>
+<li>编译构建脚本<ul>
+<li>Makefile CmakeLists.txt Configure autogen.sh bootstrap.sh等等</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>C/C++源码<ul>
+<li>src examples tests等等</li>
+</ul>
+</li>
+</ul>
+<h2 id="可能涉及到的移植项"><a href="#可能涉及到的移植项" class="headerlink" title="可能涉及到的移植项"></a>可能涉及到的移植项</h2><ul>
+<li>编译构建脚本类文件<ul>
+<li>编译选项的移植(指定数据类型, 生成代码特性, 目标执行器架构, 处理器硬件加速功能等)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>C/C++代码类文件<ul>
+<li>编译宏移植(用户自定义宏移植, 编译器自定义宏移植)</li>
+<li>编译器自带builtin函数移植</li>
+<li>内联汇编移植</li>
+<li>SSE intrinsic函数移植(MMX/SEE类函数移植, AVX函数移植)</li>
 </ul>
 </li>
 </ul>
@@ -3449,7 +3476,7 @@ $(document).ready(function () {
 
 	
 function linker(){
-/* 外链保护http://link.zhd99.cn */
+/* 外链保护 */
 	 
 }
 		
@@ -3481,10 +3508,10 @@ function copycodes(){
 	
 	/* 代码高度 判断 */
 	
-	 $("figure td pre").scroll(function(){
-        $("figure td:nth-child(1) pre").scrollTop($(this).scrollTop()); // 纵向滚动条
-        $("figure td:nth-child(2) pre").scrollLeft($(this).scrollLeft()); // 横向滚动条
-    });
+	//  $("figure td pre").scroll(function(){
+    //     $("figure td:nth-child(1) pre").scrollTop($(this).scrollTop()); // 纵向滚动条
+    //     $("figure td:nth-child(2) pre").scrollLeft($(this).scrollLeft()); // 横向滚动条
+    // });
 	
 		!function (e, t, a) {
 		  /* code */
