@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>JavaScript JavaScript (函数之定义和获取) -  我叫史迪奇</title>
+	<title>爬虫 图像识别引擎(牢饭吃到饱) -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -652,10 +652,10 @@ var $main = document.querySelector('.main');
 <div class="sdq">
 	<div class="sdq-post" id="sdqPost">
 		<div class="sdq-title">
-			<h1>JavaScript JavaScript (函数之定义和获取)</h1>
+			<h1>爬虫 图像识别引擎(牢饭吃到饱)</h1>
 		</div>
 	  <div id="post" class="sdq-post-Statistics">
-            <a>2021年07月09日</a>
+            <a>2021年07月20日</a>
 		  	<a class="post-count">99 字</a>
 		
 		
@@ -667,7 +667,7 @@ var $main = document.querySelector('.main');
 <aside id="article-toc" class="fixed-toc">
     <div id="article-toc-inner">
         <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%9D%E5%AF%B9%E5%80%BC%E5%87%BD%E6%95%B0"><span class="toc-text">绝对值函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">调用函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#arguments-%E4%BC%A0%E9%80%92%E8%BF%9B%E6%9D%A5%E7%9A%84%E6%89%80%E6%9C%89%E7%9A%84%E5%8F%82%E6%95%B0%E6%98%AF%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84"><span class="toc-text">arguments 传递进来的所有的参数是一个数组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rest"><span class="toc-text">rest</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85tesseract"><span class="toc-text">安装tesseract</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E8%AF%86%E5%88%AB%E5%BC%95%E6%93%8E%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">图片识别引擎的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E8%AF%86%E5%88%AB%E5%BC%95%E6%93%8E%E7%9A%84%E4%BD%BF%E7%94%A8%E6%89%A9%E5%B1%95"><span class="toc-text">图片识别引擎的使用扩展</span></a></li></ol>
     </div>
 </aside>
 </div>
@@ -706,21 +706,24 @@ var $main = document.querySelector('.main');
 
 		<div>
 			  <article>
-				<p><strong>JavaScript个人整理</strong></p>
+				<p><strong>每天一个入狱小技巧</strong></p>
 <a id="more"></a>
 
-<h1 id="绝对值函数"><a href="#绝对值函数" class="headerlink" title="绝对值函数"></a>绝对值函数</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$  <span class="function"><span class="keyword">function</span> <span class="title">abs</span>(<span class="params">x</span>) </span>&#123;&#125;</span><br><span class="line">$      <span class="keyword">if</span>(x&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">$          <span class="keyword">return</span> x;</span><br><span class="line">$      &#125;</span><br><span class="line">$      <span class="keyword">else</span> &#123;</span><br><span class="line">$          <span class="keyword">return</span> -x;</span><br><span class="line">$      &#125;</span><br><span class="line">$  &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>一旦执行return 代表函数结束,返回结果 没有执行return, 函数执行完也会返回结果 undefined</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$  <span class="keyword">var</span> abs = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;&#125;</span><br><span class="line">$      <span class="keyword">if</span>(x&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">$          <span class="keyword">return</span> x;</span><br><span class="line">$      &#125;</span><br><span class="line">$      <span class="keyword">else</span> &#123;</span><br><span class="line">$          <span class="keyword">return</span> -x;</span><br><span class="line">$      &#125;</span><br><span class="line">$  &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>function(x){….}是匿名函数, 可以把结果赋值给abs, 可以调用函数</strong></p>
-<h1 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h1><p><strong>可以传任意个参数, 也可以不传递参数 假设不传递参数, 如何规避</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$  <span class="keyword">var</span> abs = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;&#125;</span><br><span class="line">$      <span class="comment">//手动抛出异常来判断</span></span><br><span class="line">$      <span class="keyword">if</span> (<span class="keyword">typeof</span> x!== <span class="string">&quot;number&quot;</span>) &#123;</span><br><span class="line">$          thow <span class="string">&quot;Not a Number&quot;</span>;</span><br><span class="line">$      &#125;</span><br><span class="line">$      <span class="keyword">if</span>(x&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">$          <span class="keyword">return</span> x;</span><br><span class="line">$      &#125;</span><br><span class="line">$      <span class="keyword">else</span> &#123;</span><br><span class="line">$          <span class="keyword">return</span> -x;</span><br><span class="line">$      &#125;</span><br><span class="line">$  &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="arguments-传递进来的所有的参数是一个数组"><a href="#arguments-传递进来的所有的参数是一个数组" class="headerlink" title="arguments 传递进来的所有的参数是一个数组"></a>arguments 传递进来的所有的参数是一个数组</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$  <span class="keyword">var</span> abs = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;&#125;</span><br><span class="line">$      <span class="built_in">console</span>.log(<span class="string">&quot;x=&gt;&quot;</span>+x)</span><br><span class="line">$          thow <span class="string">&quot;Not a Number&quot;</span>;</span><br><span class="line">$      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i&lt;<span class="built_in">arguments</span>.length;i++)&#123;</span><br><span class="line">$          <span class="built_in">console</span>,log(<span class="built_in">arguments</span>[i]);</span><br><span class="line">$      &#125;</span><br><span class="line">$      <span class="keyword">if</span>(x&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">$          <span class="keyword">return</span> x;</span><br><span class="line">$      &#125;</span><br><span class="line">$      <span class="keyword">else</span> &#123;</span><br><span class="line">$          <span class="keyword">return</span> -x;</span><br><span class="line">$      &#125;</span><br><span class="line">$  &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="rest"><a href="#rest" class="headerlink" title="rest"></a>rest</h1><p><strong>以前:</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$   <span class="keyword">if</span> (<span class="built_in">arguments</span>.;length&gt;<span class="number">2</span>) &#123;</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">2</span>;i&lt;<span class="built_in">arguments</span>.length;i++) &#123;</span><br><span class="line">$        &#125;</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>ES6的引入的新特性, 获取除了已经定义的参数之外的所有参数</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$   <span class="function"><span class="keyword">function</span> <span class="title">sdq</span>(<span class="params">s,d,q,... rest</span>) </span>&#123;&#125;</span><br><span class="line">$       <span class="built_in">console</span>.log(<span class="string">&quot;s=&gt;&quot;</span>+s);</span><br><span class="line">$       <span class="built_in">console</span>.log(<span class="string">&quot;d=&gt;&quot;</span>+d);</span><br><span class="line">$       <span class="built_in">console</span>.log(<span class="string">&quot;q=&gt;&quot;</span>+q);</span><br><span class="line">$       <span class="built_in">console</span>.log(rest);</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>rest参数只能写在最后面, 必须用…标识</strong></p>
+<h1 id="安装tesseract"><a href="#安装tesseract" class="headerlink" title="安装tesseract"></a>安装tesseract</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">windows exe安装配环境变量</span><br><span class="line"></span><br><span class="line">MacOS   brew install tesseract</span><br><span class="line"></span><br><span class="line">Linux   sudo apt-get install tesserac-ocr</span><br></pre></td></tr></table></figure>
+<p><strong>打开cmd 输入以下内容</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># PIL用于打开图片文件</span><br><span class="line">pip install pillow</span><br><span class="line"></span><br><span class="line"># pytesseract模块用于从图片中解析数据</span><br><span class="line">pip install pytesseract</span><br></pre></td></tr></table></figure>
+<h1 id="图片识别引擎的使用"><a href="#图片识别引擎的使用" class="headerlink" title="图片识别引擎的使用"></a>图片识别引擎的使用</h1><p><strong>通过pytesseract模块的image_to_string方法就能将打开图片的文件中的数据提取成字符串数据</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line">import pytesseract</span><br><span class="line"></span><br><span class="line"># 打开一个图片文件</span><br><span class="line">im &#x3D; Image.open(&#39;起名可以是中文.jpg&#39;)    &#x2F;&#x2F;该图片的&quot;内容&quot;非中文, 中文不识别</span><br><span class="line"></span><br><span class="line">result &#x3D; pytesseract.image_to_string(im)</span><br><span class="line"></span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+<h1 id="图片识别引擎的使用扩展"><a href="#图片识别引擎的使用扩展" class="headerlink" title="图片识别引擎的使用扩展"></a>图片识别引擎的使用扩展</h1><p><strong><a target="_blank" rel="noopener" href="https://www.cnblogs.com/cnlian/p/5765871.html">训练平台</a></strong></p>
+<ul>
+<li>其他OCR平台<ul>
+<li><a target="_blank" rel="noopener" href="https://azure.microsoft.com/zh-cn/services/cognitive-services/computer-vision">微软Azure图像识别</a></li>
+<li><a target="_blank" rel="noopener" href="http://aidemo.youdao.com/ocrdemo">有道智能文字识别</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.aliyun.com/product/cdi">阿里云图文识别</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/product/ocr">腾讯OCR文字识别</a></li>
+</ul>
+</li>
+</ul>
 
 			  </article>
 		</div>
@@ -798,7 +801,7 @@ $(window).load(function(){
         
 	
 <strong>本文链接：</strong>
-	<a href="https://sdq3.gitee.io/JavaScript-definition-obtain.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;JavaScript-definition-obtain.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;JavaScript-definition-obtain.html</a><br>
+	<a href="https://sdq3.gitee.io/reptile-tesseract.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;reptile-tesseract.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;reptile-tesseract.html</a><br>
 </div>
 
 	  
