@@ -1326,6 +1326,35 @@ $</style>
       </categories>
   </entry>
   <entry>
+    <title>JavaScript 数据类型之(数组类型)</title>
+    <url>/JavaScript-array.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="Array可以包含任意的数据类型"><a href="#Array可以包含任意的数据类型" class="headerlink" title="Array可以包含任意的数据类型"></a>Array可以包含任意的数据类型</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];     <span class="comment">/*通过下标取值和赋值*/</span></span><br><span class="line">$  arr[<span class="number">0</span>]</span><br><span class="line">$  arr[<span class="number">3</span>] = <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<h1 id="数组长度"><a href="#数组长度" class="headerlink" title="数组长度"></a>数组长度</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   arr.length      <span class="comment">/*赋值过小值, 元素就会丢失*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="indexOf-通过元素获得下标"><a href="#indexOf-通过元素获得下标" class="headerlink" title="indexOf  通过元素获得下标"></a>indexOf  通过元素获得下标</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="keyword">var</span> arr = [<span class="number">0</span>,<span class="number">1</span>]; </span><br><span class="line">$  arr.indexOf(<span class="number">2</span>);  <span class="comment">/*输出1  字符串&quot;1&quot;和数字1是不同的*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="slice-截取Array的一部分-返回一个数组"><a href="#slice-截取Array的一部分-返回一个数组" class="headerlink" title="slice() 截取Array的一部分, 返回一个数组"></a>slice() 截取Array的一部分, 返回一个数组</h1><p><strong>例子</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ slice()   <span class="comment">/*类似于String中的substring*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="push-和pop-尾部"><a href="#push-和pop-尾部" class="headerlink" title="push()和pop()尾部"></a>push()和pop()尾部</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   push:    <span class="comment">/*压入到头部*/</span></span><br><span class="line">$   shift:   <span class="comment">/*弹出头部的一个元素*/</span></span><br></pre></td></tr></table></figure>
+
+
+<h1 id="排序-sort"><a href="#排序-sort" class="headerlink" title="排序 sort()"></a>排序 sort()</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  (<span class="number">3</span>)[<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>,<span class="string">&quot;C&quot;</span>]         <span class="comment">/*排序前*/</span></span><br><span class="line">$  arr.sort()         </span><br><span class="line">$  (<span class="number">3</span>)[<span class="string">&quot;A&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;C&quot;</span>]         <span class="comment">/*排序后*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="元素反转-reverse"><a href="#元素反转-reverse" class="headerlink" title="元素反转 reverse()"></a>元素反转 reverse()</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  (<span class="number">3</span>)[<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>,<span class="string">&quot;C&quot;</span>]         <span class="comment">/*反转前*/</span></span><br><span class="line">$  arr.reverse()        </span><br><span class="line">$  (<span class="number">3</span>)[<span class="string">&quot;C&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>]         <span class="comment">/*反转后*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="concat"><a href="#concat" class="headerlink" title="concat()"></a>concat()</h1><p><strong>注意concat()并没有修改数组, 只是会返回一个新的数组</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  (<span class="number">3</span>)[<span class="string">&quot;C&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>]</span><br><span class="line">$  arr.concat([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])        </span><br><span class="line">$  (<span class="number">6</span>)[<span class="string">&quot;C&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">$  arr</span><br><span class="line">$  (<span class="number">3</span>)[<span class="string">&quot;C&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>]</span><br></pre></td></tr></table></figure>
+<h1 id="join-连接符"><a href="#join-连接符" class="headerlink" title="join 连接符"></a>join 连接符</h1><p><strong>例子</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  (<span class="number">3</span>)[<span class="string">&quot;C&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>] </span><br><span class="line">$  arr.join(<span class="string">&#x27;-&#x27;</span>)         <span class="comment">/*使用特定的字符串连接*/</span>   </span><br><span class="line">$  <span class="comment">/*结果输出&quot;C-B-A&quot;*/</span>       </span><br></pre></td></tr></table></figure>
+<h1 id="多位数组"><a href="#多位数组" class="headerlink" title="多位数组"></a>多位数组</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  arr = [[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>],[<span class="string">&quot;5&quot;</span>,<span class="string">&quot;6&quot;</span>]];</span><br><span class="line">$  arr[<span class="number">1</span>][<span class="number">1</span>]   </span><br><span class="line">$  <span class="comment">/*结果输出4*/</span>  </span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
     <title>JavaScript 数据类型之(对象)</title>
     <url>/JavaScript-object.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
@@ -1363,35 +1392,6 @@ $</style>
 <h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$   Car c = new Car();   //先创建一辆车</span><br><span class="line">$   c.fly();  //.表示调用  众所周知所以车都是可以飞的</span><br><span class="line">$   c.diving();  //.表示调用  众所周知所以车都是可以下水的</span><br><span class="line">$   c.color = <span class="string">&quot;透明&quot;</span>;  //我的车是透明色</span><br><span class="line">$   c.wheel = 5; //众所周知所以车都是5个轮子</span><br><span class="line">$   c.seat = 9;  //我的车 里面坐4个 车前绑1个人用来刹车 车顶坐1个人 剩下3个人的拿板拿雨伞凳坐后车厢 尾气管那面绑上1个人 用来吸收尾气</span><br><span class="line">$   System.out.println(c.color);</span><br><span class="line">$   System.out.println(c.wheel);</span><br><span class="line">$   System.out.println(c.seat);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript 数据类型之(数组类型)</title>
-    <url>/JavaScript-array.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="Array可以包含任意的数据类型"><a href="#Array可以包含任意的数据类型" class="headerlink" title="Array可以包含任意的数据类型"></a>Array可以包含任意的数据类型</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];     <span class="comment">/*通过下标取值和赋值*/</span></span><br><span class="line">$  arr[<span class="number">0</span>]</span><br><span class="line">$  arr[<span class="number">3</span>] = <span class="number">3</span></span><br></pre></td></tr></table></figure>
-<h1 id="数组长度"><a href="#数组长度" class="headerlink" title="数组长度"></a>数组长度</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   arr.length      <span class="comment">/*赋值过小值, 元素就会丢失*/</span></span><br></pre></td></tr></table></figure>
-<h1 id="indexOf-通过元素获得下标"><a href="#indexOf-通过元素获得下标" class="headerlink" title="indexOf  通过元素获得下标"></a>indexOf  通过元素获得下标</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="keyword">var</span> arr = [<span class="number">0</span>,<span class="number">1</span>]; </span><br><span class="line">$  arr.indexOf(<span class="number">2</span>);  <span class="comment">/*输出1  字符串&quot;1&quot;和数字1是不同的*/</span></span><br></pre></td></tr></table></figure>
-<h1 id="slice-截取Array的一部分-返回一个数组"><a href="#slice-截取Array的一部分-返回一个数组" class="headerlink" title="slice() 截取Array的一部分, 返回一个数组"></a>slice() 截取Array的一部分, 返回一个数组</h1><p><strong>例子</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ slice()   <span class="comment">/*类似于String中的substring*/</span></span><br></pre></td></tr></table></figure>
-<h1 id="push-和pop-尾部"><a href="#push-和pop-尾部" class="headerlink" title="push()和pop()尾部"></a>push()和pop()尾部</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   push:    <span class="comment">/*压入到头部*/</span></span><br><span class="line">$   shift:   <span class="comment">/*弹出头部的一个元素*/</span></span><br></pre></td></tr></table></figure>
-
-
-<h1 id="排序-sort"><a href="#排序-sort" class="headerlink" title="排序 sort()"></a>排序 sort()</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  (<span class="number">3</span>)[<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>,<span class="string">&quot;C&quot;</span>]         <span class="comment">/*排序前*/</span></span><br><span class="line">$  arr.sort()         </span><br><span class="line">$  (<span class="number">3</span>)[<span class="string">&quot;A&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;C&quot;</span>]         <span class="comment">/*排序后*/</span></span><br></pre></td></tr></table></figure>
-<h1 id="元素反转-reverse"><a href="#元素反转-reverse" class="headerlink" title="元素反转 reverse()"></a>元素反转 reverse()</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  (<span class="number">3</span>)[<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>,<span class="string">&quot;C&quot;</span>]         <span class="comment">/*反转前*/</span></span><br><span class="line">$  arr.reverse()        </span><br><span class="line">$  (<span class="number">3</span>)[<span class="string">&quot;C&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>]         <span class="comment">/*反转后*/</span></span><br></pre></td></tr></table></figure>
-<h1 id="concat"><a href="#concat" class="headerlink" title="concat()"></a>concat()</h1><p><strong>注意concat()并没有修改数组, 只是会返回一个新的数组</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  (<span class="number">3</span>)[<span class="string">&quot;C&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>]</span><br><span class="line">$  arr.concat([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])        </span><br><span class="line">$  (<span class="number">6</span>)[<span class="string">&quot;C&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">$  arr</span><br><span class="line">$  (<span class="number">3</span>)[<span class="string">&quot;C&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>]</span><br></pre></td></tr></table></figure>
-<h1 id="join-连接符"><a href="#join-连接符" class="headerlink" title="join 连接符"></a>join 连接符</h1><p><strong>例子</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  (<span class="number">3</span>)[<span class="string">&quot;C&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>] </span><br><span class="line">$  arr.join(<span class="string">&#x27;-&#x27;</span>)         <span class="comment">/*使用特定的字符串连接*/</span>   </span><br><span class="line">$  <span class="comment">/*结果输出&quot;C-B-A&quot;*/</span>       </span><br></pre></td></tr></table></figure>
-<h1 id="多位数组"><a href="#多位数组" class="headerlink" title="多位数组"></a>多位数组</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  arr = [[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>],[<span class="string">&quot;5&quot;</span>,<span class="string">&quot;6&quot;</span>]];</span><br><span class="line">$  arr[<span class="number">1</span>][<span class="number">1</span>]   </span><br><span class="line">$  <span class="comment">/*结果输出4*/</span>  </span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>JavaScript</category>
       </categories>
   </entry>
   <entry>
@@ -1674,17 +1674,6 @@ $
       </categories>
   </entry>
   <entry>
-    <title>下次一定</title>
-    <url>/xcyd.html</url>
-    <content><![CDATA[<p><strong>本人制作简单的一款软件</strong></p>
-<a id="more"></a>
-
-<h1 id="软件截图"><a href="#软件截图" class="headerlink" title="软件截图"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcydjt.jpg">软件截图</a></h1><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcyd.jpg">下载</a></h1><h1 id="声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡"><a href="#声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡" class="headerlink" title="声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡"></a>声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡</h1><h1 id="真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器"><a href="#真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器" class="headerlink" title="真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器"></a>真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器</h1><h1 id="除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了"><a href="#除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了" class="headerlink" title="除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了"></a>除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了</h1>]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-  </entry>
-  <entry>
     <title>轻松理解json与python关系</title>
     <url>/json-python.html</url>
     <content><![CDATA[<p><strong>json笔记</strong></p>
@@ -1792,6 +1781,17 @@ python数据类型
 ]]></content>
       <categories>
         <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>下次一定</title>
+    <url>/xcyd.html</url>
+    <content><![CDATA[<p><strong>本人制作简单的一款软件</strong></p>
+<a id="more"></a>
+
+<h1 id="软件截图"><a href="#软件截图" class="headerlink" title="软件截图"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcydjt.jpg">软件截图</a></h1><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a><a href="https://sdq3.gitee.io/images/lower-second-one-set/xcyd.jpg">下载</a></h1><h1 id="声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡"><a href="#声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡" class="headerlink" title="声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡"></a>声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡</h1><h1 id="真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器"><a href="#真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器" class="headerlink" title="真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器"></a>真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器</h1><h1 id="除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了"><a href="#除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了" class="headerlink" title="除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了"></a>除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了</h1>]]></content>
+      <categories>
+        <category>Android</category>
       </categories>
   </entry>
   <entry>
@@ -1917,6 +1917,21 @@ python数据类型
       </categories>
   </entry>
   <entry>
+    <title>python 基本运算符(我失忆了)</title>
+    <url>/python-jjcc.html</url>
+    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
+<a id="more"></a>
+
+<h1 id="pdtho基本运算符"><a href="#pdtho基本运算符" class="headerlink" title="pdtho基本运算符"></a>pdtho基本运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;加&#39;, 2 + 3)</span><br><span class="line">print(&#39;减&#39;, 1 - 3)</span><br><span class="line">print(&#39;两个减号&#39;, 1 - -2)</span><br><span class="line">print(&#39;乘&#39;, 2 * 4)</span><br><span class="line">print(&#39;除&#39;, 9 &#x2F; 3)</span><br><span class="line">print(&#39;取整&#39;, 10 &#x2F;&#x2F; 3, 10 &#x2F;&#x2F; 4)</span><br><span class="line">print(&#39;取整1&#39;, 10 &#x2F; 3, 10 &#x2F; 4)</span><br><span class="line">print(&#39;模运算，取余数&#39;, 10 % 3)  </span><br></pre></td></tr></table></figure>
+<h1 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h1><p><strong>4舍6入5看齐,奇进偶不进,相比四舍五入更精确</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(round(1.2), round(1.5), round(2.5))</span><br></pre></td></tr></table></figure>
+<h1 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s, d, q, z &#x3D; 1, 2, 3, 1</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; d&#39;, s &#x3D;&#x3D; d)</span><br><span class="line">print(&#39;s !&#x3D; d&#39;, s !&#x3D; d)</span><br><span class="line">print(&#39;s &gt; d&#39;, s &gt; d)</span><br><span class="line">print(&#39;d &lt; z&#39;, d &lt; z)</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; z&#39;, s &#x3D;&#x3D; z)   #比较值</span><br><span class="line">print(&#39;s is z&#39;, s is z)   #比较地址</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>python 字符串(我失忆了)</title>
     <url>/python-zfc.html</url>
     <content><![CDATA[<p><strong>我真的失忆了</strong></p>
@@ -1928,21 +1943,6 @@ python数据类型
 <h1 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 切片 变量名[a:b] 同数学区间的[a,b)</span><br><span class="line">sdq &#x3D; &#39;0123456789&#39;</span><br><span class="line">print(&#39;sdq[0:3]&#39;, sdq[0:3])         #012</span><br><span class="line">print(&#39;sdq[1:]&#39;, sdq[1:])           #123456789</span><br><span class="line">print(&#39;sdq[:2]&#39;, sdq[:2])           #01</span><br><span class="line">print(&#39;sdq[:]&#39;, sdq[:])             #返回全部</span><br><span class="line">print(&#39;sdq[-4:-1]&#39;, sdq[-4:-1])     #678</span><br><span class="line">print(sdq[1:100])                   # 切片超出范围是不会报错的会返回全部</span><br></pre></td></tr></table></figure>
 <h1 id="代码格式化"><a href="#代码格式化" class="headerlink" title="代码格式化"></a>代码格式化</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># name &#x3D; &#39;史迪奇&#39;</span><br><span class="line"># number &#x3D; 626</span><br><span class="line"># print(name+&#39;是个&#39;+str(number)+&#39;号实验品&#39;)</span><br><span class="line"># print(&#39;&#123;&#125;是个&#123;&#125;号实验品&#39;.format(name, number))</span><br><span class="line"># print(&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;.format(name&#x3D;&#39;史迪奇&#39;, number&#x3D;626))</span><br><span class="line"># print(f&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;)</span><br><span class="line"># 在一些老的教程里会用%的形式格式化代码，在Python3里就不建议使用了</span><br></pre></td></tr></table></figure>
 <h1 id="字符串的一些使用方法"><a href="#字符串的一些使用方法" class="headerlink" title="字符串的一些使用方法"></a>字符串的一些使用方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sdq &#x3D; &#39;Stitch&#39;</span><br><span class="line">print(&#39;find第一次出现b的索引&#39;, sdq.find(&#39;h&#39;))  #看h的下标</span><br><span class="line">print(&#39;replace&#39;, sdq.replace(&#39;i&#39;, &#39;I&#39;))  #拿I替换i</span><br><span class="line">print(&#39;upper&#39;, sdq.upper()) #全大写</span><br><span class="line">print(&#39;lower&#39;, sdq.lower()) #全小写</span><br><span class="line">print(&#39;swapcase 对换&#39;, &#39;sdq&#39;.swapcase())  #反转字母大小写</span><br><span class="line">print(&#39;去前后空格&#39;, &#39; sdq &#39;.strip(), sep&#x3D;&#39;&#39;)  </span><br><span class="line">print(&#39;S t i t c h &#39;.replace(&#39; &#39;, &#39;&#39;))   #空格替换空字符串</span><br><span class="line"></span><br><span class="line">print(len(&#39;S t i t c h&#39;)) # 获取字符串长度 里面的空格也是计算长度的</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>python 基本运算符(我失忆了)</title>
-    <url>/python-jjcc.html</url>
-    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
-<a id="more"></a>
-
-<h1 id="pdtho基本运算符"><a href="#pdtho基本运算符" class="headerlink" title="pdtho基本运算符"></a>pdtho基本运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;加&#39;, 2 + 3)</span><br><span class="line">print(&#39;减&#39;, 1 - 3)</span><br><span class="line">print(&#39;两个减号&#39;, 1 - -2)</span><br><span class="line">print(&#39;乘&#39;, 2 * 4)</span><br><span class="line">print(&#39;除&#39;, 9 &#x2F; 3)</span><br><span class="line">print(&#39;取整&#39;, 10 &#x2F;&#x2F; 3, 10 &#x2F;&#x2F; 4)</span><br><span class="line">print(&#39;取整1&#39;, 10 &#x2F; 3, 10 &#x2F; 4)</span><br><span class="line">print(&#39;模运算，取余数&#39;, 10 % 3)  </span><br></pre></td></tr></table></figure>
-<h1 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h1><p><strong>4舍6入5看齐,奇进偶不进,相比四舍五入更精确</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(round(1.2), round(1.5), round(2.5))</span><br></pre></td></tr></table></figure>
-<h1 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s, d, q, z &#x3D; 1, 2, 3, 1</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; d&#39;, s &#x3D;&#x3D; d)</span><br><span class="line">print(&#39;s !&#x3D; d&#39;, s !&#x3D; d)</span><br><span class="line">print(&#39;s &gt; d&#39;, s &gt; d)</span><br><span class="line">print(&#39;d &lt; z&#39;, d &lt; z)</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; z&#39;, s &#x3D;&#x3D; z)   #比较值</span><br><span class="line">print(&#39;s is z&#39;, s is z)   #比较地址</span><br></pre></td></tr></table></figure>
-]]></content>
       <categories>
         <category>Python</category>
       </categories>
@@ -3285,6 +3285,25 @@ option && myChart.setOption(option);
       </categories>
   </entry>
   <entry>
+    <title>爬虫 访问百度翻译(牢饭吃到饱)</title>
+    <url>/reptile-Baidutranslate.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+
+<h1 id="导入requests"><a href="#导入requests" class="headerlink" title="导入requests"></a>导入requests</h1><!--more-->
+<p><strong>打开cmd输入以下代码</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip install requests</span><br></pre></td></tr></table></figure>
+<h1 id="百度翻译案例"><a href="#百度翻译案例" class="headerlink" title="百度翻译案例"></a>百度翻译案例</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &quot;https:&#x2F;&#x2F;fanyi.baidu.com&#x2F;sug&quot;</span><br><span class="line"></span><br><span class="line">s &#x3D; input(&quot;请输入你要翻译的英文单词&quot;)</span><br><span class="line"></span><br><span class="line">dat &#x3D; &#123;</span><br><span class="line">        &quot;kw&quot;:s</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">tou &#x3D; &#123;</span><br><span class="line">    &quot;user-agent&quot;: &quot;Mozilla&#x2F;5.0 (Linux; Android 6.0; Nexus 5 Build&#x2F;MRA58N) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.85 Mobile Safari&#x2F;537.36&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">pachon &#x3D; requests.post(url,headers&#x3D;tou,data&#x3D;dat)</span><br><span class="line"></span><br><span class="line">print(pachon)</span><br><span class="line"></span><br><span class="line">print(pachon.json())</span><br><span class="line"></span><br><span class="line">pachon.close()  #断开&#x2F;关闭连接, 一定要断开</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
     <title>爬虫 请求头和响应头(吃牢饭集合)</title>
     <url>/reptile-header.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -3382,25 +3401,6 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 
 
  -->
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>爬虫 访问百度翻译(牢饭吃到饱)</title>
-    <url>/reptile-Baidutranslate.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-
-<h1 id="导入requests"><a href="#导入requests" class="headerlink" title="导入requests"></a>导入requests</h1><!--more-->
-<p><strong>打开cmd输入以下代码</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip install requests</span><br></pre></td></tr></table></figure>
-<h1 id="百度翻译案例"><a href="#百度翻译案例" class="headerlink" title="百度翻译案例"></a>百度翻译案例</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &quot;https:&#x2F;&#x2F;fanyi.baidu.com&#x2F;sug&quot;</span><br><span class="line"></span><br><span class="line">s &#x3D; input(&quot;请输入你要翻译的英文单词&quot;)</span><br><span class="line"></span><br><span class="line">dat &#x3D; &#123;</span><br><span class="line">        &quot;kw&quot;:s</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">tou &#x3D; &#123;</span><br><span class="line">    &quot;user-agent&quot;: &quot;Mozilla&#x2F;5.0 (Linux; Android 6.0; Nexus 5 Build&#x2F;MRA58N) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.85 Mobile Safari&#x2F;537.36&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">pachon &#x3D; requests.post(url,headers&#x3D;tou,data&#x3D;dat)</span><br><span class="line"></span><br><span class="line">print(pachon)</span><br><span class="line"></span><br><span class="line">print(pachon.json())</span><br><span class="line"></span><br><span class="line">pachon.close()  #断开&#x2F;关闭连接, 一定要断开</span><br></pre></td></tr></table></figure>
-
-
-
 ]]></content>
       <categories>
         <category>爬虫</category>
