@@ -67,6 +67,178 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Bodhi Linux安装教程(老电脑的福利)</title>
+    <url>/Bodhi-Linux.html</url>
+    <content><![CDATA[<p><strong>本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版</strong></p>
+<a id="more"></a>
+
+<p><strong>以下是我的电脑的参数</strong></p>
+<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%81%94%E6%83%B3G430.jpg"></p>
+<h1 id="第一步-安装Bodhi-Linux"><a href="#第一步-安装Bodhi-Linux" class="headerlink" title="第一步 安装Bodhi Linux"></a>第一步 安装Bodhi Linux</h1><p><strong>Bodhi Linux<a href="https://nchc.dl.sourceforge.net/project/bodhilinux/5.1.0/bodhi-5.1.0-64.iso">个人建议Standard版本</a>如果你想选择别的版本到<a href="https://www.bodhilinux.com/download/">官网找</a></strong></p>
+<p><a href="https://www.bilibili.com/video/BV1aW411C7NR">安装视频参考Ubantu的, 都是可视化界面安装</a></p>
+<h1 id="第二步-老电脑无法连接WIFI-所以终端输入以下命令"><a href="#第二步-老电脑无法连接WIFI-所以终端输入以下命令" class="headerlink" title="第二步 老电脑无法连接WIFI 所以终端输入以下命令"></a>第二步 老电脑无法连接WIFI 所以终端输入以下命令</h1><p><strong>建议用网线装机</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install bcmwl-kernel-source</span><br></pre></td></tr></table></figure>
+
+<p><strong>仍然没有的话 就在终端输入以下命令</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo nano /etc/modprobe.d/blacklist.conf   //nano命令ctrl+x退出，选择y后保存</span><br><span class="line">$ blacklist acer-wmi   //最后一行加入</span><br></pre></td></tr></table></figure>
+
+<h1 id="第三步-安装安装中文环境"><a href="#第三步-安装安装中文环境" class="headerlink" title="第三步 安装安装中文环境"></a>第三步 安装安装中文环境</h1><p><strong>安装中文字体和中文语言包</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install -y language-pack-zh-hans language-pack-zh-hans-base language-pack-gnome-zh-hans language-pack-gnome-zh-hans-base fonts-wqy-microhei</span><br></pre></td></tr></table></figure>
+
+<p><strong>然后按照以下打开步骤</strong></p>
+<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%871.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%872.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%873.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%874.jpg"></p>
+<h1 id="第四步安装输入法"><a href="#第四步安装输入法" class="headerlink" title="第四步安装输入法"></a>第四步安装输入法</h1><p><strong>这里<a href="https://pinyin.sogou.com/linux/">安装搜狗输入法</a></strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install fonts-droid-fallback zip   //安装它的依赖包</span><br><span class="line">$ sudo dpkg -i xxx    //xxx为下载的包名 后缀名也要</span><br></pre></td></tr></table></figure>
+<h1 id="第五步安装一些常用软件"><a href="#第五步安装一些常用软件" class="headerlink" title="第五步安装一些常用软件"></a>第五步安装一些常用软件</h1><p><strong>例如安装vim</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install vim   //vim是文本编辑软件</span><br></pre></td></tr></table></figure>
+<p><strong>例如浏览器 它自身也有web浏览器 看个人喜欢</strong></p>
+<p><strong>安装火狐浏览器和中文语言包</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get remove firefox</span><br><span class="line">$ sudo apt-get install -y firefox firefox-locale-zh-hans</span><br></pre></td></tr></table></figure>
+<p><strong>安装谷歌浏览器</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/</span><br><span class="line">wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -     //先添加源</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install google-chrome-stable     //安装谷歌浏览器</span><br></pre></td></tr></table></figure>
+<h1 id="安装neofetch"><a href="#安装neofetch" class="headerlink" title="安装neofetch"></a>安装neofetch</h1><p><strong>终端输入以下命令</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:dawidd0811/neofetch</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install neofetch</span><br><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
+<p><strong>本人试了(CrunchBang Linux), (Zenix Linux), (antiX Linux), (Zenwalk Linux), (Xubuntu Linux), (Lubuntu Linux), (Tiny Core Linux), (SliTaz Linux), (Porteus Linux), (Puppy Linux), (Silverblue Linux), (4MLinux)等等带桌面的发行版然后就唯独Bodhi Linux最满意</strong></p>
+<p><strong>至于为什么要带桌面的发行版, 因为要日用偶尔看看B站什么的</strong></p>
+<p><strong>关于这台电脑用的硬盘 大小80G 有9724个坏道 拆掉坏掉的戴尔一条三星的DDR2 才有2G内存可以体验</strong></p>
+<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E5%9D%8F%E9%81%93.jpg"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Arch系统包桌面傻瓜式安装 (有手就行)</title>
+    <url>/Arch-install.html</url>
+    <content><![CDATA[<p><strong>本人是Arch教徒过来传一下教</strong> </p>
+<img src="/images/Arch傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;">
+<a id="more"></a>
+
+<p><strong>在Windows里用DiskGenius转GPT之后 删除你所要安装Arch的分区</strong></p>
+<img src="/images/Arch傻瓜式安装/转GPT格式.jpg" style="width: 300px; height: 150px;">
+
+<p><strong>磁盘变更还可以用Lixux命令来 不建议使用</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ partrd /dev/xxx  //你要变更的磁盘</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gpt</span><br></pre></td></tr></table></figure>
+<p>然后退出</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ quit</span><br></pre></td></tr></table></figure>
+<h1 id="第一步-先要有一个启动盘-这里推荐清华大学开源软件镜像站"><a href="#第一步-先要有一个启动盘-这里推荐清华大学开源软件镜像站" class="headerlink" title="第一步 先要有一个启动盘 这里推荐清华大学开源软件镜像站"></a>第一步 先要有一个启动盘 这里推荐<a href="https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/">清华大学开源软件镜像站</a></h1><h1 id="第二步-引导界面选择第一个-进入U盘"><a href="#第二步-引导界面选择第一个-进入U盘" class="headerlink" title="第二步 引导界面选择第一个 进入U盘"></a>第二步 引导界面选择第一个 进入U盘</h1><p><strong>先检查一下是不是UEFI启动,输入以下命令，有输出就代码是UEFI启动，检查BIOS设置是否为UEFI, BIOS设置每个机型都不一样</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ls /sys/firmware/efi/efivars</span><br></pre></td></tr></table></figure>
+<h1 id="第三步-检查网络连接"><a href="#第三步-检查网络连接" class="headerlink" title="第三步 检查网络连接"></a>第三步 检查网络连接</h1><p><strong>建议直接插网线，然后ping一下百度，有反应继续 没反应检查网线</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ping www.baidu.com</span><br></pre></td></tr></table></figure>
+
+<p>然后CTRL+Z退出</p>
+<p><strong>如果你想用WIFI就执行以下步骤</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ iwctl</span><br></pre></td></tr></table></figure>
+<p><strong>查看网卡 通常都是wlan0</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ device list</span><br></pre></td></tr></table></figure>
+<p><strong>以下命令是扫描你范围内的无线网卡</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ station wlan0 get-networks</span><br></pre></td></tr></table></figure>
+
+<p><strong>找到你的WIFI</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ station wlan0 connect xxx    //无线网卡名字通常是wlan0，WIFI名字xxx</span><br></pre></td></tr></table></figure>
+<p><strong>Passphrase:是让你输密码</strong></p>
+<p><strong>然后以下命令退出</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+<h1 id="第四步-设置系统时钟更新-与网络时间同步"><a href="#第四步-设置系统时钟更新-与网络时间同步" class="headerlink" title="第四步 设置系统时钟更新 与网络时间同步"></a>第四步 设置系统时钟更新 与网络时间同步</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ timedatectl set-ntp <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p><strong>查看是否执行完同步</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ timedatectl status</span><br></pre></td></tr></table></figure>
+<h1 id="第五步-更换镜像源"><a href="#第五步-更换镜像源" class="headerlink" title="第五步 更换镜像源"></a>第五步 更换镜像源</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ vim /etc/pamcan.d/mtrrorlist</span><br></pre></td></tr></table></figure>
+<p><strong>查找: Server = <a href="https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch">https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch</a></strong></p>
+<h1 id="第六步-分区"><a href="#第六步-分区" class="headerlink" title="第六步 分区"></a>第六步 分区</h1><p><strong>查看分区</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ lsblk</span><br></pre></td></tr></table></figure>
+<p><strong>然后正式分区</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cfdisk /dev/xxx   //你要变更的磁盘</span><br></pre></td></tr></table></figure>
+<p><strong>终于到这里了 这里是图形化界面很好查找</strong><br><img src="/images/Arch傻瓜式安装/图形化界面.jpg" style="width: 750px; height: 100px;"></p>
+<p><strong>(New是新建) (Resize是调整大小) (Quit是退出) (Type是类型) (Heip是帮助) (Wrire是保存) (Dump是丢弃)</strong></p>
+<p><strong>步骤: 先点New建一个300M的文件，然后点Type选择EFI System点击，再点New建一个2G的文件，然后点Type选择Linux swap点击，最后点New建一个(根目录)主分区把剩下的所有内存用上，然后点Type选择Linux filesystem点击，然后Wrire回车，并输入yes，然后拍照，点击Quit退出</strong></p>
+<img src="/images/Arch傻瓜式安装/例子.jpg" style="width: 900px; height: 300px;">
+
+<p><strong>以防万一，检查一下</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cfdisk -l</span><br></pre></td></tr></table></figure>
+<h1 id="第七步-格式化操作"><a href="#第七步-格式化操作" class="headerlink" title="第七步 格式化操作"></a>第七步 格式化操作</h1><p><strong>格式化主分区(根目录)</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkfs.ext4 /dev/xxx   //就是你刚刚Linux filesystem的</span><br></pre></td></tr></table></figure>
+<p><strong>格式化EFI分区</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkfs.vfat /dev/xxx     //就是你刚刚EFI System的</span><br></pre></td></tr></table></figure>
+<p><strong>格式化swap分区</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkfswap -f /dev/xxx     //就是你刚刚Linux swap的</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ swapon /dev/xxx     //就是你刚刚Linux swap的</span><br></pre></td></tr></table></figure>
+<h1 id="第八步-挂载"><a href="#第八步-挂载" class="headerlink" title="第八步 挂载"></a>第八步 挂载</h1><p><strong>挂载根目录 注意/mnt前面有空格</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mount /dev/(就是你刚刚Linux filesystem的) /mnt</span><br></pre></td></tr></table></figure>
+<p><strong>挂载EFI分区 先创建boot目录 再里面创建EFI目录 注意/mnt前面还有空格</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir /mnt/boot</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir /mnt/boot/EFI</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mount /dev/xxx /mnt/boot/EFI       //xxx就是你刚刚EFI System的</span><br></pre></td></tr></table></figure>
+<h1 id="第九步-安装系统"><a href="#第九步-安装系统" class="headerlink" title="第九步 安装系统"></a>第九步 安装系统</h1><p><strong>这三个包必安装</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacstrap /mnt base linux linux-firmware</span><br></pre></td></tr></table></figure>
+<p><strong>然后安装功能性软件 联网的有dhcpcd iwd，编辑器有vim，提权有sudo</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacstrap /mnt dhcpcd iwd vim sudo</span><br></pre></td></tr></table></figure>
+<p><strong>然后定义etc分区</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
+<p><strong>以防万一还是检查一下</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
+<h1 id="第七步-把环境迁移到新系统"><a href="#第七步-把环境迁移到新系统" class="headerlink" title="第七步 把环境迁移到新系统"></a>第七步 把环境迁移到新系统</h1><p><strong>迁移命令</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ arch-chroot /mnt</span><br></pre></td></tr></table></figure>
+<p><strong>创建时区 例如: 上海</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ln -sf /usr.share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
+<p><strong>同步时区</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hwclock --systohc</span><br></pre></td></tr></table></figure>
+<p><strong>设置语言 留意en_US.UTF-8 UTF-8</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ vim /etc/locale.gen</span><br></pre></td></tr></table></figure>
+<p><strong>然后生成</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ locale-gen</span><br></pre></td></tr></table></figure>
+<p><strong>然后输入内容</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">&#x27;LANG=EN_us.utf-8 &gt; /etc/locale.conf&#x27;</span></span><br></pre></td></tr></table></figure>
+<p><strong>以防万一 检查一下</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat /etc/locale.conf</span><br></pre></td></tr></table></figure>
+<h1 id="第八步-用户设置"><a href="#第八步-用户设置" class="headerlink" title="第八步 用户设置"></a>第八步 用户设置</h1><p><strong>Root用户设置密码</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ passwd root</span><br></pre></td></tr></table></figure>
+<p><strong>intel英特尔CPU安装这个</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S intel-ucode</span><br></pre></td></tr></table></figure>
+<p><strong>AMD超微CPU安装这个</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S amd-ucode</span><br></pre></td></tr></table></figure>
+<h1 id="第九步-安装引导程序"><a href="#第九步-安装引导程序" class="headerlink" title="第九步 安装引导程序"></a>第九步 安装引导程序</h1><p><strong>安装grub引导</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S grub efibootmgr</span><br></pre></td></tr></table></figure>
+<p><strong>然后给grub引导取个名字</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ grub-install --target=x86_64-efi --efi-directory=/bootloader-id=Arch      //这里我起Arch 顺便起个名字就好了</span><br></pre></td></tr></table></figure>
+<p><strong>生成配置文件</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+<p><strong>退出安装环境</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+<p><strong>卸载分区</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ umount -R /mnt</span><br></pre></td></tr></table></figure>
+<p><strong>然后重启一下 可选择物理重启和命令重启</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ reboot</span><br></pre></td></tr></table></figure>
+<img src="/images/Arch傻瓜式安装/效果.jpg" style="width: 318px; height: 144px;">
+
+<h1 id="第九步-安装到此为止-安装桌面玩下看"><a href="#第九步-安装到此为止-安装桌面玩下看" class="headerlink" title="第九步 安装到此为止 安装桌面玩下看"></a>第九步 安装到此为止 安装桌面玩下看</h1><h1 id="桌面环境"><a href="#桌面环境" class="headerlink" title="桌面环境"></a>桌面环境</h1><p><strong>创建用户 有利于提权</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ useradd -m -g users G wheel -s /bin/bash xxx     //xxx是你顺便起个用户名</span><br></pre></td></tr></table></figure>
+<p><strong>创建密码</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ passwd wallen</span><br></pre></td></tr></table></figure>
+<p><strong>编辑新用户权限 %wheel ALL=(ALL) ALL</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ EDITOR=vim visudo</span><br></pre></td></tr></table></figure>
+<p><strong>创建桌面环境命令和其他必要软件命令  dolpin是文件管理器  konsole是终端</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S plasma-meta dolphin konsole</span><br></pre></td></tr></table></figure>
+<p><strong>配置sddm设置为开机自启</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ systemctl <span class="built_in">enable</span> sddm</span><br></pre></td></tr></table></figure>
+<p><strong>开启一下32位支持库 有些程序还是32位 所以要装一些库</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo vim /etc/pacman.conf</span><br></pre></td></tr></table></figure>
+<p><strong>配置</strong></p>
+<img src="/images/Arch傻瓜式安装/配置.jpg" style="width: 900px; height: 300px;">
+
+<p><strong>刷新数据库内容</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacmam -Syyu</span><br></pre></td></tr></table></figure>
+<p><strong>然后重启一下 可选择物理重启和命令重启</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ reboot</span><br></pre></td></tr></table></figure>
+<h1 id="Vim命令"><a href="#Vim命令" class="headerlink" title="Vim命令"></a>Vim命令</h1><p><strong>按A键是编辑模式</strong><br><strong>按回车键是执行</strong><br><strong>按两下D键是剪切</strong><br><strong>按两下G键是回到第一行</strong><br><strong>按P键粘贴</strong><br><strong>按N键查找下一个</strong><br><strong>按ESC 然后输入 :wq 是保存并退出</strong></p>
+<h1 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Anroid 项目结构</title>
     <url>/Anroid-structure.html</url>
     <content><![CDATA[<p><strong>未完待续</strong></p>
@@ -444,178 +616,6 @@ var tools = (function(){
       </categories>
   </entry>
   <entry>
-    <title>Arch系统包桌面傻瓜式安装 (有手就行)</title>
-    <url>/Arch-install.html</url>
-    <content><![CDATA[<p><strong>本人是Arch教徒过来传一下教</strong> </p>
-<img src="/images/Arch傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;">
-<a id="more"></a>
-
-<p><strong>在Windows里用DiskGenius转GPT之后 删除你所要安装Arch的分区</strong></p>
-<img src="/images/Arch傻瓜式安装/转GPT格式.jpg" style="width: 300px; height: 150px;">
-
-<p><strong>磁盘变更还可以用Lixux命令来 不建议使用</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ partrd /dev/xxx  //你要变更的磁盘</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gpt</span><br></pre></td></tr></table></figure>
-<p>然后退出</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ quit</span><br></pre></td></tr></table></figure>
-<h1 id="第一步-先要有一个启动盘-这里推荐清华大学开源软件镜像站"><a href="#第一步-先要有一个启动盘-这里推荐清华大学开源软件镜像站" class="headerlink" title="第一步 先要有一个启动盘 这里推荐清华大学开源软件镜像站"></a>第一步 先要有一个启动盘 这里推荐<a href="https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/">清华大学开源软件镜像站</a></h1><h1 id="第二步-引导界面选择第一个-进入U盘"><a href="#第二步-引导界面选择第一个-进入U盘" class="headerlink" title="第二步 引导界面选择第一个 进入U盘"></a>第二步 引导界面选择第一个 进入U盘</h1><p><strong>先检查一下是不是UEFI启动,输入以下命令，有输出就代码是UEFI启动，检查BIOS设置是否为UEFI, BIOS设置每个机型都不一样</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ls /sys/firmware/efi/efivars</span><br></pre></td></tr></table></figure>
-<h1 id="第三步-检查网络连接"><a href="#第三步-检查网络连接" class="headerlink" title="第三步 检查网络连接"></a>第三步 检查网络连接</h1><p><strong>建议直接插网线，然后ping一下百度，有反应继续 没反应检查网线</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ping www.baidu.com</span><br></pre></td></tr></table></figure>
-
-<p>然后CTRL+Z退出</p>
-<p><strong>如果你想用WIFI就执行以下步骤</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ iwctl</span><br></pre></td></tr></table></figure>
-<p><strong>查看网卡 通常都是wlan0</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ device list</span><br></pre></td></tr></table></figure>
-<p><strong>以下命令是扫描你范围内的无线网卡</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ station wlan0 get-networks</span><br></pre></td></tr></table></figure>
-
-<p><strong>找到你的WIFI</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ station wlan0 connect xxx    //无线网卡名字通常是wlan0，WIFI名字xxx</span><br></pre></td></tr></table></figure>
-<p><strong>Passphrase:是让你输密码</strong></p>
-<p><strong>然后以下命令退出</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
-<h1 id="第四步-设置系统时钟更新-与网络时间同步"><a href="#第四步-设置系统时钟更新-与网络时间同步" class="headerlink" title="第四步 设置系统时钟更新 与网络时间同步"></a>第四步 设置系统时钟更新 与网络时间同步</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ timedatectl set-ntp <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p><strong>查看是否执行完同步</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ timedatectl status</span><br></pre></td></tr></table></figure>
-<h1 id="第五步-更换镜像源"><a href="#第五步-更换镜像源" class="headerlink" title="第五步 更换镜像源"></a>第五步 更换镜像源</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ vim /etc/pamcan.d/mtrrorlist</span><br></pre></td></tr></table></figure>
-<p><strong>查找: Server = <a href="https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch">https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch</a></strong></p>
-<h1 id="第六步-分区"><a href="#第六步-分区" class="headerlink" title="第六步 分区"></a>第六步 分区</h1><p><strong>查看分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ lsblk</span><br></pre></td></tr></table></figure>
-<p><strong>然后正式分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cfdisk /dev/xxx   //你要变更的磁盘</span><br></pre></td></tr></table></figure>
-<p><strong>终于到这里了 这里是图形化界面很好查找</strong><br><img src="/images/Arch傻瓜式安装/图形化界面.jpg" style="width: 750px; height: 100px;"></p>
-<p><strong>(New是新建) (Resize是调整大小) (Quit是退出) (Type是类型) (Heip是帮助) (Wrire是保存) (Dump是丢弃)</strong></p>
-<p><strong>步骤: 先点New建一个300M的文件，然后点Type选择EFI System点击，再点New建一个2G的文件，然后点Type选择Linux swap点击，最后点New建一个(根目录)主分区把剩下的所有内存用上，然后点Type选择Linux filesystem点击，然后Wrire回车，并输入yes，然后拍照，点击Quit退出</strong></p>
-<img src="/images/Arch傻瓜式安装/例子.jpg" style="width: 900px; height: 300px;">
-
-<p><strong>以防万一，检查一下</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cfdisk -l</span><br></pre></td></tr></table></figure>
-<h1 id="第七步-格式化操作"><a href="#第七步-格式化操作" class="headerlink" title="第七步 格式化操作"></a>第七步 格式化操作</h1><p><strong>格式化主分区(根目录)</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkfs.ext4 /dev/xxx   //就是你刚刚Linux filesystem的</span><br></pre></td></tr></table></figure>
-<p><strong>格式化EFI分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkfs.vfat /dev/xxx     //就是你刚刚EFI System的</span><br></pre></td></tr></table></figure>
-<p><strong>格式化swap分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkfswap -f /dev/xxx     //就是你刚刚Linux swap的</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ swapon /dev/xxx     //就是你刚刚Linux swap的</span><br></pre></td></tr></table></figure>
-<h1 id="第八步-挂载"><a href="#第八步-挂载" class="headerlink" title="第八步 挂载"></a>第八步 挂载</h1><p><strong>挂载根目录 注意/mnt前面有空格</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mount /dev/(就是你刚刚Linux filesystem的) /mnt</span><br></pre></td></tr></table></figure>
-<p><strong>挂载EFI分区 先创建boot目录 再里面创建EFI目录 注意/mnt前面还有空格</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir /mnt/boot</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir /mnt/boot/EFI</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mount /dev/xxx /mnt/boot/EFI       //xxx就是你刚刚EFI System的</span><br></pre></td></tr></table></figure>
-<h1 id="第九步-安装系统"><a href="#第九步-安装系统" class="headerlink" title="第九步 安装系统"></a>第九步 安装系统</h1><p><strong>这三个包必安装</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacstrap /mnt base linux linux-firmware</span><br></pre></td></tr></table></figure>
-<p><strong>然后安装功能性软件 联网的有dhcpcd iwd，编辑器有vim，提权有sudo</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacstrap /mnt dhcpcd iwd vim sudo</span><br></pre></td></tr></table></figure>
-<p><strong>然后定义etc分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
-<p><strong>以防万一还是检查一下</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
-<h1 id="第七步-把环境迁移到新系统"><a href="#第七步-把环境迁移到新系统" class="headerlink" title="第七步 把环境迁移到新系统"></a>第七步 把环境迁移到新系统</h1><p><strong>迁移命令</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ arch-chroot /mnt</span><br></pre></td></tr></table></figure>
-<p><strong>创建时区 例如: 上海</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ln -sf /usr.share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
-<p><strong>同步时区</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hwclock --systohc</span><br></pre></td></tr></table></figure>
-<p><strong>设置语言 留意en_US.UTF-8 UTF-8</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ vim /etc/locale.gen</span><br></pre></td></tr></table></figure>
-<p><strong>然后生成</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ locale-gen</span><br></pre></td></tr></table></figure>
-<p><strong>然后输入内容</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">&#x27;LANG=EN_us.utf-8 &gt; /etc/locale.conf&#x27;</span></span><br></pre></td></tr></table></figure>
-<p><strong>以防万一 检查一下</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat /etc/locale.conf</span><br></pre></td></tr></table></figure>
-<h1 id="第八步-用户设置"><a href="#第八步-用户设置" class="headerlink" title="第八步 用户设置"></a>第八步 用户设置</h1><p><strong>Root用户设置密码</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ passwd root</span><br></pre></td></tr></table></figure>
-<p><strong>intel英特尔CPU安装这个</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S intel-ucode</span><br></pre></td></tr></table></figure>
-<p><strong>AMD超微CPU安装这个</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S amd-ucode</span><br></pre></td></tr></table></figure>
-<h1 id="第九步-安装引导程序"><a href="#第九步-安装引导程序" class="headerlink" title="第九步 安装引导程序"></a>第九步 安装引导程序</h1><p><strong>安装grub引导</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S grub efibootmgr</span><br></pre></td></tr></table></figure>
-<p><strong>然后给grub引导取个名字</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ grub-install --target=x86_64-efi --efi-directory=/bootloader-id=Arch      //这里我起Arch 顺便起个名字就好了</span><br></pre></td></tr></table></figure>
-<p><strong>生成配置文件</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
-<p><strong>退出安装环境</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
-<p><strong>卸载分区</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ umount -R /mnt</span><br></pre></td></tr></table></figure>
-<p><strong>然后重启一下 可选择物理重启和命令重启</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ reboot</span><br></pre></td></tr></table></figure>
-<img src="/images/Arch傻瓜式安装/效果.jpg" style="width: 318px; height: 144px;">
-
-<h1 id="第九步-安装到此为止-安装桌面玩下看"><a href="#第九步-安装到此为止-安装桌面玩下看" class="headerlink" title="第九步 安装到此为止 安装桌面玩下看"></a>第九步 安装到此为止 安装桌面玩下看</h1><h1 id="桌面环境"><a href="#桌面环境" class="headerlink" title="桌面环境"></a>桌面环境</h1><p><strong>创建用户 有利于提权</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ useradd -m -g users G wheel -s /bin/bash xxx     //xxx是你顺便起个用户名</span><br></pre></td></tr></table></figure>
-<p><strong>创建密码</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ passwd wallen</span><br></pre></td></tr></table></figure>
-<p><strong>编辑新用户权限 %wheel ALL=(ALL) ALL</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ EDITOR=vim visudo</span><br></pre></td></tr></table></figure>
-<p><strong>创建桌面环境命令和其他必要软件命令  dolpin是文件管理器  konsole是终端</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S plasma-meta dolphin konsole</span><br></pre></td></tr></table></figure>
-<p><strong>配置sddm设置为开机自启</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ systemctl <span class="built_in">enable</span> sddm</span><br></pre></td></tr></table></figure>
-<p><strong>开启一下32位支持库 有些程序还是32位 所以要装一些库</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo vim /etc/pacman.conf</span><br></pre></td></tr></table></figure>
-<p><strong>配置</strong></p>
-<img src="/images/Arch傻瓜式安装/配置.jpg" style="width: 900px; height: 300px;">
-
-<p><strong>刷新数据库内容</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacmam -Syyu</span><br></pre></td></tr></table></figure>
-<p><strong>然后重启一下 可选择物理重启和命令重启</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ reboot</span><br></pre></td></tr></table></figure>
-<h1 id="Vim命令"><a href="#Vim命令" class="headerlink" title="Vim命令"></a>Vim命令</h1><p><strong>按A键是编辑模式</strong><br><strong>按回车键是执行</strong><br><strong>按两下D键是剪切</strong><br><strong>按两下G键是回到第一行</strong><br><strong>按P键粘贴</strong><br><strong>按N键查找下一个</strong><br><strong>按ESC 然后输入 :wq 是保存并退出</strong></p>
-<h1 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Bodhi Linux安装教程(老电脑的福利)</title>
-    <url>/Bodhi-Linux.html</url>
-    <content><![CDATA[<p><strong>本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版</strong></p>
-<a id="more"></a>
-
-<p><strong>以下是我的电脑的参数</strong></p>
-<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%81%94%E6%83%B3G430.jpg"></p>
-<h1 id="第一步-安装Bodhi-Linux"><a href="#第一步-安装Bodhi-Linux" class="headerlink" title="第一步 安装Bodhi Linux"></a>第一步 安装Bodhi Linux</h1><p><strong>Bodhi Linux<a href="https://nchc.dl.sourceforge.net/project/bodhilinux/5.1.0/bodhi-5.1.0-64.iso">个人建议Standard版本</a>如果你想选择别的版本到<a href="https://www.bodhilinux.com/download/">官网找</a></strong></p>
-<p><a href="https://www.bilibili.com/video/BV1aW411C7NR">安装视频参考Ubantu的, 都是可视化界面安装</a></p>
-<h1 id="第二步-老电脑无法连接WIFI-所以终端输入以下命令"><a href="#第二步-老电脑无法连接WIFI-所以终端输入以下命令" class="headerlink" title="第二步 老电脑无法连接WIFI 所以终端输入以下命令"></a>第二步 老电脑无法连接WIFI 所以终端输入以下命令</h1><p><strong>建议用网线装机</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install bcmwl-kernel-source</span><br></pre></td></tr></table></figure>
-
-<p><strong>仍然没有的话 就在终端输入以下命令</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo nano /etc/modprobe.d/blacklist.conf   //nano命令ctrl+x退出，选择y后保存</span><br><span class="line">$ blacklist acer-wmi   //最后一行加入</span><br></pre></td></tr></table></figure>
-
-<h1 id="第三步-安装安装中文环境"><a href="#第三步-安装安装中文环境" class="headerlink" title="第三步 安装安装中文环境"></a>第三步 安装安装中文环境</h1><p><strong>安装中文字体和中文语言包</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install -y language-pack-zh-hans language-pack-zh-hans-base language-pack-gnome-zh-hans language-pack-gnome-zh-hans-base fonts-wqy-microhei</span><br></pre></td></tr></table></figure>
-
-<p><strong>然后按照以下打开步骤</strong></p>
-<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%871.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%872.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%873.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%874.jpg"></p>
-<h1 id="第四步安装输入法"><a href="#第四步安装输入法" class="headerlink" title="第四步安装输入法"></a>第四步安装输入法</h1><p><strong>这里<a href="https://pinyin.sogou.com/linux/">安装搜狗输入法</a></strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install fonts-droid-fallback zip   //安装它的依赖包</span><br><span class="line">$ sudo dpkg -i xxx    //xxx为下载的包名 后缀名也要</span><br></pre></td></tr></table></figure>
-<h1 id="第五步安装一些常用软件"><a href="#第五步安装一些常用软件" class="headerlink" title="第五步安装一些常用软件"></a>第五步安装一些常用软件</h1><p><strong>例如安装vim</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install vim   //vim是文本编辑软件</span><br></pre></td></tr></table></figure>
-<p><strong>例如浏览器 它自身也有web浏览器 看个人喜欢</strong></p>
-<p><strong>安装火狐浏览器和中文语言包</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get remove firefox</span><br><span class="line">$ sudo apt-get install -y firefox firefox-locale-zh-hans</span><br></pre></td></tr></table></figure>
-<p><strong>安装谷歌浏览器</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/</span><br><span class="line">wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -     //先添加源</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install google-chrome-stable     //安装谷歌浏览器</span><br></pre></td></tr></table></figure>
-<h1 id="安装neofetch"><a href="#安装neofetch" class="headerlink" title="安装neofetch"></a>安装neofetch</h1><p><strong>终端输入以下命令</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:dawidd0811/neofetch</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install neofetch</span><br><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
-<p><strong>本人试了(CrunchBang Linux), (Zenix Linux), (antiX Linux), (Zenwalk Linux), (Xubuntu Linux), (Lubuntu Linux), (Tiny Core Linux), (SliTaz Linux), (Porteus Linux), (Puppy Linux), (Silverblue Linux), (4MLinux)等等带桌面的发行版然后就唯独Bodhi Linux最满意</strong></p>
-<p><strong>至于为什么要带桌面的发行版, 因为要日用偶尔看看B站什么的</strong></p>
-<p><strong>关于这台电脑用的硬盘 大小80G 有9724个坏道 拆掉坏掉的戴尔一条三星的DDR2 才有2G内存可以体验</strong></p>
-<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E5%9D%8F%E9%81%93.jpg"></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
     <title>CSS 三种基本选择器</title>
     <url>/CSS%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
@@ -796,6 +796,21 @@ $</style>
 ]]></content>
       <categories>
         <category>EJS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>HTML iframe内联框架</title>
+    <url>/HTML-iframe.html</url>
+    <content><![CDATA[<p><strong>HTML个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;path&quot;</span> name=<span class="string">&quot;mainFrame&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;mainFrame&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>其中path是引用页面地址 mainFrame是框架标识名</strong></p>
+<h1 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h1><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;demo_iframe.html&quot;</span> frameborder=<span class="string">&quot;0&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;xxx/xxx.html&quot;</span> name=<span class="string">&quot;iframe_a&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;iframe_a&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>HTML</category>
       </categories>
   </entry>
   <entry>
@@ -1080,21 +1095,6 @@ $</style>
       </categories>
   </entry>
   <entry>
-    <title>HTML iframe内联框架</title>
-    <url>/HTML-iframe.html</url>
-    <content><![CDATA[<p><strong>HTML个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;path&quot;</span> name=<span class="string">&quot;mainFrame&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;mainFrame&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>其中path是引用页面地址 mainFrame是框架标识名</strong></p>
-<h1 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h1><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;demo_iframe.html&quot;</span> frameborder=<span class="string">&quot;0&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">$     &lt;iframe src=<span class="string">&quot;xxx/xxx.html&quot;</span> name=<span class="string">&quot;iframe_a&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$     &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;iframe_a&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>HTML</category>
-      </categories>
-  </entry>
-  <entry>
     <title>HTML 表格</title>
     <url>/HTML-form.html</url>
     <content><![CDATA[<p><strong>HTML个人整理</strong></p>
@@ -1229,6 +1229,24 @@ $</style>
       </categories>
   </entry>
   <entry>
+    <title>JavaScript 数据类型之(Map和Set)</title>
+    <url>/JavaScript-Map-Set.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="comment">/*ES6 Map*/</span></span><br><span class="line">$  <span class="comment">/*学生的成绩, 学生的名字 两种方式*/</span></span><br><span class="line">$  <span class="keyword">var</span> names = [<span class="string">&quot;史迪奇&quot;</span>,<span class="string">&quot;史迪仔&quot;</span>,<span class="string">&quot;强霸&quot;</span>];</span><br><span class="line">$  <span class="keyword">var</span> scores = [<span class="number">100</span>,<span class="number">100</span>,<span class="number">36</span>]</span><br><span class="line">$  <span class="comment">/*另一种*/</span></span><br><span class="line">$  <span class="keyword">var</span> map = naw <span class="built_in">Map</span>([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">36</span>]]);</span><br><span class="line">$  <span class="keyword">var</span> name = map.get(<span class="string">&quot;史迪奇&quot;</span>);    <span class="comment">/*通过key获得value*/</span> </span><br><span class="line">$  map.set(<span class="string">&quot;独眼霹雳&quot;</span>,<span class="number">60</span>);          <span class="comment">/*新增或修改*/</span> </span><br><span class="line">$  map.delete(<span class="string">&quot;强霸&quot;</span>);              <span class="comment">/*删除*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   set.add(<span class="number">3</span>)                 <span class="comment">/*添加*/</span>  </span><br><span class="line">$   set.delete(<span class="string">&quot;强霸&quot;</span>);        <span class="comment">/*删除*/</span></span><br><span class="line">$   <span class="built_in">console</span>.log(set.has(<span class="number">3</span>))    <span class="comment">/*是否包含某个元素*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h1><p><strong>遍历数组</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="comment">/*通过for of, for in 下标 */</span>  </span><br><span class="line">$   <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> arr)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>遍历map</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">100</span>]]);</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> map)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>遍历set</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> set = <span class="keyword">new</span> set([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">100</span>]]);</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> set)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
     <title>JavaScript JavaScript (函数之定义和获取)</title>
     <url>/JavaScript-definition-obtain.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
@@ -1270,24 +1288,6 @@ $</style>
       </categories>
   </entry>
   <entry>
-    <title>JavaScript 数据类型之(Map和Set)</title>
-    <url>/JavaScript-Map-Set.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="comment">/*ES6 Map*/</span></span><br><span class="line">$  <span class="comment">/*学生的成绩, 学生的名字 两种方式*/</span></span><br><span class="line">$  <span class="keyword">var</span> names = [<span class="string">&quot;史迪奇&quot;</span>,<span class="string">&quot;史迪仔&quot;</span>,<span class="string">&quot;强霸&quot;</span>];</span><br><span class="line">$  <span class="keyword">var</span> scores = [<span class="number">100</span>,<span class="number">100</span>,<span class="number">36</span>]</span><br><span class="line">$  <span class="comment">/*另一种*/</span></span><br><span class="line">$  <span class="keyword">var</span> map = naw <span class="built_in">Map</span>([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">36</span>]]);</span><br><span class="line">$  <span class="keyword">var</span> name = map.get(<span class="string">&quot;史迪奇&quot;</span>);    <span class="comment">/*通过key获得value*/</span> </span><br><span class="line">$  map.set(<span class="string">&quot;独眼霹雳&quot;</span>,<span class="number">60</span>);          <span class="comment">/*新增或修改*/</span> </span><br><span class="line">$  map.delete(<span class="string">&quot;强霸&quot;</span>);              <span class="comment">/*删除*/</span></span><br></pre></td></tr></table></figure>
-<h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   set.add(<span class="number">3</span>)                 <span class="comment">/*添加*/</span>  </span><br><span class="line">$   set.delete(<span class="string">&quot;强霸&quot;</span>);        <span class="comment">/*删除*/</span></span><br><span class="line">$   <span class="built_in">console</span>.log(set.has(<span class="number">3</span>))    <span class="comment">/*是否包含某个元素*/</span></span><br></pre></td></tr></table></figure>
-<h1 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h1><p><strong>遍历数组</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="comment">/*通过for of, for in 下标 */</span>  </span><br><span class="line">$   <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> arr)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>遍历map</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">100</span>]]);</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> map)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>遍历set</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> set = <span class="keyword">new</span> set([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">100</span>]]);</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> set)&#123;</span><br><span class="line">$        <span class="built_in">console</span>.log(x)</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
     <title>JavaScript 数据类型之(分支和循环)</title>
     <url>/JavaScript-branch-loop.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
@@ -1300,6 +1300,27 @@ $</style>
 <h1 id="forEach-循环"><a href="#forEach-循环" class="headerlink" title="forEach 循环"></a>forEach 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">var</span> sdq = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line">$   <span class="comment">/*函数*/</span></span><br><span class="line">$   sdq.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">$       <span class="built_in">console</span>.log(value)</span><br><span class="line">$   &#125;)</span><br></pre></td></tr></table></figure>
 <h1 id="for-…-in-循环"><a href="#for-…-in-循环" class="headerlink" title="for … in 循环"></a>for … in 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   <span class="keyword">for</span>(<span class="keyword">var</span> sdq <span class="keyword">in</span> age) &#123;</span><br><span class="line">$       <span class="keyword">if</span> (sdq.hasOwnProperty(sdz)) &#123;</span><br><span class="line">$           <span class="built_in">console</span>.log(<span class="string">&quot;存在&quot;</span>)</span><br><span class="line">$           <span class="built_in">console</span>.log(sdq[sdz])</span><br><span class="line">$       &#125;</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript 数据类型之(字符串类型)</title>
+    <url>/JavaScript-string.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="字符串常用"><a href="#字符串常用" class="headerlink" title="字符串常用"></a>字符串常用</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ <span class="string">&quot;字符串&quot;</span>     <span class="comment">/*双引号包裹*/</span></span><br><span class="line">$ <span class="string">&#x27;字符串&#x27;</span>     <span class="comment">/*单引号包裹*/</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  \<span class="string">&#x27;           /*代表它是一个字符串*/</span></span><br><span class="line"><span class="string">$  \n           /*换行*/</span></span><br><span class="line"><span class="string">$  \t           /*tab*/</span></span><br><span class="line"><span class="string">$  \u5d3d       /*Unicode字符*/</span></span><br><span class="line"><span class="string">$  \x45         /*Asll字符*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="多行字符串编写"><a href="#多行字符串编写" class="headerlink" title="多行字符串编写"></a>多行字符串编写</h1><p><strong>例子</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ <span class="comment">/*tab键上面  esc键下面*/</span></span><br><span class="line">$    <span class="keyword">var</span> msg =</span><br><span class="line">$        haha</span><br><span class="line">$   哈哈</span><br><span class="line">$   蛤蛤  </span><br></pre></td></tr></table></figure>
+<h1 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h1><p><strong>例子</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ <span class="comment">/*tab键上面  esc键下面*/</span></span><br><span class="line">$    <span class="keyword">let</span> sdq = <span class="string">&quot;史迪奇&quot;</span>;</span><br><span class="line">$    <span class="keyword">let</span> sdz = <span class="string">&quot;史迪仔&quot;</span>;</span><br><span class="line">$    <span class="keyword">let</span> age = <span class="number">119</span>;</span><br><span class="line">$    <span class="keyword">let</span> sdqz = <span class="string">&#x27;我叫.$&#123;sdq&#125;&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="字符串长度"><a href="#字符串长度" class="headerlink" title="字符串长度"></a>字符串长度</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   str.length</span><br></pre></td></tr></table></figure>
+<h1 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="comment">/*是方法不是属性*/</span></span><br><span class="line">$  sdq.toUpperCase()          <span class="comment">/*大写*/</span></span><br><span class="line">$  sdq.LowerCase()          <span class="comment">/*小写*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="字符串截取"><a href="#字符串截取" class="headerlink" title="字符串截取"></a>字符串截取</h1><p><strong>subsrting</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  sdq.subsrting(<span class="number">1</span>)          <span class="comment">/*从第一个字符串截取到最后一个字符串*/</span></span><br><span class="line">$  sdq.LowerCase(<span class="number">1</span>,<span class="number">3</span>)          <span class="comment">/*包头不包尾*/</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>
@@ -1323,27 +1344,6 @@ $</style>
 
 
 ]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript 数据类型之(字符串类型)</title>
-    <url>/JavaScript-string.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="字符串常用"><a href="#字符串常用" class="headerlink" title="字符串常用"></a>字符串常用</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ <span class="string">&quot;字符串&quot;</span>     <span class="comment">/*双引号包裹*/</span></span><br><span class="line">$ <span class="string">&#x27;字符串&#x27;</span>     <span class="comment">/*单引号包裹*/</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  \<span class="string">&#x27;           /*代表它是一个字符串*/</span></span><br><span class="line"><span class="string">$  \n           /*换行*/</span></span><br><span class="line"><span class="string">$  \t           /*tab*/</span></span><br><span class="line"><span class="string">$  \u5d3d       /*Unicode字符*/</span></span><br><span class="line"><span class="string">$  \x45         /*Asll字符*/</span></span><br></pre></td></tr></table></figure>
-<h1 id="多行字符串编写"><a href="#多行字符串编写" class="headerlink" title="多行字符串编写"></a>多行字符串编写</h1><p><strong>例子</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ <span class="comment">/*tab键上面  esc键下面*/</span></span><br><span class="line">$    <span class="keyword">var</span> msg =</span><br><span class="line">$        haha</span><br><span class="line">$   哈哈</span><br><span class="line">$   蛤蛤  </span><br></pre></td></tr></table></figure>
-<h1 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h1><p><strong>例子</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ <span class="comment">/*tab键上面  esc键下面*/</span></span><br><span class="line">$    <span class="keyword">let</span> sdq = <span class="string">&quot;史迪奇&quot;</span>;</span><br><span class="line">$    <span class="keyword">let</span> sdz = <span class="string">&quot;史迪仔&quot;</span>;</span><br><span class="line">$    <span class="keyword">let</span> age = <span class="number">119</span>;</span><br><span class="line">$    <span class="keyword">let</span> sdqz = <span class="string">&#x27;我叫.$&#123;sdq&#125;&#x27;</span>;</span><br></pre></td></tr></table></figure>
-<h1 id="字符串长度"><a href="#字符串长度" class="headerlink" title="字符串长度"></a>字符串长度</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$   str.length</span><br></pre></td></tr></table></figure>
-<h1 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  <span class="comment">/*是方法不是属性*/</span></span><br><span class="line">$  sdq.toUpperCase()          <span class="comment">/*大写*/</span></span><br><span class="line">$  sdq.LowerCase()          <span class="comment">/*小写*/</span></span><br></pre></td></tr></table></figure>
-<h1 id="字符串截取"><a href="#字符串截取" class="headerlink" title="字符串截取"></a>字符串截取</h1><p><strong>subsrting</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$  sdq.subsrting(<span class="number">1</span>)          <span class="comment">/*从第一个字符串截取到最后一个字符串*/</span></span><br><span class="line">$  sdq.LowerCase(<span class="number">1</span>,<span class="number">3</span>)          <span class="comment">/*包头不包尾*/</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>
@@ -1395,6 +1395,25 @@ $</style>
       </categories>
   </entry>
   <entry>
+    <title>Java面向对象思维之构造方法</title>
+    <url>/Object-oriented-constructor.html</url>
+    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ // 自动生成一个无参数的构造方法 public <span class="function"><span class="title">Car</span></span>() &#123; </span><br><span class="line">$ public Car(String color, int wheel, int seat) &#123; //这里给它添加参数  </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h1><p><strong>例如 车能飞</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">fly</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.color+<span class="string">&quot;车能飞&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>例如 车可以潜水</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">diving</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.diving+<span class="string">&quot;车可以下水&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,5,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     c1.fly();</span><br><span class="line">$     c1.diving();</span><br><span class="line">$ </span><br><span class="line">$     c2.fly();</span><br><span class="line">$     c2.diving();</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="构造方法需要注意"><a href="#构造方法需要注意" class="headerlink" title="构造方法需要注意"></a>构造方法需要注意</h1><p><strong>没有返回值这一项</strong><br><strong>在new的时候, 给对象设置属性信息</strong><br><strong>Java会默认自动的送每个类一个无参数的构造方法, 如果你写了构造方法, 那么Java就不送了</strong></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Java面向对象思维之getter和setter(作用)</title>
     <url>/Object-oriented-getter-setter.html</url>
     <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
@@ -1403,21 +1422,6 @@ $</style>
 <h1 id="getter"><a href="#getter" class="headerlink" title="getter"></a>getter</h1><p><strong>主要是给成员变量赋值, 做一定的保护</strong></p>
 <h1 id="setter"><a href="#setter" class="headerlink" title="setter"></a>setter</h1><p><strong>从成员变量中获取数据</strong></p>
 ]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Java面向对象思维之构造方法需的重载</title>
-    <url>/Object-oriented-constructor-heavy-load.html</url>
-    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color,  int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color, int wheel, int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this(color,seat);  //this还可以调用当前累中其他的构造方法</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h1>]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -1443,20 +1447,16 @@ $</style>
       </categories>
   </entry>
   <entry>
-    <title>Java面向对象思维之构造方法</title>
-    <url>/Object-oriented-constructor.html</url>
+    <title>Java面向对象思维之构造方法需的重载</title>
+    <url>/Object-oriented-constructor-heavy-load.html</url>
     <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
 <a id="more"></a>
 
-<h1 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ // 自动生成一个无参数的构造方法 public <span class="function"><span class="title">Car</span></span>() &#123; </span><br><span class="line">$ public Car(String color, int wheel, int seat) &#123; //这里给它添加参数  </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h1><p><strong>例如 车能飞</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">fly</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.color+<span class="string">&quot;车能飞&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>例如 车可以潜水</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public class <span class="function"><span class="title">diving</span></span>()&#123;</span><br><span class="line">$ System.out.println(this.diving+<span class="string">&quot;车可以下水&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,5,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     c1.fly();</span><br><span class="line">$     c1.diving();</span><br><span class="line">$ </span><br><span class="line">$     c2.fly();</span><br><span class="line">$     c2.diving();</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="构造方法需要注意"><a href="#构造方法需要注意" class="headerlink" title="构造方法需要注意"></a>构造方法需要注意</h1><p><strong>没有返回值这一项</strong><br><strong>在new的时候, 给对象设置属性信息</strong><br><strong>Java会默认自动的送每个类一个无参数的构造方法, 如果你写了构造方法, 那么Java就不送了</strong></p>
-]]></content>
+<h1 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color,  int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ public Car(String color, int wheel, int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this(color,seat);  //this还可以调用当前累中其他的构造方法</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h1>]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -1559,6 +1559,20 @@ $
       </categories>
   </entry>
   <entry>
+    <title>Vue.js 网页笔记本</title>
+    <url>/Vue-network-books.html</url>
+    <content><![CDATA[<p><strong>Vue.js个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="演示代码"><a href="#演示代码" class="headerlink" title="演示代码"></a>演示代码</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;js/vue.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;js/marked.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;js/moment.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;css/icon.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;css/style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;notebook&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;side-bar&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;toolbar&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;addNote&quot;</span> <span class="attr">v-bind:title</span>=<span class="string">&quot;addButtonTitle&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;material-icons&quot;</span>&gt;</span>add_box<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">                    新建笔记</span><br><span class="line">                <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;notes&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">&quot;note in notes&quot;</span> <span class="attr">class</span>=<span class="string">&quot;note&quot;</span> <span class="attr">v-on:click</span>=<span class="string">&quot;selectNote(note)&quot;</span> <span class="attr">v-bind:class</span>=<span class="string">&quot;&#123;selected:note === selectedNote&#125;&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;icon material-icons&quot;</span> <span class="attr">v-if</span>=<span class="string">&quot;note.favorite&quot;</span>&gt;</span>star<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">                    &#123;&#123;note.title&#125;&#125;</span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">&quot;selectedNote&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">&quot;main&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;toolbar&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;selectedNote.title&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入笔记标题&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;removeNote&quot;</span> <span class="attr">title</span>=<span class="string">&quot;删除笔记&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;material-icons&quot;</span>&gt;</span>delete<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;favoriteNote&quot;</span> <span class="attr">title</span>=<span class="string">&quot;收藏笔记&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;material-icons&quot;</span>&gt;</span>&#123;&#123;selectedNote.favorite?&#x27;star&#x27;:&#x27;star_border&#x27;&#125;&#125;<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">button</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">v-model</span>=<span class="string">&quot;selectedNote.content&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;toolbar status-bar&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;date&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;label&quot;</span>&gt;</span>创建日期: <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;value&quot;</span>&gt;</span>&#123;&#123;selectedNote.created | changeDate&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;lines&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;label&quot;</span>&gt;</span>行数: <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;value&quot;</span>&gt;</span>&#123;&#123;linesCount&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;words&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;label&quot;</span>&gt;</span>单词数: <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;value&quot;</span>&gt;</span>&#123;&#123;wordsCount&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;characters&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;label&quot;</span>&gt;</span>字符数: <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;value&quot;</span>&gt;</span>&#123;&#123;charactersCount&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;preview&quot;</span> <span class="attr">v-html</span>=<span class="string">&quot;notePreview&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> app=<span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">        el:<span class="string">&#x27;#notebook&#x27;</span>,</span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="javascript">                notes:<span class="built_in">JSON</span>.parse(<span class="built_in">localStorage</span>.getItem(<span class="string">&#x27;notes&#x27;</span>)) || [],</span></span><br><span class="line"><span class="javascript">                selectedId:<span class="built_in">localStorage</span>.getItem(<span class="string">&quot;selected-id&quot;</span>) || <span class="literal">null</span>,</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line"><span class="javascript">                    <span class="function"><span class="title">saveNote</span>(<span class="params">v</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="built_in">localStorage</span>.setItem(<span class="string">&#x27;notes&#x27;</span>,<span class="built_in">JSON</span>.stringify(<span class="built_in">this</span>.notes))</span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(<span class="string">&quot;笔记已经保存! &quot;</span>,<span class="keyword">new</span> <span class="built_in">Date</span>())</span></span><br><span class="line">                    &#125;,</span><br><span class="line"><span class="javascript">                    <span class="function"><span class="title">addNote</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">const</span> time = <span class="built_in">Date</span>.now()</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">const</span> note = </span></span><br><span class="line">                        &#123;</span><br><span class="line"><span class="javascript">                            id:<span class="built_in">String</span>(time),</span></span><br><span class="line"><span class="javascript">                            title:<span class="string">&#x27;New Note&#x27;</span> + (<span class="built_in">this</span>.notes.length+<span class="number">1</span>),</span></span><br><span class="line"><span class="javascript">                            content:<span class="string">&#x27;Hi,Wellcome to write a new note!&#x27;</span>,</span></span><br><span class="line">                            created:time,</span><br><span class="line"><span class="javascript">                            favorite:<span class="literal">false</span>,</span></span><br><span class="line">                        &#125;</span><br><span class="line"><span class="javascript">                        <span class="built_in">this</span>.notes.push(note)</span></span><br><span class="line">                    &#125;,</span><br><span class="line"><span class="javascript">                    <span class="function"><span class="title">selectNote</span>(<span class="params">v</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="built_in">this</span>.selectedId=v.id</span></span><br><span class="line">                    &#125;,</span><br><span class="line"><span class="javascript">                    <span class="function"><span class="title">removeNote</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">if</span> (<span class="built_in">this</span>.selectedNote &amp;&amp; confirm(<span class="string">&#x27;确定删除笔记?&#x27;</span>))</span></span><br><span class="line">                        &#123;</span><br><span class="line"><span class="javascript">                            <span class="keyword">const</span> index = <span class="built_in">this</span>.notes.indexOf(<span class="built_in">this</span>.selectedNote)</span></span><br><span class="line"><span class="javascript">                            <span class="keyword">if</span>(index !== -<span class="number">1</span>)</span></span><br><span class="line">                            &#123;</span><br><span class="line"><span class="javascript">                                <span class="built_in">this</span>.notes.splice(index,<span class="number">1</span>)&#125;</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    </span><br><span class="line">                    favoriteNote()</span><br><span class="line">                    &#123;</span><br><span class="line"><span class="javascript">                        <span class="built_in">this</span>.selectedNote.favorite=!<span class="built_in">this</span>.selectedNote.favorite</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">        computed:&#123;</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">notePreview</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> <span class="built_in">this</span>.selectedNote?marked(<span class="built_in">this</span>.selectedNote.content):<span class="string">&#x27;&#x27;</span></span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">addButtonTitle</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> <span class="built_in">this</span>.notes.length+<span class="string">&#x27; note(s) already&#x27;</span></span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">selectedNote</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> <span class="built_in">this</span>.notes.find(<span class="function"><span class="params">note</span>=&gt;</span>note.id===<span class="built_in">this</span>.selectedId)</span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">sortedNotes</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> <span class="built_in">this</span>.notes.slice().sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>a.created-b.created).sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>(a.favorite===b.favorite)?<span class="number">0</span>:a.favorite?-<span class="number">1</span>:<span class="number">1</span>)</span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">linesCount</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">if</span>(<span class="built_in">this</span>.selectedNote)</span></span><br><span class="line">                    &#123;</span><br><span class="line"><span class="javascript">                        <span class="keyword">return</span> <span class="built_in">this</span>.selectedNote.content.split(<span class="regexp">/\r\n|\r|\n/</span>).length</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">            <span class="function"><span class="title">wordsCount</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span>(<span class="built_in">this</span>.selectedNote)&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">var</span> s = <span class="built_in">this</span>.selectedNote.content;</span></span><br><span class="line"><span class="javascript">                    s = s.replace(<span class="regexp">/\n/g</span>,<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="javascript">                    s = s.replace(<span class="regexp">/(^\s*)|(\s*$)/gi</span>,<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="javascript">                    s = s.replace(<span class="regexp">/\s\s+/gi</span>,<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> s.split(<span class="string">&#x27; &#x27;</span>).length</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line"><span class="javascript">                    <span class="function"><span class="title">charactersCount</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">if</span>(<span class="built_in">this</span>.selectedNote)&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">return</span> <span class="built_in">this</span>.selectedNote.content.split(<span class="string">&#x27;&#x27;</span>).length</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            watch:&#123;</span><br><span class="line">                notes:&#123;</span><br><span class="line"><span class="javascript">                    handler:<span class="string">&#x27;saveNote&#x27;</span>,</span></span><br><span class="line"><span class="javascript">                    deep:<span class="literal">true</span>,</span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">selectedId</span>(<span class="params">v</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="built_in">localStorage</span>.setItem(<span class="string">&#x27;selected-id&#x27;</span>,v)</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            filters:&#123;</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">changeDate</span>(<span class="params">v</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> moment(v).format(<span class="string">&#x27;YYYY-MM-DD&#x27;</span>)</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><font color="#DC143C">直接实战</font></p>
+<p><a href="./项目/项目工程.html" target="_blank">演示效果</a></p>
+]]></content>
+      <categories>
+        <category>Vue.js</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Vue.js 表单输入绑定的基础用法</title>
     <url>/Vue-usage.html</url>
     <content><![CDATA[<p><strong>Vue.js个人整理</strong></p>
@@ -1607,70 +1621,6 @@ $
 ]]></content>
       <categories>
         <category>Vue.js</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Vue.js 网页笔记本</title>
-    <url>/Vue-network-books.html</url>
-    <content><![CDATA[<p><strong>Vue.js个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="演示代码"><a href="#演示代码" class="headerlink" title="演示代码"></a>演示代码</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;js/vue.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;js/marked.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;js/moment.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;css/icon.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;css/style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;notebook&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;side-bar&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;toolbar&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;addNote&quot;</span> <span class="attr">v-bind:title</span>=<span class="string">&quot;addButtonTitle&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;material-icons&quot;</span>&gt;</span>add_box<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">                    新建笔记</span><br><span class="line">                <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;notes&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">&quot;note in notes&quot;</span> <span class="attr">class</span>=<span class="string">&quot;note&quot;</span> <span class="attr">v-on:click</span>=<span class="string">&quot;selectNote(note)&quot;</span> <span class="attr">v-bind:class</span>=<span class="string">&quot;&#123;selected:note === selectedNote&#125;&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;icon material-icons&quot;</span> <span class="attr">v-if</span>=<span class="string">&quot;note.favorite&quot;</span>&gt;</span>star<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">                    &#123;&#123;note.title&#125;&#125;</span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">&quot;selectedNote&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">&quot;main&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;toolbar&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;selectedNote.title&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入笔记标题&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;removeNote&quot;</span> <span class="attr">title</span>=<span class="string">&quot;删除笔记&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;material-icons&quot;</span>&gt;</span>delete<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;favoriteNote&quot;</span> <span class="attr">title</span>=<span class="string">&quot;收藏笔记&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;material-icons&quot;</span>&gt;</span>&#123;&#123;selectedNote.favorite?&#x27;star&#x27;:&#x27;star_border&#x27;&#125;&#125;<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">button</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">v-model</span>=<span class="string">&quot;selectedNote.content&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;toolbar status-bar&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;date&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;label&quot;</span>&gt;</span>创建日期: <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;value&quot;</span>&gt;</span>&#123;&#123;selectedNote.created | changeDate&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;lines&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;label&quot;</span>&gt;</span>行数: <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;value&quot;</span>&gt;</span>&#123;&#123;linesCount&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;words&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;label&quot;</span>&gt;</span>单词数: <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;value&quot;</span>&gt;</span>&#123;&#123;wordsCount&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;characters&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;label&quot;</span>&gt;</span>字符数: <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;value&quot;</span>&gt;</span>&#123;&#123;charactersCount&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;preview&quot;</span> <span class="attr">v-html</span>=<span class="string">&quot;notePreview&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> app=<span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">        el:<span class="string">&#x27;#notebook&#x27;</span>,</span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="javascript">                notes:<span class="built_in">JSON</span>.parse(<span class="built_in">localStorage</span>.getItem(<span class="string">&#x27;notes&#x27;</span>)) || [],</span></span><br><span class="line"><span class="javascript">                selectedId:<span class="built_in">localStorage</span>.getItem(<span class="string">&quot;selected-id&quot;</span>) || <span class="literal">null</span>,</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line"><span class="javascript">                    <span class="function"><span class="title">saveNote</span>(<span class="params">v</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="built_in">localStorage</span>.setItem(<span class="string">&#x27;notes&#x27;</span>,<span class="built_in">JSON</span>.stringify(<span class="built_in">this</span>.notes))</span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(<span class="string">&quot;笔记已经保存! &quot;</span>,<span class="keyword">new</span> <span class="built_in">Date</span>())</span></span><br><span class="line">                    &#125;,</span><br><span class="line"><span class="javascript">                    <span class="function"><span class="title">addNote</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">const</span> time = <span class="built_in">Date</span>.now()</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">const</span> note = </span></span><br><span class="line">                        &#123;</span><br><span class="line"><span class="javascript">                            id:<span class="built_in">String</span>(time),</span></span><br><span class="line"><span class="javascript">                            title:<span class="string">&#x27;New Note&#x27;</span> + (<span class="built_in">this</span>.notes.length+<span class="number">1</span>),</span></span><br><span class="line"><span class="javascript">                            content:<span class="string">&#x27;Hi,Wellcome to write a new note!&#x27;</span>,</span></span><br><span class="line">                            created:time,</span><br><span class="line"><span class="javascript">                            favorite:<span class="literal">false</span>,</span></span><br><span class="line">                        &#125;</span><br><span class="line"><span class="javascript">                        <span class="built_in">this</span>.notes.push(note)</span></span><br><span class="line">                    &#125;,</span><br><span class="line"><span class="javascript">                    <span class="function"><span class="title">selectNote</span>(<span class="params">v</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="built_in">this</span>.selectedId=v.id</span></span><br><span class="line">                    &#125;,</span><br><span class="line"><span class="javascript">                    <span class="function"><span class="title">removeNote</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">if</span> (<span class="built_in">this</span>.selectedNote &amp;&amp; confirm(<span class="string">&#x27;确定删除笔记?&#x27;</span>))</span></span><br><span class="line">                        &#123;</span><br><span class="line"><span class="javascript">                            <span class="keyword">const</span> index = <span class="built_in">this</span>.notes.indexOf(<span class="built_in">this</span>.selectedNote)</span></span><br><span class="line"><span class="javascript">                            <span class="keyword">if</span>(index !== -<span class="number">1</span>)</span></span><br><span class="line">                            &#123;</span><br><span class="line"><span class="javascript">                                <span class="built_in">this</span>.notes.splice(index,<span class="number">1</span>)&#125;</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    </span><br><span class="line">                    favoriteNote()</span><br><span class="line">                    &#123;</span><br><span class="line"><span class="javascript">                        <span class="built_in">this</span>.selectedNote.favorite=!<span class="built_in">this</span>.selectedNote.favorite</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">        computed:&#123;</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">notePreview</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> <span class="built_in">this</span>.selectedNote?marked(<span class="built_in">this</span>.selectedNote.content):<span class="string">&#x27;&#x27;</span></span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">addButtonTitle</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> <span class="built_in">this</span>.notes.length+<span class="string">&#x27; note(s) already&#x27;</span></span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">selectedNote</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> <span class="built_in">this</span>.notes.find(<span class="function"><span class="params">note</span>=&gt;</span>note.id===<span class="built_in">this</span>.selectedId)</span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">sortedNotes</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> <span class="built_in">this</span>.notes.slice().sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>a.created-b.created).sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>(a.favorite===b.favorite)?<span class="number">0</span>:a.favorite?-<span class="number">1</span>:<span class="number">1</span>)</span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">linesCount</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">if</span>(<span class="built_in">this</span>.selectedNote)</span></span><br><span class="line">                    &#123;</span><br><span class="line"><span class="javascript">                        <span class="keyword">return</span> <span class="built_in">this</span>.selectedNote.content.split(<span class="regexp">/\r\n|\r|\n/</span>).length</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">            <span class="function"><span class="title">wordsCount</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span>(<span class="built_in">this</span>.selectedNote)&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">var</span> s = <span class="built_in">this</span>.selectedNote.content;</span></span><br><span class="line"><span class="javascript">                    s = s.replace(<span class="regexp">/\n/g</span>,<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="javascript">                    s = s.replace(<span class="regexp">/(^\s*)|(\s*$)/gi</span>,<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="javascript">                    s = s.replace(<span class="regexp">/\s\s+/gi</span>,<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> s.split(<span class="string">&#x27; &#x27;</span>).length</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line"><span class="javascript">                    <span class="function"><span class="title">charactersCount</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">if</span>(<span class="built_in">this</span>.selectedNote)&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">return</span> <span class="built_in">this</span>.selectedNote.content.split(<span class="string">&#x27;&#x27;</span>).length</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            watch:&#123;</span><br><span class="line">                notes:&#123;</span><br><span class="line"><span class="javascript">                    handler:<span class="string">&#x27;saveNote&#x27;</span>,</span></span><br><span class="line"><span class="javascript">                    deep:<span class="literal">true</span>,</span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">selectedId</span>(<span class="params">v</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="built_in">localStorage</span>.setItem(<span class="string">&#x27;selected-id&#x27;</span>,v)</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            filters:&#123;</span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">changeDate</span>(<span class="params">v</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> moment(v).format(<span class="string">&#x27;YYYY-MM-DD&#x27;</span>)</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><font color="#DC143C">直接实战</font></p>
-<p><a href="./项目/项目工程.html" target="_blank">演示效果</a></p>
-]]></content>
-      <categories>
-        <category>Vue.js</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Arch wsl的傻瓜式安装 (有手就行)</title>
-    <url>/Arch-Wsl-install.html</url>
-    <content><![CDATA[<p><strong>本人是Arch教徒过来传一下教</strong> </p>
-<img src="/images/wsl傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;">
-<a id="more"></a>
-
-<h1 id="第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下"><a href="#第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下" class="headerlink" title="第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下"></a>第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</span><br></pre></td></tr></table></figure>
-<img src="/images/wsl傻瓜式安装/按照提示重启电脑.jpg" style="width: 300px; height: 300px;">
-
-<p><strong>按照提示重启电脑</strong></p>
-<h1 id="第二步-下载文件"><a href="#第二步-下载文件" class="headerlink" title="第二步 下载文件"></a>第二步 下载文件</h1><p><strong>然后下载<a href="https://github.com/yuk7/ArchWSL">Arch WSL</a></strong></p>
-<img src="/images/wsl傻瓜式安装/Arch wsl下载.jpg">
-<br>
-<img src="/images/wsl傻瓜式安装/Arch wsl下载版本.jpg">
-
-<p><strong>那个安装证书是给appx版的arch wsl用的</strong></p>
-<p><strong>你已经安装zip版的</strong></p>
-<p><strong>没有必要安两次</strong></p>
-<p><strong>只用需要用到zip</strong></p>
-<h1 id="第三步-配置Arch-Wsl"><a href="#第三步-配置Arch-Wsl" class="headerlink" title="第三步 配置Arch Wsl"></a>第三步 配置Arch Wsl</h1><img src="/images/wsl傻瓜式安装/Arch wsl配置.jpg" style="width: 800px; height: 500px;">
-
-<p><strong>反正按照我这个改，保存是ctrl + x 回车</strong></p>
-<h1 id="第四步-配置相关参数"><a href="#第四步-配置相关参数" class="headerlink" title="第四步 配置相关参数"></a>第四步 配置相关参数</h1><p><strong>这里会提示配置  按照我的方法配置</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe//这个是启动后的显示</span><br><span class="line">[root@PC-NAME user]<span class="comment"># passwd       //这个是用户名输完名字输密码</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe</span><br><span class="line">[root@PC-NAME]<span class="comment"># EDITOR=nano visudo</span></span><br><span class="line">    %wheel      ALL=(ALL) ALL</span><br><span class="line">    (setup sudoers file.)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]<span class="comment"># useradd -m -G wheel -s /bin/bash &#123;username&#125;</span></span><br><span class="line">(add user)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># passwd &#123;username&#125;      //&#123;&#125;换成你的用户名,记住不需要打&#123;&#125;</span></span><br><span class="line">(<span class="built_in">set</span> default user password)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># exit  //退出</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe config --default-user &#123;username&#125;</span><br><span class="line">    (setting to default user)     //现在是root用户,不用加sudo</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [user@PC-NAME]$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]$ sudo pacman-key --populate</span><br></pre></td></tr></table></figure>
-<h1 id="第五步-安装完后操作"><a href="#第五步-安装完后操作" class="headerlink" title="第五步 安装完后操作"></a>第五步 安装完后操作</h1><p><strong>下面是<a href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/">换源</a></strong></p>
-<p><strong>打开nano /etc/pacman.d/mirrorlist 然后再最顶端添加 切记去##</strong></p>
-<img src="/images/wsl傻瓜式安装/Arch wsl配置文件.jpg" style="width: 800px; height: 500px;">
-<br>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Server = https:mirrors.tuna.tsinghua.edu.cn/archlinux/<span class="variable">$repo</span>/os/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
-**然后就可以 更新软件包缓存**
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman -Syy</span><br></pre></td></tr></table></figure>
-<h1 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
-<img src="/images/wsl傻瓜式安装/Arch wsl.jpg" style="width: 800px; height: 500px;">
-
-<h1 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h1><h1 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h1><h1 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h1>]]></content>
-      <categories>
-        <category>Linux</category>
       </categories>
   </entry>
   <entry>
@@ -1784,6 +1734,56 @@ python数据类型
       </categories>
   </entry>
   <entry>
+    <title>Arch wsl的傻瓜式安装 (有手就行)</title>
+    <url>/Arch-Wsl-install.html</url>
+    <content><![CDATA[<p><strong>本人是Arch教徒过来传一下教</strong> </p>
+<img src="/images/wsl傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;">
+<a id="more"></a>
+
+<h1 id="第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下"><a href="#第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下" class="headerlink" title="第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下"></a>第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</span><br></pre></td></tr></table></figure>
+<img src="/images/wsl傻瓜式安装/按照提示重启电脑.jpg" style="width: 300px; height: 300px;">
+
+<p><strong>按照提示重启电脑</strong></p>
+<h1 id="第二步-下载文件"><a href="#第二步-下载文件" class="headerlink" title="第二步 下载文件"></a>第二步 下载文件</h1><p><strong>然后下载<a href="https://github.com/yuk7/ArchWSL">Arch WSL</a></strong></p>
+<img src="/images/wsl傻瓜式安装/Arch wsl下载.jpg">
+<br>
+<img src="/images/wsl傻瓜式安装/Arch wsl下载版本.jpg">
+
+<p><strong>那个安装证书是给appx版的arch wsl用的</strong></p>
+<p><strong>你已经安装zip版的</strong></p>
+<p><strong>没有必要安两次</strong></p>
+<p><strong>只用需要用到zip</strong></p>
+<h1 id="第三步-配置Arch-Wsl"><a href="#第三步-配置Arch-Wsl" class="headerlink" title="第三步 配置Arch Wsl"></a>第三步 配置Arch Wsl</h1><img src="/images/wsl傻瓜式安装/Arch wsl配置.jpg" style="width: 800px; height: 500px;">
+
+<p><strong>反正按照我这个改，保存是ctrl + x 回车</strong></p>
+<h1 id="第四步-配置相关参数"><a href="#第四步-配置相关参数" class="headerlink" title="第四步 配置相关参数"></a>第四步 配置相关参数</h1><p><strong>这里会提示配置  按照我的方法配置</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe//这个是启动后的显示</span><br><span class="line">[root@PC-NAME user]<span class="comment"># passwd       //这个是用户名输完名字输密码</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe</span><br><span class="line">[root@PC-NAME]<span class="comment"># EDITOR=nano visudo</span></span><br><span class="line">    %wheel      ALL=(ALL) ALL</span><br><span class="line">    (setup sudoers file.)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]<span class="comment"># useradd -m -G wheel -s /bin/bash &#123;username&#125;</span></span><br><span class="line">(add user)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># passwd &#123;username&#125;      //&#123;&#125;换成你的用户名,记住不需要打&#123;&#125;</span></span><br><span class="line">(<span class="built_in">set</span> default user password)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME user]<span class="comment"># exit  //退出</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Arch.exe config --default-user &#123;username&#125;</span><br><span class="line">    (setting to default user)     //现在是root用户,不用加sudo</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [user@PC-NAME]$ sudo pacman-key --init</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [root@PC-NAME]$ sudo pacman-key --populate</span><br></pre></td></tr></table></figure>
+<h1 id="第五步-安装完后操作"><a href="#第五步-安装完后操作" class="headerlink" title="第五步 安装完后操作"></a>第五步 安装完后操作</h1><p><strong>下面是<a href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/">换源</a></strong></p>
+<p><strong>打开nano /etc/pacman.d/mirrorlist 然后再最顶端添加 切记去##</strong></p>
+<img src="/images/wsl傻瓜式安装/Arch wsl配置文件.jpg" style="width: 800px; height: 500px;">
+<br>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Server = https:mirrors.tuna.tsinghua.edu.cn/archlinux/<span class="variable">$repo</span>/os/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
+**然后就可以 更新软件包缓存**
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pacman -Syy</span><br></pre></td></tr></table></figure>
+<h1 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pacman -S neofetch</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ neofetch</span><br></pre></td></tr></table></figure>
+<img src="/images/wsl傻瓜式安装/Arch wsl.jpg" style="width: 800px; height: 500px;">
+
+<h1 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h1><h1 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h1><h1 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h1>]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>下次一定</title>
     <url>/xcyd.html</url>
     <content><![CDATA[<p><strong>本人制作简单的一款软件</strong></p>
@@ -1887,23 +1887,6 @@ python数据类型
       </categories>
   </entry>
   <entry>
-    <title>Python 字符串(我失忆了)</title>
-    <url>/python-zfc.html</url>
-    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
-<a id="more"></a>
-
-<h1 id="以下全是字符串"><a href="#以下全是字符串" class="headerlink" title="以下全是字符串"></a>以下全是字符串</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s &#x3D; &#39;s&#39;</span><br><span class="line">d &#x3D; &quot;d&quot;</span><br><span class="line">q &#x3D; &#39;&#39;&#39;q&#39;&#39;&#39;</span><br><span class="line">sdq &#x3D; &quot;d &#39;s&#39; &quot;</span><br><span class="line">sdz &#x3D; &#39;&#39;&#39; &quot;s&#39;d&#39;&quot; q&#39;&#39;&#39;</span><br><span class="line">print(s, d, sdq, q, sdz, sep&#x3D;&#39;\n&#39;)</span><br></pre></td></tr></table></figure>
-<h1 id="字符串拼接操作"><a href="#字符串拼接操作" class="headerlink" title="字符串拼接操作"></a>字符串拼接操作</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 字符串拼接</span><br><span class="line"># print(&#39;s&#39; + &#39;d&#39; + &#39;q&#39;)</span><br><span class="line"># 字符串和数字是不能拼接的</span><br><span class="line"># print(&#39;sdq&#39; + 3)</span><br><span class="line"># 连续打印5次史迪奇</span><br><span class="line"># print(5 * &#39;sdq&#39;)</span><br></pre></td></tr></table></figure>
-<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 索引 变量名[] 表索引 编程语言都是从0开始计数的</span><br><span class="line">sdq&#x3D; &#39;我叫史迪奇&#39;</span><br><span class="line">print(str1[0], str1[3], str1[-1])</span><br><span class="line">print(str1[10])  #超出会报错</span><br></pre></td></tr></table></figure>
-<h1 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 切片 变量名[a:b] 同数学区间的[a,b)</span><br><span class="line">sdq &#x3D; &#39;0123456789&#39;</span><br><span class="line">print(&#39;sdq[0:3]&#39;, sdq[0:3])         #012</span><br><span class="line">print(&#39;sdq[1:]&#39;, sdq[1:])           #123456789</span><br><span class="line">print(&#39;sdq[:2]&#39;, sdq[:2])           #01</span><br><span class="line">print(&#39;sdq[:]&#39;, sdq[:])             #返回全部</span><br><span class="line">print(&#39;sdq[-4:-1]&#39;, sdq[-4:-1])     #678</span><br><span class="line">print(sdq[1:100])                   # 切片超出范围是不会报错的会返回全部</span><br></pre></td></tr></table></figure>
-<h1 id="代码格式化"><a href="#代码格式化" class="headerlink" title="代码格式化"></a>代码格式化</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># name &#x3D; &#39;史迪奇&#39;</span><br><span class="line"># number &#x3D; 626</span><br><span class="line"># print(name+&#39;是个&#39;+str(number)+&#39;号实验品&#39;)</span><br><span class="line"># print(&#39;&#123;&#125;是个&#123;&#125;号实验品&#39;.format(name, number))</span><br><span class="line"># print(&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;.format(name&#x3D;&#39;史迪奇&#39;, number&#x3D;626))</span><br><span class="line"># print(f&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;)</span><br><span class="line"># 在一些老的教程里会用%的形式格式化代码，在Python3里就不建议使用了</span><br></pre></td></tr></table></figure>
-<h1 id="字符串的一些使用方法"><a href="#字符串的一些使用方法" class="headerlink" title="字符串的一些使用方法"></a>字符串的一些使用方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sdq &#x3D; &#39;Stitch&#39;</span><br><span class="line">print(&#39;find第一次出现b的索引&#39;, sdq.find(&#39;h&#39;))  #看h的下标</span><br><span class="line">print(&#39;replace&#39;, sdq.replace(&#39;i&#39;, &#39;I&#39;))  #拿I替换i</span><br><span class="line">print(&#39;upper&#39;, sdq.upper()) #全大写</span><br><span class="line">print(&#39;lower&#39;, sdq.lower()) #全小写</span><br><span class="line">print(&#39;swapcase 对换&#39;, &#39;sdq&#39;.swapcase())  #反转字母大小写</span><br><span class="line">print(&#39;去前后空格&#39;, &#39; sdq &#39;.strip(), sep&#x3D;&#39;&#39;)  </span><br><span class="line">print(&#39;S t i t c h &#39;.replace(&#39; &#39;, &#39;&#39;))   #空格替换空字符串</span><br><span class="line"></span><br><span class="line">print(len(&#39;S t i t c h&#39;)) # 获取字符串长度 里面的空格也是计算长度的</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Python 数据类型(我失忆了)</title>
     <url>/python-type.html</url>
     <content><![CDATA[<p><strong>我真的失忆了</strong></p>
@@ -1912,6 +1895,21 @@ python数据类型
 <h1 id="python基本数据类型"><a href="#python基本数据类型" class="headerlink" title="python基本数据类型"></a>python基本数据类型</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;整数&#39;, 1)                          </span><br><span class="line">print(&#39;浮点数&#39;, 0.1)             </span><br><span class="line">print(&#39;布尔值&#39;, True) </span><br><span class="line">print(&#39;空&#39;, None)</span><br><span class="line">print(&#39;元组&#39;, (1, 2, 3)) #可以存放不同类型</span><br><span class="line">print(&#39;列表&#39;, [1, 2, 3])</span><br><span class="line">print(&#39;字典&#39;, &#123;&#39;a&#39;:&#39;d&#39;&#125;)   </span><br></pre></td></tr></table></figure>
 <h1 id="查询类型"><a href="#查询类型" class="headerlink" title="查询类型"></a>查询类型</h1><p><strong>例子</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(type(int))</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Python 基本运算符(我失忆了)</title>
+    <url>/python-jjcc.html</url>
+    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
+<a id="more"></a>
+
+<h1 id="pdtho基本运算符"><a href="#pdtho基本运算符" class="headerlink" title="pdtho基本运算符"></a>pdtho基本运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;加&#39;, 2 + 3)</span><br><span class="line">print(&#39;减&#39;, 1 - 3)</span><br><span class="line">print(&#39;两个减号&#39;, 1 - -2)</span><br><span class="line">print(&#39;乘&#39;, 2 * 4)</span><br><span class="line">print(&#39;除&#39;, 9 &#x2F; 3)</span><br><span class="line">print(&#39;取整&#39;, 10 &#x2F;&#x2F; 3, 10 &#x2F;&#x2F; 4)</span><br><span class="line">print(&#39;取整1&#39;, 10 &#x2F; 3, 10 &#x2F; 4)</span><br><span class="line">print(&#39;模运算，取余数&#39;, 10 % 3)  </span><br></pre></td></tr></table></figure>
+<h1 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h1><p><strong>4舍6入5看齐,奇进偶不进,相比四舍五入更精确</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(round(1.2), round(1.5), round(2.5))</span><br></pre></td></tr></table></figure>
+<h1 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s, d, q, z &#x3D; 1, 2, 3, 1</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; d&#39;, s &#x3D;&#x3D; d)</span><br><span class="line">print(&#39;s !&#x3D; d&#39;, s !&#x3D; d)</span><br><span class="line">print(&#39;s &gt; d&#39;, s &gt; d)</span><br><span class="line">print(&#39;d &lt; z&#39;, d &lt; z)</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; z&#39;, s &#x3D;&#x3D; z)   #比较值</span><br><span class="line">print(&#39;s is z&#39;, s is z)   #比较地址</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Python</category>
@@ -1934,15 +1932,17 @@ python数据类型
       </categories>
   </entry>
   <entry>
-    <title>Python 基本运算符(我失忆了)</title>
-    <url>/python-jjcc.html</url>
+    <title>Python 字符串(我失忆了)</title>
+    <url>/python-zfc.html</url>
     <content><![CDATA[<p><strong>我真的失忆了</strong></p>
 <a id="more"></a>
 
-<h1 id="pdtho基本运算符"><a href="#pdtho基本运算符" class="headerlink" title="pdtho基本运算符"></a>pdtho基本运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;加&#39;, 2 + 3)</span><br><span class="line">print(&#39;减&#39;, 1 - 3)</span><br><span class="line">print(&#39;两个减号&#39;, 1 - -2)</span><br><span class="line">print(&#39;乘&#39;, 2 * 4)</span><br><span class="line">print(&#39;除&#39;, 9 &#x2F; 3)</span><br><span class="line">print(&#39;取整&#39;, 10 &#x2F;&#x2F; 3, 10 &#x2F;&#x2F; 4)</span><br><span class="line">print(&#39;取整1&#39;, 10 &#x2F; 3, 10 &#x2F; 4)</span><br><span class="line">print(&#39;模运算，取余数&#39;, 10 % 3)  </span><br></pre></td></tr></table></figure>
-<h1 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h1><p><strong>4舍6入5看齐,奇进偶不进,相比四舍五入更精确</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(round(1.2), round(1.5), round(2.5))</span><br></pre></td></tr></table></figure>
-<h1 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s, d, q, z &#x3D; 1, 2, 3, 1</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; d&#39;, s &#x3D;&#x3D; d)</span><br><span class="line">print(&#39;s !&#x3D; d&#39;, s !&#x3D; d)</span><br><span class="line">print(&#39;s &gt; d&#39;, s &gt; d)</span><br><span class="line">print(&#39;d &lt; z&#39;, d &lt; z)</span><br><span class="line"></span><br><span class="line">print(&#39;s &#x3D;&#x3D; z&#39;, s &#x3D;&#x3D; z)   #比较值</span><br><span class="line">print(&#39;s is z&#39;, s is z)   #比较地址</span><br></pre></td></tr></table></figure>
+<h1 id="以下全是字符串"><a href="#以下全是字符串" class="headerlink" title="以下全是字符串"></a>以下全是字符串</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s &#x3D; &#39;s&#39;</span><br><span class="line">d &#x3D; &quot;d&quot;</span><br><span class="line">q &#x3D; &#39;&#39;&#39;q&#39;&#39;&#39;</span><br><span class="line">sdq &#x3D; &quot;d &#39;s&#39; &quot;</span><br><span class="line">sdz &#x3D; &#39;&#39;&#39; &quot;s&#39;d&#39;&quot; q&#39;&#39;&#39;</span><br><span class="line">print(s, d, sdq, q, sdz, sep&#x3D;&#39;\n&#39;)</span><br></pre></td></tr></table></figure>
+<h1 id="字符串拼接操作"><a href="#字符串拼接操作" class="headerlink" title="字符串拼接操作"></a>字符串拼接操作</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 字符串拼接</span><br><span class="line"># print(&#39;s&#39; + &#39;d&#39; + &#39;q&#39;)</span><br><span class="line"># 字符串和数字是不能拼接的</span><br><span class="line"># print(&#39;sdq&#39; + 3)</span><br><span class="line"># 连续打印5次史迪奇</span><br><span class="line"># print(5 * &#39;sdq&#39;)</span><br></pre></td></tr></table></figure>
+<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 索引 变量名[] 表索引 编程语言都是从0开始计数的</span><br><span class="line">sdq&#x3D; &#39;我叫史迪奇&#39;</span><br><span class="line">print(str1[0], str1[3], str1[-1])</span><br><span class="line">print(str1[10])  #超出会报错</span><br></pre></td></tr></table></figure>
+<h1 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 切片 变量名[a:b] 同数学区间的[a,b)</span><br><span class="line">sdq &#x3D; &#39;0123456789&#39;</span><br><span class="line">print(&#39;sdq[0:3]&#39;, sdq[0:3])         #012</span><br><span class="line">print(&#39;sdq[1:]&#39;, sdq[1:])           #123456789</span><br><span class="line">print(&#39;sdq[:2]&#39;, sdq[:2])           #01</span><br><span class="line">print(&#39;sdq[:]&#39;, sdq[:])             #返回全部</span><br><span class="line">print(&#39;sdq[-4:-1]&#39;, sdq[-4:-1])     #678</span><br><span class="line">print(sdq[1:100])                   # 切片超出范围是不会报错的会返回全部</span><br></pre></td></tr></table></figure>
+<h1 id="代码格式化"><a href="#代码格式化" class="headerlink" title="代码格式化"></a>代码格式化</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># name &#x3D; &#39;史迪奇&#39;</span><br><span class="line"># number &#x3D; 626</span><br><span class="line"># print(name+&#39;是个&#39;+str(number)+&#39;号实验品&#39;)</span><br><span class="line"># print(&#39;&#123;&#125;是个&#123;&#125;号实验品&#39;.format(name, number))</span><br><span class="line"># print(&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;.format(name&#x3D;&#39;史迪奇&#39;, number&#x3D;626))</span><br><span class="line"># print(f&#39;&#123;name&#125;是个&#123;number&#125;号实验品&#39;)</span><br><span class="line"># 在一些老的教程里会用%的形式格式化代码，在Python3里就不建议使用了</span><br></pre></td></tr></table></figure>
+<h1 id="字符串的一些使用方法"><a href="#字符串的一些使用方法" class="headerlink" title="字符串的一些使用方法"></a>字符串的一些使用方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sdq &#x3D; &#39;Stitch&#39;</span><br><span class="line">print(&#39;find第一次出现b的索引&#39;, sdq.find(&#39;h&#39;))  #看h的下标</span><br><span class="line">print(&#39;replace&#39;, sdq.replace(&#39;i&#39;, &#39;I&#39;))  #拿I替换i</span><br><span class="line">print(&#39;upper&#39;, sdq.upper()) #全大写</span><br><span class="line">print(&#39;lower&#39;, sdq.lower()) #全小写</span><br><span class="line">print(&#39;swapcase 对换&#39;, &#39;sdq&#39;.swapcase())  #反转字母大小写</span><br><span class="line">print(&#39;去前后空格&#39;, &#39; sdq &#39;.strip(), sep&#x3D;&#39;&#39;)  </span><br><span class="line">print(&#39;S t i t c h &#39;.replace(&#39; &#39;, &#39;&#39;))   #空格替换空字符串</span><br><span class="line"></span><br><span class="line">print(len(&#39;S t i t c h&#39;)) # 获取字符串长度 里面的空格也是计算长度的</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Python</category>
@@ -1994,6 +1994,22 @@ python数据类型
       </categories>
   </entry>
   <entry>
+    <title>爬虫 cookie(吃牢饭集合)</title>
+    <url>/reptile-cookie.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="headers中携带cookie"><a href="#headers中携带cookie" class="headerlink" title="headers中携带cookie"></a>headers中携带cookie</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;github.com&#x2F;sdqOS&#39;</span><br><span class="line"></span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.72 Safari&#x2F;537.36&quot;,</span><br><span class="line">    &quot;Cookie&quot;: &quot;_octo&#x3D;GH1.1.1829904439.1611247247; _device_id&#x3D;326c46400086ed13ec278dc836662948; _locale&#x3D;ko; _locale_experiment&#x3D;ko; tz&#x3D;Asia%2FShanghai; has_recent_activity&#x3D;1; user_session&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz&#x3D;Asia%2FShanghai; color_mode&#x3D;%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in&#x3D;yes; dotcom_user&#x3D;sdqOS; _gh_sess&#x3D;l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">respinse &#x3D; requests.get(url, headers&#x3D;headers,)</span><br><span class="line"></span><br><span class="line"># 看看是给谁发请求</span><br><span class="line">print(respinse.url)</span><br><span class="line"></span><br><span class="line">with open(&#39;github.html&#39;, &#39;wb&#39;)as f:</span><br><span class="line">    f.write(respinse.content)</span><br></pre></td></tr></table></figure>
+<p>#构建cookie字典</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;github.com&#x2F;sdqOS&#39;</span><br><span class="line"></span><br><span class="line"># 构造请求头字典</span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.72 Safari&#x2F;537.36&quot;,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">temp &#x3D; &quot;_octo&#x3D;GH1.1.1829904439.1611247247; _device_id&#x3D;326c46400086ed13ec278dc836662948; _locale&#x3D;ko; _locale_experiment&#x3D;ko; tz&#x3D;Asia%2FShanghai; has_recent_activity&#x3D;1; user_session&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz&#x3D;Asia%2FShanghai; color_mode&#x3D;%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in&#x3D;yes; dotcom_user&#x3D;sdqOS; _gh_sess&#x3D;l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cookie_list &#x3D; temp.split(&#39;; &#39;)</span><br><span class="line"></span><br><span class="line"># 熟练方案</span><br><span class="line">cookies &#x3D; &#123; cookie.split(&#39;&#x3D;&#39;)[0]:cookie.split(&#39;&#x3D;&#39;)[-1] for cookie in cookie_list&#125;</span><br><span class="line"></span><br><span class="line"># 稳妥方案</span><br><span class="line"># cookies &#x3D; &#123;&#125;</span><br><span class="line"></span><br><span class="line"># for cookie in cookie_list:</span><br><span class="line">#     cookies[cookie.split(&#39;&#x3D;&#39;)[0]] &#x3D; cookie.split(&#39;&#x3D;&#39;)[-1]</span><br><span class="line"></span><br><span class="line"># print(cookies)</span><br><span class="line"></span><br><span class="line"># # 构造cookie字典</span><br><span class="line"></span><br><span class="line">response &#x3D; requests.get(url, headers&#x3D;headers,cookies&#x3D;cookies)</span><br><span class="line"></span><br><span class="line"># 看看是给谁发请求</span><br><span class="line">print(response.url)</span><br><span class="line"></span><br><span class="line">with open(&#39;github3.html&#39;, &#39;wb&#39;)as f:</span><br><span class="line">    f.write(response.content)</span><br></pre></td></tr></table></figure>
+<h1 id="cookieJar对象转换成cookie字典方法"><a href="#cookieJar对象转换成cookie字典方法" class="headerlink" title="cookieJar对象转换成cookie字典方法"></a>cookieJar对象转换成cookie字典方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;www.baidu.com&#39;</span><br><span class="line"></span><br><span class="line"># 设置(timeout)访问时长为3秒, 然后就断开</span><br><span class="line">response &#x3D; response.get(url, timeout&#x3D;3)</span><br><span class="line"></span><br><span class="line">print(response.cookies)</span><br><span class="line"></span><br><span class="line"># 将对象转字典</span><br><span class="line">dict_cookie &#x3D; requests.utils.dict_from_cookiejar(response.cookies)</span><br><span class="line">print(dict_cookie)</span><br><span class="line"></span><br><span class="line"># 将字典转换为对象</span><br><span class="line">jar_cookies &#x3D; requests.utils.cookiejar_from_dict(dict_cookies)</span><br><span class="line">print(jar_cookies)</span><br></pre></td></tr></table></figure>
+<!--副作用丢失域名 这个不要紧我们自己知道这个cookie对应哪个域名的-->
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
     <title>爬虫 http和https(吃牢饭集合)</title>
     <url>/reptile-http-https.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -2012,22 +2028,6 @@ python数据类型
 
 <p><strong>可以打开浏览器访问一个url, 右键检查, 点击network, 点选一个url, 查看http协议的形式</strong></p>
 <h1 id="HTTPS因为要加密缘故相比HTTP较慢一些-性能低一些-但是比HTTP更安全"><a href="#HTTPS因为要加密缘故相比HTTP较慢一些-性能低一些-但是比HTTP更安全" class="headerlink" title="HTTPS因为要加密缘故相比HTTP较慢一些,性能低一些, 但是比HTTP更安全"></a>HTTPS因为要加密缘故相比HTTP较慢一些,性能低一些, 但是比HTTP更安全</h1>]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>爬虫 cookie(吃牢饭集合)</title>
-    <url>/reptile-cookie.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="headers中携带cookie"><a href="#headers中携带cookie" class="headerlink" title="headers中携带cookie"></a>headers中携带cookie</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;github.com&#x2F;sdqOS&#39;</span><br><span class="line"></span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.72 Safari&#x2F;537.36&quot;,</span><br><span class="line">    &quot;Cookie&quot;: &quot;_octo&#x3D;GH1.1.1829904439.1611247247; _device_id&#x3D;326c46400086ed13ec278dc836662948; _locale&#x3D;ko; _locale_experiment&#x3D;ko; tz&#x3D;Asia%2FShanghai; has_recent_activity&#x3D;1; user_session&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz&#x3D;Asia%2FShanghai; color_mode&#x3D;%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in&#x3D;yes; dotcom_user&#x3D;sdqOS; _gh_sess&#x3D;l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">respinse &#x3D; requests.get(url, headers&#x3D;headers,)</span><br><span class="line"></span><br><span class="line"># 看看是给谁发请求</span><br><span class="line">print(respinse.url)</span><br><span class="line"></span><br><span class="line">with open(&#39;github.html&#39;, &#39;wb&#39;)as f:</span><br><span class="line">    f.write(respinse.content)</span><br></pre></td></tr></table></figure>
-<p>#构建cookie字典</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;github.com&#x2F;sdqOS&#39;</span><br><span class="line"></span><br><span class="line"># 构造请求头字典</span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.72 Safari&#x2F;537.36&quot;,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">temp &#x3D; &quot;_octo&#x3D;GH1.1.1829904439.1611247247; _device_id&#x3D;326c46400086ed13ec278dc836662948; _locale&#x3D;ko; _locale_experiment&#x3D;ko; tz&#x3D;Asia%2FShanghai; has_recent_activity&#x3D;1; user_session&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site&#x3D;zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz&#x3D;Asia%2FShanghai; color_mode&#x3D;%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in&#x3D;yes; dotcom_user&#x3D;sdqOS; _gh_sess&#x3D;l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cookie_list &#x3D; temp.split(&#39;; &#39;)</span><br><span class="line"></span><br><span class="line"># 熟练方案</span><br><span class="line">cookies &#x3D; &#123; cookie.split(&#39;&#x3D;&#39;)[0]:cookie.split(&#39;&#x3D;&#39;)[-1] for cookie in cookie_list&#125;</span><br><span class="line"></span><br><span class="line"># 稳妥方案</span><br><span class="line"># cookies &#x3D; &#123;&#125;</span><br><span class="line"></span><br><span class="line"># for cookie in cookie_list:</span><br><span class="line">#     cookies[cookie.split(&#39;&#x3D;&#39;)[0]] &#x3D; cookie.split(&#39;&#x3D;&#39;)[-1]</span><br><span class="line"></span><br><span class="line"># print(cookies)</span><br><span class="line"></span><br><span class="line"># # 构造cookie字典</span><br><span class="line"></span><br><span class="line">response &#x3D; requests.get(url, headers&#x3D;headers,cookies&#x3D;cookies)</span><br><span class="line"></span><br><span class="line"># 看看是给谁发请求</span><br><span class="line">print(response.url)</span><br><span class="line"></span><br><span class="line">with open(&#39;github3.html&#39;, &#39;wb&#39;)as f:</span><br><span class="line">    f.write(response.content)</span><br></pre></td></tr></table></figure>
-<h1 id="cookieJar对象转换成cookie字典方法"><a href="#cookieJar对象转换成cookie字典方法" class="headerlink" title="cookieJar对象转换成cookie字典方法"></a>cookieJar对象转换成cookie字典方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;www.baidu.com&#39;</span><br><span class="line"></span><br><span class="line"># 设置(timeout)访问时长为3秒, 然后就断开</span><br><span class="line">response &#x3D; response.get(url, timeout&#x3D;3)</span><br><span class="line"></span><br><span class="line">print(response.cookies)</span><br><span class="line"></span><br><span class="line"># 将对象转字典</span><br><span class="line">dict_cookie &#x3D; requests.utils.dict_from_cookiejar(response.cookies)</span><br><span class="line">print(dict_cookie)</span><br><span class="line"></span><br><span class="line"># 将字典转换为对象</span><br><span class="line">jar_cookies &#x3D; requests.utils.cookiejar_from_dict(dict_cookies)</span><br><span class="line">print(jar_cookies)</span><br></pre></td></tr></table></figure>
-<!--副作用丢失域名 这个不要紧我们自己知道这个cookie对应哪个域名的-->
-]]></content>
       <categories>
         <category>爬虫</category>
       </categories>
@@ -2410,16 +2410,6 @@ python数据类型
       </categories>
   </entry>
   <entry>
-    <title>爬虫 verify参数与CA证书(吃牢饭集合)</title>
-    <url>/reptile-verify-CA.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line"># 例如校园网</span><br><span class="line">url &#x3D; &quot;https:&#x2F;&#x2F;sam.huat.edu.cn:8443&#x2F;selfservice&#x2F;&quot;</span><br><span class="line"></span><br><span class="line">response &#x3D; requests.get(url, verify&#x3D;False)</span><br><span class="line"></span><br><span class="line">print(response.content)</span><br><span class="line">print(response.text)</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
     <title>爬虫 xpath(牢饭吃到饱)</title>
     <url>/reptile-xpath.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -2545,6 +2535,16 @@ python数据类型
 <li>返回由Element对象构成的列表: xpath规则字符串匹配的是标签, 列表中的Element对象可以继续进行xpath</li>
 </ul>
 ]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>爬虫 verify参数与CA证书(吃牢饭集合)</title>
+    <url>/reptile-verify-CA.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line"># 例如校园网</span><br><span class="line">url &#x3D; &quot;https:&#x2F;&#x2F;sam.huat.edu.cn:8443&#x2F;selfservice&#x2F;&quot;</span><br><span class="line"></span><br><span class="line">response &#x3D; requests.get(url, verify&#x3D;False)</span><br><span class="line"></span><br><span class="line">print(response.content)</span><br><span class="line">print(response.text)</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>爬虫</category>
       </categories>
@@ -3415,6 +3415,25 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
       </categories>
   </entry>
   <entry>
+    <title>爬虫 访问百度翻译(牢饭吃到饱)</title>
+    <url>/reptile-Baidutranslate.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+
+<h1 id="导入requests"><a href="#导入requests" class="headerlink" title="导入requests"></a>导入requests</h1><!--more-->
+<p><strong>打开cmd输入以下代码</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip install requests</span><br></pre></td></tr></table></figure>
+<h1 id="百度翻译案例"><a href="#百度翻译案例" class="headerlink" title="百度翻译案例"></a>百度翻译案例</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &quot;https:&#x2F;&#x2F;fanyi.baidu.com&#x2F;sug&quot;</span><br><span class="line"></span><br><span class="line">s &#x3D; input(&quot;请输入你要翻译的英文单词&quot;)</span><br><span class="line"></span><br><span class="line">dat &#x3D; &#123;</span><br><span class="line">        &quot;kw&quot;:s</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">tou &#x3D; &#123;</span><br><span class="line">    &quot;user-agent&quot;: &quot;Mozilla&#x2F;5.0 (Linux; Android 6.0; Nexus 5 Build&#x2F;MRA58N) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.85 Mobile Safari&#x2F;537.36&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">pachon &#x3D; requests.post(url,headers&#x3D;tou,data&#x3D;dat)</span><br><span class="line"></span><br><span class="line">print(pachon)</span><br><span class="line"></span><br><span class="line">print(pachon.json())</span><br><span class="line"></span><br><span class="line">pachon.close()  #断开&#x2F;关闭连接, 一定要断开</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
     <title>电脑刷BIOS(保姆级教程)</title>
     <url>/BOIS.html</url>
     <content><![CDATA[<p><strong>电脑刷BIOS简单到不能再简单</strong></p>
@@ -3439,6 +3458,9 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ECFlash</span><br></pre></td></tr></table></figure>
 <p><img src="/images/%E5%88%B7BIOS/%E5%88%B7EC.jpg"></p>
 <p><strong>进BIOS目录下刷写BIOS</strong></p>
+<p><strong>快</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meset </span><br></pre></td></tr></table></figure>
+<p><strong>慢</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flashme</span><br></pre></td></tr></table></figure>
 <p><img src="/images/%E5%88%B7BIOS/%E5%88%B7BIOS.jpg"></p>
 <h3 id="神州SL7D3-神州SL7S3-神州SL7S4用的BIOS"><a href="#神州SL7D3-神州SL7S3-神州SL7S4用的BIOS" class="headerlink" title="神州SL7D3 神州SL7S3 神州SL7S4用的BIOS"></a>神州SL7D3 神州SL7S3 神州SL7S4<a href="https://wwr.lanzoui.com/iFiRVs7ehij">用的BIOS</a></h3>]]></content>
@@ -3496,25 +3518,6 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 ]]></content>
       <categories>
         <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>爬虫 访问百度翻译(牢饭吃到饱)</title>
-    <url>/reptile-Baidutranslate.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-
-<h1 id="导入requests"><a href="#导入requests" class="headerlink" title="导入requests"></a>导入requests</h1><!--more-->
-<p><strong>打开cmd输入以下代码</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip install requests</span><br></pre></td></tr></table></figure>
-<h1 id="百度翻译案例"><a href="#百度翻译案例" class="headerlink" title="百度翻译案例"></a>百度翻译案例</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &quot;https:&#x2F;&#x2F;fanyi.baidu.com&#x2F;sug&quot;</span><br><span class="line"></span><br><span class="line">s &#x3D; input(&quot;请输入你要翻译的英文单词&quot;)</span><br><span class="line"></span><br><span class="line">dat &#x3D; &#123;</span><br><span class="line">        &quot;kw&quot;:s</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">tou &#x3D; &#123;</span><br><span class="line">    &quot;user-agent&quot;: &quot;Mozilla&#x2F;5.0 (Linux; Android 6.0; Nexus 5 Build&#x2F;MRA58N) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.85 Mobile Safari&#x2F;537.36&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">pachon &#x3D; requests.post(url,headers&#x3D;tou,data&#x3D;dat)</span><br><span class="line"></span><br><span class="line">print(pachon)</span><br><span class="line"></span><br><span class="line">print(pachon.json())</span><br><span class="line"></span><br><span class="line">pachon.close()  #断开&#x2F;关闭连接, 一定要断开</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>爬虫</category>
       </categories>
   </entry>
   <entry>
