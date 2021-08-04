@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>SQL Server T-SQL 存储过程 -  我叫史迪奇</title>
+	<title>电脑刷BIOS(保姆级教程) -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -761,13 +761,11 @@ var $main = document.querySelector('.main');
 <div class="sdq">
 	<div class="sdq-post" id="sdqPost">
 		<div class="sdq-title">
-			<h1>SQL Server T-SQL 存储过程</h1>
+			<h1>电脑刷BIOS(保姆级教程)</h1>
 		</div>
 	  <div id="post" class="sdq-post-Statistics">
-            <a>2021年07月09日</a>
+            <a>2021年08月03日</a>
 		  	<a class="post-count">99 字</a>
-		
-		  <a class=" -link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
 		
 		
 	  </div>
@@ -778,7 +776,7 @@ var $main = document.querySelector('.main');
 <aside id="article-toc" class="fixed-toc">
     <div id="article-toc-inner">
         <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%8F%98%E9%87%8F"><span class="toc-text">创建变量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%8F%98%E9%87%8F"><span class="toc-text">查询变量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="toc-text">创建存储过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="toc-text">执行存储过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="toc-text">删除存储过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Procedure-%E7%AE%80%E5%86%99%E4%B8%BA%EF%BC%9Aproc"><span class="toc-text">Procedure 简写为：proc</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%B7BIOS%E9%9C%80%E8%B0%A8%E6%85%8E-%E4%B8%8D%E7%84%B6%E4%BC%9A%E6%83%B3%E6%88%91%E4%B8%80%E6%A0%B7%E8%8A%B1100%E5%BF%AB%E5%8E%BB%E9%87%8D%E6%96%B0%E7%83%A7%E5%BD%95"><span class="toc-text">刷BIOS需谨慎, 不然会想我一样花100快去重新烧录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A6%96%E5%85%88%E4%B8%8B%E8%BD%BDWindows%E5%88%B7BIOS%E6%96%87%E4%BB%B6"><span class="toc-text">首先下载Windows刷BIOS文件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#dos%E5%88%B7BIOS"><span class="toc-text">dos刷BIOS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%BE%AEPE%E6%8A%8A%E8%A6%81%E5%88%B7%E5%86%99%E7%9A%84BIOS%E6%96%87%E4%BB%B6U%E7%9B%98"><span class="toc-text">下载微PE把要刷写的BIOS文件U盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8CMaxDos%E5%B7%A5%E5%85%B7%E7%AE%B1"><span class="toc-text">运行MaxDos工具箱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A5%9E%E5%B7%9ESL7D3-%E7%A5%9E%E5%B7%9ESL7S3-%E7%A5%9E%E5%B7%9ESL7S4%E7%94%A8%E7%9A%84BIOS"><span class="toc-text">神州SL7D3 神州SL7S3 神州SL7S4用的BIOS</span></a></li></ol></li></ol></li></ol>
     </div>
 </aside>
 </div>
@@ -817,15 +815,31 @@ var $main = document.querySelector('.main');
 
 		<div>
 			  <article>
-				<p><strong>SQL Server个人整理</strong></p>
+				<p><strong>电脑刷BIOS简单到不能再简单</strong></p>
 <a id="more"></a>
-
-<h1 id="创建变量"><a href="#创建变量" class="headerlink" title="创建变量"></a>创建变量</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">declare</span> 变量名 数据类型 常量</span><br></pre></td></tr></table></figure>
-<h1 id="查询变量"><a href="#查询变量" class="headerlink" title="查询变量"></a>查询变量</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ select 变量名</span><br></pre></td></tr></table></figure>
-<h1 id="创建存储过程"><a href="#创建存储过程" class="headerlink" title="创建存储过程"></a>创建存储过程</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ create Procedure 存储过程名 as select 字段 from 表名</span><br></pre></td></tr></table></figure>
-<h1 id="执行存储过程"><a href="#执行存储过程" class="headerlink" title="执行存储过程"></a>执行存储过程</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ EXECUTE 存储过程名</span><br></pre></td></tr></table></figure>
-<h1 id="删除存储过程"><a href="#删除存储过程" class="headerlink" title="删除存储过程"></a>删除存储过程</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ drop proc 存储过程名</span><br></pre></td></tr></table></figure>
-<h1 id="Procedure-简写为：proc"><a href="#Procedure-简写为：proc" class="headerlink" title="Procedure 简写为：proc"></a>Procedure 简写为：proc</h1>
+<h1 id="刷BIOS需谨慎-不然会想我一样花100快去重新烧录"><a href="#刷BIOS需谨慎-不然会想我一样花100快去重新烧录" class="headerlink" title="刷BIOS需谨慎, 不然会想我一样花100快去重新烧录"></a>刷BIOS需谨慎, 不然会想我一样花100快去重新烧录</h1><h3 id="首先下载Windows刷BIOS文件"><a href="#首先下载Windows刷BIOS文件" class="headerlink" title="首先下载Windows刷BIOS文件"></a>首先下载<a target="_blank" rel="noopener" href="https://wwr.lanzoui.com/inijIs7ck0h">Windows刷BIOS文件</a></h3><ul>
+<li>密码:sdq3</li>
+<li>把文件拖入C盘根目录解压</li>
+</ul>
+<p><strong>以管理员的方式打开</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd C:&#x2F;刷BIOS</span><br></pre></td></tr></table></figure>
+<p><strong>备份命令 支持很多格式的备份</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fptw64.exe -d 备份.bin -bios</span><br></pre></td></tr></table></figure>
+<p><strong>写入命令 支持很多格式的写入</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fptw64.exe -f 写入.bin -bios</span><br></pre></td></tr></table></figure>
+<h1 id="dos刷BIOS"><a href="#dos刷BIOS" class="headerlink" title="dos刷BIOS"></a>dos刷BIOS</h1><h3 id="下载微PE把要刷写的BIOS文件U盘"><a href="#下载微PE把要刷写的BIOS文件U盘" class="headerlink" title="下载微PE把要刷写的BIOS文件U盘"></a>下载<a target="_blank" rel="noopener" href="https://download.csdn.net/download/qq_44948696/20695927">微PE</a>把要刷写的BIOS文件U盘</h3><p><img src="/images/%E5%88%B7BIOS/%E5%BE%AEPE1.jpg"></p>
+<p><img src="/images/%E5%88%B7BIOS/%E5%BE%AEPE2.jpg"></p>
+<h3 id="运行MaxDos工具箱"><a href="#运行MaxDos工具箱" class="headerlink" title="运行MaxDos工具箱"></a>运行MaxDos工具箱</h3><p><strong>查看</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dir</span><br></pre></td></tr></table></figure>
+<p><strong>切换分区</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A:</span><br><span class="line"></span><br><span class="line">B:</span><br></pre></td></tr></table></figure>
+<p><strong>刷新进EC目录下EC</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ECFlash</span><br></pre></td></tr></table></figure>
+<p><img src="/images/%E5%88%B7BIOS/%E5%88%B7EC.jpg"></p>
+<p><strong>进BIOS目录下刷写BIOS</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flashme</span><br></pre></td></tr></table></figure>
+<p><img src="/images/%E5%88%B7BIOS/%E5%88%B7BIOS.jpg"></p>
+<h3 id="神州SL7D3-神州SL7S3-神州SL7S4用的BIOS"><a href="#神州SL7D3-神州SL7S3-神州SL7S4用的BIOS" class="headerlink" title="神州SL7D3 神州SL7S3 神州SL7S4用的BIOS"></a>神州SL7D3 神州SL7S3 神州SL7S4<a target="_blank" rel="noopener" href="https://wwr.lanzoui.com/iFiRVs7ehij">用的BIOS</a></h3>
 			  </article>
 		</div>
 		
@@ -902,7 +916,7 @@ $(window).load(function(){
         
 	
 <strong>本文链接：</strong>
-	<a href="https://sdq3.gitee.io/SQL-storage.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;SQL-storage.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;SQL-storage.html</a><br>
+	<a href="https://sdq3.gitee.io/BOIS.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;BOIS.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;BOIS.html</a><br>
 </div>
 
 	  
