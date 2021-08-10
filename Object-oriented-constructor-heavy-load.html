@@ -184,7 +184,7 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>81
+					<span>文章</span>88
 					<span>标签</span>0
 					<span>分类</span>14
 				</div>		
@@ -324,7 +324,7 @@
 
         <li>
           <a href="/categories/TypeScript/">TypeScript</a>
-          <span>4</span>
+          <span>11</span>
         </li>
 
         
@@ -384,23 +384,23 @@
       <ul>
         
           <li>
-            <a href="/TypeScript-array.html">TypeScript数组类型注解的方法</a>
+            <a href="/TypeScript-NameSpace.html">TypeScript 命名空间</a>
           </li>
         
           <li>
-            <a href="/TypeScript-hscsfhlxdzj.html">TypeScript函数参数和返回类型的注解</a>
+            <a href="/TypeScript-genericity.html">TypeScript 泛型</a>
           </li>
         
           <li>
-            <a href="/TypeScript-zjtd.html">TypeScript数据注解和类型推断</a>
+            <a href="/TypeScript-Enum.html">TypeScript 枚举类型</a>
           </li>
         
           <li>
-            <a href="/TypeScript-type.html">TypeScript静态数据类型</a>
+            <a href="/TypeScript-Union-type-protection.html">TypeScript 联合类型和类型保护</a>
           </li>
         
           <li>
-            <a href="/BOIS.html">电脑刷BIOS(保姆级教程)</a>
+            <a href="/TypeScript-config.html">TypeScript 配置文件</a>
           </li>
         
       </ul>
@@ -828,8 +828,8 @@ var $main = document.querySelector('.main');
 <a id="more"></a>
 
 <h1 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$   //成员变量</span><br><span class="line">$ public class Car &#123;</span><br><span class="line">$ String color;  //颜色</span><br><span class="line">$ int wheel;   //轮子</span><br><span class="line">$ int seat;   //座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ public Car(String color,  int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this.color = color; // 颜色</span><br><span class="line">$     this.seat = seat; // 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ public Car(String color, int wheel, int seat) &#123; </span><br><span class="line">$     // 设置属性信息</span><br><span class="line">$     this(color,seat);  //this还可以调用当前累中其他的构造方法</span><br><span class="line">$     this.wheel = wheel; // 轮子</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ public Car(String color,  int seat) &#123; </span><br><span class="line">$     设置属性信息</span><br><span class="line">$     this.color = color; 颜色</span><br><span class="line">$     this.seat = seat; 座位</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ public Car(String color, int wheel, int seat) &#123; </span><br><span class="line">$     设置属性信息</span><br><span class="line">$     this(color,seat);  //this还可以调用当前累中其他的构造方法</span><br><span class="line">$     this.wheel = wheel; 轮子</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$   //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line">$     Car c1 = new Car(<span class="string">&quot;透明&quot;</span>,9);</span><br><span class="line">$     Car c2 = new Car(<span class="string">&quot;黄&quot;</span>,5,9);</span><br><span class="line">$     &#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <h1 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h1>
 			  </article>

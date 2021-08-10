@@ -184,7 +184,7 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>81
+					<span>文章</span>88
 					<span>标签</span>0
 					<span>分类</span>14
 				</div>		
@@ -324,7 +324,7 @@
 
         <li>
           <a href="/categories/TypeScript/">TypeScript</a>
-          <span>4</span>
+          <span>11</span>
         </li>
 
         
@@ -384,23 +384,23 @@
       <ul>
         
           <li>
-            <a href="/TypeScript-array.html">TypeScript数组类型注解的方法</a>
+            <a href="/TypeScript-NameSpace.html">TypeScript 命名空间</a>
           </li>
         
           <li>
-            <a href="/TypeScript-hscsfhlxdzj.html">TypeScript函数参数和返回类型的注解</a>
+            <a href="/TypeScript-genericity.html">TypeScript 泛型</a>
           </li>
         
           <li>
-            <a href="/TypeScript-zjtd.html">TypeScript数据注解和类型推断</a>
+            <a href="/TypeScript-Enum.html">TypeScript 枚举类型</a>
           </li>
         
           <li>
-            <a href="/TypeScript-type.html">TypeScript静态数据类型</a>
+            <a href="/TypeScript-Union-type-protection.html">TypeScript 联合类型和类型保护</a>
           </li>
         
           <li>
-            <a href="/BOIS.html">电脑刷BIOS(保姆级教程)</a>
+            <a href="/TypeScript-config.html">TypeScript 配置文件</a>
           </li>
         
       </ul>
@@ -832,7 +832,7 @@ var $main = document.querySelector('.main');
 <p>)/1.jpg)</p>
 <h1 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$<span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$  div&#123;</span><br><span class="line">$       /* border是边框 3px是边框的粗细 soshed是边框的样式 black是边框的颜色 */</span><br><span class="line">$       border: 3px soshed black;</span><br><span class="line">$        &#125;</span><br><span class="line">$<span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h1 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a>圆角边框</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$<span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">$  div&#123;</span><br><span class="line">$       /* border是边框 10px是边框的粗细 solid是边框的样式 blue是边框的颜色 */</span><br><span class="line">$       border: 10px solid blue;</span><br><span class="line">$       border-radius: 100px;  //100px这是圆角边框 这个值可以随便改很好玩的</span><br><span class="line">$        &#125;</span><br><span class="line">$<span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$<span class="tag">&lt;<span class="name">style</span>&gt;</span> </span><br><span class="line">$  div&#123;</span><br><span class="line">$     width:300px;  //宽</span><br><span class="line">$     height:100px;  //高</span><br><span class="line">$     background-color:#ff9900;  //颜色</span><br><span class="line">$     -moz-box-shadow: 10px 10px 5px #888888; // 老的 Firefox </span><br><span class="line">$     box-shadow: 10px 10px 5px #888888; //box-shadow 属性向框添加一个或多个阴影</span><br><span class="line">$     &#125;</span><br><span class="line">$<span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$<span class="tag">&lt;<span class="name">style</span>&gt;</span> </span><br><span class="line">$  div&#123;</span><br><span class="line">$     width:300px;  //宽</span><br><span class="line">$     height:100px;  //高</span><br><span class="line">$     background-color:#ff9900;  //颜色</span><br><span class="line">$     -moz-box-shadow: 10px 10px 5px #888888; 老的 Firefox </span><br><span class="line">$     box-shadow: 10px 10px 5px #888888; //box-shadow 属性向框添加一个或多个阴影</span><br><span class="line">$     &#125;</span><br><span class="line">$<span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h1 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$<span class="tag">&lt;<span class="name">style</span>&gt;</span> </span><br><span class="line">$  div&#123;</span><br><span class="line">$     display: inline-block;  //将对象呈现为inline对象，但是对象的作为daoblock对象呈现</span><br><span class="line">$     float:right;  //float浮动 right右</span><br><span class="line">$     clear: right;  //右侧不允许有浮动元素</span><br><span class="line">$     clear: left;  //左侧不允许有浮动元素</span><br><span class="line">$     clear: both;  //两侧都不允许有浮动元素</span><br><span class="line">$     &#125;</span><br><span class="line">$<span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <!-- **解决方法 增加父级元素的高度**
 **解决方法 增加一个空的div标签, 清除浮动** -->
