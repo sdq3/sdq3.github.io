@@ -616,22 +616,6 @@ var tools = (function(){
       </categories>
   </entry>
   <entry>
-    <title>CSS 伪类选择器</title>
-    <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
-    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">  &#125;</span><br><span class="line">  ul li:first-child&#123;   //first-child意思是选中第一个</span><br><span class="line">      color: red;   //红色字体</span><br><span class="line">  &#125;</span><br><span class="line">  ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">      color: blue;   //红色字体</span><br><span class="line">  &#125;</span><br><span class="line">  p:nth-child(2)&#123;   //选中p1: 定位到父元素, 选择当前的第一个元素也就是选择当前p元素的父级元素, 选中父级元素的第一个, 并且是当前元素才生效</span><br><span class="line">      color: yellow;   //黄色字体</span><br><span class="line">  &#125;</span><br><span class="line">  ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">      color: red;   //红色字体</span><br><span class="line">  &#125;</span><br><span class="line">  p:nth-of-type(2)&#123;   //nth-of-type意思是选中父类下元素的第二个类型</span><br><span class="line">      color: red;   //红色字体</span><br><span class="line">  &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇骑士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇打手<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇国王<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>CSS 三种基本选择器</title>
     <url>/CSS%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
@@ -649,6 +633,22 @@ var tools = (function(){
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><strong>标签选择器: 选择一类标签 标签名{}</strong></p>
 <p><strong>类/class选择器: 选择所有的class属性一致的标签, 跨标签 .类名{}</strong></p>
 <p><strong>id选择器: 全局唯一 id名{}</strong></p>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>CSS 伪类选择器</title>
+    <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">  &#125;</span><br><span class="line">  ul li:first-child&#123;   //first-child意思是选中第一个</span><br><span class="line">      color: red;   //红色字体</span><br><span class="line">  &#125;</span><br><span class="line">  ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">      color: blue;   //红色字体</span><br><span class="line">  &#125;</span><br><span class="line">  p:nth-child(2)&#123;   //选中p1: 定位到父元素, 选择当前的第一个元素也就是选择当前p元素的父级元素, 选中父级元素的第一个, 并且是当前元素才生效</span><br><span class="line">      color: yellow;   //黄色字体</span><br><span class="line">  &#125;</span><br><span class="line">  ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">      color: red;   //红色字体</span><br><span class="line">  &#125;</span><br><span class="line">  p:nth-of-type(2)&#123;   //nth-of-type意思是选中父类下元素的第二个类型</span><br><span class="line">      color: red;   //红色字体</span><br><span class="line">  &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇骑士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇打手<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇国王<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
 ]]></content>
       <categories>
         <category>CSS</category>
@@ -796,6 +796,21 @@ $</style>
 ]]></content>
       <categories>
         <category>EJS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>HTML 表格</title>
+    <url>/HTML-form.html</url>
+    <content><![CDATA[<p><strong>HTML个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="table"><a href="#table" class="headerlink" title="table"></a>table</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ tr  //行</span><br><span class="line">$ td  //列</span><br></pre></td></tr></table></figure>
+
+<h1 id="跨列"><a href="#跨列" class="headerlink" title="跨列"></a>跨列</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tb</span> <span class="attr">cospan</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="跨行"><a href="#跨行" class="headerlink" title="跨行"></a>跨行</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tb</span> <span class="attr">rowspan</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>HTML</category>
       </categories>
   </entry>
   <entry>
@@ -1095,21 +1110,6 @@ $</style>
       </categories>
   </entry>
   <entry>
-    <title>HTML 表格</title>
-    <url>/HTML-form.html</url>
-    <content><![CDATA[<p><strong>HTML个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="table"><a href="#table" class="headerlink" title="table"></a>table</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ tr  //行</span><br><span class="line">$ td  //列</span><br></pre></td></tr></table></figure>
-
-<h1 id="跨列"><a href="#跨列" class="headerlink" title="跨列"></a>跨列</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tb</span> <span class="attr">cospan</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="跨行"><a href="#跨行" class="headerlink" title="跨行"></a>跨行</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tb</span> <span class="attr">rowspan</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>HTML</category>
-      </categories>
-  </entry>
-  <entry>
     <title>关于Hexo搭建博客我所踩过的坑和小白安装教程</title>
     <url>/Hexo-install.html</url>
     <content><![CDATA[<p><strong>搭建博客笔记</strong></p>
@@ -1138,94 +1138,6 @@ $</style>
 <img src="/images/Hexo博客/案例.jpg">]]></content>
       <categories>
         <category>搭建博客</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Java Swing 图形界面速背表(未完工)</title>
-    <url>/Java-Swing.html</url>
-    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
-<a id="more"></a>
-
-<blockquote>
-<h1 id="JavaSwing-布局管理器"><a href="#JavaSwing-布局管理器" class="headerlink" title="JavaSwing 布局管理器"></a>JavaSwing 布局管理器</h1></blockquote>
-<p>getWigth 得到宽度 或者 控件的高度<br>getHeight 得到高度 或者 控件的宽度<br>root.setLayout(layoutMgr) 给容器设置一个布局器<br>layoutMgr.layoutContainer(…) 当容器改变大小时，自动调用布局器重新布局<br>Perferred Size 指控件最佳大小<br>Dimension 表示尺寸信息 size.width/size.height</p>
-<h1 id="FlowLayout-流式布局"><a href="#FlowLayout-流式布局" class="headerlink" title="FlowLayout (流式布局)"></a>FlowLayout (流式布局)</h1><p>setPreferred Size() 控制每个控件的显示高度和宽度</p>
-<p>GridLayout (网格布局)</p>
-<p>GridBagLayout (网格袋布局)</p>
-<p>BoxLayout (箱式布局)</p>
-<p>GroupLayout (分组布局)</p>
-<p>AFXLayout  (水平布局)</p>
-<h1 id="AfAnyWhere-自由位置布局"><a href="#AfAnyWhere-自由位置布局" class="headerlink" title="AfAnyWhere (自由位置布局)"></a>AfAnyWhere (自由位置布局)</h1><p>new AfMargin(top,left,botton,right)</p>
-<h1 id="CardLayout-卡片布局"><a href="#CardLayout-卡片布局" class="headerlink" title="CardLayout (卡片布局)"></a>CardLayout (卡片布局)</h1><p>CardLayout.show(pane,”name”)</p>
-<h1 id="BorderLayout-边界布局"><a href="#BorderLayout-边界布局" class="headerlink" title="BorderLayout (边界布局)"></a>BorderLayout (边界布局)</h1><p>setPreferrendSize() 对于上下边界调高度，左右边界调宽度<br>PAGE_START 上边界<br>PAGE_END 下边界<br>LINE_START 左边界<br>LINE_END 右边<br>CENTER 中央</p>
-<p>SpringLayout (弹性布局)</p>
-<p>null (绝对布局)</p>
-<blockquote>
-<h1 id="JavaSwing-基本组件"><a href="#JavaSwing-基本组件" class="headerlink" title="JavaSwing 基本组件"></a>JavaSwing 基本组件</h1></blockquote>
-<h1 id="JLabel-标签"><a href="#JLabel-标签" class="headerlink" title="JLabel (标签)"></a>JLabel (标签)</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ JLabel x = new JLabel(<span class="string">&quot;我是JLabel&quot;</span>);</span><br><span class="line">$ contenntPane.add(x);</span><br><span class="line">$ //也可以用一行</span><br><span class="line">$ contenntPane.add(new JLabel(<span class="string">&quot;我是JLabel&quot;</span>);</span><br></pre></td></tr></table></figure>
-<p>JLabel 用于显示短文本或图标<br>setText() 设置文件<br>setFont() 设置字体<br>setForeground() 设置文件颜色<br>setToolTipText() 设置工具提示<br>getText() 取得用户输入</p>
-<h2 id="JButton-按钮"><a href="#JButton-按钮" class="headerlink" title="JButton (按钮)"></a>JButton (按钮)</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ JButton x = new JButton(<span class="string">&quot;我是JButton&quot;</span>);</span><br><span class="line">$ contenntPane.add(x);</span><br><span class="line">$ //也可以用一行</span><br><span class="line">$ contenntPane.add(new JButton(<span class="string">&quot;我是JButton&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>JRadioButton (单选按钮)</p>
-<h1 id="JCheckBox-复选框"><a href="#JCheckBox-复选框" class="headerlink" title="JCheckBox (复选框)"></a>JCheckBox (复选框)</h1><p>getSelected() 选中状态<br>setSelected() 设置<br>getText() 选项文字<br>addActionListener() 用户选中/取消时触发</p>
-<p>JToggleButton (开关按钮)</p>
-<h1 id="JTextField-文本框-或者-单行文本框"><a href="#JTextField-文本框-或者-单行文本框" class="headerlink" title="JTextField (文本框 或者 单行文本框)"></a>JTextField (文本框 或者 单行文本框)</h1><p>JTextField 用于显示单行文本<br>new JTextField(10) 其中,10用于表示列数，用于计算宽度(并不是字数限制)<br>setText() 设置文本<br>getText() 获取文本<br>setFont() 设置字体</p>
-<h1 id="JoptionPane-消息框"><a href="#JoptionPane-消息框" class="headerlink" title="JoptionPane 消息框"></a>JoptionPane 消息框</h1><p>JoptionPane.showMessageDialog() 提示消息框<br>showMessageDialog  简单消息提示<br>showConfirmDialog  简单消息确认<br>showInputDialog  简单数据输入<br>showoptionDialog  简单选择输入<br>Blocked 阻塞<br>JoptionPane.showInputDialog() 提示消息框</p>
-<p>JPasswordField (密码框)</p>
-<h2 id="JTextArea-文本区域-或者-多行文本框"><a href="#JTextArea-文本区域-或者-多行文本框" class="headerlink" title="JTextArea (文本区域 或者 多行文本框)"></a>JTextArea (文本区域 或者 多行文本框)</h2><p>JComboBox (下拉列表框)</p>
-<p>JList (列表框)</p>
-<p>JProgressBar (进度条)</p>
-<p>JSlider (滑块)</p>
-<blockquote>
-<h1 id="JavaSwing-面板组件"><a href="#JavaSwing-面板组件" class="headerlink" title="JavaSwing 面板组件"></a>JavaSwing 面板组件</h1></blockquote>
-<p>JPanel (面板)</p>
-<p>JScrollPane (滚动面板)</p>
-<p>JSplitPane (分隔面板)</p>
-<p>JTabbedPane (选项卡面板)</p>
-<p>JLayeredPane (层级面板)</p>
-<blockquote>
-<h1 id="JavaSwing-其他组件"><a href="#JavaSwing-其他组件" class="headerlink" title="JavaSwing 其他组件"></a>JavaSwing 其他组件</h1></blockquote>
-<p>JFrame (窗口)[一般存放标题]<br>setTitle  (设置标题)</p>
-<p>Container (内容面板)</p>
-<h1 id="setVisible-设置窗口大小-和-setVisble-显示窗口大小"><a href="#setVisible-设置窗口大小-和-setVisble-显示窗口大小" class="headerlink" title="setVisible (设置窗口大小) 和 setVisble(显示窗口大小)"></a>setVisible (设置窗口大小) 和 setVisble(显示窗口大小)</h1><p>setVisible(boolean)方法是用来显示/隐藏GUI组件的。<br>需要显示则使用true，需要隐藏则使用false</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ setVisible(<span class="literal">true</span>)  //例如这个</span><br></pre></td></tr></table></figure>
-<p>意思是说数据模型已经构造好了，允许JVM可以根据数据模型执行paint方法开始画图并显示到屏幕上了，并不是显示图形，而是可以运行开始画图，要把setVisible()方法放到最后面，代码是按顺序执行的 ，如果把setVisible()放在前边，后边再添加其他组件的时候，有可能不会显示出来</p>
-<p>JDialog, JOptionPane (对话框)</p>
-<p>JFileChooser (文件选择器)</p>
-<p>JColorChooser (颜色选择器)</p>
-<h1 id="JMenuBar-菜单栏"><a href="#JMenuBar-菜单栏" class="headerlink" title="JMenuBar (菜单栏)"></a>JMenuBar (菜单栏)</h1><p>JMenuBar (菜单项)<br>JMenu (菜单)<br>JMenuItem (菜单项)</p>
-<h1 id="JToolBar-工具栏"><a href="#JToolBar-工具栏" class="headerlink" title="JToolBar (工具栏)"></a>JToolBar (工具栏)</h1><p>JButton 工具按钮<br>setIcin() 图标<br>setAction Command() 命令<br>setToolTipText() 提示文字<br>add Action Listener() 事件处理</p>
-<p>JPopupMenu (弹出菜单 或者 上下文菜单 或者 右键菜单)<br>JPopupMenu 创建<br>JMenuItem  添加<br>添加鼠标右键的响应，显示窗口菜单<br>菜单项被点击时，执行事件处理</p>
-<p>JTable (表格)</p>
-<p>JTree (树)</p>
-<p>JInternalFrame (内部窗口)</p>
-<blockquote>
-<h1 id="JavaSwing-相关特性-了解就行"><a href="#JavaSwing-相关特性-了解就行" class="headerlink" title="JavaSwing 相关特性(了解就行)"></a>JavaSwing 相关特性(了解就行)</h1></blockquote>
-<p>组件的位置和尺寸</p>
-<h1 id="组件边框-Border"><a href="#组件边框-Border" class="headerlink" title="组件边框 (Border)"></a>组件边框 (Border)</h1><p>Border本身就是一个接口<br>Padding: 边框与它的内容之间的间距<br>Margin: 边框与它外面的容器之间的间距</p>
-<h1 id="AfBorder-添加边框和边距"><a href="#AfBorder-添加边框和边距" class="headerlink" title="AfBorder 添加边框和边距"></a>AfBorder 添加边框和边距</h1><p>addPadding() 内边距<br>addMargin() 外边距<br>addOuterBorder() 外边添加Border<br>addInnerBorder() 里面添加Border</p>
-<h1 id="AfPanel-用于快速布局"><a href="#AfPanel-用于快速布局" class="headerlink" title="AfPanel 用于快速布局"></a>AfPanel 用于快速布局</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ AfPanel p = new AfPanel();</span><br><span class="line">$ p.padding();  //设置内边距</span><br><span class="line">$ p.margin();  //设置外边距</span><br><span class="line">$ p.preferredWidth();  //设置PrefedSise的宽度</span><br><span class="line">$ p.preferredHeight();  //设置PrefedSise的高度</span><br></pre></td></tr></table></figure>
-<h1 id="图片缩放工具"><a href="#图片缩放工具" class="headerlink" title="图片缩放工具"></a>图片缩放工具</h1><p>fitXY()  XY方向拉伸占满<br>fitCenter()  居中显示，并保持长宽比<br>fitCenterInside() 如果图片较小，则居中显示，如果图片越出范围，则舒服显示</p>
-<h1 id="图片显示控件"><a href="#图片显示控件" class="headerlink" title="图片显示控件"></a>图片显示控件</h1><p>AfImageView  图片显示控件<br>setScaleType()  设置缩放类型<br>setImage()  显示图片<br>setBgColor()  设置背景图</p>
-<h1 id="鼠标事件-MouseEvent"><a href="#鼠标事件-MouseEvent" class="headerlink" title="鼠标事件 MouseEvent"></a>鼠标事件 MouseEvent</h1><p>addMouseliskener()<br>鼠标点击 mouseClicked<br>鼠标按下 mousePressed<br>鼠标抬起 mouseExited<br>鼠标移入 mouseEntered<br>鼠标移出 mouseExited<br>addMouseMotionliskener()<br>鼠标移动 mouseMoved<br>鼠标拖动 mouseDragged<br>addMouseWheelListener<br>鼠标滚动 mouseWheelMoved</p>
-<p>事件处理</p>
-<p>多线程并发与线程安全</p>
-<p>拖拽功能</p>
-<p>系统托盘 (System Tray)</p>
-<p>闪屏 (Splash Screen)</p>
-<h1 id="Java-AWT-Swing-其他相关"><a href="#Java-AWT-Swing-其他相关" class="headerlink" title="Java AWT/Swing 其他相关"></a>Java AWT/Swing 其他相关</h1><p>Java绘图: 使用Graphics类绘制线段, 矩形, 椭圆/圆弧/扇形, 图片, 文本</p>
-<p>Java图片操作 — 图片的读取, 绘制, 缩放, 裁剪, 保存</p>
-<p>Java代码截屏: 使用 Java 代码截取电脑屏幕并保存</p>
-<p>Java模拟鼠标键盘输入事件 — Robot 类</p>
-<p>Java操作桌面应用 — Desktop 类</p>
-<p>Java操作系统剪贴板(Clipboard)实现复制和粘贴 –&gt;</p>
-<h1 id="特别提醒-AWT-例如-Label-Button"><a href="#特别提醒-AWT-例如-Label-Button" class="headerlink" title="特别提醒 AWT 例如: Label,Button"></a>特别提醒 AWT 例如: Label,Button</h1><h1 id="特别提醒-Swing-例如-JLabel-JButton-只要是以J开头的"><a href="#特别提醒-Swing-例如-JLabel-JButton-只要是以J开头的" class="headerlink" title="特别提醒 Swing 例如: JLabel,JButton 只要是以J开头的"></a>特别提醒 Swing 例如: JLabel,JButton 只要是以J开头的</h1><h1 id="ActionListener-是一个接口，所以派生时用impleme"><a href="#ActionListener-是一个接口，所以派生时用impleme" class="headerlink" title="ActionListener 是一个接口，所以派生时用impleme"></a>ActionListener 是一个接口，所以派生时用impleme</h1><p>addActionListener(…)  传入的参数</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Button.addActionListener(x);  //意思是把什么交给谁，例如button(按键) 和 x </span><br></pre></td></tr></table></figure>
-<h1 id="演示drawString（）方法的示例程序"><a href="#演示drawString（）方法的示例程序" class="headerlink" title="演示drawString（）方法的示例程序:"></a>演示drawString（）方法的示例程序:</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">drawString示例程序</span><br><span class="line"><span class="variable">$import</span> java.awt.*; </span><br><span class="line"><span class="variable">$import</span> java.applet.*; </span><br><span class="line"><span class="variable">$public</span> class HelloWorldApplet扩展Applet &#123;     </span><br><span class="line">$ public void paint(Graphics g)&#123;         </span><br><span class="line">$ g.drawString(<span class="string">&quot;Hello World&quot;</span>，100,100);</span><br></pre></td></tr></table></figure>
-<h1 id="显示消息对话框"><a href="#显示消息对话框" class="headerlink" title="显示消息对话框"></a>显示消息对话框</h1><p>showMessageDialog(“里面的文字”)<br>f.setVisible(true)<br>f.setTitle(“框框上的文字”)<br>charAt<br>看见actionPerformed 就要implements ActionListener<br><strong>(Button saveButton = new Button)</strong><br>saveButton.addActionListener(this);没什么加就this<br>(ActionListener=监听器)<br>(this=当前对象的意思)<br>(super是父级对象)<br><strong>如果Container contentPane = newContainer();</strong><br><strong>就Container contentPane = getContentPane();</strong><br>有Thread就想起Runnable</p>
-]]></content>
-      <categories>
-        <category>Java</category>
       </categories>
   </entry>
   <entry>
@@ -1258,47 +1170,6 @@ mouse: &lt;span id=&quot;mouseMove&quot;&gt;&lt;/span&gt;
         }
     });
 </script>
-]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript BOM</title>
-    <url>/JavaScript-BOM.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="window"><a href="#window" class="headerlink" title="window"></a>window</h1><p><strong>作用: 有关浏览器窗口</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.alert(<span class="number">1</span>)</span><br><span class="line">undefind</span><br><span class="line"><span class="built_in">window</span>.innerHeight</span><br><span class="line"><span class="number">790</span></span><br><span class="line"><span class="built_in">window</span>.innerWidth</span><br><span class="line"><span class="number">918</span></span><br><span class="line"><span class="built_in">window</span>.outerHeight</span><br><span class="line"><span class="number">28</span></span><br><span class="line"><span class="built_in">window</span>.outerWidth</span><br><span class="line"><span class="number">160</span></span><br></pre></td></tr></table></figure>
-<h1 id="Navigator"><a href="#Navigator" class="headerlink" title="Navigator"></a>Navigator</h1><p><strong>作用: 封装浏览器信息</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">navigator.appName</span><br><span class="line"><span class="string">&quot;Netscape&quot;</span></span><br><span class="line">navigator.appVersion</span><br><span class="line"><span class="string">&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36&quot;</span></span><br><span class="line">navigator.userAgent</span><br><span class="line"><span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36&quot;</span></span><br><span class="line">navigator.platform</span><br><span class="line"><span class="string">&quot;Win32&quot;</span></span><br></pre></td></tr></table></figure>
-<h1 id="screen"><a href="#screen" class="headerlink" title="screen"></a>screen</h1><p><strong>作用: 代表屏幕尺寸</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">screen.width</span><br><span class="line"><span class="number">1536</span></span><br><span class="line">screen.height</span><br><span class="line"><span class="number">864</span></span><br></pre></td></tr></table></figure>
-<h1 id="location-重要"><a href="#location-重要" class="headerlink" title="location (重要)"></a>location (重要)</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 主机</span></span><br><span class="line">host: <span class="string">&quot;www.baidu.com&quot;</span></span><br><span class="line"><span class="comment">// 当前指向的位置</span></span><br><span class="line">href: <span class="string">&quot;http://www.baidu.com/&quot;</span></span><br><span class="line"><span class="comment">// 协议</span></span><br><span class="line">protocol: <span class="string">&quot;http:&quot;</span></span><br><span class="line"><span class="comment">//重新加载/刷新</span></span><br><span class="line">reload: ƒ reload()</span><br><span class="line"><span class="comment">// 设置新的地址</span></span><br><span class="line">location.assign(<span class="string">&#x27;https://sdq3.gitee.io/&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="document"><a href="#document" class="headerlink" title="document"></a>document</h1><p><strong>document 表示当前页面, HTML DOM文档树</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.title</span><br><span class="line"><span class="string">&quot;百度一下，你就知道&quot;</span></span><br><span class="line"><span class="built_in">document</span>.title = <span class="string">&quot;我叫史迪奇&quot;</span></span><br><span class="line"><span class="string">&quot;我叫史迪奇&quot;</span></span><br></pre></td></tr></table></figure>
-<p><strong>获取具体的文档树节点</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span> <span class="attr">id</span> =<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>史迪奇<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>史迪奇国王<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>史迪奇骑士<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> dl = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;app&#x27;</span>)</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>获取cookie</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.cookie</span><br><span class="line"><span class="string">&quot;BIDUPSID=EC9E21CA08B01D9E2E577F635293067...&quot;</span></span><br></pre></td></tr></table></figure>
-<p><strong>劫持cookie原理</strong><br>    + 劫持cookie: 获取你的cookie然后上传的它的服务器<br>    + 预防: 服务器端设置 cokie: httpOnly</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;sdq.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="history"><a href="#history" class="headerlink" title="history"></a>history</h1><p><strong>代表浏览器的历史记录</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 前进</span></span><br><span class="line">history.forward()</span><br><span class="line"><span class="comment">// 返回</span></span><br><span class="line">history.back()</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
 ]]></content>
       <categories>
         <category>JavaScript</category>
@@ -1434,27 +1305,41 @@ mouse: &lt;span id=&quot;mouseMove&quot;&gt;&lt;/span&gt;
       </categories>
   </entry>
   <entry>
-    <title>JavaScript 函数</title>
-    <url>/JavaScript-apply-Data.html</url>
+    <title>JavaScript BOM</title>
+    <url>/JavaScript-BOM.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
 <a id="more"></a>
 
-<h1 id="方法的定义和调用"><a href="#方法的定义和调用" class="headerlink" title="方法的定义和调用"></a>方法的定义和调用</h1><h2 id="定义方法"><a href="#定义方法" class="headerlink" title="定义方法"></a>定义方法</h2><p><strong>方法就是把函数放在对象里面 对象只有两个东西: 属性和方法</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> sdq = &#123;</span><br><span class="line">    <span class="comment">// 名称</span></span><br><span class="line">    name: <span class="string">&quot;史迪奇&quot;</span>,、</span><br><span class="line">    <span class="comment">// 编号</span></span><br><span class="line">    number: <span class="number">626</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment">//方法</span></span><br><span class="line">    计算编号: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">// 今年 - 编号</span></span><br><span class="line">        <span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear():</span><br><span class="line">        <span class="keyword">return</span> now - <span class="built_in">this</span>.nuber;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 属性</span></span><br><span class="line">sdq.name</span><br><span class="line"><span class="comment">// 方法 (方法一定带括号)</span></span><br><span class="line">sdq.number()</span><br></pre></td></tr></table></figure>
-<p><strong>另类写法</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSdq</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear():</span><br><span class="line">        <span class="keyword">return</span> now - <span class="built_in">this</span>.nuber;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sdq = &#123;</span><br><span class="line">    <span class="comment">// 名称</span></span><br><span class="line">    name: <span class="string">&quot;史迪奇&quot;</span>,、</span><br><span class="line">    <span class="comment">// 编号</span></span><br><span class="line">    number: <span class="number">626</span>,</span><br><span class="line">    sdq3: getSdq</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 提示: 正常</span></span><br><span class="line">sdq.name</span><br><span class="line"><span class="comment">// 提示: NaN window</span></span><br><span class="line">sdq.number()</span><br></pre></td></tr></table></figure>
-<h1 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h1><p><strong>控制this指向</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSdq</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear():</span><br><span class="line">        <span class="keyword">return</span> now - <span class="built_in">this</span>.nuber;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sdq = &#123;</span><br><span class="line">    <span class="comment">// 名称</span></span><br><span class="line">    name: <span class="string">&quot;史迪奇&quot;</span>,、</span><br><span class="line">    <span class="comment">// 编号</span></span><br><span class="line">    number: <span class="number">626</span>,</span><br><span class="line">    sdq3: getSdq</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// this 指向 sdq 参数为空</span></span><br><span class="line">etSdq.apply(sdq,[]);</span><br></pre></td></tr></table></figure>
-<h1 id="内部对象"><a href="#内部对象" class="headerlink" title="内部对象"></a>内部对象</h1><h2 id="标准对象"><a href="#标准对象" class="headerlink" title="标准对象"></a>标准对象</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="number">333</span></span><br><span class="line"><span class="string">&quot;number&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> <span class="string">&#x27;333&#x27;</span></span><br><span class="line"><span class="string">&quot;string&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">true</span></span><br><span class="line"><span class="string">&quot;boolean&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">NaN</span></span><br><span class="line"><span class="string">&quot;number&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> []</span><br><span class="line"><span class="string">&quot;object&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> &#123;&#125;</span><br><span class="line"><span class="string">&quot;object&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> <span class="built_in">Math</span>.sdq</span><br><span class="line"><span class="string">&quot;function&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span></span><br><span class="line"><span class="string">&quot;undefined&quot;</span></span><br></pre></td></tr></table></figure>
-<h2 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h2><h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line">now.getFullYear(); <span class="comment">// 年</span></span><br><span class="line">now.getMonth();    <span class="comment">// 月 0-11</span></span><br><span class="line">now.getDate();     <span class="comment">// 日</span></span><br><span class="line">now.getDay();      <span class="comment">// 星期几</span></span><br><span class="line">now.getHours();    <span class="comment">// 时</span></span><br><span class="line">now.getMinutes();  <span class="comment">// 分</span></span><br><span class="line">now.getseconds();  <span class="comment">// 秒</span></span><br><span class="line">now.getTime();     <span class="comment">// 时间截 全世界统一 1970 1.1 0:00:00 毫秒数</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Date</span>(一窜数字))  <span class="comment">//时间截转为时间</span></span><br></pre></td></tr></table></figure>
-<p><strong>转换</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">now = <span class="keyword">new</span> <span class="built_in">Date</span>(一窜数字);</span><br><span class="line"></span><br><span class="line">Sat Jan <span class="number">04</span> <span class="number">2021</span> <span class="number">10</span>:<span class="number">48</span>:<span class="number">35</span> GMT+<span class="number">0800</span> (中国标准时间)</span><br><span class="line"></span><br><span class="line">now.toLocaleString  <span class="comment">// 注意, 调用是一个方法/方式 非属性</span></span><br><span class="line"></span><br><span class="line">f <span class="function"><span class="title">toLocaleString</span>(<span class="params"></span>)</span> &#123;[native code]&#125;</span><br><span class="line"></span><br><span class="line">now.toLocaleString()</span><br><span class="line"><span class="string">&quot;2020/1/4 上午10:51:25&quot;</span></span><br><span class="line"></span><br><span class="line">now.toGMTString()</span><br><span class="line"><span class="string">&quot;Sat, 03 Jan 2021 05:48:42&quot;</span></span><br></pre></td></tr></table></figure>
-<h2 id="json字符串js对象的转换"><a href="#json字符串js对象的转换" class="headerlink" title="json字符串js对象的转换"></a>json字符串js对象的转换</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> user = &#123;</span><br><span class="line">    name: <span class="string">&quot;史迪奇&quot;</span>,</span><br><span class="line">    number: <span class="number">626</span>,</span><br><span class="line">    sex: <span class="string">&quot;未知&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象转化json字符串 &#123;&quot;name&quot;:&quot;史迪奇&quot;, &quot;number&quot;:626, &quot;sex&quot;: &quot;未知&quot;&#125;</span></span><br><span class="line"><span class="keyword">var</span> jsonUser = <span class="built_in">JSON</span>.stringify(user);</span><br><span class="line"></span><br><span class="line"><span class="comment">// json 字符串转化对象 参数为 json字符串</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">JSON</span>.parse(<span class="string">&#x27;&#123;&quot;name&quot;:&quot;史迪奇&quot;, &quot;number&quot;:626, &quot;sex&quot;: &quot;未知&quot;&#125;&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><ul>
-<li>原生的js写法 xhr 异步请求</li>
-<li>jQuey 封装的方法 $(“#name”).ajax(“”)</li>
-<li>axios 请求</li>
-</ul>
+<h1 id="window"><a href="#window" class="headerlink" title="window"></a>window</h1><p><strong>作用: 有关浏览器窗口</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.alert(<span class="number">1</span>)</span><br><span class="line">undefind</span><br><span class="line"><span class="built_in">window</span>.innerHeight</span><br><span class="line"><span class="number">790</span></span><br><span class="line"><span class="built_in">window</span>.innerWidth</span><br><span class="line"><span class="number">918</span></span><br><span class="line"><span class="built_in">window</span>.outerHeight</span><br><span class="line"><span class="number">28</span></span><br><span class="line"><span class="built_in">window</span>.outerWidth</span><br><span class="line"><span class="number">160</span></span><br></pre></td></tr></table></figure>
+<h1 id="Navigator"><a href="#Navigator" class="headerlink" title="Navigator"></a>Navigator</h1><p><strong>作用: 封装浏览器信息</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">navigator.appName</span><br><span class="line"><span class="string">&quot;Netscape&quot;</span></span><br><span class="line">navigator.appVersion</span><br><span class="line"><span class="string">&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36&quot;</span></span><br><span class="line">navigator.userAgent</span><br><span class="line"><span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36&quot;</span></span><br><span class="line">navigator.platform</span><br><span class="line"><span class="string">&quot;Win32&quot;</span></span><br></pre></td></tr></table></figure>
+<h1 id="screen"><a href="#screen" class="headerlink" title="screen"></a>screen</h1><p><strong>作用: 代表屏幕尺寸</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">screen.width</span><br><span class="line"><span class="number">1536</span></span><br><span class="line">screen.height</span><br><span class="line"><span class="number">864</span></span><br></pre></td></tr></table></figure>
+<h1 id="location-重要"><a href="#location-重要" class="headerlink" title="location (重要)"></a>location (重要)</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 主机</span></span><br><span class="line">host: <span class="string">&quot;www.baidu.com&quot;</span></span><br><span class="line"><span class="comment">// 当前指向的位置</span></span><br><span class="line">href: <span class="string">&quot;http://www.baidu.com/&quot;</span></span><br><span class="line"><span class="comment">// 协议</span></span><br><span class="line">protocol: <span class="string">&quot;http:&quot;</span></span><br><span class="line"><span class="comment">//重新加载/刷新</span></span><br><span class="line">reload: ƒ reload()</span><br><span class="line"><span class="comment">// 设置新的地址</span></span><br><span class="line">location.assign(<span class="string">&#x27;https://sdq3.gitee.io/&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="document"><a href="#document" class="headerlink" title="document"></a>document</h1><p><strong>document 表示当前页面, HTML DOM文档树</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.title</span><br><span class="line"><span class="string">&quot;百度一下，你就知道&quot;</span></span><br><span class="line"><span class="built_in">document</span>.title = <span class="string">&quot;我叫史迪奇&quot;</span></span><br><span class="line"><span class="string">&quot;我叫史迪奇&quot;</span></span><br></pre></td></tr></table></figure>
+<p><strong>获取具体的文档树节点</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span> <span class="attr">id</span> =<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>史迪奇<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>史迪奇国王<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>史迪奇骑士<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> dl = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;app&#x27;</span>)</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>获取cookie</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.cookie</span><br><span class="line"><span class="string">&quot;BIDUPSID=EC9E21CA08B01D9E2E577F635293067...&quot;</span></span><br></pre></td></tr></table></figure>
+<p><strong>劫持cookie原理</strong><br>    + 劫持cookie: 获取你的cookie然后上传的它的服务器<br>    + 预防: 服务器端设置 cokie: httpOnly</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;sdq.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="history"><a href="#history" class="headerlink" title="history"></a>history</h1><p><strong>代表浏览器的历史记录</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 前进</span></span><br><span class="line">history.forward()</span><br><span class="line"><span class="comment">// 返回</span></span><br><span class="line">history.back()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
 ]]></content>
       <categories>
         <category>JavaScript</category>
@@ -1478,6 +1363,33 @@ mouse: &lt;span id=&quot;mouseMove&quot;&gt;&lt;/span&gt;
 <p><strong>ES6的引入的新特性, 获取除了已经定义的参数之外的所有参数</strong></p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sdq</span>(<span class="params">s,d,q,... rest</span>) </span>&#123;&#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;s=&gt;&quot;</span>+s);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;d=&gt;&quot;</span>+d);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;q=&gt;&quot;</span>+q);</span><br><span class="line">    <span class="built_in">console</span>.log(rest);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>rest参数只能写在最后面, 必须用…标识</strong></p>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript 函数</title>
+    <url>/JavaScript-apply-Data.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="方法的定义和调用"><a href="#方法的定义和调用" class="headerlink" title="方法的定义和调用"></a>方法的定义和调用</h1><h2 id="定义方法"><a href="#定义方法" class="headerlink" title="定义方法"></a>定义方法</h2><p><strong>方法就是把函数放在对象里面 对象只有两个东西: 属性和方法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> sdq = &#123;</span><br><span class="line">    <span class="comment">// 名称</span></span><br><span class="line">    name: <span class="string">&quot;史迪奇&quot;</span>,、</span><br><span class="line">    <span class="comment">// 编号</span></span><br><span class="line">    number: <span class="number">626</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment">//方法</span></span><br><span class="line">    计算编号: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">// 今年 - 编号</span></span><br><span class="line">        <span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear():</span><br><span class="line">        <span class="keyword">return</span> now - <span class="built_in">this</span>.nuber;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 属性</span></span><br><span class="line">sdq.name</span><br><span class="line"><span class="comment">// 方法 (方法一定带括号)</span></span><br><span class="line">sdq.number()</span><br></pre></td></tr></table></figure>
+<p><strong>另类写法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSdq</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear():</span><br><span class="line">        <span class="keyword">return</span> now - <span class="built_in">this</span>.nuber;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sdq = &#123;</span><br><span class="line">    <span class="comment">// 名称</span></span><br><span class="line">    name: <span class="string">&quot;史迪奇&quot;</span>,、</span><br><span class="line">    <span class="comment">// 编号</span></span><br><span class="line">    number: <span class="number">626</span>,</span><br><span class="line">    sdq3: getSdq</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 提示: 正常</span></span><br><span class="line">sdq.name</span><br><span class="line"><span class="comment">// 提示: NaN window</span></span><br><span class="line">sdq.number()</span><br></pre></td></tr></table></figure>
+<h1 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h1><p><strong>控制this指向</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSdq</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear():</span><br><span class="line">        <span class="keyword">return</span> now - <span class="built_in">this</span>.nuber;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sdq = &#123;</span><br><span class="line">    <span class="comment">// 名称</span></span><br><span class="line">    name: <span class="string">&quot;史迪奇&quot;</span>,、</span><br><span class="line">    <span class="comment">// 编号</span></span><br><span class="line">    number: <span class="number">626</span>,</span><br><span class="line">    sdq3: getSdq</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// this 指向 sdq 参数为空</span></span><br><span class="line">etSdq.apply(sdq,[]);</span><br></pre></td></tr></table></figure>
+<h1 id="内部对象"><a href="#内部对象" class="headerlink" title="内部对象"></a>内部对象</h1><h2 id="标准对象"><a href="#标准对象" class="headerlink" title="标准对象"></a>标准对象</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="number">333</span></span><br><span class="line"><span class="string">&quot;number&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> <span class="string">&#x27;333&#x27;</span></span><br><span class="line"><span class="string">&quot;string&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">true</span></span><br><span class="line"><span class="string">&quot;boolean&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">NaN</span></span><br><span class="line"><span class="string">&quot;number&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> []</span><br><span class="line"><span class="string">&quot;object&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> &#123;&#125;</span><br><span class="line"><span class="string">&quot;object&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> <span class="built_in">Math</span>.sdq</span><br><span class="line"><span class="string">&quot;function&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span></span><br><span class="line"><span class="string">&quot;undefined&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h2><h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line">now.getFullYear(); <span class="comment">// 年</span></span><br><span class="line">now.getMonth();    <span class="comment">// 月 0-11</span></span><br><span class="line">now.getDate();     <span class="comment">// 日</span></span><br><span class="line">now.getDay();      <span class="comment">// 星期几</span></span><br><span class="line">now.getHours();    <span class="comment">// 时</span></span><br><span class="line">now.getMinutes();  <span class="comment">// 分</span></span><br><span class="line">now.getseconds();  <span class="comment">// 秒</span></span><br><span class="line">now.getTime();     <span class="comment">// 时间截 全世界统一 1970 1.1 0:00:00 毫秒数</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Date</span>(一窜数字))  <span class="comment">//时间截转为时间</span></span><br></pre></td></tr></table></figure>
+<p><strong>转换</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">now = <span class="keyword">new</span> <span class="built_in">Date</span>(一窜数字);</span><br><span class="line"></span><br><span class="line">Sat Jan <span class="number">04</span> <span class="number">2021</span> <span class="number">10</span>:<span class="number">48</span>:<span class="number">35</span> GMT+<span class="number">0800</span> (中国标准时间)</span><br><span class="line"></span><br><span class="line">now.toLocaleString  <span class="comment">// 注意, 调用是一个方法/方式 非属性</span></span><br><span class="line"></span><br><span class="line">f <span class="function"><span class="title">toLocaleString</span>(<span class="params"></span>)</span> &#123;[native code]&#125;</span><br><span class="line"></span><br><span class="line">now.toLocaleString()</span><br><span class="line"><span class="string">&quot;2020/1/4 上午10:51:25&quot;</span></span><br><span class="line"></span><br><span class="line">now.toGMTString()</span><br><span class="line"><span class="string">&quot;Sat, 03 Jan 2021 05:48:42&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="json字符串js对象的转换"><a href="#json字符串js对象的转换" class="headerlink" title="json字符串js对象的转换"></a>json字符串js对象的转换</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> user = &#123;</span><br><span class="line">    name: <span class="string">&quot;史迪奇&quot;</span>,</span><br><span class="line">    number: <span class="number">626</span>,</span><br><span class="line">    sex: <span class="string">&quot;未知&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象转化json字符串 &#123;&quot;name&quot;:&quot;史迪奇&quot;, &quot;number&quot;:626, &quot;sex&quot;: &quot;未知&quot;&#125;</span></span><br><span class="line"><span class="keyword">var</span> jsonUser = <span class="built_in">JSON</span>.stringify(user);</span><br><span class="line"></span><br><span class="line"><span class="comment">// json 字符串转化对象 参数为 json字符串</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">JSON</span>.parse(<span class="string">&#x27;&#123;&quot;name&quot;:&quot;史迪奇&quot;, &quot;number&quot;:626, &quot;sex&quot;: &quot;未知&quot;&#125;&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><ul>
+<li>原生的js写法 xhr 异步请求</li>
+<li>jQuey 封装的方法 $(“#name”).ajax(“”)</li>
+<li>axios 请求</li>
+</ul>
 ]]></content>
       <categories>
         <category>JavaScript</category>
@@ -1523,6 +1435,94 @@ mouse: &lt;span id=&quot;mouseMove&quot;&gt;&lt;/span&gt;
 ]]></content>
       <categories>
         <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java Swing 图形界面速背表(未完工)</title>
+    <url>/Java-Swing.html</url>
+    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
+<a id="more"></a>
+
+<blockquote>
+<h1 id="JavaSwing-布局管理器"><a href="#JavaSwing-布局管理器" class="headerlink" title="JavaSwing 布局管理器"></a>JavaSwing 布局管理器</h1></blockquote>
+<p>getWigth 得到宽度 或者 控件的高度<br>getHeight 得到高度 或者 控件的宽度<br>root.setLayout(layoutMgr) 给容器设置一个布局器<br>layoutMgr.layoutContainer(…) 当容器改变大小时，自动调用布局器重新布局<br>Perferred Size 指控件最佳大小<br>Dimension 表示尺寸信息 size.width/size.height</p>
+<h1 id="FlowLayout-流式布局"><a href="#FlowLayout-流式布局" class="headerlink" title="FlowLayout (流式布局)"></a>FlowLayout (流式布局)</h1><p>setPreferred Size() 控制每个控件的显示高度和宽度</p>
+<p>GridLayout (网格布局)</p>
+<p>GridBagLayout (网格袋布局)</p>
+<p>BoxLayout (箱式布局)</p>
+<p>GroupLayout (分组布局)</p>
+<p>AFXLayout  (水平布局)</p>
+<h1 id="AfAnyWhere-自由位置布局"><a href="#AfAnyWhere-自由位置布局" class="headerlink" title="AfAnyWhere (自由位置布局)"></a>AfAnyWhere (自由位置布局)</h1><p>new AfMargin(top,left,botton,right)</p>
+<h1 id="CardLayout-卡片布局"><a href="#CardLayout-卡片布局" class="headerlink" title="CardLayout (卡片布局)"></a>CardLayout (卡片布局)</h1><p>CardLayout.show(pane,”name”)</p>
+<h1 id="BorderLayout-边界布局"><a href="#BorderLayout-边界布局" class="headerlink" title="BorderLayout (边界布局)"></a>BorderLayout (边界布局)</h1><p>setPreferrendSize() 对于上下边界调高度，左右边界调宽度<br>PAGE_START 上边界<br>PAGE_END 下边界<br>LINE_START 左边界<br>LINE_END 右边<br>CENTER 中央</p>
+<p>SpringLayout (弹性布局)</p>
+<p>null (绝对布局)</p>
+<blockquote>
+<h1 id="JavaSwing-基本组件"><a href="#JavaSwing-基本组件" class="headerlink" title="JavaSwing 基本组件"></a>JavaSwing 基本组件</h1></blockquote>
+<h1 id="JLabel-标签"><a href="#JLabel-标签" class="headerlink" title="JLabel (标签)"></a>JLabel (标签)</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ JLabel x = new JLabel(<span class="string">&quot;我是JLabel&quot;</span>);</span><br><span class="line">$ contenntPane.add(x);</span><br><span class="line">$ //也可以用一行</span><br><span class="line">$ contenntPane.add(new JLabel(<span class="string">&quot;我是JLabel&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>JLabel 用于显示短文本或图标<br>setText() 设置文件<br>setFont() 设置字体<br>setForeground() 设置文件颜色<br>setToolTipText() 设置工具提示<br>getText() 取得用户输入</p>
+<h2 id="JButton-按钮"><a href="#JButton-按钮" class="headerlink" title="JButton (按钮)"></a>JButton (按钮)</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ JButton x = new JButton(<span class="string">&quot;我是JButton&quot;</span>);</span><br><span class="line">$ contenntPane.add(x);</span><br><span class="line">$ //也可以用一行</span><br><span class="line">$ contenntPane.add(new JButton(<span class="string">&quot;我是JButton&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>JRadioButton (单选按钮)</p>
+<h1 id="JCheckBox-复选框"><a href="#JCheckBox-复选框" class="headerlink" title="JCheckBox (复选框)"></a>JCheckBox (复选框)</h1><p>getSelected() 选中状态<br>setSelected() 设置<br>getText() 选项文字<br>addActionListener() 用户选中/取消时触发</p>
+<p>JToggleButton (开关按钮)</p>
+<h1 id="JTextField-文本框-或者-单行文本框"><a href="#JTextField-文本框-或者-单行文本框" class="headerlink" title="JTextField (文本框 或者 单行文本框)"></a>JTextField (文本框 或者 单行文本框)</h1><p>JTextField 用于显示单行文本<br>new JTextField(10) 其中,10用于表示列数，用于计算宽度(并不是字数限制)<br>setText() 设置文本<br>getText() 获取文本<br>setFont() 设置字体</p>
+<h1 id="JoptionPane-消息框"><a href="#JoptionPane-消息框" class="headerlink" title="JoptionPane 消息框"></a>JoptionPane 消息框</h1><p>JoptionPane.showMessageDialog() 提示消息框<br>showMessageDialog  简单消息提示<br>showConfirmDialog  简单消息确认<br>showInputDialog  简单数据输入<br>showoptionDialog  简单选择输入<br>Blocked 阻塞<br>JoptionPane.showInputDialog() 提示消息框</p>
+<p>JPasswordField (密码框)</p>
+<h2 id="JTextArea-文本区域-或者-多行文本框"><a href="#JTextArea-文本区域-或者-多行文本框" class="headerlink" title="JTextArea (文本区域 或者 多行文本框)"></a>JTextArea (文本区域 或者 多行文本框)</h2><p>JComboBox (下拉列表框)</p>
+<p>JList (列表框)</p>
+<p>JProgressBar (进度条)</p>
+<p>JSlider (滑块)</p>
+<blockquote>
+<h1 id="JavaSwing-面板组件"><a href="#JavaSwing-面板组件" class="headerlink" title="JavaSwing 面板组件"></a>JavaSwing 面板组件</h1></blockquote>
+<p>JPanel (面板)</p>
+<p>JScrollPane (滚动面板)</p>
+<p>JSplitPane (分隔面板)</p>
+<p>JTabbedPane (选项卡面板)</p>
+<p>JLayeredPane (层级面板)</p>
+<blockquote>
+<h1 id="JavaSwing-其他组件"><a href="#JavaSwing-其他组件" class="headerlink" title="JavaSwing 其他组件"></a>JavaSwing 其他组件</h1></blockquote>
+<p>JFrame (窗口)[一般存放标题]<br>setTitle  (设置标题)</p>
+<p>Container (内容面板)</p>
+<h1 id="setVisible-设置窗口大小-和-setVisble-显示窗口大小"><a href="#setVisible-设置窗口大小-和-setVisble-显示窗口大小" class="headerlink" title="setVisible (设置窗口大小) 和 setVisble(显示窗口大小)"></a>setVisible (设置窗口大小) 和 setVisble(显示窗口大小)</h1><p>setVisible(boolean)方法是用来显示/隐藏GUI组件的。<br>需要显示则使用true，需要隐藏则使用false</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ setVisible(<span class="literal">true</span>)  //例如这个</span><br></pre></td></tr></table></figure>
+<p>意思是说数据模型已经构造好了，允许JVM可以根据数据模型执行paint方法开始画图并显示到屏幕上了，并不是显示图形，而是可以运行开始画图，要把setVisible()方法放到最后面，代码是按顺序执行的 ，如果把setVisible()放在前边，后边再添加其他组件的时候，有可能不会显示出来</p>
+<p>JDialog, JOptionPane (对话框)</p>
+<p>JFileChooser (文件选择器)</p>
+<p>JColorChooser (颜色选择器)</p>
+<h1 id="JMenuBar-菜单栏"><a href="#JMenuBar-菜单栏" class="headerlink" title="JMenuBar (菜单栏)"></a>JMenuBar (菜单栏)</h1><p>JMenuBar (菜单项)<br>JMenu (菜单)<br>JMenuItem (菜单项)</p>
+<h1 id="JToolBar-工具栏"><a href="#JToolBar-工具栏" class="headerlink" title="JToolBar (工具栏)"></a>JToolBar (工具栏)</h1><p>JButton 工具按钮<br>setIcin() 图标<br>setAction Command() 命令<br>setToolTipText() 提示文字<br>add Action Listener() 事件处理</p>
+<p>JPopupMenu (弹出菜单 或者 上下文菜单 或者 右键菜单)<br>JPopupMenu 创建<br>JMenuItem  添加<br>添加鼠标右键的响应，显示窗口菜单<br>菜单项被点击时，执行事件处理</p>
+<p>JTable (表格)</p>
+<p>JTree (树)</p>
+<p>JInternalFrame (内部窗口)</p>
+<blockquote>
+<h1 id="JavaSwing-相关特性-了解就行"><a href="#JavaSwing-相关特性-了解就行" class="headerlink" title="JavaSwing 相关特性(了解就行)"></a>JavaSwing 相关特性(了解就行)</h1></blockquote>
+<p>组件的位置和尺寸</p>
+<h1 id="组件边框-Border"><a href="#组件边框-Border" class="headerlink" title="组件边框 (Border)"></a>组件边框 (Border)</h1><p>Border本身就是一个接口<br>Padding: 边框与它的内容之间的间距<br>Margin: 边框与它外面的容器之间的间距</p>
+<h1 id="AfBorder-添加边框和边距"><a href="#AfBorder-添加边框和边距" class="headerlink" title="AfBorder 添加边框和边距"></a>AfBorder 添加边框和边距</h1><p>addPadding() 内边距<br>addMargin() 外边距<br>addOuterBorder() 外边添加Border<br>addInnerBorder() 里面添加Border</p>
+<h1 id="AfPanel-用于快速布局"><a href="#AfPanel-用于快速布局" class="headerlink" title="AfPanel 用于快速布局"></a>AfPanel 用于快速布局</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ AfPanel p = new AfPanel();</span><br><span class="line">$ p.padding();  //设置内边距</span><br><span class="line">$ p.margin();  //设置外边距</span><br><span class="line">$ p.preferredWidth();  //设置PrefedSise的宽度</span><br><span class="line">$ p.preferredHeight();  //设置PrefedSise的高度</span><br></pre></td></tr></table></figure>
+<h1 id="图片缩放工具"><a href="#图片缩放工具" class="headerlink" title="图片缩放工具"></a>图片缩放工具</h1><p>fitXY()  XY方向拉伸占满<br>fitCenter()  居中显示，并保持长宽比<br>fitCenterInside() 如果图片较小，则居中显示，如果图片越出范围，则舒服显示</p>
+<h1 id="图片显示控件"><a href="#图片显示控件" class="headerlink" title="图片显示控件"></a>图片显示控件</h1><p>AfImageView  图片显示控件<br>setScaleType()  设置缩放类型<br>setImage()  显示图片<br>setBgColor()  设置背景图</p>
+<h1 id="鼠标事件-MouseEvent"><a href="#鼠标事件-MouseEvent" class="headerlink" title="鼠标事件 MouseEvent"></a>鼠标事件 MouseEvent</h1><p>addMouseliskener()<br>鼠标点击 mouseClicked<br>鼠标按下 mousePressed<br>鼠标抬起 mouseExited<br>鼠标移入 mouseEntered<br>鼠标移出 mouseExited<br>addMouseMotionliskener()<br>鼠标移动 mouseMoved<br>鼠标拖动 mouseDragged<br>addMouseWheelListener<br>鼠标滚动 mouseWheelMoved</p>
+<p>事件处理</p>
+<p>多线程并发与线程安全</p>
+<p>拖拽功能</p>
+<p>系统托盘 (System Tray)</p>
+<p>闪屏 (Splash Screen)</p>
+<h1 id="Java-AWT-Swing-其他相关"><a href="#Java-AWT-Swing-其他相关" class="headerlink" title="Java AWT/Swing 其他相关"></a>Java AWT/Swing 其他相关</h1><p>Java绘图: 使用Graphics类绘制线段, 矩形, 椭圆/圆弧/扇形, 图片, 文本</p>
+<p>Java图片操作 — 图片的读取, 绘制, 缩放, 裁剪, 保存</p>
+<p>Java代码截屏: 使用 Java 代码截取电脑屏幕并保存</p>
+<p>Java模拟鼠标键盘输入事件 — Robot 类</p>
+<p>Java操作桌面应用 — Desktop 类</p>
+<p>Java操作系统剪贴板(Clipboard)实现复制和粘贴 –&gt;</p>
+<h1 id="特别提醒-AWT-例如-Label-Button"><a href="#特别提醒-AWT-例如-Label-Button" class="headerlink" title="特别提醒 AWT 例如: Label,Button"></a>特别提醒 AWT 例如: Label,Button</h1><h1 id="特别提醒-Swing-例如-JLabel-JButton-只要是以J开头的"><a href="#特别提醒-Swing-例如-JLabel-JButton-只要是以J开头的" class="headerlink" title="特别提醒 Swing 例如: JLabel,JButton 只要是以J开头的"></a>特别提醒 Swing 例如: JLabel,JButton 只要是以J开头的</h1><h1 id="ActionListener-是一个接口，所以派生时用impleme"><a href="#ActionListener-是一个接口，所以派生时用impleme" class="headerlink" title="ActionListener 是一个接口，所以派生时用impleme"></a>ActionListener 是一个接口，所以派生时用impleme</h1><p>addActionListener(…)  传入的参数</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Button.addActionListener(x);  //意思是把什么交给谁，例如button(按键) 和 x </span><br></pre></td></tr></table></figure>
+<h1 id="演示drawString（）方法的示例程序"><a href="#演示drawString（）方法的示例程序" class="headerlink" title="演示drawString（）方法的示例程序:"></a>演示drawString（）方法的示例程序:</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">drawString示例程序</span><br><span class="line"><span class="variable">$import</span> java.awt.*; </span><br><span class="line"><span class="variable">$import</span> java.applet.*; </span><br><span class="line"><span class="variable">$public</span> class HelloWorldApplet扩展Applet &#123;     </span><br><span class="line">$ public void paint(Graphics g)&#123;         </span><br><span class="line">$ g.drawString(<span class="string">&quot;Hello World&quot;</span>，100,100);</span><br></pre></td></tr></table></figure>
+<h1 id="显示消息对话框"><a href="#显示消息对话框" class="headerlink" title="显示消息对话框"></a>显示消息对话框</h1><p>showMessageDialog(“里面的文字”)<br>f.setVisible(true)<br>f.setTitle(“框框上的文字”)<br>charAt<br>看见actionPerformed 就要implements ActionListener<br><strong>(Button saveButton = new Button)</strong><br>saveButton.addActionListener(this);没什么加就this<br>(ActionListener=监听器)<br>(this=当前对象的意思)<br>(super是父级对象)<br><strong>如果Container contentPane = newContainer();</strong><br><strong>就Container contentPane = getContentPane();</strong><br>有Thread就想起Runnable</p>
+]]></content>
+      <categories>
+        <category>Java</category>
       </categories>
   </entry>
   <entry>
@@ -1666,6 +1666,19 @@ mouse: &lt;span id=&quot;mouseMove&quot;&gt;&lt;/span&gt;
       </categories>
   </entry>
   <entry>
+    <title>Java面向对象思维之getter和setter(作用)</title>
+    <url>/Object-oriented-getter-setter.html</url>
+    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="getter"><a href="#getter" class="headerlink" title="getter"></a>getter</h1><p><strong>主要是给成员变量赋值, 做一定的保护</strong></p>
+<h1 id="setter"><a href="#setter" class="headerlink" title="setter"></a>setter</h1><p><strong>从成员变量中获取数据</strong></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Java面向对象思维</title>
     <url>/Object-oriented.html</url>
     <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
@@ -1678,19 +1691,6 @@ mouse: &lt;span id=&quot;mouseMove&quot;&gt;&lt;/span&gt;
 <p><strong>例如车可以潜水</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"> //成员方法</span><br><span class="line">$ public void <span class="function"><span class="title">diving</span></span>()&#123;</span><br><span class="line">$ System.out.println(<span class="string">&quot;车可以下水&quot;</span>);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"> //成员方法</span><br><span class="line">$ public static void main(String[ ] args) &#123;</span><br><span class="line"> Car c = new Car();   //先创建一辆车</span><br><span class="line"> c.fly();  //.表示调用  众所周知所以车都是可以飞的</span><br><span class="line"> c.diving();  //.表示调用  众所周知所以车都是可以下水的</span><br><span class="line"> c.color = <span class="string">&quot;透明&quot;</span>;  //我的车是透明色</span><br><span class="line"> c.wheel = 5; //众所周知所以车都是5个轮子</span><br><span class="line"> c.seat = 9;  //我的车 里面坐4个 车前绑1个人用来刹车 车顶坐1个人 剩下3个人的拿板拿雨伞凳坐后车厢 尾气管那面绑上1个人 用来吸收尾气</span><br><span class="line"> System.out.println(c.color);</span><br><span class="line"> System.out.println(c.wheel);</span><br><span class="line"> System.out.println(c.seat);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Java面向对象思维之getter和setter(作用)</title>
-    <url>/Object-oriented-getter-setter.html</url>
-    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="getter"><a href="#getter" class="headerlink" title="getter"></a>getter</h1><p><strong>主要是给成员变量赋值, 做一定的保护</strong></p>
-<h1 id="setter"><a href="#setter" class="headerlink" title="setter"></a>setter</h1><p><strong>从成员变量中获取数据</strong></p>
-]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -1810,17 +1810,6 @@ $
       </categories>
   </entry>
   <entry>
-    <title>String 比较</title>
-    <url>/String-compare.html</url>
-    <content><![CDATA[<p><strong>个人笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="String-比较"><a href="#String-比较" class="headerlink" title="String 比较"></a>String 比较</h1><p><strong>当String进行比较时应该用equals</strong></p>
-<p><strong>因为equals是String类重写后的用于比较字符串内容的方法</strong></p>
-<p><strong>为什么不用==进行比较, 因为==是用于比较地址值</strong></p>
-]]></content>
-  </entry>
-  <entry>
     <title>SQL Server T-SQL 视图</title>
     <url>/SQL-try.html</url>
     <content><![CDATA[<p><strong>SQL Server个人整理</strong></p>
@@ -1833,6 +1822,17 @@ $
       <categories>
         <category>数据库</category>
       </categories>
+  </entry>
+  <entry>
+    <title>String 比较</title>
+    <url>/String-compare.html</url>
+    <content><![CDATA[<p><strong>个人笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="String-比较"><a href="#String-比较" class="headerlink" title="String 比较"></a>String 比较</h1><p><strong>当String进行比较时应该用equals</strong></p>
+<p><strong>因为equals是String类重写后的用于比较字符串内容的方法</strong></p>
+<p><strong>为什么不用==进行比较, 因为==是用于比较地址值</strong></p>
+]]></content>
   </entry>
   <entry>
     <title>TypeScript 打包代码</title>
@@ -1854,22 +1854,6 @@ $
 <h3 id="引入-script"><a href="#引入-script" class="headerlink" title="引入 script"></a>引入 script</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;.&#x2F;page.ts&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">   &lt;title&gt;史迪奇国王&lt;&#x2F;title&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt; </span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="page-ts"><a href="#page-ts" class="headerlink" title="page.ts"></a>page.ts</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const sdq : string &#x3D; &quot;史迪奇&quot;</span><br><span class="line">console.log(sdq)</span><br></pre></td></tr></table></figure>
 ]]></content>
-      <categories>
-        <category>TypeScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>TypeScript 使用Jquery库</title>
-    <url>/TypeScript-Jquery.html</url>
-    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
-<a id="more"></a>
-
-<p><strong><a href="https://wwr.lanzoui.com/iFfQ7shdb4d">未打包文件</a></strong></p>
-<ul>
-<li>密码: sdq3</li>
-</ul>
-<h1 id="Jquery的引入"><a href="#Jquery的引入" class="headerlink" title="Jquery的引入"></a>Jquery的引入</h1><h3 id="html文件"><a href="#html文件" class="headerlink" title="html文件"></a>html文件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 引入jquery --&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.bootcdn.net&#x2F;ajax&#x2F;libs&#x2F;jquery&#x2F;3.5.1&#x2F;jquery.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;.&#x2F;page.ts&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">   &lt;title&gt;史迪奇国王&lt;&#x2F;title&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    </span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="page-ts"><a href="#page-ts" class="headerlink" title="page.ts"></a>page.ts</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 解决报错问题 或者 npm i @types&#x2F;jquery 和 cnpm i @types&#x2F;jquery </span><br><span class="line">declare var $: any;</span><br><span class="line"></span><br><span class="line">const sdq: string &#x3D; &quot;史迪奇&quot;;</span><br><span class="line">console.log(sdq);</span><br><span class="line"></span><br><span class="line">$(function () &#123;</span><br><span class="line">  alert(&quot;史迪奇&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>TypeScript</category>
       </categories>
@@ -1902,6 +1886,22 @@ $
 <h3 id="component-ts改成以下代码"><a href="#component-ts改成以下代码" class="headerlink" title="component.ts改成以下代码"></a>component.ts改成以下代码</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; export是ES6中的接口</span><br><span class="line">export class Header &#123;</span><br><span class="line">  constructor() &#123;</span><br><span class="line">    const elem &#x3D; document.createElement(&quot;div&quot;);</span><br><span class="line">    elem.innerText &#x3D; &quot;This is Header&quot;;</span><br><span class="line">    document.body.appendChild(elem);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export class Content &#123;</span><br><span class="line">  constructor() &#123;</span><br><span class="line">    const elem &#x3D; document.createElement(&quot;div&quot;);</span><br><span class="line">    elem.innerText &#x3D; &quot;This is Content&quot;;</span><br><span class="line">    document.body.appendChild(elem);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export class Footer &#123;</span><br><span class="line">  constructor() &#123;</span><br><span class="line">    const elem &#x3D; document.createElement(&quot;div&quot;);</span><br><span class="line">    elem.innerText &#x3D; &quot;This is Footer&quot;;</span><br><span class="line">    document.body.appendChild(elem);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="html文件-引用"><a href="#html文件-引用" class="headerlink" title="html文件 引用"></a>html文件 引用</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;cn&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;!-- require.js 的 CDN 地址 --&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdnjs.cloudflare.com&#x2F;ajax&#x2F;libs&#x2F;require.js&#x2F;2.3.6&#x2F;require.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;.&#x2F;build&#x2F;page.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;title&gt;史迪奇国王&lt;&#x2F;title&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        &#x2F;&#x2F; require.js方式引入</span><br><span class="line">        require([&quot;page&quot;], function (page) &#123;</span><br><span class="line">          &#x2F;&#x2F; ES6基本写法</span><br><span class="line">          new page.default();</span><br><span class="line">        &#125;);</span><br><span class="line">      &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>TypeScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>TypeScript 使用Jquery库</title>
+    <url>/TypeScript-Jquery.html</url>
+    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
+<a id="more"></a>
+
+<p><strong><a href="https://wwr.lanzoui.com/iFfQ7shdb4d">未打包文件</a></strong></p>
+<ul>
+<li>密码: sdq3</li>
+</ul>
+<h1 id="Jquery的引入"><a href="#Jquery的引入" class="headerlink" title="Jquery的引入"></a>Jquery的引入</h1><h3 id="html文件"><a href="#html文件" class="headerlink" title="html文件"></a>html文件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 引入jquery --&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.bootcdn.net&#x2F;ajax&#x2F;libs&#x2F;jquery&#x2F;3.5.1&#x2F;jquery.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;.&#x2F;page.ts&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">   &lt;title&gt;史迪奇国王&lt;&#x2F;title&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    </span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="page-ts"><a href="#page-ts" class="headerlink" title="page.ts"></a>page.ts</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 解决报错问题 或者 npm i @types&#x2F;jquery 和 cnpm i @types&#x2F;jquery </span><br><span class="line">declare var $: any;</span><br><span class="line"></span><br><span class="line">const sdq: string &#x3D; &quot;史迪奇&quot;;</span><br><span class="line">console.log(sdq);</span><br><span class="line"></span><br><span class="line">$(function () &#123;</span><br><span class="line">  alert(&quot;史迪奇&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>TypeScript</category>
       </categories>
@@ -1999,6 +1999,20 @@ $
       </categories>
   </entry>
   <entry>
+    <title>TypeScript调用接口</title>
+    <url>/TypeScript-interface.html</url>
+    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
+<a id="more"></a>
+
+
+<h3 id="调用接口"><a href="#调用接口" class="headerlink" title="调用接口"></a>调用接口</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">interface Girl &#123;</span><br><span class="line">    name : string;</span><br><span class="line">    age : number;</span><br><span class="line">    bust : number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const girl&#x3D;&#123;</span><br><span class="line">    name:&#39;史迪奇&#39;,</span><br><span class="line">    age : 0,</span><br><span class="line">    bust : 999</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const screenResume &#x3D; (girl:Girl) &#x3D;&gt; &#123;</span><br><span class="line">    girl.age &lt; 24 &amp;&amp; girl.bust &gt;&#x3D; 90 &amp;&amp; console.log(girl.name + &#39;进入战场&#39;)</span><br><span class="line">    girl.age &gt;&#x3D; 24 || girl.bust &lt; 90 &amp;&amp; console.log(girl.name + &#39;已死亡&#39;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const getResume &#x3D; (girl:Girl) &#x3D;&gt; &#123;</span><br><span class="line">    console.log(girl.name+&#39;的年龄&#39;+girl.age)</span><br><span class="line">    console.log(girl.name+&#39;的实验品编号&#39;+girl.bust)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">screenResume(girl)</span><br><span class="line">getResume(girl)</span><br></pre></td></tr></table></figure>
+<p><strong>接口不仅能限制对象还可以限制类</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">interface Girl &#123;</span><br><span class="line">    name : string;</span><br><span class="line">    age : number;</span><br><span class="line">    bust : number;</span><br><span class="line">    waistline ?: number;</span><br><span class="line">    [propname:string]:any;</span><br><span class="line">    say():string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface syp extends Girl&#123;</span><br><span class="line">    syp():string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const girl&#x3D;&#123;</span><br><span class="line">    name:&#39;史迪奇&#39;,</span><br><span class="line">    age : 0,</span><br><span class="line">    bust : 626,</span><br><span class="line">    waistline:999,</span><br><span class="line">    sex:&#39;男&#39;,</span><br><span class="line">    say()&#123;</span><br><span class="line">        return &quot;毁灭吧&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class sdq implements Girl&#123;</span><br><span class="line">    name:&#39;鲁本&#39;</span><br><span class="line">    age : 0</span><br><span class="line">    bust : 625</span><br><span class="line">    waistline:999</span><br><span class="line">    sex:&#39;男&#39;</span><br><span class="line">    say()&#123;</span><br><span class="line">        return &quot;毁灭吧&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const screenResume &#x3D; (girl:Girl) &#x3D;&gt; &#123;</span><br><span class="line">    girl.age &lt; 24 &amp;&amp; girl.bust &gt;&#x3D; 90 &amp;&amp; console.log(girl.name + &#39;进入战场&#39;)</span><br><span class="line">    girl.age &gt;&#x3D; 24 || girl.bust &lt; 90 &amp;&amp; console.log(girl.name + &#39;已死亡&#39;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const getResume &#x3D; (girl:Girl) &#x3D;&gt; &#123;</span><br><span class="line">    console.log(girl.name+&#39;的年龄&#39;+girl.age)</span><br><span class="line">    console.log(girl.name+&#39;的实验品编号&#39;+girl.bust)</span><br><span class="line">    girl.waistline &amp;&amp; console.log(girl.name+&#39;的战斗力&#39;+girl.waistline)</span><br><span class="line">    girl.sex &amp;&amp; console.log(girl.name+&#39;的性别&#39;+girl.sex)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">screenResume(girl)</span><br><span class="line">getResume(girl)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>TypeScript</category>
+      </categories>
+  </entry>
+  <entry>
     <title>TypeScript 联合类型和类型保护</title>
     <url>/TypeScript-Union-type-protection.html</url>
     <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
@@ -2011,20 +2025,6 @@ $
 <h2 id="in语法"><a href="#in语法" class="headerlink" title="in语法"></a>in语法</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function subjectTwo(Number: SDQ | SDZ) &#123;</span><br><span class="line">&#x2F;&#x2F; in来判断number里有没有skill()方</span><br><span class="line">  if (&quot;skill&quot; in Number) &#123;</span><br><span class="line">    Number.skill();</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    Number.say();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="typeof语法"><a href="#typeof语法" class="headerlink" title="typeof语法"></a>typeof语法</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function sdq(first: string | number, second: string | number) &#123;</span><br><span class="line">&#x2F;&#x2F; typeof来判断是不是string</span><br><span class="line">  if (typeof first &#x3D;&#x3D;&#x3D; &quot;string&quot; || typeof second &#x3D;&#x3D;&#x3D; &quot;string&quot;) &#123;</span><br><span class="line">    return &#96;$&#123;first&#125;$&#123;second&#125;&#96;;</span><br><span class="line">  &#125;</span><br><span class="line">  return first + second;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="instanceof语法"><a href="#instanceof语法" class="headerlink" title="instanceof语法"></a>instanceof语法</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function sdz(first: object | NumberObj, second: object | NumberObj) &#123;</span><br><span class="line">  if (first instanceof NumberObj &amp;&amp; second instanceof NumberObj) &#123;</span><br><span class="line">    return first.count + second.count;</span><br><span class="line">  &#125;</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>TypeScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>TypeScript调用接口</title>
-    <url>/TypeScript-interface.html</url>
-    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
-<a id="more"></a>
-
-
-<h3 id="调用接口"><a href="#调用接口" class="headerlink" title="调用接口"></a>调用接口</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">interface Girl &#123;</span><br><span class="line">    name : string;</span><br><span class="line">    age : number;</span><br><span class="line">    bust : number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const girl&#x3D;&#123;</span><br><span class="line">    name:&#39;史迪奇&#39;,</span><br><span class="line">    age : 0,</span><br><span class="line">    bust : 999</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const screenResume &#x3D; (girl:Girl) &#x3D;&gt; &#123;</span><br><span class="line">    girl.age &lt; 24 &amp;&amp; girl.bust &gt;&#x3D; 90 &amp;&amp; console.log(girl.name + &#39;进入战场&#39;)</span><br><span class="line">    girl.age &gt;&#x3D; 24 || girl.bust &lt; 90 &amp;&amp; console.log(girl.name + &#39;已死亡&#39;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const getResume &#x3D; (girl:Girl) &#x3D;&gt; &#123;</span><br><span class="line">    console.log(girl.name+&#39;的年龄&#39;+girl.age)</span><br><span class="line">    console.log(girl.name+&#39;的实验品编号&#39;+girl.bust)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">screenResume(girl)</span><br><span class="line">getResume(girl)</span><br></pre></td></tr></table></figure>
-<p><strong>接口不仅能限制对象还可以限制类</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">interface Girl &#123;</span><br><span class="line">    name : string;</span><br><span class="line">    age : number;</span><br><span class="line">    bust : number;</span><br><span class="line">    waistline ?: number;</span><br><span class="line">    [propname:string]:any;</span><br><span class="line">    say():string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface syp extends Girl&#123;</span><br><span class="line">    syp():string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const girl&#x3D;&#123;</span><br><span class="line">    name:&#39;史迪奇&#39;,</span><br><span class="line">    age : 0,</span><br><span class="line">    bust : 626,</span><br><span class="line">    waistline:999,</span><br><span class="line">    sex:&#39;男&#39;,</span><br><span class="line">    say()&#123;</span><br><span class="line">        return &quot;毁灭吧&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class sdq implements Girl&#123;</span><br><span class="line">    name:&#39;鲁本&#39;</span><br><span class="line">    age : 0</span><br><span class="line">    bust : 625</span><br><span class="line">    waistline:999</span><br><span class="line">    sex:&#39;男&#39;</span><br><span class="line">    say()&#123;</span><br><span class="line">        return &quot;毁灭吧&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const screenResume &#x3D; (girl:Girl) &#x3D;&gt; &#123;</span><br><span class="line">    girl.age &lt; 24 &amp;&amp; girl.bust &gt;&#x3D; 90 &amp;&amp; console.log(girl.name + &#39;进入战场&#39;)</span><br><span class="line">    girl.age &gt;&#x3D; 24 || girl.bust &lt; 90 &amp;&amp; console.log(girl.name + &#39;已死亡&#39;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const getResume &#x3D; (girl:Girl) &#x3D;&gt; &#123;</span><br><span class="line">    console.log(girl.name+&#39;的年龄&#39;+girl.age)</span><br><span class="line">    console.log(girl.name+&#39;的实验品编号&#39;+girl.bust)</span><br><span class="line">    girl.waistline &amp;&amp; console.log(girl.name+&#39;的战斗力&#39;+girl.waistline)</span><br><span class="line">    girl.sex &amp;&amp; console.log(girl.name+&#39;的性别&#39;+girl.sex)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">screenResume(girl)</span><br><span class="line">getResume(girl)</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>TypeScript</category>
       </categories>
@@ -2686,65 +2686,6 @@ python数据类型
       </categories>
   </entry>
   <entry>
-    <title>爬虫 network(牢饭吃到饱)</title>
-    <url>/reptile-network.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="network抓包"><a href="#network抓包" class="headerlink" title="network抓包"></a>network抓包</h1><ul>
-<li>名称: Preserver log <ul>
-<li>功能:保存抓包的历史记录</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>名称: Filter <ul>
-<li>功能: 过滤清空</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>名称: XHR<ul>
-<li>功能: 大部分情况的ajax请求</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>名称: js<ul>
-<li>功能:js请求</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>名称: css<ul>
-<li>功能: css请求</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>名称: Ever Listeners<ul>
-<li>功能: 事件的监听<ul>
-<li>名称: click</li>
-<li>功能: 加密</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="js解析"><a href="#js解析" class="headerlink" title="js解析"></a>js解析</h1><ul>
-<li>定位js文件<ul>
-<li>通过initiator定位到js文件</li>
-<li>通过seach搜索关键字定位的js文件</li>
-<li>通过元素绑定的事件监听函数找到js文件</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
     <title>爬虫 requests模块(吃牢饭集合)</title>
     <url>/reptile-header.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -2856,6 +2797,65 @@ python数据类型
 
 
 
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>爬虫 network(牢饭吃到饱)</title>
+    <url>/reptile-network.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="network抓包"><a href="#network抓包" class="headerlink" title="network抓包"></a>network抓包</h1><ul>
+<li>名称: Preserver log <ul>
+<li>功能:保存抓包的历史记录</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>名称: Filter <ul>
+<li>功能: 过滤清空</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>名称: XHR<ul>
+<li>功能: 大部分情况的ajax请求</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>名称: js<ul>
+<li>功能:js请求</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>名称: css<ul>
+<li>功能: css请求</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>名称: Ever Listeners<ul>
+<li>功能: 事件的监听<ul>
+<li>名称: click</li>
+<li>功能: 加密</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="js解析"><a href="#js解析" class="headerlink" title="js解析"></a>js解析</h1><ul>
+<li>定位js文件<ul>
+<li>通过initiator定位到js文件</li>
+<li>通过seach搜索关键字定位的js文件</li>
+<li>通过元素绑定的事件监听函数找到js文件</li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>爬虫</category>
@@ -3358,180 +3358,6 @@ option && myChart.setOption(option);
       </categories>
   </entry>
   <entry>
-    <title>爬虫 数据提取(吃牢饭集合)</title>
-    <url>/reptile-Extraction.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="响应内容分类"><a href="#响应内容分类" class="headerlink" title="响应内容分类"></a>响应内容分类</h1><h2 id="结构化的响应内容"><a href="#结构化的响应内容" class="headerlink" title="结构化的响应内容"></a>结构化的响应内容</h2><h3 id="json字符串-高频出现"><a href="#json字符串-高频出现" class="headerlink" title="json字符串(高频出现)"></a>json字符串(高频出现)</h3><ul>
-<li>可以使用re,json等模块来提取特定数据</li>
-</ul>
-<h3 id="xml数据-低频出现"><a href="#xml数据-低频出现" class="headerlink" title="xml数据(低频出现)"></a>xml数据(低频出现)</h3><ul>
-<li>可以使用re,lxml等模块来提取特定数据</li>
-</ul>
-<h2 id="非结构化的响应内容"><a href="#非结构化的响应内容" class="headerlink" title="非结构化的响应内容"></a>非结构化的响应内容</h2><h3 id="html字符串"><a href="#html字符串" class="headerlink" title="html字符串"></a>html字符串</h3><ul>
-<li>可以使用re,lxml等模块来提取特定数据</li>
-</ul>
-<h1 id="xml与html区别"><a href="#xml与html区别" class="headerlink" title="xml与html区别"></a>xml与html区别</h1><table>
-<thead>
-<tr>
-<th align="center">数据格式</th>
-<th align="center">描述</th>
-<th align="center">设计目标</th>
-<th align="center">个人总结</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">XML</td>
-<td align="center">Extensible Markup Language(可扩展标记语言)</td>
-<td align="center">被设计为传输和存储数据, 其焦点是数据的内容</td>
-<td align="center">xml传输和储存数据</td>
-</tr>
-<tr>
-<td align="center">HTML</td>
-<td align="center">HyperText Markup Language(超文本标记语言)</td>
-<td align="center">显示数据已经然后更好显示数据</td>
-<td align="center">html展示数据</td>
-</tr>
-</tbody></table>
-<h2 id="xml"><a href="#xml" class="headerlink" title="xml"></a>xml</h2><ul>
-<li>可扩展标记语言</li>
-<li>为了传输和储存数据, 侧重点是在于数据内容本身</li>
-<li>xml是一种可扩展标记语言, 样子和html很像, 功能更专注对传输和储存数据</li>
-</ul>
-<p>_</p>
-<h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><ul>
-<li>超文本记语言</li>
-<li>为了更好的显示数据, 侧重点是为显示</li>
-<li>html是显示效果更好, 用于展示数据</li>
-</ul>
-<h1 id="常用的数据解析方法"><a href="#常用的数据解析方法" class="headerlink" title="常用的数据解析方法"></a>常用的数据解析方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">                                          &#x2F;   json模块</span><br><span class="line">                                &#x2F;   json |</span><br><span class="line">                               &#x2F;          \   jsonpath模块</span><br><span class="line">               数据化数据      &#x2F;</span><br><span class="line">           &#x2F;￣￣￣￣￣￣￣￣￣￣\</span><br><span class="line">          &#x2F;                     \         &#x2F;   re模块    正则语法</span><br><span class="line">         &#x2F;                       \  xml  |</span><br><span class="line">        &#x2F;                                 \   lxml模块  xpath语法</span><br><span class="line">       &#x2F;                                 </span><br><span class="line">数据解析</span><br><span class="line">       \ </span><br><span class="line">        \                                 &#x2F;   re模块    正则语法         </span><br><span class="line">         \                               &#x2F;    lxml模块  xpath语法</span><br><span class="line">          \                             &#x2F;</span><br><span class="line">           \_____________________ html |      beautifulsoup  xpath语法 正则语法 css选择器</span><br><span class="line">               非结构化数据              \     </span><br><span class="line">                                         \</span><br><span class="line">                                          \   pyquery   css选择器</span><br></pre></td></tr></table></figure>
-
-<h1 id="jsonpath模块"><a href="#jsonpath模块" class="headerlink" title="jsonpath模块"></a>jsonpath模块</h1><p><a href="https://sdq3.gitee.io/reptile-jsonpath.html">详细说明</a></p>
-<h1 id="lxml模块"><a href="#lxml模块" class="headerlink" title="lxml模块"></a>lxml模块</h1><p><a href="https://sdq3.gitee.io/bs4-lxml.html">详细说明</a></p>
-<h1 id="xpath模块"><a href="#xpath模块" class="headerlink" title="xpath模块"></a>xpath模块</h1><p><a href="https://sdq3.gitee.io/reptile-xpath.html">详细说明</a></p>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>爬虫 报文(吃牢饭集合)</title>
-    <url>/reptile-message.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="查看报文"><a href="#查看报文" class="headerlink" title="查看报文"></a>查看报文</h1><p><strong>点击Request Headers旁边的view parsed</strong></p>
-<p><strong>注意: view parsed没点之前其实是给你优化过的</strong></p>
-<h1 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h1><table>
-<thead>
-<tr>
-<th>GET</th>
-<th>HTTP</th>
-<th>1.1</th>
-<th>Host</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>方法</td>
-<td>路径</td>
-<td>协议版本</td>
-<td>发送请求的域名</td>
-</tr>
-</tbody></table>
-<ul>
-<li>Content-Type</li>
-<li>Host (主机和端口号)</li>
-<li>Connection (链接类型/常链接)</li>
-<li>UPgrade-Insecure-Requests (升级为HTTPS请求)</li>
-<li>User-Agent (用户代理 提供系统信息和浏览器信息)</li>
-<li>Referer (页面跳转处)</li>
-<li>Cookie (Cookie数据非常重要,)</li>
-<li>Authorization (表示HTTP协议中需要认证资源的认证信息, 例如用于jwt认证)</li>
-</ul>
-
-<p><strong>请求头表格形式</strong></p>
-<table>
-<thead>
-<tr>
-<th>特别关注</th>
-<th>以下几个请求头</th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Host</td>
-<td>域名</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Connection</td>
-<td>常链接</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>UPgrade-Insecure-Requests</td>
-<td>升级为HTTPS请求</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>User-Agent</td>
-<td>用户代理</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Refrer</td>
-<td>页面跳转处, 防盗链</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Cookie</td>
-<td>保持状态, 用于跳过账号密码</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p><strong>响应头表格形式</strong></p>
-<table>
-<thead>
-<tr>
-<th>特别关注</th>
-<th>以下几个请求头</th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>HTTP/1.1</td>
-<td>协议</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>200</td>
-<td>状态码</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Set-Cookie</td>
-<td>cookie到用户浏览器的缓存非常重要用于跳过账号密码</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
     <title>爬虫 反爬知识大讲解(抓到即坐牢)</title>
     <url>/reptile-prevent.html</url>
     <content><![CDATA[<p><strong>好好劳改重新做人</strong></p>
@@ -3681,6 +3507,180 @@ option && myChart.setOption(option);
 </ul>
 </li>
 </ul>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>爬虫 报文(吃牢饭集合)</title>
+    <url>/reptile-message.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="查看报文"><a href="#查看报文" class="headerlink" title="查看报文"></a>查看报文</h1><p><strong>点击Request Headers旁边的view parsed</strong></p>
+<p><strong>注意: view parsed没点之前其实是给你优化过的</strong></p>
+<h1 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h1><table>
+<thead>
+<tr>
+<th>GET</th>
+<th>HTTP</th>
+<th>1.1</th>
+<th>Host</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>方法</td>
+<td>路径</td>
+<td>协议版本</td>
+<td>发送请求的域名</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Content-Type</li>
+<li>Host (主机和端口号)</li>
+<li>Connection (链接类型/常链接)</li>
+<li>UPgrade-Insecure-Requests (升级为HTTPS请求)</li>
+<li>User-Agent (用户代理 提供系统信息和浏览器信息)</li>
+<li>Referer (页面跳转处)</li>
+<li>Cookie (Cookie数据非常重要,)</li>
+<li>Authorization (表示HTTP协议中需要认证资源的认证信息, 例如用于jwt认证)</li>
+</ul>
+
+<p><strong>请求头表格形式</strong></p>
+<table>
+<thead>
+<tr>
+<th>特别关注</th>
+<th>以下几个请求头</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Host</td>
+<td>域名</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Connection</td>
+<td>常链接</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>UPgrade-Insecure-Requests</td>
+<td>升级为HTTPS请求</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>User-Agent</td>
+<td>用户代理</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Refrer</td>
+<td>页面跳转处, 防盗链</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Cookie</td>
+<td>保持状态, 用于跳过账号密码</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>响应头表格形式</strong></p>
+<table>
+<thead>
+<tr>
+<th>特别关注</th>
+<th>以下几个请求头</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HTTP/1.1</td>
+<td>协议</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>200</td>
+<td>状态码</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Set-Cookie</td>
+<td>cookie到用户浏览器的缓存非常重要用于跳过账号密码</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>爬虫 数据提取(吃牢饭集合)</title>
+    <url>/reptile-Extraction.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="响应内容分类"><a href="#响应内容分类" class="headerlink" title="响应内容分类"></a>响应内容分类</h1><h2 id="结构化的响应内容"><a href="#结构化的响应内容" class="headerlink" title="结构化的响应内容"></a>结构化的响应内容</h2><h3 id="json字符串-高频出现"><a href="#json字符串-高频出现" class="headerlink" title="json字符串(高频出现)"></a>json字符串(高频出现)</h3><ul>
+<li>可以使用re,json等模块来提取特定数据</li>
+</ul>
+<h3 id="xml数据-低频出现"><a href="#xml数据-低频出现" class="headerlink" title="xml数据(低频出现)"></a>xml数据(低频出现)</h3><ul>
+<li>可以使用re,lxml等模块来提取特定数据</li>
+</ul>
+<h2 id="非结构化的响应内容"><a href="#非结构化的响应内容" class="headerlink" title="非结构化的响应内容"></a>非结构化的响应内容</h2><h3 id="html字符串"><a href="#html字符串" class="headerlink" title="html字符串"></a>html字符串</h3><ul>
+<li>可以使用re,lxml等模块来提取特定数据</li>
+</ul>
+<h1 id="xml与html区别"><a href="#xml与html区别" class="headerlink" title="xml与html区别"></a>xml与html区别</h1><table>
+<thead>
+<tr>
+<th align="center">数据格式</th>
+<th align="center">描述</th>
+<th align="center">设计目标</th>
+<th align="center">个人总结</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">XML</td>
+<td align="center">Extensible Markup Language(可扩展标记语言)</td>
+<td align="center">被设计为传输和存储数据, 其焦点是数据的内容</td>
+<td align="center">xml传输和储存数据</td>
+</tr>
+<tr>
+<td align="center">HTML</td>
+<td align="center">HyperText Markup Language(超文本标记语言)</td>
+<td align="center">显示数据已经然后更好显示数据</td>
+<td align="center">html展示数据</td>
+</tr>
+</tbody></table>
+<h2 id="xml"><a href="#xml" class="headerlink" title="xml"></a>xml</h2><ul>
+<li>可扩展标记语言</li>
+<li>为了传输和储存数据, 侧重点是在于数据内容本身</li>
+<li>xml是一种可扩展标记语言, 样子和html很像, 功能更专注对传输和储存数据</li>
+</ul>
+<p>_</p>
+<h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><ul>
+<li>超文本记语言</li>
+<li>为了更好的显示数据, 侧重点是为显示</li>
+<li>html是显示效果更好, 用于展示数据</li>
+</ul>
+<h1 id="常用的数据解析方法"><a href="#常用的数据解析方法" class="headerlink" title="常用的数据解析方法"></a>常用的数据解析方法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">                                          &#x2F;   json模块</span><br><span class="line">                                &#x2F;   json |</span><br><span class="line">                               &#x2F;          \   jsonpath模块</span><br><span class="line">               数据化数据      &#x2F;</span><br><span class="line">           &#x2F;￣￣￣￣￣￣￣￣￣￣\</span><br><span class="line">          &#x2F;                     \         &#x2F;   re模块    正则语法</span><br><span class="line">         &#x2F;                       \  xml  |</span><br><span class="line">        &#x2F;                                 \   lxml模块  xpath语法</span><br><span class="line">       &#x2F;                                 </span><br><span class="line">数据解析</span><br><span class="line">       \ </span><br><span class="line">        \                                 &#x2F;   re模块    正则语法         </span><br><span class="line">         \                               &#x2F;    lxml模块  xpath语法</span><br><span class="line">          \                             &#x2F;</span><br><span class="line">           \_____________________ html |      beautifulsoup  xpath语法 正则语法 css选择器</span><br><span class="line">               非结构化数据              \     </span><br><span class="line">                                         \</span><br><span class="line">                                          \   pyquery   css选择器</span><br></pre></td></tr></table></figure>
+
+<h1 id="jsonpath模块"><a href="#jsonpath模块" class="headerlink" title="jsonpath模块"></a>jsonpath模块</h1><p><a href="https://sdq3.gitee.io/reptile-jsonpath.html">详细说明</a></p>
+<h1 id="lxml模块"><a href="#lxml模块" class="headerlink" title="lxml模块"></a>lxml模块</h1><p><a href="https://sdq3.gitee.io/bs4-lxml.html">详细说明</a></p>
+<h1 id="xpath模块"><a href="#xpath模块" class="headerlink" title="xpath模块"></a>xpath模块</h1><p><a href="https://sdq3.gitee.io/reptile-xpath.html">详细说明</a></p>
 ]]></content>
       <categories>
         <category>爬虫</category>
