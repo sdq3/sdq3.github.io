@@ -830,27 +830,39 @@ var $main = document.querySelector('.main');
 <h1 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">   <span class="comment">// 选择器就是css的选择器</span></span><br><span class="line">   $(<span class="string">&#x27;#test-jquey&#x27;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">        <span class="title">alert</span>(<span class="params"><span class="string">&#x27;我叫史迪奇&#x27;</span></span>)</span></span><br><span class="line"><span class="function">   )</span></span><br><span class="line"><span class="function">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h1 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="comment">//原生js的css选择器</span></span><br><span class="line">    <span class="comment">// 标签选择器</span></span><br><span class="line">    <span class="built_in">document</span>.getElementsByTagName();</span><br><span class="line">    <span class="comment">// id选择器</span></span><br><span class="line">    <span class="built_in">document</span>.getElementsById();</span><br><span class="line">    <span class="comment">// 类 class选择器</span></span><br><span class="line">    <span class="built_in">document</span>.getElementsByClassName();</span><br><span class="line">    </span><br><span class="line"><span class="comment">// jQuery的css选择器</span></span><br><span class="line">    <span class="comment">// 标签选择器</span></span><br><span class="line">    $(<span class="string">&#x27;p&#x27;</span>).click()</span><br><span class="line">    <span class="comment">// id选择器</span></span><br><span class="line">    $(<span class="string">&#x27;#id3&#x27;</span>).click()</span><br><span class="line">    <span class="comment">// 类 class选择器</span></span><br><span class="line">    $(<span class="string">&#x27;.class3&#x27;</span>).click()</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <h1 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h1><p><strong>鼠标事件</strong><br>    + mousedown()按下<br>    + mouseenter()当鼠标指针穿过元素时<br>    + mouseleave()离开<br>    + mousemove()移动<br>    + mouseout()当鼠标指针从元素上移开时<br>    + mouseover()点击结束<br>    + mouseup()元素上放松鼠标按钮</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    #divMove&#123;</span><br><span class="line">        width: 500px;</span><br><span class="line">        heigh: 500px;</span><br><span class="line">        border: 1px solid blue;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">    &lt;!--要求: 获取鼠标当前的一个坐标--&gt;</span><br><span class="line">    mouse: <span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;mouseMove&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">    &lt;div id=<span class="string">&quot;divMove&quot;</span>&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// 当网页元素加载完毕之后, 响应事件</span></span><br><span class="line">    $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">&#x27;#divMove&#x27;</span>).mousemove(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>))</span>&#123;</span><br><span class="line">            $(<span class="string">&#x27;#mouseMove&#x27;</span>).text(x:e.pageX + <span class="string">&#x27;y&#x27;</span>+e.pageY)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;定位板&lt;/title&gt;</span><br><span class="line">    &lt;script src=<span class="string">&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        #divMove &#123;</span><br><span class="line">            width: 500px;</span><br><span class="line">            height: 500px;</span><br><span class="line">            border: 1px solid blue;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;!--要求: 获取鼠标当前的一个坐标--&gt;</span><br><span class="line">    mouse: <span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;mouseMove&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">    &lt;div id=<span class="string">&quot;divMove&quot;</span>&gt;</span><br><span class="line">        在这里移动鼠标</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="comment">// 当网页元素加载完毕之后, 响应事件</span></span><br><span class="line">        $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">&#x27;#divMove&#x27;</span>).mousemove(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">                $(<span class="string">&#x27;#mouseMove&#x27;</span>).text(<span class="string">&#x27;x:&#x27;</span> + e.pageX + <span class="string">&#x27;y:&#x27;</span> + e.pageY)</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<!DOCTYPE html>
+<html lang="cn">
 
-<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-<style>
-    #divMove{
-        width: 500px;
-        heigh: 500px;
-        border: 1px solid blue;
-    }
-</style>
-<pre><code>&lt;!--要求: 获取鼠标当前的一个坐标--&gt;
-mouse: &lt;span id=&quot;mouseMove&quot;&gt;&lt;/span&gt;
-&lt;div id=&quot;divMove&quot;&gt;</code></pre>
-<script>
-    // 当网页元素加载完毕之后, 响应事件
-    $(function () {
-        $('#divMove').mousemove(function (e)){
-            $('#mouseMove').text(x:e.pageX + 'y'+e.pageY)
+<head>
+    <title>定位板</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <style>
+        #divMove {
+            width: 500px;
+            height: 500px;
+            border: 1px solid blue;
         }
-    });
-</script>
+    </style>
+</head>
+
+<body>
+    <!--要求: 获取鼠标当前的一个坐标-->
+    mouse: <span id="mouseMove"></span>
+    <div id="divMove">
+        在这里移动鼠标
+    </div>
+    <script>
+        // 当网页元素加载完毕之后, 响应事件
+        $(function() {
+            $('#divMove').mousemove(function(e) {
+                $('#mouseMove').text('x:' + e.pageX + 'y:' + e.pageY)
+            })
+        });
+    </script>
+</body>
+
+</html>
 
 			  </article>
 		</div>
