@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>归档：2021/7 -  我叫史迪奇</title>
+	<title>JavaScript DOM -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -184,7 +184,7 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>90
+					<span>文章</span>96
 					<span>标签</span>0
 					<span>分类</span>14
 				</div>		
@@ -303,7 +303,7 @@
 
         <li>
           <a href="/categories/JavaScript/">JavaScript</a>
-          <span>7</span>
+          <span>13</span>
         </li>
 
         
@@ -384,23 +384,23 @@
       <ul>
         
           <li>
-            <a href="/TypeScript-Jquery.html">TypeScript 使用Jquery库</a>
+            <a href="/JavaScript-function.html">JavaScript 函数的定义和参数获取</a>
           </li>
         
           <li>
-            <a href="/TypeScript-Parcel.html">TypeScript 打包代码</a>
+            <a href="/JavaScript-definition-obtain.html">JavaScript 函数的定义和参数获取</a>
           </li>
         
           <li>
-            <a href="/TypeScript-NameSpace.html">TypeScript 命名空间</a>
+            <a href="/JavaScript-apply-Data.html">JavaScript 函数</a>
           </li>
         
           <li>
-            <a href="/TypeScript-genericity.html">TypeScript 泛型</a>
+            <a href="/JavaScript-BOM.html">JavaScript BOM</a>
           </li>
         
           <li>
-            <a href="/TypeScript-Enum.html">TypeScript 枚举类型</a>
+            <a href="/JavaScript-object-oriented.html">JavaScript 面向对象</a>
           </li>
         
       </ul>
@@ -760,518 +760,57 @@ var $main = document.querySelector('.main');
 
 
 
-
 <style>
-.sdq-post {
-	webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-}
-.sdq-post:hover{
-	webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-}
+	#sdqPost:hover{
+   		    background-color: rgba(255, 255, 255, 0.5)!important;
+	}	
 </style>
-
-
-<style>
-@media screen and (max-width: 1024px){
-	.sdq-more{    
-    opacity: 1!important;
-	}
-	.sdq-more{  
-		display: contents!important;	
-	}
-	.sdq-toping{
-		display: inline-block;
-		left: 10px;
-		top: 0;
-		z-index: 2;
-		color: #FFFFFF;
-		padding: 0 10px;
-		border-radius: 4px;
-		font-style: normal;
-		background-color: rgba(234, 67, 74, 0.7);
-	}
-	.sdq-post:hover .sdq-toping {display: inline-block!important;}
-}
-
-@media screen and (min-width: 1024px){
-	.sdq-toping{
-		display: none;
-		position: fixed;
-		left: 10px;
-		top: 0;
-		z-index: 2;color: #FFFFFF;
-		clip-path: polygon(100% 0, 100% 100%, 50% 70%, 0 100%, 0 0);
-		background-color: rgba(255, 0, 0, 0.51);    
-		background: -webkit-gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
-    	background: gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
-		height: 61px;
-		width: 41px;
-	}
-}
-	.sdq-more{   
-	display: inline-block;
-    float: right;
-    background-color: rgba(204, 196, 196, 0.45);
-    padding: .5rem 1rem;
-    border-radius: 4px;
-    color: #919191!important;
-    text-decoration: none;
-    opacity: 0;
-    -webkit-transition: opacity 1.2s;
-    transition: opacity 1.2s;
-    will-change: opacity;
-        -moz-user-select: none; /*火狐*/
-        -webkit-user-select: none; /*webkit浏览器*/
-        -ms-user-select: none; /*IE10*/
-        -khtml-user-select: none; /*早期浏览器*/
-        -o-user-select: none; /* Opera*/
-        user-select: none;
-	}
-	.sdq-post:hover .sdq-more {
-		opacity: 1;
-		animation: fade-in;
-		animation-duration: 0.6s;
-		-webkit-animation: fade-in 0.6s;
-	}
-	
-	@keyframes fade-in {  
-    0% {opacity: 0;}/*初始状态 透明度为0*/  
-    40% {opacity: 0;}/*过渡状态 透明度为0*/  
-    100% {opacity: 1;}/*结束状态 透明度为1*/  
-	}  
-	@-webkit-keyframes fade-in {/*针对webkit内核*/  
-		0% {opacity: 0;}  
-		40% {opacity: 0;}  
-		100% {opacity: 1;}  
-	}  
-	.sdq-post:hover .sdq-toping {display: block;}
-	.sdq-tags{
-	}
-	.sdq-tags a{
-		color: #fff; 
-		font-size: 15px; 
-	}
-	.sdq-tags a {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-	}
-	
-</style>
-
-
-<style>
-	
-@media screen and (min-width: 1024px){
-	.sdq-post:hover{
-   		border: none;
-		transform: translateY(-20px);
-		-webkit-transform: translateY(-20px);
-		-moz-transform: translateY(-20px);
-		background-color: rgba(255, 255, 255, 0.3);
-	}
-	.sdq-post{    
-		padding: 60px 70px!important;
-	}
-}
-	.sdq-post{    
-/*   		border: 1px #b8c7ff solid;*/
-		margin: 0px;    margin-bottom: 20px;
-        background-color: rgba(240, 248, 255, 0.4);
-	}
-</style>
-
-
-
-
-
-
 <div class="sdq">
-	<section class="sdq-posts">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Private-cloud.html">
-					<div class="sdq-title"> 
-						私有云配置(个人笔记)
-					</div>
-				</a>
-			</div>
-			
+	<div class="sdq-post" id="sdqPost">
+		<div class="sdq-title">
+			<h1>JavaScript DOM</h1>
 		</div>
+	  <div id="post" class="sdq-post-Statistics">
+            <a>2021年08月18日</a>
+		  	<a class="post-count">99 字</a>
+		
+		  <a class=" -link" href="/categories/JavaScript/">JavaScript</a>
+		
+		
+	  </div>
+		
+		
+<div id="modal" style="display:none">
 
-			<article>
-				
-				<p><strong>要有Linux基础</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-					<a class="category-link" href="/categories/Linux/">Linux</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Private-cloud.html"><div class="sdq-more">阅读更多...</div></a>
-		
+<aside id="article-toc" class="fixed-toc">
+    <div id="article-toc-inner">
+        <strong class="sidebar-title">目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%93%8D%E4%BD%9CDOM%E5%AF%B9%E8%B1%A1"><span class="toc-text">操作DOM对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%BE%97DOM%E8%8A%82%E7%82%B9"><span class="toc-text">获得DOM节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0DOM%E8%8A%82%E7%82%B9"><span class="toc-text">更新DOM节点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%96%87%E6%9C%AC"><span class="toc-text">操作文本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9Ccss"><span class="toc-text">操作css</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9"><span class="toc-text">删除节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%85%A5DOM%E8%8A%82%E7%82%B9"><span class="toc-text">插入DOM节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BADOM%E6%96%B0%E8%8A%82%E7%82%B9"><span class="toc-text">创建DOM新节点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAscript%E6%A0%87%E7%AD%BE%E8%8A%82%E7%82%B9"><span class="toc-text">创建一个script标签节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAscript%E6%A0%87%E7%AD%BE%E8%8A%82%E7%82%B9-1"><span class="toc-text">创建一个script标签节点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E8%A1%A8%E5%8D%95-%E9%AA%8C%E8%AF%81"><span class="toc-text">操作表单 (验证)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%BE%97%E6%8F%90%E4%BA%A4%E7%9A%84%E4%BF%A1%E6%81%AF"><span class="toc-text">获得提交的信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E8%A1%A8%E5%8D%95"><span class="toc-text">提交表单</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">加强版</span></a></li></ol>
     </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/baidu.html">
-					<div class="sdq-title"> 
-						百度搜索技巧
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>技巧</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/baidu.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/reptile-Baidutranslate.html">
-					<div class="sdq-title"> 
-						爬虫 访问百度翻译(牢饭吃到饱)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>每天一个入狱小技巧</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-					<a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
-				
-				
-			</div>
-		</div>
-		<a href="/reptile-Baidutranslate.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/reptile-header.html">
-					<div class="sdq-title"> 
-						爬虫 请求头和响应头(吃牢饭集合)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>每天一个入狱小技巧</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-					<a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
-				
-				
-			</div>
-		</div>
-		<a href="/reptile-header.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/reptile-state.html">
-					<div class="sdq-title"> 
-						爬虫 状态码(吃牢饭集合)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>每天一个入狱小技巧</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-					<a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
-				
-				
-			</div>
-		</div>
-		<a href="/reptile-state.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/reptile-mao.html">
-					<div class="sdq-title"> 
-						爬虫 爬猫猫图片(牢饭吃到饱)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>每天一个入狱小技巧</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-					<a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
-				
-				
-			</div>
-		</div>
-		<a href="/reptile-mao.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/reptile-novel.html">
-					<div class="sdq-title"> 
-						爬虫 爬小说(牢饭吃到饱)未完待续
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>每天一个入狱小技巧</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-					<a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
-				
-				
-			</div>
-		</div>
-		<a href="/reptile-novel.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/reptile-python%E2%80%94node.js.html">
-					<div class="sdq-title"> 
-						爬虫 比Python功能更加强大的node.js简介(牢饭吃到饱)未完待续
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>每天一个入狱小技巧</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-					<a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
-				
-				
-			</div>
-		</div>
-		<a href="/reptile-python%E2%80%94node.js.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/reptile-RegEx.html">
-					<div class="sdq-title"> 
-						爬虫 正则表达式(牢饭吃到饱)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>每天一个入狱小技巧</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-					<a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
-				
-				
-			</div>
-		</div>
-		<a href="/reptile-RegEx.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/reptile-concept.html">
-					<div class="sdq-title"> 
-						爬虫 概念(牢饭吃到饱)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>每天一个入狱小技巧</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-					<a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
-				
-				
-			</div>
-		</div>
-		<a href="/reptile-concept.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-</section>
-	
-
-
-    <nav id="paging">
-      <a class="extend prev" rel="prev" href="/archives/2021/07/"><i class="sdqMsDanIconFont"></i></a><a class="page-number" href="/archives/2021/07/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2021/07/page/3/">3</a><a class="page-number" href="/archives/2021/07/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2021/07/page/8/">8</a><a class="extend next" rel="next" href="/archives/2021/07/page/3/"><i class="sdqMsDanIconFont"></i></a>
-    </nav>
-  
-
-<!--
-        prev_text: '<i class="iconfont">&#xe617;</i>',
-        next_text: '<i class="iconfont">&#xe627;</i>'
--->
+</aside>
 </div>
 
 
+		
+			<a href="#modal" class="second">
+				<div class="i">
+						<i style="font-size:20px" class="sdq3 sdqfasong">
+						<span style="font-size:0px">
+						</i>
+				</div>
+			</a>
+
+
+
+
+<script>
+	$(".second .i").mouseover(function(){
+  $(".second .i span").css("font-size","18px");
+});
+	$(".second .i").mouseleave(function(){
+  $(".second .i span").css("font-size","0px");
+});
+</script>
 
 
 
@@ -1279,6 +818,241 @@ var $main = document.querySelector('.main');
 
 
 
+
+
+
+
+		<div>
+			  <article>
+				<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="操作DOM对象"><a href="#操作DOM对象" class="headerlink" title="操作DOM对象"></a>操作DOM对象</h1><h2 id="获得DOM节点"><a href="#获得DOM节点" class="headerlink" title="获得DOM节点"></a>获得DOM节点</h2><p><strong>浏览器网页就是一个DOM树形结构</strong><br>    + 更新: 更新DOM节点<br>    + 遍历DOM节点: 得到DOM节点<br>    + 删除: 删除一个DOM节点<br>    + 添加: 添加一个新的节点</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 要操作一个DOM节点就必须先获得这个DOM节点</span></span><br><span class="line"><span class="comment">// 获得DOM节点</span></span><br><span class="line">&lt;div id=<span class="string">&quot;Syp&quot;</span>&gt;</span><br><span class="line">    &lt;h1&gt;实验品&lt;/h1&gt;</span><br><span class="line">    &lt;p id=<span class="string">&quot;Reuben&quot;</span>&gt;鲁本&lt;/p&gt;</span><br><span class="line">    &lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;Angel&quot;</span>&gt;安娜&lt;/p&gt;</span><br><span class="line">    &lt;p id=<span class="string">&quot;Stitch&quot;</span>&gt;史迪奇&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// 对应 css选择器</span></span><br><span class="line">    <span class="keyword">var</span> h1 = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&quot;h1&quot;</span>)</span><br><span class="line">    <span class="keyword">var</span> Reuben = <span class="built_in">document</span>.getElementById(<span class="string">&quot;Reuben&quot;</span>)</span><br><span class="line">    <span class="keyword">var</span> Angel = <span class="built_in">document</span>.getElementByclassName(<span class="string">&quot;Angel&quot;</span>)</span><br><span class="line">    <span class="keyword">var</span> Stitch = <span class="built_in">document</span>.getElementById(<span class="string">&quot;Stitch&quot;</span>)</span><br><span class="line">    <span class="comment">// 获取父节点下的所有子节点</span></span><br><span class="line">    <span class="keyword">var</span> childrens = Syp.hildrens;</span><br><span class="line">    <span class="comment">// Syp.firstChild</span></span><br><span class="line">    <span class="comment">// Syp.LastChild</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="更新DOM节点"><a href="#更新DOM节点" class="headerlink" title="更新DOM节点"></a>更新DOM节点</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 要操作一个DOM节点就必须先获得这个DOM节点</span></span><br><span class="line"><span class="comment">// 获得DOM节点</span></span><br><span class="line">&lt;div id=<span class="string">&quot;Syp&quot;</span>&gt;</span><br><span class="line">    &lt;h1&gt;实验品&lt;/h1&gt;</span><br><span class="line">    &lt;p id=<span class="string">&quot;Reuben&quot;</span>&gt;鲁本&lt;/p&gt;</span><br><span class="line">    &lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;Angel&quot;</span>&gt;安娜&lt;/p&gt;</span><br><span class="line">    &lt;p id=<span class="string">&quot;Stitch&quot;</span>&gt;史迪奇&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> Syp = <span class="built_in">document</span>.getElementById(<span class="string">&quot;Syp&quot;</span>)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="操作文本"><a href="#操作文本" class="headerlink" title="操作文本"></a>操作文本</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 修改文本的值</span></span><br><span class="line">Syp.innerText = <span class="string">&#x27;我叫史迪奇&#x27;</span>;</span><br><span class="line"><span class="comment">// 可以解析HTML文本标签</span></span><br><span class="line">Syp.innerHTML = <span class="string">&#x27;&lt;strong&gt;我叫史迪奇&lt;/strong&gt;&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="操作css"><a href="#操作css" class="headerlink" title="操作css"></a>操作css</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 属性使用 字符串 包起来</span></span><br><span class="line">Syp.style.color = <span class="string">&#x27;blue&#x27;</span>;</span><br><span class="line"><span class="comment">// fontSize是驼峰命名</span></span><br><span class="line">Syp.style.fontSize = <span class="string">&#x27;333px&#x27;</span>;</span><br><span class="line">Syp.style.padding = <span class="string">&#x27;3em&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h2><p><strong>步骤: 先获取父节点, 再获取子节点, 然后通过父节点删除子节点</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;Syp&quot;</span>&gt;</span><br><span class="line">    &lt;h1&gt;实验品&lt;/h1&gt;</span><br><span class="line">    &lt;p id=<span class="string">&quot;Reuben&quot;</span>&gt;鲁本&lt;/p&gt;</span><br><span class="line">    &lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;Angel&quot;</span>&gt;安娜&lt;/p&gt;</span><br><span class="line">    &lt;p id=<span class="string">&quot;Stitch&quot;</span>&gt;史迪奇&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// 先获取父节点</span></span><br><span class="line">    <span class="keyword">var</span> Syp = Reuben.parentElement;</span><br><span class="line">    <span class="comment">// 再获取子节点</span></span><br><span class="line">    <span class="keyword">var</span> Reuben = <span class="built_in">document</span>.getElementById(<span class="string">&quot;Reuben&quot;</span>)</span><br><span class="line">    <span class="comment">// 然后通过父节点删除子节点</span></span><br><span class="line">    Syp.removeChild(Reuben)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 删除是一个动态过程 一删除其余的也跟着删除</span></span><br><span class="line">    Syp.removeChild(Syp.children[<span class="number">0</span>])</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="插入DOM节点"><a href="#插入DOM节点" class="headerlink" title="插入DOM节点"></a>插入DOM节点</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=<span class="string">&quot;Syp&quot;</span>&gt;实验品&lt;/p&gt;</span><br><span class="line">&lt;div id=<span class="string">&quot;list&quot;</span>&gt;</span><br><span class="line">    &lt;p id=<span class="string">&quot;Reuben&quot;</span>&gt;鲁本&lt;/p&gt;</span><br><span class="line">    &lt;p id=<span class="string">&quot;Angel&quot;</span>&gt;安娜&lt;/p&gt;</span><br><span class="line">    &lt;p id=<span class="string">&quot;Stitch&quot;</span>&gt;史迪奇&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> Syp = <span class="built_in">document</span>.getElementById(<span class="string">&quot;Syp&quot;</span>)</span><br><span class="line">    <span class="keyword">var</span> list = <span class="built_in">document</span>.getElementById(<span class="string">&quot;list&quot;</span>)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>然后浏览器输入来实现 追加效果</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 追加</span><br><span class="line">list.appendChild(Stitch);</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建DOM新节点"><a href="#创建DOM新节点" class="headerlink" title="创建DOM新节点"></a>创建DOM新节点</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=<span class="string">&quot;Syp&quot;</span>&gt;实验品&lt;/p&gt;</span><br><span class="line">&lt;div id=<span class="string">&quot;list&quot;</span>&gt;</span><br><span class="line">    &lt;p id=<span class="string">&quot;Reuben&quot;</span>&gt;鲁本&lt;/p&gt;</span><br><span class="line">    &lt;p id=<span class="string">&quot;Angel&quot;</span>&gt;安娜&lt;/p&gt;</span><br><span class="line">    &lt;p id=<span class="string">&quot;Stitch&quot;</span>&gt;史迪奇&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> Syp = <span class="built_in">document</span>.getElementById(<span class="string">&quot;Syp&quot;</span>)</span><br><span class="line">    <span class="keyword">var</span> list = <span class="built_in">document</span>.getElementById(<span class="string">&quot;list&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 通过 JS 创建新的p节点</span></span><br><span class="line">    <span class="keyword">var</span> sdq = <span class="built_in">document</span>.createRlement(<span class="string">&quot;p&quot;</span>)</span><br><span class="line">    <span class="comment">// 给它创建id</span></span><br><span class="line">    sdq.id = <span class="string">&quot;sdq&quot;</span></span><br><span class="line">    <span class="comment">// 内容</span></span><br><span class="line">    sdq.innerText = <span class="string">&quot;我叫史迪奇&quot;</span></span><br><span class="line"></span><br><span class="line">    list.appendChild</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>然后浏览器输入来实现 创建效果</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 创建</span><br><span class="line">list.appendChild(sdq);</span><br></pre></td></tr></table></figure>
+<h3 id="创建一个script标签节点"><a href="#创建一个script标签节点" class="headerlink" title="创建一个script标签节点"></a>创建一个script标签节点</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=<span class="string">&quot;Syp&quot;</span>&gt;实验品&lt;/p&gt;</span><br><span class="line">&lt;div id=<span class="string">&quot;list&quot;</span>&gt;</span><br><span class="line">    &lt;p id=<span class="string">&quot;Reuben&quot;</span>&gt;鲁本&lt;/p&gt;</span><br><span class="line">    &lt;p id=<span class="string">&quot;Angel&quot;</span>&gt;安娜&lt;/p&gt;</span><br><span class="line">    &lt;p id=<span class="string">&quot;Stitch&quot;</span>&gt;史迪奇&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> Syp = <span class="built_in">document</span>.getElementById(<span class="string">&quot;Syp&quot;</span>)</span><br><span class="line">    <span class="keyword">var</span> list = <span class="built_in">document</span>.getElementById(<span class="string">&quot;list&quot;</span>)</span><br><span class="line">    <span class="keyword">var</span> sdq = <span class="built_in">document</span>.createRlement(<span class="string">&quot;p&quot;</span>)</span><br><span class="line">    sdq.id = <span class="string">&quot;sdq&quot;</span></span><br><span class="line">    sdq.innerText = <span class="string">&quot;我叫史迪奇&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 通过这个属性, 可以设置任意的值</span></span><br><span class="line">    <span class="keyword">var</span> script = <span class="built_in">document</span>.createRlement(<span class="string">&quot;script&quot;</span>);</span><br><span class="line">    script.setAttribute(<span class="string">&#x27;type&#x27;</span>,<span class="string">&#x27;text/javascript&#x27;</span>)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>然后浏览器输入来实现 创建效果</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 创建</span><br><span class="line">list.appendChild(script);</span><br></pre></td></tr></table></figure>
+<h3 id="创建一个script标签节点-1"><a href="#创建一个script标签节点-1" class="headerlink" title="创建一个script标签节点"></a>创建一个script标签节点</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=<span class="string">&quot;Syp&quot;</span>&gt;实验品&lt;/p&gt;</span><br><span class="line">&lt;div id=<span class="string">&quot;list&quot;</span>&gt;</span><br><span class="line">    &lt;p id=<span class="string">&quot;Reuben&quot;</span>&gt;鲁本&lt;/p&gt;</span><br><span class="line">    &lt;p id=<span class="string">&quot;Angel&quot;</span>&gt;安娜&lt;/p&gt;</span><br><span class="line">    &lt;p id=<span class="string">&quot;Stitch&quot;</span>&gt;史迪奇&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> Syp = <span class="built_in">document</span>.getElementById(<span class="string">&quot;Syp&quot;</span>)</span><br><span class="line">    <span class="keyword">var</span> list = <span class="built_in">document</span>.getElementById(<span class="string">&quot;list&quot;</span>)</span><br><span class="line">    <span class="keyword">var</span> sdq = <span class="built_in">document</span>.createRlement(<span class="string">&quot;p&quot;</span>)</span><br><span class="line">    sdq.id = <span class="string">&quot;sdq&quot;</span></span><br><span class="line">    sdq.innerText = <span class="string">&quot;我叫史迪奇&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建空style标签</span></span><br><span class="line">    <span class="keyword">var</span> style = <span class="built_in">document</span>.createRlement(<span class="string">&quot;style&quot;</span>);</span><br><span class="line">    style.setAttribute(<span class="string">&#x27;type&#x27;</span>,<span class="string">&#x27;text/css&#x27;</span>);</span><br><span class="line">    <span class="comment">// 标签内容</span></span><br><span class="line">    style.innerHTML = <span class="string">&#x27;body&#123;background-color: chartreuse;&#125;&#x27;</span></span><br><span class="line">    <span class="comment">// document.getElementsByTagName(&#x27;head&#x27;)[0].appendChild(style)</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>然后浏览器输入来实现 创建效果</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 创建style</span><br><span class="line">document.getElementsByTagName(&#x27;head&#x27;)[0].appendChild(style)</span><br></pre></td></tr></table></figure>
+<h2 id="操作表单-验证"><a href="#操作表单-验证" class="headerlink" title="操作表单 (验证)"></a>操作表单 (验证)</h2><pre><code>+ 文本框 text
++ 下拉框 &lt;select&gt;
++ 单选框 radio
++ 多选框 checkbox
++ 隐藏域 hidden
++ 密码框  password</code></pre>
+<h3 id="获得提交的信息"><a href="#获得提交的信息" class="headerlink" title="获得提交的信息"></a>获得提交的信息</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">&quot;list&quot;</span>&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">    &lt;span&gt;实验品编号: &lt;/span&gt;<span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;name&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">    &lt;!-- 多选框的值, 就是定义好value --&gt;</span><br><span class="line">    &lt;p&gt;</span><br><span class="line">        &lt;span&gt;实验品编号: &lt;/span&gt;</span><br><span class="line">        &lt;input type=<span class="string">&quot;radio&quot;</span> name=<span class="string">&quot;See&quot;</span> vlaue=<span class="string">&quot;Yes&quot;</span> id=<span class="string">&quot;Yes&quot;</span>&gt;有看过</span><br><span class="line">        &lt;input type=<span class="string">&quot;radio&quot;</span> name=<span class="string">&quot;See&quot;</span> vlaue=<span class="string">&quot;No&quot;</span> id=<span class="string">&quot;No&quot;</span>&gt;没看过</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> See = <span class="built_in">document</span>.getElementById(<span class="string">&quot;name&quot;</span>)</span><br><span class="line">    <span class="keyword">var</span> Yes = <span class="built_in">document</span>.getElementById(<span class="string">&quot;Yes&quot;</span>)</span><br><span class="line">    <span class="keyword">var</span> NO = <span class="built_in">document</span>.createRlement(<span class="string">&quot;No&quot;</span>)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>然后浏览器输入来实现 创建效果</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 得到输入框的值</span><br><span class="line">See.value</span><br><span class="line">// 修改输入框的值</span><br><span class="line">See.value = &#x27;333&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><font color="#DC143C"> 以下为效果</font></p>
+<p>
+    <span>实验品编号: </span><input type="text" id="name">
+</p>
+    <!-- 多选框的值, 就是定义好value -->
+    <p>
+        <span>实验品编号: </span>
+        <input type="radio" name="See" vlaue="Yes" id="Yes">有看过
+        <input type="radio" name="See" vlaue="No" id="No">没看过
+    </p>
+
+
+
+<script>
+    var See = document.getElementById("name")
+    var Yes = document.getElementById("Yes")
+    var NO = document.createRlement("No")
+</script>
+
+
+<h2 id="提交表单"><a href="#提交表单" class="headerlink" title="提交表单"></a>提交表单</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- MD5 工具类 --&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;https:cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;form action=<span class="string">&quot;#&quot;</span> method=<span class="string">&quot;post&quot;</span>&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">    &lt;span&gt;实验品编号: &lt;/span&gt;<span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;name&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">&lt;p&gt;</span><br><span class="line">    &lt;span&gt;密&amp;emsp;&amp;emsp;&amp;emsp;码: &lt;/span&gt;<span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">id</span>=<span class="string">&quot;input-pwd&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">    &lt;input type=<span class="string">&quot;hidden&quot;</span> id=<span class="string">&quot;md5-pwd&quot;</span> name=<span class="string">&quot;password&quot;</span>&gt;</span><br><span class="line">    &lt;!-- 绑定事件 onclick 被点击 --&gt;</span><br><span class="line">    &lt;button type=<span class="string">&quot;submit&quot;</span> onclick=<span class="string">&quot;dianji()&quot;</span>&gt;登陆&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">dianji</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">        <span class="title">var</span> <span class="title">name</span> = <span class="title">document</span>.<span class="title">getElementById</span>(<span class="params"><span class="string">&quot;name&quot;</span></span>)</span>;</span><br><span class="line">        <span class="keyword">var</span> pwd = <span class="built_in">document</span>.getElementById(<span class="string">&quot;pwd&quot;</span>);</span><br><span class="line">        <span class="keyword">var</span> md5pwd = <span class="built_in">document</span>.getElementById(<span class="string">&quot;md5-pwd&quot;</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(name.value);</span><br><span class="line">        <span class="built_in">console</span>.log(pwd.value);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// MD5 算法</span></span><br><span class="line">        pwd.value = md5(pwd.value)</span><br><span class="line">        <span class="built_in">console</span>.log(pwd.value);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><font color="#DC143C"> 以下为效果</font></p>
+<!-- MD5 工具类 -->
+<script src="https:cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<form action="#" method="post">
+<p>
+    <span>实验品编号: </span><input type="text" id="name">
+</p>
+<p>
+    <span>密&emsp;&emsp;&emsp;码: </span><input type="password" id="input-pwd">
+</p>
+    <input type="hidden" id="md5-pwd" name="password">
+    <!-- 绑定事件 onclick 被点击 -->
+    <button type="submit" onclick="dianji()">登陆</button>
+
+<script>
+    function dianji()
+        var name = document.getElementById("name");
+        var pwd = document.getElementById("pwd");
+        var md5pwd = document.getElementById("md5-pwd");
+        console.log(name.value);
+        console.log(pwd.value);
+
+        // MD5 算法
+        md5pwd.value = md5(pwd.value)
+        console.log(pwd.value);
+</script>
+
+<h1>加强版</h1>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- MD5 工具类 --&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;https:cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 表单绑定提交事件onsubmit= 绑定应该提交检查的函数 trur和<span class="literal">false</span>将结果返回给表单用 --&gt;</span><br><span class="line">&lt;form action=<span class="string">&quot;http://www.baidu.com/&quot;</span> method=<span class="string">&quot;post&quot;</span> onsubit=<span class="string">&quot;dianji()&quot;</span>&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">    &lt;span&gt;实验品编号: &lt;/span&gt;<span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;name&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">&lt;p&gt;</span><br><span class="line">    &lt;span&gt;密&amp;emsp;&amp;emsp;&amp;emsp;码: &lt;/span&gt;<span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">id</span>=<span class="string">&quot;input-pwd&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">    &lt;input type=<span class="string">&quot;hidden&quot;</span> id=<span class="string">&quot;md5-pwd&quot;</span> name=<span class="string">&quot;password&quot;</span>&gt;</span><br><span class="line">    &lt;!-- 绑定事件 onclick 被点击 --&gt;</span><br><span class="line">    &lt;button type=<span class="string">&quot;submit&quot;</span>&gt;登陆&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">dianji</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">var</span> name = <span class="built_in">document</span>.getElementById(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">        <span class="keyword">var</span> pwd = <span class="built_in">document</span>.getElementById(<span class="string">&quot;pwd&quot;</span>);</span><br><span class="line">        <span class="keyword">var</span> md5pwd = <span class="built_in">document</span>.getElementById(<span class="string">&quot;md5-pwd&quot;</span>);</span><br><span class="line">        <span class="comment">// MD5 算法</span></span><br><span class="line">        md5pwd.value = md5(pwd.value);</span><br><span class="line">        <span class="comment">// 可以判断表单内容 true 通过提交 false 阻止提交</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><font color="#DC143C"> 以下为效果</font></p>
+<!-- MD5 工具类 -->
+<script src="https:cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
+<!-- 表单绑定提交事件onsubmit= 绑定应该提交检查的函数 trur和false将结果返回给表单用 -->
+<form action="http://www.baidu.com/" method="post" onsubit="dianji()">
+<p>
+    <span>实验品编号: </span><input type="text" id="name">
+</p>
+<p>
+    <span>密&emsp;&emsp;&emsp;码: </span><input type="password" id="input-pwd">
+</p>
+    <input type="hidden" id="md5-pwd" name="password">
+    <!-- 绑定事件 onclick 被点击 -->
+    <button type="submit">登陆</button>
+
+<script>
+    function dianji(){
+        alert(1);
+        var name = document.getElementById("name");
+        var pwd = document.getElementById("pwd");
+        var md5pwd = document.getElementById("md5-pwd");
+        // MD5 算法
+        md5pwd.value = md5(pwd.value);
+        // 可以判断表单内容 true 通过提交 false 阻止提交
+        return true;
+    }
+</script>
+
+
+
+
+
+</form></form>
+			  </article>
+		</div>
+		
+		
+
+
+		 	
+				<style>
+.veditor {
+    background: url('images/评论区/史迪奇睡觉.gif') no-repeat #fcfcfc!important;
+    background-size: auto 130px!important;
+    background-position: right bottom!important;
+}
+</style>
+<div id="vcomments" class="comment">
+
+</div>
+<script>
+	window.valine = new Valine({
+		el: '#vcomments',
+		appId: 'QqqoNLFAJzeDU9WPBVYk7UBj-MdYXbMMI',
+		appKey: 'hzwk2U93vOE4IdBWQXvda2mJ',
+		avatar: 'robohash',
+		placeholder: '我叫史迪奇',
+		path: window.location.pathname,   //[重点] 记得添加path路径
+		enableQQ:'true'
+	});
+	
+    // 使用方法 https://valine.js.org/quickstart.html
+	/*
+		var $vcomments = document.querySelector('.comment');
+		var $div= document.createElement('div');
+		$div.setAttribute("id","#vcomments");
+		$vcomments.appendChild($div);
+    new Valine({
+        el: '#vcomments',
+        appId: 'QqqoNLFAJzeDU9WPBVYk7UBj-MdYXbMMI',
+        appKey: 'hzwk2U93vOE4IdBWQXvda2mJ',
+		avatar: 'robohash',
+        placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ',
+    });*/
+        //placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ',
+</script>
+
+<script>
+/*//$(function() 
+$(window).load(function(){
+	// 去valine版权
+	$('.info').css("display","none");
+	// 去valine位移
+	$('.vmeta').css("padding-right","66px");
+	$('.vcontrol').css("padding-right","66px");
+	$('.vctrl').css("padding-right","66px");
+	$('#veditor').removeAttr("placeholder");
+	$("#veditor").attr("placeholder","输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ");
+	$('.v .vwrap .vheader .vinput:nth-child(3)').removeAttr("placeholder");
+	$(".v .vwrap .vheader .vinput:nth-child(3)").attr("placeholder","你的HOME(例：https://www.baidu.com)");
+	$(".info").after(" <p>&copy; </p>");
+});*/
+</script>
+			
+		
+	  
+	
+		
+
+
+<div class="copy">
+<i></i>
+<strong>本文作者：</strong>
+	
+	 
+			史迪奇<br>
+        
+	
+<strong>本文链接：</strong>
+	<a href="https://sdq3.gitee.io/JavaScript-DOM.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;JavaScript-DOM.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;JavaScript-DOM.html</a><br>
+</div>
+
+	  
+	</div>
+</div>
+<script>
+	(function(){
+		var jmz = {};
+		jmz.GetLength = function(str) {
+			var realLength = 0, len = str.length, charCode = -1;
+			for (var i = 0; i < len; i++) {
+				charCode = str.charCodeAt(i);
+				if (charCode >= 0 && charCode <= 128) 
+					  realLength += 1;
+				else
+					  realLength += 1;
+			}
+			return realLength;
+		};
+		//console.log(str);
+		var article = document.querySelector('.sdq-post article').innerHTML.trim();
+
+		var b = article.replace(/<.*?>/ig,"");
+		
+		$('.post-count').html(jmz.GetLength(b)+"字");
+	})()
+
+
+
+</script>
 
 
     				

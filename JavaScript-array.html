@@ -184,7 +184,7 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>90
+					<span>文章</span>96
 					<span>标签</span>0
 					<span>分类</span>14
 				</div>		
@@ -303,7 +303,7 @@
 
         <li>
           <a href="/categories/JavaScript/">JavaScript</a>
-          <span>7</span>
+          <span>13</span>
         </li>
 
         
@@ -384,23 +384,23 @@
       <ul>
         
           <li>
-            <a href="/TypeScript-Jquery.html">TypeScript 使用Jquery库</a>
+            <a href="/JavaScript-function.html">JavaScript 函数的定义和参数获取</a>
           </li>
         
           <li>
-            <a href="/TypeScript-Parcel.html">TypeScript 打包代码</a>
+            <a href="/JavaScript-definition-obtain.html">JavaScript 函数的定义和参数获取</a>
           </li>
         
           <li>
-            <a href="/TypeScript-NameSpace.html">TypeScript 命名空间</a>
+            <a href="/JavaScript-apply-Data.html">JavaScript 函数</a>
           </li>
         
           <li>
-            <a href="/TypeScript-genericity.html">TypeScript 泛型</a>
+            <a href="/JavaScript-BOM.html">JavaScript BOM</a>
           </li>
         
           <li>
-            <a href="/TypeScript-Enum.html">TypeScript 枚举类型</a>
+            <a href="/JavaScript-object-oriented.html">JavaScript 面向对象</a>
           </li>
         
       </ul>
@@ -771,7 +771,7 @@ var $main = document.querySelector('.main');
 			<h1>JavaScript 数据类型之(数组类型)</h1>
 		</div>
 	  <div id="post" class="sdq-post-Statistics">
-            <a>2021年07月09日</a>
+            <a>2021年08月18日</a>
 		  	<a class="post-count">99 字</a>
 		
 		  <a class=" -link" href="/categories/JavaScript/">JavaScript</a>
@@ -827,21 +827,21 @@ var $main = document.querySelector('.main');
 				<p><strong>JavaScript个人整理</strong></p>
 <a id="more"></a>
 
-<h1 id="Array可以包含任意的数据类型"><a href="#Array可以包含任意的数据类型" class="headerlink" title="Array可以包含任意的数据类型"></a>Array可以包含任意的数据类型</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$  <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];     <span class="comment">/*通过下标取值和赋值*/</span></span><br><span class="line">$  arr[<span class="number">0</span>]</span><br><span class="line">$  arr[<span class="number">3</span>] = <span class="number">3</span></span><br></pre></td></tr></table></figure>
-<h1 id="数组长度"><a href="#数组长度" class="headerlink" title="数组长度"></a>数组长度</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$   arr.length      <span class="comment">/*赋值过小值, 元素就会丢失*/</span></span><br></pre></td></tr></table></figure>
-<h1 id="indexOf-通过元素获得下标"><a href="#indexOf-通过元素获得下标" class="headerlink" title="indexOf  通过元素获得下标"></a>indexOf  通过元素获得下标</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$  <span class="keyword">var</span> arr = [<span class="number">0</span>,<span class="number">1</span>]; </span><br><span class="line">$  arr.indexOf(<span class="number">2</span>);  <span class="comment">/*输出1  字符串&quot;1&quot;和数字1是不同的*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="Array可以包含任意的数据类型"><a href="#Array可以包含任意的数据类型" class="headerlink" title="Array可以包含任意的数据类型"></a>Array可以包含任意的数据类型</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];     <span class="comment">/*通过下标取值和赋值*/</span></span><br><span class="line">arr[<span class="number">0</span>]</span><br><span class="line">arr[<span class="number">3</span>] = <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<h1 id="数组长度"><a href="#数组长度" class="headerlink" title="数组长度"></a>数组长度</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.length      <span class="comment">/*赋值过小值, 元素就会丢失*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="indexOf-通过元素获得下标"><a href="#indexOf-通过元素获得下标" class="headerlink" title="indexOf  通过元素获得下标"></a>indexOf  通过元素获得下标</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">0</span>,<span class="number">1</span>]; </span><br><span class="line">arr.indexOf(<span class="number">2</span>);  <span class="comment">/*输出1  字符串&quot;1&quot;和数字1是不同的*/</span></span><br></pre></td></tr></table></figure>
 <h1 id="slice-截取Array的一部分-返回一个数组"><a href="#slice-截取Array的一部分-返回一个数组" class="headerlink" title="slice() 截取Array的一部分, 返回一个数组"></a>slice() 截取Array的一部分, 返回一个数组</h1><p><strong>例子</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ slice()   <span class="comment">/*类似于String中的substring*/</span></span><br></pre></td></tr></table></figure>
-<h1 id="push-和pop-尾部"><a href="#push-和pop-尾部" class="headerlink" title="push()和pop()尾部"></a>push()和pop()尾部</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$   push:    <span class="comment">/*压入到头部*/</span></span><br><span class="line">$   shift:   <span class="comment">/*弹出头部的一个元素*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="push-和pop-尾部"><a href="#push-和pop-尾部" class="headerlink" title="push()和pop()尾部"></a>push()和pop()尾部</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">push:    <span class="comment">/*压入到头部*/</span></span><br><span class="line">shift:   <span class="comment">/*弹出头部的一个元素*/</span></span><br></pre></td></tr></table></figure>
 
 
-<h1 id="排序-sort"><a href="#排序-sort" class="headerlink" title="排序 sort()"></a>排序 sort()</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$  (<span class="number">3</span>)[<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>,<span class="string">&quot;C&quot;</span>]         <span class="comment">/*排序前*/</span></span><br><span class="line">$  arr.sort()         </span><br><span class="line">$  (<span class="number">3</span>)[<span class="string">&quot;A&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;C&quot;</span>]         <span class="comment">/*排序后*/</span></span><br></pre></td></tr></table></figure>
-<h1 id="元素反转-reverse"><a href="#元素反转-reverse" class="headerlink" title="元素反转 reverse()"></a>元素反转 reverse()</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$  (<span class="number">3</span>)[<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>,<span class="string">&quot;C&quot;</span>]         <span class="comment">/*反转前*/</span></span><br><span class="line">$  arr.reverse()        </span><br><span class="line">$  (<span class="number">3</span>)[<span class="string">&quot;C&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>]         <span class="comment">/*反转后*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="排序-sort"><a href="#排序-sort" class="headerlink" title="排序 sort()"></a>排序 sort()</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">3</span>)[<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>,<span class="string">&quot;C&quot;</span>]         <span class="comment">/*排序前*/</span></span><br><span class="line">arr.sort()         </span><br><span class="line">(<span class="number">3</span>)[<span class="string">&quot;A&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;C&quot;</span>]         <span class="comment">/*排序后*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="元素反转-reverse"><a href="#元素反转-reverse" class="headerlink" title="元素反转 reverse()"></a>元素反转 reverse()</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">3</span>)[<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>,<span class="string">&quot;C&quot;</span>]         <span class="comment">/*反转前*/</span></span><br><span class="line">arr.reverse()        </span><br><span class="line">(<span class="number">3</span>)[<span class="string">&quot;C&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>]         <span class="comment">/*反转后*/</span></span><br></pre></td></tr></table></figure>
 <h1 id="concat"><a href="#concat" class="headerlink" title="concat()"></a>concat()</h1><p><strong>注意concat()并没有修改数组, 只是会返回一个新的数组</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$  (<span class="number">3</span>)[<span class="string">&quot;C&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>]</span><br><span class="line">$  arr.concat([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])        </span><br><span class="line">$  (<span class="number">6</span>)[<span class="string">&quot;C&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">$  arr</span><br><span class="line">$  (<span class="number">3</span>)[<span class="string">&quot;C&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">3</span>)[<span class="string">&quot;C&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>]</span><br><span class="line">arr.concat([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])        </span><br><span class="line">(<span class="number">6</span>)[<span class="string">&quot;C&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">arr</span><br><span class="line">(<span class="number">3</span>)[<span class="string">&quot;C&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>]</span><br></pre></td></tr></table></figure>
 <h1 id="join-连接符"><a href="#join-连接符" class="headerlink" title="join 连接符"></a>join 连接符</h1><p><strong>例子</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$  (<span class="number">3</span>)[<span class="string">&quot;C&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>] </span><br><span class="line">$  arr.join(<span class="string">&#x27;-&#x27;</span>)         <span class="comment">/*使用特定的字符串连接*/</span>   </span><br><span class="line">$  <span class="comment">/*结果输出&quot;C-B-A&quot;*/</span>       </span><br></pre></td></tr></table></figure>
-<h1 id="多位数组"><a href="#多位数组" class="headerlink" title="多位数组"></a>多位数组</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$  arr = [[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>],[<span class="string">&quot;5&quot;</span>,<span class="string">&quot;6&quot;</span>]];</span><br><span class="line">$  arr[<span class="number">1</span>][<span class="number">1</span>]   </span><br><span class="line">$  <span class="comment">/*结果输出4*/</span>  </span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">3</span>)[<span class="string">&quot;C&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;A&quot;</span>] </span><br><span class="line">arr.join(<span class="string">&#x27;-&#x27;</span>)         <span class="comment">/*使用特定的字符串连接*/</span>   </span><br><span class="line"><span class="comment">/*结果输出&quot;C-B-A&quot;*/</span>       </span><br></pre></td></tr></table></figure>
+<h1 id="多位数组"><a href="#多位数组" class="headerlink" title="多位数组"></a>多位数组</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr = [[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>],[<span class="string">&quot;5&quot;</span>,<span class="string">&quot;6&quot;</span>]];</span><br><span class="line">arr[<span class="number">1</span>][<span class="number">1</span>]   </span><br><span class="line"><span class="comment">/*结果输出4*/</span>  </span><br></pre></td></tr></table></figure>
 
 
 

@@ -184,7 +184,7 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>90
+					<span>文章</span>96
 					<span>标签</span>0
 					<span>分类</span>14
 				</div>		
@@ -303,7 +303,7 @@
 
         <li>
           <a href="/categories/JavaScript/">JavaScript</a>
-          <span>7</span>
+          <span>13</span>
         </li>
 
         
@@ -384,23 +384,23 @@
       <ul>
         
           <li>
-            <a href="/TypeScript-Jquery.html">TypeScript 使用Jquery库</a>
+            <a href="/JavaScript-function.html">JavaScript 函数的定义和参数获取</a>
           </li>
         
           <li>
-            <a href="/TypeScript-Parcel.html">TypeScript 打包代码</a>
+            <a href="/JavaScript-definition-obtain.html">JavaScript 函数的定义和参数获取</a>
           </li>
         
           <li>
-            <a href="/TypeScript-NameSpace.html">TypeScript 命名空间</a>
+            <a href="/JavaScript-apply-Data.html">JavaScript 函数</a>
           </li>
         
           <li>
-            <a href="/TypeScript-genericity.html">TypeScript 泛型</a>
+            <a href="/JavaScript-BOM.html">JavaScript BOM</a>
           </li>
         
           <li>
-            <a href="/TypeScript-Enum.html">TypeScript 枚举类型</a>
+            <a href="/JavaScript-object-oriented.html">JavaScript 面向对象</a>
           </li>
         
       </ul>
@@ -771,7 +771,7 @@ var $main = document.querySelector('.main');
 			<h1>JavaScript 数据类型之(字符串类型)</h1>
 		</div>
 	  <div id="post" class="sdq-post-Statistics">
-            <a>2021年07月09日</a>
+            <a>2021年08月18日</a>
 		  	<a class="post-count">99 字</a>
 		
 		  <a class=" -link" href="/categories/JavaScript/">JavaScript</a>
@@ -829,15 +829,15 @@ var $main = document.querySelector('.main');
 
 <h1 id="字符串常用"><a href="#字符串常用" class="headerlink" title="字符串常用"></a>字符串常用</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="string">&quot;字符串&quot;</span>     <span class="comment">/*双引号包裹*/</span></span><br><span class="line">$ <span class="string">&#x27;字符串&#x27;</span>     <span class="comment">/*单引号包裹*/</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$  \<span class="string">&#x27;           /*代表它是一个字符串*/</span></span><br><span class="line"><span class="string">$  \n           /*换行*/</span></span><br><span class="line"><span class="string">$  \t           /*tab*/</span></span><br><span class="line"><span class="string">$  \u5d3d       /*Unicode字符*/</span></span><br><span class="line"><span class="string">$  \x45         /*Asll字符*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\<span class="string">&#x27;           /*代表它是一个字符串*/</span></span><br><span class="line"><span class="string">\n           /*换行*/</span></span><br><span class="line"><span class="string">\t           /*tab*/</span></span><br><span class="line"><span class="string">\u5d3d       /*Unicode字符*/</span></span><br><span class="line"><span class="string">\x45         /*Asll字符*/</span></span><br></pre></td></tr></table></figure>
 <h1 id="多行字符串编写"><a href="#多行字符串编写" class="headerlink" title="多行字符串编写"></a>多行字符串编写</h1><p><strong>例子</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="comment">/*tab键上面  esc键下面*/</span></span><br><span class="line">$    <span class="keyword">var</span> msg =</span><br><span class="line">$        haha</span><br><span class="line">$   哈哈</span><br><span class="line">$   蛤蛤  </span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="comment">/*tab键上面  esc键下面*/</span></span><br><span class="line">  <span class="keyword">var</span> msg =</span><br><span class="line">      haha</span><br><span class="line"> 哈哈</span><br><span class="line"> 蛤蛤  </span><br></pre></td></tr></table></figure>
 <h1 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h1><p><strong>例子</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="comment">/*tab键上面  esc键下面*/</span></span><br><span class="line">$    <span class="keyword">let</span> sdq = <span class="string">&quot;史迪奇&quot;</span>;</span><br><span class="line">$    <span class="keyword">let</span> sdz = <span class="string">&quot;史迪仔&quot;</span>;</span><br><span class="line">$    <span class="keyword">let</span> age = <span class="number">119</span>;</span><br><span class="line">$    <span class="keyword">let</span> sdqz = <span class="string">&#x27;我叫.$&#123;sdq&#125;&#x27;</span>;</span><br></pre></td></tr></table></figure>
-<h1 id="字符串长度"><a href="#字符串长度" class="headerlink" title="字符串长度"></a>字符串长度</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$   str.length</span><br></pre></td></tr></table></figure>
-<h1 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$  <span class="comment">/*是方法不是属性*/</span></span><br><span class="line">$  sdq.toUpperCase()          <span class="comment">/*大写*/</span></span><br><span class="line">$  sdq.LowerCase()          <span class="comment">/*小写*/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="comment">/*tab键上面  esc键下面*/</span></span><br><span class="line">  <span class="keyword">let</span> sdq = <span class="string">&quot;史迪奇&quot;</span>;</span><br><span class="line">  <span class="keyword">let</span> sdz = <span class="string">&quot;史迪仔&quot;</span>;</span><br><span class="line">  <span class="keyword">let</span> age = <span class="number">119</span>;</span><br><span class="line">  <span class="keyword">let</span> sdqz = <span class="string">&#x27;我叫.$&#123;sdq&#125;&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="字符串长度"><a href="#字符串长度" class="headerlink" title="字符串长度"></a>字符串长度</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.length</span><br></pre></td></tr></table></figure>
+<h1 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*是方法不是属性*/</span></span><br><span class="line">sdq.toUpperCase()          <span class="comment">/*大写*/</span></span><br><span class="line">sdq.LowerCase()          <span class="comment">/*小写*/</span></span><br></pre></td></tr></table></figure>
 <h1 id="字符串截取"><a href="#字符串截取" class="headerlink" title="字符串截取"></a>字符串截取</h1><p><strong>subsrting</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$  sdq.subsrting(<span class="number">1</span>)          <span class="comment">/*从第一个字符串截取到最后一个字符串*/</span></span><br><span class="line">$  sdq.LowerCase(<span class="number">1</span>,<span class="number">3</span>)          <span class="comment">/*包头不包尾*/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sdq.subsrting(<span class="number">1</span>)          <span class="comment">/*从第一个字符串截取到最后一个字符串*/</span></span><br><span class="line">sdq.LowerCase(<span class="number">1</span>,<span class="number">3</span>)          <span class="comment">/*包头不包尾*/</span></span><br></pre></td></tr></table></figure>
 			  </article>
 		</div>
 		

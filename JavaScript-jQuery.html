@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>归档：2021/7 -  我叫史迪奇</title>
+	<title>JavaScript jQuery -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -184,7 +184,7 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>90
+					<span>文章</span>96
 					<span>标签</span>0
 					<span>分类</span>14
 				</div>		
@@ -303,7 +303,7 @@
 
         <li>
           <a href="/categories/JavaScript/">JavaScript</a>
-          <span>7</span>
+          <span>13</span>
         </li>
 
         
@@ -384,23 +384,23 @@
       <ul>
         
           <li>
-            <a href="/TypeScript-Jquery.html">TypeScript 使用Jquery库</a>
+            <a href="/JavaScript-function.html">JavaScript 函数的定义和参数获取</a>
           </li>
         
           <li>
-            <a href="/TypeScript-Parcel.html">TypeScript 打包代码</a>
+            <a href="/JavaScript-definition-obtain.html">JavaScript 函数的定义和参数获取</a>
           </li>
         
           <li>
-            <a href="/TypeScript-NameSpace.html">TypeScript 命名空间</a>
+            <a href="/JavaScript-apply-Data.html">JavaScript 函数</a>
           </li>
         
           <li>
-            <a href="/TypeScript-genericity.html">TypeScript 泛型</a>
+            <a href="/JavaScript-BOM.html">JavaScript BOM</a>
           </li>
         
           <li>
-            <a href="/TypeScript-Enum.html">TypeScript 枚举类型</a>
+            <a href="/JavaScript-object-oriented.html">JavaScript 面向对象</a>
           </li>
         
       </ul>
@@ -760,339 +760,57 @@ var $main = document.querySelector('.main');
 
 
 
-
 <style>
-.sdq-post {
-	webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-}
-.sdq-post:hover{
-	webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-}
+	#sdqPost:hover{
+   		    background-color: rgba(255, 255, 255, 0.5)!important;
+	}	
 </style>
-
-
-<style>
-@media screen and (max-width: 1024px){
-	.sdq-more{    
-    opacity: 1!important;
-	}
-	.sdq-more{  
-		display: contents!important;	
-	}
-	.sdq-toping{
-		display: inline-block;
-		left: 10px;
-		top: 0;
-		z-index: 2;
-		color: #FFFFFF;
-		padding: 0 10px;
-		border-radius: 4px;
-		font-style: normal;
-		background-color: rgba(234, 67, 74, 0.7);
-	}
-	.sdq-post:hover .sdq-toping {display: inline-block!important;}
-}
-
-@media screen and (min-width: 1024px){
-	.sdq-toping{
-		display: none;
-		position: fixed;
-		left: 10px;
-		top: 0;
-		z-index: 2;color: #FFFFFF;
-		clip-path: polygon(100% 0, 100% 100%, 50% 70%, 0 100%, 0 0);
-		background-color: rgba(255, 0, 0, 0.51);    
-		background: -webkit-gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
-    	background: gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
-		height: 61px;
-		width: 41px;
-	}
-}
-	.sdq-more{   
-	display: inline-block;
-    float: right;
-    background-color: rgba(204, 196, 196, 0.45);
-    padding: .5rem 1rem;
-    border-radius: 4px;
-    color: #919191!important;
-    text-decoration: none;
-    opacity: 0;
-    -webkit-transition: opacity 1.2s;
-    transition: opacity 1.2s;
-    will-change: opacity;
-        -moz-user-select: none; /*火狐*/
-        -webkit-user-select: none; /*webkit浏览器*/
-        -ms-user-select: none; /*IE10*/
-        -khtml-user-select: none; /*早期浏览器*/
-        -o-user-select: none; /* Opera*/
-        user-select: none;
-	}
-	.sdq-post:hover .sdq-more {
-		opacity: 1;
-		animation: fade-in;
-		animation-duration: 0.6s;
-		-webkit-animation: fade-in 0.6s;
-	}
-	
-	@keyframes fade-in {  
-    0% {opacity: 0;}/*初始状态 透明度为0*/  
-    40% {opacity: 0;}/*过渡状态 透明度为0*/  
-    100% {opacity: 1;}/*结束状态 透明度为1*/  
-	}  
-	@-webkit-keyframes fade-in {/*针对webkit内核*/  
-		0% {opacity: 0;}  
-		40% {opacity: 0;}  
-		100% {opacity: 1;}  
-	}  
-	.sdq-post:hover .sdq-toping {display: block;}
-	.sdq-tags{
-	}
-	.sdq-tags a{
-		color: #fff; 
-		font-size: 15px; 
-	}
-	.sdq-tags a {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-	}
-	
-</style>
-
-
-<style>
-	
-@media screen and (min-width: 1024px){
-	.sdq-post:hover{
-   		border: none;
-		transform: translateY(-20px);
-		-webkit-transform: translateY(-20px);
-		-moz-transform: translateY(-20px);
-		background-color: rgba(255, 255, 255, 0.3);
-	}
-	.sdq-post{    
-		padding: 60px 70px!important;
-	}
-}
-	.sdq-post{    
-/*   		border: 1px #b8c7ff solid;*/
-		margin: 0px;    margin-bottom: 20px;
-        background-color: rgba(240, 248, 255, 0.4);
-	}
-</style>
-
-
-
-
-
-
 <div class="sdq">
-	<section class="sdq-posts">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/CSS%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8.html">
-					<div class="sdq-title"> 
-						CSS 三种基本选择器
-					</div>
-				</a>
-			</div>
-			
+	<div class="sdq-post" id="sdqPost">
+		<div class="sdq-title">
+			<h1>JavaScript jQuery</h1>
 		</div>
+	  <div id="post" class="sdq-post-Statistics">
+            <a>2021年08月18日</a>
+		  	<a class="post-count">99 字</a>
+		
+		  <a class=" -link" href="/categories/JavaScript/">JavaScript</a>
+		
+		
+	  </div>
+		
+		
+<div id="modal" style="display:none">
 
-			<article>
-				
-				<p><strong>CSS个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-					<a class="category-link" href="/categories/CSS/">CSS</a>
-				
-				
-			</div>
-		</div>
-		<a href="/CSS%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8.html"><div class="sdq-more">阅读更多...</div></a>
-		
+<aside id="article-toc" class="fixed-toc">
+    <div id="article-toc-inner">
+        <strong class="sidebar-title">目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AC%E5%BC%8F"><span class="toc-text">公式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">选择器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-text">事件</span></a></li></ol>
     </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Bodhi-Linux.html">
-					<div class="sdq-title"> 
-						Bodhi Linux安装教程(老电脑的福利)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-					<a class="category-link" href="/categories/Linux/">Linux</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Bodhi-Linux.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Arch-install.html">
-					<div class="sdq-title"> 
-						Arch系统包桌面傻瓜式安装 (有手就行)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>本人是Arch教徒过来传一下教</strong> </p>
-<img src="/images/Arch傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;">
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-					<a class="category-link" href="/categories/Linux/">Linux</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Arch-install.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Anroid-structure.html">
-					<div class="sdq-title"> 
-						Anroid 项目结构
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>未完待续</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-					<a class="category-link" href="/categories/Android/">Android</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Anroid-structure.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/HelloWorld.html">
-					<div class="sdq-title"> 
-						33种编程语言的HelloWorld
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>我的核心代码</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/HelloWorld.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-</section>
-	
-
-
-    <nav id="paging">
-      <a class="extend prev" rel="prev" href="/archives/2021/07/page/7/"><i class="sdqMsDanIconFont"></i></a><a class="page-number" href="/archives/2021/07/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2021/07/page/6/">6</a><a class="page-number" href="/archives/2021/07/page/7/">7</a><span class="page-number current">8</span>
-    </nav>
-  
-
-<!--
-        prev_text: '<i class="iconfont">&#xe617;</i>',
-        next_text: '<i class="iconfont">&#xe627;</i>'
--->
+</aside>
 </div>
 
 
+		
+			<a href="#modal" class="second">
+				<div class="i">
+						<i style="font-size:20px" class="sdq3 sdqfasong">
+						<span style="font-size:0px">
+						</i>
+				</div>
+			</a>
+
+
+
+
+<script>
+	$(".second .i").mouseover(function(){
+  $(".second .i span").css("font-size","18px");
+});
+	$(".second .i").mouseleave(function(){
+  $(".second .i span").css("font-size","0px");
+});
+</script>
 
 
 
@@ -1100,6 +818,147 @@ var $main = document.querySelector('.main');
 
 
 
+
+
+
+
+		<div>
+			  <article>
+				<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">   <span class="comment">// 选择器就是css的选择器</span></span><br><span class="line">   $(<span class="string">&#x27;#test-jquey&#x27;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">        <span class="title">alert</span>(<span class="params"><span class="string">&#x27;我叫史迪奇&#x27;</span></span>)</span></span><br><span class="line"><span class="function">   )</span></span><br><span class="line"><span class="function">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="comment">//原生js的css选择器</span></span><br><span class="line">    <span class="comment">// 标签选择器</span></span><br><span class="line">    <span class="built_in">document</span>.getElementsByTagName();</span><br><span class="line">    <span class="comment">// id选择器</span></span><br><span class="line">    <span class="built_in">document</span>.getElementsById();</span><br><span class="line">    <span class="comment">// 类 class选择器</span></span><br><span class="line">    <span class="built_in">document</span>.getElementsByClassName();</span><br><span class="line">    </span><br><span class="line"><span class="comment">// jQuery的css选择器</span></span><br><span class="line">    <span class="comment">// 标签选择器</span></span><br><span class="line">    $(<span class="string">&#x27;p&#x27;</span>).click()</span><br><span class="line">    <span class="comment">// id选择器</span></span><br><span class="line">    $(<span class="string">&#x27;#id3&#x27;</span>).click()</span><br><span class="line">    <span class="comment">// 类 class选择器</span></span><br><span class="line">    $(<span class="string">&#x27;.class3&#x27;</span>).click()</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h1><p><strong>鼠标事件</strong><br>    + mousedown()按下<br>    + mouseenter()当鼠标指针穿过元素时<br>    + mouseleave()离开<br>    + mousemove()移动<br>    + mouseout()当鼠标指针从元素上移开时<br>    + mouseover()点击结束<br>    + mouseup()元素上放松鼠标按钮</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    #divMove&#123;</span><br><span class="line">        width: 500px;</span><br><span class="line">        heigh: 500px;</span><br><span class="line">        border: 1px solid blue;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">    &lt;!--要求: 获取鼠标当前的一个坐标--&gt;</span><br><span class="line">    mouse: <span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;mouseMove&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">    &lt;div id=<span class="string">&quot;divMove&quot;</span>&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// 当网页元素加载完毕之后, 响应事件</span></span><br><span class="line">    $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">&#x27;#divMove&#x27;</span>).mousemove(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>))</span>&#123;</span><br><span class="line">            $(<span class="string">&#x27;#mouseMove&#x27;</span>).text(x:e.pageX + <span class="string">&#x27;y&#x27;</span>+e.pageY)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<style>
+    #divMove{
+        width: 500px;
+        heigh: 500px;
+        border: 1px solid blue;
+    }
+</style>
+<pre><code>&lt;!--要求: 获取鼠标当前的一个坐标--&gt;
+mouse: &lt;span id=&quot;mouseMove&quot;&gt;&lt;/span&gt;
+&lt;div id=&quot;divMove&quot;&gt;</code></pre>
+<script>
+    // 当网页元素加载完毕之后, 响应事件
+    $(function () {
+        $('#divMove').mousemove(function (e)){
+            $('#mouseMove').text(x:e.pageX + 'y'+e.pageY)
+        }
+    });
+</script>
+
+			  </article>
+		</div>
+		
+		
+
+
+		 	
+				<style>
+.veditor {
+    background: url('images/评论区/史迪奇睡觉.gif') no-repeat #fcfcfc!important;
+    background-size: auto 130px!important;
+    background-position: right bottom!important;
+}
+</style>
+<div id="vcomments" class="comment">
+
+</div>
+<script>
+	window.valine = new Valine({
+		el: '#vcomments',
+		appId: 'QqqoNLFAJzeDU9WPBVYk7UBj-MdYXbMMI',
+		appKey: 'hzwk2U93vOE4IdBWQXvda2mJ',
+		avatar: 'robohash',
+		placeholder: '我叫史迪奇',
+		path: window.location.pathname,   //[重点] 记得添加path路径
+		enableQQ:'true'
+	});
+	
+    // 使用方法 https://valine.js.org/quickstart.html
+	/*
+		var $vcomments = document.querySelector('.comment');
+		var $div= document.createElement('div');
+		$div.setAttribute("id","#vcomments");
+		$vcomments.appendChild($div);
+    new Valine({
+        el: '#vcomments',
+        appId: 'QqqoNLFAJzeDU9WPBVYk7UBj-MdYXbMMI',
+        appKey: 'hzwk2U93vOE4IdBWQXvda2mJ',
+		avatar: 'robohash',
+        placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ',
+    });*/
+        //placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ',
+</script>
+
+<script>
+/*//$(function() 
+$(window).load(function(){
+	// 去valine版权
+	$('.info').css("display","none");
+	// 去valine位移
+	$('.vmeta').css("padding-right","66px");
+	$('.vcontrol').css("padding-right","66px");
+	$('.vctrl').css("padding-right","66px");
+	$('#veditor').removeAttr("placeholder");
+	$("#veditor").attr("placeholder","输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ");
+	$('.v .vwrap .vheader .vinput:nth-child(3)').removeAttr("placeholder");
+	$(".v .vwrap .vheader .vinput:nth-child(3)").attr("placeholder","你的HOME(例：https://www.baidu.com)");
+	$(".info").after(" <p>&copy; </p>");
+});*/
+</script>
+			
+		
+	  
+	
+		
+
+
+<div class="copy">
+<i></i>
+<strong>本文作者：</strong>
+	
+	 
+			史迪奇<br>
+        
+	
+<strong>本文链接：</strong>
+	<a href="https://sdq3.gitee.io/JavaScript-jQuery.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;JavaScript-jQuery.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;JavaScript-jQuery.html</a><br>
+</div>
+
+	  
+	</div>
+</div>
+<script>
+	(function(){
+		var jmz = {};
+		jmz.GetLength = function(str) {
+			var realLength = 0, len = str.length, charCode = -1;
+			for (var i = 0; i < len; i++) {
+				charCode = str.charCodeAt(i);
+				if (charCode >= 0 && charCode <= 128) 
+					  realLength += 1;
+				else
+					  realLength += 1;
+			}
+			return realLength;
+		};
+		//console.log(str);
+		var article = document.querySelector('.sdq-post article').innerHTML.trim();
+
+		var b = article.replace(/<.*?>/ig,"");
+		
+		$('.post-count').html(jmz.GetLength(b)+"字");
+	})()
+
+
+
+</script>
 
 
     				

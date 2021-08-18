@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>归档：2021/7 -  我叫史迪奇</title>
+	<title>JavaScript BOM -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -184,7 +184,7 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>90
+					<span>文章</span>96
 					<span>标签</span>0
 					<span>分类</span>14
 				</div>		
@@ -303,7 +303,7 @@
 
         <li>
           <a href="/categories/JavaScript/">JavaScript</a>
-          <span>7</span>
+          <span>13</span>
         </li>
 
         
@@ -384,23 +384,23 @@
       <ul>
         
           <li>
-            <a href="/TypeScript-Jquery.html">TypeScript 使用Jquery库</a>
+            <a href="/JavaScript-function.html">JavaScript 函数的定义和参数获取</a>
           </li>
         
           <li>
-            <a href="/TypeScript-Parcel.html">TypeScript 打包代码</a>
+            <a href="/JavaScript-definition-obtain.html">JavaScript 函数的定义和参数获取</a>
           </li>
         
           <li>
-            <a href="/TypeScript-NameSpace.html">TypeScript 命名空间</a>
+            <a href="/JavaScript-apply-Data.html">JavaScript 函数</a>
           </li>
         
           <li>
-            <a href="/TypeScript-genericity.html">TypeScript 泛型</a>
+            <a href="/JavaScript-BOM.html">JavaScript BOM</a>
           </li>
         
           <li>
-            <a href="/TypeScript-Enum.html">TypeScript 枚举类型</a>
+            <a href="/JavaScript-object-oriented.html">JavaScript 面向对象</a>
           </li>
         
       </ul>
@@ -760,519 +760,57 @@ var $main = document.querySelector('.main');
 
 
 
-
 <style>
-.sdq-post {
-	webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-}
-.sdq-post:hover{
-	webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-}
+	#sdqPost:hover{
+   		    background-color: rgba(255, 255, 255, 0.5)!important;
+	}	
 </style>
-
-
-<style>
-@media screen and (max-width: 1024px){
-	.sdq-more{    
-    opacity: 1!important;
-	}
-	.sdq-more{  
-		display: contents!important;	
-	}
-	.sdq-toping{
-		display: inline-block;
-		left: 10px;
-		top: 0;
-		z-index: 2;
-		color: #FFFFFF;
-		padding: 0 10px;
-		border-radius: 4px;
-		font-style: normal;
-		background-color: rgba(234, 67, 74, 0.7);
-	}
-	.sdq-post:hover .sdq-toping {display: inline-block!important;}
-}
-
-@media screen and (min-width: 1024px){
-	.sdq-toping{
-		display: none;
-		position: fixed;
-		left: 10px;
-		top: 0;
-		z-index: 2;color: #FFFFFF;
-		clip-path: polygon(100% 0, 100% 100%, 50% 70%, 0 100%, 0 0);
-		background-color: rgba(255, 0, 0, 0.51);    
-		background: -webkit-gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
-    	background: gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
-		height: 61px;
-		width: 41px;
-	}
-}
-	.sdq-more{   
-	display: inline-block;
-    float: right;
-    background-color: rgba(204, 196, 196, 0.45);
-    padding: .5rem 1rem;
-    border-radius: 4px;
-    color: #919191!important;
-    text-decoration: none;
-    opacity: 0;
-    -webkit-transition: opacity 1.2s;
-    transition: opacity 1.2s;
-    will-change: opacity;
-        -moz-user-select: none; /*火狐*/
-        -webkit-user-select: none; /*webkit浏览器*/
-        -ms-user-select: none; /*IE10*/
-        -khtml-user-select: none; /*早期浏览器*/
-        -o-user-select: none; /* Opera*/
-        user-select: none;
-	}
-	.sdq-post:hover .sdq-more {
-		opacity: 1;
-		animation: fade-in;
-		animation-duration: 0.6s;
-		-webkit-animation: fade-in 0.6s;
-	}
-	
-	@keyframes fade-in {  
-    0% {opacity: 0;}/*初始状态 透明度为0*/  
-    40% {opacity: 0;}/*过渡状态 透明度为0*/  
-    100% {opacity: 1;}/*结束状态 透明度为1*/  
-	}  
-	@-webkit-keyframes fade-in {/*针对webkit内核*/  
-		0% {opacity: 0;}  
-		40% {opacity: 0;}  
-		100% {opacity: 1;}  
-	}  
-	.sdq-post:hover .sdq-toping {display: block;}
-	.sdq-tags{
-	}
-	.sdq-tags a{
-		color: #fff; 
-		font-size: 15px; 
-	}
-	.sdq-tags a {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-	}
-	
-</style>
-
-
-<style>
-	
-@media screen and (min-width: 1024px){
-	.sdq-post:hover{
-   		border: none;
-		transform: translateY(-20px);
-		-webkit-transform: translateY(-20px);
-		-moz-transform: translateY(-20px);
-		background-color: rgba(255, 255, 255, 0.3);
-	}
-	.sdq-post{    
-		padding: 60px 70px!important;
-	}
-}
-	.sdq-post{    
-/*   		border: 1px #b8c7ff solid;*/
-		margin: 0px;    margin-bottom: 20px;
-        background-color: rgba(240, 248, 255, 0.4);
-	}
-</style>
-
-
-
-
-
-
 <div class="sdq">
-	<section class="sdq-posts">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/python-jjcc.html">
-					<div class="sdq-title"> 
-						Python 基本运算符(我失忆了)
-					</div>
-				</a>
-			</div>
-			
+	<div class="sdq-post" id="sdqPost">
+		<div class="sdq-title">
+			<h1>JavaScript BOM</h1>
 		</div>
+	  <div id="post" class="sdq-post-Statistics">
+            <a>2021年08月18日</a>
+		  	<a class="post-count">99 字</a>
+		
+		  <a class=" -link" href="/categories/JavaScript/">JavaScript</a>
+		
+		
+	  </div>
+		
+		
+<div id="modal" style="display:none">
 
-			<article>
-				
-				<p><strong>我真的失忆了</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-					<a class="category-link" href="/categories/Python/">Python</a>
-				
-				
-			</div>
-		</div>
-		<a href="/python-jjcc.html"><div class="sdq-more">阅读更多...</div></a>
-		
+<aside id="article-toc" class="fixed-toc">
+    <div id="article-toc-inner">
+        <strong class="sidebar-title">目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#window"><span class="toc-text">window</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Navigator"><span class="toc-text">Navigator</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#screen"><span class="toc-text">screen</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#location-%E9%87%8D%E8%A6%81"><span class="toc-text">location (重要)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#document"><span class="toc-text">document</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#history"><span class="toc-text">history</span></a></li></ol>
     </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/python-type.html">
-					<div class="sdq-title"> 
-						Python 数据类型(我失忆了)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>我真的失忆了</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-					<a class="category-link" href="/categories/Python/">Python</a>
-				
-				
-			</div>
-		</div>
-		<a href="/python-type.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/python-zfc.html">
-					<div class="sdq-title"> 
-						Python 字符串(我失忆了)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>我真的失忆了</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-					<a class="category-link" href="/categories/Python/">Python</a>
-				
-				
-			</div>
-		</div>
-		<a href="/python-zfc.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Android-compile.html">
-					<div class="sdq-title"> 
-						Android同步源码和编译ROM傻瓜式 (有手就行)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>本人是用Arch，顺便来传一下教</strong><br><img src="/images/编译Android/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-					<a class="category-link" href="/categories/Linux/">Linux</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Android-compile.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/xcyd.html">
-					<div class="sdq-title"> 
-						下次一定
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>本人制作简单的一款软件</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-					<a class="category-link" href="/categories/Android/">Android</a>
-				
-				
-			</div>
-		</div>
-		<a href="/xcyd.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Arch-Wsl-install.html">
-					<div class="sdq-title"> 
-						Arch wsl的傻瓜式安装 (有手就行)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>本人是Arch教徒过来传一下教</strong> </p>
-<img src="/images/wsl傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;">
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-					<a class="category-link" href="/categories/Linux/">Linux</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Arch-Wsl-install.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Vue-usage.html">
-					<div class="sdq-title"> 
-						Vue.js 表单输入绑定的基础用法
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>Vue.js个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-					<a class="category-link" href="/categories/Vue-js/">Vue.js</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Vue-usage.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Vue-network-books.html">
-					<div class="sdq-title"> 
-						Vue.js 网页笔记本
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>Vue.js个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-					<a class="category-link" href="/categories/Vue-js/">Vue.js</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Vue-network-books.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/one-Vue.html">
-					<div class="sdq-title"> 
-						第一个Vue.js
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>Vue.js个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-					<a class="category-link" href="/categories/Vue-js/">Vue.js</a>
-				
-				
-			</div>
-		</div>
-		<a href="/one-Vue.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/String-compare.html">
-					<div class="sdq-title"> 
-						String 比较
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>个人笔记</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年07月09日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/String-compare.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-</section>
-	
-
-
-    <nav id="paging">
-      <a class="extend prev" rel="prev" href="/archives/2021/07/page/3/"><i class="sdqMsDanIconFont"></i></a><a class="page-number" href="/archives/2021/07/">1</a><a class="page-number" href="/archives/2021/07/page/2/">2</a><a class="page-number" href="/archives/2021/07/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/2021/07/page/5/">5</a><a class="page-number" href="/archives/2021/07/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2021/07/page/8/">8</a><a class="extend next" rel="next" href="/archives/2021/07/page/5/"><i class="sdqMsDanIconFont"></i></a>
-    </nav>
-  
-
-<!--
-        prev_text: '<i class="iconfont">&#xe617;</i>',
-        next_text: '<i class="iconfont">&#xe627;</i>'
--->
+</aside>
 </div>
 
 
+		
+			<a href="#modal" class="second">
+				<div class="i">
+						<i style="font-size:20px" class="sdq3 sdqfasong">
+						<span style="font-size:0px">
+						</i>
+				</div>
+			</a>
+
+
+
+
+<script>
+	$(".second .i").mouseover(function(){
+  $(".second .i span").css("font-size","18px");
+});
+	$(".second .i").mouseleave(function(){
+  $(".second .i span").css("font-size","0px");
+});
+</script>
 
 
 
@@ -1280,6 +818,153 @@ var $main = document.querySelector('.main');
 
 
 
+
+
+
+
+		<div>
+			  <article>
+				<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="window"><a href="#window" class="headerlink" title="window"></a>window</h1><p><strong>作用: 有关浏览器窗口</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.alert(<span class="number">1</span>)</span><br><span class="line">undefind</span><br><span class="line"><span class="built_in">window</span>.innerHeight</span><br><span class="line"><span class="number">790</span></span><br><span class="line"><span class="built_in">window</span>.innerWidth</span><br><span class="line"><span class="number">918</span></span><br><span class="line"><span class="built_in">window</span>.outerHeight</span><br><span class="line"><span class="number">28</span></span><br><span class="line"><span class="built_in">window</span>.outerWidth</span><br><span class="line"><span class="number">160</span></span><br></pre></td></tr></table></figure>
+<h1 id="Navigator"><a href="#Navigator" class="headerlink" title="Navigator"></a>Navigator</h1><p><strong>作用: 封装浏览器信息</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">navigator.appName</span><br><span class="line"><span class="string">&quot;Netscape&quot;</span></span><br><span class="line">navigator.appVersion</span><br><span class="line"><span class="string">&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36&quot;</span></span><br><span class="line">navigator.userAgent</span><br><span class="line"><span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36&quot;</span></span><br><span class="line">navigator.platform</span><br><span class="line"><span class="string">&quot;Win32&quot;</span></span><br></pre></td></tr></table></figure>
+<h1 id="screen"><a href="#screen" class="headerlink" title="screen"></a>screen</h1><p><strong>作用: 代表屏幕尺寸</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">screen.width</span><br><span class="line"><span class="number">1536</span></span><br><span class="line">screen.height</span><br><span class="line"><span class="number">864</span></span><br></pre></td></tr></table></figure>
+<h1 id="location-重要"><a href="#location-重要" class="headerlink" title="location (重要)"></a>location (重要)</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 主机</span></span><br><span class="line">host: <span class="string">&quot;www.baidu.com&quot;</span></span><br><span class="line"><span class="comment">// 当前指向的位置</span></span><br><span class="line">href: <span class="string">&quot;http://www.baidu.com/&quot;</span></span><br><span class="line"><span class="comment">// 协议</span></span><br><span class="line">protocol: <span class="string">&quot;http:&quot;</span></span><br><span class="line"><span class="comment">//重新加载/刷新</span></span><br><span class="line">reload: ƒ reload()</span><br><span class="line"><span class="comment">// 设置新的地址</span></span><br><span class="line">location.assign(<span class="string">&#x27;https://sdq3.gitee.io/&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="document"><a href="#document" class="headerlink" title="document"></a>document</h1><p><strong>document 表示当前页面, HTML DOM文档树</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.title</span><br><span class="line"><span class="string">&quot;百度一下，你就知道&quot;</span></span><br><span class="line"><span class="built_in">document</span>.title = <span class="string">&quot;我叫史迪奇&quot;</span></span><br><span class="line"><span class="string">&quot;我叫史迪奇&quot;</span></span><br></pre></td></tr></table></figure>
+<p><strong>获取具体的文档树节点</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span> <span class="attr">id</span> =<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>史迪奇<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>史迪奇国王<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>史迪奇骑士<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> dl = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;app&#x27;</span>)</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>获取cookie</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.cookie</span><br><span class="line"><span class="string">&quot;BIDUPSID=EC9E21CA08B01D9E2E577F635293067...&quot;</span></span><br></pre></td></tr></table></figure>
+<p><strong>劫持cookie原理</strong><br>    + 劫持cookie: 获取你的cookie然后上传的它的服务器<br>    + 预防: 服务器端设置 cokie: httpOnly</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;sdq.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="history"><a href="#history" class="headerlink" title="history"></a>history</h1><p><strong>代表浏览器的历史记录</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 前进</span></span><br><span class="line">history.forward()</span><br><span class="line"><span class="comment">// 返回</span></span><br><span class="line">history.back()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			  </article>
+		</div>
+		
+		
+
+
+		 	
+				<style>
+.veditor {
+    background: url('images/评论区/史迪奇睡觉.gif') no-repeat #fcfcfc!important;
+    background-size: auto 130px!important;
+    background-position: right bottom!important;
+}
+</style>
+<div id="vcomments" class="comment">
+
+</div>
+<script>
+	window.valine = new Valine({
+		el: '#vcomments',
+		appId: 'QqqoNLFAJzeDU9WPBVYk7UBj-MdYXbMMI',
+		appKey: 'hzwk2U93vOE4IdBWQXvda2mJ',
+		avatar: 'robohash',
+		placeholder: '我叫史迪奇',
+		path: window.location.pathname,   //[重点] 记得添加path路径
+		enableQQ:'true'
+	});
+	
+    // 使用方法 https://valine.js.org/quickstart.html
+	/*
+		var $vcomments = document.querySelector('.comment');
+		var $div= document.createElement('div');
+		$div.setAttribute("id","#vcomments");
+		$vcomments.appendChild($div);
+    new Valine({
+        el: '#vcomments',
+        appId: 'QqqoNLFAJzeDU9WPBVYk7UBj-MdYXbMMI',
+        appKey: 'hzwk2U93vOE4IdBWQXvda2mJ',
+		avatar: 'robohash',
+        placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ',
+    });*/
+        //placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ',
+</script>
+
+<script>
+/*//$(function() 
+$(window).load(function(){
+	// 去valine版权
+	$('.info').css("display","none");
+	// 去valine位移
+	$('.vmeta').css("padding-right","66px");
+	$('.vcontrol').css("padding-right","66px");
+	$('.vctrl').css("padding-right","66px");
+	$('#veditor').removeAttr("placeholder");
+	$("#veditor").attr("placeholder","输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ");
+	$('.v .vwrap .vheader .vinput:nth-child(3)').removeAttr("placeholder");
+	$(".v .vwrap .vheader .vinput:nth-child(3)").attr("placeholder","你的HOME(例：https://www.baidu.com)");
+	$(".info").after(" <p>&copy; </p>");
+});*/
+</script>
+			
+		
+	  
+	
+		
+
+
+<div class="copy">
+<i></i>
+<strong>本文作者：</strong>
+	
+	 
+			史迪奇<br>
+        
+	
+<strong>本文链接：</strong>
+	<a href="https://sdq3.gitee.io/JavaScript-BOM.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;JavaScript-BOM.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;JavaScript-BOM.html</a><br>
+</div>
+
+	  
+	</div>
+</div>
+<script>
+	(function(){
+		var jmz = {};
+		jmz.GetLength = function(str) {
+			var realLength = 0, len = str.length, charCode = -1;
+			for (var i = 0; i < len; i++) {
+				charCode = str.charCodeAt(i);
+				if (charCode >= 0 && charCode <= 128) 
+					  realLength += 1;
+				else
+					  realLength += 1;
+			}
+			return realLength;
+		};
+		//console.log(str);
+		var article = document.querySelector('.sdq-post article').innerHTML.trim();
+
+		var b = article.replace(/<.*?>/ig,"");
+		
+		$('.post-count').html(jmz.GetLength(b)+"字");
+	})()
+
+
+
+</script>
 
 
     				

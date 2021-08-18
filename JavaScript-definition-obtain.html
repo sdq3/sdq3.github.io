@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>JavaScript JavaScript (函数之定义和获取) -  我叫史迪奇</title>
+	<title>JavaScript (函数之定义和获取) -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -184,7 +184,7 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>90
+					<span>文章</span>96
 					<span>标签</span>0
 					<span>分类</span>14
 				</div>		
@@ -303,7 +303,7 @@
 
         <li>
           <a href="/categories/JavaScript/">JavaScript</a>
-          <span>7</span>
+          <span>13</span>
         </li>
 
         
@@ -384,23 +384,23 @@
       <ul>
         
           <li>
-            <a href="/TypeScript-Jquery.html">TypeScript 使用Jquery库</a>
+            <a href="/JavaScript-function.html">JavaScript 函数的定义和参数获取</a>
           </li>
         
           <li>
-            <a href="/TypeScript-Parcel.html">TypeScript 打包代码</a>
+            <a href="/JavaScript-definition-obtain.html">JavaScript 函数的定义和参数获取</a>
           </li>
         
           <li>
-            <a href="/TypeScript-NameSpace.html">TypeScript 命名空间</a>
+            <a href="/JavaScript-apply-Data.html">JavaScript 函数</a>
           </li>
         
           <li>
-            <a href="/TypeScript-genericity.html">TypeScript 泛型</a>
+            <a href="/JavaScript-BOM.html">JavaScript BOM</a>
           </li>
         
           <li>
-            <a href="/TypeScript-Enum.html">TypeScript 枚举类型</a>
+            <a href="/JavaScript-object-oriented.html">JavaScript 面向对象</a>
           </li>
         
       </ul>
@@ -768,10 +768,10 @@ var $main = document.querySelector('.main');
 <div class="sdq">
 	<div class="sdq-post" id="sdqPost">
 		<div class="sdq-title">
-			<h1>JavaScript JavaScript (函数之定义和获取)</h1>
+			<h1>JavaScript (函数之定义和获取)</h1>
 		</div>
 	  <div id="post" class="sdq-post-Statistics">
-            <a>2021年07月09日</a>
+            <a>2021年08月18日</a>
 		  	<a class="post-count">99 字</a>
 		
 		  <a class=" -link" href="/categories/JavaScript/">JavaScript</a>
@@ -827,17 +827,17 @@ var $main = document.querySelector('.main');
 				<p><strong>JavaScript个人整理</strong></p>
 <a id="more"></a>
 
-<h1 id="绝对值函数"><a href="#绝对值函数" class="headerlink" title="绝对值函数"></a>绝对值函数</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$  <span class="function"><span class="keyword">function</span> <span class="title">abs</span>(<span class="params">x</span>) </span>&#123;&#125;</span><br><span class="line">$      <span class="keyword">if</span>(x&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">$          <span class="keyword">return</span> x;</span><br><span class="line">$      &#125;</span><br><span class="line">$      <span class="keyword">else</span> &#123;</span><br><span class="line">$          <span class="keyword">return</span> -x;</span><br><span class="line">$      &#125;</span><br><span class="line">$  &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="绝对值函数"><a href="#绝对值函数" class="headerlink" title="绝对值函数"></a>绝对值函数</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">abs</span>(<span class="params">x</span>) </span>&#123;&#125;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> -x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>一旦执行return 代表函数结束,返回结果 没有执行return, 函数执行完也会返回结果 undefined</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$  <span class="keyword">var</span> abs = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;&#125;</span><br><span class="line">$      <span class="keyword">if</span>(x&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">$          <span class="keyword">return</span> x;</span><br><span class="line">$      &#125;</span><br><span class="line">$      <span class="keyword">else</span> &#123;</span><br><span class="line">$          <span class="keyword">return</span> -x;</span><br><span class="line">$      &#125;</span><br><span class="line">$  &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> abs = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;&#125;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> -x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>function(x){….}是匿名函数, 可以把结果赋值给abs, 可以调用函数</strong></p>
 <h1 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h1><p><strong>可以传任意个参数, 也可以不传递参数 假设不传递参数, 如何规避</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$  <span class="keyword">var</span> abs = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;&#125;</span><br><span class="line">$      <span class="comment">//手动抛出异常来判断</span></span><br><span class="line">$      <span class="keyword">if</span> (<span class="keyword">typeof</span> x!== <span class="string">&quot;number&quot;</span>) &#123;</span><br><span class="line">$          thow <span class="string">&quot;Not a Number&quot;</span>;</span><br><span class="line">$      &#125;</span><br><span class="line">$      <span class="keyword">if</span>(x&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">$          <span class="keyword">return</span> x;</span><br><span class="line">$      &#125;</span><br><span class="line">$      <span class="keyword">else</span> &#123;</span><br><span class="line">$          <span class="keyword">return</span> -x;</span><br><span class="line">$      &#125;</span><br><span class="line">$  &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="arguments-传递进来的所有的参数是一个数组"><a href="#arguments-传递进来的所有的参数是一个数组" class="headerlink" title="arguments 传递进来的所有的参数是一个数组"></a>arguments 传递进来的所有的参数是一个数组</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$  <span class="keyword">var</span> abs = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;&#125;</span><br><span class="line">$      <span class="built_in">console</span>.log(<span class="string">&quot;x=&gt;&quot;</span>+x)</span><br><span class="line">$          thow <span class="string">&quot;Not a Number&quot;</span>;</span><br><span class="line">$      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i&lt;<span class="built_in">arguments</span>.length;i++)&#123;</span><br><span class="line">$          <span class="built_in">console</span>,log(<span class="built_in">arguments</span>[i]);</span><br><span class="line">$      &#125;</span><br><span class="line">$      <span class="keyword">if</span>(x&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">$          <span class="keyword">return</span> x;</span><br><span class="line">$      &#125;</span><br><span class="line">$      <span class="keyword">else</span> &#123;</span><br><span class="line">$          <span class="keyword">return</span> -x;</span><br><span class="line">$      &#125;</span><br><span class="line">$  &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> abs = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;&#125;</span><br><span class="line">    <span class="comment">//手动抛出异常来判断</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> x!== <span class="string">&quot;number&quot;</span>) &#123;</span><br><span class="line">        thow <span class="string">&quot;Not a Number&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> -x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="arguments-传递进来的所有的参数是一个数组"><a href="#arguments-传递进来的所有的参数是一个数组" class="headerlink" title="arguments 传递进来的所有的参数是一个数组"></a>arguments 传递进来的所有的参数是一个数组</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> abs = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;&#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;x=&gt;&quot;</span>+x)</span><br><span class="line">        thow <span class="string">&quot;Not a Number&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i&lt;<span class="built_in">arguments</span>.length;i++)&#123;</span><br><span class="line">        <span class="built_in">console</span>,log(<span class="built_in">arguments</span>[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> -x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="rest"><a href="#rest" class="headerlink" title="rest"></a>rest</h1><p><strong>以前:</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$   <span class="keyword">if</span> (<span class="built_in">arguments</span>.;length&gt;<span class="number">2</span>) &#123;</span><br><span class="line">$   <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">2</span>;i&lt;<span class="built_in">arguments</span>.length;i++) &#123;</span><br><span class="line">$        &#125;</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">arguments</span>.;length&gt;<span class="number">2</span>) &#123;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">2</span>;i&lt;<span class="built_in">arguments</span>.length;i++) &#123;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>ES6的引入的新特性, 获取除了已经定义的参数之外的所有参数</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$   <span class="function"><span class="keyword">function</span> <span class="title">sdq</span>(<span class="params">s,d,q,... rest</span>) </span>&#123;&#125;</span><br><span class="line">$       <span class="built_in">console</span>.log(<span class="string">&quot;s=&gt;&quot;</span>+s);</span><br><span class="line">$       <span class="built_in">console</span>.log(<span class="string">&quot;d=&gt;&quot;</span>+d);</span><br><span class="line">$       <span class="built_in">console</span>.log(<span class="string">&quot;q=&gt;&quot;</span>+q);</span><br><span class="line">$       <span class="built_in">console</span>.log(rest);</span><br><span class="line">$   &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sdq</span>(<span class="params">s,d,q,... rest</span>) </span>&#123;&#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;s=&gt;&quot;</span>+s);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;d=&gt;&quot;</span>+d);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;q=&gt;&quot;</span>+q);</span><br><span class="line">    <span class="built_in">console</span>.log(rest);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>rest参数只能写在最后面, 必须用…标识</strong></p>
 
 			  </article>
