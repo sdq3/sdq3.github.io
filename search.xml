@@ -683,6 +683,22 @@ var tools = (function(){
       </categories>
   </entry>
   <entry>
+    <title>CSS 伪类选择器</title>
+    <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">  &#125;</span><br><span class="line">  ul li:first-child&#123;   //first-child意思是选中第一个</span><br><span class="line">      color: red;   //红色字体</span><br><span class="line">  &#125;</span><br><span class="line">  ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">      color: blue;   //红色字体</span><br><span class="line">  &#125;</span><br><span class="line">  p:nth-child(2)&#123;   //选中p1: 定位到父元素, 选择当前的第一个元素也就是选择当前p元素的父级元素, 选中父级元素的第一个, 并且是当前元素才生效</span><br><span class="line">      color: yellow;   //黄色字体</span><br><span class="line">  &#125;</span><br><span class="line">  ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">      color: red;   //红色字体</span><br><span class="line">  &#125;</span><br><span class="line">  p:nth-of-type(2)&#123;   //nth-of-type意思是选中父类下元素的第二个类型</span><br><span class="line">      color: red;   //红色字体</span><br><span class="line">  &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇骑士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇打手<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇国王<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
     <title>CSS 三种基本选择器</title>
     <url>/CSS%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
@@ -700,22 +716,6 @@ var tools = (function(){
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><strong>标签选择器: 选择一类标签 标签名{}</strong></p>
 <p><strong>类/class选择器: 选择所有的class属性一致的标签, 跨标签 .类名{}</strong></p>
 <p><strong>id选择器: 全局唯一 id名{}</strong></p>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>CSS 伪类选择器</title>
-    <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
-    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">  &#125;</span><br><span class="line">  ul li:first-child&#123;   //first-child意思是选中第一个</span><br><span class="line">      color: red;   //红色字体</span><br><span class="line">  &#125;</span><br><span class="line">  ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">      color: blue;   //红色字体</span><br><span class="line">  &#125;</span><br><span class="line">  p:nth-child(2)&#123;   //选中p1: 定位到父元素, 选择当前的第一个元素也就是选择当前p元素的父级元素, 选中父级元素的第一个, 并且是当前元素才生效</span><br><span class="line">      color: yellow;   //黄色字体</span><br><span class="line">  &#125;</span><br><span class="line">  ul li:last-child&#123;   //last-child意思是选中最后一个</span><br><span class="line">      color: red;   //红色字体</span><br><span class="line">  &#125;</span><br><span class="line">  p:nth-of-type(2)&#123;   //nth-of-type意思是选中父类下元素的第二个类型</span><br><span class="line">      color: red;   //红色字体</span><br><span class="line">  &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇骑士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇打手<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>史迪奇国王<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">$ <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
 ]]></content>
       <categories>
         <category>CSS</category>
@@ -1642,23 +1642,6 @@ $</style>
       </categories>
   </entry>
   <entry>
-    <title>JavaScript 数据类型之(分支和循环)</title>
-    <url>/JavaScript-branch-loop.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="if-判断-循环"><a href="#if-判断-循环" class="headerlink" title="if 判断/循环"></a>if 判断/循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">if</span>(sdq &gt; <span class="number">3</span>)&#123;    <span class="comment">/*第一个判断*/</span></span><br><span class="line"> alert(<span class="string">&quot;史迪奇骑士&quot;</span>);</span><br><span class="line"> &#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(sdq &lt; <span class="number">5</span>)&#123;    <span class="comment">/*第二个判断*/</span></span><br><span class="line"> alert(<span class="string">&quot;史迪奇国王&quot;</span>);</span><br><span class="line"> &#125;</span><br><span class="line"><span class="keyword">else</span> &#123;               <span class="comment">/*否则*/</span></span><br><span class="line"> alert(<span class="string">&quot;史迪奇战士&quot;</span>);</span><br><span class="line"> &#125; </span><br></pre></td></tr></table></figure>
-<h1 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(sdq &lt; <span class="number">100</span>)&#123;</span><br><span class="line">     sdq = sdq + <span class="number">1</span>;</span><br><span class="line">     <span class="built_in">console</span>.log(sdq)</span><br><span class="line">     &#125;  </span><br></pre></td></tr></table></figure>
-<h1 id="do-while-循环"><a href="#do-while-循环" class="headerlink" title="do while 循环"></a>do while 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">     sdq = sdq + <span class="number">1</span>;</span><br><span class="line">     <span class="built_in">console</span>.log(sdq)</span><br><span class="line">     &#125; </span><br><span class="line"> <span class="keyword">while</span>(sdq &lt; <span class="number">100</span>) </span><br></pre></td></tr></table></figure>
-<h1 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++)&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="forEach-循环"><a href="#forEach-循环" class="headerlink" title="forEach 循环"></a>forEach 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> sdq = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line"><span class="comment">/*函数*/</span></span><br><span class="line">sdq.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h1 id="for-…-in-循环"><a href="#for-…-in-循环" class="headerlink" title="for … in 循环"></a>for … in 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> sdq <span class="keyword">in</span> age) &#123;</span><br><span class="line">    <span class="keyword">if</span> (sdq.hasOwnProperty(sdz)) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;存在&quot;</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(sdq[sdz])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
     <title>JavaScript 数据类型之(Map和Set)</title>
     <url>/JavaScript-Map-Set.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
@@ -1672,6 +1655,23 @@ $</style>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">100</span>]]);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> map)&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(x)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>遍历set</strong></p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> set = <span class="keyword">new</span> set([[<span class="string">&quot;史迪奇&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;史迪仔&quot;</span>,<span class="number">100</span>],[<span class="string">&quot;强霸&quot;</span>,<span class="number">100</span>]]);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> set)&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(x)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript 数据类型之(分支和循环)</title>
+    <url>/JavaScript-branch-loop.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="if-判断-循环"><a href="#if-判断-循环" class="headerlink" title="if 判断/循环"></a>if 判断/循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">if</span>(sdq &gt; <span class="number">3</span>)&#123;    <span class="comment">/*第一个判断*/</span></span><br><span class="line"> alert(<span class="string">&quot;史迪奇骑士&quot;</span>);</span><br><span class="line"> &#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(sdq &lt; <span class="number">5</span>)&#123;    <span class="comment">/*第二个判断*/</span></span><br><span class="line"> alert(<span class="string">&quot;史迪奇国王&quot;</span>);</span><br><span class="line"> &#125;</span><br><span class="line"><span class="keyword">else</span> &#123;               <span class="comment">/*否则*/</span></span><br><span class="line"> alert(<span class="string">&quot;史迪奇战士&quot;</span>);</span><br><span class="line"> &#125; </span><br></pre></td></tr></table></figure>
+<h1 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(sdq &lt; <span class="number">100</span>)&#123;</span><br><span class="line">     sdq = sdq + <span class="number">1</span>;</span><br><span class="line">     <span class="built_in">console</span>.log(sdq)</span><br><span class="line">     &#125;  </span><br></pre></td></tr></table></figure>
+<h1 id="do-while-循环"><a href="#do-while-循环" class="headerlink" title="do while 循环"></a>do while 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">     sdq = sdq + <span class="number">1</span>;</span><br><span class="line">     <span class="built_in">console</span>.log(sdq)</span><br><span class="line">     &#125; </span><br><span class="line"> <span class="keyword">while</span>(sdq &lt; <span class="number">100</span>) </span><br></pre></td></tr></table></figure>
+<h1 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++)&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="forEach-循环"><a href="#forEach-循环" class="headerlink" title="forEach 循环"></a>forEach 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> sdq = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line"><span class="comment">/*函数*/</span></span><br><span class="line">sdq.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="for-…-in-循环"><a href="#for-…-in-循环" class="headerlink" title="for … in 循环"></a>for … in 循环</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> sdq <span class="keyword">in</span> age) &#123;</span><br><span class="line">    <span class="keyword">if</span> (sdq.hasOwnProperty(sdz)) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;存在&quot;</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(sdq[sdz])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>
@@ -1910,20 +1910,6 @@ $
       </categories>
   </entry>
   <entry>
-    <title>SQL Server T-SQL 视图</title>
-    <url>/SQL-try.html</url>
-    <content><![CDATA[<p><strong>SQL Server个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ create view 视图(字段别名) as select 字段 from 表 WITH CHECK OPTION</span><br></pre></td></tr></table></figure>
-<h1 id="向视图插入数据"><a href="#向视图插入数据" class="headerlink" title="向视图插入数据"></a>向视图插入数据</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ insert 视图 values(<span class="string">&#x27;数据&#x27;</span>) </span><br></pre></td></tr></table></figure>
-<h1 id="查询视图数据"><a href="#查询视图数据" class="headerlink" title="查询视图数据"></a>查询视图数据</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ select 字段 from 视图</span><br></pre></td></tr></table></figure>
-<h1 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ update 视图 <span class="built_in">set</span> 修改的字段=<span class="string">&#x27;修改的数据&#x27;</span> <span class="built_in">where</span> 匹配字段=<span class="string">&#x27;匹配数据&#x27;</span> </span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-  </entry>
-  <entry>
     <title>SQL Server T-SQL 存储过程</title>
     <url>/SQL-storage.html</url>
     <content><![CDATA[<p><strong>SQL Server个人整理</strong></p>
@@ -1940,27 +1926,17 @@ $
       </categories>
   </entry>
   <entry>
-    <title>TypeScript 打包代码</title>
-    <url>/TypeScript-Parcel.html</url>
-    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
+    <title>SQL Server T-SQL 视图</title>
+    <url>/SQL-try.html</url>
+    <content><![CDATA[<p><strong>SQL Server个人整理</strong></p>
 <a id="more"></a>
 
-<p><strong><a href="https://wwr.lanzoui.com/iFfQ7shdb4d">未打包文件</a></strong></p>
-<ul>
-<li>密码: sdq3</li>
-</ul>
-<h1 id="Parcel打包"><a href="#Parcel打包" class="headerlink" title="Parcel打包"></a>Parcel打包</h1><h3 id="Parcel安装方法"><a href="#Parcel安装方法" class="headerlink" title="Parcel安装方法"></a>Parcel安装方法</h3><p><strong>用yarn来安装</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yarn add --dev parcel@next</span><br></pre></td></tr></table></figure>
-<p><strong>用npm来安装</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install parcel@next --save</span><br></pre></td></tr></table></figure>
-<p><strong>用cnpm来安装</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install parcel@next --save</span><br></pre></td></tr></table></figure>
-<h3 id="打包文件"><a href="#打包文件" class="headerlink" title="打包文件"></a>打包文件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;sdqts&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;&quot;,</span><br><span class="line">  &quot;main&quot;: &quot;index.js&quot;,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &#x2F;&#x2F; 要打包路径</span><br><span class="line">    &quot;test&quot;: &quot;parcel .&#x2F;src&#x2F;index.html&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;keywords&quot;: [],</span><br><span class="line">  &quot;author&quot;: &quot;&quot;,</span><br><span class="line">  &quot;license&quot;: &quot;ISC&quot;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;parcel&quot;: &quot;^2.0.0-rc.0&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="引入-script"><a href="#引入-script" class="headerlink" title="引入 script"></a>引入 script</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;.&#x2F;page.ts&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">   &lt;title&gt;史迪奇国王&lt;&#x2F;title&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt; </span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="page-ts"><a href="#page-ts" class="headerlink" title="page.ts"></a>page.ts</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const sdq : string &#x3D; &quot;史迪奇&quot;</span><br><span class="line">console.log(sdq)</span><br></pre></td></tr></table></figure>
-]]></content>
+<h1 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ create view 视图(字段别名) as select 字段 from 表 WITH CHECK OPTION</span><br></pre></td></tr></table></figure>
+<h1 id="向视图插入数据"><a href="#向视图插入数据" class="headerlink" title="向视图插入数据"></a>向视图插入数据</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ insert 视图 values(<span class="string">&#x27;数据&#x27;</span>) </span><br></pre></td></tr></table></figure>
+<h1 id="查询视图数据"><a href="#查询视图数据" class="headerlink" title="查询视图数据"></a>查询视图数据</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ select 字段 from 视图</span><br></pre></td></tr></table></figure>
+<h1 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ update 视图 <span class="built_in">set</span> 修改的字段=<span class="string">&#x27;修改的数据&#x27;</span> <span class="built_in">where</span> 匹配字段=<span class="string">&#x27;匹配数据&#x27;</span> </span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>TypeScript</category>
+        <category>数据库</category>
       </categories>
   </entry>
   <entry>
@@ -1986,6 +1962,30 @@ $
 </ul>
 <h1 id="Jquery的引入"><a href="#Jquery的引入" class="headerlink" title="Jquery的引入"></a>Jquery的引入</h1><h3 id="html文件"><a href="#html文件" class="headerlink" title="html文件"></a>html文件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 引入jquery --&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.bootcdn.net&#x2F;ajax&#x2F;libs&#x2F;jquery&#x2F;3.5.1&#x2F;jquery.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;.&#x2F;page.ts&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">   &lt;title&gt;史迪奇国王&lt;&#x2F;title&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    </span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="page-ts"><a href="#page-ts" class="headerlink" title="page.ts"></a>page.ts</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 解决报错问题 或者 npm i @types&#x2F;jquery 和 cnpm i @types&#x2F;jquery </span><br><span class="line">declare var $: any;</span><br><span class="line"></span><br><span class="line">const sdq: string &#x3D; &quot;史迪奇&quot;;</span><br><span class="line">console.log(sdq);</span><br><span class="line"></span><br><span class="line">$(function () &#123;</span><br><span class="line">  alert(&quot;史迪奇&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>TypeScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>TypeScript 打包代码</title>
+    <url>/TypeScript-Parcel.html</url>
+    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
+<a id="more"></a>
+
+<p><strong><a href="https://wwr.lanzoui.com/iFfQ7shdb4d">未打包文件</a></strong></p>
+<ul>
+<li>密码: sdq3</li>
+</ul>
+<h1 id="Parcel打包"><a href="#Parcel打包" class="headerlink" title="Parcel打包"></a>Parcel打包</h1><h3 id="Parcel安装方法"><a href="#Parcel安装方法" class="headerlink" title="Parcel安装方法"></a>Parcel安装方法</h3><p><strong>用yarn来安装</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yarn add --dev parcel@next</span><br></pre></td></tr></table></figure>
+<p><strong>用npm来安装</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install parcel@next --save</span><br></pre></td></tr></table></figure>
+<p><strong>用cnpm来安装</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install parcel@next --save</span><br></pre></td></tr></table></figure>
+<h3 id="打包文件"><a href="#打包文件" class="headerlink" title="打包文件"></a>打包文件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;sdqts&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;&quot;,</span><br><span class="line">  &quot;main&quot;: &quot;index.js&quot;,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &#x2F;&#x2F; 要打包路径</span><br><span class="line">    &quot;test&quot;: &quot;parcel .&#x2F;src&#x2F;index.html&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;keywords&quot;: [],</span><br><span class="line">  &quot;author&quot;: &quot;&quot;,</span><br><span class="line">  &quot;license&quot;: &quot;ISC&quot;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;parcel&quot;: &quot;^2.0.0-rc.0&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="引入-script"><a href="#引入-script" class="headerlink" title="引入 script"></a>引入 script</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;.&#x2F;page.ts&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">   &lt;title&gt;史迪奇国王&lt;&#x2F;title&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt; </span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="page-ts"><a href="#page-ts" class="headerlink" title="page.ts"></a>page.ts</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const sdq : string &#x3D; &quot;史迪奇&quot;</span><br><span class="line">console.log(sdq)</span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
         <category>TypeScript</category>
       </categories>
@@ -2146,6 +2146,34 @@ $
       </categories>
   </entry>
   <entry>
+    <title>TypeScript静态数据类型</title>
+    <url>/TypeScript-type.html</url>
+    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="TypeScript中的基础静态数据类型有"><a href="#TypeScript中的基础静态数据类型有" class="headerlink" title="TypeScript中的基础静态数据类型有"></a>TypeScript中的基础静态数据类型有</h1><ul>
+<li>Undefined :</li>
+<li>Number : 数值类型;</li>
+<li>string : 字符串类型;</li>
+<li>Boolean : 布尔类型；</li>
+<li>enum : 枚举类型；</li>
+<li>any : 任意类型，一个牛X的类型；</li>
+<li>void : 空类型；</li>
+<li>Array : 数组类型;</li>
+<li>Tuple : 元祖类型；</li>
+<li>Null : 空类型</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const count : number &#x3D; 333;</span><br><span class="line">const myNname : string &#x3D; &quot;史迪奇&quot;;</span><br></pre></td></tr></table></figure>
+<h1 id="还包含对象类型-数组类型-类类型-函数类型"><a href="#还包含对象类型-数组类型-类类型-函数类型" class="headerlink" title="还包含对象类型 数组类型 类类型 函数类型"></a>还包含对象类型 数组类型 类类型 函数类型</h1><h3 id="对象类型"><a href="#对象类型" class="headerlink" title="对象类型"></a>对象类型</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const sdq : &#123;</span><br><span class="line">    name:string,</span><br><span class="line">    age:number</span><br><span class="line">&#125; &#x3D; &#123;</span><br><span class="line">    name &#x3D; &quot;史迪奇&quot;,</span><br><span class="line">    age &#x3D; 18</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="数组类型"><a href="#数组类型" class="headerlink" title="数组类型"></a>数组类型</h3><p><strong>对象类型也可以是数组, 但是类型必须一致</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const sdq : string [] &#x3D; [&#39;史迪奇&#39;,&#39;独眼霹雳&#39;,&#39;强霸&#39;]</span><br></pre></td></tr></table></figure>
+<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Experimentalarticle&#123;&#125;</span><br><span class="line">const sdq : Experimentalarticle &#x3D; new Experimentalarticle()</span><br><span class="line"></span><br><span class="line">const sdz : ()&#x3D;&gt;string &#x3D; () &#x3D;&gt;&#123;return &#39;史迪奇&#39;&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>TypeScript</category>
+      </categories>
+  </entry>
+  <entry>
     <title>TypeScript 配置文件</title>
     <url>/TypeScript-config.html</url>
     <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
@@ -2170,34 +2198,6 @@ $
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;sourceMap&quot;: true</span><br></pre></td></tr></table></figure>
 <h3 id="noUnusedLocals属性-和-noUnusedParameters属性"><a href="#noUnusedLocals属性-和-noUnusedParameters属性" class="headerlink" title="noUnusedLocals属性 和 noUnusedParameters属性"></a>noUnusedLocals属性 和 noUnusedParameters属性</h3><p><strong>作用: 提示未使用变量和未使用方法</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;noUnusedLocals&quot;: true,       &#x2F;&#x2F;打包时进行提示未使用的变量    </span><br><span class="line">&quot;noUnusedParameters&quot;: true    &#x2F;&#x2F;打包是进行提示未使用的方法</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>TypeScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>TypeScript静态数据类型</title>
-    <url>/TypeScript-type.html</url>
-    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="TypeScript中的基础静态数据类型有"><a href="#TypeScript中的基础静态数据类型有" class="headerlink" title="TypeScript中的基础静态数据类型有"></a>TypeScript中的基础静态数据类型有</h1><ul>
-<li>Undefined :</li>
-<li>Number : 数值类型;</li>
-<li>string : 字符串类型;</li>
-<li>Boolean : 布尔类型；</li>
-<li>enum : 枚举类型；</li>
-<li>any : 任意类型，一个牛X的类型；</li>
-<li>void : 空类型；</li>
-<li>Array : 数组类型;</li>
-<li>Tuple : 元祖类型；</li>
-<li>Null : 空类型</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const count : number &#x3D; 333;</span><br><span class="line">const myNname : string &#x3D; &quot;史迪奇&quot;;</span><br></pre></td></tr></table></figure>
-<h1 id="还包含对象类型-数组类型-类类型-函数类型"><a href="#还包含对象类型-数组类型-类类型-函数类型" class="headerlink" title="还包含对象类型 数组类型 类类型 函数类型"></a>还包含对象类型 数组类型 类类型 函数类型</h1><h3 id="对象类型"><a href="#对象类型" class="headerlink" title="对象类型"></a>对象类型</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const sdq : &#123;</span><br><span class="line">    name:string,</span><br><span class="line">    age:number</span><br><span class="line">&#125; &#x3D; &#123;</span><br><span class="line">    name &#x3D; &quot;史迪奇&quot;,</span><br><span class="line">    age &#x3D; 18</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="数组类型"><a href="#数组类型" class="headerlink" title="数组类型"></a>数组类型</h3><p><strong>对象类型也可以是数组, 但是类型必须一致</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const sdq : string [] &#x3D; [&#39;史迪奇&#39;,&#39;独眼霹雳&#39;,&#39;强霸&#39;]</span><br></pre></td></tr></table></figure>
-<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Experimentalarticle&#123;&#125;</span><br><span class="line">const sdq : Experimentalarticle &#x3D; new Experimentalarticle()</span><br><span class="line"></span><br><span class="line">const sdz : ()&#x3D;&gt;string &#x3D; () &#x3D;&gt;&#123;return &#39;史迪奇&#39;&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>TypeScript</category>
@@ -3123,136 +3123,6 @@ python数据类型
       </categories>
   </entry>
   <entry>
-    <title>爬虫 xpath(牢饭吃到饱)</title>
-    <url>/reptile-xpath.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-
-<h1 id="xpath-是在XML文档中搜索内容的一门语言-可以用绝对定位和相对定位"><a href="#xpath-是在XML文档中搜索内容的一门语言-可以用绝对定位和相对定位" class="headerlink" title="xpath 是在XML文档中搜索内容的一门语言 可以用绝对定位和相对定位"></a>xpath 是在XML文档中搜索内容的一门语言 可以用绝对定位和相对定位</h1><p><strong>html是xml的一个子集</strong></p>
-<h1 id="安装xpath"><a href="#安装xpath" class="headerlink" title="安装xpath"></a>安装xpath</h1><p><strong>打开cmd 输入以下内容</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install xpath</span><br></pre></td></tr></table></figure>
-<h1 id="xpath语法"><a href="#xpath语法" class="headerlink" title="xpath语法"></a>xpath语法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">主要分为3大类</span><br><span class="line"></span><br><span class="line">层级:   &#x2F; 直接子集   跳级     斜杠隔开的是节点</span><br><span class="line"></span><br><span class="line">属性:   @ 属性访问  如&#x2F;&#x2F;link&#x2F;@href 从选中的节点标签中获取指定的值</span><br><span class="line"></span><br><span class="line">函数:   contains() 包含   text()文本 等...  如&#x2F;&#x2F;title&#x2F;text() 从开闭标签之间去文本内容</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th align="center">表达式</th>
-<th align="center">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">nodename</td>
-<td align="center">选中该元素</td>
-</tr>
-<tr>
-<td align="center">/</td>
-<td align="center">从根节点选取或者是元素和元素间的过度</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">从匹配选择的当前节点选择文档的节点而不用考虑它们的位置</td>
-</tr>
-<tr>
-<td align="center">@</td>
-<td align="center">选取属性</td>
-</tr>
-<tr>
-<td align="center">.</td>
-<td align="center">选取当前节点</td>
-</tr>
-<tr>
-<td align="center">..</td>
-<td align="center">选取当前节点的父节点</td>
-</tr>
-<tr>
-<td align="center">text()</td>
-<td align="center">选取文本</td>
-</tr>
-</tbody></table>
-<h1 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h1><p><strong>打开这个<a href="https://www.umei.cc/bizhitupian/weimeibizhi/">网址</a></strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 导入xpath</span></span><br><span class="line">from lxml import etree</span><br><span class="line"></span><br><span class="line">xml = <span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">&lt;book&gt;</span></span><br><span class="line"><span class="string">    &lt;id&gt;???&lt;/id&gt;</span></span><br><span class="line"><span class="string">    &lt;name&gt;星际宝贝&lt;/name&gt;</span></span><br><span class="line"><span class="string">    &lt;price&gt;!!!&lt;/price&gt;</span></span><br><span class="line"><span class="string">    &lt;nick&gt;实验品&lt;/nick&gt;</span></span><br><span class="line"><span class="string">    &lt;author&gt;</span></span><br><span class="line"><span class="string">        &lt;nick id=&quot;</span>624<span class="string">&quot;&gt;安琪&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;nick id=&quot;</span>625<span class="string">&quot;&gt;鲁本&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;nick id=&quot;</span>626<span class="string">&quot;&gt;史迪奇&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;nick class=&quot;</span>221<span class="string">&quot;&gt;小火花&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;div&gt;</span></span><br><span class="line"><span class="string">            &lt;nick&gt;搞破坏&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;span&gt;</span></span><br><span class="line"><span class="string">            &lt;nick&gt;吃饭&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;/span&gt;</span></span><br><span class="line"><span class="string">    &lt;/author&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &lt;partner&gt;</span></span><br><span class="line"><span class="string">        &lt;nick id=&quot;</span>029<span class="string">&quot;&gt;跳棋&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;nick id=&quot;</span>001<span class="string">&quot;&gt;史灵可&lt;/nick&gt;</span></span><br><span class="line"><span class="string">    &lt;/partner&gt;</span></span><br><span class="line"><span class="string">&lt;/book&gt;</span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">tree = etree.HTML(html.text)   <span class="comment">#加载爬取下来的源码</span></span><br><span class="line"><span class="comment"># tree = etree.parse(paese)   #加载文件</span></span><br><span class="line"><span class="comment"># tree = etree.XML(xml)       #加载XML</span></span><br><span class="line"></span><br><span class="line">result = tree.xpath(<span class="string">&quot;/book//nick/text().extract&quot;</span>) <span class="comment">#text()就是文字 .extract就是提取</span></span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
-<h1 id="HTML代码-保存sdq-html"><a href="#HTML代码-保存sdq-html" class="headerlink" title="HTML代码 保存sdq.html"></a>HTML代码 保存sdq.html</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset&#x3D;&quot;UTF-8&quot; &#x2F;&gt;</span><br><span class="line">        &lt;title&gt;Title&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;&#x2F;head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;http:&#x2F;&#x2F;www.baidu.com&quot;&gt;百度&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;http:&#x2F;&#x2F;www.google.com&quot;&gt;谷歌&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;http:&#x2F;&#x2F;www.sogou.com&quot;&gt;搜狗&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">        &lt;&#x2F;ul&gt;</span><br><span class="line">        &lt;ol&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;Stitch&quot;&gt;Stitch&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;sdq&quot;&gt;史迪奇&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;sdz&quot;&gt;史迪仔&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">        &lt;&#x2F;ol&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;Lilo&quot;&gt;莉萝&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;Nani&quot;&gt;兰莉&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="py代码"><a href="#py代码" class="headerlink" title="py代码"></a>py代码</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from lxml import etree</span><br><span class="line"></span><br><span class="line">tree &#x3D; etree.parse(&quot;sdq.html&quot;)</span><br><span class="line"># result &#x3D; tree.xpath(&#39;&#x2F;html&#39;)</span><br><span class="line"># result &#x3D; tree.xpath(&quot;&#x2F;html&#x2F;body&#x2F;ul&#x2F;li&#x2F;a&#x2F;text()&quot;)</span><br><span class="line"># result &#x3D; tree.xpath(&quot;&#x2F;html&#x2F;body&#x2F;ul&#x2F;li[1]&#x2F;a&#x2F;text()&quot;)  # xpath的顺序是从1开始数的, []表示索引</span><br><span class="line"># result &#x3D; tree.xpath(&quot;&#x2F;html&#x2F;body&#x2F;ol&#x2F;li&#x2F;a[@href&#x3D;&#39;dapao&#39;]&#x2F;text()&quot;)  # [@xxx&#x3D;xxx] 属性的筛选</span><br><span class="line"># print(result)</span><br><span class="line"></span><br><span class="line"># ol_li_list &#x3D; tree.xpath(&quot;&#x2F;html&#x2F;body&#x2F;ol&#x2F;li&quot;)</span><br><span class="line"></span><br><span class="line"># for li in ol_li_list:</span><br><span class="line">#     # 从每一个li中提取到文字信息</span><br><span class="line">#     result &#x3D; li.xpath(&quot;.&#x2F;a&#x2F;text()&quot;)  # 在li中继续去寻找 相对查找</span><br><span class="line">#     print(result)</span><br><span class="line">#     result2 &#x3D; li.xpath(&quot;.&#x2F;a&#x2F;@href&quot;)  # @属性意思是拿到属性值</span><br><span class="line">#     print(result2)</span><br><span class="line">#</span><br><span class="line"># print(tree.xpath(&quot;&#x2F;html&#x2F;body&#x2F;ul&#x2F;li&#x2F;a&#x2F;@href&quot;))</span><br><span class="line">print(tree.xpath(&#39;&#x2F;html&#x2F;body&#x2F;div[1]&#x2F;text().extract&#39;))       #text()就是文字 .extract就是提取</span><br><span class="line">print(tree.xpath(&#39;&#x2F;html&#x2F;body&#x2F;ol&#x2F;li&#x2F;a&#x2F;text().extract&#39;))      #text()就是文字 .extract就是提取</span><br></pre></td></tr></table></figure>
-
-<h1 id="选取特定节点的语法"><a href="#选取特定节点的语法" class="headerlink" title="选取特定节点的语法"></a>选取特定节点的语法</h1><h3 id="通过索引修饰节点"><a href="#通过索引修饰节点" class="headerlink" title="通过索引修饰节点"></a>通过索引修饰节点</h3><table>
-<thead>
-<tr>
-<th align="center">路径表达式</th>
-<th align="center">结果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">//title[@lang=”eng”]</td>
-<td align="center">选择lang属性值为eng的所有title元素</td>
-</tr>
-<tr>
-<td align="center">/bookstore/book[1]</td>
-<td align="center">选择属于bookstore子元素的第一个book元素</td>
-</tr>
-<tr>
-<td align="center">/bookstore/book[last()]</td>
-<td align="center">选择属于bookstore子元素的最后一个book元素</td>
-</tr>
-<tr>
-<td align="center">/bookstore/book[last()-1]</td>
-<td align="center">选择属于bookstore子元素的倒数第二个book元素</td>
-</tr>
-<tr>
-<td align="center">/bookstore/book[position()&gt;1]</td>
-<td align="center">选择bookstore下面的book元素从第二个开始选择</td>
-</tr>
-<tr>
-<td align="center">//book/title[text()=”sdq”]</td>
-<td align="center">选择所有book下的title元素仅仅选择文本为sdq的title元素</td>
-</tr>
-<tr>
-<td align="center">/bookstore/book[price&gt;33.33]</td>
-<td align="center">选取bookstore元素中book元素的所有title元素且其中price元素的值必须大于33.33</td>
-</tr>
-</tbody></table>
-<h3 id="通过属性值修饰节点"><a href="#通过属性值修饰节点" class="headerlink" title="通过属性值修饰节点"></a>通过属性值修饰节点</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;div[@id&#x3D;&quot;sdq&quot;]&#x2F;div&#x2F;@id     出现在[]中@是使用标签属性名和属性值修饰节点 出现在结尾的&#x2F;@是取属性值</span><br></pre></td></tr></table></figure>
-<h3 id="通过子节点的值修饰节点"><a href="#通过子节点的值修饰节点" class="headerlink" title="通过子节点的值修饰节点"></a>通过子节点的值修饰节点</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//span[i&gt;333]   i是标签</span><br><span class="line">//div[span[2]&gt;9.3]   span是标签</span><br></pre></td></tr></table></figure>
-<h3 id="通过包含修饰"><a href="#通过包含修饰" class="headerlink" title="通过包含修饰"></a>通过包含修饰</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;div[contains(@id,&quot;sd&quot;)]       找出sdq通过属性名和大概的属性值 </span><br><span class="line">&#x2F;&#x2F;div[contains(text(),&quot;下一页&quot;)]     通过文本内容包含有下一页的字  </span><br></pre></td></tr></table></figure>
-<h1 id="选取未知节点的语法"><a href="#选取未知节点的语法" class="headerlink" title="选取未知节点的语法"></a>选取未知节点的语法</h1><table>
-<thead>
-<tr>
-<th align="center">通配符</th>
-<th align="center">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">*</td>
-<td align="center">匹配任何元素节点</td>
-</tr>
-<tr>
-<td align="center">@*</td>
-<td align="center">匹配任何属性节点</td>
-</tr>
-<tr>
-<td align="center">node()</td>
-<td align="center">匹配任何类型的节点</td>
-</tr>
-<tr>
-<td align="center">//*</td>
-<td align="center">全部的标签</td>
-</tr>
-<tr>
-<td align="center">//@*</td>
-<td align="center">全部的属性</td>
-</tr>
-</tbody></table>
-<h2 id="xpath复合使用语法"><a href="#xpath复合使用语法" class="headerlink" title="xpath复合使用语法"></a>xpath复合使用语法</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;h2&#x2F;a|&#x2F;&#x2F;td&#x2F;a</span><br></pre></td></tr></table></figure>
-<h1 id="xpath方法返回列表的三种情况"><a href="#xpath方法返回列表的三种情况" class="headerlink" title="xpath方法返回列表的三种情况"></a>xpath方法返回列表的三种情况</h1><ul>
-<li>返回空列表: 根据xpath语法规则字符串, 没有定位到任何元素</li>
-<li>返回由字符串构成的列表: xpath字符串匹配的一定是文本内容或某属性的值</li>
-<li>返回由Element对象构成的列表: xpath规则字符串匹配的是标签, 列表中的Element对象可以继续进行xpath</li>
-</ul>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
     <title>爬虫 代理(吃牢饭集合)</title>
     <url>/reptile-agent.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -3469,6 +3339,136 @@ option = {
 
 option && myChart.setOption(option);
 </script> -->]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>爬虫 xpath(牢饭吃到饱)</title>
+    <url>/reptile-xpath.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+
+<h1 id="xpath-是在XML文档中搜索内容的一门语言-可以用绝对定位和相对定位"><a href="#xpath-是在XML文档中搜索内容的一门语言-可以用绝对定位和相对定位" class="headerlink" title="xpath 是在XML文档中搜索内容的一门语言 可以用绝对定位和相对定位"></a>xpath 是在XML文档中搜索内容的一门语言 可以用绝对定位和相对定位</h1><p><strong>html是xml的一个子集</strong></p>
+<h1 id="安装xpath"><a href="#安装xpath" class="headerlink" title="安装xpath"></a>安装xpath</h1><p><strong>打开cmd 输入以下内容</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install xpath</span><br></pre></td></tr></table></figure>
+<h1 id="xpath语法"><a href="#xpath语法" class="headerlink" title="xpath语法"></a>xpath语法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">主要分为3大类</span><br><span class="line"></span><br><span class="line">层级:   &#x2F; 直接子集   跳级     斜杠隔开的是节点</span><br><span class="line"></span><br><span class="line">属性:   @ 属性访问  如&#x2F;&#x2F;link&#x2F;@href 从选中的节点标签中获取指定的值</span><br><span class="line"></span><br><span class="line">函数:   contains() 包含   text()文本 等...  如&#x2F;&#x2F;title&#x2F;text() 从开闭标签之间去文本内容</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">表达式</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">nodename</td>
+<td align="center">选中该元素</td>
+</tr>
+<tr>
+<td align="center">/</td>
+<td align="center">从根节点选取或者是元素和元素间的过度</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">从匹配选择的当前节点选择文档的节点而不用考虑它们的位置</td>
+</tr>
+<tr>
+<td align="center">@</td>
+<td align="center">选取属性</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td align="center">选取当前节点</td>
+</tr>
+<tr>
+<td align="center">..</td>
+<td align="center">选取当前节点的父节点</td>
+</tr>
+<tr>
+<td align="center">text()</td>
+<td align="center">选取文本</td>
+</tr>
+</tbody></table>
+<h1 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h1><p><strong>打开这个<a href="https://www.umei.cc/bizhitupian/weimeibizhi/">网址</a></strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 导入xpath</span></span><br><span class="line">from lxml import etree</span><br><span class="line"></span><br><span class="line">xml = <span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">&lt;book&gt;</span></span><br><span class="line"><span class="string">    &lt;id&gt;???&lt;/id&gt;</span></span><br><span class="line"><span class="string">    &lt;name&gt;星际宝贝&lt;/name&gt;</span></span><br><span class="line"><span class="string">    &lt;price&gt;!!!&lt;/price&gt;</span></span><br><span class="line"><span class="string">    &lt;nick&gt;实验品&lt;/nick&gt;</span></span><br><span class="line"><span class="string">    &lt;author&gt;</span></span><br><span class="line"><span class="string">        &lt;nick id=&quot;</span>624<span class="string">&quot;&gt;安琪&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;nick id=&quot;</span>625<span class="string">&quot;&gt;鲁本&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;nick id=&quot;</span>626<span class="string">&quot;&gt;史迪奇&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;nick class=&quot;</span>221<span class="string">&quot;&gt;小火花&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;div&gt;</span></span><br><span class="line"><span class="string">            &lt;nick&gt;搞破坏&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;span&gt;</span></span><br><span class="line"><span class="string">            &lt;nick&gt;吃饭&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;/span&gt;</span></span><br><span class="line"><span class="string">    &lt;/author&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &lt;partner&gt;</span></span><br><span class="line"><span class="string">        &lt;nick id=&quot;</span>029<span class="string">&quot;&gt;跳棋&lt;/nick&gt;</span></span><br><span class="line"><span class="string">        &lt;nick id=&quot;</span>001<span class="string">&quot;&gt;史灵可&lt;/nick&gt;</span></span><br><span class="line"><span class="string">    &lt;/partner&gt;</span></span><br><span class="line"><span class="string">&lt;/book&gt;</span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">tree = etree.HTML(html.text)   <span class="comment">#加载爬取下来的源码</span></span><br><span class="line"><span class="comment"># tree = etree.parse(paese)   #加载文件</span></span><br><span class="line"><span class="comment"># tree = etree.XML(xml)       #加载XML</span></span><br><span class="line"></span><br><span class="line">result = tree.xpath(<span class="string">&quot;/book//nick/text().extract&quot;</span>) <span class="comment">#text()就是文字 .extract就是提取</span></span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
+<h1 id="HTML代码-保存sdq-html"><a href="#HTML代码-保存sdq-html" class="headerlink" title="HTML代码 保存sdq.html"></a>HTML代码 保存sdq.html</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset&#x3D;&quot;UTF-8&quot; &#x2F;&gt;</span><br><span class="line">        &lt;title&gt;Title&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;&#x2F;head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;http:&#x2F;&#x2F;www.baidu.com&quot;&gt;百度&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;http:&#x2F;&#x2F;www.google.com&quot;&gt;谷歌&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;http:&#x2F;&#x2F;www.sogou.com&quot;&gt;搜狗&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">        &lt;&#x2F;ul&gt;</span><br><span class="line">        &lt;ol&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;Stitch&quot;&gt;Stitch&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;sdq&quot;&gt;史迪奇&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href&#x3D;&quot;sdz&quot;&gt;史迪仔&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">        &lt;&#x2F;ol&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;Lilo&quot;&gt;莉萝&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;Nani&quot;&gt;兰莉&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="py代码"><a href="#py代码" class="headerlink" title="py代码"></a>py代码</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from lxml import etree</span><br><span class="line"></span><br><span class="line">tree &#x3D; etree.parse(&quot;sdq.html&quot;)</span><br><span class="line"># result &#x3D; tree.xpath(&#39;&#x2F;html&#39;)</span><br><span class="line"># result &#x3D; tree.xpath(&quot;&#x2F;html&#x2F;body&#x2F;ul&#x2F;li&#x2F;a&#x2F;text()&quot;)</span><br><span class="line"># result &#x3D; tree.xpath(&quot;&#x2F;html&#x2F;body&#x2F;ul&#x2F;li[1]&#x2F;a&#x2F;text()&quot;)  # xpath的顺序是从1开始数的, []表示索引</span><br><span class="line"># result &#x3D; tree.xpath(&quot;&#x2F;html&#x2F;body&#x2F;ol&#x2F;li&#x2F;a[@href&#x3D;&#39;dapao&#39;]&#x2F;text()&quot;)  # [@xxx&#x3D;xxx] 属性的筛选</span><br><span class="line"># print(result)</span><br><span class="line"></span><br><span class="line"># ol_li_list &#x3D; tree.xpath(&quot;&#x2F;html&#x2F;body&#x2F;ol&#x2F;li&quot;)</span><br><span class="line"></span><br><span class="line"># for li in ol_li_list:</span><br><span class="line">#     # 从每一个li中提取到文字信息</span><br><span class="line">#     result &#x3D; li.xpath(&quot;.&#x2F;a&#x2F;text()&quot;)  # 在li中继续去寻找 相对查找</span><br><span class="line">#     print(result)</span><br><span class="line">#     result2 &#x3D; li.xpath(&quot;.&#x2F;a&#x2F;@href&quot;)  # @属性意思是拿到属性值</span><br><span class="line">#     print(result2)</span><br><span class="line">#</span><br><span class="line"># print(tree.xpath(&quot;&#x2F;html&#x2F;body&#x2F;ul&#x2F;li&#x2F;a&#x2F;@href&quot;))</span><br><span class="line">print(tree.xpath(&#39;&#x2F;html&#x2F;body&#x2F;div[1]&#x2F;text().extract&#39;))       #text()就是文字 .extract就是提取</span><br><span class="line">print(tree.xpath(&#39;&#x2F;html&#x2F;body&#x2F;ol&#x2F;li&#x2F;a&#x2F;text().extract&#39;))      #text()就是文字 .extract就是提取</span><br></pre></td></tr></table></figure>
+
+<h1 id="选取特定节点的语法"><a href="#选取特定节点的语法" class="headerlink" title="选取特定节点的语法"></a>选取特定节点的语法</h1><h3 id="通过索引修饰节点"><a href="#通过索引修饰节点" class="headerlink" title="通过索引修饰节点"></a>通过索引修饰节点</h3><table>
+<thead>
+<tr>
+<th align="center">路径表达式</th>
+<th align="center">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">//title[@lang=”eng”]</td>
+<td align="center">选择lang属性值为eng的所有title元素</td>
+</tr>
+<tr>
+<td align="center">/bookstore/book[1]</td>
+<td align="center">选择属于bookstore子元素的第一个book元素</td>
+</tr>
+<tr>
+<td align="center">/bookstore/book[last()]</td>
+<td align="center">选择属于bookstore子元素的最后一个book元素</td>
+</tr>
+<tr>
+<td align="center">/bookstore/book[last()-1]</td>
+<td align="center">选择属于bookstore子元素的倒数第二个book元素</td>
+</tr>
+<tr>
+<td align="center">/bookstore/book[position()&gt;1]</td>
+<td align="center">选择bookstore下面的book元素从第二个开始选择</td>
+</tr>
+<tr>
+<td align="center">//book/title[text()=”sdq”]</td>
+<td align="center">选择所有book下的title元素仅仅选择文本为sdq的title元素</td>
+</tr>
+<tr>
+<td align="center">/bookstore/book[price&gt;33.33]</td>
+<td align="center">选取bookstore元素中book元素的所有title元素且其中price元素的值必须大于33.33</td>
+</tr>
+</tbody></table>
+<h3 id="通过属性值修饰节点"><a href="#通过属性值修饰节点" class="headerlink" title="通过属性值修饰节点"></a>通过属性值修饰节点</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;div[@id&#x3D;&quot;sdq&quot;]&#x2F;div&#x2F;@id     出现在[]中@是使用标签属性名和属性值修饰节点 出现在结尾的&#x2F;@是取属性值</span><br></pre></td></tr></table></figure>
+<h3 id="通过子节点的值修饰节点"><a href="#通过子节点的值修饰节点" class="headerlink" title="通过子节点的值修饰节点"></a>通过子节点的值修饰节点</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//span[i&gt;333]   i是标签</span><br><span class="line">//div[span[2]&gt;9.3]   span是标签</span><br></pre></td></tr></table></figure>
+<h3 id="通过包含修饰"><a href="#通过包含修饰" class="headerlink" title="通过包含修饰"></a>通过包含修饰</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;div[contains(@id,&quot;sd&quot;)]       找出sdq通过属性名和大概的属性值 </span><br><span class="line">&#x2F;&#x2F;div[contains(text(),&quot;下一页&quot;)]     通过文本内容包含有下一页的字  </span><br></pre></td></tr></table></figure>
+<h1 id="选取未知节点的语法"><a href="#选取未知节点的语法" class="headerlink" title="选取未知节点的语法"></a>选取未知节点的语法</h1><table>
+<thead>
+<tr>
+<th align="center">通配符</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">*</td>
+<td align="center">匹配任何元素节点</td>
+</tr>
+<tr>
+<td align="center">@*</td>
+<td align="center">匹配任何属性节点</td>
+</tr>
+<tr>
+<td align="center">node()</td>
+<td align="center">匹配任何类型的节点</td>
+</tr>
+<tr>
+<td align="center">//*</td>
+<td align="center">全部的标签</td>
+</tr>
+<tr>
+<td align="center">//@*</td>
+<td align="center">全部的属性</td>
+</tr>
+</tbody></table>
+<h2 id="xpath复合使用语法"><a href="#xpath复合使用语法" class="headerlink" title="xpath复合使用语法"></a>xpath复合使用语法</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;h2&#x2F;a|&#x2F;&#x2F;td&#x2F;a</span><br></pre></td></tr></table></figure>
+<h1 id="xpath方法返回列表的三种情况"><a href="#xpath方法返回列表的三种情况" class="headerlink" title="xpath方法返回列表的三种情况"></a>xpath方法返回列表的三种情况</h1><ul>
+<li>返回空列表: 根据xpath语法规则字符串, 没有定位到任何元素</li>
+<li>返回由字符串构成的列表: xpath字符串匹配的一定是文本内容或某属性的值</li>
+<li>返回由Element对象构成的列表: xpath规则字符串匹配的是标签, 列表中的Element对象可以继续进行xpath</li>
+</ul>
+]]></content>
       <categories>
         <category>爬虫</category>
       </categories>
@@ -3869,19 +3869,6 @@ option && myChart.setOption(option);
       </categories>
   </entry>
   <entry>
-    <title>爬虫 爬猫猫图片(牢饭吃到饱)</title>
-    <url>/reptile-mao.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h1><p><strong>打开这个<a href="http://www.ichong123.com/maomao">网址</a></strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 所有用到的库</span><br><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line"># 要爬的链接</span><br><span class="line">url &#x3D; &quot;http:&#x2F;&#x2F;www.ichong123.com&#x2F;maomao&quot;</span><br><span class="line"></span><br><span class="line"># 请求头</span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.72 Safari&#x2F;537.36&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">paqv &#x3D; requests.get( url&#x3D;url, headers&#x3D;headers )</span><br><span class="line"></span><br><span class="line"># 根据网站的编码来换</span><br><span class="line">paqv.encoding &#x3D; &#39;utf-8&#39;</span><br><span class="line"></span><br><span class="line"># xiazai &#x3D; paqv.text</span><br><span class="line"></span><br><span class="line"># print(xiazai)</span><br><span class="line"></span><br><span class="line"># 正则表达式 re.S单行匹配(正则解析比较多) re.M多行匹配()</span><br><span class="line">sdq1 &#x3D; re.compile(r&#39;&lt;div class&#x3D;&quot;pet_s&quot;&gt;.*?&lt;img src&#x3D;(?P&lt;mao&gt;.*?)width&#39;,re.S)</span><br><span class="line">paq &#x3D; sdq1.finditer(paqv.text)</span><br><span class="line">a &#x3D; 1</span><br><span class="line"># 用循环来依次下载</span><br><span class="line">for it in paq:</span><br><span class="line">    time.sleep(3)  #休眠3秒</span><br><span class="line">    ul &#x3D; it.group(&#39;mao&#39;)</span><br><span class="line">    ul2 &#x3D; eval(ul)  #eval()函数用来执行一个字符串表达式，并返回表达式的值</span><br><span class="line">    sdz &#x3D; requests.get(ul2)</span><br><span class="line"></span><br><span class="line">    # 图片文件保存 选择路径</span><br><span class="line">    with open(f&quot;E:&#x2F;百度文档&#x2F;mao&#x2F;&#123;a&#125;.jpg&quot;,&quot;wb&quot;) as f:</span><br><span class="line">        f.write(sdz.content)</span><br><span class="line">        f.close()</span><br><span class="line">        a+&#x3D;1</span><br><span class="line">print(&quot;猫猫下载完了&quot;)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
     <title>爬虫 爬小说(牢饭吃到饱)未完待续</title>
     <url>/reptile-novel.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -3889,6 +3876,19 @@ option && myChart.setOption(option);
 
 
 <h1 id="爬小说的详细步骤"><a href="#爬小说的详细步骤" class="headerlink" title="爬小说的详细步骤"></a>爬小说的详细步骤</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import time</span><br><span class="line">feom bs4</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>爬虫 爬猫猫图片(牢饭吃到饱)</title>
+    <url>/reptile-mao.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h1><p><strong>打开这个<a href="http://www.ichong123.com/maomao">网址</a></strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 所有用到的库</span><br><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line"># 要爬的链接</span><br><span class="line">url &#x3D; &quot;http:&#x2F;&#x2F;www.ichong123.com&#x2F;maomao&quot;</span><br><span class="line"></span><br><span class="line"># 请求头</span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.72 Safari&#x2F;537.36&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">paqv &#x3D; requests.get( url&#x3D;url, headers&#x3D;headers )</span><br><span class="line"></span><br><span class="line"># 根据网站的编码来换</span><br><span class="line">paqv.encoding &#x3D; &#39;utf-8&#39;</span><br><span class="line"></span><br><span class="line"># xiazai &#x3D; paqv.text</span><br><span class="line"></span><br><span class="line"># print(xiazai)</span><br><span class="line"></span><br><span class="line"># 正则表达式 re.S单行匹配(正则解析比较多) re.M多行匹配()</span><br><span class="line">sdq1 &#x3D; re.compile(r&#39;&lt;div class&#x3D;&quot;pet_s&quot;&gt;.*?&lt;img src&#x3D;(?P&lt;mao&gt;.*?)width&#39;,re.S)</span><br><span class="line">paq &#x3D; sdq1.finditer(paqv.text)</span><br><span class="line">a &#x3D; 1</span><br><span class="line"># 用循环来依次下载</span><br><span class="line">for it in paq:</span><br><span class="line">    time.sleep(3)  #休眠3秒</span><br><span class="line">    ul &#x3D; it.group(&#39;mao&#39;)</span><br><span class="line">    ul2 &#x3D; eval(ul)  #eval()函数用来执行一个字符串表达式，并返回表达式的值</span><br><span class="line">    sdz &#x3D; requests.get(ul2)</span><br><span class="line"></span><br><span class="line">    # 图片文件保存 选择路径</span><br><span class="line">    with open(f&quot;E:&#x2F;百度文档&#x2F;mao&#x2F;&#123;a&#125;.jpg&quot;,&quot;wb&quot;) as f:</span><br><span class="line">        f.write(sdz.content)</span><br><span class="line">        f.close()</span><br><span class="line">        a+&#x3D;1</span><br><span class="line">print(&quot;猫猫下载完了&quot;)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>爬虫</category>
