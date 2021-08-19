@@ -785,7 +785,7 @@ var $main = document.querySelector('.main');
 <aside id="article-toc" class="fixed-toc">
     <div id="article-toc-inner">
         <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AC%E5%BC%8F"><span class="toc-text">公式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">选择器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-text">事件</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AC%E5%BC%8F"><span class="toc-text">公式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">选择器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-text">事件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C-DOM%E5%85%83%E7%B4%A0"><span class="toc-text">操作 DOM元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8A%82%E7%82%B9%E6%96%87%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">节点文本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-text">css的操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E7%9A%84%E6%98%BE%E7%A4%BA%E4%B8%8E%E9%9A%90%E8%97%8F"><span class="toc-text">元素的显示与隐藏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#window%E6%93%8D%E4%BD%9C"><span class="toc-text">window操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ajax%E6%93%8D%E4%BD%9C"><span class="toc-text">ajax操作</span></a></li></ol></li></ol></li></ol>
     </div>
 </aside>
 </div>
@@ -824,7 +824,7 @@ var $main = document.querySelector('.main');
 
 		<div>
 			  <article>
-				<p><strong>JavaScript个人整理</strong></p>
+				<p><strong><a target="_blank" rel="noopener" href="https://jquery.cuishifeng.cn/jQuery.Ajax.html">JavaScript jQuery个人整理</a></strong></p>
 <a id="more"></a>
 
 <h1 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">   <span class="comment">// 选择器就是css的选择器</span></span><br><span class="line">   $(<span class="string">&#x27;#test-jquey&#x27;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">        <span class="title">alert</span>(<span class="params"><span class="string">&#x27;我叫史迪奇&#x27;</span></span>)</span></span><br><span class="line"><span class="function">   )</span></span><br><span class="line"><span class="function">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -863,6 +863,43 @@ var $main = document.querySelector('.main');
 </body>
 
 </html>
+
+<h1 id="操作-DOM元素"><a href="#操作-DOM元素" class="headerlink" title="操作 DOM元素"></a>操作 DOM元素</h1><h3 id="节点文本操作"><a href="#节点文本操作" class="headerlink" title="节点文本操作"></a>节点文本操作</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;节点文本操作&lt;/title&gt;</span><br><span class="line">    &lt;script src=<span class="string">&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;ul id=<span class="string">&quot;Syp&quot;</span>&gt;实验品</span><br><span class="line">        &lt;li name=<span class="string">&quot;Stitch&quot;</span>&gt;史迪奇&lt;/li&gt;</span><br><span class="line">        &lt;li name=<span class="string">&quot;Reuben&quot;</span>&gt;鲁本&lt;/li&gt;</span><br><span class="line">        &lt;li name=<span class="string">&quot;Angel&quot;</span>&gt;安琪&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        $(<span class="string">&#x27;#Syp li[name=Stitch]&#x27;</span>).text()</span><br><span class="line">        $(<span class="string">&#x27;#Syp&#x27;</span>).html</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>浏览器输入来实现效果</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获得值</span></span><br><span class="line">$(<span class="string">&#x27;#Syp li[name=Stitch]&#x27;</span>).text()</span><br><span class="line"><span class="comment">// 设置值</span></span><br><span class="line">$(<span class="string">&#x27;#Syp li[name=Stitch]&#x27;</span>).text(<span class="string">&quot;我叫史迪奇&quot;</span>)</span><br><span class="line"><span class="comment">// 获得值</span></span><br><span class="line">$(<span class="string">&#x27;#Syp&#x27;</span>).html()</span><br><span class="line"><span class="comment">// 设置值</span></span><br><span class="line">$(<span class="string">&#x27;#Syp&#x27;</span>).html(<span class="string">&quot;&lt;strong&gt;我叫史迪奇&lt;/strong&gt;&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="css的操作"><a href="#css的操作" class="headerlink" title="css的操作"></a>css的操作</h3><p><strong>浏览器输入来实现效果</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;#Syp li[name=Stitch]&#x27;</span>).css(&#123;<span class="string">&quot;color&quot;</span>:<span class="string">&quot;blue&quot;</span>&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="元素的显示与隐藏"><a href="#元素的显示与隐藏" class="headerlink" title="元素的显示与隐藏"></a>元素的显示与隐藏</h3><p><strong>浏览器输入来实现效果</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 本质 display: none;</span></span><br><span class="line">    <span class="comment">// 显示</span></span><br><span class="line">    $(<span class="string">&#x27;#Syp li[name=Stitch]&#x27;</span>).show()</span><br><span class="line">    <span class="comment">// 隐藏</span></span><br><span class="line">    $(<span class="string">&#x27;#Syp li[name=Stitch]&#x27;</span>).hide()</span><br></pre></td></tr></table></figure>
+<h3 id="window操作"><a href="#window操作" class="headerlink" title="window操作"></a>window操作</h3><p><strong>浏览器输入来实现效果</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查看窗口宽度</span></span><br><span class="line">$(<span class="built_in">window</span>).width()</span><br><span class="line"><span class="comment">// 查看窗口高度</span></span><br><span class="line">$(<span class="built_in">window</span>).height()</span><br><span class="line"><span class="comment">// 切换显示与隐藏</span></span><br><span class="line">$(<span class="string">&#x27;#Syp li[name=Stitch]&#x27;</span>).toggle();</span><br></pre></td></tr></table></figure>
+<h3 id="ajax操作"><a href="#ajax操作" class="headerlink" title="ajax操作"></a>ajax操作</h3><p><strong>浏览器输入来实现效果</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#Syp&quot;</span>).ajax()</span><br><span class="line"></span><br><span class="line">$.ajax(&#123; <span class="attr">url</span>: <span class="string">&quot;test.html&quot;</span>, <span class="attr">context</span>: <span class="built_in">document</span>.body, <span class="attr">success</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="built_in">this</span>).addClass(<span class="string">&quot;done&quot;</span>);</span><br><span class="line">&#125;&#125;);</span><br></pre></td></tr></table></figure>
+<p><font color="#DC143C">以下为实验对象</font></p>
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <title>节点文本操作</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <ul id="Syp">实验品
+        <li name="Stitch">史迪奇</li>
+        <li name="Reuben">鲁本</li>
+        <li name="Angel">安琪</li>
+    </ul>
+    <script>
+        $('#Syp li[name=Stitch]').text()
+        $('#Syp').html
+    </script>
+</body>
+
+</html>
+
+
+
 
 			  </article>
 		</div>
