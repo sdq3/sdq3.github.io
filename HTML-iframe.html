@@ -59,8 +59,12 @@
 <script src="/js/highlight.min.js"></script>
 
 	
-<link rel="stylesheet" href="/css/code-styles/vs2015.min.css">
+<link rel="stylesheet" href="/css/code-style.css">
 
+	
+<link rel="stylesheet" href="/css/code-styles/xcode.min.css">
+
+	
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 
@@ -833,11 +837,11 @@ var $main = document.querySelector('.main');
 				<p><strong>HTML个人整理</strong></p>
 <a id="more"></a>
 
-<h1 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">   &lt;iframe src=<span class="string">&quot;path&quot;</span> name=<span class="string">&quot;mainFrame&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">   &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;mainFrame&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ &lt;body&gt;<br>   &lt;iframe src=<span class="hljs-string">&quot;path&quot;</span> name=<span class="hljs-string">&quot;mainFrame&quot;</span>&gt;&lt;/iframe&gt;<br>   &lt;p&gt;&lt;a href=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="hljs-string">&quot;mainFrame&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;<br>$ &lt;/body&gt;<br></code></pre></td></tr></table></figure>
 <p><strong>其中path是引用页面地址 mainFrame是框架标识名</strong></p>
 <h1 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h1><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">   &lt;iframe src=<span class="string">&quot;demo_iframe.html&quot;</span> frameborder=<span class="string">&quot;0&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ &lt;body&gt;</span><br><span class="line">   &lt;iframe src=<span class="string">&quot;xxx/xxx.html&quot;</span> name=<span class="string">&quot;iframe_a&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">   &lt;p&gt;&lt;a href=<span class="string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="string">&quot;iframe_a&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">$ &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ &lt;body&gt;<br>   &lt;iframe src=<span class="hljs-string">&quot;demo_iframe.html&quot;</span> frameborder=<span class="hljs-string">&quot;0&quot;</span>&gt;&lt;/iframe&gt;<br>$ &lt;/body&gt;<br></code></pre></td></tr></table></figure>
+<h1 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ &lt;body&gt;<br>   &lt;iframe src=<span class="hljs-string">&quot;xxx/xxx.html&quot;</span> name=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;&lt;/iframe&gt;<br>   &lt;p&gt;&lt;a href=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> target=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;我叫史迪奇&lt;/a&gt;&lt;/p&gt;<br>$ &lt;/body&gt;<br></code></pre></td></tr></table></figure>
 			  </article>
 		</div>
 		
@@ -3735,7 +3739,11 @@ function sdqlazyload(){
  
 	
 	<script>
-	hljs.highlightAll();	
+	document.addEventListener('DOMContentLoaded', (event) => {
+  		document.querySelectorAll('pre>span').forEach((el) => {
+   			hljs.highlightElement(el);
+  		});
+	});
 	</script>	
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/moc/tororo.2048","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/moc/tororo.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

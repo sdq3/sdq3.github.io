@@ -59,8 +59,12 @@
 <script src="/js/highlight.min.js"></script>
 
 	
-<link rel="stylesheet" href="/css/code-styles/vs2015.min.css">
+<link rel="stylesheet" href="/css/code-style.css">
 
+	
+<link rel="stylesheet" href="/css/code-styles/xcode.min.css">
+
+	
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 
@@ -930,38 +934,6 @@ var $main = document.querySelector('.main');
 		<div class="sdq-inner-content">
 		<div class="sdq-inner-img">
 			<div class="sdq-cover-content">
-				<a href="/BOIS.html">
-					<div class="sdq-title"> 
-						电脑刷BIOS(保姆级教程)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>电脑刷BIOS简单到不能再简单</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2021年08月18日</a>
-				
-				
-			</div>
-		</div>
-		<a href="/BOIS.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
 				<a href="/baidu.html">
 					<div class="sdq-title"> 
 						百度搜索技巧
@@ -983,6 +955,38 @@ var $main = document.querySelector('.main');
 			</div>
 		</div>
 		<a href="/baidu.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
+	
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
+				<a href="/BOIS.html">
+					<div class="sdq-title"> 
+						电脑刷BIOS(保姆级教程)
+					</div>
+				</a>
+			</div>
+			
+		</div>
+
+			<article>
+				
+				<p><strong>电脑刷BIOS简单到不能再简单</strong></p>
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2021年08月18日</a>
+				
+				
+			</div>
+		</div>
+		<a href="/BOIS.html"><div class="sdq-more">阅读更多...</div></a>
 		
     </div>
     
@@ -4073,7 +4077,11 @@ function sdqlazyload(){
  
 	
 	<script>
-	hljs.highlightAll();	
+	document.addEventListener('DOMContentLoaded', (event) => {
+  		document.querySelectorAll('pre>span').forEach((el) => {
+   			hljs.highlightElement(el);
+  		});
+	});
 	</script>	
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/moc/tororo.2048","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/moc/tororo.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

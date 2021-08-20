@@ -59,8 +59,12 @@
 <script src="/js/highlight.min.js"></script>
 
 	
-<link rel="stylesheet" href="/css/code-styles/vs2015.min.css">
+<link rel="stylesheet" href="/css/code-style.css">
 
+	
+<link rel="stylesheet" href="/css/code-styles/xcode.min.css">
+
+	
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 
@@ -843,7 +847,7 @@ var $main = document.querySelector('.main');
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">源码  ---------&gt;  预处理  ---------&gt;  预编译文件  ---------&gt;  编译  ---------&gt;  汇编代码    -----------&gt;  汇编  ---------&gt;  目标文件  ---------&gt;  链接  ---------&gt;  可执行文件</span><br><span class="line"></span><br><span class="line">test.c      gcc -E test.c -o test.i      text.i       gcc -S test.io test.s      text.s          gcc -S test.so test.o     test.o       gcc -S test.so test.o     text</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">源码  ---------&gt;  预处理  ---------&gt;  预编译文件  ---------&gt;  编译  ---------&gt;  汇编代码    -----------&gt;  汇编  ---------&gt;  目标文件  ---------&gt;  链接  ---------&gt;  可执行文件<br><br>test.c      gcc -E test.c -o test.i      text.i       gcc -S test.io test.s      text.s          gcc -S test.so test.o     test.o       gcc -S test.so test.o     text<br></code></pre></td></tr></table></figure>
 <h2 id="C-C-代码需要迁移的原因"><a href="#C-C-代码需要迁移的原因" class="headerlink" title="C/C++代码需要迁移的原因"></a>C/C++代码需要迁移的原因</h2><ul>
 <li>架构差异:<ul>
 <li>x86和鲲鹏处理器(aarch64)属于不同架构</li>
@@ -892,7 +896,7 @@ var $main = document.querySelector('.main');
 </ul>
 <!-- # C/C++代码编译构建过程
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">                  </span><br><span class="line">~~~ --&gt;</span><br><span class="line"></span><br><span class="line"># 直接真题 CTRL+F</span><br><span class="line"></span><br><span class="line">## 判断题</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plain">                  <br>~~~ --&gt;<br><br># 直接真题 CTRL+F<br><br>## 判断题<br><br></code></pre></td></tr></table></figure>
 <p>yum和rpm安装方式本质都是基于RPM包来安装软件 √</p>
 <p>交叉编译是在一个平台 上生成另一个平台上可执行的代码 √</p>
 <p>BenchmarkSQL使用GCC编译进行编译安装 ×</p>
@@ -911,7 +915,7 @@ var $main = document.querySelector('.main');
 <p>华为鲲鹏云服务可提供KC1型ECS和KS1型BMS. √</p>
 <p>Tai Shan服务器必须使用特殊的专有内存和硬盘. x</p>
 <p>Java/Python的虚拟机不支撑再鲲鹏上源码编译, 只能使用yum方式安装. x</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!-- **个人理解Python是解释型语言,Java在鲲鹏里面也被强制列为解释型语言** --&gt;</span><br><span class="line">&lt;!-- **用户想安装按RPM方式发行的软件, 只需简单地输入命令rpm -ivh xxx.rpm即可** --&gt;</span><br><span class="line">## 单选题</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plain"><br>&lt;!-- **个人理解Python是解释型语言,Java在鲲鹏里面也被强制列为解释型语言** --&gt;<br>&lt;!-- **用户想安装按RPM方式发行的软件, 只需简单地输入命令rpm -ivh xxx.rpm即可** --&gt;<br>## 单选题<br><br></code></pre></td></tr></table></figure>
 <p>类RedHat系统提供了什么命令来安装, 卸载和升级rpm软件包    (A)<br>    A. rpm<br>    B. dpkg<br>    C. tar<br>    D. apt-get</p>
 <p>下面哪个工具不属于鲲鹏开发套件?      (A)<br>    A. 分析扫码工具<br>    B. 代码迁移工具<br>    C. 性能调优工具<br>    D. Vtune</p>
 <p>使用命令rpmbuild -bb XX. spec (XX表示文件名)制作RPM包时，RPM包生成在什么目录下?      (C)<br>A、BUILD B、SOURCE C、RPMS D、SPEC</p>
@@ -937,7 +941,7 @@ var $main = document.querySelector('.main');
 <p>使用gcc编译时，编译选项-march的作用是什么?      (A)<br>A、指定指令集<br>B、指定cpu型号<br>C、指定流水线<br>D、提升兼容性</p>
 <p>下列哪个是华为鲲鹏生态兼容的非国产操作系统?      (C)<br>A、BCLinux<br>B、openEuler<br>C、Ubuntu<br>D、Kylin</p>
 <p>谁是Linux之父?      (D)<br>A、Richard Matthew Stal lman B、Andrew Morton C、Bill Gates D、LimusTorval ds</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 多选题</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain"><br>## 多选题<br><br></code></pre></td></tr></table></figure>
 <p>可以从哪些方面对Post greSQL进行性能调优?      (A C)<br>A、数据库参数 B、硬件 C、编译参数 D、操作系统</p>
 <p>使用BenchmarkSQL前需要进行哪些操作?      (A C D)<br>A、配置环境变量 B、重启服务器 C、安装JDK  D、使环境变量生效</p>
 <p>关于rpm包和SRPM包的描述，以下正确的是?      (A B D)<br>A、SRPM包含源代码而RPM不包含 B、rpm包可以直接安装，SRPM包不可以 C、两者都可修改编译参数 D、rpm包是已编译的程序，而SRPM不是</p>
@@ -3872,7 +3876,11 @@ function sdqlazyload(){
  
 	
 	<script>
-	hljs.highlightAll();	
+	document.addEventListener('DOMContentLoaded', (event) => {
+  		document.querySelectorAll('pre>span').forEach((el) => {
+   			hljs.highlightElement(el);
+  		});
+	});
 	</script>	
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/moc/tororo.2048","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/moc/tororo.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

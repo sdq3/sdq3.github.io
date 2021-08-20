@@ -59,8 +59,12 @@
 <script src="/js/highlight.min.js"></script>
 
 	
-<link rel="stylesheet" href="/css/code-styles/vs2015.min.css">
+<link rel="stylesheet" href="/css/code-style.css">
 
+	
+<link rel="stylesheet" href="/css/code-styles/xcode.min.css">
+
+	
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 
@@ -875,7 +879,7 @@ var $main = document.querySelector('.main');
 <li>为了更好的显示数据, 侧重点是为显示</li>
 <li>html是显示效果更好, 用于展示数据</li>
 </ul>
-<h1 id="常用的数据解析方法"><a href="#常用的数据解析方法" class="headerlink" title="常用的数据解析方法"></a>常用的数据解析方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">                                          &#x2F;   json模块</span><br><span class="line">                                &#x2F;   json |</span><br><span class="line">                               &#x2F;          \   jsonpath模块</span><br><span class="line">               数据化数据      &#x2F;</span><br><span class="line">           &#x2F;￣￣￣￣￣￣￣￣￣￣\</span><br><span class="line">          &#x2F;                     \         &#x2F;   re模块    正则语法</span><br><span class="line">         &#x2F;                       \  xml  |</span><br><span class="line">        &#x2F;                                 \   lxml模块  xpath语法</span><br><span class="line">       &#x2F;                                 </span><br><span class="line">数据解析</span><br><span class="line">       \ </span><br><span class="line">        \                                 &#x2F;   re模块    正则语法         </span><br><span class="line">         \                               &#x2F;    lxml模块  xpath语法</span><br><span class="line">          \                             &#x2F;</span><br><span class="line">           \_____________________ html |      beautifulsoup  xpath语法 正则语法 css选择器</span><br><span class="line">               非结构化数据              \     </span><br><span class="line">                                         \</span><br><span class="line">                                          \   pyquery   css选择器</span><br></pre></td></tr></table></figure>
+<h1 id="常用的数据解析方法"><a href="#常用的数据解析方法" class="headerlink" title="常用的数据解析方法"></a>常用的数据解析方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs plain">                                          &#x2F;   json模块<br>                                &#x2F;   json |<br>                               &#x2F;          \   jsonpath模块<br>               数据化数据      &#x2F;<br>           &#x2F;￣￣￣￣￣￣￣￣￣￣\<br>          &#x2F;                     \         &#x2F;   re模块    正则语法<br>         &#x2F;                       \  xml  |<br>        &#x2F;                                 \   lxml模块  xpath语法<br>       &#x2F;                                 <br>数据解析<br>       \ <br>        \                                 &#x2F;   re模块    正则语法         <br>         \                               &#x2F;    lxml模块  xpath语法<br>          \                             &#x2F;<br>           \_____________________ html |      beautifulsoup  xpath语法 正则语法 css选择器<br>               非结构化数据              \     <br>                                         \<br>                                          \   pyquery   css选择器<br></code></pre></td></tr></table></figure>
 
 <h1 id="jsonpath模块"><a href="#jsonpath模块" class="headerlink" title="jsonpath模块"></a>jsonpath模块</h1><p><a href="https://sdq3.gitee.io/reptile-jsonpath.html">详细说明</a></p>
 <h1 id="lxml模块"><a href="#lxml模块" class="headerlink" title="lxml模块"></a>lxml模块</h1><p><a href="https://sdq3.gitee.io/bs4-lxml.html">详细说明</a></p>
@@ -3778,7 +3782,11 @@ function sdqlazyload(){
  
 	
 	<script>
-	hljs.highlightAll();	
+	document.addEventListener('DOMContentLoaded', (event) => {
+  		document.querySelectorAll('pre>span').forEach((el) => {
+   			hljs.highlightElement(el);
+  		});
+	});
 	</script>	
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/moc/tororo.2048","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/moc/tororo.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

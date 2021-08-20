@@ -59,8 +59,12 @@
 <script src="/js/highlight.min.js"></script>
 
 	
-<link rel="stylesheet" href="/css/code-styles/vs2015.min.css">
+<link rel="stylesheet" href="/css/code-style.css">
 
+	
+<link rel="stylesheet" href="/css/code-styles/xcode.min.css">
+
+	
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 
@@ -838,11 +842,11 @@ var $main = document.querySelector('.main');
 <p><strong>缺点: 优点老手福利, 新手? ? ?</strong></p>
 <h1 id="正则表达式的概念"><a href="#正则表达式的概念" class="headerlink" title="正则表达式的概念"></a>正则表达式的概念</h1><p><strong>使用元字符进行排列组合用来匹配字符串</strong></p>
 <h1 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h1><p><strong>常用元字符</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">.          匹配除换行符以外的任意字符</span><br><span class="line">    </span><br><span class="line">\w         匹配字母或数字或下划线</span><br><span class="line">    </span><br><span class="line">\s         匹配任意的空白符</span><br><span class="line">    </span><br><span class="line">\d         匹配数字</span><br><span class="line">    </span><br><span class="line">\n         匹配一个换行符</span><br><span class="line">    </span><br><span class="line">\t         匹配一个制表符</span><br><span class="line">    </span><br><span class="line">^          匹配字符串的开始</span><br><span class="line">    </span><br><span class="line">        匹配字符串的结尾</span><br><span class="line">    </span><br><span class="line">\w         匹配非字母或数字或下划线</span><br><span class="line">    </span><br><span class="line">\D         匹配非数字</span><br><span class="line">    </span><br><span class="line">\S         匹配非空白符</span><br><span class="line">    </span><br><span class="line">a|b        匹配字符a或字符b</span><br><span class="line">    </span><br><span class="line">()         匹配括号内的表达式, 也表示一个组</span><br><span class="line">    </span><br><span class="line">[]         匹配字符中的字符    例如 [a-zA-z0-9]</span><br><span class="line">    </span><br><span class="line">[^]        匹配除了字符组中字符的所有字符</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs plain">.          匹配除换行符以外的任意字符<br>    <br>\w         匹配字母或数字或下划线<br>    <br>\s         匹配任意的空白符<br>    <br>\d         匹配数字<br>    <br>\n         匹配一个换行符<br>    <br>\t         匹配一个制表符<br>    <br>^          匹配字符串的开始<br>    <br>        匹配字符串的结尾<br>    <br>\w         匹配非字母或数字或下划线<br>    <br>\D         匹配非数字<br>    <br>\S         匹配非空白符<br>    <br>a|b        匹配字符a或字符b<br>    <br>()         匹配括号内的表达式, 也表示一个组<br>    <br>[]         匹配字符中的字符    例如 [a-zA-z0-9]<br>    <br>[^]        匹配除了字符组中字符的所有字符<br></code></pre></td></tr></table></figure>
 <p><strong>量词: 控制前面的元字符出现的次数</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">*          重复零次或更多次 </span><br><span class="line"></span><br><span class="line">+          重复一次或更多次</span><br><span class="line"></span><br><span class="line">?          重复零次或一次  说白了就是出现或者不出现</span><br><span class="line"></span><br><span class="line">&#123;n&#125;        重复n次</span><br><span class="line"></span><br><span class="line">&#123;n,&#125;       重复n次或更多次</span><br><span class="line"></span><br><span class="line">&#123;n,m&#125;      重复n到m次</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plain">*          重复零次或更多次 <br><br>+          重复一次或更多次<br><br>?          重复零次或一次  说白了就是出现或者不出现<br><br>&#123;n&#125;        重复n次<br><br>&#123;n,&#125;       重复n次或更多次<br><br>&#123;n,m&#125;      重复n到m次<br></code></pre></td></tr></table></figure>
 <p><strong>贪婪匹配和惰性匹配</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.*          贪婪匹配      说白了就是尽可能多的匹配</span><br><span class="line"></span><br><span class="line">.*?         惰性匹配      说白了就是尽可能少的匹配</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">.*          贪婪匹配      说白了就是尽可能多的匹配<br><br>.*?         惰性匹配      说白了就是尽可能少的匹配<br></code></pre></td></tr></table></figure>
 			  </article>
 		</div>
 		
@@ -3740,7 +3744,11 @@ function sdqlazyload(){
  
 	
 	<script>
-	hljs.highlightAll();	
+	document.addEventListener('DOMContentLoaded', (event) => {
+  		document.querySelectorAll('pre>span').forEach((el) => {
+   			hljs.highlightElement(el);
+  		});
+	});
 	</script>	
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/moc/tororo.2048","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/moc/tororo.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

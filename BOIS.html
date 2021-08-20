@@ -59,8 +59,12 @@
 <script src="/js/highlight.min.js"></script>
 
 	
-<link rel="stylesheet" href="/css/code-styles/vs2015.min.css">
+<link rel="stylesheet" href="/css/code-style.css">
 
+	
+<link rel="stylesheet" href="/css/code-styles/xcode.min.css">
+
+	
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 
@@ -835,25 +839,25 @@ var $main = document.querySelector('.main');
 <li>把文件拖入C盘根目录解压</li>
 </ul>
 <p><strong>以管理员的方式打开</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd C:&#x2F;刷BIOS</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">cd C:&#x2F;刷BIOS<br></code></pre></td></tr></table></figure>
 <p><strong>备份命令 支持很多格式的备份</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fptw64.exe -d 备份.bin -bios</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">fptw64.exe -d 备份.bin -bios<br></code></pre></td></tr></table></figure>
 <p><strong>写入命令 支持很多格式的写入</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fptw64.exe -f 写入.bin -bios</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">fptw64.exe -f 写入.bin -bios<br></code></pre></td></tr></table></figure>
 <h1 id="dos刷BIOS"><a href="#dos刷BIOS" class="headerlink" title="dos刷BIOS"></a>dos刷BIOS</h1><h3 id="下载微PE把要刷写的BIOS文件U盘"><a href="#下载微PE把要刷写的BIOS文件U盘" class="headerlink" title="下载微PE把要刷写的BIOS文件U盘"></a>下载<a target="_blank" rel="noopener" href="https://download.csdn.net/download/qq_44948696/20695927">微PE</a>把要刷写的BIOS文件U盘</h3><p><img src="/images/%E5%88%B7BIOS/%E5%BE%AEPE1.jpg"></p>
 <p><img src="/images/%E5%88%B7BIOS/%E5%BE%AEPE2.jpg"></p>
 <h3 id="运行MaxDos工具箱"><a href="#运行MaxDos工具箱" class="headerlink" title="运行MaxDos工具箱"></a>运行MaxDos工具箱</h3><p><strong>查看</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dir</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">dir<br></code></pre></td></tr></table></figure>
 <p><strong>切换分区</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A:</span><br><span class="line"></span><br><span class="line">B:</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">A:<br><br>B:<br></code></pre></td></tr></table></figure>
 <p><strong>刷新进EC目录下EC</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ECFlash</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">ECFlash<br></code></pre></td></tr></table></figure>
 <p><img src="/images/%E5%88%B7BIOS/%E5%88%B7EC.jpg"></p>
 <p><strong>进BIOS目录下刷写BIOS</strong></p>
 <p><strong>快</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">meset </span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">meset <br></code></pre></td></tr></table></figure>
 <p><strong>慢</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flashme</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">flashme<br></code></pre></td></tr></table></figure>
 <p><img src="/images/%E5%88%B7BIOS/%E5%88%B7BIOS.jpg"></p>
 <h3 id="神州SL7D3-神州SL7S3-神州SL7S4用的BIOS"><a href="#神州SL7D3-神州SL7S3-神州SL7S4用的BIOS" class="headerlink" title="神州SL7D3 神州SL7S3 神州SL7S4用的BIOS"></a>神州SL7D3 神州SL7S3 神州SL7S4<a target="_blank" rel="noopener" href="https://wwr.lanzoui.com/iFiRVs7ehij">用的BIOS</a></h3>
 			  </article>
@@ -3753,7 +3757,11 @@ function sdqlazyload(){
  
 	
 	<script>
-	hljs.highlightAll();	
+	document.addEventListener('DOMContentLoaded', (event) => {
+  		document.querySelectorAll('pre>span').forEach((el) => {
+   			hljs.highlightElement(el);
+  		});
+	});
 	</script>	
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/moc/tororo.2048","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/moc/tororo.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

@@ -59,8 +59,12 @@
 <script src="/js/highlight.min.js"></script>
 
 	
-<link rel="stylesheet" href="/css/code-styles/vs2015.min.css">
+<link rel="stylesheet" href="/css/code-style.css">
 
+	
+<link rel="stylesheet" href="/css/code-styles/xcode.min.css">
+
+	
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 
@@ -839,10 +843,10 @@ var $main = document.querySelector('.main');
 <h1 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h1><p><strong>HTTP协议传输的就是网站源代码</strong></p>
 <h1 id="HTTP协议把一条消息分为三大块内容"><a href="#HTTP协议把一条消息分为三大块内容" class="headerlink" title="HTTP协议把一条消息分为三大块内容"></a>HTTP协议把一条消息分为三大块内容</h1><h1>请求: </h1>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">请求行 -&gt; 请求方式(get&#x2F;post) 请求url地址 协议</span><br><span class="line"></span><br><span class="line">请求头 -&gt; 放一些服务器要使用的附加信息</span><br><span class="line"></span><br><span class="line">请求体 -&gt; 一般放一些请求参数</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plain">请求行 -&gt; 请求方式(get&#x2F;post) 请求url地址 协议<br><br>请求头 -&gt; 放一些服务器要使用的附加信息<br><br>请求体 -&gt; 一般放一些请求参数<br></code></pre></td></tr></table></figure>
 <h1>响应: </h1>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">状态行 -&gt;  协议 状态码 例如:404</span><br><span class="line"></span><br><span class="line">响应头 -&gt; 放一些客户端要使用的附加信息</span><br><span class="line"></span><br><span class="line">响应体 -&gt; 服务器返回的真正客户端要使用的内容 例如:HTML, json等等</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plain">状态行 -&gt;  协议 状态码 例如:404<br><br>响应头 -&gt; 放一些客户端要使用的附加信息<br><br>响应体 -&gt; 服务器返回的真正客户端要使用的内容 例如:HTML, json等等<br></code></pre></td></tr></table></figure>
 <h1 id="请求头中最常见的一些重要内容"><a href="#请求头中最常见的一些重要内容" class="headerlink" title="请求头中最常见的一些重要内容"></a>请求头中最常见的一些重要内容</h1><p><strong>User-Agent: 请求载体的身份标识(用啥发送的请求)</strong></p>
 <p><strong>Referer: 防盗链(这次请求是从哪个页面来的? 防爬会用到)</strong></p>
 <p><strong>cookie: 本地字符串数据信息(用户登陆信息, 防爬的token)</strong></p>
@@ -3753,7 +3757,11 @@ function sdqlazyload(){
  
 	
 	<script>
-	hljs.highlightAll();	
+	document.addEventListener('DOMContentLoaded', (event) => {
+  		document.querySelectorAll('pre>span').forEach((el) => {
+   			hljs.highlightElement(el);
+  		});
+	});
 	</script>	
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/moc/tororo.2048","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/moc/tororo.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

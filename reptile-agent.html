@@ -59,8 +59,12 @@
 <script src="/js/highlight.min.js"></script>
 
 	
-<link rel="stylesheet" href="/css/code-styles/vs2015.min.css">
+<link rel="stylesheet" href="/css/code-style.css">
 
+	
+<link rel="stylesheet" href="/css/code-styles/xcode.min.css">
+
+	
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 
@@ -851,11 +855,11 @@ var $main = document.querySelector('.main');
 
 <h1 id="怎么区分正向代理和反向代理"><a href="#怎么区分正向代理和反向代理" class="headerlink" title="怎么区分正向代理和反向代理"></a>怎么区分正向代理和反向代理</h1><p><strong>知不知道最终服务器的地址作为判断标准 知道正向 不知道反向</strong></p>
 <h1 id="代理ip-代理服务器-的分类"><a href="#代理ip-代理服务器-的分类" class="headerlink" title="代理ip(代理服务器)的分类"></a>代理ip(代理服务器)的分类</h1><p><strong>透明代理(Transparent Proxy) 透明代理虽然直接隐藏你的ip地址, 但还是可以查看的到 目标服务器接收到的请求头如下:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">REMOTE_ADDR &#x3D; Proxy IP</span><br><span class="line"></span><br><span class="line">HTTP_VIA &#x3D; Proxy IP</span><br><span class="line"></span><br><span class="line">HTTP_X_FORWARDED_FOR &#x3D; 你的IP</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plain">REMOTE_ADDR &#x3D; Proxy IP<br><br>HTTP_VIA &#x3D; Proxy IP<br><br>HTTP_X_FORWARDED_FOR &#x3D; 你的IP<br></code></pre></td></tr></table></figure>
 <p><strong>匿名代理(Anonymous Proxy) 使用匿名代理, 别人只能知道你用了代理, 无法知道你是谁 目标服务器接收到的请求头如下:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">REMOTE_ADDR &#x3D; Proxy IP</span><br><span class="line"></span><br><span class="line">HTTP_VIA &#x3D; Proxy IP</span><br><span class="line"></span><br><span class="line">HTTP_X_FORWARDED_FOR &#x3D; Proxy IP</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plain">REMOTE_ADDR &#x3D; Proxy IP<br><br>HTTP_VIA &#x3D; Proxy IP<br><br>HTTP_X_FORWARDED_FOR &#x3D; Proxy IP<br></code></pre></td></tr></table></figure>
 <p><strong>高匿代理(Elite Proxy或者High Anonymous Proxy) 使用高匿代理让别人无法发现你是在用代理, 所以是最好选择 效果最好 目标服务器接收到的请求头如下:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">REMOTE_ADDR &#x3D; Proxy IP</span><br><span class="line"></span><br><span class="line">HTTP_VIA &#x3D; not determined</span><br><span class="line"></span><br><span class="line">HTTP_X_FORWARDED_FOR &#x3D; not determined</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plain">REMOTE_ADDR &#x3D; Proxy IP<br><br>HTTP_VIA &#x3D; not determined<br><br>HTTP_X_FORWARDED_FOR &#x3D; not determined<br></code></pre></td></tr></table></figure>
 <h1 id="根据网站所使用的协议不同-需要使用相应协议的代理服务"><a href="#根据网站所使用的协议不同-需要使用相应协议的代理服务" class="headerlink" title="根据网站所使用的协议不同, 需要使用相应协议的代理服务"></a>根据网站所使用的协议不同, 需要使用相应协议的代理服务</h1><ul>
 <li>http代理: 目标url为http协议</li>
 <li>https代理: 目标url为https协议</li>
@@ -869,7 +873,7 @@ var $main = document.querySelector('.main');
 </ul>
 
 <h1 id="proxies代理参数的使用"><a href="#proxies代理参数的使用" class="headerlink" title="proxies代理参数的使用"></a>proxies代理参数的使用</h1><p><strong>为了让服务器以为不是同一个客户端的请求, 防止频繁向一个域名发送请求被封ip, 所以要使用代理ip</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 主意: proxies字典中包含多个键值对, 发送请求时将按照url地址的协议来选择对应的代理ip</span><br><span class="line"></span><br><span class="line"># proxies通常是用字典形式使用</span><br><span class="line">proxies &#x3D; &#123;</span><br><span class="line">    &quot;http&quot;:&quot;http:&#x2F;&#x2F;106.14.5.128:80&quot;,</span><br><span class="line">    &quot;https&quot;:&quot;http:&#x2F;&#x2F;106.14.5.130:80&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># reuests模块使用代理的用法:</span><br><span class="line">response &#x3D; requests.get(url, proxies&#x3D;proxies)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plain"># 主意: proxies字典中包含多个键值对, 发送请求时将按照url地址的协议来选择对应的代理ip<br><br># proxies通常是用字典形式使用<br>proxies &#x3D; &#123;<br>    &quot;http&quot;:&quot;http:&#x2F;&#x2F;106.14.5.128:80&quot;,<br>    &quot;https&quot;:&quot;http:&#x2F;&#x2F;106.14.5.130:80&quot;<br>&#125;<br><br># reuests模块使用代理的用法:<br>response &#x3D; requests.get(url, proxies&#x3D;proxies)<br></code></pre></td></tr></table></figure>
 
 
 
@@ -3941,7 +3945,11 @@ function sdqlazyload(){
  
 	
 	<script>
-	hljs.highlightAll();	
+	document.addEventListener('DOMContentLoaded', (event) => {
+  		document.querySelectorAll('pre>span').forEach((el) => {
+   			hljs.highlightElement(el);
+  		});
+	});
 	</script>	
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/moc/tororo.2048","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/moc/tororo.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

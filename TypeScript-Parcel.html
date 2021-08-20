@@ -59,8 +59,12 @@
 <script src="/js/highlight.min.js"></script>
 
 	
-<link rel="stylesheet" href="/css/code-styles/vs2015.min.css">
+<link rel="stylesheet" href="/css/code-style.css">
 
+	
+<link rel="stylesheet" href="/css/code-styles/xcode.min.css">
+
+	
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 
@@ -838,14 +842,14 @@ var $main = document.querySelector('.main');
 <li>密码: sdq3</li>
 </ul>
 <h1 id="Parcel打包"><a href="#Parcel打包" class="headerlink" title="Parcel打包"></a>Parcel打包</h1><h3 id="Parcel安装方法"><a href="#Parcel安装方法" class="headerlink" title="Parcel安装方法"></a>Parcel安装方法</h3><p><strong>用yarn来安装</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add --dev parcel@next</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">yarn add --dev parcel@next<br></code></pre></td></tr></table></figure>
 <p><strong>用npm来安装</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install parcel@next --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">npm install parcel@next --save<br></code></pre></td></tr></table></figure>
 <p><strong>用cnpm来安装</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install parcel@next --save</span><br></pre></td></tr></table></figure>
-<h3 id="打包文件"><a href="#打包文件" class="headerlink" title="打包文件"></a>打包文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;sdqts&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;&quot;,</span><br><span class="line">  &quot;main&quot;: &quot;index.js&quot;,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &#x2F;&#x2F; 要打包路径</span><br><span class="line">    &quot;test&quot;: &quot;parcel .&#x2F;src&#x2F;index.html&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;keywords&quot;: [],</span><br><span class="line">  &quot;author&quot;: &quot;&quot;,</span><br><span class="line">  &quot;license&quot;: &quot;ISC&quot;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;parcel&quot;: &quot;^2.0.0-rc.0&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="引入-script"><a href="#引入-script" class="headerlink" title="引入 script"></a>引入 script</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;.&#x2F;page.ts&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">   &lt;title&gt;史迪奇国王&lt;&#x2F;title&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt; </span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="page-ts"><a href="#page-ts" class="headerlink" title="page.ts"></a>page.ts</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const sdq : string &#x3D; &quot;史迪奇&quot;</span><br><span class="line">console.log(sdq)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">cnpm install parcel@next --save<br></code></pre></td></tr></table></figure>
+<h3 id="打包文件"><a href="#打包文件" class="headerlink" title="打包文件"></a>打包文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs plain">&#123;<br>  &quot;name&quot;: &quot;sdqts&quot;,<br>  &quot;version&quot;: &quot;1.0.0&quot;,<br>  &quot;description&quot;: &quot;&quot;,<br>  &quot;main&quot;: &quot;index.js&quot;,<br>  &quot;scripts&quot;: &#123;<br>    &#x2F;&#x2F; 要打包路径<br>    &quot;test&quot;: &quot;parcel .&#x2F;src&#x2F;index.html&quot;<br>  &#125;,<br>  &quot;keywords&quot;: [],<br>  &quot;author&quot;: &quot;&quot;,<br>  &quot;license&quot;: &quot;ISC&quot;,<br>  &quot;dependencies&quot;: &#123;<br>    &quot;parcel&quot;: &quot;^2.0.0-rc.0&quot;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="引入-script"><a href="#引入-script" class="headerlink" title="引入 script"></a>引入 script</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plain">&lt;!DOCTYPE html&gt;<br>&lt;html lang&#x3D;&quot;en&quot;&gt;<br>&lt;head&gt;<br>    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;<br>    &lt;script src&#x3D;&quot;.&#x2F;page.ts&quot;&gt;&lt;&#x2F;script&gt;<br>   &lt;title&gt;史迪奇国王&lt;&#x2F;title&gt;<br>&lt;&#x2F;head&gt;<br>&lt;body&gt; <br>&lt;&#x2F;body&gt;<br>&lt;&#x2F;html&gt;<br></code></pre></td></tr></table></figure>
+<h3 id="page-ts"><a href="#page-ts" class="headerlink" title="page.ts"></a>page.ts</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">const sdq : string &#x3D; &quot;史迪奇&quot;<br>console.log(sdq)<br></code></pre></td></tr></table></figure>
 
 			  </article>
 		</div>
@@ -3744,7 +3748,11 @@ function sdqlazyload(){
  
 	
 	<script>
-	hljs.highlightAll();	
+	document.addEventListener('DOMContentLoaded', (event) => {
+  		document.querySelectorAll('pre>span').forEach((el) => {
+   			hljs.highlightElement(el);
+  		});
+	});
 	</script>	
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/moc/tororo.2048","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/moc/tororo.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

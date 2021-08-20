@@ -59,8 +59,12 @@
 <script src="/js/highlight.min.js"></script>
 
 	
-<link rel="stylesheet" href="/css/code-styles/vs2015.min.css">
+<link rel="stylesheet" href="/css/code-style.css">
 
+	
+<link rel="stylesheet" href="/css/code-styles/xcode.min.css">
+
+	
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 
@@ -834,24 +838,24 @@ var $main = document.querySelector('.main');
 <a id="more"></a>
 
 <h1 id="生成配置文件"><a href="#生成配置文件" class="headerlink" title="生成配置文件"></a>生成配置文件</h1><p><strong>命令行输入</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tsc -init</span><br></pre></td></tr></table></figure>
-<h1 id="常用tsconfig-json配置知识"><a href="#常用tsconfig-json配置知识" class="headerlink" title="常用tsconfig.json配置知识"></a>常用tsconfig.json配置知识</h1><h3 id="include-属性是用来指定要编译的文件的"><a href="#include-属性是用来指定要编译的文件的" class="headerlink" title="include 属性是用来指定要编译的文件的"></a>include 属性是用来指定要编译的文件的</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;include&quot;:[&quot;demo.ts&quot;],</span><br><span class="line">  &quot;compilerOptions&quot;: &#123;</span><br><span class="line">      &#x2F;&#x2F;any something</span><br><span class="line">      &#x2F;&#x2F;........</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="exclude-除什么文件之外"><a href="#exclude-除什么文件之外" class="headerlink" title="exclude 除什么文件之外"></a>exclude 除什么文件之外</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;exclude&quot;:[&quot;demo.ts&quot;],</span><br><span class="line">  &quot;compilerOptions&quot;: &#123;</span><br><span class="line">      &#x2F;&#x2F;any something</span><br><span class="line">      &#x2F;&#x2F;........</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="files-配置效果和include几乎一样"><a href="#files-配置效果和include几乎一样" class="headerlink" title="files 配置效果和include几乎一样"></a>files 配置效果和include几乎一样</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;files&quot;:[&quot;demo.ts&quot;],</span><br><span class="line">  &quot;compilerOptions&quot;: &#123;</span><br><span class="line">      &#x2F;&#x2F;any something</span><br><span class="line">      &#x2F;&#x2F;........</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">tsc -init<br></code></pre></td></tr></table></figure>
+<h1 id="常用tsconfig-json配置知识"><a href="#常用tsconfig-json配置知识" class="headerlink" title="常用tsconfig.json配置知识"></a>常用tsconfig.json配置知识</h1><h3 id="include-属性是用来指定要编译的文件的"><a href="#include-属性是用来指定要编译的文件的" class="headerlink" title="include 属性是用来指定要编译的文件的"></a>include 属性是用来指定要编译的文件的</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plain">&#123;<br>  &quot;include&quot;:[&quot;demo.ts&quot;],<br>  &quot;compilerOptions&quot;: &#123;<br>      &#x2F;&#x2F;any something<br>      &#x2F;&#x2F;........<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="exclude-除什么文件之外"><a href="#exclude-除什么文件之外" class="headerlink" title="exclude 除什么文件之外"></a>exclude 除什么文件之外</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plain">&#123;<br>  &quot;exclude&quot;:[&quot;demo.ts&quot;],<br>  &quot;compilerOptions&quot;: &#123;<br>      &#x2F;&#x2F;any something<br>      &#x2F;&#x2F;........<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="files-配置效果和include几乎一样"><a href="#files-配置效果和include几乎一样" class="headerlink" title="files 配置效果和include几乎一样"></a>files 配置效果和include几乎一样</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plain">&#123;<br>  &quot;files&quot;:[&quot;demo.ts&quot;],<br>  &quot;compilerOptions&quot;: &#123;<br>      &#x2F;&#x2F;any something<br>      &#x2F;&#x2F;........<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h1 id="常用complierOptions配置知识"><a href="#常用complierOptions配置知识" class="headerlink" title="常用complierOptions配置知识"></a>常用complierOptions配置知识</h1><h3 id="removeComments-属性"><a href="#removeComments-属性" class="headerlink" title="removeComments 属性"></a>removeComments 属性</h3><p><strong>作用: removeComments的值设置为true，就是在js中不显示注释</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;removeComments&quot;: false</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">&quot;removeComments&quot;: false<br></code></pre></td></tr></table></figure>
 <h3 id="strict-属性"><a href="#strict-属性" class="headerlink" title="strict 属性"></a>strict 属性</h3><p><strong>作用: 把这个设置为false或者注释掉，意思是我们可以对设置一些不严格的写法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;strict&quot;: false</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">&quot;strict&quot;: false<br></code></pre></td></tr></table></figure>
 <h3 id="noImplicitAny-属性"><a href="#noImplicitAny-属性" class="headerlink" title="noImplicitAny 属性"></a>noImplicitAny 属性</h3><p><strong>作用: 允许你的注解类型 any 不用特意表明</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;noImplicitAny&quot;: true</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">&quot;noImplicitAny&quot;: true<br></code></pre></td></tr></table></figure>
 <h3 id="strictNullChecks-属性"><a href="#strictNullChecks-属性" class="headerlink" title="strictNullChecks 属性"></a>strictNullChecks 属性</h3><p><strong>作用: 不强制检查 NULL 类型</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;strictNullChecks&quot;: true</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">&quot;strictNullChecks&quot;: true<br></code></pre></td></tr></table></figure>
 <h3 id="rootDir属性-和-outDir属性"><a href="#rootDir属性-和-outDir属性" class="headerlink" title="rootDir属性 和 outDir属性"></a>rootDir属性 和 outDir属性</h3><p><strong>作用: 就是存放路径和生成路径</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;outDir&quot;: &quot;.&#x2F;build&quot; ,  &#x2F;&#x2F; 生成js的目录 </span><br><span class="line">&quot;rootDir&quot;: &quot;.&#x2F;src&quot;     &#x2F;&#x2F; 存放ts的目录</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">&quot;outDir&quot;: &quot;.&#x2F;build&quot; ,  &#x2F;&#x2F; 生成js的目录 <br>&quot;rootDir&quot;: &quot;.&#x2F;src&quot;     &#x2F;&#x2F; 存放ts的目录<br></code></pre></td></tr></table></figure>
 <h3 id="sourceMap-属性"><a href="#sourceMap-属性" class="headerlink" title="sourceMap 属性"></a>sourceMap 属性</h3><p><strong>作用: 里面储存着位置信息</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;sourceMap&quot;: true</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">&quot;sourceMap&quot;: true<br></code></pre></td></tr></table></figure>
 <h3 id="noUnusedLocals属性-和-noUnusedParameters属性"><a href="#noUnusedLocals属性-和-noUnusedParameters属性" class="headerlink" title="noUnusedLocals属性 和 noUnusedParameters属性"></a>noUnusedLocals属性 和 noUnusedParameters属性</h3><p><strong>作用: 提示未使用变量和未使用方法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;noUnusedLocals&quot;: true,       &#x2F;&#x2F;打包时进行提示未使用的变量    </span><br><span class="line">&quot;noUnusedParameters&quot;: true    &#x2F;&#x2F;打包是进行提示未使用的方法</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">&quot;noUnusedLocals&quot;: true,       &#x2F;&#x2F;打包时进行提示未使用的变量    <br>&quot;noUnusedParameters&quot;: true    &#x2F;&#x2F;打包是进行提示未使用的方法<br></code></pre></td></tr></table></figure>
 
 			  </article>
 		</div>
@@ -3750,7 +3754,11 @@ function sdqlazyload(){
  
 	
 	<script>
-	hljs.highlightAll();	
+	document.addEventListener('DOMContentLoaded', (event) => {
+  		document.querySelectorAll('pre>span').forEach((el) => {
+   			hljs.highlightElement(el);
+  		});
+	});
 	</script>	
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/moc/tororo.2048","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/moc/tororo.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

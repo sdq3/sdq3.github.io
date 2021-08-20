@@ -59,8 +59,12 @@
 <script src="/js/highlight.min.js"></script>
 
 	
-<link rel="stylesheet" href="/css/code-styles/vs2015.min.css">
+<link rel="stylesheet" href="/css/code-style.css">
 
+	
+<link rel="stylesheet" href="/css/code-styles/xcode.min.css">
+
+	
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 
@@ -833,17 +837,17 @@ var $main = document.querySelector('.main');
 				<p><strong>JavaScript个人整理</strong></p>
 <a id="more"></a>
 
-<h1 id="字符串常用"><a href="#字符串常用" class="headerlink" title="字符串常用"></a>字符串常用</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="string">&quot;字符串&quot;</span>     <span class="comment">/*双引号包裹*/</span></span><br><span class="line">$ <span class="string">&#x27;字符串&#x27;</span>     <span class="comment">/*单引号包裹*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="字符串常用"><a href="#字符串常用" class="headerlink" title="字符串常用"></a>字符串常用</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">$ <span class="hljs-string">&quot;字符串&quot;</span>     <span class="hljs-comment">/*双引号包裹*/</span><br>$ <span class="hljs-string">&#x27;字符串&#x27;</span>     <span class="hljs-comment">/*单引号包裹*/</span><br></code></pre></td></tr></table></figure>
 
-<h1 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\<span class="string">&#x27;           /*代表它是一个字符串*/</span></span><br><span class="line"><span class="string">\n           /*换行*/</span></span><br><span class="line"><span class="string">\t           /*tab*/</span></span><br><span class="line"><span class="string">\u5d3d       /*Unicode字符*/</span></span><br><span class="line"><span class="string">\x45         /*Asll字符*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">\<span class="hljs-string">&#x27;           /*代表它是一个字符串*/</span><br>\n           <span class="hljs-comment">/*换行*/</span><br>\t           <span class="hljs-comment">/*tab*/</span><br>\u5d3d       <span class="hljs-comment">/*Unicode字符*/</span><br>\x45         <span class="hljs-comment">/*Asll字符*/</span><br></code></pre></td></tr></table></figure>
 <h1 id="多行字符串编写"><a href="#多行字符串编写" class="headerlink" title="多行字符串编写"></a>多行字符串编写</h1><p><strong>例子</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="comment">/*tab键上面  esc键下面*/</span></span><br><span class="line">  <span class="keyword">var</span> msg =</span><br><span class="line">      haha</span><br><span class="line"> 哈哈</span><br><span class="line"> 蛤蛤  </span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">$ <span class="hljs-comment">/*tab键上面  esc键下面*/</span><br>  <span class="hljs-keyword">var</span> msg =<br>      haha<br> 哈哈<br> 蛤蛤  <br></code></pre></td></tr></table></figure>
 <h1 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h1><p><strong>例子</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="comment">/*tab键上面  esc键下面*/</span></span><br><span class="line">  <span class="keyword">let</span> sdq = <span class="string">&quot;史迪奇&quot;</span>;</span><br><span class="line">  <span class="keyword">let</span> sdz = <span class="string">&quot;史迪仔&quot;</span>;</span><br><span class="line">  <span class="keyword">let</span> age = <span class="number">119</span>;</span><br><span class="line">  <span class="keyword">let</span> sdqz = <span class="string">&#x27;我叫.$&#123;sdq&#125;&#x27;</span>;</span><br></pre></td></tr></table></figure>
-<h1 id="字符串长度"><a href="#字符串长度" class="headerlink" title="字符串长度"></a>字符串长度</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.length</span><br></pre></td></tr></table></figure>
-<h1 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*是方法不是属性*/</span></span><br><span class="line">sdq.toUpperCase()          <span class="comment">/*大写*/</span></span><br><span class="line">sdq.LowerCase()          <span class="comment">/*小写*/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">$ <span class="hljs-comment">/*tab键上面  esc键下面*/</span><br>  <span class="hljs-keyword">let</span> sdq = <span class="hljs-string">&quot;史迪奇&quot;</span>;<br>  <span class="hljs-keyword">let</span> sdz = <span class="hljs-string">&quot;史迪仔&quot;</span>;<br>  <span class="hljs-keyword">let</span> age = <span class="hljs-number">119</span>;<br>  <span class="hljs-keyword">let</span> sdqz = <span class="hljs-string">&#x27;我叫.$&#123;sdq&#125;&#x27;</span>;<br></code></pre></td></tr></table></figure>
+<h1 id="字符串长度"><a href="#字符串长度" class="headerlink" title="字符串长度"></a>字符串长度</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">str.<span class="hljs-property">length</span><br></code></pre></td></tr></table></figure>
+<h1 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">/*是方法不是属性*/</span><br>sdq.<span class="hljs-title function_">toUpperCase</span>()          <span class="hljs-comment">/*大写*/</span><br>sdq.<span class="hljs-title class_">LowerCase</span>()          <span class="hljs-comment">/*小写*/</span><br></code></pre></td></tr></table></figure>
 <h1 id="字符串截取"><a href="#字符串截取" class="headerlink" title="字符串截取"></a>字符串截取</h1><p><strong>subsrting</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sdq.subsrting(<span class="number">1</span>)          <span class="comment">/*从第一个字符串截取到最后一个字符串*/</span></span><br><span class="line">sdq.LowerCase(<span class="number">1</span>,<span class="number">3</span>)          <span class="comment">/*包头不包尾*/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">sdq.<span class="hljs-title function_">subsrting</span>(<span class="hljs-number">1</span>)          <span class="hljs-comment">/*从第一个字符串截取到最后一个字符串*/</span><br>sdq.<span class="hljs-title class_">LowerCase</span>(<span class="hljs-number">1</span>,<span class="hljs-number">3</span>)          <span class="hljs-comment">/*包头不包尾*/</span><br></code></pre></td></tr></table></figure>
 			  </article>
 		</div>
 		
@@ -3741,7 +3745,11 @@ function sdqlazyload(){
  
 	
 	<script>
-	hljs.highlightAll();	
+	document.addEventListener('DOMContentLoaded', (event) => {
+  		document.querySelectorAll('pre>span').forEach((el) => {
+   			hljs.highlightElement(el);
+  		});
+	});
 	</script>	
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/moc/tororo.2048","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/moc/tororo.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

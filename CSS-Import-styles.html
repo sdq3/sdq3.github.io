@@ -59,8 +59,12 @@
 <script src="/js/highlight.min.js"></script>
 
 	
-<link rel="stylesheet" href="/css/code-styles/vs2015.min.css">
+<link rel="stylesheet" href="/css/code-style.css">
 
+	
+<link rel="stylesheet" href="/css/code-styles/xcode.min.css">
+
+	
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 
@@ -833,12 +837,12 @@ var $main = document.querySelector('.main');
 				<p><strong>CSS个人整理</strong></p>
 <a id="more"></a>
 
-<h1 id="第一种-行内样式"><a href="#第一种-行内样式" class="headerlink" title="第一种  行内样式"></a>第一种  行内样式</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">&quot;color: red&quot;</span>&gt;</span>行内样式<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="第一种-行内样式"><a href="#第一种-行内样式" class="headerlink" title="第一种  行内样式"></a>第一种  行内样式</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html">$ <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;color: red&quot;</span>&gt;</span>行内样式<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E8%A1%8C%E5%86%85%E6%A0%B7%E5%BC%8F.jpg"></p>
-<h1 id="第二种-内部样式"><a href="#第二种-内部样式" class="headerlink" title="第二种 内部样式"></a>第二种 内部样式</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">  h1&#123;</span><br><span class="line">      color: blue;</span><br><span class="line">    &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="第二种-内部样式"><a href="#第二种-内部样式" class="headerlink" title="第二种 内部样式"></a>第二种 内部样式</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs html">$ <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br>  h1&#123;<br>      color: blue;<br>    &#125;<br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E5%86%85%E9%83%A8%E6%A0%B7%E5%BC%8F.jpg"></p>
 <h1 id="第三种-外部样式"><a href="#第三种-外部样式" class="headerlink" title="第三种 外部样式"></a>第三种 外部样式</h1><p><strong>另外一个css页面</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;css/style.css&quot;</span>&gt;</span>    //链接式  属于html</span><br><span class="line">  @import url(&quot;css/style.css&quot;)          //导入式  属于CSS2.1 了解就可以</span><br><span class="line">$ <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">  h1&#123;</span><br><span class="line">      color: blue;</span><br><span class="line">    &#125;</span><br><span class="line">$ <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs html"> <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;css/style.css&quot;</span>&gt;</span>    //链接式  属于html<br>  @import url(&quot;css/style.css&quot;)          //导入式  属于CSS2.1 了解就可以<br>$ <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br>  h1&#123;<br>      color: blue;<br>    &#125;<br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E5%A4%96%E9%83%A8%E6%A0%B7%E5%BC%8F.jpg"></p>
 <h1 id="优先级-行内样式-gt-内部样式-gt-外部样式"><a href="#优先级-行内样式-gt-内部样式-gt-外部样式" class="headerlink" title="优先级: 行内样式 &gt; 内部样式 &gt; 外部样式"></a>优先级: 行内样式 &gt; 内部样式 &gt; 外部样式</h1><p><strong>优先级看就近原则</strong></p>
 
@@ -3739,7 +3743,11 @@ function sdqlazyload(){
  
 	
 	<script>
-	hljs.highlightAll();	
+	document.addEventListener('DOMContentLoaded', (event) => {
+  		document.querySelectorAll('pre>span').forEach((el) => {
+   			hljs.highlightElement(el);
+  		});
+	});
 	</script>	
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/moc/tororo.2048","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/moc/tororo.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

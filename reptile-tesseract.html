@@ -59,8 +59,12 @@
 <script src="/js/highlight.min.js"></script>
 
 	
-<link rel="stylesheet" href="/css/code-styles/vs2015.min.css">
+<link rel="stylesheet" href="/css/code-style.css">
 
+	
+<link rel="stylesheet" href="/css/code-styles/xcode.min.css">
+
+	
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 
@@ -833,11 +837,11 @@ var $main = document.querySelector('.main');
 				<p><strong>每天一个入狱小技巧</strong></p>
 <a id="more"></a>
 
-<h1 id="安装tesseract"><a href="#安装tesseract" class="headerlink" title="安装tesseract"></a>安装tesseract</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">windows exe安装配环境变量</span><br><span class="line"></span><br><span class="line">MacOS   brew install tesseract</span><br><span class="line"></span><br><span class="line">Linux   sudo apt-get install tesserac-ocr</span><br></pre></td></tr></table></figure>
+<h1 id="安装tesseract"><a href="#安装tesseract" class="headerlink" title="安装tesseract"></a>安装tesseract</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plain">windows exe安装配环境变量<br><br>MacOS   brew install tesseract<br><br>Linux   sudo apt-get install tesserac-ocr<br></code></pre></td></tr></table></figure>
 <p><strong>打开cmd 输入以下内容</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># PIL用于打开图片文件</span><br><span class="line">pip install pillow</span><br><span class="line"></span><br><span class="line"># pytesseract模块用于从图片中解析数据</span><br><span class="line">pip install pytesseract</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plain"># PIL用于打开图片文件<br>pip install pillow<br><br># pytesseract模块用于从图片中解析数据<br>pip install pytesseract<br></code></pre></td></tr></table></figure>
 <h1 id="图片识别引擎的使用"><a href="#图片识别引擎的使用" class="headerlink" title="图片识别引擎的使用"></a>图片识别引擎的使用</h1><p><strong>通过pytesseract模块的image_to_string方法就能将打开图片的文件中的数据提取成字符串数据</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line">import pytesseract</span><br><span class="line"></span><br><span class="line"># 打开一个图片文件</span><br><span class="line">im &#x3D; Image.open(&#39;起名可以是中文.jpg&#39;)    &#x2F;&#x2F;该图片的&quot;内容&quot;非中文, 中文不识别</span><br><span class="line"></span><br><span class="line">result &#x3D; pytesseract.image_to_string(im)</span><br><span class="line"></span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plain">from PIL import Image<br>import pytesseract<br><br># 打开一个图片文件<br>im &#x3D; Image.open(&#39;起名可以是中文.jpg&#39;)    &#x2F;&#x2F;该图片的&quot;内容&quot;非中文, 中文不识别<br><br>result &#x3D; pytesseract.image_to_string(im)<br><br>print(result)<br></code></pre></td></tr></table></figure>
 <h1 id="图片识别引擎的使用扩展"><a href="#图片识别引擎的使用扩展" class="headerlink" title="图片识别引擎的使用扩展"></a>图片识别引擎的使用扩展</h1><p><strong><a target="_blank" rel="noopener" href="https://www.cnblogs.com/cnlian/p/5765871.html">训练平台</a></strong></p>
 <ul>
 <li>其他OCR平台<ul>
@@ -3746,7 +3750,11 @@ function sdqlazyload(){
  
 	
 	<script>
-	hljs.highlightAll();	
+	document.addEventListener('DOMContentLoaded', (event) => {
+  		document.querySelectorAll('pre>span').forEach((el) => {
+   			hljs.highlightElement(el);
+  		});
+	});
 	</script>	
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/moc/tororo.2048","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/moc/tororo.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

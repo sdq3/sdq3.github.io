@@ -59,8 +59,12 @@
 <script src="/js/highlight.min.js"></script>
 
 	
-<link rel="stylesheet" href="/css/code-styles/vs2015.min.css">
+<link rel="stylesheet" href="/css/code-style.css">
 
+	
+<link rel="stylesheet" href="/css/code-styles/xcode.min.css">
+
+	
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 
@@ -836,8 +840,8 @@ var $main = document.querySelector('.main');
 
 <h1 id="导入requests"><a href="#导入requests" class="headerlink" title="导入requests"></a>导入requests</h1><!--more-->
 <p><strong>打开cmd输入以下代码</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install requests</span><br></pre></td></tr></table></figure>
-<h1 id="百度翻译案例"><a href="#百度翻译案例" class="headerlink" title="百度翻译案例"></a>百度翻译案例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &quot;https:&#x2F;&#x2F;fanyi.baidu.com&#x2F;sug&quot;</span><br><span class="line"></span><br><span class="line">s &#x3D; input(&quot;请输入你要翻译的英文单词&quot;)</span><br><span class="line"></span><br><span class="line">dat &#x3D; &#123;</span><br><span class="line">        &quot;kw&quot;:s</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">tou &#x3D; &#123;</span><br><span class="line">    &quot;user-agent&quot;: &quot;Mozilla&#x2F;5.0 (Linux; Android 6.0; Nexus 5 Build&#x2F;MRA58N) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.85 Mobile Safari&#x2F;537.36&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">pachon &#x3D; requests.post(url,headers&#x3D;tou,data&#x3D;dat)</span><br><span class="line"></span><br><span class="line">print(pachon)</span><br><span class="line"></span><br><span class="line">print(pachon.json())</span><br><span class="line"></span><br><span class="line">pachon.close()  #断开&#x2F;关闭连接, 一定要断开</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">pip install requests<br></code></pre></td></tr></table></figure>
+<h1 id="百度翻译案例"><a href="#百度翻译案例" class="headerlink" title="百度翻译案例"></a>百度翻译案例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs plain">import requests<br><br>url &#x3D; &quot;https:&#x2F;&#x2F;fanyi.baidu.com&#x2F;sug&quot;<br><br>s &#x3D; input(&quot;请输入你要翻译的英文单词&quot;)<br><br>dat &#x3D; &#123;<br>        &quot;kw&quot;:s<br>    &#125;<br><br>tou &#x3D; &#123;<br>    &quot;user-agent&quot;: &quot;Mozilla&#x2F;5.0 (Linux; Android 6.0; Nexus 5 Build&#x2F;MRA58N) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;90.0.4430.85 Mobile Safari&#x2F;537.36&quot;<br>&#125;<br><br>pachon &#x3D; requests.post(url,headers&#x3D;tou,data&#x3D;dat)<br><br>print(pachon)<br><br>print(pachon.json())<br><br>pachon.close()  #断开&#x2F;关闭连接, 一定要断开<br></code></pre></td></tr></table></figure>
 
 
 
@@ -3739,7 +3743,11 @@ function sdqlazyload(){
  
 	
 	<script>
-	hljs.highlightAll();	
+	document.addEventListener('DOMContentLoaded', (event) => {
+  		document.querySelectorAll('pre>span').forEach((el) => {
+   			hljs.highlightElement(el);
+  		});
+	});
 	</script>	
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/moc/tororo.2048","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/moc/tororo.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

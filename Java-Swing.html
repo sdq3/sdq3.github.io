@@ -59,8 +59,12 @@
 <script src="/js/highlight.min.js"></script>
 
 	
-<link rel="stylesheet" href="/css/code-styles/vs2015.min.css">
+<link rel="stylesheet" href="/css/code-style.css">
 
+	
+<link rel="stylesheet" href="/css/code-styles/xcode.min.css">
+
+	
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 
@@ -849,9 +853,9 @@ var $main = document.querySelector('.main');
 <p>null (绝对布局)</p>
 <blockquote>
 <h1 id="JavaSwing-基本组件"><a href="#JavaSwing-基本组件" class="headerlink" title="JavaSwing 基本组件"></a>JavaSwing 基本组件</h1></blockquote>
-<h1 id="JLabel-标签"><a href="#JLabel-标签" class="headerlink" title="JLabel (标签)"></a>JLabel (标签)</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ JLabel x = new JLabel(<span class="string">&quot;我是JLabel&quot;</span>);</span><br><span class="line">$ contenntPane.add(x);</span><br><span class="line">$ //也可以用一行</span><br><span class="line">$ contenntPane.add(new JLabel(<span class="string">&quot;我是JLabel&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="JLabel-标签"><a href="#JLabel-标签" class="headerlink" title="JLabel (标签)"></a>JLabel (标签)</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ JLabel x = new JLabel(<span class="hljs-string">&quot;我是JLabel&quot;</span>);<br>$ contenntPane.add(x);<br>$ //也可以用一行<br>$ contenntPane.add(new JLabel(<span class="hljs-string">&quot;我是JLabel&quot;</span>);<br></code></pre></td></tr></table></figure>
 <p>JLabel 用于显示短文本或图标<br>setText() 设置文件<br>setFont() 设置字体<br>setForeground() 设置文件颜色<br>setToolTipText() 设置工具提示<br>getText() 取得用户输入</p>
-<h2 id="JButton-按钮"><a href="#JButton-按钮" class="headerlink" title="JButton (按钮)"></a>JButton (按钮)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ JButton x = new JButton(<span class="string">&quot;我是JButton&quot;</span>);</span><br><span class="line">$ contenntPane.add(x);</span><br><span class="line">$ //也可以用一行</span><br><span class="line">$ contenntPane.add(new JButton(<span class="string">&quot;我是JButton&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="JButton-按钮"><a href="#JButton-按钮" class="headerlink" title="JButton (按钮)"></a>JButton (按钮)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ JButton x = new JButton(<span class="hljs-string">&quot;我是JButton&quot;</span>);<br>$ contenntPane.add(x);<br>$ //也可以用一行<br>$ contenntPane.add(new JButton(<span class="hljs-string">&quot;我是JButton&quot;</span>);<br></code></pre></td></tr></table></figure>
 
 <p>JRadioButton (单选按钮)</p>
 <h1 id="JCheckBox-复选框"><a href="#JCheckBox-复选框" class="headerlink" title="JCheckBox (复选框)"></a>JCheckBox (复选框)</h1><p>getSelected() 选中状态<br>setSelected() 设置<br>getText() 选项文字<br>addActionListener() 用户选中/取消时触发</p>
@@ -875,7 +879,7 @@ var $main = document.querySelector('.main');
 <p>JFrame (窗口)[一般存放标题]<br>setTitle  (设置标题)</p>
 <p>Container (内容面板)</p>
 <h1 id="setVisible-设置窗口大小-和-setVisble-显示窗口大小"><a href="#setVisible-设置窗口大小-和-setVisble-显示窗口大小" class="headerlink" title="setVisible (设置窗口大小) 和 setVisble(显示窗口大小)"></a>setVisible (设置窗口大小) 和 setVisble(显示窗口大小)</h1><p>setVisible(boolean)方法是用来显示/隐藏GUI组件的。<br>需要显示则使用true，需要隐藏则使用false</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ setVisible(<span class="literal">true</span>)  //例如这个</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ setVisible(<span class="hljs-literal">true</span>)  //例如这个<br></code></pre></td></tr></table></figure>
 <p>意思是说数据模型已经构造好了，允许JVM可以根据数据模型执行paint方法开始画图并显示到屏幕上了，并不是显示图形，而是可以运行开始画图，要把setVisible()方法放到最后面，代码是按顺序执行的 ，如果把setVisible()放在前边，后边再添加其他组件的时候，有可能不会显示出来</p>
 <p>JDialog, JOptionPane (对话框)</p>
 <p>JFileChooser (文件选择器)</p>
@@ -891,7 +895,7 @@ var $main = document.querySelector('.main');
 <p>组件的位置和尺寸</p>
 <h1 id="组件边框-Border"><a href="#组件边框-Border" class="headerlink" title="组件边框 (Border)"></a>组件边框 (Border)</h1><p>Border本身就是一个接口<br>Padding: 边框与它的内容之间的间距<br>Margin: 边框与它外面的容器之间的间距</p>
 <h1 id="AfBorder-添加边框和边距"><a href="#AfBorder-添加边框和边距" class="headerlink" title="AfBorder 添加边框和边距"></a>AfBorder 添加边框和边距</h1><p>addPadding() 内边距<br>addMargin() 外边距<br>addOuterBorder() 外边添加Border<br>addInnerBorder() 里面添加Border</p>
-<h1 id="AfPanel-用于快速布局"><a href="#AfPanel-用于快速布局" class="headerlink" title="AfPanel 用于快速布局"></a>AfPanel 用于快速布局</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ AfPanel p = new AfPanel();</span><br><span class="line">$ p.padding();  //设置内边距</span><br><span class="line">$ p.margin();  //设置外边距</span><br><span class="line">$ p.preferredWidth();  //设置PrefedSise的宽度</span><br><span class="line">$ p.preferredHeight();  //设置PrefedSise的高度</span><br></pre></td></tr></table></figure>
+<h1 id="AfPanel-用于快速布局"><a href="#AfPanel-用于快速布局" class="headerlink" title="AfPanel 用于快速布局"></a>AfPanel 用于快速布局</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ AfPanel p = new AfPanel();<br>$ p.padding();  //设置内边距<br>$ p.margin();  //设置外边距<br>$ p.preferredWidth();  //设置PrefedSise的宽度<br>$ p.preferredHeight();  //设置PrefedSise的高度<br></code></pre></td></tr></table></figure>
 <h1 id="图片缩放工具"><a href="#图片缩放工具" class="headerlink" title="图片缩放工具"></a>图片缩放工具</h1><p>fitXY()  XY方向拉伸占满<br>fitCenter()  居中显示，并保持长宽比<br>fitCenterInside() 如果图片较小，则居中显示，如果图片越出范围，则舒服显示</p>
 <h1 id="图片显示控件"><a href="#图片显示控件" class="headerlink" title="图片显示控件"></a>图片显示控件</h1><p>AfImageView  图片显示控件<br>setScaleType()  设置缩放类型<br>setImage()  显示图片<br>setBgColor()  设置背景图</p>
 <h1 id="鼠标事件-MouseEvent"><a href="#鼠标事件-MouseEvent" class="headerlink" title="鼠标事件 MouseEvent"></a>鼠标事件 MouseEvent</h1><p>addMouseliskener()<br>鼠标点击 mouseClicked<br>鼠标按下 mousePressed<br>鼠标抬起 mouseExited<br>鼠标移入 mouseEntered<br>鼠标移出 mouseExited<br>addMouseMotionliskener()<br>鼠标移动 mouseMoved<br>鼠标拖动 mouseDragged<br>addMouseWheelListener<br>鼠标滚动 mouseWheelMoved</p>
@@ -907,8 +911,8 @@ var $main = document.querySelector('.main');
 <p>Java操作桌面应用 — Desktop 类</p>
 <p>Java操作系统剪贴板(Clipboard)实现复制和粘贴 –&gt;</p>
 <h1 id="特别提醒-AWT-例如-Label-Button"><a href="#特别提醒-AWT-例如-Label-Button" class="headerlink" title="特别提醒 AWT 例如: Label,Button"></a>特别提醒 AWT 例如: Label,Button</h1><h1 id="特别提醒-Swing-例如-JLabel-JButton-只要是以J开头的"><a href="#特别提醒-Swing-例如-JLabel-JButton-只要是以J开头的" class="headerlink" title="特别提醒 Swing 例如: JLabel,JButton 只要是以J开头的"></a>特别提醒 Swing 例如: JLabel,JButton 只要是以J开头的</h1><h1 id="ActionListener-是一个接口，所以派生时用impleme"><a href="#ActionListener-是一个接口，所以派生时用impleme" class="headerlink" title="ActionListener 是一个接口，所以派生时用impleme"></a>ActionListener 是一个接口，所以派生时用impleme</h1><p>addActionListener(…)  传入的参数</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ Button.addActionListener(x);  //意思是把什么交给谁，例如button(按键) 和 x </span><br></pre></td></tr></table></figure>
-<h1 id="演示drawString（）方法的示例程序"><a href="#演示drawString（）方法的示例程序" class="headerlink" title="演示drawString（）方法的示例程序:"></a>演示drawString（）方法的示例程序:</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">drawString示例程序</span><br><span class="line"><span class="variable">$import</span> java.awt.*; </span><br><span class="line"><span class="variable">$import</span> java.applet.*; </span><br><span class="line"><span class="variable">$public</span> class HelloWorldApplet扩展Applet &#123;     </span><br><span class="line">$ public void paint(Graphics g)&#123;         </span><br><span class="line">$ g.drawString(<span class="string">&quot;Hello World&quot;</span>，100,100);</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ Button.addActionListener(x);  //意思是把什么交给谁，例如button(按键) 和 x <br></code></pre></td></tr></table></figure>
+<h1 id="演示drawString（）方法的示例程序"><a href="#演示drawString（）方法的示例程序" class="headerlink" title="演示drawString（）方法的示例程序:"></a>演示drawString（）方法的示例程序:</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">drawString示例程序<br><span class="hljs-variable">$import</span> java.awt.*; <br><span class="hljs-variable">$import</span> java.applet.*; <br><span class="hljs-variable">$public</span> class HelloWorldApplet扩展Applet &#123;     <br>$ public void paint(Graphics g)&#123;         <br>$ g.drawString(<span class="hljs-string">&quot;Hello World&quot;</span>，100,100);<br></code></pre></td></tr></table></figure>
 <h1 id="显示消息对话框"><a href="#显示消息对话框" class="headerlink" title="显示消息对话框"></a>显示消息对话框</h1><p>showMessageDialog(“里面的文字”)<br>f.setVisible(true)<br>f.setTitle(“框框上的文字”)<br>charAt<br>看见actionPerformed 就要implements ActionListener<br><strong>(Button saveButton = new Button)</strong><br>saveButton.addActionListener(this);没什么加就this<br>(ActionListener=监听器)<br>(this=当前对象的意思)<br>(super是父级对象)<br><strong>如果Container contentPane = newContainer();</strong><br><strong>就Container contentPane = getContentPane();</strong><br>有Thread就想起Runnable</p>
 
 			  </article>
@@ -3808,7 +3812,11 @@ function sdqlazyload(){
  
 	
 	<script>
-	hljs.highlightAll();	
+	document.addEventListener('DOMContentLoaded', (event) => {
+  		document.querySelectorAll('pre>span').forEach((el) => {
+   			hljs.highlightElement(el);
+  		});
+	});
 	</script>	
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/moc/tororo.2048","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/moc/tororo.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>
