@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>归档：2020/11 -  我叫史迪奇</title>
+	<title>React 组件 -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -808,520 +808,57 @@ var $main = document.querySelector('.main');
 
 
 
-
 <style>
-.sdq-post {
-	webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-}
-.sdq-post:hover{
-	webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-}
+	#sdqPost:hover{
+   		    background-color: rgba(255, 255, 255, 0.5)!important;
+	}	
 </style>
-
-
-<style>
-@media screen and (max-width: 1024px){
-	.sdq-more{    
-    opacity: 1!important;
-	}
-	.sdq-more{  
-		display: contents!important;	
-	}
-	.sdq-toping{
-		display: inline-block;
-		left: 10px;
-		top: 0;
-		z-index: 2;
-		color: #FFFFFF;
-		padding: 0 10px;
-		border-radius: 4px;
-		font-style: normal;
-		background-color: rgba(234, 67, 74, 0.7);
-	}
-	.sdq-post:hover .sdq-toping {display: inline-block!important;}
-}
-
-@media screen and (min-width: 1024px){
-	.sdq-toping{
-		display: none;
-		position: fixed;
-		left: 10px;
-		top: 0;
-		z-index: 2;color: #FFFFFF;
-		clip-path: polygon(100% 0, 100% 100%, 50% 70%, 0 100%, 0 0);
-		background-color: rgba(255, 0, 0, 0.51);    
-		background: -webkit-gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
-    	background: gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
-		height: 61px;
-		width: 41px;
-	}
-}
-	.sdq-more{   
-	display: inline-block;
-    float: right;
-    background-color: rgba(204, 196, 196, 0.45);
-    padding: .5rem 1rem;
-    border-radius: 4px;
-    color: #919191!important;
-    text-decoration: none;
-    opacity: 0;
-    -webkit-transition: opacity 1.2s;
-    transition: opacity 1.2s;
-    will-change: opacity;
-        -moz-user-select: none; /*火狐*/
-        -webkit-user-select: none; /*webkit浏览器*/
-        -ms-user-select: none; /*IE10*/
-        -khtml-user-select: none; /*早期浏览器*/
-        -o-user-select: none; /* Opera*/
-        user-select: none;
-	}
-	.sdq-post:hover .sdq-more {
-		opacity: 1;
-		animation: fade-in;
-		animation-duration: 0.6s;
-		-webkit-animation: fade-in 0.6s;
-	}
-	
-	@keyframes fade-in {  
-    0% {opacity: 0;}/*初始状态 透明度为0*/  
-    40% {opacity: 0;}/*过渡状态 透明度为0*/  
-    100% {opacity: 1;}/*结束状态 透明度为1*/  
-	}  
-	@-webkit-keyframes fade-in {/*针对webkit内核*/  
-		0% {opacity: 0;}  
-		40% {opacity: 0;}  
-		100% {opacity: 1;}  
-	}  
-	.sdq-post:hover .sdq-toping {display: block;}
-	.sdq-tags{
-	}
-	.sdq-tags a{
-		color: #fff; 
-		font-size: 15px; 
-	}
-	.sdq-tags a {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-	}
-	
-</style>
-
-
-<style>
-	
-@media screen and (min-width: 1024px){
-	.sdq-post:hover{
-   		border: none;
-		transform: translateY(-20px);
-		-webkit-transform: translateY(-20px);
-		-moz-transform: translateY(-20px);
-		background-color: rgba(255, 255, 255, 0.3);
-	}
-	.sdq-post{    
-		padding: 60px 70px!important;
-	}
-}
-	.sdq-post{    
-/*   		border: 1px #b8c7ff solid;*/
-		margin: 0px;    margin-bottom: 20px;
-        background-color: rgba(240, 248, 255, 0.4);
-	}
-</style>
-
-
-
-
-
-
 <div class="sdq">
-	<section class="sdq-posts">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/CSS8.html">
-					<div class="sdq-title"> 
-						CSS-边距-边框-阴影-浮动-定位-透明-z-index-动画
-					</div>
-				</a>
-			</div>
-			
+	<div class="sdq-post" id="sdqPost">
+		<div class="sdq-title">
+			<h1>React 组件</h1>
 		</div>
+	  <div id="post" class="sdq-post-Statistics">
+            <a>2021年09月10日</a>
+		  	<a class="post-count">99 字</a>
+		
+		  <a class=" -link" href="/categories/React/">React</a>
+		
+		
+	  </div>
+		
+		
+<div id="modal" style="display:none">
 
-			<article>
-				
-				<p><strong>CSS个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2020年11月29日</a>
-				
-					<a class="category-link" href="/categories/CSS/">CSS</a>
-				
-				
-			</div>
-		</div>
-		<a href="/CSS8.html"><div class="sdq-more">阅读更多...</div></a>
-		
+<aside id="article-toc" class="fixed-toc">
+    <div id="article-toc-inner">
+        <strong class="sidebar-title">目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JSX%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-text">JSX的优点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6%E5%83%8F-class-%E5%92%8C-for-%E4%B8%8D%E5%BB%BA%E8%AE%AE%E4%BD%9C%E4%B8%BA-XML-%E5%B1%9E%E6%80%A7%E5%90%8D-%E4%BD%9C%E4%B8%BA%E6%9B%BF%E4%BB%A3-React-DOM-%E4%BD%BF%E7%94%A8-className-%E5%92%8C-htmlFor-%E6%9D%A5%E5%81%9A%E5%AF%B9%E5%BA%94%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-text">标识符像 class 和 for 不建议作为 XML 属性名 作为替代 React DOM 使用 className 和 htmlFor 来做对应的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-JSX"><span class="toc-text">使用 JSX</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8B%AC%E7%AB%8B%E6%96%87%E4%BB%B6"><span class="toc-text">独立文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97"><span class="toc-text">逻辑运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-text">数组</span></a></li></ol></li></ol></li></ol>
     </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/CSS-Import-styles.html">
-					<div class="sdq-title"> 
-						CSS 三种导入样式
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>CSS个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2020年11月29日</a>
-				
-					<a class="category-link" href="/categories/CSS/">CSS</a>
-				
-				
-			</div>
-		</div>
-		<a href="/CSS-Import-styles.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/CSS%E5%B1%82%E6%AC%A1%E9%80%89%E6%8B%A9%E5%99%A8.html">
-					<div class="sdq-title"> 
-						CSS 层次选择器
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>CSS个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2020年11月29日</a>
-				
-					<a class="category-link" href="/categories/CSS/">CSS</a>
-				
-				
-			</div>
-		</div>
-		<a href="/CSS%E5%B1%82%E6%AC%A1%E9%80%89%E6%8B%A9%E5%99%A8.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html">
-					<div class="sdq-title"> 
-						CSS 伪类选择器
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>CSS个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2020年11月29日</a>
-				
-					<a class="category-link" href="/categories/CSS/">CSS</a>
-				
-				
-			</div>
-		</div>
-		<a href="/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/CSS%E5%88%97%E8%A1%A8.html">
-					<div class="sdq-title"> 
-						CSS 列表
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>CSS个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2020年11月29日</a>
-				
-					<a class="category-link" href="/categories/CSS/">CSS</a>
-				
-				
-			</div>
-		</div>
-		<a href="/CSS%E5%88%97%E8%A1%A8.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F.html">
-					<div class="sdq-title"> 
-						CSS 三种导入样式
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>CSS个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2020年11月29日</a>
-				
-					<a class="category-link" href="/categories/CSS/">CSS</a>
-				
-				
-			</div>
-		</div>
-		<a href="/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/CSS%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8.html">
-					<div class="sdq-title"> 
-						CSS 三种基本选择器
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>CSS个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2020年11月29日</a>
-				
-					<a class="category-link" href="/categories/CSS/">CSS</a>
-				
-				
-			</div>
-		</div>
-		<a href="/CSS%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html">
-					<div class="sdq-title"> 
-						CSS 属性选择器(常用)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>CSS个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2020年11月29日</a>
-				
-					<a class="category-link" href="/categories/CSS/">CSS</a>
-				
-				
-			</div>
-		</div>
-		<a href="/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/HTML-iframe.html">
-					<div class="sdq-title"> 
-						HTML iframe内联框架
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>HTML个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2020年11月28日</a>
-				
-					<a class="category-link" href="/categories/HTML/">HTML</a>
-				
-				
-			</div>
-		</div>
-		<a href="/HTML-iframe.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Object-oriented-getter-setter.html">
-					<div class="sdq-title"> 
-						Java面向对象思维之getter和setter(作用)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>学习Java个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2020年11月28日</a>
-				
-					<a class="category-link" href="/categories/Java/">Java</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Object-oriented-getter-setter.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-</section>
-	
-
-
-    <nav id="paging">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2020/11/page/2/">2</a><a class="page-number" href="/archives/2020/11/page/3/">3</a><a class="extend next" rel="next" href="/archives/2020/11/page/2/"><i class="sdqMsDanIconFont"></i></a>
-    </nav>
-  
-
-<!--
-        prev_text: '<i class="iconfont">&#xe617;</i>',
-        next_text: '<i class="iconfont">&#xe627;</i>'
--->
+</aside>
 </div>
 
 
+		
+			<a href="#modal" class="second">
+				<div class="i">
+						<i style="font-size:20px" class="sdq3 sdqfasong">
+						<span style="font-size:0px">
+						</i>
+				</div>
+			</a>
+
+
+
+
+<script>
+	$(".second .i").mouseover(function(){
+  $(".second .i span").css("font-size","18px");
+});
+	$(".second .i").mouseleave(function(){
+  $(".second .i span").css("font-size","0px");
+});
+</script>
 
 
 
@@ -1329,6 +866,136 @@ var $main = document.querySelector('.main');
 
 
 
+
+
+
+
+		<div>
+			  <article>
+				<p><strong>React笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="JSX的优点"><a href="#JSX的优点" class="headerlink" title="JSX的优点"></a>JSX的优点</h1><ul>
+<li>JSX 执行更快，因为它在编译为 JavaScript 代码后进行了优化</li>
+<li>它是类型安全的，在编译过程中就能发现错误</li>
+<li>使用 JSX 编写模板更加简单快速</li>
+</ul>
+<h3 id="标识符像-class-和-for-不建议作为-XML-属性名-作为替代-React-DOM-使用-className-和-htmlFor-来做对应的属性"><a href="#标识符像-class-和-for-不建议作为-XML-属性名-作为替代-React-DOM-使用-className-和-htmlFor-来做对应的属性" class="headerlink" title="标识符像 class 和 for 不建议作为 XML 属性名 作为替代 React DOM 使用 className 和 htmlFor 来做对应的属性"></a>标识符像 class 和 for 不建议作为 XML 属性名 作为替代 React DOM 使用 className 和 htmlFor 来做对应的属性</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>&#123;/*  使用函数定义组件  */&#125;<br>function MyNameIsStitch(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>&#123;/*<br>class MyNameIsStitch extends React.Component &#123;<br>  render() &#123;<br>    return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>  &#125;<br>&#125;<br>*/&#125;<br>const element = <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> /&gt;</span>;<br><br>ReactDOM.render(<br>	element,<br>	document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="使用-JSX"><a href="#使用-JSX" class="headerlink" title="使用 JSX"></a>使用 JSX</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function MyNameIsStitch(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫&#123;props.name&#125;!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>&#123;/*  props.name=name  */&#125;<br>const element = <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;史迪奇&quot;</span>/&gt;</span>;<br>&#123;/*  const element = <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> <span class="hljs-attr">props.name</span>=<span class="hljs-string">&quot;史迪奇&quot;</span>/&gt;</span>;  */&#125;<br><br>ReactDOM.render(<br>	element,<br>	document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="独立文件"><a href="#独立文件" class="headerlink" title="独立文件"></a>独立文件</h3><p><strong>React JSX 代码可以放在一个独立文件上</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sdq.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>      ReactDOM.render(<br>      	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>          &#123;/*  逻辑运算 表达式写在花括号 &#123;&#125;  */&#125;<br>      	  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>https://sdq&#123;1+2&#125;.gitee.io<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      	,<br>      	document.getElementById(&#x27;example&#x27;)<br>      );<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><strong>JSX 中不能使用 if else 语句，但可以使用 conditional (三元运算) 表达式来替代</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br> var i = 3;<br>    ReactDOM.render(<br>    	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    	  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>&#123;i == 3 ? &#x27;True!&#x27; : &#x27;False&#x27;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>&#123;i != 3 ? &#x27;True!&#x27; : &#x27;False&#x27;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    	,<br>    	document.getElementById(&#x27;example&#x27;)<br>    );<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>    &#123;/*  创建数组  */&#125;<br>    var arr = [<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>,<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>安琪<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>,<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>鲁本<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span><br>    ];<br>    ReactDOM.render(<br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>&#123;arr&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>,<br>      document.getElementById(&#x27;example&#x27;)<br>    );<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+			  </article>
+		</div>
+		
+		
+
+
+		 	
+				<style>
+.veditor {
+    background: url('images/评论区/史迪奇睡觉.gif') no-repeat #fcfcfc!important;
+    background-size: auto 130px!important;
+    background-position: right bottom!important;
+}
+</style>
+<div id="vcomments" class="comment">
+
+</div>
+<script>
+	window.valine = new Valine({
+		el: '#vcomments',
+		appId: 'QqqoNLFAJzeDU9WPBVYk7UBj-MdYXbMMI',
+		appKey: 'hzwk2U93vOE4IdBWQXvda2mJ',
+		avatar: 'robohash',
+		placeholder: '我叫史迪奇',
+		path: window.location.pathname,   //[重点] 记得添加path路径
+		enableQQ:'true'
+	});
+	
+    // 使用方法 https://valine.js.org/quickstart.html
+	/*
+		var $vcomments = document.querySelector('.comment');
+		var $div= document.createElement('div');
+		$div.setAttribute("id","#vcomments");
+		$vcomments.appendChild($div);
+    new Valine({
+        el: '#vcomments',
+        appId: 'QqqoNLFAJzeDU9WPBVYk7UBj-MdYXbMMI',
+        appKey: 'hzwk2U93vOE4IdBWQXvda2mJ',
+		avatar: 'robohash',
+        placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ',
+    });*/
+        //placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ',
+</script>
+
+<script>
+/*//$(function() 
+$(window).load(function(){
+	// 去valine版权
+	$('.info').css("display","none");
+	// 去valine位移
+	$('.vmeta').css("padding-right","66px");
+	$('.vcontrol').css("padding-right","66px");
+	$('.vctrl').css("padding-right","66px");
+	$('#veditor').removeAttr("placeholder");
+	$("#veditor").attr("placeholder","输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ");
+	$('.v .vwrap .vheader .vinput:nth-child(3)').removeAttr("placeholder");
+	$(".v .vwrap .vheader .vinput:nth-child(3)").attr("placeholder","你的HOME(例：https://www.baidu.com)");
+	$(".info").after(" <p>&copy; </p>");
+});*/
+</script>
+			
+		
+	  
+	
+		
+
+
+<div class="copy">
+<i></i>
+<strong>本文作者：</strong>
+	
+	 
+			史迪奇<br>
+        
+	
+<strong>本文链接：</strong>
+	<a href="https://sdq3.gitee.io/React-subassembly.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;React-subassembly.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;React-subassembly.html</a><br>
+</div>
+
+	  
+	</div>
+</div>
+<script>
+	(function(){
+		var jmz = {};
+		jmz.GetLength = function(str) {
+			var realLength = 0, len = str.length, charCode = -1;
+			for (var i = 0; i < len; i++) {
+				charCode = str.charCodeAt(i);
+				if (charCode >= 0 && charCode <= 128) 
+					  realLength += 1;
+				else
+					  realLength += 1;
+			}
+			return realLength;
+		};
+		//console.log(str);
+		var article = document.querySelector('.sdq-post article').innerHTML.trim();
+
+		var b = article.replace(/<.*?>/ig,"");
+		
+		$('.post-count').html(jmz.GetLength(b)+"字");
+	})()
+
+
+
+</script>
 
 
     				

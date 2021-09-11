@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>归档：2020/11 -  我叫史迪奇</title>
+	<title>React 元素渲染 -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -808,520 +808,57 @@ var $main = document.querySelector('.main');
 
 
 
-
 <style>
-.sdq-post {
-	webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-}
-.sdq-post:hover{
-	webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-}
+	#sdqPost:hover{
+   		    background-color: rgba(255, 255, 255, 0.5)!important;
+	}	
 </style>
-
-
-<style>
-@media screen and (max-width: 1024px){
-	.sdq-more{    
-    opacity: 1!important;
-	}
-	.sdq-more{  
-		display: contents!important;	
-	}
-	.sdq-toping{
-		display: inline-block;
-		left: 10px;
-		top: 0;
-		z-index: 2;
-		color: #FFFFFF;
-		padding: 0 10px;
-		border-radius: 4px;
-		font-style: normal;
-		background-color: rgba(234, 67, 74, 0.7);
-	}
-	.sdq-post:hover .sdq-toping {display: inline-block!important;}
-}
-
-@media screen and (min-width: 1024px){
-	.sdq-toping{
-		display: none;
-		position: fixed;
-		left: 10px;
-		top: 0;
-		z-index: 2;color: #FFFFFF;
-		clip-path: polygon(100% 0, 100% 100%, 50% 70%, 0 100%, 0 0);
-		background-color: rgba(255, 0, 0, 0.51);    
-		background: -webkit-gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
-    	background: gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
-		height: 61px;
-		width: 41px;
-	}
-}
-	.sdq-more{   
-	display: inline-block;
-    float: right;
-    background-color: rgba(204, 196, 196, 0.45);
-    padding: .5rem 1rem;
-    border-radius: 4px;
-    color: #919191!important;
-    text-decoration: none;
-    opacity: 0;
-    -webkit-transition: opacity 1.2s;
-    transition: opacity 1.2s;
-    will-change: opacity;
-        -moz-user-select: none; /*火狐*/
-        -webkit-user-select: none; /*webkit浏览器*/
-        -ms-user-select: none; /*IE10*/
-        -khtml-user-select: none; /*早期浏览器*/
-        -o-user-select: none; /* Opera*/
-        user-select: none;
-	}
-	.sdq-post:hover .sdq-more {
-		opacity: 1;
-		animation: fade-in;
-		animation-duration: 0.6s;
-		-webkit-animation: fade-in 0.6s;
-	}
-	
-	@keyframes fade-in {  
-    0% {opacity: 0;}/*初始状态 透明度为0*/  
-    40% {opacity: 0;}/*过渡状态 透明度为0*/  
-    100% {opacity: 1;}/*结束状态 透明度为1*/  
-	}  
-	@-webkit-keyframes fade-in {/*针对webkit内核*/  
-		0% {opacity: 0;}  
-		40% {opacity: 0;}  
-		100% {opacity: 1;}  
-	}  
-	.sdq-post:hover .sdq-toping {display: block;}
-	.sdq-tags{
-	}
-	.sdq-tags a{
-		color: #fff; 
-		font-size: 15px; 
-	}
-	.sdq-tags a {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-	}
-	
-</style>
-
-
-<style>
-	
-@media screen and (min-width: 1024px){
-	.sdq-post:hover{
-   		border: none;
-		transform: translateY(-20px);
-		-webkit-transform: translateY(-20px);
-		-moz-transform: translateY(-20px);
-		background-color: rgba(255, 255, 255, 0.3);
-	}
-	.sdq-post{    
-		padding: 60px 70px!important;
-	}
-}
-	.sdq-post{    
-/*   		border: 1px #b8c7ff solid;*/
-		margin: 0px;    margin-bottom: 20px;
-        background-color: rgba(240, 248, 255, 0.4);
-	}
-</style>
-
-
-
-
-
-
 <div class="sdq">
-	<section class="sdq-posts">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/CSS8.html">
-					<div class="sdq-title"> 
-						CSS-边距-边框-阴影-浮动-定位-透明-z-index-动画
-					</div>
-				</a>
-			</div>
-			
+	<div class="sdq-post" id="sdqPost">
+		<div class="sdq-title">
+			<h1>React 元素渲染</h1>
 		</div>
+	  <div id="post" class="sdq-post-Statistics">
+            <a>2021年09月10日</a>
+		  	<a class="post-count">99 字</a>
+		
+		  <a class=" -link" href="/categories/React/">React</a>
+		
+		
+	  </div>
+		
+		
+<div id="modal" style="display:none">
 
-			<article>
-				
-				<p><strong>CSS个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2020年11月29日</a>
-				
-					<a class="category-link" href="/categories/CSS/">CSS</a>
-				
-				
-			</div>
-		</div>
-		<a href="/CSS8.html"><div class="sdq-more">阅读更多...</div></a>
-		
+<aside id="article-toc" class="fixed-toc">
+    <div id="article-toc-inner">
+        <strong class="sidebar-title">目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E6%B8%B2%E6%9F%93"><span class="toc-text">元素渲染</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E6%98%AF%E6%9E%84%E6%88%90-React-%E5%BA%94%E7%94%A8%E7%9A%84%E6%9C%80%E5%B0%8F%E5%8D%95%E4%BD%8D-%E7%94%A8%E4%BA%8E%E6%8F%8F%E8%BF%B0%E5%B1%8F%E5%B9%95%E4%B8%8A%E8%BE%93%E5%87%BA%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-text">元素是构成 React 应用的最小单位   用于描述屏幕上输出的内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E5%85%83%E7%B4%A0%E6%B8%B2%E6%9F%93"><span class="toc-text">更新元素渲染</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E5%87%BD%E6%95%B0%E6%9D%A5%E8%A1%A8%E7%A4%BA"><span class="toc-text">用函数来表示</span></a></li></ol></li></ol></li></ol>
     </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/CSS-Import-styles.html">
-					<div class="sdq-title"> 
-						CSS 三种导入样式
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>CSS个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2020年11月29日</a>
-				
-					<a class="category-link" href="/categories/CSS/">CSS</a>
-				
-				
-			</div>
-		</div>
-		<a href="/CSS-Import-styles.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/CSS%E5%B1%82%E6%AC%A1%E9%80%89%E6%8B%A9%E5%99%A8.html">
-					<div class="sdq-title"> 
-						CSS 层次选择器
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>CSS个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2020年11月29日</a>
-				
-					<a class="category-link" href="/categories/CSS/">CSS</a>
-				
-				
-			</div>
-		</div>
-		<a href="/CSS%E5%B1%82%E6%AC%A1%E9%80%89%E6%8B%A9%E5%99%A8.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html">
-					<div class="sdq-title"> 
-						CSS 伪类选择器
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>CSS个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2020年11月29日</a>
-				
-					<a class="category-link" href="/categories/CSS/">CSS</a>
-				
-				
-			</div>
-		</div>
-		<a href="/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/CSS%E5%88%97%E8%A1%A8.html">
-					<div class="sdq-title"> 
-						CSS 列表
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>CSS个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2020年11月29日</a>
-				
-					<a class="category-link" href="/categories/CSS/">CSS</a>
-				
-				
-			</div>
-		</div>
-		<a href="/CSS%E5%88%97%E8%A1%A8.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F.html">
-					<div class="sdq-title"> 
-						CSS 三种导入样式
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>CSS个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2020年11月29日</a>
-				
-					<a class="category-link" href="/categories/CSS/">CSS</a>
-				
-				
-			</div>
-		</div>
-		<a href="/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/CSS%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8.html">
-					<div class="sdq-title"> 
-						CSS 三种基本选择器
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>CSS个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2020年11月29日</a>
-				
-					<a class="category-link" href="/categories/CSS/">CSS</a>
-				
-				
-			</div>
-		</div>
-		<a href="/CSS%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html">
-					<div class="sdq-title"> 
-						CSS 属性选择器(常用)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>CSS个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2020年11月29日</a>
-				
-					<a class="category-link" href="/categories/CSS/">CSS</a>
-				
-				
-			</div>
-		</div>
-		<a href="/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/HTML-iframe.html">
-					<div class="sdq-title"> 
-						HTML iframe内联框架
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>HTML个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2020年11月28日</a>
-				
-					<a class="category-link" href="/categories/HTML/">HTML</a>
-				
-				
-			</div>
-		</div>
-		<a href="/HTML-iframe.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Object-oriented-getter-setter.html">
-					<div class="sdq-title"> 
-						Java面向对象思维之getter和setter(作用)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>学习Java个人整理</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2020年11月28日</a>
-				
-					<a class="category-link" href="/categories/Java/">Java</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Object-oriented-getter-setter.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-</section>
-	
-
-
-    <nav id="paging">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2020/11/page/2/">2</a><a class="page-number" href="/archives/2020/11/page/3/">3</a><a class="extend next" rel="next" href="/archives/2020/11/page/2/"><i class="sdqMsDanIconFont"></i></a>
-    </nav>
-  
-
-<!--
-        prev_text: '<i class="iconfont">&#xe617;</i>',
-        next_text: '<i class="iconfont">&#xe627;</i>'
--->
+</aside>
 </div>
 
 
+		
+			<a href="#modal" class="second">
+				<div class="i">
+						<i style="font-size:20px" class="sdq3 sdqfasong">
+						<span style="font-size:0px">
+						</i>
+				</div>
+			</a>
+
+
+
+
+<script>
+	$(".second .i").mouseover(function(){
+  $(".second .i span").css("font-size","18px");
+});
+	$(".second .i").mouseleave(function(){
+  $(".second .i span").css("font-size","0px");
+});
+</script>
 
 
 
@@ -1329,6 +866,128 @@ var $main = document.querySelector('.main');
 
 
 
+
+
+
+
+		<div>
+			  <article>
+				<p><strong>React笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="元素渲染"><a href="#元素渲染" class="headerlink" title="元素渲染"></a>元素渲染</h1><h2 id="元素是构成-React-应用的最小单位-用于描述屏幕上输出的内容"><a href="#元素是构成-React-应用的最小单位-用于描述屏幕上输出的内容" class="headerlink" title="元素是构成 React 应用的最小单位   用于描述屏幕上输出的内容"></a>元素是构成 React 应用的最小单位   用于描述屏幕上输出的内容</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-comment">&lt;!-- eact 的核心库 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-comment">&lt;!-- 提供与 DOM 相关的功能 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-comment">&lt;!-- Babel 可以将 ES6 代码转为 ES5 代码 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 将元素渲染到 DOM 中 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>// 要将React元素渲染到根DOM节点中 通过把它们都传递给 ReactDOM.render()的方法来将其渲染到页面上<br>const element =<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>ReactDOM.render(<br>    element,<br>    document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="更新元素渲染"><a href="#更新元素渲染" class="headerlink" title="更新元素渲染"></a>更新元素渲染</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function tick() &#123;<br>  const element = (<br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>你已经浪费了的时间 &#123;new Date().toLocaleTimeString()&#125;秒<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  );<br>  // 当前更新界面的唯一办法<br>  ReactDOM.render(<br>    element,<br>    document.getElementById(&#x27;example&#x27;)<br>  );<br>&#125;<br> <br>setInterval(tick, 1000);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="用函数来表示"><a href="#用函数来表示" class="headerlink" title="用函数来表示"></a>用函数来表示</h3><p><strong>React 只会更新必要的部分</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function Clock(props) &#123;<br>  return (<br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>    // this当前对象<br>    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>现在是 &#123;this.props.date.toLocaleTimeString()&#125;你又在这浪费时间<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>    // <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>现在是 &#123;props.date.toLocaleTimeString()&#125;你又在这浪费时间<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  );<br>&#125;<br><br>function tick() &#123;<br>  ReactDOM.render(<br>    <span class="hljs-tag">&lt;<span class="hljs-name">Clock</span> <span class="hljs-attr">date</span>=<span class="hljs-string">&#123;new</span> <span class="hljs-attr">Date</span>()&#125; /&gt;</span>,<br>    document.getElementById(&#x27;example&#x27;)<br>  );<br>&#125;<br><br>setInterval(tick, 1000);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+			  </article>
+		</div>
+		
+		
+
+
+		 	
+				<style>
+.veditor {
+    background: url('images/评论区/史迪奇睡觉.gif') no-repeat #fcfcfc!important;
+    background-size: auto 130px!important;
+    background-position: right bottom!important;
+}
+</style>
+<div id="vcomments" class="comment">
+
+</div>
+<script>
+	window.valine = new Valine({
+		el: '#vcomments',
+		appId: 'QqqoNLFAJzeDU9WPBVYk7UBj-MdYXbMMI',
+		appKey: 'hzwk2U93vOE4IdBWQXvda2mJ',
+		avatar: 'robohash',
+		placeholder: '我叫史迪奇',
+		path: window.location.pathname,   //[重点] 记得添加path路径
+		enableQQ:'true'
+	});
+	
+    // 使用方法 https://valine.js.org/quickstart.html
+	/*
+		var $vcomments = document.querySelector('.comment');
+		var $div= document.createElement('div');
+		$div.setAttribute("id","#vcomments");
+		$vcomments.appendChild($div);
+    new Valine({
+        el: '#vcomments',
+        appId: 'QqqoNLFAJzeDU9WPBVYk7UBj-MdYXbMMI',
+        appKey: 'hzwk2U93vOE4IdBWQXvda2mJ',
+		avatar: 'robohash',
+        placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ',
+    });*/
+        //placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ',
+</script>
+
+<script>
+/*//$(function() 
+$(window).load(function(){
+	// 去valine版权
+	$('.info').css("display","none");
+	// 去valine位移
+	$('.vmeta').css("padding-right","66px");
+	$('.vcontrol').css("padding-right","66px");
+	$('.vctrl').css("padding-right","66px");
+	$('#veditor').removeAttr("placeholder");
+	$("#veditor").attr("placeholder","输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ");
+	$('.v .vwrap .vheader .vinput:nth-child(3)').removeAttr("placeholder");
+	$(".v .vwrap .vheader .vinput:nth-child(3)").attr("placeholder","你的HOME(例：https://www.baidu.com)");
+	$(".info").after(" <p>&copy; </p>");
+});*/
+</script>
+			
+		
+	  
+	
+		
+
+
+<div class="copy">
+<i></i>
+<strong>本文作者：</strong>
+	
+	 
+			史迪奇<br>
+        
+	
+<strong>本文链接：</strong>
+	<a href="https://sdq3.gitee.io/React-Render-Elements.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;React-Render-Elements.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;React-Render-Elements.html</a><br>
+</div>
+
+	  
+	</div>
+</div>
+<script>
+	(function(){
+		var jmz = {};
+		jmz.GetLength = function(str) {
+			var realLength = 0, len = str.length, charCode = -1;
+			for (var i = 0; i < len; i++) {
+				charCode = str.charCodeAt(i);
+				if (charCode >= 0 && charCode <= 128) 
+					  realLength += 1;
+				else
+					  realLength += 1;
+			}
+			return realLength;
+		};
+		//console.log(str);
+		var article = document.querySelector('.sdq-post article').innerHTML.trim();
+
+		var b = article.replace(/<.*?>/ig,"");
+		
+		$('.post-count').html(jmz.GetLength(b)+"字");
+	})()
+
+
+
+</script>
 
 
     				
