@@ -190,7 +190,7 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>109
+					<span>文章</span>122
 					<span>标签</span>0
 					<span>分类</span>20
 				</div>		
@@ -344,7 +344,7 @@
 
         <li>
           <a href="/categories/React/">React</a>
-          <span>4</span>
+          <span>17</span>
         </li>
 
         
@@ -432,23 +432,23 @@
       <ul>
         
           <li>
-            <a href="/React-subassembly.html">React 组件</a>
+            <a href="/React-Component-oriented.html">React 面向组件编程</a>
           </li>
         
           <li>
-            <a href="/React-JSX.html">React JSX</a>
+            <a href="/React-JSX-one.html">React 模块与组件(模块与组件的理解)</a>
           </li>
         
           <li>
-            <a href="/React-Render-Elements.html">React 元素渲染</a>
+            <a href="/React-JSX-one.html">React JSX进一步学习</a>
           </li>
         
           <li>
-            <a href="/React-Foundation.html">React 第一枪</a>
+            <a href="/React-Refs.html">React Refs</a>
           </li>
         
           <li>
-            <a href="/JavaScript-definition-obtain.html">JavaScript 函数的定义和参数获取</a>
+            <a href="/React-Component-Lifecycles.html">React 组件生命周期</a>
           </li>
         
       </ul>
@@ -805,147 +805,148 @@ var $main = document.querySelector('.main');
 			<div class="main">
 				<div class="main-content">
 					
+
 <style>
-@media screen and (max-width: 1024px) {
-	.sdq-post:hover {
-		box-shadow: 0 4px 24px rgb(255, 255, 255);
-		z-index: 50!important;
-		padding: 15px!important;
+	/* 1550 */
+	/* 1440 */
+	@keyframes animation1 {
+		0%{
+			box-shadow: 0px 0px 20px 0px darkred ;
+		}
+		25%{
+			box-shadow: 0px 0px 20px 0px cornflowerblue ;
+		}
+		50%{
+			box-shadow: 0px 0px 20px 0px cornsilk ;
+		}
+		75%{
+			box-shadow: 0px 0px 20px 0px darkmagenta ;
+		}
+		100%{
+			box-shadow: 0px 0px 20px 0px darkred ;
+		}
 	}
-}
+	.box {
+		display: flex !important;
+		flex-direction: row !important;
+		flex-wrap: wrap !important;
+		justify-content: center !important;
+		text-decoration: none !important;
+		color: #000 !important;
+	}
+	.a {
+		transition: 0.3s !important;
+		width: 26% !important;
+		display: flex !important;
+		flex-direction: row !important;
+		list-style: none !important;
+		padding: 10px !important;
+		border-radius: 10px !important;
+		margin: 10px !important;
+		text-decoration: none !important;
+		color: #000 !important;
+		background-color: rgba(255, 255, 255, 0.5);
+		/* box-shadow: 0px 0px 10px 0px cornflowerblue ; */
+	}
+	.a:hover {
+		animation: animation1 5s infinite !important;
+		transform: translateY(-7px);
+	}
+	img {
+		width: 100% !important;
+		height: 100% !important;
+		object-fit: cover !important;
+	}
+	.a .div {
+		width: 90% !important;
+		/* background-color: crimson; */
+	}
+	.a .div:nth-child(1) {
+		width: 35% !important;
+		overflow: hidden !important;
+		border-radius: 20px;
+	}
+	.a .div:nth-child(2) {
+		display: flex !important;
+		flex-direction: column !important;
+		justify-content: center !important;
+		align-items: center !important;
+	}
+	@media all and (max-width:760px) {
+		.a {
+			width: 100% !important;
+		}
+	}
 </style>
-<div class="sdq-post" id="links">
-  <article>
-	    <div class="cloud-content">
-			<div class="cloud-header">
-				<h3>
-				<em>友情链接</em>
-				</h3>
-			本站信息: 
-	<table>
-
-		<tbody>
-			<tr>
-				<td align="center"></td>
-				<td>友情网站名称:  陈陈菌  &nbsp;&nbsp;<img src="images/头像/陈陈菌.jpg" style="width: 50px; height: 50px;" ></td>
-			</tr>
-			<tr>
-				<td align="center"></td>
-				<td>友情网站链接:  <a target="_blank" rel="noopener" href="https://blog.glumi.cn">https://blog.glumi.cn</a><br/></td>
-			</tr>
-		  </tbody>
-	</table>
-		  <br>	
-		  本站信息: 
-	<table>
-		  <thead>
-			<tr>
-				<tr>
-					<td align="center"></td>
-					<td>友情网站名称:  lemon大雄   &nbsp;&nbsp;<img src="images/头像/lemon大雄.jpg" style="width: 50px; height: 50px;" ></td>
-				</tr>
-				<tr>
-					<td align="center"></td>
-					<td>友情网站链接:  <a target="_blank" rel="noopener" href="https://blog.lemonbigbig.top">https://blog.lemonbigbig.top</a><br/></td>
-				</tr>
-			</tr>
-		</thead>
-	</table>
-		  <br>	
-		  本站信息: 
-	<table>
-		  <thead>
-			<tr>
-				<tr>
-					<td align="center"></td>
-					<td>友情网站名称:  神楽シロ_Official   &nbsp;&nbsp;<img src="https://i.loli.net/2021/05/15/QdcDz8P721AfEMR.jpg" style="width: 50px; height: 50px;" ></td>
-				</tr>
-				<tr>
-					<td align="center"></td>
-					<td>友情网站链接:  <a target="_blank" rel="noopener" href="https://blog.gzxiaobai.cn">https://blog.gzxiaobai.cn</a><br/></td>
-				</tr>
-			</tr>
-		</thead>
-	</table>
-
-	<br>	
-	本站信息: 
-	<table>
-		<thead>
-		  <tr>
-			  <tr>
-				  <td align="center"></td>
-				  <td>友情网站名称:  x1a071   &nbsp;&nbsp;<img src="images/头像/71.jpg" style="width: 50px; height: 50px;" ></td>
-			  </tr>
-			  <tr>
-				  <td align="center"></td>
-				  <td>友情网站链接： <a target="_blank" rel="noopener" href="https://x1a071.github.io">https://x1a071.github.io</a><br/></td>
-			  </tr>
-		  </tr>
-	  </thead>
-	</table>
-
-	<br>
-	本站信息: 
-	<table>
-
-		<tbody>
-			<tr>
-				<td align="center"></td>
-				<td>友情网站名称:  VaeWhite  &nbsp;&nbsp;<img src="https://blog.vaewhite.com/img/icon.png" style="width: 50px; height: 50px;" ></td>
-			</tr>
-			<tr>
-				<td align="center"></td>
-				<td>友情网站链接:  <a target="_blank" rel="noopener" href="https://blog.vaewhite.com">https://blog.vaewhite.com</a><br/></td>
-			</tr>
-		  </tbody>
-	</table>
-
-	<br>
-	本站信息: 
-	<table>
-
-		<tbody>
-			<tr>
-				<td align="center"></td>
-				<td>友情网站名称:  星语  &nbsp;&nbsp;<img src="https://q2.qlogo.cn/headimg_dl?dst_uin=2598974824&spec=5" style="width: 50px; height: 50px;" ></td>
-			</tr>
-			<tr>
-				<td align="center"></td>
-				<td>友情网站链接:  <a target="_blank" rel="noopener" href="https://blog.xingzhige.com">https://blog.xingzhige.com</a><br/></td>
-			</tr>
-		  </tbody>
-	</table>
-
-	<br>
-	本站信息: 
-	<table>
-
-		<tbody>
-			<tr>
-				<td align="center"></td>
-				<td>友情网站名称:  潘高的小站  &nbsp;&nbsp;<img src="https://blog.pangao.vip/images/avatar.jpg" style="width: 50px; height: 50px;" ></td>
-			</tr>
-			<tr>
-				<td align="center"></td>
-				<td>友情网站链接:  <a target="_blank" rel="noopener" href="https://blog.pangao.vip">https://blog.pangao.vip</a><br/></td>
-			</tr>
-		  </tbody>
-	</table>
-
-	
-<div class="cloud-wrapper clearfix">
-
-   
-
-
-
+<div class="sdq-post">
+<article>
+<div class="box">
+	<a class="a" target="_blank" href="https://blog.glumi.cn">
+		<div class="div">
+			<img src="./images/头像/陈陈菌.jpg">
+		</div>
+		<div class="div">
+			<span>陈陈菌</span>
+			<!-- <span>miaoshu</span> -->
+		</div>
+	</a>
+	<a class="a" target="_blank" href="https://blog.lemonbigbig.top">
+		<div class="div">
+			<img src="./images/头像/lemon大雄.jpg">
+		</div>
+		<div class="div">
+			<span>lemon大雄</span>
+			<!-- <span>miaoshu</span> -->
+		</div>
+	</a>
+	<a class="a" target="_blank" href="https://blog.gzxiaobai.cn">
+		<div class="div">
+			<img src="https://i.loli.net/2021/05/15/QdcDz8P721AfEMR.jpg">
+		</div>
+		<div class="div">
+			<span>神楽シロ_Official</span>
+			<!-- <span>神楽シロ_Officiald</span> -->
+		</div>
+	</a>
+	<a class="a" target="_blank" href="https://blog.gzxiaobai.cn">
+		<div class="div">
+			<img src="./images/头像/x1a071.jpg">
+		</div>
+		<div class="div">
+			<span>x1a071</span>
+			<!-- <span>神楽シロ_Officiald</span> -->
+		</div>
+	</a>
+	<a class="a" target="_blank" href="https://blog.vaewhite.com">
+		<div class="div">
+			<img src="https://blog.vaewhite.com/img/icon.png">
+		</div>
+		<div class="div">
+			<span>VaeWhite</span>
+			<!-- <span>神楽シロ_Officiald</span> -->
+		</div>
+	</a>
+	<a class="a" target="_blank" href="https://blog.gzxiaobai.cn">
+		<div class="div">
+			<img src="https://q2.qlogo.cn/headimg_dl?dst_uin=2598974824&spec=5">
+		</div>
+		<div class="div">
+			<span>星语</span>
+			<!-- <span>神楽シロ_Officiald</span> -->
+		</div>
+	</a>
+	<a class="a" target="_blank" href="https://blog.pangao.vip">
+		<div class="div">
+			<img src="https://blog.pangao.vip/images/avatar.jpg">
+		</div>
+		<div class="div">
+			<span>潘高的小站</span>
+			<!-- <span>神楽シロ_Officiald</span> -->
+		</div>
+	</a>
 </div>
-			</div>
-  </article>
+</article>
 </div>
-
-
     				
 					
 	

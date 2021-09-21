@@ -640,11 +640,12 @@ img {
 
 iframe {
     width: 100%;
+    /* height: 100%; */
     outline: 0;
     border: none;
     /* max-width: 100%; 
-    height: 330px; 
-    max-height: 100%; */
+    height: 330px; */ 
+    /* max-height: 100%; */
 }
 
 
@@ -1263,7 +1264,6 @@ iframe {
 
 .sdq-post img {
     width: auto;
-    max-width: 100%;
 }
 
 #sdqPost article img {
@@ -1278,9 +1278,6 @@ iframe {
     max-width: 100%;
 }
 
-#links img {
-    width: inherit;
-}
 
 .copy {
     margin-top: 30px;
@@ -1384,9 +1381,6 @@ iframe {
     .navbar-default .brand {
         padding-left: 30px;
         padding-right: 15px
-    }
-    #links img {
-        height: 80px;
     }
 }
 
@@ -1684,3 +1678,7 @@ iframe {
         background-position: -100% 0
     }
 }
+
+/* figure td pre{
+    overflow:hidden
+} */

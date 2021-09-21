@@ -190,7 +190,7 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>109
+					<span>文章</span>122
 					<span>标签</span>0
 					<span>分类</span>20
 				</div>		
@@ -344,7 +344,7 @@
 
         <li>
           <a href="/categories/React/">React</a>
-          <span>4</span>
+          <span>17</span>
         </li>
 
         
@@ -432,23 +432,23 @@
       <ul>
         
           <li>
-            <a href="/React-subassembly.html">React 组件</a>
+            <a href="/React-Component-oriented.html">React 面向组件编程</a>
           </li>
         
           <li>
-            <a href="/React-JSX.html">React JSX</a>
+            <a href="/React-JSX-one.html">React 模块与组件(模块与组件的理解)</a>
           </li>
         
           <li>
-            <a href="/React-Render-Elements.html">React 元素渲染</a>
+            <a href="/React-JSX-one.html">React JSX进一步学习</a>
           </li>
         
           <li>
-            <a href="/React-Foundation.html">React 第一枪</a>
+            <a href="/React-Refs.html">React Refs</a>
           </li>
         
           <li>
-            <a href="/JavaScript-definition-obtain.html">JavaScript 函数的定义和参数获取</a>
+            <a href="/React-Component-Lifecycles.html">React 组件生命周期</a>
           </li>
         
       </ul>
@@ -833,7 +833,7 @@ var $main = document.querySelector('.main');
 <aside id="article-toc" class="fixed-toc">
     <div id="article-toc-inner">
         <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git-%E5%85%A8%E5%B1%80%E8%AE%BE%E7%BD%AE"><span class="toc-text">Git 全局设置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-git-%E4%BB%93%E5%BA%93"><span class="toc-text">创建 git 仓库</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git-%E5%85%A8%E5%B1%80%E8%AE%BE%E7%BD%AE"><span class="toc-text">Git 全局设置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-git-%E4%BB%93%E5%BA%93"><span class="toc-text">创建 git 仓库</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-%E5%88%86%E6%94%AF%E6%9F%A5%E7%9C%8B%E4%B8%8E%E5%88%87%E6%8D%A2"><span class="toc-text">git 分支查看与切换</span></a></li></ol>
     </div>
 </aside>
 </div>
@@ -875,13 +875,11 @@ var $main = document.querySelector('.main');
 				<p><strong>Git学习笔记</strong></p>
 <a id="more"></a>
 
-<h1 id="Git-全局设置"><a href="#Git-全局设置" class="headerlink" title="Git 全局设置"></a>Git 全局设置</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs Git">&#x2F;&#x2F; 名称<br>git config --global user.name &quot;名称&quot;<br>&#x2F;&#x2F; 邮箱<br>git config --global user.email &quot;邮箱&quot;<br></code></pre></td></tr></table></figure>
+<h1 id="Git-全局设置"><a href="#Git-全局设置" class="headerlink" title="Git 全局设置"></a>Git 全局设置</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">名称</span><br>git config --global user.name &quot;名称&quot;<br><span class="hljs-meta"># </span><span class="language-bash">邮箱</span><br>git config --global user.email &quot;邮箱&quot;<br></code></pre></td></tr></table></figure>
 
 
-<h2 id="创建-git-仓库"><a href="#创建-git-仓库" class="headerlink" title="创建 git 仓库"></a>创建 git 仓库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs Git">&#x2F;&#x2F; 创建sdq文件夹<br>mkdir sdq<br><br>&#x2F;&#x2F; 打开sdq文件夹<br>cd sdq<br><br>&#x2F;&#x2F; 初始化<br>git init<br>&#x2F;&#x2F; 创建说明文档<br>touch README.md<br><br>&#x2F;&#x2F; 添加说明文档<br>git add README.md<br><br>&#x2F;&#x2F; 添加说明内容<br>git commit -m &quot;史迪奇&quot;<br><br>&#x2F;&#x2F; 关联远程存储库 sdz为存储库名<br>git remote add sdz https:&#x2F;&#x2F;gitee.com&#x2F;sdq3&#x2F;web.git<br><br>&#x2F;&#x2F; 开始上传 master分支名称<br>git push -u sdz master<br></code></pre></td></tr></table></figure>
-
-
-
+<h2 id="创建-git-仓库"><a href="#创建-git-仓库" class="headerlink" title="创建 git 仓库"></a>创建 git 仓库</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">创建sdq文件夹</span><br>mkdir sdq<br><br><span class="hljs-meta"># </span><span class="language-bash">打开sdq文件夹</span><br>cd sdq<br><br><span class="hljs-meta"># </span><span class="language-bash">初始化</span><br>git init<br><span class="hljs-meta"># </span><span class="language-bash">创建说明文档</span><br>touch README.md<br><br><span class="hljs-meta"># </span><span class="language-bash">添加说明文档</span><br>git add README.md<br><br><span class="hljs-meta"># </span><span class="language-bash">添加说明内容</span><br>git commit -m &quot;史迪奇&quot;<br><br><span class="hljs-meta"># </span><span class="language-bash">关联远程存储库 sdz为存储库名</span><br>git remote add sdz https:#gitee.com/sdq3/web.git<br><br><span class="hljs-meta"># </span><span class="language-bash">开始上传 master分支名称</span><br>git push -u sdz master<br></code></pre></td></tr></table></figure>
+<h1 id="git-分支查看与切换"><a href="#git-分支查看与切换" class="headerlink" title="git 分支查看与切换"></a>git 分支查看与切换</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">查看所有分支</span><br>git branch -a<br><br><span class="hljs-meta"># </span><span class="language-bash">查看当前使用分支(结果列表中前面标*号的表示当前使用分支)</span><br>git branch<br><br><span class="hljs-meta"># </span><span class="language-bash">切换分支</span><br>git checkout [分支名]<br></code></pre></td></tr></table></figure>
 			  </article>
 		</div>
 		
