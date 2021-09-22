@@ -190,7 +190,7 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>123
+					<span>文章</span>124
 					<span>标签</span>0
 					<span>分类</span>20
 				</div>		
@@ -344,7 +344,7 @@
 
         <li>
           <a href="/categories/React/">React</a>
-          <span>17</span>
+          <span>18</span>
         </li>
 
         
@@ -432,6 +432,10 @@
       <ul>
         
           <li>
+            <a href="/React-Hooks.html">React Hooks</a>
+          </li>
+        
+          <li>
             <a href="/JavaScript-definition-obtain.html">JavaScript 函数的定义和参数获取</a>
           </li>
         
@@ -445,10 +449,6 @@
         
           <li>
             <a href="/React-JSX-one.html">React 模块与组件(模块与组件的理解)</a>
-          </li>
-        
-          <li>
-            <a href="/React-JSX-one.html">React JSX进一步学习</a>
           </li>
         
       </ul>
@@ -875,7 +875,19 @@ var $main = document.querySelector('.main');
 				<p><strong>React笔记</strong></p>
 <a id="more"></a>
 
-<h1 id="jsx语法规则"><a href="#jsx语法规则" class="headerlink" title="jsx语法规则:"></a>jsx语法规则:</h1><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs md">1.定义虚拟DOM时, 不要写引号<br>​2.标签中混入JS表达式时要用&#123;&#125;<br>​3.样式的类名指定不要用class, 要用className<br>​4.内联样式, 要用style=&#123;&#123;key:value&#125;&#125;的形式去写<br>​5.只有一个根标签<br>​6.标签必须闭合<br>​7.标签首字母<br>​					(1).若小写字母开头, 则将该标签转为html中同名元素, 若html中无该标签对应的同名元素, 则报错<br>​					(2).若大写字母开头, react就去渲染对应的组件, 若组件没有定义, 则报错<br></code></pre></td></tr></table></figure>
+<h1 id="jsx语法规则"><a href="#jsx语法规则" class="headerlink" title="jsx语法规则:"></a>jsx语法规则:</h1><ul>
+<li>定义虚拟DOM时, 不要写引号</li>
+<li>标签中混入JS表达式时要用{}</li>
+<li>样式的类名指定不要用class, 要用className</li>
+<li>内联样式, 要用style=的形式去写</li>
+<li>只有一个根标签</li>
+<li>标签必须闭合</li>
+<li>标签首字母<ul>
+<li>若小写字母开头, 则将该标签转为html中同名元素, 若html中无该标签对应的同名元素, 则报错</li>
+<li>若大写字母开头, react就去渲染对应的组件, 若组件没有定义, 则报错</li>
+</ul>
+</li>
+</ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs HTML">	<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br>		.title&#123;<br>			background-color: orange;<br>			width: 333px;<br>		&#125;<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-comment">&lt;!-- 准备好一个&quot;容器&quot;--&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;引入react核心库&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;引入react-dom&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;引入babel&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span> &gt;</span><br>		const myId = &#x27;Stitch&#x27;<br>		const myData = &#x27;My Name is Stitch&#x27;<br><br>		//1.创建虚拟DOM<br>		const VDOM = (<br>			<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;title&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&#123;myId.toLowerCase()&#125;</span>&gt;</span><br>					<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&#123;&#123;color:</span>&#x27;<span class="hljs-attr">white</span>&#x27;,<span class="hljs-attr">fontSize:</span>&#x27;<span class="hljs-attr">29px</span>&#x27;&#125;&#125;&gt;</span>&#123;myData.toLowerCase()&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>				<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;title&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&#123;myId.toUpperCase()&#125;</span>&gt;</span><br>					<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&#123;&#123;color:</span>&#x27;<span class="hljs-attr">white</span>&#x27;,<span class="hljs-attr">fontSize:</span>&#x27;<span class="hljs-attr">29px</span>&#x27;&#125;&#125;&gt;</span>&#123;myData.toLowerCase()&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>				<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span>/&gt;</span><br>			<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>		)<br>		//2.渲染虚拟DOM到页面<br>		ReactDOM.render(VDOM,document.getElementById(&#x27;test&#x27;))<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>		<span class="hljs-comment">//模拟一些数据</span><br>		<span class="hljs-keyword">const</span> data = [<span class="hljs-string">&#x27;Angular&#x27;</span>,<span class="hljs-string">&#x27;React&#x27;</span>,<span class="hljs-string">&#x27;Vue&#x27;</span>]<br>		<span class="hljs-comment">//1.创建虚拟DOM</span><br>		<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">VDOM</span> = (<br>			&lt;div&gt;<br>				&lt;h1&gt;前端js框架列表&lt;/h1&gt;<br>				&lt;ul&gt;<br>					&#123;<br>						data.<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">item,index</span>)=&gt;</span>&#123;<br>							<span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&#123;index&#125;</span>&gt;</span>&#123;item&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span><br>						&#125;)<br>					&#125;<br>				&lt;/ul&gt;<br>			&lt;/div&gt;<br>		)<br>		<span class="hljs-comment">//2.渲染虚拟DOM到页面</span><br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="hljs-variable constant_">VDOM</span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test&#x27;</span>))<br>	&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
 <p><font color="#DC143C">效果</font></p>
