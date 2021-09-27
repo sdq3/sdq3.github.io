@@ -190,7 +190,7 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>126
+					<span>文章</span>128
 					<span>标签</span>0
 					<span>分类</span>21
 				</div>		
@@ -351,7 +351,7 @@
 
         <li>
           <a href="/categories/Three-js/">Three.js</a>
-          <span>1</span>
+          <span>3</span>
         </li>
 
         
@@ -439,11 +439,15 @@
       <ul>
         
           <li>
+            <a href="/Three.js-vector.html">Three.js 向量</a>
+          </li>
+        
+          <li>
             <a href="/Applet-Global-profile.html">小程序 全局配置文件</a>
           </li>
         
           <li>
-            <a href="/React-assembly-ase-3attribute.html">React 组件实例的三大属性</a>
+            <a href="/React-state-props-refs.html">React 组件实例的三大属性</a>
           </li>
         
           <li>
@@ -452,10 +456,6 @@
         
           <li>
             <a href="/CSS-cube.html">CSS 正方体旋转效果</a>
-          </li>
-        
-          <li>
-            <a href="/React-Component-oriented.html">React 面向组件编程</a>
           </li>
         
       </ul>
@@ -885,7 +885,7 @@ var $main = document.querySelector('.main');
 <h1 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&lt;script src=<span class="hljs-string">&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;</span>&gt;&lt;/script&gt;<br><br><br>&lt;script&gt;<br>   <span class="hljs-comment">// 选择器就是css的选择器</span><br>   $(<span class="hljs-string">&#x27;#test-jquey&#x27;</span>).<span class="hljs-title function_">click</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)<br>        <span class="hljs-title function_">alert</span>(<span class="hljs-string">&#x27;我叫史迪奇&#x27;</span>)<br>   )<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
 <h1 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&lt;script&gt;<br><span class="hljs-comment">//原生js的css选择器</span><br>    <span class="hljs-comment">// 标签选择器</span><br>    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByTagName</span>();<br>    <span class="hljs-comment">// id选择器</span><br>    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsById</span>();<br>    <span class="hljs-comment">// 类 class选择器</span><br>    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByClassName</span>();<br>    <br><span class="hljs-comment">// jQuery的css选择器</span><br>    <span class="hljs-comment">// 标签选择器</span><br>    $(<span class="hljs-string">&#x27;p&#x27;</span>).<span class="hljs-title function_">click</span>()<br>    <span class="hljs-comment">// id选择器</span><br>    $(<span class="hljs-string">&#x27;#id3&#x27;</span>).<span class="hljs-title function_">click</span>()<br>    <span class="hljs-comment">// 类 class选择器</span><br>    $(<span class="hljs-string">&#x27;.class3&#x27;</span>).<span class="hljs-title function_">click</span>()<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
 <h1 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h1><p><strong>鼠标事件</strong><br>    + mousedown()按下<br>    + mouseenter()当鼠标指针穿过元素时<br>    + mouseleave()离开<br>    + mousemove()移动<br>    + mouseout()当鼠标指针从元素上移开时<br>    + mouseover()点击结束<br>    + mouseup()元素上放松鼠标按钮</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&lt;head&gt;<br>    &lt;title&gt;定位板&lt;/title&gt;<br>    &lt;script src=<span class="hljs-string">&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;</span>&gt;&lt;/script&gt;<br>    &lt;style&gt;<br>        #divMove &#123;<br>            <span class="hljs-attr">width</span>: 500px;<br>            <span class="hljs-attr">height</span>: 500px;<br>            <span class="hljs-attr">border</span>: 1px solid blue;<br>        &#125;<br>    &lt;/style&gt;<br>&lt;/head&gt;<br><br>&lt;body&gt;<br>    &lt;!--要求: 获取鼠标当前的一个坐标--&gt;<br>    <span class="hljs-attr">mouse</span>: <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;mouseMove&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br>    &lt;div id=<span class="hljs-string">&quot;divMove&quot;</span>&gt;<br>        在这里移动鼠标<br>    &lt;/div&gt;<br>    &lt;script&gt;<br>        <span class="hljs-comment">// 当网页元素加载完毕之后, 响应事件</span><br>        $(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>            $(<span class="hljs-string">&#x27;#divMove&#x27;</span>).<span class="hljs-title function_">mousemove</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) &#123;<br>                $(<span class="hljs-string">&#x27;#mouseMove&#x27;</span>).<span class="hljs-title function_">text</span>(<span class="hljs-string">&#x27;x:&#x27;</span> + e.<span class="hljs-property">pageX</span> + <span class="hljs-string">&#x27;y:&#x27;</span> + e.<span class="hljs-property">pageY</span>)<br>            &#125;)<br>        &#125;);<br>    &lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>定位板<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br>        #divMove &#123;<br>            width: 500px;<br>            height: 500px;<br>            border: 1px solid blue;<br>        &#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-comment">&lt;!--要求: 获取鼠标当前的一个坐标--&gt;</span><br>    mouse: <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;mouseMove&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;divMove&quot;</span>&gt;</span><br>        在这里移动鼠标<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>        // 当网页元素加载完毕之后, 响应事件<br>        $(function() &#123;<br>            $(&#x27;#divMove&#x27;).mousemove(function(e) &#123;<br>                $(&#x27;#mouseMove&#x27;).text(&#x27;x:&#x27; + e.pageX + &#x27;y:&#x27; + e.pageY)<br>            &#125;)<br>        &#125;);<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <!DOCTYPE html>
 <html lang="cn">
 

@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>Bodhi Linux安装教程(老电脑的福利) -  我叫史迪奇</title>
+	<title>Three.js 向量 -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -823,13 +823,13 @@ var $main = document.querySelector('.main');
 <div class="sdq">
 	<div class="sdq-post" id="sdqPost">
 		<div class="sdq-title">
-			<h1>Bodhi Linux安装教程(老电脑的福利)</h1>
+			<h1>Three.js 向量</h1>
 		</div>
 	  <div id="post" class="sdq-post-Statistics">
-            <a>2020年03月27日</a>
+            <a>2021年09月27日</a>
 		  	<a class="post-count">99 字</a>
 		
-		  <a class=" -link" href="/categories/Linux/">Linux</a>
+		  <a class=" -link" href="/categories/Three-js/">Three.js</a>
 		
 		
 	  </div>
@@ -840,7 +840,7 @@ var $main = document.querySelector('.main');
 <aside id="article-toc" class="fixed-toc">
     <div id="article-toc-inner">
         <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E5%AE%89%E8%A3%85Bodhi-Linux"><span class="toc-text">第一步 安装Bodhi Linux</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5-%E8%80%81%E7%94%B5%E8%84%91%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5WIFI-%E6%89%80%E4%BB%A5%E7%BB%88%E7%AB%AF%E8%BE%93%E5%85%A5%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4"><span class="toc-text">第二步 老电脑无法连接WIFI 所以终端输入以下命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5-%E5%AE%89%E8%A3%85%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E7%8E%AF%E5%A2%83"><span class="toc-text">第三步 安装安装中文环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%E5%AE%89%E8%A3%85%E8%BE%93%E5%85%A5%E6%B3%95"><span class="toc-text">第四步安装输入法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E6%AD%A5%E5%AE%89%E8%A3%85%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6"><span class="toc-text">第五步安装一些常用软件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85neofetch"><span class="toc-text">安装neofetch</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4%E5%90%91%E9%87%8F-Vector2"><span class="toc-text">二维向量-Vector2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-text">构造函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E7%BB%B4%E5%90%91%E9%87%8F-Vector3"><span class="toc-text">三维向量-Vector3</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E7%BB%B4%E5%90%91%E9%87%8F-Vector4"><span class="toc-text">四维向量-Vector4</span></a></li></ol>
     </div>
 </aside>
 </div>
@@ -879,39 +879,94 @@ var $main = document.querySelector('.main');
 
 		<div>
 			  <article>
-				<p><strong>本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版</strong></p>
+				<p><strong>Three.js学习笔记</strong></p>
 <a id="more"></a>
 
-<p><strong>以下是我的电脑的参数</strong></p>
-<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%81%94%E6%83%B3G430.jpg"></p>
-<h1 id="第一步-安装Bodhi-Linux"><a href="#第一步-安装Bodhi-Linux" class="headerlink" title="第一步 安装Bodhi Linux"></a>第一步 安装Bodhi Linux</h1><p><strong>Bodhi Linux<a target="_blank" rel="noopener" href="https://nchc.dl.sourceforge.net/project/bodhilinux/5.1.0/bodhi-5.1.0-64.iso">个人建议Standard版本</a>如果你想选择别的版本到<a target="_blank" rel="noopener" href="https://www.bodhilinux.com/download/">官网找</a></strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1aW411C7NR">安装视频参考Ubantu的, 都是可视化界面安装</a></p>
-<h1 id="第二步-老电脑无法连接WIFI-所以终端输入以下命令"><a href="#第二步-老电脑无法连接WIFI-所以终端输入以下命令" class="headerlink" title="第二步 老电脑无法连接WIFI 所以终端输入以下命令"></a>第二步 老电脑无法连接WIFI 所以终端输入以下命令</h1><p><strong>建议用网线装机</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get update</span><br><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install bcmwl-kernel-source</span><br></code></pre></td></tr></table></figure>
+<h1 id="二维向量-Vector2"><a href="#二维向量-Vector2" class="headerlink" title="二维向量-Vector2"></a>二维向量-Vector2</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// Vector2(x, y) 这里传2个值就是二维向量</span><br><span class="hljs-keyword">var</span> a = <span class="hljs-keyword">new</span> <span class="hljs-variable constant_">THREE</span>.<span class="hljs-title class_">Vector</span>2( <span class="hljs-number">0</span>, <span class="hljs-number">1</span> );<br><br><span class="hljs-comment">//no arguments; will be initialised to (0, 0)</span><br><span class="hljs-keyword">var</span> b = <span class="hljs-keyword">new</span> <span class="hljs-variable constant_">THREE</span>.<span class="hljs-title class_">Vector</span>2( );<br><br><span class="hljs-keyword">var</span> d = a.<span class="hljs-title function_">distanceTo</span>( b );<br></code></pre></td></tr></table></figure>
+<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><ul>
+<li>Vector2( x : Float, y : Float )</li>
+<li>x - 向量的x值, 默认为0</li>
+<li>y - 向量的y值, 默认为0</li>
+</ul>
+<p><strong>属性</strong></p>
+<p><strong>.isVector2</strong> : Boolean<br>用于测试这个类或者派生类是否为Vector2, 默认为true</p>
+<p>你不应当对这个属性进行改变,因为它在内部使用, 以用于优化</p>
+<p><strong>.height</strong> : Float</p>
+<ul>
+<li>y的别名</li>
+</ul>
+<p><strong>.width</strong> : Float</p>
+<ul>
+<li>x的别名</li>
+</ul>
+<p><strong>.x</strong> : Float<br><strong>.y</strong> : Float</p>
+<p>方法<br><strong>.add</strong> ( v : Vector2 ) : this<br>将传入的向量v和这个向量相加</p>
+<p><strong>.addScalar</strong> ( s : Float ) : this<br>将传入的标量s和这个向量的x值、y值相加</p>
+<p><strong>.addScaledVector</strong> ( v : Vector2, s : Float ) : this<br>将所传入的v与s相乘所得乘积和这个向量相加</p>
+<p><strong>.addVectors</strong> ( a : Vector2, b : Vector2 ) : this<br>将该向量设置为 a + b</p>
+<p><strong>.angle</strong> () : Float<br>计算该向量相对于x轴正方向的弧度角度</p>
+<p><strong>.applyMatrix3</strong> ( m : Matrix3 ) : this<br>将该向量乘以三阶矩阵m(第三个值隐式地为1)</p>
+<p><strong>.ceil</strong> () : this<br>向量中的x分量和y分量向上取整为最接近的整数值</p>
+<p><strong>.clamp</strong> ( min : Vector2, max : Vector2 ) : this<br>min - 在限制范围内, x和y的最小值<br>max - 在限制范围内, x和y的最大值</p>
+<p>如果该向量的x值或y值大于限制范围内最大x值或y值, 则该值将会被所对应的值取代</p>
+<p>如果该向量的x值或y值小于限制范围内最小x值或y值, 则该值将会被所对应的值取代</p>
+<p><strong>.clampLength</strong> ( min : Float, max : Float ) : this<br>min - 长度将被限制为的最小值<br>max - 长度将被限制为的最大值</p>
+<p>如果向量长度大于最大值, 则它将会被最大值所取代</p>
+<p>如果向量长度小于最小值, 则它将会被最小值所取代</p>
+<p><strong>.clampScalar</strong> ( min : Float, max : Float ) : this<br><strong>min</strong> - 分量将被限制为的最小值<br><strong>max</strong> - 分量将被限制为的最大值</p>
+<p>如果该向量的x值或y值大于最大值, 则它们将被最大值所取代</p>
+<p>如果该向量的x值或y值小于最小值, 则它们将被最小值所取代</p>
+<p><strong>.clone</strong> () : Vector2<br>返回一个新的Vector2, 其具有和当前这个向量相同的x和y</p>
+<p><strong>.copy</strong> ( v : Vector2 ) : this<br>将所传入Vector2的x和y属性复制给这一Vector2</p>
+<p><strong>.distanceTo</strong> ( v : Vector2 ) : Float<br>计算该vector到传入的v的距离</p>
+<p><strong>.manhattanDistanceTo</strong> ( v : Vector2 ) : Float<br>计算该vector到传入的v的曼哈顿距离(Manhattan distance)</p>
+<p><strong>.distanceToSquared</strong> ( v : Vector2 ) : Float<br>计算该向量到传入的v的平方距离 如果你只是将该距离和另一个距离进行比较, 则应当比较的是距离的平方,  因为它的计算效率会更高一些</p>
+<p><strong>.divide</strong> ( v : Vector2 ) : this<br>将该向量除以向量v</p>
+<p><strong>.divideScalar</strong> ( s : Float ) : this<br>将该向量除以标量s<br>如果传入的s = 0, 则向量将被设置为( 0, 0 )</p>
+<p><strong>.dot</strong> ( v : Vector2 ) : Float<br>计算该vector和所传入v的点积(dot product)</p>
+<p><strong>.cross</strong> ( v : Vector2 ) : Float<br>计算该vector和所传入v的叉积(cross product) 请注意, “叉积”在2D中并没有被明确定义该函数计算的是2D图形中经常使用的几何叉积</p>
+<p><strong>.equals</strong> ( v : Vector2 ) : Boolean<br>检查该向量和v的严格相等性</p>
+<p><strong>.floor ()</strong> : this<br>向量中的x分量和y分量向下取整为最接近的整数值</p>
+<p><strong>.fromArray</strong> ( array : Array, offset : Integer ) : this<br>array - 来源的数组<br>offset - (可选)在数组中的元素偏移量, 默认值为0</p>
+<p>设置向量中的x值为array[ offset ], y值为array[ offset + 1 ]</p>
+<p><strong>.fromBufferAttribute</strong> ( attribute : BufferAttribute, index : Integer ) : this<br>attribute - 来源的attribute<br>index - 在attribute中的索引</p>
+<p>从attribute中设置向量的x值和y值 、</p>
+<p><strong>.getComponent</strong> ( index : Integer ) : Float<br>index - 0 或 1</p>
+<p>如果index值为0则返回x值<br>如果index值为1则返回y值</p>
+<p><strong>.length</strong> () : Float<br>计算从(0, 0)到(x, y)的欧几里得长度 (Euclidean length, 即直线长度)</p>
+<p><strong>.manhattanLength</strong> () : Float<br>计算该向量的曼哈顿长度(Manhattan length)</p>
+<p><strong>.lengthSq</strong> () : Float<br>计算从(0, 0)到(x, y)的欧几里得长度 (Euclidean length, 即直线长度)的平方 如果你正在比较向量的长度, 应当比较的是长度的平方, 因为它的计算效率更高一些</p>
+<p><strong>.lerp</strong> ( v : Vector2, alpha : Float ) : this<br>v - 朝着进行插值的Vector2<br>alpha - 插值因数, 其范围通常在[0, 1]闭区间</p>
+<p>在该向量与传入的向量v之间的线性插值, alpha是沿着线的长度的百分比 —— alpha = 0 时表示的是当前向量, alpha = 1 时表示的是所传入的向量v</p>
+<p><strong>.lerpVectors</strong> ( v1 : Vector2, v2 : Vector2, alpha : Float ) : this<br>v1 - 起始的Vector2<br>v2 - 朝着进行插值的Vector2<br>alpha - 插值因数, 其范围通常在[0, 1]闭区间</p>
+<p>将此向量设置为在v1和v2之间进行线性插值的向量,  其中alpha为两个向量之间连线的长度的百分比 —— alpha = 0 时表示的是v1, alpha = 1 时表示的是v2</p>
+<p><strong>.negate</strong> ()  : this<br>向量取反, 即： x = -x , y = -y</p>
+<p><strong>.normalize</strong> () : this<br>将该向量转换为单位向量(unit vector),  也就是说, 将该向量的方向设置为和原向量相同, 但是其长度(length)为1</p>
+<p><strong>.max</strong> ( v : Vector2 ) : this<br>如果该向量的x值或y值小于所传入v的x值或y值, 则将该值替换为对应的最大值</p>
+<p><strong>.min</strong> ( v : Vector2 ) : this<br>如果该向量的x值或y值大于所传入v的x值或y值, 则将该值替换为对应的最小值</p>
+<p><strong>.multiply</strong> ( v : Vector2 ) : this<br>将该向量与所传入的向量v进行相乘</p>
+<p><strong>.multiplyScalar</strong> ( s : Float ) : this<br>将该向量与所传入的标量s进行相乘</p>
+<p><strong>.rotateAround</strong> ( center : Vector2, angle : float ) : this<br>center - 将被围绕旋转的点<br>angle - 将要旋转的角度, 以弧度来表示</p>
+<p>将向量围绕着center旋转angle弧度</p>
+<p><strong>.round</strong> () : this<br>向量中的x分量和y分量四舍五入取整为最接近的整数值</p>
+<p><strong>.roundToZero</strong> () : this<br>向量中的分量朝向0取整数(若分量为负数则向上取整, 若为正数则向下取整)</p>
+<p><strong>.set</strong> ( x : Float, y : Float ) : this<br>设置该向量的x和y分量</p>
+<p><strong>.setComponent</strong> ( index : Integer, value : Float ) : null<br>index - 0 或 1<br>value - Float</p>
+<p>如果index值为0则将x值设置为value<br>如果index值为1则将y值设置为value</p>
+<p><strong>.setLength</strong> ( l : Float ) : this<br>将该向量的方向设置为和原向量相同, 但是长度(length)为l</p>
+<p><strong>.setScalar</strong> ( scalar : Float ) : this<br>将该向量的x、y值同时设置为等于传入的scalar</p>
+<p><strong>.setX</strong> ( x : Float ) : this<br>将向量中的x值替换为x</p>
+<p><strong>.setY</strong> ( y : Float ) : this<br>将向量中的y值替换为y</p>
+<p><strong>.sub</strong> ( v : Vector2 ) : this<br>从该向量减去向量v</p>
+<p><strong>.subScalar</strong> ( s : Float ) : this<br>从该向量的x和y中减去标量s</p>
+<p><strong>.subVectors</strong> ( a : Vector2, b : Vector2 ) : this<br>将该向量设置为a - b</p>
+<p><strong>.toArray</strong> ( array : Array, offset : Integer ) : Array<br>array - (可选)被用于存储向量的数组如果这个值没有传入, 则将创建一个新的数组<br>offset - (可选) 数组中元素的偏移量</p>
+<p>返回一个数组[x, y], 或者将x和y复制到所传入的array中</p>
+<h1 id="三维向量-Vector3"><a href="#三维向量-Vector3" class="headerlink" title="三维向量-Vector3"></a>三维向量-Vector3</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// Vector3(x, y, z) 这里传3个值就是二维向量</span><br><span class="hljs-keyword">var</span> a = <span class="hljs-keyword">new</span> <span class="hljs-variable constant_">THREE</span>.<span class="hljs-title class_">Vector</span>3( <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span> );<br><br><span class="hljs-comment">//no arguments; will be initialised to (0, 0, 0)</span><br><span class="hljs-keyword">var</span> b = <span class="hljs-keyword">new</span> <span class="hljs-variable constant_">THREE</span>.<span class="hljs-title class_">Vector</span>3( );<br><br><span class="hljs-keyword">var</span> d = a.<span class="hljs-title function_">distanceTo</span>( b );<br></code></pre></td></tr></table></figure>
+<h1 id="四维向量-Vector4"><a href="#四维向量-Vector4" class="headerlink" title="四维向量-Vector4"></a>四维向量-Vector4</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// Vector4(x, y, z, w) 这里传4个值就是四维向量 </span><br><span class="hljs-keyword">var</span> a = <span class="hljs-keyword">new</span> <span class="hljs-variable constant_">THREE</span>.<span class="hljs-title class_">Vector</span>4( <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span> );<br><br><span class="hljs-comment">//no arguments; will be initialised to (0, 0, 0, 1)</span><br><span class="hljs-keyword">var</span> b = <span class="hljs-keyword">new</span> <span class="hljs-variable constant_">THREE</span>.<span class="hljs-title class_">Vector</span>4( );<br><br><span class="hljs-keyword">var</span> d = a.<span class="hljs-title function_">dot</span>( b );<br></code></pre></td></tr></table></figure>
 
-<p><strong>仍然没有的话 就在终端输入以下命令</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo nano /etc/modprobe.d/blacklist.conf   //nano命令ctrl+x退出，选择y后保存</span><br><span class="hljs-meta">$ </span><span class="language-bash">blacklist acer-wmi   //最后一行加入</span><br></code></pre></td></tr></table></figure>
 
-<h1 id="第三步-安装安装中文环境"><a href="#第三步-安装安装中文环境" class="headerlink" title="第三步 安装安装中文环境"></a>第三步 安装安装中文环境</h1><p><strong>安装中文字体和中文语言包</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get update</span><br><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install -y language-pack-zh-hans language-pack-zh-hans-base language-pack-gnome-zh-hans language-pack-gnome-zh-hans-base fonts-wqy-microhei</span><br></code></pre></td></tr></table></figure>
 
-<p><strong>然后按照以下打开步骤</strong></p>
-<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%871.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%872.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%873.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%874.jpg"></p>
-<h1 id="第四步安装输入法"><a href="#第四步安装输入法" class="headerlink" title="第四步安装输入法"></a>第四步安装输入法</h1><p><strong>这里<a target="_blank" rel="noopener" href="https://pinyin.sogou.com/linux/">安装搜狗输入法</a></strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install fonts-droid-fallback zip   //安装它的依赖包</span><br><span class="hljs-meta">$ </span><span class="language-bash">sudo dpkg -i xxx    //xxx为下载的包名 后缀名也要</span><br></code></pre></td></tr></table></figure>
-<h1 id="第五步安装一些常用软件"><a href="#第五步安装一些常用软件" class="headerlink" title="第五步安装一些常用软件"></a>第五步安装一些常用软件</h1><p><strong>例如安装vim</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install vim   //vim是文本编辑软件</span><br></code></pre></td></tr></table></figure>
-<p><strong>例如浏览器 它自身也有web浏览器 看个人喜欢</strong></p>
-<p><strong>安装火狐浏览器和中文语言包</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get remove firefox</span><br><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install -y firefox firefox-locale-zh-hans</span><br></code></pre></td></tr></table></figure>
-<p><strong>安装谷歌浏览器</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/</span><br>wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -     //先添加源<br><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get update</span><br><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install google-chrome-stable     //安装谷歌浏览器</span><br></code></pre></td></tr></table></figure>
-<h1 id="安装neofetch"><a href="#安装neofetch" class="headerlink" title="安装neofetch"></a>安装neofetch</h1><p><strong>终端输入以下命令</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo add-apt-repository ppa:dawidd0811/neofetch</span><br><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get update</span><br><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install neofetch</span><br><span class="hljs-meta">$ </span><span class="language-bash">neofetch</span><br></code></pre></td></tr></table></figure>
-<p><strong>本人试了(CrunchBang Linux), (Zenix Linux), (antiX Linux), (Zenwalk Linux), (Xubuntu Linux), (Lubuntu Linux), (Tiny Core Linux), (SliTaz Linux), (Porteus Linux), (Puppy Linux), (Silverblue Linux), (4MLinux)等等带桌面的发行版然后就唯独Bodhi Linux最满意</strong></p>
-<p><strong>至于为什么要带桌面的发行版, 因为要日用偶尔看看B站什么的</strong></p>
-<p><strong>关于这台电脑用的硬盘 大小80G 有9724个坏道 拆掉坏掉的戴尔一条三星的DDR2 才有2G内存可以体验</strong></p>
-<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E5%9D%8F%E9%81%93.jpg"></p>
 
 			  </article>
 		</div>
@@ -989,7 +1044,7 @@ $(window).load(function(){
         
 	
 <strong>本文链接：</strong>
-	<a href="https://sdq3.gitee.io/Bodhi-Linux.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;Bodhi-Linux.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;Bodhi-Linux.html</a><br>
+	<a href="https://sdq3.gitee.io/Three.js-vector.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;Three.js-vector.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;Three.js-vector.html</a><br>
 </div>
 
 	  
