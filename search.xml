@@ -67,6 +67,73 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Android ROM移植</title>
+    <url>/Android-ROM-transplant.html</url>
+    <content><![CDATA[<p><strong>本人是用Arch，顺便来传一下教</strong><br><img src="/images/编译Android/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
+<a id="more"></a>
+
+<p><strong>此教程针对 高通和联发科 64位就多替换lib64 等有64字眼的</strong></p>
+<h1 id="移植-刷机包-ROM-建议在Linux的平台是-下载个解压软件"><a href="#移植-刷机包-ROM-建议在Linux的平台是-下载个解压软件" class="headerlink" title="移植 刷机包/ROM 建议在Linux的平台是 下载个解压软件"></a>移植 刷机包/ROM 建议在Linux的平台是 下载个解压软件</h1><ul>
+<li>推荐sdat2</li>
+</ul>
+<h2 id="移植boot-img"><a href="#移植boot-img" class="headerlink" title="移植boot.img"></a>移植boot.img</h2><ul>
+<li>步骤: 解压出官方booT和要移植包的boot, 替换进入官方<ul>
+<li>替换文件: dt.img和zlmagewe 没有这个文件的话就无视</li>
+</ul>
+</li>
+</ul>
+<p><strong>可以开机之后 再进行以下操作</strong></p>
+<ul>
+<li>开机失败就替换fstab.qcom为官方</li>
+</ul>
+<h2 id="刷机脚本修改"><a href="#刷机脚本修改" class="headerlink" title="刷机脚本修改"></a>刷机脚本修改</h2><ul>
+<li>1.机型验证<ul>
+<li>getprop开头的那行删除，如果安装中断的话就是这行没删完,</li>
+</ul>
+</li>
+<li>2.分区挂卸<ul>
+<li>分区注意mmcblk0p字眼的记得改成官方的</li>
+</ul>
+</li>
+<li>3.删除底层文件刷入<ul>
+<li>底层文件一般在包里面，正常的包有system(system.dat…), boot.img,META—INF, data其他多余的未知文件和文件夹就是底层文件, 这些必须删除, 不然就可能会黑砖</li>
+</ul>
+</li>
+</ul>
+<p><strong>参考脚本 一般放在META-INF里面</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">ui_print(&quot;Patching firmware images...&quot;);<br>ifelse(msm.boot_update(&quot;main&quot;), (<br>package_extract_file(&quot;firmware-update/tz.mbn&quot;, &quot;/dev/block/bootdevice/by-name/tz&quot;);<br>package_extract_file(&quot;firmware-update/hyp.mbn&quot;, &quot;/dev/block/bootdevice/by-name/hyp&quot;);<br>package_extract_file(&quot;firmware-update/sbl1.mbn&quot;, &quot;/dev/block/bootdevice/by-name/sbl1&quot;);<br>package_extract_file(&quot;firmware-update/rpm.mbn&quot;, &quot;/dev/block/bootdevice/by-name/rpm&quot;);<br>package_extract_file(&quot;firmware-update/emmc_appsboot.mbn&quot;, &quot;/dev/block/bootdevice/by-name/aboot&quot;);<br>), &quot;&quot;);<br>ifelse(msm.boot_update(&quot;backup&quot;), (<br>package_extract_file(&quot;firmware-update/tz.mbn&quot;, &quot;/dev/block/bootdevice/by-name/tzbak&quot;);<br>package_extract_file(&quot;firmware-update/hyp.mbn&quot;, &quot;/dev/block/bootdevice/by-name/hypbak&quot;);<br>package_extract_file(&quot;firmware-update/sbl1.mbn&quot;, &quot;/dev/block/bootdevice/by-name/sbl1bak&quot;);<br>package_extract_file(&quot;firmware-update/rpm.mbn&quot;, &quot;/dev/block/bootdevice/by-name/rpmbak&quot;);<br>package_extract_file(&quot;firmware-update/emmc_appsboot.mbn&quot;, &quot;/dev/block/bootdevice/by-name/abootbak&quot;);<br>), &quot;&quot;);<br>msm.boot_update(&quot;finalize&quot;);<br>package_extract_file(&quot;firmware-update/NON-HLOS.bin&quot;, &quot;/dev/block/bootdevice/by-name/modem&quot;);<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="WIFI修复"><a href="#WIFI修复" class="headerlink" title="WIFI修复"></a>WIFI修复</h2><ul>
+<li>步骤: 以下文件或文件夹替换为官方 没有就不替换</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/etc/firmware/wlan<br>system/etc/wifi<br>system/lib/modules/pronto<br>system/lib/modules/wlan.ko<br></code></pre></td></tr></table></figure>
+<p><strong>可以用WIFI之后 再进行以下操作</strong></p>
+<ul>
+<li>还是不行再看看boot.img里面的init.qcom.rc对比官方boot里面的init.qcom.rc修改 还不行就看刷机脚本, 改里面的wifi软链接</li>
+</ul>
+<h3 id="内存卡使用修复"><a href="#内存卡使用修复" class="headerlink" title="内存卡使用修复"></a>内存卡使用修复</h3><ul>
+<li>以下文件替换或修改为官方</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/etc/permissions/platform.xml<br></code></pre></td></tr></table></figure>
+<h3 id="修复按键"><a href="#修复按键" class="headerlink" title="修复按键"></a>修复按键</h3><ul>
+<li>以下文件替换或修改为官方</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/usr/icu<br>system/usr/idc<br><br>//不行再多替换 <br>system/usr/keylayout/Generic.kl<br></code></pre></td></tr></table></figure>
+<h3 id="修复声音"><a href="#修复声音" class="headerlink" title="修复声音"></a>修复声音</h3><p><strong>以下文件替换为官方</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">    方法1:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换etc/mixer开头的<br><br>    方法2:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换system/hw/audio.primary.msmxxxx.so(64位多替换system/lib64/hw/audio.primary.msmxxxx.so)<br><br>    方法3:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换system/lib/hw/audio开头的（64位多替换system/lib64/hw/audio）<br><br>    方法4:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换以下:<br>    system/etc/mixer开头的<br>    system/lib/hw/audio.primary.msmxxxx.so<br>    (64位多替换system/lib64/hw/audio.primary.msmxxxx.so)<br><br>    方法5:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换以下:<br>    system/etc/audio和mixer开头的<br>    system/lib/hw/audio开头的<br>    (64位多替换system/lib64/hw/audio开头的)<br><br>注: lib和lib64文件夹里面的audio开头(不包括hw文件夹)64位替换了不卡屏，但32位可能会卡屏<br></code></pre></td></tr></table></figure>
+<h3 id="修改型号"><a href="#修改型号" class="headerlink" title="修改型号"></a>修改型号</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 品牌<br>ro.product.brand=xiaomi<br>// 型号<br>ro.product.name=2<br>// 关于手机显示的型号<br>ro.product.model=redmi 2<br>// 分辨率<br>ro.sf.lcd_density=320 <br>// 这个也是有关型号的<br>ro.build.product=2<br>// 虚拟按键  1是关0是开，没有这行的就加进去<br>qemu.hw.mainkeys=0 <br></code></pre></td></tr></table></figure>
+<h3 id="修复相机"><a href="#修复相机" class="headerlink" title="修复相机"></a>修复相机</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 把System/lib文件夹里面的文件替换成官方包的文件，可以解决相机打开停止的BUG问题<br>libcamalgo.so<br>libcamera_client.so<br>libcameracustom.so<br>libcameraservice.so<br>libmhal.so<br>libmhalcontent.so<br>libmhaldrv.so<br>libmhalmdp.so<br>libmhalpipe.so<br>libmhalscenario.so<br>libmhalutility.so<br></code></pre></td></tr></table></figure>
+
+<h3 id="修复传感器"><a href="#修复传感器" class="headerlink" title="修复传感器"></a>修复传感器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 替换System/lib/hw  文件夹里面<br>sensors.default.so<br></code></pre></td></tr></table></figure>
+
+<h1>移植有风险, 不保证无bug</h1>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Anroid 项目结构</title>
     <url>/Anroid-structure.html</url>
     <content><![CDATA[<p><strong>未完待续</strong></p>
@@ -441,73 +508,6 @@ var tools = (function(){
 </ul></ul></ul></ul>]]></content>
       <categories>
         <category>Android</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Android ROM移植</title>
-    <url>/Android-ROM-transplant.html</url>
-    <content><![CDATA[<p><strong>本人是用Arch，顺便来传一下教</strong><br><img src="/images/编译Android/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
-<a id="more"></a>
-
-<p><strong>此教程针对 高通和联发科 64位就多替换lib64 等有64字眼的</strong></p>
-<h1 id="移植-刷机包-ROM-建议在Linux的平台是-下载个解压软件"><a href="#移植-刷机包-ROM-建议在Linux的平台是-下载个解压软件" class="headerlink" title="移植 刷机包/ROM 建议在Linux的平台是 下载个解压软件"></a>移植 刷机包/ROM 建议在Linux的平台是 下载个解压软件</h1><ul>
-<li>推荐sdat2</li>
-</ul>
-<h2 id="移植boot-img"><a href="#移植boot-img" class="headerlink" title="移植boot.img"></a>移植boot.img</h2><ul>
-<li>步骤: 解压出官方booT和要移植包的boot, 替换进入官方<ul>
-<li>替换文件: dt.img和zlmagewe 没有这个文件的话就无视</li>
-</ul>
-</li>
-</ul>
-<p><strong>可以开机之后 再进行以下操作</strong></p>
-<ul>
-<li>开机失败就替换fstab.qcom为官方</li>
-</ul>
-<h2 id="刷机脚本修改"><a href="#刷机脚本修改" class="headerlink" title="刷机脚本修改"></a>刷机脚本修改</h2><ul>
-<li>1.机型验证<ul>
-<li>getprop开头的那行删除，如果安装中断的话就是这行没删完,</li>
-</ul>
-</li>
-<li>2.分区挂卸<ul>
-<li>分区注意mmcblk0p字眼的记得改成官方的</li>
-</ul>
-</li>
-<li>3.删除底层文件刷入<ul>
-<li>底层文件一般在包里面，正常的包有system(system.dat…), boot.img,META—INF, data其他多余的未知文件和文件夹就是底层文件, 这些必须删除, 不然就可能会黑砖</li>
-</ul>
-</li>
-</ul>
-<p><strong>参考脚本 一般放在META-INF里面</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">ui_print(&quot;Patching firmware images...&quot;);<br>ifelse(msm.boot_update(&quot;main&quot;), (<br>package_extract_file(&quot;firmware-update/tz.mbn&quot;, &quot;/dev/block/bootdevice/by-name/tz&quot;);<br>package_extract_file(&quot;firmware-update/hyp.mbn&quot;, &quot;/dev/block/bootdevice/by-name/hyp&quot;);<br>package_extract_file(&quot;firmware-update/sbl1.mbn&quot;, &quot;/dev/block/bootdevice/by-name/sbl1&quot;);<br>package_extract_file(&quot;firmware-update/rpm.mbn&quot;, &quot;/dev/block/bootdevice/by-name/rpm&quot;);<br>package_extract_file(&quot;firmware-update/emmc_appsboot.mbn&quot;, &quot;/dev/block/bootdevice/by-name/aboot&quot;);<br>), &quot;&quot;);<br>ifelse(msm.boot_update(&quot;backup&quot;), (<br>package_extract_file(&quot;firmware-update/tz.mbn&quot;, &quot;/dev/block/bootdevice/by-name/tzbak&quot;);<br>package_extract_file(&quot;firmware-update/hyp.mbn&quot;, &quot;/dev/block/bootdevice/by-name/hypbak&quot;);<br>package_extract_file(&quot;firmware-update/sbl1.mbn&quot;, &quot;/dev/block/bootdevice/by-name/sbl1bak&quot;);<br>package_extract_file(&quot;firmware-update/rpm.mbn&quot;, &quot;/dev/block/bootdevice/by-name/rpmbak&quot;);<br>package_extract_file(&quot;firmware-update/emmc_appsboot.mbn&quot;, &quot;/dev/block/bootdevice/by-name/abootbak&quot;);<br>), &quot;&quot;);<br>msm.boot_update(&quot;finalize&quot;);<br>package_extract_file(&quot;firmware-update/NON-HLOS.bin&quot;, &quot;/dev/block/bootdevice/by-name/modem&quot;);<br></code></pre></td></tr></table></figure>
-
-
-<h2 id="WIFI修复"><a href="#WIFI修复" class="headerlink" title="WIFI修复"></a>WIFI修复</h2><ul>
-<li>步骤: 以下文件或文件夹替换为官方 没有就不替换</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/etc/firmware/wlan<br>system/etc/wifi<br>system/lib/modules/pronto<br>system/lib/modules/wlan.ko<br></code></pre></td></tr></table></figure>
-<p><strong>可以用WIFI之后 再进行以下操作</strong></p>
-<ul>
-<li>还是不行再看看boot.img里面的init.qcom.rc对比官方boot里面的init.qcom.rc修改 还不行就看刷机脚本, 改里面的wifi软链接</li>
-</ul>
-<h3 id="内存卡使用修复"><a href="#内存卡使用修复" class="headerlink" title="内存卡使用修复"></a>内存卡使用修复</h3><ul>
-<li>以下文件替换或修改为官方</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/etc/permissions/platform.xml<br></code></pre></td></tr></table></figure>
-<h3 id="修复按键"><a href="#修复按键" class="headerlink" title="修复按键"></a>修复按键</h3><ul>
-<li>以下文件替换或修改为官方</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/usr/icu<br>system/usr/idc<br><br>//不行再多替换 <br>system/usr/keylayout/Generic.kl<br></code></pre></td></tr></table></figure>
-<h3 id="修复声音"><a href="#修复声音" class="headerlink" title="修复声音"></a>修复声音</h3><p><strong>以下文件替换为官方</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">    方法1:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换etc/mixer开头的<br><br>    方法2:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换system/hw/audio.primary.msmxxxx.so(64位多替换system/lib64/hw/audio.primary.msmxxxx.so)<br><br>    方法3:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换system/lib/hw/audio开头的（64位多替换system/lib64/hw/audio）<br><br>    方法4:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换以下:<br>    system/etc/mixer开头的<br>    system/lib/hw/audio.primary.msmxxxx.so<br>    (64位多替换system/lib64/hw/audio.primary.msmxxxx.so)<br><br>    方法5:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换以下:<br>    system/etc/audio和mixer开头的<br>    system/lib/hw/audio开头的<br>    (64位多替换system/lib64/hw/audio开头的)<br><br>注: lib和lib64文件夹里面的audio开头(不包括hw文件夹)64位替换了不卡屏，但32位可能会卡屏<br></code></pre></td></tr></table></figure>
-<h3 id="修改型号"><a href="#修改型号" class="headerlink" title="修改型号"></a>修改型号</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 品牌<br>ro.product.brand=xiaomi<br>// 型号<br>ro.product.name=2<br>// 关于手机显示的型号<br>ro.product.model=redmi 2<br>// 分辨率<br>ro.sf.lcd_density=320 <br>// 这个也是有关型号的<br>ro.build.product=2<br>// 虚拟按键  1是关0是开，没有这行的就加进去<br>qemu.hw.mainkeys=0 <br></code></pre></td></tr></table></figure>
-<h3 id="修复相机"><a href="#修复相机" class="headerlink" title="修复相机"></a>修复相机</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 把System/lib文件夹里面的文件替换成官方包的文件，可以解决相机打开停止的BUG问题<br>libcamalgo.so<br>libcamera_client.so<br>libcameracustom.so<br>libcameraservice.so<br>libmhal.so<br>libmhalcontent.so<br>libmhaldrv.so<br>libmhalmdp.so<br>libmhalpipe.so<br>libmhalscenario.so<br>libmhalutility.so<br></code></pre></td></tr></table></figure>
-
-<h3 id="修复传感器"><a href="#修复传感器" class="headerlink" title="修复传感器"></a>修复传感器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 替换System/lib/hw  文件夹里面<br>sensors.default.so<br></code></pre></td></tr></table></figure>
-
-<h1>移植有风险, 不保证无bug</h1>
-]]></content>
-      <categories>
-        <category>Linux</category>
       </categories>
   </entry>
   <entry>
@@ -1010,21 +1010,6 @@ $</style>
       </categories>
   </entry>
   <entry>
-    <title>HTML iframe内联框架</title>
-    <url>/HTML-iframe.html</url>
-    <content><![CDATA[<p><strong>HTML个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;path&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;mainFrame&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;mainFrame&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p><strong>其中path是引用页面地址 mainFrame是框架标识名</strong></p>
-<h1 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h1><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;demo_iframe.html&quot;</span> <span class="hljs-attr">frameborder</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h1 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;xxx/xxx.html&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>HTML</category>
-      </categories>
-  </entry>
-  <entry>
     <title>HTML 基本控件大集合</title>
     <url>/HTML-operation.html</url>
     <content><![CDATA[<p><strong>HTML个人整理</strong></p>
@@ -1365,21 +1350,6 @@ $</style>
       </categories>
   </entry>
   <entry>
-    <title>HTML 表格</title>
-    <url>/HTML-form.html</url>
-    <content><![CDATA[<p><strong>HTML个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="table"><a href="#table" class="headerlink" title="table"></a>table</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ tr  //行<br>$ td  //列<br></code></pre></td></tr></table></figure>
-
-<h1 id="跨列"><a href="#跨列" class="headerlink" title="跨列"></a>跨列</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">tb</span> <span class="hljs-attr">cospan</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h1 id="跨行"><a href="#跨行" class="headerlink" title="跨行"></a>跨行</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">tb</span> <span class="hljs-attr">rowspan</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>HTML</category>
-      </categories>
-  </entry>
-  <entry>
     <title>关于Hexo搭建博客我所踩过的坑和小白安装教程</title>
     <url>/Hexo-install.html</url>
     <content><![CDATA[<p><strong>搭建博客笔记</strong></p>
@@ -1408,6 +1378,36 @@ $</style>
 <img src="/images/Hexo博客/案例.jpg">]]></content>
       <categories>
         <category>搭建博客</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>HTML iframe内联框架</title>
+    <url>/HTML-iframe.html</url>
+    <content><![CDATA[<p><strong>HTML个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;path&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;mainFrame&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;mainFrame&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><strong>其中path是引用页面地址 mainFrame是框架标识名</strong></p>
+<h1 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h1><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;demo_iframe.html&quot;</span> <span class="hljs-attr">frameborder</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;xxx/xxx.html&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>HTML</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>HTML 表格</title>
+    <url>/HTML-form.html</url>
+    <content><![CDATA[<p><strong>HTML个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="table"><a href="#table" class="headerlink" title="table"></a>table</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ tr  //行<br>$ td  //列<br></code></pre></td></tr></table></figure>
+
+<h1 id="跨列"><a href="#跨列" class="headerlink" title="跨列"></a>跨列</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">tb</span> <span class="hljs-attr">cospan</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="跨行"><a href="#跨行" class="headerlink" title="跨行"></a>跨行</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">tb</span> <span class="hljs-attr">rowspan</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>HTML</category>
       </categories>
   </entry>
   <entry>
@@ -1881,6 +1881,29 @@ $</style>
       </categories>
   </entry>
   <entry>
+    <title>JavaScript 数据类型之(对象)</title>
+    <url>/JavaScript-object.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象"><a href="#JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象" class="headerlink" title="JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象"></a>JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> 对象名 = &#123;    <br>    属性名: 属性值<br>    属性名: 属性值<br>    属性名: 属性值<br>$ &#125; <br>$<br>$ <span class="hljs-comment">/*通过下标取值和赋值*/</span><br>$ <span class="hljs-keyword">var</span> person = &#123;<br>   <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;sdq&quot;</span>,<br>   <span class="hljs-attr">age</span>: <span class="hljs-number">3</span>,<br>   <span class="hljs-attr">email</span>: <span class="hljs-string">&quot;???????@???&quot;</span><br>   <span class="hljs-attr">score</span>: <span class="hljs-number">0</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>若干个键值对 js中对象, {…..}表示一个对象, 键值对描述属性xxxx: xxxx, 多个属性之间使用逗号隔开, 最后一个属性不加逗号</strong></p>
+<h1 id="对象赋值"><a href="#对象赋值" class="headerlink" title="对象赋值"></a>对象赋值</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-property">name</span> = <span class="hljs-string">&quot;sdq&quot;</span>      <span class="hljs-comment">/*这里赋值sdq*/</span><br>person.<span class="hljs-property">name</span>              <span class="hljs-comment">/*这里输出sdq*/</span><br></code></pre></td></tr></table></figure>
+<h1 id="undefined-使用不存在对象-不会报错"><a href="#undefined-使用不存在对象-不会报错" class="headerlink" title="undefined 使用不存在对象, 不会报错"></a>undefined 使用不存在对象, 不会报错</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-property">sdz</span><br><span class="hljs-literal">undefined</span><br></code></pre></td></tr></table></figure>
+<h1 id="delete-动态的删减属性"><a href="#delete-动态的删减属性" class="headerlink" title="delete 动态的删减属性"></a>delete 动态的删减属性</h1><p><strong>例子</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">$ <span class="hljs-keyword">delete</span> person.<span class="hljs-property">name</span><br>$ <span class="hljs-literal">true</span><br>$ person<br></code></pre></td></tr></table></figure>
+<h1 id="动态的添加给新的属性添加值"><a href="#动态的添加给新的属性添加值" class="headerlink" title="动态的添加给新的属性添加值"></a>动态的添加给新的属性添加值</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-property">sdq</span> = <span class="hljs-string">&quot;sdz&quot;</span>  <span class="hljs-comment">/*这里赋值sdz*/</span><br>person      <br></code></pre></td></tr></table></figure>
+<h1 id="判断属性值是否在这个对象-属性值是否在这个对象"><a href="#判断属性值是否在这个对象-属性值是否在这个对象" class="headerlink" title="判断属性值是否在这个对象  属性值是否在这个对象"></a>判断属性值是否在这个对象  属性值是否在这个对象</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-string">&quot;sdq&quot;</span> <span class="hljs-keyword">in</span> person        <br><span class="hljs-literal">true</span>         <br><span class="hljs-string">&quot;sdqz&quot;</span> <span class="hljs-keyword">in</span> person   <br><span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
+<h1 id="判断属性是否是这个对象自身拥有的-hasOwnProperty"><a href="#判断属性是否是这个对象自身拥有的-hasOwnProperty" class="headerlink" title="判断属性是否是这个对象自身拥有的 hasOwnProperty()"></a>判断属性是否是这个对象自身拥有的 hasOwnProperty()</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-title function_">hasOwnProperty</span>(<span class="hljs-string">&quot;toString&quot;</span>)<br><span class="hljs-literal">false</span>       <br>person.<span class="hljs-title function_">hasOwnProperty</span>(<span class="hljs-string">&quot;sdq&quot;</span>)<br><span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
     <title>JavaScript 数据类型之(字符串类型)</title>
     <url>/JavaScript-string.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
@@ -1902,20 +1925,26 @@ $</style>
       </categories>
   </entry>
   <entry>
-    <title>JavaScript 数据类型之(对象)</title>
-    <url>/JavaScript-object.html</url>
+    <title>JavaScript 数据类型之(数组类型)</title>
+    <url>/JavaScript-array.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
 <a id="more"></a>
 
-<h1 id="JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象"><a href="#JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象" class="headerlink" title="JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象"></a>JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> 对象名 = &#123;    <br>    属性名: 属性值<br>    属性名: 属性值<br>    属性名: 属性值<br>$ &#125; <br>$<br>$ <span class="hljs-comment">/*通过下标取值和赋值*/</span><br>$ <span class="hljs-keyword">var</span> person = &#123;<br>   <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;sdq&quot;</span>,<br>   <span class="hljs-attr">age</span>: <span class="hljs-number">3</span>,<br>   <span class="hljs-attr">email</span>: <span class="hljs-string">&quot;???????@???&quot;</span><br>   <span class="hljs-attr">score</span>: <span class="hljs-number">0</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<p><strong>若干个键值对 js中对象, {…..}表示一个对象, 键值对描述属性xxxx: xxxx, 多个属性之间使用逗号隔开, 最后一个属性不加逗号</strong></p>
-<h1 id="对象赋值"><a href="#对象赋值" class="headerlink" title="对象赋值"></a>对象赋值</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-property">name</span> = <span class="hljs-string">&quot;sdq&quot;</span>      <span class="hljs-comment">/*这里赋值sdq*/</span><br>person.<span class="hljs-property">name</span>              <span class="hljs-comment">/*这里输出sdq*/</span><br></code></pre></td></tr></table></figure>
-<h1 id="undefined-使用不存在对象-不会报错"><a href="#undefined-使用不存在对象-不会报错" class="headerlink" title="undefined 使用不存在对象, 不会报错"></a>undefined 使用不存在对象, 不会报错</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-property">sdz</span><br><span class="hljs-literal">undefined</span><br></code></pre></td></tr></table></figure>
-<h1 id="delete-动态的删减属性"><a href="#delete-动态的删减属性" class="headerlink" title="delete 动态的删减属性"></a>delete 动态的删减属性</h1><p><strong>例子</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">$ <span class="hljs-keyword">delete</span> person.<span class="hljs-property">name</span><br>$ <span class="hljs-literal">true</span><br>$ person<br></code></pre></td></tr></table></figure>
-<h1 id="动态的添加给新的属性添加值"><a href="#动态的添加给新的属性添加值" class="headerlink" title="动态的添加给新的属性添加值"></a>动态的添加给新的属性添加值</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-property">sdq</span> = <span class="hljs-string">&quot;sdz&quot;</span>  <span class="hljs-comment">/*这里赋值sdz*/</span><br>person      <br></code></pre></td></tr></table></figure>
-<h1 id="判断属性值是否在这个对象-属性值是否在这个对象"><a href="#判断属性值是否在这个对象-属性值是否在这个对象" class="headerlink" title="判断属性值是否在这个对象  属性值是否在这个对象"></a>判断属性值是否在这个对象  属性值是否在这个对象</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-string">&quot;sdq&quot;</span> <span class="hljs-keyword">in</span> person        <br><span class="hljs-literal">true</span>         <br><span class="hljs-string">&quot;sdqz&quot;</span> <span class="hljs-keyword">in</span> person   <br><span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
-<h1 id="判断属性是否是这个对象自身拥有的-hasOwnProperty"><a href="#判断属性是否是这个对象自身拥有的-hasOwnProperty" class="headerlink" title="判断属性是否是这个对象自身拥有的 hasOwnProperty()"></a>判断属性是否是这个对象自身拥有的 hasOwnProperty()</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-title function_">hasOwnProperty</span>(<span class="hljs-string">&quot;toString&quot;</span>)<br><span class="hljs-literal">false</span>       <br>person.<span class="hljs-title function_">hasOwnProperty</span>(<span class="hljs-string">&quot;sdq&quot;</span>)<br><span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+<h1 id="Array可以包含任意的数据类型"><a href="#Array可以包含任意的数据类型" class="headerlink" title="Array可以包含任意的数据类型"></a>Array可以包含任意的数据类型</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>];     <span class="hljs-comment">/*通过下标取值和赋值*/</span><br>arr[<span class="hljs-number">0</span>]<br>arr[<span class="hljs-number">3</span>] = <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+<h1 id="数组长度"><a href="#数组长度" class="headerlink" title="数组长度"></a>数组长度</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">arr.<span class="hljs-property">length</span>      <span class="hljs-comment">/*赋值过小值, 元素就会丢失*/</span><br></code></pre></td></tr></table></figure>
+<h1 id="indexOf-通过元素获得下标"><a href="#indexOf-通过元素获得下标" class="headerlink" title="indexOf  通过元素获得下标"></a>indexOf  通过元素获得下标</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>]; <br>arr.<span class="hljs-title function_">indexOf</span>(<span class="hljs-number">2</span>);  <span class="hljs-comment">/*输出1  字符串&quot;1&quot;和数字1是不同的*/</span><br></code></pre></td></tr></table></figure>
+<h1 id="slice-截取Array的一部分-返回一个数组"><a href="#slice-截取Array的一部分-返回一个数组" class="headerlink" title="slice() 截取Array的一部分, 返回一个数组"></a>slice() 截取Array的一部分, 返回一个数组</h1><p><strong>例子</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">$ <span class="hljs-title function_">slice</span>()   <span class="hljs-comment">/*类似于String中的substring*/</span><br></code></pre></td></tr></table></figure>
+<h1 id="push-和pop-尾部"><a href="#push-和pop-尾部" class="headerlink" title="push()和pop()尾部"></a>push()和pop()尾部</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-attr">push</span>:    <span class="hljs-comment">/*压入到头部*/</span><br><span class="hljs-attr">shift</span>:   <span class="hljs-comment">/*弹出头部的一个元素*/</span><br></code></pre></td></tr></table></figure>
+
+
+<h1 id="排序-sort"><a href="#排序-sort" class="headerlink" title="排序 sort()"></a>排序 sort()</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">(<span class="hljs-number">3</span>)[<span class="hljs-string">&quot;B&quot;</span>,<span class="hljs-string">&quot;A&quot;</span>,<span class="hljs-string">&quot;C&quot;</span>]         <span class="hljs-comment">/*排序前*/</span><br>arr.<span class="hljs-title function_">sort</span>()         <br>(<span class="hljs-number">3</span>)[<span class="hljs-string">&quot;A&quot;</span>,<span class="hljs-string">&quot;B&quot;</span>,<span class="hljs-string">&quot;C&quot;</span>]         <span class="hljs-comment">/*排序后*/</span><br></code></pre></td></tr></table></figure>
+<h1 id="元素反转-reverse"><a href="#元素反转-reverse" class="headerlink" title="元素反转 reverse()"></a>元素反转 reverse()</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">(<span class="hljs-number">3</span>)[<span class="hljs-string">&quot;B&quot;</span>,<span class="hljs-string">&quot;A&quot;</span>,<span class="hljs-string">&quot;C&quot;</span>]         <span class="hljs-comment">/*反转前*/</span><br>arr.<span class="hljs-title function_">reverse</span>()        <br>(<span class="hljs-number">3</span>)[<span class="hljs-string">&quot;C&quot;</span>,<span class="hljs-string">&quot;B&quot;</span>,<span class="hljs-string">&quot;A&quot;</span>]         <span class="hljs-comment">/*反转后*/</span><br></code></pre></td></tr></table></figure>
+<h1 id="concat"><a href="#concat" class="headerlink" title="concat()"></a>concat()</h1><p><strong>注意concat()并没有修改数组, 只是会返回一个新的数组</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">(<span class="hljs-number">3</span>)[<span class="hljs-string">&quot;C&quot;</span>,<span class="hljs-string">&quot;B&quot;</span>,<span class="hljs-string">&quot;A&quot;</span>]<br>arr.<span class="hljs-title function_">concat</span>([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>])        <br>(<span class="hljs-number">6</span>)[<span class="hljs-string">&quot;C&quot;</span>,<span class="hljs-string">&quot;B&quot;</span>,<span class="hljs-string">&quot;A&quot;</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br>arr<br>(<span class="hljs-number">3</span>)[<span class="hljs-string">&quot;C&quot;</span>,<span class="hljs-string">&quot;B&quot;</span>,<span class="hljs-string">&quot;A&quot;</span>]<br></code></pre></td></tr></table></figure>
+<h1 id="join-连接符"><a href="#join-连接符" class="headerlink" title="join 连接符"></a>join 连接符</h1><p><strong>例子</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">(<span class="hljs-number">3</span>)[<span class="hljs-string">&quot;C&quot;</span>,<span class="hljs-string">&quot;B&quot;</span>,<span class="hljs-string">&quot;A&quot;</span>] <br>arr.<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27;-&#x27;</span>)         <span class="hljs-comment">/*使用特定的字符串连接*/</span>   <br><span class="hljs-comment">/*结果输出&quot;C-B-A&quot;*/</span>       <br></code></pre></td></tr></table></figure>
+<h1 id="多位数组"><a href="#多位数组" class="headerlink" title="多位数组"></a>多位数组</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">arr = [[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>],[<span class="hljs-string">&quot;5&quot;</span>,<span class="hljs-string">&quot;6&quot;</span>]];<br>arr[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]   <br><span class="hljs-comment">/*结果输出4*/</span>  <br></code></pre></td></tr></table></figure>
 
 
 
@@ -1948,35 +1977,6 @@ $</style>
 
 
 
-
-
-
-]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript 数据类型之(数组类型)</title>
-    <url>/JavaScript-array.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="Array可以包含任意的数据类型"><a href="#Array可以包含任意的数据类型" class="headerlink" title="Array可以包含任意的数据类型"></a>Array可以包含任意的数据类型</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>];     <span class="hljs-comment">/*通过下标取值和赋值*/</span><br>arr[<span class="hljs-number">0</span>]<br>arr[<span class="hljs-number">3</span>] = <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
-<h1 id="数组长度"><a href="#数组长度" class="headerlink" title="数组长度"></a>数组长度</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">arr.<span class="hljs-property">length</span>      <span class="hljs-comment">/*赋值过小值, 元素就会丢失*/</span><br></code></pre></td></tr></table></figure>
-<h1 id="indexOf-通过元素获得下标"><a href="#indexOf-通过元素获得下标" class="headerlink" title="indexOf  通过元素获得下标"></a>indexOf  通过元素获得下标</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>]; <br>arr.<span class="hljs-title function_">indexOf</span>(<span class="hljs-number">2</span>);  <span class="hljs-comment">/*输出1  字符串&quot;1&quot;和数字1是不同的*/</span><br></code></pre></td></tr></table></figure>
-<h1 id="slice-截取Array的一部分-返回一个数组"><a href="#slice-截取Array的一部分-返回一个数组" class="headerlink" title="slice() 截取Array的一部分, 返回一个数组"></a>slice() 截取Array的一部分, 返回一个数组</h1><p><strong>例子</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">$ <span class="hljs-title function_">slice</span>()   <span class="hljs-comment">/*类似于String中的substring*/</span><br></code></pre></td></tr></table></figure>
-<h1 id="push-和pop-尾部"><a href="#push-和pop-尾部" class="headerlink" title="push()和pop()尾部"></a>push()和pop()尾部</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-attr">push</span>:    <span class="hljs-comment">/*压入到头部*/</span><br><span class="hljs-attr">shift</span>:   <span class="hljs-comment">/*弹出头部的一个元素*/</span><br></code></pre></td></tr></table></figure>
-
-
-<h1 id="排序-sort"><a href="#排序-sort" class="headerlink" title="排序 sort()"></a>排序 sort()</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">(<span class="hljs-number">3</span>)[<span class="hljs-string">&quot;B&quot;</span>,<span class="hljs-string">&quot;A&quot;</span>,<span class="hljs-string">&quot;C&quot;</span>]         <span class="hljs-comment">/*排序前*/</span><br>arr.<span class="hljs-title function_">sort</span>()         <br>(<span class="hljs-number">3</span>)[<span class="hljs-string">&quot;A&quot;</span>,<span class="hljs-string">&quot;B&quot;</span>,<span class="hljs-string">&quot;C&quot;</span>]         <span class="hljs-comment">/*排序后*/</span><br></code></pre></td></tr></table></figure>
-<h1 id="元素反转-reverse"><a href="#元素反转-reverse" class="headerlink" title="元素反转 reverse()"></a>元素反转 reverse()</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">(<span class="hljs-number">3</span>)[<span class="hljs-string">&quot;B&quot;</span>,<span class="hljs-string">&quot;A&quot;</span>,<span class="hljs-string">&quot;C&quot;</span>]         <span class="hljs-comment">/*反转前*/</span><br>arr.<span class="hljs-title function_">reverse</span>()        <br>(<span class="hljs-number">3</span>)[<span class="hljs-string">&quot;C&quot;</span>,<span class="hljs-string">&quot;B&quot;</span>,<span class="hljs-string">&quot;A&quot;</span>]         <span class="hljs-comment">/*反转后*/</span><br></code></pre></td></tr></table></figure>
-<h1 id="concat"><a href="#concat" class="headerlink" title="concat()"></a>concat()</h1><p><strong>注意concat()并没有修改数组, 只是会返回一个新的数组</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">(<span class="hljs-number">3</span>)[<span class="hljs-string">&quot;C&quot;</span>,<span class="hljs-string">&quot;B&quot;</span>,<span class="hljs-string">&quot;A&quot;</span>]<br>arr.<span class="hljs-title function_">concat</span>([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>])        <br>(<span class="hljs-number">6</span>)[<span class="hljs-string">&quot;C&quot;</span>,<span class="hljs-string">&quot;B&quot;</span>,<span class="hljs-string">&quot;A&quot;</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br>arr<br>(<span class="hljs-number">3</span>)[<span class="hljs-string">&quot;C&quot;</span>,<span class="hljs-string">&quot;B&quot;</span>,<span class="hljs-string">&quot;A&quot;</span>]<br></code></pre></td></tr></table></figure>
-<h1 id="join-连接符"><a href="#join-连接符" class="headerlink" title="join 连接符"></a>join 连接符</h1><p><strong>例子</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">(<span class="hljs-number">3</span>)[<span class="hljs-string">&quot;C&quot;</span>,<span class="hljs-string">&quot;B&quot;</span>,<span class="hljs-string">&quot;A&quot;</span>] <br>arr.<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27;-&#x27;</span>)         <span class="hljs-comment">/*使用特定的字符串连接*/</span>   <br><span class="hljs-comment">/*结果输出&quot;C-B-A&quot;*/</span>       <br></code></pre></td></tr></table></figure>
-<h1 id="多位数组"><a href="#多位数组" class="headerlink" title="多位数组"></a>多位数组</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">arr = [[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>],[<span class="hljs-string">&quot;5&quot;</span>,<span class="hljs-string">&quot;6&quot;</span>]];<br>arr[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]   <br><span class="hljs-comment">/*结果输出4*/</span>  <br></code></pre></td></tr></table></figure>
 
 
 
@@ -2375,6 +2375,36 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>React 第一枪</title>
+    <url>/React-Foundation.html</url>
+    <content><![CDATA[<p><strong>React笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="React全家桶包括"><a href="#React全家桶包括" class="headerlink" title="React全家桶包括:"></a>React全家桶包括:</h1><ul>
+<li>React基础      (基础篇)</li>
+<li>React-Router   (专门做路由的库)</li>
+<li>PubSub         (消息管理的库)</li>
+<li>Redux          (专门做集中式状态管理的库)</li>
+<li>Ant-Design     (UI组件库)</li>
+</ul>
+<h1 id="React和Vue不同的地方"><a href="#React和Vue不同的地方" class="headerlink" title="React和Vue不同的地方"></a>React和Vue不同的地方</h1><ul>
+<li>Vue只能弄内部变量而React内外变量都可以使用</li>
+</ul>
+<h1 id="开枪认识React"><a href="#开枪认识React" class="headerlink" title="开枪认识React"></a>开枪认识React</h1><h2 id="React的Hello-world"><a href="#React的Hello-world" class="headerlink" title="React的Hello world"></a>React的Hello world</h2><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-comment">&lt;!-- eact 的核心库 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-comment">&lt;!-- 提供与 DOM 相关的功能 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-comment">&lt;!-- Babel 可以将 ES6 代码转为 ES5 代码 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-comment">&lt;!-- 需要使用 JSX 则 &lt;script&gt; 标签的 type 属性需要设置为 text/babel --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>ReactDOM.render(<br>	<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>,<br>    // 以上代码将一个 h1 标题 插入 id=&quot;example&quot; 节点中<br>	document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="create-react-app-快速构建-React-开发环境"><a href="#create-react-app-快速构建-React-开发环境" class="headerlink" title="create-react-app 快速构建 React 开发环境"></a>create-react-app 快速构建 React 开发环境</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs PowerShell">// 安装依赖<br>cnpm install <span class="hljs-literal">-g</span> create<span class="hljs-literal">-react-sdq</span><br>// 自动创建的项目是基于 Webpack + ES6 。<br>create<span class="hljs-literal">-react-app</span> my<span class="hljs-literal">-sdq</span><br>// 打开文件夹<br><span class="hljs-built_in">cd</span> my<span class="hljs-literal">-sdq</span>/<br>// 启动服务<br>npm <span class="hljs-built_in">start</span><br></code></pre></td></tr></table></figure>
+<p><strong>然后修改 my-sdq/src/App.js</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">import</span> <span class="hljs-title class_">React</span>, &#123; <span class="hljs-title class_">Component</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span>;<br><span class="hljs-keyword">import</span> logo <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./logo.svg&#x27;</span>;<br><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;./App.css&#x27;</span>;<br> <br><span class="hljs-keyword">class</span> <span class="hljs-title class_">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Component</span> &#123;<br>  <span class="hljs-title function_">render</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> (<br>      &lt;div className=<span class="hljs-string">&quot;App&quot;</span>&gt;<br>        &lt;div className=<span class="hljs-string">&quot;App-header&quot;</span>&gt;<br>          &lt;img src=&#123;logo&#125; className=<span class="hljs-string">&quot;App-logo&quot;</span> alt=<span class="hljs-string">&quot;logo&quot;</span> /&gt;<br>          &lt;h2&gt;你已经中了幻术, 浪费了你两秒的生命&lt;/h2&gt;<br>        &lt;/div&gt;<br>      &lt;/div&gt;<br>    );<br>  &#125;<br>&#125;<br><br><span class="hljs-comment">// 暴露</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">App</span>;<br></code></pre></td></tr></table></figure>
+<p><img src="/images/React/%E5%86%99%E8%BD%AE%E7%9C%BC.jpg"></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;./App.css&#x27;</span>;<br><br><span class="hljs-keyword">let</span> wbbl = <span class="hljs-string">&quot;外部变量&quot;</span><br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">App</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">let</span> nbbl = <span class="hljs-string">&quot;内部变量&quot;</span><br>  <span class="hljs-keyword">return</span> (<br>    &lt;div className=<span class="hljs-string">&quot;App&quot;</span>&gt;<br>      &lt;header className=<span class="hljs-string">&quot;App-header&quot;</span>&gt;<br>        &lt;h1&gt;&#123;nbbl&#125;&lt;/h1&gt;<br>        &lt;h1&gt;&#123;wbbl&#125;&lt;/h1&gt;<br>      &lt;/header&gt;<br>    &lt;/div&gt;<br>  );<br>&#125;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">App</span>;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;./App.css&#x27;</span>;<br>&#123;<span class="hljs-comment">/*  useState是钩子函数  */</span>&#125;<br><span class="hljs-keyword">import</span> &#123; useState &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span><br><br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">App</span>(<span class="hljs-params"></span>) &#123;<br>  &#123;<span class="hljs-comment">/*  初始值 = 数组  */</span>&#125;<br>  <span class="hljs-keyword">const</span> [nbbl, setTitle] = <span class="hljs-title function_">useState</span>(<span class="hljs-string">&quot;内部变量&quot;</span>)<br>    nbbl = <span class="hljs-string">&quot;本来就是内部变量&quot;</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(nbbl)<br>  <br>  <span class="hljs-keyword">return</span> (<br>    &lt;div className=<span class="hljs-string">&quot;App&quot;</span>&gt;<br>      &lt;header className=<span class="hljs-string">&quot;App-header&quot;</span>&gt;<br>        &lt;h1 onClik=<span class="hljs-string">&quot;&quot;</span><span class="hljs-title class_">App</span>-header&gt;&#123;nbbl&#125;&lt;/h1&gt; <br>      &lt;/header&gt;<br>    &lt;/div&gt;<br>  );<br>&#125;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">App</span>;<br></code></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>React</category>
+      </categories>
+  </entry>
+  <entry>
     <title>React 模块与组件(模块与组件的理解)</title>
     <url>/React-JSX-one.html</url>
     <content><![CDATA[<p><strong>React笔记</strong></p>
@@ -2401,36 +2431,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <li>Components: 观察这个网页有多少组件组成</li>
 <li>Profiler: 用于记录网站的性能</li>
 </ul>
-]]></content>
-      <categories>
-        <category>React</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>React 第一枪</title>
-    <url>/React-Foundation.html</url>
-    <content><![CDATA[<p><strong>React笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="React全家桶包括"><a href="#React全家桶包括" class="headerlink" title="React全家桶包括:"></a>React全家桶包括:</h1><ul>
-<li>React基础      (基础篇)</li>
-<li>React-Router   (专门做路由的库)</li>
-<li>PubSub         (消息管理的库)</li>
-<li>Redux          (专门做集中式状态管理的库)</li>
-<li>Ant-Design     (UI组件库)</li>
-</ul>
-<h1 id="React和Vue不同的地方"><a href="#React和Vue不同的地方" class="headerlink" title="React和Vue不同的地方"></a>React和Vue不同的地方</h1><ul>
-<li>Vue只能弄内部变量而React内外变量都可以使用</li>
-</ul>
-<h1 id="开枪认识React"><a href="#开枪认识React" class="headerlink" title="开枪认识React"></a>开枪认识React</h1><h2 id="React的Hello-world"><a href="#React的Hello-world" class="headerlink" title="React的Hello world"></a>React的Hello world</h2><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-comment">&lt;!-- eact 的核心库 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-comment">&lt;!-- 提供与 DOM 相关的功能 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-comment">&lt;!-- Babel 可以将 ES6 代码转为 ES5 代码 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-comment">&lt;!-- 需要使用 JSX 则 &lt;script&gt; 标签的 type 属性需要设置为 text/babel --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>ReactDOM.render(<br>	<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>,<br>    // 以上代码将一个 h1 标题 插入 id=&quot;example&quot; 节点中<br>	document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h3 id="create-react-app-快速构建-React-开发环境"><a href="#create-react-app-快速构建-React-开发环境" class="headerlink" title="create-react-app 快速构建 React 开发环境"></a>create-react-app 快速构建 React 开发环境</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs PowerShell">// 安装依赖<br>cnpm install <span class="hljs-literal">-g</span> create<span class="hljs-literal">-react-sdq</span><br>// 自动创建的项目是基于 Webpack + ES6 。<br>create<span class="hljs-literal">-react-app</span> my<span class="hljs-literal">-sdq</span><br>// 打开文件夹<br><span class="hljs-built_in">cd</span> my<span class="hljs-literal">-sdq</span>/<br>// 启动服务<br>npm <span class="hljs-built_in">start</span><br></code></pre></td></tr></table></figure>
-<p><strong>然后修改 my-sdq/src/App.js</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">import</span> <span class="hljs-title class_">React</span>, &#123; <span class="hljs-title class_">Component</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span>;<br><span class="hljs-keyword">import</span> logo <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./logo.svg&#x27;</span>;<br><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;./App.css&#x27;</span>;<br> <br><span class="hljs-keyword">class</span> <span class="hljs-title class_">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Component</span> &#123;<br>  <span class="hljs-title function_">render</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> (<br>      &lt;div className=<span class="hljs-string">&quot;App&quot;</span>&gt;<br>        &lt;div className=<span class="hljs-string">&quot;App-header&quot;</span>&gt;<br>          &lt;img src=&#123;logo&#125; className=<span class="hljs-string">&quot;App-logo&quot;</span> alt=<span class="hljs-string">&quot;logo&quot;</span> /&gt;<br>          &lt;h2&gt;你已经中了幻术, 浪费了你两秒的生命&lt;/h2&gt;<br>        &lt;/div&gt;<br>      &lt;/div&gt;<br>    );<br>  &#125;<br>&#125;<br><br><span class="hljs-comment">// 暴露</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">App</span>;<br></code></pre></td></tr></table></figure>
-<p><img src="/images/React/%E5%86%99%E8%BD%AE%E7%9C%BC.jpg"></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;./App.css&#x27;</span>;<br><br><span class="hljs-keyword">let</span> wbbl = <span class="hljs-string">&quot;外部变量&quot;</span><br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">App</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">let</span> nbbl = <span class="hljs-string">&quot;内部变量&quot;</span><br>  <span class="hljs-keyword">return</span> (<br>    &lt;div className=<span class="hljs-string">&quot;App&quot;</span>&gt;<br>      &lt;header className=<span class="hljs-string">&quot;App-header&quot;</span>&gt;<br>        &lt;h1&gt;&#123;nbbl&#125;&lt;/h1&gt;<br>        &lt;h1&gt;&#123;wbbl&#125;&lt;/h1&gt;<br>      &lt;/header&gt;<br>    &lt;/div&gt;<br>  );<br>&#125;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">App</span>;<br></code></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;./App.css&#x27;</span>;<br>&#123;<span class="hljs-comment">/*  useState是钩子函数  */</span>&#125;<br><span class="hljs-keyword">import</span> &#123; useState &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span><br><br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">App</span>(<span class="hljs-params"></span>) &#123;<br>  &#123;<span class="hljs-comment">/*  初始值 = 数组  */</span>&#125;<br>  <span class="hljs-keyword">const</span> [nbbl, setTitle] = <span class="hljs-title function_">useState</span>(<span class="hljs-string">&quot;内部变量&quot;</span>)<br>    nbbl = <span class="hljs-string">&quot;本来就是内部变量&quot;</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(nbbl)<br>  <br>  <span class="hljs-keyword">return</span> (<br>    &lt;div className=<span class="hljs-string">&quot;App&quot;</span>&gt;<br>      &lt;header className=<span class="hljs-string">&quot;App-header&quot;</span>&gt;<br>        &lt;h1 onClik=<span class="hljs-string">&quot;&quot;</span><span class="hljs-title class_">App</span>-header&gt;&#123;nbbl&#125;&lt;/h1&gt; <br>      &lt;/header&gt;<br>    &lt;/div&gt;<br>  );<br>&#125;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">App</span>;<br></code></pre></td></tr></table></figure>
-
 ]]></content>
       <categories>
         <category>React</category>
@@ -2533,9 +2533,18 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <h3 id="构造器能省略尽量省略"><a href="#构造器能省略尽量省略" class="headerlink" title="构造器能省略尽量省略"></a>构造器能省略尽量省略</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 构造器是否接收props 是否传递给super 取决于是否希望在构造器中通过this访问props</span><br><span class="hljs-title function_">costructor</span>(<span class="hljs-params">props</span>)&#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(props)<br>	<span class="hljs-comment">// 构造器必写super 传值作用</span><br>	<span class="hljs-variable language_">super</span>(props)<br>	<span class="hljs-comment">// 接props或者不接props, 可以用this.props来分析区别</span><br>	<span class="hljs-comment">// console.log(&#x27;costructor&#x27;,this.props);</span><br>	<span class="hljs-comment">// 相当于</span><br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;costructor&#x27;</span>,props);<br>&#125;<br><br><span class="hljs-comment">// 也可以</span><br><br>state = &#123;&#125;<br><br><span class="hljs-comment">// 也可以用箭头函数</span><br><br>demo = <span class="hljs-function">()=&gt;</span>&#123;<br>	<span class="hljs-comment">// 函数体</span><br>&#125;<br></code></pre></td></tr></table></figure>
 <h1 id="函数式组件使用props"><a href="#函数式组件使用props" class="headerlink" title="函数式组件使用props"></a>函数式组件使用props</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;<br>	functiom <span class="hljs-title class_">Person</span> (props)&#123;<br>		<span class="hljs-keyword">const</span> &#123; name, age, sex &#125; = props<br>		<span class="hljs-keyword">return</span> (<br>			&lt;ul&gt;<br>				&lt;li&gt;姓名：&#123;name&#125;&lt;/li&gt;<br>				&lt;li&gt;性别：&#123;sex&#125;&lt;/li&gt;<br>				&lt;li&gt;年龄：&#123;age&#125;&lt;/li&gt;<br>			&lt;/ul&gt;<br>		)<br>	&#125;<br>	<span class="hljs-comment">// 渲染组件到页面</span><br>	<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Person</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;史迪奇&quot;</span> <span class="hljs-attr">age</span>=<span class="hljs-string">&quot;未知&quot;</span> <span class="hljs-attr">sex</span>=<span class="hljs-string">&quot;未知&quot;</span>/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test1&#x27;</span>))<br>&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
 <h2 id="函数式组件也可以进行限制"><a href="#函数式组件也可以进行限制" class="headerlink" title="函数式组件也可以进行限制"></a>函数式组件也可以进行限制</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;<br>	functiom <span class="hljs-title class_">Person</span> (props)&#123;<br>		<span class="hljs-keyword">const</span> &#123; name, age, sex &#125; = props<br>		<span class="hljs-keyword">return</span> (<br>			&lt;ul&gt;<br>				&lt;li&gt;姓名：&#123;name&#125;&lt;/li&gt;<br>				&lt;li&gt;性别：&#123;sex&#125;&lt;/li&gt;<br>				&lt;li&gt;年龄：&#123;age&#125;&lt;/li&gt;<br>			&lt;/ul&gt;<br>		)<br>	&#125;<br>			<span class="hljs-title class_">Person</span>.<span class="hljs-property">propTypes</span> = &#123;<br>			<span class="hljs-attr">name</span>:<span class="hljs-title class_">PropTypes</span>.<span class="hljs-property">string</span>.<span class="hljs-property">isRequired</span>, <span class="hljs-comment">//限制name必传，且为字符串</span><br>			<span class="hljs-attr">sex</span>:<span class="hljs-title class_">PropTypes</span>.<span class="hljs-property">string</span>,<span class="hljs-comment">//限制sex为字符串</span><br>			<span class="hljs-attr">age</span>:<span class="hljs-title class_">PropTypes</span>.<span class="hljs-property">string</span>,<span class="hljs-comment">//限制age为字符串</span><br>		&#125;<br><br>		<span class="hljs-comment">//指定默认标签属性值</span><br>		<span class="hljs-title class_">Person</span>.<span class="hljs-property">defaultProps</span> = &#123;<br>			<span class="hljs-attr">sex</span>:<span class="hljs-string">&#x27;未知&#x27;</span>,<span class="hljs-comment">//sex默认值为未知</span><br>			<span class="hljs-attr">age</span>:<span class="hljs-string">&quot;未知&quot;</span> <span class="hljs-comment">//age默认值为未知</span><br>		&#125;<br>	<span class="hljs-comment">// 渲染组件到页面</span><br>	<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Person</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;史迪奇&quot;</span> <span class="hljs-attr">age</span>=<span class="hljs-string">&quot;未知&quot;</span> <span class="hljs-attr">sex</span>=<span class="hljs-string">&quot;未知&quot;</span>/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test1&#x27;</span>))<br>&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
-<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;<br>		<span class="hljs-comment">//创建组件</span><br>		<span class="hljs-keyword">class</span> <span class="hljs-title class_">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">React.Component</span>&#123;<br>			<span class="hljs-comment">// 展示左侧输入框的数据</span><br>			showData = <span class="hljs-function">()=&gt;</span>&#123;<br>				<span class="hljs-keyword">const</span> &#123;input1&#125; = <span class="hljs-variable language_">this</span>.<span class="hljs-property">refs</span><br>				<span class="hljs-title function_">alert</span>(input1.<span class="hljs-property">value</span>)<br>			&#125;<br>			<span class="hljs-comment">// 展示右侧输入框的数据</span><br>			showData2 = <span class="hljs-function">()=&gt;</span>&#123;<br>				<span class="hljs-keyword">const</span> &#123;input2&#125; = <span class="hljs-variable language_">this</span>.<span class="hljs-property">refs</span><br>				<span class="hljs-title function_">alert</span>(input2.<span class="hljs-property">value</span>)<br>			&#125;<br>			<span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;<br>				<span class="hljs-keyword">return</span>(<br>					&lt;div&gt;<br>						&lt;input ref=<span class="hljs-string">&quot;input1&quot;</span> type=<span class="hljs-string">&quot;text&quot;</span> placeholder=<span class="hljs-string">&quot;点击按钮提示数据&quot;</span>/&gt;&amp;nbsp;<br>						&lt;button onClick=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">showData</span>&#125;&gt;点我提示左侧的数据&lt;/button&gt;&amp;nbsp;<br>						&lt;input ref=<span class="hljs-string">&quot;input2&quot;</span> onBlur=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">showData2</span>&#125; type=<span class="hljs-string">&quot;text&quot;</span> placeholder=<span class="hljs-string">&quot;失去焦点提示数据&quot;</span>/&gt;<br>					&lt;/div&gt;<br>				)<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">// 渲染组件到页面</span><br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Demo</span> <span class="hljs-attr">a</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">b</span>=<span class="hljs-string">&quot;2&quot;</span>/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test&#x27;</span>))<br>	&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
-<p><font color="#DC143C">效果</font></p>
+<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><h2 id="字符串写法-不建议用"><a href="#字符串写法-不建议用" class="headerlink" title="字符串写法 不建议用"></a>字符串写法 不建议用</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;<br>		<span class="hljs-comment">//创建组件</span><br>		<span class="hljs-keyword">class</span> <span class="hljs-title class_">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">React.Component</span>&#123;<br>			<span class="hljs-comment">// 展示左侧输入框的数据</span><br>			showData = <span class="hljs-function">()=&gt;</span>&#123;<br>				<span class="hljs-keyword">const</span> &#123;input1&#125; = <span class="hljs-variable language_">this</span>.<span class="hljs-property">refs</span><br>				<span class="hljs-title function_">alert</span>(input1.<span class="hljs-property">value</span>)<br>			&#125;<br>			<span class="hljs-comment">// 展示右侧输入框的数据</span><br>			showData2 = <span class="hljs-function">()=&gt;</span>&#123;<br>				<span class="hljs-keyword">const</span> &#123;input2&#125; = <span class="hljs-variable language_">this</span>.<span class="hljs-property">refs</span><br>				<span class="hljs-title function_">alert</span>(input2.<span class="hljs-property">value</span>)<br>			&#125;<br>			<span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;<br>				<span class="hljs-keyword">return</span>(<br>					&lt;div&gt;<br>						&lt;input ref=<span class="hljs-string">&quot;input1&quot;</span> type=<span class="hljs-string">&quot;text&quot;</span> placeholder=<span class="hljs-string">&quot;点击按钮提示数据&quot;</span>/&gt;&amp;nbsp;<br>						&lt;button onClick=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">showData</span>&#125;&gt;点我提示左侧的数据&lt;/button&gt;&amp;nbsp;<br>						&lt;input ref=<span class="hljs-string">&quot;input2&quot;</span> onBlur=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">showData2</span>&#125; type=<span class="hljs-string">&quot;text&quot;</span> placeholder=<span class="hljs-string">&quot;失去焦点提示数据&quot;</span>/&gt;<br>					&lt;/div&gt;<br>				)<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">// 渲染组件到页面</span><br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Demo</span> <span class="hljs-attr">a</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">b</span>=<span class="hljs-string">&quot;2&quot;</span>/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test&#x27;</span>))<br>	&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
+<p><font color="#DC143C">字符串写法效果</font></p>
 <iframe id="iframe" src="./html/字符串形式的ref.html"></iframe>
+
+<h2 id="回调函数的ref"><a href="#回调函数的ref" class="headerlink" title="回调函数的ref"></a>回调函数的ref</h2><p><strong>解释: 定义但没调用</strong></p>
+<p><strong>特点</strong><br>      <ol style="list-style-type:number"><br>        <li>定义</li><br>        <li>调2用</li><br>        <li>执行</li><br>      </ol></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;<br>		<span class="hljs-comment">// 创建组件</span><br>		<span class="hljs-keyword">class</span> <span class="hljs-title class_">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">React.Component</span>&#123;<br>			<span class="hljs-comment">// 展示左侧输入框的数据</span><br>			showData = <span class="hljs-function">()=&gt;</span>&#123;<br>				<span class="hljs-keyword">const</span> &#123;input1&#125; = <span class="hljs-variable language_">this</span><br>				<span class="hljs-title function_">alert</span>(input1.<span class="hljs-property">value</span>)<br>			&#125;<br>			<span class="hljs-comment">// 展示右侧输入框的数据</span><br>			showData2 = <span class="hljs-function">()=&gt;</span>&#123;<br>				<span class="hljs-keyword">const</span> &#123;input2&#125; = <span class="hljs-variable language_">this</span><br>				<span class="hljs-title function_">alert</span>(input2.<span class="hljs-property">value</span>)<br>			&#125;<br>			<span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;<br>				<span class="hljs-keyword">return</span>(<br>					&lt;div&gt;<br>						<span class="hljs-comment">// ref=&#123;c =&gt; this.input1 = c &#125;是回调函数 剩下的交给React 仅ref</span><br>						&lt;input ref=&#123;<span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">input1</span> = c &#125; type=<span class="hljs-string">&quot;text&quot;</span> placeholder=<span class="hljs-string">&quot;点击按钮提示数据&quot;</span>/&gt;&amp;nbsp;<br>						&lt;button onClick=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">showData</span>&#125;&gt;点我提示左侧的数据&lt;/button&gt;&amp;nbsp;<br>						&lt;input onBlur=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">showData2</span>&#125; ref=&#123;<span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">input2</span> = c &#125; type=<span class="hljs-string">&quot;text&quot;</span> placeholder=<span class="hljs-string">&quot;失去焦点提示数据&quot;</span>/&gt;&amp;nbsp;<br>					&lt;/div&gt;<br>				)<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//渲染组件到页面</span><br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Demo</span> <span class="hljs-attr">a</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">b</span>=<span class="hljs-string">&quot;2&quot;</span>/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test&#x27;</span>))<br>	&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
+<p><font color="#DC143C">回调函数效果</font></p>
+<iframe id="iframe" src="./html/回调函数形式的ref.html"></iframe>
+
+
+
 
 
 
@@ -2623,6 +2632,19 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>React 面向组件编程</title>
+    <url>/React-Component-oriented.html</url>
+    <content><![CDATA[<p><strong>React笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="创建函数式组件"><a href="#创建函数式组件" class="headerlink" title="创建函数式组件"></a>创建函数式组件</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>		//创建函数式组件 需要定义的首字母一定要大写<br>		function MyNameIsStitch()&#123;<br>			console.log(this); //此处的this是undefined, 因为babel编译后开启了严格模式<br>			return <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>我是用函数定义的组件(适用于 简单组件 的定义)<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>		&#125;<br>		//2.渲染组件到页面<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>		/* <br>			执行了ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>            之后, 发生了什么?<br>					1.React解析组件标签, 找到了MyNameIsStitch组件<br>					2.发现组件是使用函数定义的, 随后调用该函数, 将返回的虚拟DOM转为真实DOM, 随后呈现在页面中<br>		*/<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="创建类式组件"><a href="#创建类式组件" class="headerlink" title="创建类式组件"></a>创建类式组件</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-comment">&lt;!-- 准备好一个&quot;容器&quot; --&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>		//创建类式组件<br>		class MyNameIsStitch extends React.Component &#123;<br>			render()&#123;<br>				//render是放在哪里的?—— MyNameIsStitch的原型对象上，供实例使用<br>				//render中的this是谁?—— MyNameIsStitch的实例对象 &lt;=&gt; MyNameIsStitch组件实例对象<br>				console.log(&#x27;render中的this:&#x27;,this);<br>				return <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>我是用类定义的组件(适用于【复杂组件】的定义)<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>			&#125;<br>		&#125;<br>		//渲染组件到页面<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>		/* <br>			执行了ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>.......之后，发生了什么?<br>					React解析组件标签，找到了MyNameIsStitch组件<br>					发现组件是使用类定义的，随后new出来该类的实例，并通过该实例调用到原型上的render方法<br>					将render返回的虚拟DOM转为真实DOM，随后呈现在页面中<br>		*/<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>React</category>
+      </categories>
+  </entry>
+  <entry>
     <title>SQL Server T-SQL 从创建数据库到创建数据表到插入数据</title>
     <url>/SQL-kbl.html</url>
     <content><![CDATA[<p><strong>SQL Server个人整理</strong></p>
@@ -2646,19 +2668,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 ]]></content>
       <categories>
         <category>数据库</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>React 面向组件编程</title>
-    <url>/React-Component-oriented.html</url>
-    <content><![CDATA[<p><strong>React笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="创建函数式组件"><a href="#创建函数式组件" class="headerlink" title="创建函数式组件"></a>创建函数式组件</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>		//创建函数式组件 需要定义的首字母一定要大写<br>		function MyNameIsStitch()&#123;<br>			console.log(this); //此处的this是undefined, 因为babel编译后开启了严格模式<br>			return <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>我是用函数定义的组件(适用于 简单组件 的定义)<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>		&#125;<br>		//2.渲染组件到页面<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>		/* <br>			执行了ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>            之后, 发生了什么?<br>					1.React解析组件标签, 找到了MyNameIsStitch组件<br>					2.发现组件是使用函数定义的, 随后调用该函数, 将返回的虚拟DOM转为真实DOM, 随后呈现在页面中<br>		*/<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h1 id="创建类式组件"><a href="#创建类式组件" class="headerlink" title="创建类式组件"></a>创建类式组件</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-comment">&lt;!-- 准备好一个&quot;容器&quot; --&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>		//创建类式组件<br>		class MyNameIsStitch extends React.Component &#123;<br>			render()&#123;<br>				//render是放在哪里的?—— MyNameIsStitch的原型对象上，供实例使用<br>				//render中的this是谁?—— MyNameIsStitch的实例对象 &lt;=&gt; MyNameIsStitch组件实例对象<br>				console.log(&#x27;render中的this:&#x27;,this);<br>				return <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>我是用类定义的组件(适用于【复杂组件】的定义)<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>			&#125;<br>		&#125;<br>		//渲染组件到页面<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>		/* <br>			执行了ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>.......之后，发生了什么?<br>					React解析组件标签，找到了MyNameIsStitch组件<br>					发现组件是使用类定义的，随后new出来该类的实例，并通过该实例调用到原型上的render方法<br>					将render返回的虚拟DOM转为真实DOM，随后呈现在页面中<br>		*/<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>React</category>
       </categories>
   </entry>
   <entry>
@@ -2804,9 +2813,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
     <content><![CDATA[<p><strong>Three.js学习笔记</strong></p>
 <a id="more"></a>
 
-<h1 id="var和let和const的区别"><a href="#var和let和const的区别" class="headerlink" title="var和let和const的区别"></a>var和let和const的区别</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">const</span> 定义常量<br><span class="hljs-keyword">let</span> 有区域<br><span class="hljs-keyword">var</span> 整个函数内都有效<br></code></pre></td></tr></table></figure>
-
-
 <h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>第一枪<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br>    body &#123;<br>    /* 边距 */<br>      margin: 0;<br>      overflow: hidden;<br>      /* 隐藏body窗口区域滚动条 */<br>    &#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>  <span class="hljs-comment">&lt;!--这个是别人弄的网络连接--&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://www.yanhuangxueyuan.com/versions/threejsR92/build/three.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>    /**<br>     * 创建场景对象sdq=Scene<br>     */<br>    let sdq = new THREE.Scene();<br>    /**<br>     * 创建网格模型<br>     */<br>    // let wuti = new THREE.SphereGeometry(90, 50, 150); //创建一个球体几何对象(大小, 圆度, 弧度)<br>    let wuti = new THREE.BoxGeometry(150, 150, 150); //创建一个立方体几何对象Geometry,(宽, 高, 长); <br>    let material = new THREE.MeshLambertMaterial(&#123;<br>    //   物体颜色<br>        color: 0xDC143C<br>    &#125;); //材质对象Material<br>    var mesh = new THREE.Mesh(wuti, material); //网格模型对象Mesh<br>    sdq.add(mesh); //网格模型添加到场景中<br>    /**<br>     * 光源设置<br>     */<br>    //点光源<br>    var point = new THREE.PointLight(0xffffff);<br><br>    point.position.set(260, 600, 200); //点光源位置(亮点位置, 光源强弱, 亮点位置)<br>    sdq.add(point); //点光源添加到场景中<br>    //环境光 <br>    var ambient = new THREE.AmbientLight(0x444444);<br>    // 是否照射<br>    sdq.add(ambient);<br>    /**<br>     * 相机设置<br>     */<br>    let width = window.innerWidth; //窗口宽度<br>    let height = window.innerHeight; //窗口高度<br>    let k = width / height; //窗口宽高比<br>    let s = 250; //大小 数值越小越大<br>    //创建了一个正射投影相机对象<br>    let camera = new THREE.OrthographicCamera(-s * k, s * k, s, -s, 1, 1000);<br>    camera.position.set(200, 300, 200); //设置相机位置<br>    camera.lookAt(sdq.position); //设置相机方向(指向的场景对象)<br>    /**<br>     * 创建渲染器对象<br>     */<br>    let renderer = new THREE.WebGLRenderer();<br>    renderer.setSize(width, height);//设置渲染区域尺寸<br>    renderer.setClearColor(0xb9d3ff, 1); //设置背景颜色<br>    document.body.appendChild(renderer.domElement); //body元素中插入canvas对象<br>    //执行渲染操作   指定场景 相机作为参数<br>    renderer.render(sdq, camera);<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p><font color="#DC143C">正方体</font></p>
 <iframe id="iframe" src="./html/正方体.html"></iframe>
@@ -2819,20 +2825,19 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>Three.js 第一枪</title>
-    <url>/Three.html</url>
-    <content><![CDATA[<p><strong>Three.js学习笔记</strong></p>
+    <title>TypeScript 使用Jquery库</title>
+    <url>/TypeScript-Jquery.html</url>
+    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
 <a id="more"></a>
 
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>第一枪<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br>    body &#123;<br>    /* 边距 */<br>      margin: 0;<br>      overflow: hidden;<br>      /* 隐藏body窗口区域滚动条 */<br>    &#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>  <span class="hljs-comment">&lt;!--这个是别人弄的网络连接--&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://www.yanhuangxueyuan.com/versions/threejsR92/build/three.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>    /**<br>     * 创建场景对象sdq=Scene<br>     */<br>    let sdq = new THREE.Scene();<br>    /**<br>     * 创建网格模型<br>     */<br>    // let wuti = new THREE.SphereGeometry(90, 50, 150); //创建一个球体几何对象(大小, 圆度, 弧度)<br>    let wuti = new THREE.BoxGeometry(150, 150, 150); //创建一个立方体几何对象Geometry,(宽, 高, 长); <br>    let material = new THREE.MeshLambertMaterial(&#123;<br>    //   物体颜色<br>        color: 0xDC143C<br>    &#125;); //材质对象Material<br>    var mesh = new THREE.Mesh(wuti, material); //网格模型对象Mesh<br>    sdq.add(mesh); //网格模型添加到场景中<br>    /**<br>     * 光源设置<br>     */<br>    //点光源<br>    var point = new THREE.PointLight(0xffffff);<br><br>    point.position.set(260, 600, 200); //点光源位置(亮点位置, 光源强弱, 亮点位置)<br>    sdq.add(point); //点光源添加到场景中<br>    //环境光 <br>    var ambient = new THREE.AmbientLight(0x444444);<br>    // 是否照射<br>    sdq.add(ambient);<br>    /**<br>     * 相机设置<br>     */<br>    let width = window.innerWidth; //窗口宽度<br>    let height = window.innerHeight; //窗口高度<br>    let k = width / height; //窗口宽高比<br>    let s = 250; //大小 数值越小越大<br>    //创建了一个正射投影相机对象<br>    let camera = new THREE.OrthographicCamera(-s * k, s * k, s, -s, 1, 1000);<br>    camera.position.set(200, 300, 200); //设置相机位置<br>    camera.lookAt(sdq.position); //设置相机方向(指向的场景对象)<br>    /**<br>     * 创建渲染器对象<br>     */<br>    let renderer = new THREE.WebGLRenderer();<br>    renderer.setSize(width, height);//设置渲染区域尺寸<br>    renderer.setClearColor(0xb9d3ff, 1); //设置背景颜色<br>    document.body.appendChild(renderer.domElement); //body元素中插入canvas对象<br>    //执行渲染操作   指定场景 相机作为参数<br>    renderer.render(sdq, camera);<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p><font color="#DC143C">正方体</font></p>
-<iframe id="iframe" src="./html/正方体.html"></iframe>
-
-<p><font color="#DC143C">球体</font></p>
-<iframe id="iframe" src="./html/球体.html"></iframe>
-]]></content>
+<p><strong><a href="https://wwr.lanzoui.com/iFfQ7shdb4d">未打包文件</a></strong></p>
+<ul>
+<li>密码: sdq3</li>
+</ul>
+<h1 id="Jquery的引入"><a href="#Jquery的引入" class="headerlink" title="Jquery的引入"></a>Jquery的引入</h1><h3 id="html文件"><a href="#html文件" class="headerlink" title="html文件"></a>html文件</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript">&lt;!<span class="hljs-variable constant_">DOCTYPE</span> html&gt;<br>&lt;html lang=<span class="hljs-string">&quot;en&quot;</span>&gt;<br>&lt;head&gt;<br>    &lt;meta charset=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;<br><br>    &lt;!-- 引入jquery --&gt;<br>    &lt;script src=<span class="hljs-string">&quot;https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js&quot;</span>&gt;&lt;/script&gt;<br>    &lt;script src=<span class="hljs-string">&quot;./page.ts&quot;</span>&gt;&lt;/script&gt;<br>   &lt;title&gt;史迪奇国王&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>    <br>&lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure>
+<h3 id="page-ts"><a href="#page-ts" class="headerlink" title="page.ts"></a>page.ts</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 解决报错问题 或者 npm i @types/jquery 和 cnpm i @types/jquery </span><br><span class="hljs-keyword">declare</span> <span class="hljs-keyword">var</span> <span class="hljs-attr">$</span>: <span class="hljs-built_in">any</span>;<br><br><span class="hljs-keyword">const</span> <span class="hljs-attr">sdq</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;史迪奇&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sdq);<br><br>$(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;史迪奇&quot;</span>);<br>&#125;);<br></code></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>Three.js</category>
+        <category>TypeScript</category>
       </categories>
   </entry>
   <entry>
@@ -2855,22 +2860,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <h3 id="引入-script"><a href="#引入-script" class="headerlink" title="引入 script"></a>引入 script</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript">&lt;!<span class="hljs-variable constant_">DOCTYPE</span> html&gt;<br>&lt;html lang=<span class="hljs-string">&quot;en&quot;</span>&gt;<br>&lt;head&gt;<br>    &lt;meta charset=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;<br>    &lt;script src=<span class="hljs-string">&quot;./page.ts&quot;</span>&gt;&lt;/script&gt;<br>   &lt;title&gt;史迪奇国王&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;body&gt; <br>&lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure>
 <h3 id="page-ts"><a href="#page-ts" class="headerlink" title="page.ts"></a>page.ts</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> sdq : <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;史迪奇&quot;</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sdq)<br></code></pre></td></tr></table></figure>
 ]]></content>
-      <categories>
-        <category>TypeScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>TypeScript 使用Jquery库</title>
-    <url>/TypeScript-Jquery.html</url>
-    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
-<a id="more"></a>
-
-<p><strong><a href="https://wwr.lanzoui.com/iFfQ7shdb4d">未打包文件</a></strong></p>
-<ul>
-<li>密码: sdq3</li>
-</ul>
-<h1 id="Jquery的引入"><a href="#Jquery的引入" class="headerlink" title="Jquery的引入"></a>Jquery的引入</h1><h3 id="html文件"><a href="#html文件" class="headerlink" title="html文件"></a>html文件</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript">&lt;!<span class="hljs-variable constant_">DOCTYPE</span> html&gt;<br>&lt;html lang=<span class="hljs-string">&quot;en&quot;</span>&gt;<br>&lt;head&gt;<br>    &lt;meta charset=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;<br><br>    &lt;!-- 引入jquery --&gt;<br>    &lt;script src=<span class="hljs-string">&quot;https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js&quot;</span>&gt;&lt;/script&gt;<br>    &lt;script src=<span class="hljs-string">&quot;./page.ts&quot;</span>&gt;&lt;/script&gt;<br>   &lt;title&gt;史迪奇国王&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>    <br>&lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure>
-<h3 id="page-ts"><a href="#page-ts" class="headerlink" title="page.ts"></a>page.ts</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 解决报错问题 或者 npm i @types/jquery 和 cnpm i @types/jquery </span><br><span class="hljs-keyword">declare</span> <span class="hljs-keyword">var</span> <span class="hljs-attr">$</span>: <span class="hljs-built_in">any</span>;<br><br><span class="hljs-keyword">const</span> <span class="hljs-attr">sdq</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;史迪奇&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sdq);<br><br>$(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;史迪奇&quot;</span>);<br>&#125;);<br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>TypeScript</category>
       </categories>
@@ -2946,6 +2935,26 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> <span class="hljs-attr">sdq</span>:[<span class="hljs-built_in">string</span>,<span class="hljs-built_in">string</span>,<span class="hljs-built_in">number</span>] []= [<br>    [<span class="hljs-string">&#x27;史迪奇&#x27;</span>,<span class="hljs-string">&#x27;雄性&#x27;</span>,<span class="hljs-number">626</span>],<br>    [<span class="hljs-string">&#x27;鲁本&#x27;</span>,<span class="hljs-string">&#x27;雄性&#x27;</span>,<span class="hljs-number">625</span>],<br>    [<span class="hljs-string">&#x27;安琪&#x27;</span>,<span class="hljs-string">&#x27;雌性&#x27;</span>,<span class="hljs-number">624</span>]<br>]<br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>TypeScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Three.js 第一枪</title>
+    <url>/Three.html</url>
+    <content><![CDATA[<p><strong>Three.js学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="var和let和const的区别"><a href="#var和let和const的区别" class="headerlink" title="var和let和const的区别"></a>var和let和const的区别</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">const</span> 定义常量<br><span class="hljs-keyword">let</span> 有区域<br><span class="hljs-keyword">var</span> 整个函数内都有效<br></code></pre></td></tr></table></figure>
+
+
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>第一枪<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br>    body &#123;<br>    /* 边距 */<br>      margin: 0;<br>      overflow: hidden;<br>      /* 隐藏body窗口区域滚动条 */<br>    &#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>  <span class="hljs-comment">&lt;!--这个是别人弄的网络连接--&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://www.yanhuangxueyuan.com/versions/threejsR92/build/three.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>    /**<br>     * 创建场景对象sdq=Scene<br>     */<br>    let sdq = new THREE.Scene();<br>    /**<br>     * 创建网格模型<br>     */<br>    // let wuti = new THREE.SphereGeometry(90, 50, 150); //创建一个球体几何对象(大小, 圆度, 弧度)<br>    let wuti = new THREE.BoxGeometry(150, 150, 150); //创建一个立方体几何对象Geometry,(宽, 高, 长); <br>    let material = new THREE.MeshLambertMaterial(&#123;<br>    //   物体颜色<br>        color: 0xDC143C<br>    &#125;); //材质对象Material<br>    var mesh = new THREE.Mesh(wuti, material); //网格模型对象Mesh<br>    sdq.add(mesh); //网格模型添加到场景中<br>    /**<br>     * 光源设置<br>     */<br>    //点光源<br>    var point = new THREE.PointLight(0xffffff);<br><br>    point.position.set(260, 600, 200); //点光源位置(亮点位置, 光源强弱, 亮点位置)<br>    sdq.add(point); //点光源添加到场景中<br>    //环境光 <br>    var ambient = new THREE.AmbientLight(0x444444);<br>    // 是否照射<br>    sdq.add(ambient);<br>    /**<br>     * 相机设置<br>     */<br>    let width = window.innerWidth; //窗口宽度<br>    let height = window.innerHeight; //窗口高度<br>    let k = width / height; //窗口宽高比<br>    let s = 250; //大小 数值越小越大<br>    //创建了一个正射投影相机对象<br>    let camera = new THREE.OrthographicCamera(-s * k, s * k, s, -s, 1, 1000);<br>    camera.position.set(200, 300, 200); //设置相机位置<br>    camera.lookAt(sdq.position); //设置相机方向(指向的场景对象)<br>    /**<br>     * 创建渲染器对象<br>     */<br>    let renderer = new THREE.WebGLRenderer();<br>    renderer.setSize(width, height);//设置渲染区域尺寸<br>    renderer.setClearColor(0xb9d3ff, 1); //设置背景颜色<br>    document.body.appendChild(renderer.domElement); //body元素中插入canvas对象<br>    //执行渲染操作   指定场景 相机作为参数<br>    renderer.render(sdq, camera);<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><font color="#DC143C">正方体</font></p>
+<iframe id="iframe" src="./html/正方体.html"></iframe>
+
+<p><font color="#DC143C">球体</font></p>
+<iframe id="iframe" src="./html/球体.html"></iframe>
+]]></content>
+      <categories>
+        <category>Three.js</category>
       </categories>
   </entry>
   <entry>
@@ -3483,11 +3492,8 @@ python数据类型
 <thead>
 <tr>
 <th align="left">属性</th>
-<th align="left"></th>
 <th align="left">类型</th>
-<th align="left"></th>
 <th align="left">默认值</th>
-<th align="left"></th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -3496,103 +3502,131 @@ python数据类型
 <td align="left">HexColor</td>
 <td align="left">#000000</td>
 <td align="left">导航栏背景颜色</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
 </tr>
 <tr>
 <td align="left">navigationBarTextStyle</td>
 <td align="left">string</td>
 <td align="left">white</td>
-<td align="left"></td>
-<td align="left">导航栏标题颜色，仅支持 black / white</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">导航栏标题颜色, 仅支持 black / white</td>
 </tr>
 <tr>
 <td align="left">navigationBarTitleText</td>
 <td align="left">string</td>
-<td align="left"></td>
 <td align="left">导航栏标题文字内容</td>
-<td align="left"></td>
-<td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr>
 <td align="left">navigationStyle</td>
 <td align="left">string</td>
 <td align="left">default</td>
-<td align="left">导航栏样式，仅支持以下值：default 默认样式custom 自定义导航栏，只保留右上角胶囊按钮</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">导航栏样式, 仅支持以下值: default 默认样式custom 自定义导航栏, 只保留右上角胶囊按钮</td>
 </tr>
 <tr>
 <td align="left">backgroundColor</td>
 <td align="left">HexColor</td>
 <td align="left">#ffffff</td>
 <td align="left">窗口的背景色</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
 </tr>
 <tr>
 <td align="left">backgroundTextStyle</td>
 <td align="left">string</td>
 <td align="left">dark</td>
-<td align="left">下拉 loading 的样式，仅支持 dark / light</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">下拉 loading 的样式, 仅支持 dark / light</td>
 </tr>
 <tr>
 <td align="left">backgroundColorTop</td>
 <td align="left">string</td>
 <td align="left">#ffffff</td>
 <td align="left">顶部窗口的背景色</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
 </tr>
 <tr>
 <td align="left">backgroundColorBottom</td>
 <td align="left">string</td>
 <td align="left">#ffffff</td>
 <td align="left">底部窗口的背景色</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
 </tr>
 <tr>
 <td align="left">enablePullDownRefresh</td>
 <td align="left">boolean</td>
 <td align="left">false</td>
 <td align="left">是否开启全局的下拉刷新。详见 Page.onPullDownRefresh</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
 </tr>
 <tr>
 <td align="left">onReachBottomDistance</td>
 <td align="left">number</td>
 <td align="left">50</td>
-<td align="left">页面上拉触底事件触发时距页面底部距离，单位为 px 详见 Page.onReachBottom</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">页面上拉触底事件触发时距页面底部距离, 单位为 px 详见 Page.onReachBottom</td>
 </tr>
 <tr>
 <td align="left">pageOrientation</td>
 <td align="left">string</td>
 <td align="left">portrait</td>
-<td align="left">屏幕旋转设置，支持 auto / portrait / landscape 详见 响应显示区域变化</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">屏幕旋转设置, 支持 auto / portrait / landscape 详见 响应显示区域变化</td>
 </tr>
 </tbody></table>
 <h2 id="tabbar字段"><a href="#tabbar字段" class="headerlink" title="tabbar字段"></a>tabbar字段</h2><p><strong>用处: 定义小程序所有页面的顶部背景颜色, 文字颜色等等</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> &gt;</span><br>		let arr1 = [1,3,5,7,9]<br>		let arr2 = [2,4,6,8,10]<br>           // 展开一个数组<br>		console.log(...arr1); <br>           // 连接数组<br>		let arr3 = [...arr1,...arr2]<br>		<br>		//  数组求和    在函数中使用<br>		function sum(...numbers)&#123;<br>			return numbers.reduce((preValue,currentValue)=&gt;&#123;<br>				return preValue + currentValue<br>			&#125;)<br>		&#125;<br>		console.log(sum(1,2,3,4));<br>           <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="code"><pre><code class="hljs JSON"><span class="hljs-attr">&quot;tabBar&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-comment">// list要两包括两个以上才生效</span><br>  <span class="hljs-attr">&quot;list&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">&#123;</span><br>     <span class="hljs-comment">// 首页</span><br>    <span class="hljs-attr">&quot;pagePath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;pages/index/index&quot;</span><span class="hljs-punctuation">,</span><br>     <span class="hljs-comment">// 给文章名字</span><br>    <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;首页&quot;</span><span class="hljs-punctuation">,</span><br>     <span class="hljs-comment">// 在同级创一个sdz的文件夹然后放图片在里面 </span><br>     <span class="hljs-comment">// 点击前的图标</span><br>    <span class="hljs-attr">&quot;iconPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;sdq/_sdq.png&quot;</span><span class="hljs-punctuation">,</span><br>     <span class="hljs-comment">// 点击后的图标</span><br>    <span class="hljs-attr">&quot;selectedIconPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;sdq/sdq.png&quot;</span><br>  <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;pagePath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;pages/sdz/sdz&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;史迪奇&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;iconPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;sdz/_sdq.png&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;selectedIconPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;sdz/sdq.png&quot;</span><br>  <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">]</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br></code></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">类型</th>
+<th align="right">必填</th>
+<th align="left">默认值</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">color</td>
+<td align="left">HexColor</td>
+<td align="right">是</td>
+<td align="left">tab 上的文字默认颜色, 仅支持十六进制颜色</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">selectedColor</td>
+<td align="left">HexColor</td>
+<td align="right">是</td>
+<td align="left">tab 上的文字选中时的颜色, 仅支持十六进制颜色</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">backgroundColor</td>
+<td align="left">HexColor</td>
+<td align="right">是</td>
+<td align="left">tab 的背景色, 仅支持十六进制颜色</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">borderStyle</td>
+<td align="left">string</td>
+<td align="right">否</td>
+<td align="left">black    tabbar 上边框的颜色,  仅支持 black / white</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">list</td>
+<td align="left">Array</td>
+<td align="right">是</td>
+<td align="left">tab 的列表, 详见 list 属性说明, 最少 2 个、最多 5 个 tab</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">position</td>
+<td align="left">string</td>
+<td align="right">否</td>
+<td align="left">bottom    tabBar 的位置, 仅支持 bottom / top</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">custom</td>
+<td align="left">boolean</td>
+<td align="right">否</td>
+<td align="left">false    自定义 tabBar, 见详情</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
 ]]></content>
       <categories>
         <category>小程序开发</category>
@@ -3641,6 +3675,21 @@ python数据类型
 <h1 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 切片 变量名[a:b] 同数学区间的[a,b)</span><br>sdq = <span class="hljs-string">&#x27;0123456789&#x27;</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;sdq[0:3]&#x27;</span>, sdq[<span class="hljs-number">0</span>:<span class="hljs-number">3</span>])         <span class="hljs-comment">#012</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;sdq[1:]&#x27;</span>, sdq[<span class="hljs-number">1</span>:])           <span class="hljs-comment">#123456789</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;sdq[:2]&#x27;</span>, sdq[:<span class="hljs-number">2</span>])           <span class="hljs-comment">#01</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;sdq[:]&#x27;</span>, sdq[:])             <span class="hljs-comment">#返回全部</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;sdq[-4:-1]&#x27;</span>, sdq[-<span class="hljs-number">4</span>:-<span class="hljs-number">1</span>])     <span class="hljs-comment">#678</span><br><span class="hljs-built_in">print</span>(sdq[<span class="hljs-number">1</span>:<span class="hljs-number">100</span>])                   <span class="hljs-comment"># 切片超出范围是不会报错的会返回全部</span><br></code></pre></td></tr></table></figure>
 <h1 id="代码格式化"><a href="#代码格式化" class="headerlink" title="代码格式化"></a>代码格式化</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># name = &#x27;史迪奇&#x27;</span><br><span class="hljs-comment"># number = 626</span><br><span class="hljs-comment"># print(name+&#x27;是个&#x27;+str(number)+&#x27;号实验品&#x27;)</span><br><span class="hljs-comment"># print(&#x27;&#123;&#125;是个&#123;&#125;号实验品&#x27;.format(name, number))</span><br><span class="hljs-comment"># print(&#x27;&#123;name&#125;是个&#123;number&#125;号实验品&#x27;.format(name=&#x27;史迪奇&#x27;, number=626))</span><br><span class="hljs-comment"># print(f&#x27;&#123;name&#125;是个&#123;number&#125;号实验品&#x27;)</span><br><span class="hljs-comment"># 在一些老的教程里会用%的形式格式化代码，在Python3里就不建议使用了</span><br></code></pre></td></tr></table></figure>
 <h1 id="字符串的一些使用方法"><a href="#字符串的一些使用方法" class="headerlink" title="字符串的一些使用方法"></a>字符串的一些使用方法</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">sdq = <span class="hljs-string">&#x27;Stitch&#x27;</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;find第一次出现b的索引&#x27;</span>, sdq.find(<span class="hljs-string">&#x27;h&#x27;</span>))  <span class="hljs-comment">#看h的下标</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;replace&#x27;</span>, sdq.replace(<span class="hljs-string">&#x27;i&#x27;</span>, <span class="hljs-string">&#x27;I&#x27;</span>))  <span class="hljs-comment">#拿I替换i</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;upper&#x27;</span>, sdq.upper()) <span class="hljs-comment">#全大写</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;lower&#x27;</span>, sdq.lower()) <span class="hljs-comment">#全小写</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;swapcase 对换&#x27;</span>, <span class="hljs-string">&#x27;sdq&#x27;</span>.swapcase())  <span class="hljs-comment">#反转字母大小写</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;去前后空格&#x27;</span>, <span class="hljs-string">&#x27; sdq &#x27;</span>.strip(), sep=<span class="hljs-string">&#x27;&#x27;</span>)  <br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;S t i t c h &#x27;</span>.replace(<span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>))   <span class="hljs-comment">#空格替换空字符串</span><br><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(<span class="hljs-string">&#x27;S t i t c h&#x27;</span>)) <span class="hljs-comment"># 获取字符串长度 里面的空格也是计算长度的</span><br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Python 基本运算符(我失忆了)</title>
+    <url>/python-jjcc.html</url>
+    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
+<a id="more"></a>
+
+<h1 id="pdtho基本运算符"><a href="#pdtho基本运算符" class="headerlink" title="pdtho基本运算符"></a>pdtho基本运算符</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;加&#x27;</span>, <span class="hljs-number">2</span> + <span class="hljs-number">3</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;减&#x27;</span>, <span class="hljs-number">1</span> - <span class="hljs-number">3</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;两个减号&#x27;</span>, <span class="hljs-number">1</span> - -<span class="hljs-number">2</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;乘&#x27;</span>, <span class="hljs-number">2</span> * <span class="hljs-number">4</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;除&#x27;</span>, <span class="hljs-number">9</span> / <span class="hljs-number">3</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;取整&#x27;</span>, <span class="hljs-number">10</span> <span class="hljs-number">3</span>, <span class="hljs-number">10</span> <span class="hljs-number">4</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;取整1&#x27;</span>, <span class="hljs-number">10</span> / <span class="hljs-number">3</span>, <span class="hljs-number">10</span> / <span class="hljs-number">4</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;模运算，取余数&#x27;</span>, <span class="hljs-number">10</span> % <span class="hljs-number">3</span>)  <br></code></pre></td></tr></table></figure>
+<h1 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h1><p><strong>4舍6入5看齐,奇进偶不进,相比四舍五入更精确</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-built_in">print</span>(<span class="hljs-built_in">round</span>(<span class="hljs-number">1.2</span>), <span class="hljs-built_in">round</span>(<span class="hljs-number">1.5</span>), <span class="hljs-built_in">round</span>(<span class="hljs-number">2.5</span>))<br></code></pre></td></tr></table></figure>
+<h1 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">s, d, q, z = <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span><br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;s == d&#x27;</span>, s == d)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;s != d&#x27;</span>, s != d)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;s &gt; d&#x27;</span>, s &gt; d)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;d &lt; z&#x27;</span>, d &lt; z)<br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;s == z&#x27;</span>, s == z)   <span class="hljs-comment">#比较值</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;s is z&#x27;</span>, s <span class="hljs-keyword">is</span> z)   <span class="hljs-comment">#比较地址</span><br></code></pre></td></tr></table></figure>
+]]></content>
       <categories>
         <category>Python</category>
       </categories>
@@ -3829,18 +3878,62 @@ python数据类型
       </categories>
   </entry>
   <entry>
-    <title>Python 基本运算符(我失忆了)</title>
-    <url>/python-jjcc.html</url>
-    <content><![CDATA[<p><strong>我真的失忆了</strong></p>
+    <title>爬虫 network(牢饭吃到饱)</title>
+    <url>/reptile-network.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
 <a id="more"></a>
 
-<h1 id="pdtho基本运算符"><a href="#pdtho基本运算符" class="headerlink" title="pdtho基本运算符"></a>pdtho基本运算符</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;加&#x27;</span>, <span class="hljs-number">2</span> + <span class="hljs-number">3</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;减&#x27;</span>, <span class="hljs-number">1</span> - <span class="hljs-number">3</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;两个减号&#x27;</span>, <span class="hljs-number">1</span> - -<span class="hljs-number">2</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;乘&#x27;</span>, <span class="hljs-number">2</span> * <span class="hljs-number">4</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;除&#x27;</span>, <span class="hljs-number">9</span> / <span class="hljs-number">3</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;取整&#x27;</span>, <span class="hljs-number">10</span> <span class="hljs-number">3</span>, <span class="hljs-number">10</span> <span class="hljs-number">4</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;取整1&#x27;</span>, <span class="hljs-number">10</span> / <span class="hljs-number">3</span>, <span class="hljs-number">10</span> / <span class="hljs-number">4</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;模运算，取余数&#x27;</span>, <span class="hljs-number">10</span> % <span class="hljs-number">3</span>)  <br></code></pre></td></tr></table></figure>
-<h1 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h1><p><strong>4舍6入5看齐,奇进偶不进,相比四舍五入更精确</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-built_in">print</span>(<span class="hljs-built_in">round</span>(<span class="hljs-number">1.2</span>), <span class="hljs-built_in">round</span>(<span class="hljs-number">1.5</span>), <span class="hljs-built_in">round</span>(<span class="hljs-number">2.5</span>))<br></code></pre></td></tr></table></figure>
-<h1 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">s, d, q, z = <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span><br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;s == d&#x27;</span>, s == d)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;s != d&#x27;</span>, s != d)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;s &gt; d&#x27;</span>, s &gt; d)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;d &lt; z&#x27;</span>, d &lt; z)<br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;s == z&#x27;</span>, s == z)   <span class="hljs-comment">#比较值</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;s is z&#x27;</span>, s <span class="hljs-keyword">is</span> z)   <span class="hljs-comment">#比较地址</span><br></code></pre></td></tr></table></figure>
+<h1 id="network抓包"><a href="#network抓包" class="headerlink" title="network抓包"></a>network抓包</h1><ul>
+<li>名称: Preserver log <ul>
+<li>功能:保存抓包的历史记录</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>名称: Filter <ul>
+<li>功能: 过滤清空</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>名称: XHR<ul>
+<li>功能: 大部分情况的ajax请求</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>名称: js<ul>
+<li>功能:js请求</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>名称: css<ul>
+<li>功能: css请求</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>名称: Ever Listeners<ul>
+<li>功能: 事件的监听<ul>
+<li>名称: click</li>
+<li>功能: 加密</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="js解析"><a href="#js解析" class="headerlink" title="js解析"></a>js解析</h1><ul>
+<li>定位js文件<ul>
+<li>通过initiator定位到js文件</li>
+<li>通过seach搜索关键字定位的js文件</li>
+<li>通过元素绑定的事件监听函数找到js文件</li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <categories>
-        <category>Python</category>
+        <category>爬虫</category>
       </categories>
   </entry>
   <entry>
@@ -3961,65 +4054,6 @@ python数据类型
       </categories>
   </entry>
   <entry>
-    <title>爬虫 network(牢饭吃到饱)</title>
-    <url>/reptile-network.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="network抓包"><a href="#network抓包" class="headerlink" title="network抓包"></a>network抓包</h1><ul>
-<li>名称: Preserver log <ul>
-<li>功能:保存抓包的历史记录</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>名称: Filter <ul>
-<li>功能: 过滤清空</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>名称: XHR<ul>
-<li>功能: 大部分情况的ajax请求</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>名称: js<ul>
-<li>功能:js请求</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>名称: css<ul>
-<li>功能: css请求</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>名称: Ever Listeners<ul>
-<li>功能: 事件的监听<ul>
-<li>名称: click</li>
-<li>功能: 加密</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="js解析"><a href="#js解析" class="headerlink" title="js解析"></a>js解析</h1><ul>
-<li>定位js文件<ul>
-<li>通过initiator定位到js文件</li>
-<li>通过seach搜索关键字定位的js文件</li>
-<li>通过元素绑定的事件监听函数找到js文件</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
     <title>爬虫 re模块的使用(牢饭吃到饱)</title>
     <url>/reptile-re.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -4039,91 +4073,6 @@ python数据类型
 <h1 id="预加载正则表达式-1"><a href="#预加载正则表达式-1" class="headerlink" title="预加载正则表达式"></a>预加载正则表达式</h1><p><strong>从头开始匹配, 前面没有就停止</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> re <br><br>&lt;div class=&#x27;yy&#x27;&gt;&lt;span id=&quot;613&quot;&gt;亚亚&lt;/span&gt;&lt;/div&gt;<br><br>&lt;div class=&#x27;tt&#x27;&gt;&lt;span id=&quot;617&quot;&gt;团团&lt;/span&gt;&lt;/div&gt;<br><br>&lt;div class=&#x27;hld&#x27;&gt;&lt;span id=&quot;618&quot;&gt;红绿灯&lt;/span&gt;&lt;/div&gt;<br><br>&lt;div class=&#x27;tt&#x27;&gt;&lt;span id=&quot;619&quot;&gt;团团&lt;/span&gt;&lt;/div&gt;<br><br>&lt;div class=&#x27;lb&#x27;&gt;&lt;span id=&quot;625&quot;&gt;鲁本&lt;/span&gt;&lt;/div&gt;<br><br>&lt;div class=&#x27;sdq&#x27;&gt;&lt;span id=&quot;626&quot;&gt;史迪奇&lt;/span&gt;&lt;/div&gt;<br><span class="hljs-comment"># (?&lt;分组名字&gt;正则表达式)</span><br>obj = re.compile(r&quot;&lt;div class=&#x27;.*?&#x27;&gt;&lt;span id=&quot;(?&lt;id&gt;\d+)&quot;&gt;(?P&lt;name&gt;.*?)&lt;/span&gt;&lt;/div&gt;, re.S)  # re.S: 让.能匹配换行符<br><br>result = obj.finditer(s)<br><br><span class="hljs-keyword">for</span> it <span class="hljs-keyword">in</span> sdz<br>    <span class="hljs-built_in">print</span>(it.group())<br></code></pre></td></tr></table></figure>
 ]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>爬虫 selenium自动化(牢饭吃到饱)</title>
-    <url>/reptile-selenium.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><strong>打开cmd 输入以下内容</strong></p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs PowerShell">pip install selenium<br></code></pre></td></tr></table></figure>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
-<li>代码调用webdriver操作浏览器</li>
-<li>不同的浏览器使用各自不同的driver</li>
-</ul>
-<h2 id="根据实际环境选择浏览器-谷歌浏览器-火狐浏览器"><a href="#根据实际环境选择浏览器-谷歌浏览器-火狐浏览器" class="headerlink" title="根据实际环境选择浏览器 谷歌浏览器/火狐浏览器"></a>根据实际环境选择浏览器 谷歌浏览器/火狐浏览器</h2><ul>
-<li>开发使用有头浏览器</li>
-<li>部署使用无头浏览器</li>
-</ul>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">from</span> selenium <span class="hljs-keyword">import</span> webdriver<br><span class="hljs-keyword">import</span> time<br><br><span class="hljs-comment"># 采用有头浏览器</span><br>browser = webdriver.Chrome()<br><br><span class="hljs-comment"># 要爬取的网页</span><br>browser.get(<span class="hljs-string">&quot;https://www.baidu.com/&quot;</span>)<br><br><span class="hljs-comment"># 在百度中搜索史迪奇</span><br>browser.find_element_by_id(<span class="hljs-string">&#x27;kw&#x27;</span>).send_keys(<span class="hljs-string">&#x27;史迪奇&#x27;</span>)<br><br><span class="hljs-comment">#模拟点击</span><br>browser.find_element_by_id(<span class="hljs-string">&#x27;su&#x27;</span>).click<br><br><span class="hljs-comment"># 延时3秒</span><br>time.sleep(<span class="hljs-number">3</span>)<br><br><span class="hljs-comment"># 一定要退出</span><br>browser.quit()<br></code></pre></td></tr></table></figure>
-<h1 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 当前标签页浏览器渲染之后的网页源代码</span><br>browser.page_source<br><br><span class="hljs-comment"># 当前标签页的url</span><br>browser.current_url<br><br><span class="hljs-comment"># 关闭当前标签页面, 如果只有一个标签页面则关闭整个浏览器</span><br>browser.close()<br><br><span class="hljs-comment"># 关闭浏览器</span><br>browser.quit()<br><br><span class="hljs-comment"># 页面前进</span><br>browser.forward()<br><br><span class="hljs-comment"># 页面后退</span><br>browser.back()<br><br><span class="hljs-comment"># 页面截图</span><br>browser.screen_shot(img_name)<br></code></pre></td></tr></table></figure>
-<h1 id="driver对象定位标签元素获取标签对象方法"><a href="#driver对象定位标签元素获取标签对象方法" class="headerlink" title="driver对象定位标签元素获取标签对象方法"></a>driver对象定位标签元素获取标签对象方法</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 返回一个元素</span><br>find_element_by_id<br><br><span class="hljs-comment"># 根据类名获取元素列表</span><br>find_element(s)_by_class_name<br><br><span class="hljs-comment"># 根据标签的name属性值返回包括标签对象元素的列表</span><br>find_element(s)_by_name<br><br><span class="hljs-comment"># 返回一个包含元素的列表</span><br>find_element(s)_by_xpath<br><br><span class="hljs-comment"># 根据连接文本获取元素列表</span><br>find_element(s)_by_link_text<br><br><span class="hljs-comment"># 根据标签名获取元素列表</span><br>find_element(s)_by_partial_link_text<br><br><span class="hljs-comment"># 根据css选择器来获取元素列表</span><br>find_element(s)_by_css<br></code></pre></td></tr></table></figure>
-<p><strong>特别注意:</strong></p>
-<ul>
-<li>find_element和find_elements的区别: <ul>
-<li>多了给s就返回列表, 没有s就返回匹配到的第一个标签对象</li>
-<li>find_element匹配不到就抛出异常, find_elements匹配不到就返回空列表</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>by_link_text和by_partial_link_text的区别: <ul>
-<li>全部文本和包含某个文本</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>find_element_by_xxx<ul>
-<li>定位到则是一个对象</li>
-<li>定位不到则是报错</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>find_elements_by_xxx<ul>
-<li>定位到则是一个含有元素的列表</li>
-<li>定位不到则是空列表</li>
-</ul>
-</li>
-</ul>
-<h1 id="标签对象提取文本内容和属性值"><a href="#标签对象提取文本内容和属性值" class="headerlink" title="标签对象提取文本内容和属性值"></a>标签对象提取文本内容和属性值</h1><ul>
-<li>获取文本 element.text<ul>
-<li>通过定位获取的标签对象的 text 属性, 获取文本内容</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>获取属性值 element.get_attribute(“属性名”)<ul>
-<li>通过定位获取的标签对get_attribute 函数, 传入属性名, 来获取获取属性的值</li>
-</ul>
-</li>
-</ul>
-<p><strong>例子</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">from</span> selenium <span class="hljs-keyword">import</span> webdriver<br><br>url = <span class="hljs-string">&quot;https://sz.58.com/ershoufang/?PGTID=0d200001-0000-4f6f-f947-87e3a87719a1&amp;ClickID=1&quot;</span><br><br>browser = webdriver.Chrome()<br><br>browser.get(url)<br><br>el_list = browser.find_elements_by_xpath(<span class="hljs-string">&#x27;//*[@id=&quot;__layout&quot;]/div/section/section[3]/section[1]/section[2]/div/a/div[2]/div[1]/div[1]/h3&#x27;</span>)<br><br><span class="hljs-keyword">for</span> el <span class="hljs-keyword">in</span> el_list:<br>    <span class="hljs-built_in">print</span>(el.text,el.get_attribute(<span class="hljs-string">&#x27;href&#x27;</span>))<br></code></pre></td></tr></table></figure>
-<h1 id="标签页的切换"><a href="#标签页的切换" class="headerlink" title="标签页的切换"></a>标签页的切换</h1><ul>
-<li><p>获取所有标签页的窗口句柄</p>
-</li>
-<li><p>利用窗口句柄字切换句柄指向的标签页</p>
-<ul>
-<li>这里的窗口句柄是指:<ul>
-<li>指向标签页对象的标识</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 获取当前所有的标签页的句柄构成的列表</span><br>current_windows = browser.window_handles<br><br><span class="hljs-comment"># 根据标签页句柄列表索引下标进行切换</span><br>browser.switch_to.window(current_windous[<span class="hljs-number">0</span>])<br></code></pre></td></tr></table></figure>
-<h1 id="窗口切换"><a href="#窗口切换" class="headerlink" title="窗口切换"></a>窗口切换</h1><p><strong>ifame是html中常用的一种技术, 即一个页面嵌套</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 操作frame外边的元素需要切换出去</span><br>Windows = browser.window_handles<br>browser.switch_to.window(windows[<span class="hljs-number">0</span>])<br>content = browser.find_element_by_class_name().text<br><span class="hljs-built_in">print</span>(content)<br>browser.quit()<br></code></pre></td></tr></table></figure>
-<h1 id="cookies操作"><a href="#cookies操作" class="headerlink" title="cookies操作"></a>cookies操作</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> time<br><span class="hljs-keyword">from</span> selenium <span class="hljs-keyword">import</span> webdriver<br><br>url = <span class="hljs-string">&quot;http://www.baidu.com/&quot;</span><br><br>browser = webdriver.Chrome()<br>browser.get(url)<br><br><span class="hljs-comment"># cookies = &#123;&#125;</span><br><span class="hljs-comment"># for data in browser.get_cookies():</span><br><span class="hljs-comment">#     cookies[data[&#x27;name&#x27;]] = data[&#x27;value&#x27;]</span><br><br><span class="hljs-comment"># 字典推导式</span><br>cookies  = &#123;data[<span class="hljs-string">&#x27;name&#x27;</span>] : data[<span class="hljs-string">&#x27;value&#x27;</span>]<span class="hljs-keyword">for</span> data <span class="hljs-keyword">in</span> browser.get_cookies()&#125;<br><br><span class="hljs-built_in">print</span>(cookies)<br></code></pre></td></tr></table></figure>
-<h1 id="关于js执行"><a href="#关于js执行" class="headerlink" title="关于js执行"></a>关于js执行</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> time<br><span class="hljs-keyword">from</span> selenium <span class="hljs-keyword">import</span> webdriver<br><br>url = <span class="hljs-string">&quot;http://jn.lianjia.com/&quot;</span><br><br>browser = webdriver.Chrome()<br><br>browser.get(url)<br><br><span class="hljs-comment"># 滚动条拖动 x和y</span><br>js = <span class="hljs-string">&#x27;scrollTo(0,900)&#x27;</span><br><br><span class="hljs-comment"># 执行js</span><br>browser.execute_script(js)<br></code></pre></td></tr></table></figure>
-<h1 id="无界面模式"><a href="#无界面模式" class="headerlink" title="无界面模式"></a>无界面模式</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 实例化配置对象</span><br>options = webdriver.ChromeOptions()<br><br><span class="hljs-comment"># 配置对象添加开启无界面模式的命令</span><br>options.add_argument(<span class="hljs-string">&quot;--headless&quot;</span>)<br><br><span class="hljs-comment"># 配置对象添加禁用gpu的命令</span><br>options.add_argument(<span class="hljs-string">&quot;--disable-gpu&quot;</span>)<br><br><span class="hljs-comment"># 实例化带有配置对象的browser对象</span><br>browser = webdriver.Chrome(chrome_options=options)<br></code></pre></td></tr></table></figure>
-<h1 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 实例化配置对象</span><br>options = webdriver.ChromeOptions()<br><br><span class="hljs-comment"># 配置对象添加使用代理ip的命令</span><br>options.add_argument(<span class="hljs-string">&quot;--proxy-server=http://202.20.16.82:9527&quot;</span>)<br><br><span class="hljs-comment"># 配置对象添加禁用gpu的命令</span><br>options.add_argument(<span class="hljs-string">&quot;--disable-gpu&quot;</span>)<br><br><span class="hljs-comment"># 实例化带有配置对象的browser对象</span><br>browser = webdriver.Chrome(<span class="hljs-string">&#x27;./chromedriver&#x27;</span>,chome_options=options)<br></code></pre></td></tr></table></figure>
-<h1 id="替换user-agent-上网设备"><a href="#替换user-agent-上网设备" class="headerlink" title="替换user-agent(上网设备)"></a>替换user-agent(上网设备)</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 实例化配置对象</span><br>options = webdriver.ChromeOptions()<br><br><span class="hljs-comment"># 配置对象添加使用代理ip的命令</span><br>options.add_argument(<span class="hljs-string">&quot;--user-agent=Mozilla/5.0 HAHA&quot;</span>)<br><br><span class="hljs-comment"># 配置对象添加禁用gpu的命令</span><br>options.add_argument(<span class="hljs-string">&quot;--disable-gpu&quot;</span>)<br><br><span class="hljs-comment"># 实例化带有配置对象的browser对象</span><br>browser = webdriver.Chrome(<span class="hljs-string">&#x27;./chromedriver&#x27;</span>,chome_options=options)<br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>爬虫</category>
       </categories>
@@ -4844,6 +4793,91 @@ option && myChart.setOption(option);
       </categories>
   </entry>
   <entry>
+    <title>爬虫 selenium自动化(牢饭吃到饱)</title>
+    <url>/reptile-selenium.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><strong>打开cmd 输入以下内容</strong></p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs PowerShell">pip install selenium<br></code></pre></td></tr></table></figure>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
+<li>代码调用webdriver操作浏览器</li>
+<li>不同的浏览器使用各自不同的driver</li>
+</ul>
+<h2 id="根据实际环境选择浏览器-谷歌浏览器-火狐浏览器"><a href="#根据实际环境选择浏览器-谷歌浏览器-火狐浏览器" class="headerlink" title="根据实际环境选择浏览器 谷歌浏览器/火狐浏览器"></a>根据实际环境选择浏览器 谷歌浏览器/火狐浏览器</h2><ul>
+<li>开发使用有头浏览器</li>
+<li>部署使用无头浏览器</li>
+</ul>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">from</span> selenium <span class="hljs-keyword">import</span> webdriver<br><span class="hljs-keyword">import</span> time<br><br><span class="hljs-comment"># 采用有头浏览器</span><br>browser = webdriver.Chrome()<br><br><span class="hljs-comment"># 要爬取的网页</span><br>browser.get(<span class="hljs-string">&quot;https://www.baidu.com/&quot;</span>)<br><br><span class="hljs-comment"># 在百度中搜索史迪奇</span><br>browser.find_element_by_id(<span class="hljs-string">&#x27;kw&#x27;</span>).send_keys(<span class="hljs-string">&#x27;史迪奇&#x27;</span>)<br><br><span class="hljs-comment">#模拟点击</span><br>browser.find_element_by_id(<span class="hljs-string">&#x27;su&#x27;</span>).click<br><br><span class="hljs-comment"># 延时3秒</span><br>time.sleep(<span class="hljs-number">3</span>)<br><br><span class="hljs-comment"># 一定要退出</span><br>browser.quit()<br></code></pre></td></tr></table></figure>
+<h1 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 当前标签页浏览器渲染之后的网页源代码</span><br>browser.page_source<br><br><span class="hljs-comment"># 当前标签页的url</span><br>browser.current_url<br><br><span class="hljs-comment"># 关闭当前标签页面, 如果只有一个标签页面则关闭整个浏览器</span><br>browser.close()<br><br><span class="hljs-comment"># 关闭浏览器</span><br>browser.quit()<br><br><span class="hljs-comment"># 页面前进</span><br>browser.forward()<br><br><span class="hljs-comment"># 页面后退</span><br>browser.back()<br><br><span class="hljs-comment"># 页面截图</span><br>browser.screen_shot(img_name)<br></code></pre></td></tr></table></figure>
+<h1 id="driver对象定位标签元素获取标签对象方法"><a href="#driver对象定位标签元素获取标签对象方法" class="headerlink" title="driver对象定位标签元素获取标签对象方法"></a>driver对象定位标签元素获取标签对象方法</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 返回一个元素</span><br>find_element_by_id<br><br><span class="hljs-comment"># 根据类名获取元素列表</span><br>find_element(s)_by_class_name<br><br><span class="hljs-comment"># 根据标签的name属性值返回包括标签对象元素的列表</span><br>find_element(s)_by_name<br><br><span class="hljs-comment"># 返回一个包含元素的列表</span><br>find_element(s)_by_xpath<br><br><span class="hljs-comment"># 根据连接文本获取元素列表</span><br>find_element(s)_by_link_text<br><br><span class="hljs-comment"># 根据标签名获取元素列表</span><br>find_element(s)_by_partial_link_text<br><br><span class="hljs-comment"># 根据css选择器来获取元素列表</span><br>find_element(s)_by_css<br></code></pre></td></tr></table></figure>
+<p><strong>特别注意:</strong></p>
+<ul>
+<li>find_element和find_elements的区别: <ul>
+<li>多了给s就返回列表, 没有s就返回匹配到的第一个标签对象</li>
+<li>find_element匹配不到就抛出异常, find_elements匹配不到就返回空列表</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>by_link_text和by_partial_link_text的区别: <ul>
+<li>全部文本和包含某个文本</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>find_element_by_xxx<ul>
+<li>定位到则是一个对象</li>
+<li>定位不到则是报错</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>find_elements_by_xxx<ul>
+<li>定位到则是一个含有元素的列表</li>
+<li>定位不到则是空列表</li>
+</ul>
+</li>
+</ul>
+<h1 id="标签对象提取文本内容和属性值"><a href="#标签对象提取文本内容和属性值" class="headerlink" title="标签对象提取文本内容和属性值"></a>标签对象提取文本内容和属性值</h1><ul>
+<li>获取文本 element.text<ul>
+<li>通过定位获取的标签对象的 text 属性, 获取文本内容</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>获取属性值 element.get_attribute(“属性名”)<ul>
+<li>通过定位获取的标签对get_attribute 函数, 传入属性名, 来获取获取属性的值</li>
+</ul>
+</li>
+</ul>
+<p><strong>例子</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">from</span> selenium <span class="hljs-keyword">import</span> webdriver<br><br>url = <span class="hljs-string">&quot;https://sz.58.com/ershoufang/?PGTID=0d200001-0000-4f6f-f947-87e3a87719a1&amp;ClickID=1&quot;</span><br><br>browser = webdriver.Chrome()<br><br>browser.get(url)<br><br>el_list = browser.find_elements_by_xpath(<span class="hljs-string">&#x27;//*[@id=&quot;__layout&quot;]/div/section/section[3]/section[1]/section[2]/div/a/div[2]/div[1]/div[1]/h3&#x27;</span>)<br><br><span class="hljs-keyword">for</span> el <span class="hljs-keyword">in</span> el_list:<br>    <span class="hljs-built_in">print</span>(el.text,el.get_attribute(<span class="hljs-string">&#x27;href&#x27;</span>))<br></code></pre></td></tr></table></figure>
+<h1 id="标签页的切换"><a href="#标签页的切换" class="headerlink" title="标签页的切换"></a>标签页的切换</h1><ul>
+<li><p>获取所有标签页的窗口句柄</p>
+</li>
+<li><p>利用窗口句柄字切换句柄指向的标签页</p>
+<ul>
+<li>这里的窗口句柄是指:<ul>
+<li>指向标签页对象的标识</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 获取当前所有的标签页的句柄构成的列表</span><br>current_windows = browser.window_handles<br><br><span class="hljs-comment"># 根据标签页句柄列表索引下标进行切换</span><br>browser.switch_to.window(current_windous[<span class="hljs-number">0</span>])<br></code></pre></td></tr></table></figure>
+<h1 id="窗口切换"><a href="#窗口切换" class="headerlink" title="窗口切换"></a>窗口切换</h1><p><strong>ifame是html中常用的一种技术, 即一个页面嵌套</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 操作frame外边的元素需要切换出去</span><br>Windows = browser.window_handles<br>browser.switch_to.window(windows[<span class="hljs-number">0</span>])<br>content = browser.find_element_by_class_name().text<br><span class="hljs-built_in">print</span>(content)<br>browser.quit()<br></code></pre></td></tr></table></figure>
+<h1 id="cookies操作"><a href="#cookies操作" class="headerlink" title="cookies操作"></a>cookies操作</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> time<br><span class="hljs-keyword">from</span> selenium <span class="hljs-keyword">import</span> webdriver<br><br>url = <span class="hljs-string">&quot;http://www.baidu.com/&quot;</span><br><br>browser = webdriver.Chrome()<br>browser.get(url)<br><br><span class="hljs-comment"># cookies = &#123;&#125;</span><br><span class="hljs-comment"># for data in browser.get_cookies():</span><br><span class="hljs-comment">#     cookies[data[&#x27;name&#x27;]] = data[&#x27;value&#x27;]</span><br><br><span class="hljs-comment"># 字典推导式</span><br>cookies  = &#123;data[<span class="hljs-string">&#x27;name&#x27;</span>] : data[<span class="hljs-string">&#x27;value&#x27;</span>]<span class="hljs-keyword">for</span> data <span class="hljs-keyword">in</span> browser.get_cookies()&#125;<br><br><span class="hljs-built_in">print</span>(cookies)<br></code></pre></td></tr></table></figure>
+<h1 id="关于js执行"><a href="#关于js执行" class="headerlink" title="关于js执行"></a>关于js执行</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> time<br><span class="hljs-keyword">from</span> selenium <span class="hljs-keyword">import</span> webdriver<br><br>url = <span class="hljs-string">&quot;http://jn.lianjia.com/&quot;</span><br><br>browser = webdriver.Chrome()<br><br>browser.get(url)<br><br><span class="hljs-comment"># 滚动条拖动 x和y</span><br>js = <span class="hljs-string">&#x27;scrollTo(0,900)&#x27;</span><br><br><span class="hljs-comment"># 执行js</span><br>browser.execute_script(js)<br></code></pre></td></tr></table></figure>
+<h1 id="无界面模式"><a href="#无界面模式" class="headerlink" title="无界面模式"></a>无界面模式</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 实例化配置对象</span><br>options = webdriver.ChromeOptions()<br><br><span class="hljs-comment"># 配置对象添加开启无界面模式的命令</span><br>options.add_argument(<span class="hljs-string">&quot;--headless&quot;</span>)<br><br><span class="hljs-comment"># 配置对象添加禁用gpu的命令</span><br>options.add_argument(<span class="hljs-string">&quot;--disable-gpu&quot;</span>)<br><br><span class="hljs-comment"># 实例化带有配置对象的browser对象</span><br>browser = webdriver.Chrome(chrome_options=options)<br></code></pre></td></tr></table></figure>
+<h1 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 实例化配置对象</span><br>options = webdriver.ChromeOptions()<br><br><span class="hljs-comment"># 配置对象添加使用代理ip的命令</span><br>options.add_argument(<span class="hljs-string">&quot;--proxy-server=http://202.20.16.82:9527&quot;</span>)<br><br><span class="hljs-comment"># 配置对象添加禁用gpu的命令</span><br>options.add_argument(<span class="hljs-string">&quot;--disable-gpu&quot;</span>)<br><br><span class="hljs-comment"># 实例化带有配置对象的browser对象</span><br>browser = webdriver.Chrome(<span class="hljs-string">&#x27;./chromedriver&#x27;</span>,chome_options=options)<br></code></pre></td></tr></table></figure>
+<h1 id="替换user-agent-上网设备"><a href="#替换user-agent-上网设备" class="headerlink" title="替换user-agent(上网设备)"></a>替换user-agent(上网设备)</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 实例化配置对象</span><br>options = webdriver.ChromeOptions()<br><br><span class="hljs-comment"># 配置对象添加使用代理ip的命令</span><br>options.add_argument(<span class="hljs-string">&quot;--user-agent=Mozilla/5.0 HAHA&quot;</span>)<br><br><span class="hljs-comment"># 配置对象添加禁用gpu的命令</span><br>options.add_argument(<span class="hljs-string">&quot;--disable-gpu&quot;</span>)<br><br><span class="hljs-comment"># 实例化带有配置对象的browser对象</span><br>browser = webdriver.Chrome(<span class="hljs-string">&#x27;./chromedriver&#x27;</span>,chome_options=options)<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
     <title>爬虫 概念(牢饭吃到饱)</title>
     <url>/reptile-concept.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -5490,150 +5524,6 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
       </categories>
   </entry>
   <entry>
-    <title>鲲鹏微认证(日后会更新)</title>
-    <url>/Kunpeng-micro-authentication.html</url>
-    <content><![CDATA[<p><strong>鲲鹏微认证笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="C-C-代码迁移"><a href="#C-C-代码迁移" class="headerlink" title="C/C++代码迁移"></a>C/C++代码迁移</h1><h2 id="编译型语言"><a href="#编译型语言" class="headerlink" title="编译型语言"></a>编译型语言</h2><ul>
-<li>典型的如C/C++/Go语言, 都属于编译型语言, 编译型语言开发的程序从x86处理器迁移到鲲鹏处理器时, 必须经过重新编译才能运行</li>
-</ul>
-<ul>
-<li>从源码到程序的过程<ul>
-<li>源码需要由编译器, 汇编器翻译成机器指令, 再通过链接器链接库函数生成机器语言程序<br>
-<br>
-
-</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight brainfuck"><table><tr><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">源码</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">预处理</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">预编译文件</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">编译</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">汇编代码</span>    --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">汇编</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">目标文件</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">链接</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">可执行文件</span><br><br><span class="hljs-comment">testc</span>      <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">E</span> <span class="hljs-comment">testc</span> <span class="hljs-literal">-</span><span class="hljs-comment">o</span> <span class="hljs-comment">testi</span>      <span class="hljs-comment">texti</span>       <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testio</span> <span class="hljs-comment">tests</span>      <span class="hljs-comment">texts</span>          <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testso</span> <span class="hljs-comment">testo</span>     <span class="hljs-comment">testo</span>       <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testso</span> <span class="hljs-comment">testo</span>     <span class="hljs-comment">text</span><br></code></pre></td></tr></table></figure>
-<h2 id="C-C-代码需要迁移的原因"><a href="#C-C-代码需要迁移的原因" class="headerlink" title="C/C++代码需要迁移的原因"></a>C/C++代码需要迁移的原因</h2><ul>
-<li>架构差异:<ul>
-<li>x86和鲲鹏处理器(aarch64)属于不同架构</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>指令极差异:<ul>
-<li>x86属于复杂指令集</li>
-<li>鲲鹏处理器(aarch64)属于精简指令集</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>向量寄存器的差异:<ul>
-<li>x86和鲲鹏处理器(aarch64)使用向量寄存器不同, 向量指令集也存在差异</li>
-</ul>
-</li>
-</ul>
-<h1 id="C-C-代码构建编译过程"><a href="#C-C-代码构建编译过程" class="headerlink" title="C/C++代码构建编译过程"></a>C/C++代码构建编译过程</h1><h2 id="C-C-代码工程主要包括两类文件"><a href="#C-C-代码工程主要包括两类文件" class="headerlink" title="C/C++代码工程主要包括两类文件:"></a>C/C++代码工程主要包括两类文件:</h2><ul>
-<li>编译构建脚本<ul>
-<li>Makefile CmakeListstxt Configure autogensh bootstrapsh等等</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>C/C++源码<ul>
-<li>src examples tests等等</li>
-</ul>
-</li>
-</ul>
-<h2 id="可能涉及到的移植项"><a href="#可能涉及到的移植项" class="headerlink" title="可能涉及到的移植项"></a>可能涉及到的移植项</h2><ul>
-<li>编译构建脚本类文件<ul>
-<li>编译选项的移植(指定数据类型, 生成代码特性, 目标执行器架构, 处理器硬件加速功能等)</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>C/C++代码类文件<ul>
-<li>编译宏移植(用户自定义宏移植, 编译器自定义宏移植)</li>
-<li>编译器自带builtin函数移植</li>
-<li>内联汇编移植</li>
-<li>SSE intrinsic函数移植(MMX/SEE类函数移植, AVX函数移植)</li>
-</ul>
-</li>
-</ul>
-<!-- # C/C++代码编译构建过程
-
-~~~
-
-~~~ -->
-
-<h1 id="直接真题-CTRL-F"><a href="#直接真题-CTRL-F" class="headerlink" title="直接真题 CTRL+F"></a>直接真题 CTRL+F</h1><h2 id="判断题"><a href="#判断题" class="headerlink" title="判断题"></a>判断题</h2><p><strong>yum和rpm安装方式本质都是基于RPM包来安装软件</strong> √</p>
-<p><strong>交叉编译是在一个平台 上生成另一个平台上可执行的代码</strong> √</p>
-<p><strong>BenchmarkSQL使用GCC编译进行编译安装</strong> ×</p>
-<p><strong>Dockerfile中的每一条指令 都分别对应镜像的每一层</strong> √</p>
-<p><strong>C/C++语言属于编译型语言，其编译后得到的可执行程序执行时依赖的指令是与CPU架构不相关的，因此此类应用程序不需要移植</strong> ×</p>
-<p><strong>Centos是开源的操作系统，Debian不属于开源操作系统</strong> ×</p>
-<p><strong>Tai Shan服务器的CPU是ARM架构的</strong> √</p>
-<p><strong>华为鲲鹏云服务产品发布前，需要先加入鲲鹏凌云伙伴计划并通过鲲鹏云服务兼容性认证</strong> √</p>
-<p><strong>通过”ps -ef | grep PostgreSQL ”命令可以确认数据库进程是否启动</strong> ×</p>
-<p><strong>为方便客户业务的统一部署， 镜像服务建立起了镜像与弹性云服务器之间 镜像与裸金属服务器之间 以及镜像与外部文件之间的直接联系</strong> √</p>
-<p><strong>一个弹性公网IP能同时给多个弹性云服务器使用</strong> ×</p>
-<p><strong>华为鲲鹏性能优化工具支持分析C/C+ +和Java Mixed-Mode两种应用程序类型</strong> √</p>
-<p><strong>对于Java类应用程序进行性能分析时，由于受java的jit编译的限制，函数分析结果中只能查看到对应的源码，无法查看汇编和代码流图</strong> √</p>
-<p><strong>HiBench支持在编译时指定编译模块</strong> √</p>
-<p><strong>docker的基础镜像中包含父镜像</strong> ×</p>
-<p><strong>华为鲲鹏云服务可提供KC1型ECS和KS1型BMS</strong> √</p>
-<p><strong>Tai Shan服务器必须使用特殊的专有内存和硬盘</strong> x</p>
-<p><strong>Java/Python的虚拟机不支撑再鲲鹏上源码编译, 只能使用yum方式安装</strong> x</p>
-<!-- **个人理解Python是解释型语言,Java在鲲鹏里面也被强制列为解释型语言** -->
-<!-- **用户想安装按RPM方式发行的软件, 只需简单地输入命令rpm -ivh xxxrpm即可** -->
-<h2 id="单选题"><a href="#单选题" class="headerlink" title="单选题"></a>单选题</h2><p>类RedHat系统提供了什么命令来安装, 卸载和升级rpm软件包    (A)<br>    A rpm<br>    B dpkg<br>    C tar<br>    D apt-get</p>
-<p>下面哪个工具不属于鲲鹏开发套件?      (A)<br>    A 分析扫码工具<br>    B 代码迁移工具<br>    C 性能调优工具<br>    D Vtune</p>
-<p>使用命令rpmbuild -bb XX spec (XX表示文件名)制作RPM包时，RPM包生成在什么目录下?      (C)<br>A BUILD B SOURCE C RPMS D SPEC</p>
-<p>在BenchmarkSQL执行以下哪个脚本，可以对表中写入数据?      (A)<br>A runLoader sh B runBenchmark sh C runDatabaseBuild sh D runDatabaseDestroy Sh</p>
-<p>BenchmarkSQL执行以下哪个脚本加载数据?      (B)<br>A runBenchmark sh B runDat abaseBuild sh C runDat abaseDestroy sh D runLoader sh</p>
-<p>代码扫描工具Dependency Advisor是部署在哪种架构的服务器或者弹性云服务器上?      (D)<br>A ARM B 鲲鹏 C Power D x86</p>
-<p>以下哪个不属于镜像管理特性?      (D)<br>A 修改镜像 B 删除镜像 C 镜像导出 D 查询镜像</p>
-<p>Hi Bench是什么？      (C)<br>A 大数据开发框架 B 大数据可视化平台 C 大数据基准测试套件 D 大数据分析工具</p>
-<p>关于容器的删除操作，以下哪项是正确的？      (C)<br>A 可通过”docker rm &lt;容器ID&gt;”删除正在运行的容器<br>B 可通过”docker rmi &lt;容器ID&gt;”删除已停止的容器<br>C 可通过”docker rm &lt;容器ID&gt;”删除已停止的容器<br>D 可通过”docker rmi &lt;容器ID&gt;”删除正在运行的容器</p>
-<p>关于华为鲲鹏迁移工具分析报告提供的依赖库so文件的操作建议，以下哪项是不正确的?      (A)<br>A 目前不存在鲲鹏平台无法识别的依赖库So文件<br>B 鲲鹏平台不支持该类依赖库S0文件,需要用户自行处理<br>C 如果依赖库so文件已经过鲲鹏平台验证，但无二进制安装包,则需要用户下载依赖库源码，然后上传至目标服务器进行编译安装<br>D 如果依赖库S0文件已经过鲲鹏平台验证，且已有二进制安装包,则用户可以直按将工具提供的开源版本依赖库安装包下载到本地，然后上传至目标服务器进行安装使用</p>
-<p>以下关于web界面访问华为鲲鹏代码迁移工具的方式,描述正确的是      (A)<br>A 单用户单任务访问<br>B 多用户多任务并发访间<br>C 多用户同时访问<br>D 单用户多任务访问</p>
-<p>以下哪个选项不是iSula通用容器引辈的特点?      (C)<br>A 升级不中断业务 B 增强安全性和调测特性 C 大幅提升容器性能 D 快速灵活</p>
-<p>在修改BenchmarkSQL连接PostereSQL的配置文件时，关于runMins和runTxnsPerTerminal这两个参数的设置，以下哪项是正确的?      (A)<br>A 必须有一个设定为0  B 必须相等 C 均为0   D 必须不相等，且均不为0</p>
-<p>扫描工具Dependency Advi sor支持以下哪种使用模式?      (A)<br>A web B make C test D name</p>
-<p>如果要放开外部对弹性云服务器的8080端口访问，可以通过配置以下哪项功能实现?      (C)<br>A 弹性公网IP带宽 B 主机组 C 安全组 D VPC子网</p>
-<p>系统盘镜像类型不包含以下哪个      (A)<br>A 机架服务器系统盘镜像 B 普通云服务器系统盘镜像 C GPU加速云服务器系统盘镜像 D 裸金属云服务器系统盘镜像</p>
-<p>私有镜像通过以下哪个功能可以实现本地业务部署和公有云业务部署的统一化持久化?      (A)<br>A 镜像导出  B 镜像市场 C 镜像复制 D 镜像共享</p>
-<p>以下哪个命令表示只生成rpm源代码的命令?      (B)<br>A rpmbuild -ba B rpmbuild- bs C rpmbuild -bc D rpmbuild -bb</p>
-<p>以下哪个不是使用rpm工具安装软件?      (A)<br>A 自动安装依赖包 B 全自动安装 C 能够进行数据库的记载 D 自定义安装路径</p>
-<p>提供预装操作系统 应用环境和各类软件的优质第三方镜像是属于以下哪种镜像?      (C)<br>A 共享镜像 B 私有镜像 C 市场镜像 D 公共镜像</p>
-<p>ssh协议默认端口号是什么?      (C)<br>A 9600 B 23 C 22 D 513</p>
-<p>关于容器相关概念的描述，以下哪项是错误的?      (C)<br>A 标签:可用于识别不同的变体或版本<br>B 仓库: 一个软件库， 存储了可下载并安装在系统中的软件包<br>C 镜像:容器的运行实例<br>D 容器:image的运行实例</p>
-<p>使用gcc编译时，编译选项-march的作用是什么?      (A)<br>A 指定指令集<br>B 指定cpu型号<br>C 指定流水线<br>D 提升兼容性</p>
-<p>下列哪个是华为鲲鹏生态兼容的非国产操作系统?      (C)<br>A BCLinux<br>B openEuler<br>C Ubuntu<br>D Kylin</p>
-<p>谁是Linux之父?      (D)<br>A Richard Matthew Stal lman B Andrew Morton C Bill Gates D LimusTorval ds</p>
-<h2 id="多选题"><a href="#多选题" class="headerlink" title="多选题"></a>多选题</h2><p>可以从哪些方面对Post greSQL进行性能调优?      (A C)<br>A 数据库参数 B 硬件 C 编译参数 D 操作系统</p>
-<p>使用BenchmarkSQL前需要进行哪些操作?      (A C D)<br>A 配置环境变量 B 重启服务器 C 安装JDK  D 使环境变量生效</p>
-<p>关于rpm包和SRPM包的描述，以下正确的是?      (A B D)<br>A SRPM包含源代码而RPM不包含 B rpm包可以直接安装，SRPM包不可以 C 两者都可修改编译参数 D rpm包是已编译的程序，而SRPM不是</p>
-<p>镜像服务的典型应用场景有哪些?      (A B C)<br>A 快速部署应用 B 批量复制弹性云服务器 C 传统业务上云 D 实时同步数据</p>
-<p>镜像文件一般包括以下哪些内容?      (A C)<br>A 预装的软件 B 数据盘 C 操作系统 D 系统盘</p>
-<p>以下哪些不是针对spec文件的操作命令?      (A B)<br>A cmake B makefile C make D make install</p>
-<p>rpm安装包有哪些优点?      (A B C D)<br>A 提供软件版本资讯，软件名称，软件用途等相关信息，便于了解软件<br>B 内含编译程序，免编译<br>C 使用数据库记录rpm文件的相关参数，便于升级 移除 查询与验证<br>D 预先检查系统版本，可避免文 件被错误安装</p>
-<p>创建C/C++程序性能分析任务时，以下关于分析类型，描述正确的是?      (A B C)<br>A Profile System,即采集整个服务器系统，无需关注系统中有哪些类型的应用在运行，采集时长需要配置参数控制，适用于多业务混合运行和有子进程的场景<br>B Attach to Process,即该采集对象针对正在运行的应用程序，通过关联到运行该应用程序的PID的方式，来实时跟踪和采集该应用程序的性能数据,采集时长需要配置参数控制，适用于某些应用需要长时间持续运行和采集的场景<br>C Launch Application,即采集启动的时候，同时启动Application,采集时长受Appl ication的执行时间来控制，适用于Application运行时间较短的场景<br>D C/C++程序仅支持Launch Application和Attach to Process两种分析类型</p>
-<p>以下哪些属于Dockerfile的指令？      (A B C D)<br>A FROM B CMD C EXPOSE D RUN</p>
-<p>关于使用源码方式安装加速引擎软件，以下说法正确的有哪些?      (A B C D)<br>A 编译安装zlib加速库<br>B 在下载好的源码目录下，使用make命令编译加速器<br>C 编译安装加速器OpenSSL引擎<br>D 编译安装Warpdrive驱动开发库<br>E 安装openssl 111a或以上版本<br>F 安装内核开发包kernel-devel</p>
-<p>同一段C/C++代码，在鲲鹏处理器与x86架构处理器上编译的可执行程序有哪些不同?      (A B)<br>A 指令 B 指令使用的寄存器 C 功能 D 文件结构</p>
-<p>以下关于X6000 V5描述正确的是?      (A C D)<br>A 机框支持2个3000w电源<br>B 每个服务器节点支持3个半高半长标准PCIe插槽<br>C 支持4个半宽双路服务器节点<br>D 每个服务器节点支持16个DDR4 DIM插槽</p>
-<p>以下哪些场景属于数据密集紧耦合场景?      (C D)<br>A 基因测序<br>B 流体动力学<br>C 天气预测<br>D 环境预测</p>
-<p>在PostgreSQL迁移流程中，包含以下哪些步骤?      (A D)<br>A 迁移分析 B 性能测试 C 环境准备 D 源码修改</p>
-<p>通过以下哪些方式可以获取华为鲲鹏系列服务?      (B C)<br>A 购买华为云鲲鹏弹性云服务器<br>B 购买基于x86架构的弹性云服务器<br>C 购买RH服务器<br>D 购买Tai shan服务器</p>
-<p>私有镜像包含以下哪些功能?      (A B C D)<br>A 镜像加密 B 镜像共享 C 镜像导出 D 镜像复制</p>
-<p>在华为公有云中，私有镜像包括?      (B C)<br>A 市场镜像 B 系统镜像 C 数据镜像 D 共享镜像</p>
-<p>docker run -p 6379:6379 v $PWD/data:/data -d t_arm64v8/centos_ redis:505 redis server –appendonly yes关于此命令的描述，以下哪些是正确的?      (B C D)<br>A “6379:6379” :将主机的6379端口映射到容器的6379端口<br>B “appendonly yes”，打开持久化配置<br>C 该命令功能是启动容器，并在容器启动时候执行容器内的redis-server服务<br>D “$PWD/data: /data” :将主机中当前目录下的data挂载到容器的/data</p>
-<p>使用华为鲲鹏代码迁移工具对源码进行扫描分析时，需要进行哪些方面的检查和分析?      (A B C D)<br>A 检查x86平台与鲲鹏平台相异的编译器宏 编译选项 buildin函数 attribute函数等列表<br>B 对比输入的(S0文件名)列表和S0依赖库白名单<br>C 扫描分析用户软件目标二进制文件依赖的源文件集合<br>D 检查Make file中的编译链接</p>
-<p>C/C++语言开发的源码在编译时，以下哪些模块是不需要的？      (B C)<br>A 汇编器 B 存储器 C 加载器 D 编译器</p>
-<p>以下哪些是Tai Shan大数据方案使用的主要服务器型号?      (A B)<br>A 2280均衡型 B 5280存储型 C XA320计算节点 D X6000高密型</p>
-<p>以下关于华为鲲鹏920的特点描述正确的有哪些?      (C D)<br>A 性能可匹配Intel Skylake(V5) 高端处理器型号<br>B CPU最多支持2个100GE网口，支持RoCE特性<br>C 相比同等性能的Intel处理器，功耗更低<br>D 支持8内存通道，带宽高于Intel Skyl ake (V5)的6通道</p>
-<p>BenchmarkSQL配置文件中loadWorkers指的是什么（ ）<br>A、并发用户数<br>B、数据库装载并发数<br>C、数据库并行数<br>D、数据库表的数量<br>答案：B<br>TPCC衡量标准是什么？<br>A、QphH<br>B、响应时间<br>C、tpmC<br>D、TPS<br>答案：C<br>Porting Advisor工具在移植源码过程中的作用是？<br>A、分析源码，并给出移植工作量<br>B、分析源码，并给出分析报告和源码修改建议<br>C、分析源码，并修改源码<br>D、分析源码，并给出性能优化建议<br>答案：B<br>华为鲲鹏BMS云服务器最高可提供多少核？<br>A、32<br>B、48<br>C、62<br>D、128<br>答案：D<br>IMS私有镜像类型不包括以下哪项？<br>A、系统盘镜像<br>B、整体镜像<br>C、数据盘镜像<br>D、整机镜像<br>答案：B<br>可以根据设定的寻路协议实时自动优化网络结构，以保持客户使用的网络持续稳定、高效.这句话是关于以下哪项的描述？<br>A、静态BGP<br>B、全动态BGP<br>C、独享宽带<br>D、共享宽带<br>答案：B<br>以下哪条命令可以查看docker镜像？<br>A、docker images<br>B、docker list<br>C、docker container ls<br>D、docker -a<br>答案：A<br>以下哪个工具可以用于鲲鹏平台上进行代码迁移？<br>A、Tuning kit<br>B、Dependency Advisor<br>C、Porting Advisor<br>D、GCC<br>答案：C<br>Suse操作系统是从哪个版本开始处于Kunpeng 920的OS生态圈？<br>A、SLES 12.3<br>B、SLES 12.4<br>C、SLES 15<br>D、SLES 15.1<br>答案：D<br>以下哪项不是TaiShan服务器的优点？<br>A、国产化，自主安全可控<br>B、多物理核心，并发性能高<br>C、低功耗，绿色节能<br>D、生态完备，上层应用支持好<br>答案：D<br>以下哪个不是华为云鲲鹏生态帮助伙伴/开发者商业变现的方式?<br>A、华为鲲鹏严选馆:鲲鹏应用，优先推荐，快速商业变现<br>B、华为提供鲲鹏人才培养:专业培训，完善的鲲鹏工程师认证体系<br>C、华为提供鲲鹏原厂认证:专业团队，专业工具，1对1技术支持<br>D、华为鲲鹏云专业服务:客户业务系统一站式搬迁服务<br>答案：D<br>金融行业的鲲鹏硬替代应用不包括以下哪项?<br>A、经营分析<br>B、核心应用<br>C、办公支撑<br>D、互联网银行<br>答案：B<br>以下哪种工具可用于制作RPM包?<br>A、rpm-cmake<br>B、rpm make<br>C、rpm-test<br>D、rpm-build<br>答案：D<br>对PostgreSQL的编译参数进行调优时需要在CFLAGS字段中添加哪些选项<br>A、-march= and<br>B、-march=armv8- a+crc+lse<br>C、-march=armv8-a<br>D、march =X86<br>答案：B<br>以下哪个是BenchmarkSQL连接PostgreSQL的配置文件?<br>A、props.mysq1<br>B、props.pg<br>C、props.ora<br>D、props.percona<br>答案：B<br>以下哪种语言的源码文件不能用Porting Advisor迁移工具进行迁移分析?<br>A、C++<br>B、C<br>C、Java<br>D、汇编<br>答案：C<br>在华为云上，通过以下哪种方式或工具可以访问外网?<br>A、弹性公网IP<br>B、云硬盘<br>C、VPC<br>D、镜像<br>答案：A<br>在仅有x86服务器或者云服务器下，如何编译出ARM环境下执行的程序?<br>A、安装交叉编译环境，通过交叉编译环境执行编译<br>B、直接编译<br>C、使用x86下新版本gcc编译<br>D、修改权限编译<br>答案：A<br>关于加密镜像的描述，以下哪项是正确的?<br>A、使用加密的弹性云服务器创建的镜像为加密镜像<br>B、使用加密镜像创建的弹性云服务器不一定被加密<br>C、使用加密的弹性云服务器创建的镜像密钥与加密云服务器的密钥不同<br>D、使用加密的弹性云服务器创建的镜像为非加密镜像<br>答案：A<br>以下关于镜像的描述，不正确的是?<br>A、用户可以快速复制私有镜像，不受region限制<br>B、查询镜像时，支持通过标签过滤查询镜像<br>C、通过导入外部镜像文件创建镜像时，不支持qcow2格式<br>D、支持key-value类型的镜像标签<br>答案：C<br>多选题<br>以下哪些属于华为云鲲鹏伙伴计划？<br>A、鲲鹏凌云伙伴计划<br>B、鲲鹏智数伙伴计划<br>C、鲲鹏展翅伙伴计划<br>D、鲲鹏翱翔伙伴计划<br>答案：ABC<br>以下哪些属于鲲鹏通用解决方案？<br>A、HCSO解决方案<br>B、大数据解决方案<br>C、HPC解决方案<br>D、分布式存储<br>答案：ABCD<br>华为鲲鹏性能优化工具能够提供（ ）方面的性能分析结果<br>A、分析Top热点函数<br>B、分析函数火焰图<br>C、分析热点函数代码映射<br>D、分析不同函数对应top-down模型的各指标值<br>答案：ABCD<br>华为鲲鹏性能优化工具支持从哪些维度分析应用的性能瓶颈？<br>A、C/C++<br>B、Java Mixed-Mode<br>C、Locks and Waits<br>D、LLC&amp;DDR<br>答案：AB<br>下列哪些选项可能会影响WRF性能<br>A、网络带宽<br>B、并行线程数<br>C、内存刷新频率<br>D、存储读写速度<br>答案：ABCD<br>HiBench支持的框架有哪些？<br>A、flinkbench<br>B、hadoopbench<br>C、stormbench<br>D、sparkbench<br>答案：ABCD<br>弱内存序问题主要与如下那些因素相关？<br>A、多线程<br>B、多进程<br>C、不同CPU之间Cache同步<br>D、一级、二级、三级Cache间数据同步<br>E、不同core之间Cache同步<br>答案：ACE<br>在向鲲鹏处理器迁移软件时，以下哪些是可能导致编译错误或告警的原因？<br>A、编译选项<br>B、数据类型不同<br>C、汇编指令<br>D、弱内存序问题<br>答案：ABC<br>关于Docker的镜像仓库，说法正确的是？<br>A、实现Docker镜像的全局存储<br>B、提供API接口<br>C、提供Docker镜像的下载/推送/查询<br>D、可用于租户管理<br>答案：ABCD<br>关于执行命令“docker ps -a”后，显示的标题含义描述，正确的是？<br>A、CONTAINER ID:容器的唯一表示ID<br>B、IMAGE:创建容器时使用的镜像<br>C、COMMAND:容器最后运行的命令<br>D、CREATED:创建容器的时间<br>答案：ABCD<br>华为鲲鹏代码迁移工具能够提供（ ）方面的移植评估结果<br>A、扫描源码中有多少个安装包<br>B、扫描源码中有多少可以移植的依赖库SO文件<br>C、扫描源码中有多少行可以移植的C/C++代码、汇编代码<br>D、预估移植所需的工作量<br>答案：BC<br>华为鲲鹏代码迁移工具适用于以下哪些类型的应用程序？<br>A、C/C++<br>B、Java<br>C、汇编<br>D、Python<br>答案：AC<br>为什么x86架构处理器上的软件在鲲鹏处理器使用时需要移植？<br>A、两种处理器的指令集不同<br>B、源代码需要按照目标处理的指令集编译成指令才能运行<br>C、编译型语言由编译器静态编译成指令和数据<br>D、解释型语言由语言的虚拟机在运行时将源码/字节码编译成指令和数据<br>答案：ABCD<br>TaiShan 200机架服务器包含哪些型号？<br>A、2280<br>B、5280<br>C、2480<br>D、X6000<br>答案：ABC<br>华为鲲鹏920处理器内置了那些加速器？<br>A、.SSL加速引擎<br>B、加解密加速引擎<br>C、压缩解压缩加速引擎<br>D、语音识别加速引擎<br>答案：ABC<br>以下哪些关于华为鲲鹏920处理器的描述是正确的（）？<br>A、最多支持64核<br>B、采用了7nm的制造工艺<br>C、支持PCIe 4.0接口，并兼容PCIe 3.0/2.0/1.0<br>D、支持多种加速器<br>答案：ABCD<br>围绕鲲鹏计算产业，华为提供（ ）支持<br>A、云服务<br>B、工具链<br>C、社区服务<br>D、专业服务<br>答案：ABCD<br>华为鲲鹏计算产业相关产品有哪些？<br>A、华为鲲鹏处理器<br>B、TaiShan服务器<br>C、华为云鲲鹏云服务<br>D、X86服务器<br>答案：ABC<br>以下哪些是鲲鹏社区可以提供的服务？<br>A、获得海量软件的迁移指导<br>B、了解鲲鹏解决方案<br>C、获取最新的鲲鹏咨询<br>D、直接获得社区扶持<br>答案：ABC<br>镜像有哪些类别？<br>A、公共镜像<br>B、自由镜像<br>C、私有镜像<br>D、共享镜像<br>答案：ACD<br>以下哪些子文件包含在rpmbuild文件夹的目录结构中？<br>A、SOURCE<br>B、BUILD<br>C、SPEC<br>D、SRPMS<br>答案：BD<br>以下哪些命令可以安装C语言开发环境？<br>A、apt-get groupinstall build-essential<br>B、apt-get install build-essential<br>C、yum install Development Tools<br>D、yum groupinstall Development Tools<br>答案：BD<br>关于 Dockerfile 的描述，以下哪些是正确的？<br>A、Dockerfile一般包含四部分内容：基础镜像信息、维护者信息、镜像操作指令和容器启动时执行指令<br>B、Dockerfile中，第一条指令必须为 FROM指令<br>C、EXPOSE在Dockerfile中是必选的<br>D、完成Dockerfile编写后，可以通过docker build命令来创建镜像<br>答案：ABD<br>华为鲲鹏云服务包括以下哪些？<br>A、华为鲲鹏裸金属服务器<br>B、鲲鹏弹性云服务器<br>C、鲲鹏容器<br>D、鲲鹏云手机<br>答案：ABCD<br>以下哪些属于华为鲲鹏920芯片的特点？<br>A、集成最多64个自研核<br>B、支持8通道DDR4控制器<br>C、支持CCIX接口<br>D、只支持GE/10GE网络<br>答案：ABC<br>以下哪些属于鲲鹏软件栈发布的五大软件领域？<br>A、操作系统<br>B、游戏软件<br>C、基础软件<br>D、应用软件<br>答案：ACD<br>在BenchmarkSQL连接PostgreSQL前，在PostgreSQL侧需要修改哪些文件<br>A、pg_ident.conf<br>B、PosgreSQL.conf<br>C、pg_hba.conf<br>D、PostgreSQL.auto.conf<br>答案：BC<br>BenchmarkSQL可以对哪些数据库进行测试?<br>A、Post gresSQL<br>B、Oracle<br>C、SQL Server<br>D、MySQL<br>答案：ABCD<br>判断题<br>鲲鹏计算平台已经兼容的操作系统可通过<a href="http://support.huawei.com/onlinetoolweb/ftca/index?serise=9%E9%93%BE%E6%8E%A5%E6%9F%A5%E8%AF%A2">http://support.huawei.com/onlinetoolweb/ftca/index?serise=9链接查询</a> √<br>华为云鲲鹏社区目前是否提供软件下载功能？ √<br>可以执行rpmbuild -ba redis.spec生成二进制文件 ×<br>使用华为鲲鹏性能优化工具对C/C++应用程序进行性能分析时，能够查看到函数源代码、汇编代码，以及函数汇编代码basic block的控制流图 √<br>CPU性能和网络带宽都会影响HPC性能 √<br>纯Java语言开发的代码，无依赖的SO库文件不需要编译，可以直接在JVM（Java虚拟机）中运行 √<br>鲲鹏处理器和x86处理器的add指令是一样的 ×<br>Tune是一种通过非侵入式系统画像的负载感知方法，识别业务并匹配最佳资源模型，实时响应业务特征变化的AI自动调优系统 √<br>Android手机应用在鲲鹏云服务上运行仍需要指令翻译器 ×<br>在BenchmarkSQL的测试结果中，Running Average tpmTOTAL 值和Current tpmTOTAL值越高，表示性能越差. ×<br>Porting Advisor工具界面中的GCC版本需要与后台操作系统中的GCC版本保持一致 ×<br>rpm包中包含所有源代码文件 ×<br>私有镜像不能通过外部镜像文件创建 ×</p>
-]]></content>
-      <categories>
-        <category>鲲鹏云</category>
-      </categories>
-  </entry>
-  <entry>
     <title>鲲鹏题库</title>
     <url>/Kunpeng-question.html</url>
     <content><![CDATA[<p><strong>鲲鹏笔记+题库</strong></p>
@@ -6159,6 +6049,150 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 <li>云备份</li>
 </ol>
 <font color="#F08080">正确答案 A B C D<br>解答: 注意问的是整机镜像</font>]]></content>
+      <categories>
+        <category>鲲鹏云</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>鲲鹏微认证(日后会更新)</title>
+    <url>/Kunpeng-micro-authentication.html</url>
+    <content><![CDATA[<p><strong>鲲鹏微认证笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="C-C-代码迁移"><a href="#C-C-代码迁移" class="headerlink" title="C/C++代码迁移"></a>C/C++代码迁移</h1><h2 id="编译型语言"><a href="#编译型语言" class="headerlink" title="编译型语言"></a>编译型语言</h2><ul>
+<li>典型的如C/C++/Go语言, 都属于编译型语言, 编译型语言开发的程序从x86处理器迁移到鲲鹏处理器时, 必须经过重新编译才能运行</li>
+</ul>
+<ul>
+<li>从源码到程序的过程<ul>
+<li>源码需要由编译器, 汇编器翻译成机器指令, 再通过链接器链接库函数生成机器语言程序<br>
+<br>
+
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight brainfuck"><table><tr><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">源码</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">预处理</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">预编译文件</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">编译</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">汇编代码</span>    --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">汇编</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">目标文件</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">链接</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">可执行文件</span><br><br><span class="hljs-comment">testc</span>      <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">E</span> <span class="hljs-comment">testc</span> <span class="hljs-literal">-</span><span class="hljs-comment">o</span> <span class="hljs-comment">testi</span>      <span class="hljs-comment">texti</span>       <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testio</span> <span class="hljs-comment">tests</span>      <span class="hljs-comment">texts</span>          <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testso</span> <span class="hljs-comment">testo</span>     <span class="hljs-comment">testo</span>       <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testso</span> <span class="hljs-comment">testo</span>     <span class="hljs-comment">text</span><br></code></pre></td></tr></table></figure>
+<h2 id="C-C-代码需要迁移的原因"><a href="#C-C-代码需要迁移的原因" class="headerlink" title="C/C++代码需要迁移的原因"></a>C/C++代码需要迁移的原因</h2><ul>
+<li>架构差异:<ul>
+<li>x86和鲲鹏处理器(aarch64)属于不同架构</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>指令极差异:<ul>
+<li>x86属于复杂指令集</li>
+<li>鲲鹏处理器(aarch64)属于精简指令集</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>向量寄存器的差异:<ul>
+<li>x86和鲲鹏处理器(aarch64)使用向量寄存器不同, 向量指令集也存在差异</li>
+</ul>
+</li>
+</ul>
+<h1 id="C-C-代码构建编译过程"><a href="#C-C-代码构建编译过程" class="headerlink" title="C/C++代码构建编译过程"></a>C/C++代码构建编译过程</h1><h2 id="C-C-代码工程主要包括两类文件"><a href="#C-C-代码工程主要包括两类文件" class="headerlink" title="C/C++代码工程主要包括两类文件:"></a>C/C++代码工程主要包括两类文件:</h2><ul>
+<li>编译构建脚本<ul>
+<li>Makefile CmakeListstxt Configure autogensh bootstrapsh等等</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>C/C++源码<ul>
+<li>src examples tests等等</li>
+</ul>
+</li>
+</ul>
+<h2 id="可能涉及到的移植项"><a href="#可能涉及到的移植项" class="headerlink" title="可能涉及到的移植项"></a>可能涉及到的移植项</h2><ul>
+<li>编译构建脚本类文件<ul>
+<li>编译选项的移植(指定数据类型, 生成代码特性, 目标执行器架构, 处理器硬件加速功能等)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>C/C++代码类文件<ul>
+<li>编译宏移植(用户自定义宏移植, 编译器自定义宏移植)</li>
+<li>编译器自带builtin函数移植</li>
+<li>内联汇编移植</li>
+<li>SSE intrinsic函数移植(MMX/SEE类函数移植, AVX函数移植)</li>
+</ul>
+</li>
+</ul>
+<!-- # C/C++代码编译构建过程
+
+~~~
+
+~~~ -->
+
+<h1 id="直接真题-CTRL-F"><a href="#直接真题-CTRL-F" class="headerlink" title="直接真题 CTRL+F"></a>直接真题 CTRL+F</h1><h2 id="判断题"><a href="#判断题" class="headerlink" title="判断题"></a>判断题</h2><p><strong>yum和rpm安装方式本质都是基于RPM包来安装软件</strong> √</p>
+<p><strong>交叉编译是在一个平台 上生成另一个平台上可执行的代码</strong> √</p>
+<p><strong>BenchmarkSQL使用GCC编译进行编译安装</strong> ×</p>
+<p><strong>Dockerfile中的每一条指令 都分别对应镜像的每一层</strong> √</p>
+<p><strong>C/C++语言属于编译型语言，其编译后得到的可执行程序执行时依赖的指令是与CPU架构不相关的，因此此类应用程序不需要移植</strong> ×</p>
+<p><strong>Centos是开源的操作系统，Debian不属于开源操作系统</strong> ×</p>
+<p><strong>Tai Shan服务器的CPU是ARM架构的</strong> √</p>
+<p><strong>华为鲲鹏云服务产品发布前，需要先加入鲲鹏凌云伙伴计划并通过鲲鹏云服务兼容性认证</strong> √</p>
+<p><strong>通过”ps -ef | grep PostgreSQL ”命令可以确认数据库进程是否启动</strong> ×</p>
+<p><strong>为方便客户业务的统一部署， 镜像服务建立起了镜像与弹性云服务器之间 镜像与裸金属服务器之间 以及镜像与外部文件之间的直接联系</strong> √</p>
+<p><strong>一个弹性公网IP能同时给多个弹性云服务器使用</strong> ×</p>
+<p><strong>华为鲲鹏性能优化工具支持分析C/C+ +和Java Mixed-Mode两种应用程序类型</strong> √</p>
+<p><strong>对于Java类应用程序进行性能分析时，由于受java的jit编译的限制，函数分析结果中只能查看到对应的源码，无法查看汇编和代码流图</strong> √</p>
+<p><strong>HiBench支持在编译时指定编译模块</strong> √</p>
+<p><strong>docker的基础镜像中包含父镜像</strong> ×</p>
+<p><strong>华为鲲鹏云服务可提供KC1型ECS和KS1型BMS</strong> √</p>
+<p><strong>Tai Shan服务器必须使用特殊的专有内存和硬盘</strong> x</p>
+<p><strong>Java/Python的虚拟机不支撑再鲲鹏上源码编译, 只能使用yum方式安装</strong> x</p>
+<!-- **个人理解Python是解释型语言,Java在鲲鹏里面也被强制列为解释型语言** -->
+<!-- **用户想安装按RPM方式发行的软件, 只需简单地输入命令rpm -ivh xxxrpm即可** -->
+<h2 id="单选题"><a href="#单选题" class="headerlink" title="单选题"></a>单选题</h2><p>类RedHat系统提供了什么命令来安装, 卸载和升级rpm软件包    (A)<br>    A rpm<br>    B dpkg<br>    C tar<br>    D apt-get</p>
+<p>下面哪个工具不属于鲲鹏开发套件?      (A)<br>    A 分析扫码工具<br>    B 代码迁移工具<br>    C 性能调优工具<br>    D Vtune</p>
+<p>使用命令rpmbuild -bb XX spec (XX表示文件名)制作RPM包时，RPM包生成在什么目录下?      (C)<br>A BUILD B SOURCE C RPMS D SPEC</p>
+<p>在BenchmarkSQL执行以下哪个脚本，可以对表中写入数据?      (A)<br>A runLoader sh B runBenchmark sh C runDatabaseBuild sh D runDatabaseDestroy Sh</p>
+<p>BenchmarkSQL执行以下哪个脚本加载数据?      (B)<br>A runBenchmark sh B runDat abaseBuild sh C runDat abaseDestroy sh D runLoader sh</p>
+<p>代码扫描工具Dependency Advisor是部署在哪种架构的服务器或者弹性云服务器上?      (D)<br>A ARM B 鲲鹏 C Power D x86</p>
+<p>以下哪个不属于镜像管理特性?      (D)<br>A 修改镜像 B 删除镜像 C 镜像导出 D 查询镜像</p>
+<p>Hi Bench是什么？      (C)<br>A 大数据开发框架 B 大数据可视化平台 C 大数据基准测试套件 D 大数据分析工具</p>
+<p>关于容器的删除操作，以下哪项是正确的？      (C)<br>A 可通过”docker rm &lt;容器ID&gt;”删除正在运行的容器<br>B 可通过”docker rmi &lt;容器ID&gt;”删除已停止的容器<br>C 可通过”docker rm &lt;容器ID&gt;”删除已停止的容器<br>D 可通过”docker rmi &lt;容器ID&gt;”删除正在运行的容器</p>
+<p>关于华为鲲鹏迁移工具分析报告提供的依赖库so文件的操作建议，以下哪项是不正确的?      (A)<br>A 目前不存在鲲鹏平台无法识别的依赖库So文件<br>B 鲲鹏平台不支持该类依赖库S0文件,需要用户自行处理<br>C 如果依赖库so文件已经过鲲鹏平台验证，但无二进制安装包,则需要用户下载依赖库源码，然后上传至目标服务器进行编译安装<br>D 如果依赖库S0文件已经过鲲鹏平台验证，且已有二进制安装包,则用户可以直按将工具提供的开源版本依赖库安装包下载到本地，然后上传至目标服务器进行安装使用</p>
+<p>以下关于web界面访问华为鲲鹏代码迁移工具的方式,描述正确的是      (A)<br>A 单用户单任务访问<br>B 多用户多任务并发访间<br>C 多用户同时访问<br>D 单用户多任务访问</p>
+<p>以下哪个选项不是iSula通用容器引辈的特点?      (C)<br>A 升级不中断业务 B 增强安全性和调测特性 C 大幅提升容器性能 D 快速灵活</p>
+<p>在修改BenchmarkSQL连接PostereSQL的配置文件时，关于runMins和runTxnsPerTerminal这两个参数的设置，以下哪项是正确的?      (A)<br>A 必须有一个设定为0  B 必须相等 C 均为0   D 必须不相等，且均不为0</p>
+<p>扫描工具Dependency Advi sor支持以下哪种使用模式?      (A)<br>A web B make C test D name</p>
+<p>如果要放开外部对弹性云服务器的8080端口访问，可以通过配置以下哪项功能实现?      (C)<br>A 弹性公网IP带宽 B 主机组 C 安全组 D VPC子网</p>
+<p>系统盘镜像类型不包含以下哪个      (A)<br>A 机架服务器系统盘镜像 B 普通云服务器系统盘镜像 C GPU加速云服务器系统盘镜像 D 裸金属云服务器系统盘镜像</p>
+<p>私有镜像通过以下哪个功能可以实现本地业务部署和公有云业务部署的统一化持久化?      (A)<br>A 镜像导出  B 镜像市场 C 镜像复制 D 镜像共享</p>
+<p>以下哪个命令表示只生成rpm源代码的命令?      (B)<br>A rpmbuild -ba B rpmbuild- bs C rpmbuild -bc D rpmbuild -bb</p>
+<p>以下哪个不是使用rpm工具安装软件?      (A)<br>A 自动安装依赖包 B 全自动安装 C 能够进行数据库的记载 D 自定义安装路径</p>
+<p>提供预装操作系统 应用环境和各类软件的优质第三方镜像是属于以下哪种镜像?      (C)<br>A 共享镜像 B 私有镜像 C 市场镜像 D 公共镜像</p>
+<p>ssh协议默认端口号是什么?      (C)<br>A 9600 B 23 C 22 D 513</p>
+<p>关于容器相关概念的描述，以下哪项是错误的?      (C)<br>A 标签:可用于识别不同的变体或版本<br>B 仓库: 一个软件库， 存储了可下载并安装在系统中的软件包<br>C 镜像:容器的运行实例<br>D 容器:image的运行实例</p>
+<p>使用gcc编译时，编译选项-march的作用是什么?      (A)<br>A 指定指令集<br>B 指定cpu型号<br>C 指定流水线<br>D 提升兼容性</p>
+<p>下列哪个是华为鲲鹏生态兼容的非国产操作系统?      (C)<br>A BCLinux<br>B openEuler<br>C Ubuntu<br>D Kylin</p>
+<p>谁是Linux之父?      (D)<br>A Richard Matthew Stal lman B Andrew Morton C Bill Gates D LimusTorval ds</p>
+<h2 id="多选题"><a href="#多选题" class="headerlink" title="多选题"></a>多选题</h2><p>可以从哪些方面对Post greSQL进行性能调优?      (A C)<br>A 数据库参数 B 硬件 C 编译参数 D 操作系统</p>
+<p>使用BenchmarkSQL前需要进行哪些操作?      (A C D)<br>A 配置环境变量 B 重启服务器 C 安装JDK  D 使环境变量生效</p>
+<p>关于rpm包和SRPM包的描述，以下正确的是?      (A B D)<br>A SRPM包含源代码而RPM不包含 B rpm包可以直接安装，SRPM包不可以 C 两者都可修改编译参数 D rpm包是已编译的程序，而SRPM不是</p>
+<p>镜像服务的典型应用场景有哪些?      (A B C)<br>A 快速部署应用 B 批量复制弹性云服务器 C 传统业务上云 D 实时同步数据</p>
+<p>镜像文件一般包括以下哪些内容?      (A C)<br>A 预装的软件 B 数据盘 C 操作系统 D 系统盘</p>
+<p>以下哪些不是针对spec文件的操作命令?      (A B)<br>A cmake B makefile C make D make install</p>
+<p>rpm安装包有哪些优点?      (A B C D)<br>A 提供软件版本资讯，软件名称，软件用途等相关信息，便于了解软件<br>B 内含编译程序，免编译<br>C 使用数据库记录rpm文件的相关参数，便于升级 移除 查询与验证<br>D 预先检查系统版本，可避免文 件被错误安装</p>
+<p>创建C/C++程序性能分析任务时，以下关于分析类型，描述正确的是?      (A B C)<br>A Profile System,即采集整个服务器系统，无需关注系统中有哪些类型的应用在运行，采集时长需要配置参数控制，适用于多业务混合运行和有子进程的场景<br>B Attach to Process,即该采集对象针对正在运行的应用程序，通过关联到运行该应用程序的PID的方式，来实时跟踪和采集该应用程序的性能数据,采集时长需要配置参数控制，适用于某些应用需要长时间持续运行和采集的场景<br>C Launch Application,即采集启动的时候，同时启动Application,采集时长受Appl ication的执行时间来控制，适用于Application运行时间较短的场景<br>D C/C++程序仅支持Launch Application和Attach to Process两种分析类型</p>
+<p>以下哪些属于Dockerfile的指令？      (A B C D)<br>A FROM B CMD C EXPOSE D RUN</p>
+<p>关于使用源码方式安装加速引擎软件，以下说法正确的有哪些?      (A B C D)<br>A 编译安装zlib加速库<br>B 在下载好的源码目录下，使用make命令编译加速器<br>C 编译安装加速器OpenSSL引擎<br>D 编译安装Warpdrive驱动开发库<br>E 安装openssl 111a或以上版本<br>F 安装内核开发包kernel-devel</p>
+<p>同一段C/C++代码，在鲲鹏处理器与x86架构处理器上编译的可执行程序有哪些不同?      (A B)<br>A 指令 B 指令使用的寄存器 C 功能 D 文件结构</p>
+<p>以下关于X6000 V5描述正确的是?      (A C D)<br>A 机框支持2个3000w电源<br>B 每个服务器节点支持3个半高半长标准PCIe插槽<br>C 支持4个半宽双路服务器节点<br>D 每个服务器节点支持16个DDR4 DIM插槽</p>
+<p>以下哪些场景属于数据密集紧耦合场景?      (C D)<br>A 基因测序<br>B 流体动力学<br>C 天气预测<br>D 环境预测</p>
+<p>在PostgreSQL迁移流程中，包含以下哪些步骤?      (A D)<br>A 迁移分析 B 性能测试 C 环境准备 D 源码修改</p>
+<p>通过以下哪些方式可以获取华为鲲鹏系列服务?      (B C)<br>A 购买华为云鲲鹏弹性云服务器<br>B 购买基于x86架构的弹性云服务器<br>C 购买RH服务器<br>D 购买Tai shan服务器</p>
+<p>私有镜像包含以下哪些功能?      (A B C D)<br>A 镜像加密 B 镜像共享 C 镜像导出 D 镜像复制</p>
+<p>在华为公有云中，私有镜像包括?      (B C)<br>A 市场镜像 B 系统镜像 C 数据镜像 D 共享镜像</p>
+<p>docker run -p 6379:6379 v $PWD/data:/data -d t_arm64v8/centos_ redis:505 redis server –appendonly yes关于此命令的描述，以下哪些是正确的?      (B C D)<br>A “6379:6379” :将主机的6379端口映射到容器的6379端口<br>B “appendonly yes”，打开持久化配置<br>C 该命令功能是启动容器，并在容器启动时候执行容器内的redis-server服务<br>D “$PWD/data: /data” :将主机中当前目录下的data挂载到容器的/data</p>
+<p>使用华为鲲鹏代码迁移工具对源码进行扫描分析时，需要进行哪些方面的检查和分析?      (A B C D)<br>A 检查x86平台与鲲鹏平台相异的编译器宏 编译选项 buildin函数 attribute函数等列表<br>B 对比输入的(S0文件名)列表和S0依赖库白名单<br>C 扫描分析用户软件目标二进制文件依赖的源文件集合<br>D 检查Make file中的编译链接</p>
+<p>C/C++语言开发的源码在编译时，以下哪些模块是不需要的？      (B C)<br>A 汇编器 B 存储器 C 加载器 D 编译器</p>
+<p>以下哪些是Tai Shan大数据方案使用的主要服务器型号?      (A B)<br>A 2280均衡型 B 5280存储型 C XA320计算节点 D X6000高密型</p>
+<p>以下关于华为鲲鹏920的特点描述正确的有哪些?      (C D)<br>A 性能可匹配Intel Skylake(V5) 高端处理器型号<br>B CPU最多支持2个100GE网口，支持RoCE特性<br>C 相比同等性能的Intel处理器，功耗更低<br>D 支持8内存通道，带宽高于Intel Skyl ake (V5)的6通道</p>
+<p>BenchmarkSQL配置文件中loadWorkers指的是什么（ ）<br>A、并发用户数<br>B、数据库装载并发数<br>C、数据库并行数<br>D、数据库表的数量<br>答案：B<br>TPCC衡量标准是什么？<br>A、QphH<br>B、响应时间<br>C、tpmC<br>D、TPS<br>答案：C<br>Porting Advisor工具在移植源码过程中的作用是？<br>A、分析源码，并给出移植工作量<br>B、分析源码，并给出分析报告和源码修改建议<br>C、分析源码，并修改源码<br>D、分析源码，并给出性能优化建议<br>答案：B<br>华为鲲鹏BMS云服务器最高可提供多少核？<br>A、32<br>B、48<br>C、62<br>D、128<br>答案：D<br>IMS私有镜像类型不包括以下哪项？<br>A、系统盘镜像<br>B、整体镜像<br>C、数据盘镜像<br>D、整机镜像<br>答案：B<br>可以根据设定的寻路协议实时自动优化网络结构，以保持客户使用的网络持续稳定、高效.这句话是关于以下哪项的描述？<br>A、静态BGP<br>B、全动态BGP<br>C、独享宽带<br>D、共享宽带<br>答案：B<br>以下哪条命令可以查看docker镜像？<br>A、docker images<br>B、docker list<br>C、docker container ls<br>D、docker -a<br>答案：A<br>以下哪个工具可以用于鲲鹏平台上进行代码迁移？<br>A、Tuning kit<br>B、Dependency Advisor<br>C、Porting Advisor<br>D、GCC<br>答案：C<br>Suse操作系统是从哪个版本开始处于Kunpeng 920的OS生态圈？<br>A、SLES 12.3<br>B、SLES 12.4<br>C、SLES 15<br>D、SLES 15.1<br>答案：D<br>以下哪项不是TaiShan服务器的优点？<br>A、国产化，自主安全可控<br>B、多物理核心，并发性能高<br>C、低功耗，绿色节能<br>D、生态完备，上层应用支持好<br>答案：D<br>以下哪个不是华为云鲲鹏生态帮助伙伴/开发者商业变现的方式?<br>A、华为鲲鹏严选馆:鲲鹏应用，优先推荐，快速商业变现<br>B、华为提供鲲鹏人才培养:专业培训，完善的鲲鹏工程师认证体系<br>C、华为提供鲲鹏原厂认证:专业团队，专业工具，1对1技术支持<br>D、华为鲲鹏云专业服务:客户业务系统一站式搬迁服务<br>答案：D<br>金融行业的鲲鹏硬替代应用不包括以下哪项?<br>A、经营分析<br>B、核心应用<br>C、办公支撑<br>D、互联网银行<br>答案：B<br>以下哪种工具可用于制作RPM包?<br>A、rpm-cmake<br>B、rpm make<br>C、rpm-test<br>D、rpm-build<br>答案：D<br>对PostgreSQL的编译参数进行调优时需要在CFLAGS字段中添加哪些选项<br>A、-march= and<br>B、-march=armv8- a+crc+lse<br>C、-march=armv8-a<br>D、march =X86<br>答案：B<br>以下哪个是BenchmarkSQL连接PostgreSQL的配置文件?<br>A、props.mysq1<br>B、props.pg<br>C、props.ora<br>D、props.percona<br>答案：B<br>以下哪种语言的源码文件不能用Porting Advisor迁移工具进行迁移分析?<br>A、C++<br>B、C<br>C、Java<br>D、汇编<br>答案：C<br>在华为云上，通过以下哪种方式或工具可以访问外网?<br>A、弹性公网IP<br>B、云硬盘<br>C、VPC<br>D、镜像<br>答案：A<br>在仅有x86服务器或者云服务器下，如何编译出ARM环境下执行的程序?<br>A、安装交叉编译环境，通过交叉编译环境执行编译<br>B、直接编译<br>C、使用x86下新版本gcc编译<br>D、修改权限编译<br>答案：A<br>关于加密镜像的描述，以下哪项是正确的?<br>A、使用加密的弹性云服务器创建的镜像为加密镜像<br>B、使用加密镜像创建的弹性云服务器不一定被加密<br>C、使用加密的弹性云服务器创建的镜像密钥与加密云服务器的密钥不同<br>D、使用加密的弹性云服务器创建的镜像为非加密镜像<br>答案：A<br>以下关于镜像的描述，不正确的是?<br>A、用户可以快速复制私有镜像，不受region限制<br>B、查询镜像时，支持通过标签过滤查询镜像<br>C、通过导入外部镜像文件创建镜像时，不支持qcow2格式<br>D、支持key-value类型的镜像标签<br>答案：C<br>多选题<br>以下哪些属于华为云鲲鹏伙伴计划？<br>A、鲲鹏凌云伙伴计划<br>B、鲲鹏智数伙伴计划<br>C、鲲鹏展翅伙伴计划<br>D、鲲鹏翱翔伙伴计划<br>答案：ABC<br>以下哪些属于鲲鹏通用解决方案？<br>A、HCSO解决方案<br>B、大数据解决方案<br>C、HPC解决方案<br>D、分布式存储<br>答案：ABCD<br>华为鲲鹏性能优化工具能够提供（ ）方面的性能分析结果<br>A、分析Top热点函数<br>B、分析函数火焰图<br>C、分析热点函数代码映射<br>D、分析不同函数对应top-down模型的各指标值<br>答案：ABCD<br>华为鲲鹏性能优化工具支持从哪些维度分析应用的性能瓶颈？<br>A、C/C++<br>B、Java Mixed-Mode<br>C、Locks and Waits<br>D、LLC&amp;DDR<br>答案：AB<br>下列哪些选项可能会影响WRF性能<br>A、网络带宽<br>B、并行线程数<br>C、内存刷新频率<br>D、存储读写速度<br>答案：ABCD<br>HiBench支持的框架有哪些？<br>A、flinkbench<br>B、hadoopbench<br>C、stormbench<br>D、sparkbench<br>答案：ABCD<br>弱内存序问题主要与如下那些因素相关？<br>A、多线程<br>B、多进程<br>C、不同CPU之间Cache同步<br>D、一级、二级、三级Cache间数据同步<br>E、不同core之间Cache同步<br>答案：ACE<br>在向鲲鹏处理器迁移软件时，以下哪些是可能导致编译错误或告警的原因？<br>A、编译选项<br>B、数据类型不同<br>C、汇编指令<br>D、弱内存序问题<br>答案：ABC<br>关于Docker的镜像仓库，说法正确的是？<br>A、实现Docker镜像的全局存储<br>B、提供API接口<br>C、提供Docker镜像的下载/推送/查询<br>D、可用于租户管理<br>答案：ABCD<br>关于执行命令“docker ps -a”后，显示的标题含义描述，正确的是？<br>A、CONTAINER ID:容器的唯一表示ID<br>B、IMAGE:创建容器时使用的镜像<br>C、COMMAND:容器最后运行的命令<br>D、CREATED:创建容器的时间<br>答案：ABCD<br>华为鲲鹏代码迁移工具能够提供（ ）方面的移植评估结果<br>A、扫描源码中有多少个安装包<br>B、扫描源码中有多少可以移植的依赖库SO文件<br>C、扫描源码中有多少行可以移植的C/C++代码、汇编代码<br>D、预估移植所需的工作量<br>答案：BC<br>华为鲲鹏代码迁移工具适用于以下哪些类型的应用程序？<br>A、C/C++<br>B、Java<br>C、汇编<br>D、Python<br>答案：AC<br>为什么x86架构处理器上的软件在鲲鹏处理器使用时需要移植？<br>A、两种处理器的指令集不同<br>B、源代码需要按照目标处理的指令集编译成指令才能运行<br>C、编译型语言由编译器静态编译成指令和数据<br>D、解释型语言由语言的虚拟机在运行时将源码/字节码编译成指令和数据<br>答案：ABCD<br>TaiShan 200机架服务器包含哪些型号？<br>A、2280<br>B、5280<br>C、2480<br>D、X6000<br>答案：ABC<br>华为鲲鹏920处理器内置了那些加速器？<br>A、.SSL加速引擎<br>B、加解密加速引擎<br>C、压缩解压缩加速引擎<br>D、语音识别加速引擎<br>答案：ABC<br>以下哪些关于华为鲲鹏920处理器的描述是正确的（）？<br>A、最多支持64核<br>B、采用了7nm的制造工艺<br>C、支持PCIe 4.0接口，并兼容PCIe 3.0/2.0/1.0<br>D、支持多种加速器<br>答案：ABCD<br>围绕鲲鹏计算产业，华为提供（ ）支持<br>A、云服务<br>B、工具链<br>C、社区服务<br>D、专业服务<br>答案：ABCD<br>华为鲲鹏计算产业相关产品有哪些？<br>A、华为鲲鹏处理器<br>B、TaiShan服务器<br>C、华为云鲲鹏云服务<br>D、X86服务器<br>答案：ABC<br>以下哪些是鲲鹏社区可以提供的服务？<br>A、获得海量软件的迁移指导<br>B、了解鲲鹏解决方案<br>C、获取最新的鲲鹏咨询<br>D、直接获得社区扶持<br>答案：ABC<br>镜像有哪些类别？<br>A、公共镜像<br>B、自由镜像<br>C、私有镜像<br>D、共享镜像<br>答案：ACD<br>以下哪些子文件包含在rpmbuild文件夹的目录结构中？<br>A、SOURCE<br>B、BUILD<br>C、SPEC<br>D、SRPMS<br>答案：BD<br>以下哪些命令可以安装C语言开发环境？<br>A、apt-get groupinstall build-essential<br>B、apt-get install build-essential<br>C、yum install Development Tools<br>D、yum groupinstall Development Tools<br>答案：BD<br>关于 Dockerfile 的描述，以下哪些是正确的？<br>A、Dockerfile一般包含四部分内容：基础镜像信息、维护者信息、镜像操作指令和容器启动时执行指令<br>B、Dockerfile中，第一条指令必须为 FROM指令<br>C、EXPOSE在Dockerfile中是必选的<br>D、完成Dockerfile编写后，可以通过docker build命令来创建镜像<br>答案：ABD<br>华为鲲鹏云服务包括以下哪些？<br>A、华为鲲鹏裸金属服务器<br>B、鲲鹏弹性云服务器<br>C、鲲鹏容器<br>D、鲲鹏云手机<br>答案：ABCD<br>以下哪些属于华为鲲鹏920芯片的特点？<br>A、集成最多64个自研核<br>B、支持8通道DDR4控制器<br>C、支持CCIX接口<br>D、只支持GE/10GE网络<br>答案：ABC<br>以下哪些属于鲲鹏软件栈发布的五大软件领域？<br>A、操作系统<br>B、游戏软件<br>C、基础软件<br>D、应用软件<br>答案：ACD<br>在BenchmarkSQL连接PostgreSQL前，在PostgreSQL侧需要修改哪些文件<br>A、pg_ident.conf<br>B、PosgreSQL.conf<br>C、pg_hba.conf<br>D、PostgreSQL.auto.conf<br>答案：BC<br>BenchmarkSQL可以对哪些数据库进行测试?<br>A、Post gresSQL<br>B、Oracle<br>C、SQL Server<br>D、MySQL<br>答案：ABCD<br>判断题<br>鲲鹏计算平台已经兼容的操作系统可通过<a href="http://support.huawei.com/onlinetoolweb/ftca/index?serise=9%E9%93%BE%E6%8E%A5%E6%9F%A5%E8%AF%A2">http://support.huawei.com/onlinetoolweb/ftca/index?serise=9链接查询</a> √<br>华为云鲲鹏社区目前是否提供软件下载功能？ √<br>可以执行rpmbuild -ba redis.spec生成二进制文件 ×<br>使用华为鲲鹏性能优化工具对C/C++应用程序进行性能分析时，能够查看到函数源代码、汇编代码，以及函数汇编代码basic block的控制流图 √<br>CPU性能和网络带宽都会影响HPC性能 √<br>纯Java语言开发的代码，无依赖的SO库文件不需要编译，可以直接在JVM（Java虚拟机）中运行 √<br>鲲鹏处理器和x86处理器的add指令是一样的 ×<br>Tune是一种通过非侵入式系统画像的负载感知方法，识别业务并匹配最佳资源模型，实时响应业务特征变化的AI自动调优系统 √<br>Android手机应用在鲲鹏云服务上运行仍需要指令翻译器 ×<br>在BenchmarkSQL的测试结果中，Running Average tpmTOTAL 值和Current tpmTOTAL值越高，表示性能越差. ×<br>Porting Advisor工具界面中的GCC版本需要与后台操作系统中的GCC版本保持一致 ×<br>rpm包中包含所有源代码文件 ×<br>私有镜像不能通过外部镜像文件创建 ×</p>
+]]></content>
       <categories>
         <category>鲲鹏云</category>
       </categories>
