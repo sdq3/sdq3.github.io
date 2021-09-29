@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>归档：2019 -  我叫史迪奇</title>
+	<title>React 受控组件与非受控组件 -  我叫史迪奇</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
@@ -815,520 +815,57 @@ var $main = document.querySelector('.main');
 
 
 
-
 <style>
-.sdq-post {
-	webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-}
-.sdq-post:hover{
-	webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-}
+	#sdqPost:hover{
+   		    background-color: rgba(255, 255, 255, 0.5)!important;
+	}	
 </style>
-
-
-<style>
-@media screen and (max-width: 1024px){
-	.sdq-more{    
-    opacity: 1!important;
-	}
-	.sdq-more{  
-		display: contents!important;	
-	}
-	.sdq-toping{
-		display: inline-block;
-		left: 10px;
-		top: 0;
-		z-index: 2;
-		color: #FFFFFF;
-		padding: 0 10px;
-		border-radius: 4px;
-		font-style: normal;
-		background-color: rgba(234, 67, 74, 0.7);
-	}
-	.sdq-post:hover .sdq-toping {display: inline-block!important;}
-}
-
-@media screen and (min-width: 1024px){
-	.sdq-toping{
-		display: none;
-		position: fixed;
-		left: 10px;
-		top: 0;
-		z-index: 2;color: #FFFFFF;
-		clip-path: polygon(100% 0, 100% 100%, 50% 70%, 0 100%, 0 0);
-		background-color: rgba(255, 0, 0, 0.51);    
-		background: -webkit-gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
-    	background: gradient(linear, left bottom,left top, from(transparent), color-stop(100%, rgba(255, 0, 0, 0.51)));
-		height: 61px;
-		width: 41px;
-	}
-}
-	.sdq-more{   
-	display: inline-block;
-    float: right;
-    background-color: rgba(204, 196, 196, 0.45);
-    padding: .5rem 1rem;
-    border-radius: 4px;
-    color: #919191!important;
-    text-decoration: none;
-    opacity: 0;
-    -webkit-transition: opacity 1.2s;
-    transition: opacity 1.2s;
-    will-change: opacity;
-        -moz-user-select: none; /*火狐*/
-        -webkit-user-select: none; /*webkit浏览器*/
-        -ms-user-select: none; /*IE10*/
-        -khtml-user-select: none; /*早期浏览器*/
-        -o-user-select: none; /* Opera*/
-        user-select: none;
-	}
-	.sdq-post:hover .sdq-more {
-		opacity: 1;
-		animation: fade-in;
-		animation-duration: 0.6s;
-		-webkit-animation: fade-in 0.6s;
-	}
-	
-	@keyframes fade-in {  
-    0% {opacity: 0;}/*初始状态 透明度为0*/  
-    40% {opacity: 0;}/*过渡状态 透明度为0*/  
-    100% {opacity: 1;}/*结束状态 透明度为1*/  
-	}  
-	@-webkit-keyframes fade-in {/*针对webkit内核*/  
-		0% {opacity: 0;}  
-		40% {opacity: 0;}  
-		100% {opacity: 1;}  
-	}  
-	.sdq-post:hover .sdq-toping {display: block;}
-	.sdq-tags{
-	}
-	.sdq-tags a{
-		color: #fff; 
-		font-size: 15px; 
-	}
-	.sdq-tags a {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-	}
-	
-</style>
-
-
-<style>
-	
-@media screen and (min-width: 1024px){
-	.sdq-post:hover{
-   		border: none;
-		transform: translateY(-20px);
-		-webkit-transform: translateY(-20px);
-		-moz-transform: translateY(-20px);
-		background-color: rgba(255, 255, 255, 0.3);
-	}
-	.sdq-post{    
-		padding: 60px 70px!important;
-	}
-}
-	.sdq-post{    
-/*   		border: 1px #b8c7ff solid;*/
-		margin: 0px;    margin-bottom: 20px;
-        background-color: rgba(240, 248, 255, 0.4);
-	}
-</style>
-
-
-
-
-
-
 <div class="sdq">
-	<section class="sdq-posts">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/Hexo-install.html">
-					<div class="sdq-title"> 
-						关于Hexo搭建博客我所踩过的坑和小白安装教程
-					</div>
-				</a>
-			</div>
-			
+	<div class="sdq-post" id="sdqPost">
+		<div class="sdq-title">
+			<h1>React 受控组件与非受控组件</h1>
 		</div>
+	  <div id="post" class="sdq-post-Statistics">
+            <a>2021年09月29日</a>
+		  	<a class="post-count">99 字</a>
+		
+		  <a class=" -link" href="/categories/React/">React</a>
+		
+		
+	  </div>
+		
+		
+<div id="modal" style="display:none">
 
-			<article>
-				
-				<p><strong>搭建博客笔记</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2019年11月29日</a>
-				
-					<a class="category-link" href="/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">搭建博客</a>
-				
-				
-			</div>
-		</div>
-		<a href="/Hexo-install.html"><div class="sdq-more">阅读更多...</div></a>
-		
+<aside id="article-toc" class="fixed-toc">
+    <div id="article-toc-inner">
+        <strong class="sidebar-title">目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%97%E6%8E%A7%E7%BB%84%E4%BB%B6-%E6%8E%A8%E8%8D%90"><span class="toc-text">受控组件 (推荐)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%9E%E5%8F%97%E6%8E%A7%E7%BB%84%E4%BB%B6"><span class="toc-text">非受控组件</span></a></li></ol>
     </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/reptile-jsonpath.html">
-					<div class="sdq-title"> 
-						爬虫 jsonpath模块(吃牢饭集合)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>每天一个入狱小技巧</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2019年04月09日</a>
-				
-					<a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
-				
-				
-			</div>
-		</div>
-		<a href="/reptile-jsonpath.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/reptile-network.html">
-					<div class="sdq-title"> 
-						爬虫 network(牢饭吃到饱)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>每天一个入狱小技巧</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2019年04月08日</a>
-				
-					<a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
-				
-				
-			</div>
-		</div>
-		<a href="/reptile-network.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/reptile-cookie.html">
-					<div class="sdq-title"> 
-						爬虫 cookie(吃牢饭集合)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>每天一个入狱小技巧</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2019年04月08日</a>
-				
-					<a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
-				
-				
-			</div>
-		</div>
-		<a href="/reptile-cookie.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/reptile-bs4-lxml.html">
-					<div class="sdq-title"> 
-						爬虫 Beautiful Soup(牢饭吃到饱)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>每天一个入狱小技巧</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2019年04月08日</a>
-				
-					<a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
-				
-				
-			</div>
-		</div>
-		<a href="/reptile-bs4-lxml.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/reptile-tesseract.html">
-					<div class="sdq-title"> 
-						爬虫 图像识别引擎(牢饭吃到饱)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>每天一个入狱小技巧</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2019年04月08日</a>
-				
-					<a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
-				
-				
-			</div>
-		</div>
-		<a href="/reptile-tesseract.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/reptile-Extraction.html">
-					<div class="sdq-title"> 
-						爬虫 数据提取(吃牢饭集合)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>每天一个入狱小技巧</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2019年04月07日</a>
-				
-					<a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
-				
-				
-			</div>
-		</div>
-		<a href="/reptile-Extraction.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/reptile-state.html">
-					<div class="sdq-title"> 
-						爬虫 状态码(吃牢饭集合)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>每天一个入狱小技巧</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2019年04月07日</a>
-				
-					<a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
-				
-				
-			</div>
-		</div>
-		<a href="/reptile-state.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/reptile-python%E2%80%94node.js.html">
-					<div class="sdq-title"> 
-						爬虫 比Python功能更加强大的node.js简介(牢饭吃到饱)未完待续
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>每天一个入狱小技巧</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2019年04月06日</a>
-				
-					<a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
-				
-				
-			</div>
-		</div>
-		<a href="/reptile-python%E2%80%94node.js.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
-				<a href="/reptile-header.html">
-					<div class="sdq-title"> 
-						爬虫 请求头和响应头(吃牢饭集合)
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>每天一个入狱小技巧</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2019年04月06日</a>
-				
-					<a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
-				
-				
-			</div>
-		</div>
-		<a href="/reptile-header.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-</section>
-	
-
-
-    <nav id="paging">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2019/page/2/">2</a><a class="page-number" href="/archives/2019/page/3/">3</a><a class="extend next" rel="next" href="/archives/2019/page/2/"><i class="sdqMsDanIconFont"></i></a>
-    </nav>
-  
-
-<!--
-        prev_text: '<i class="iconfont">&#xe617;</i>',
-        next_text: '<i class="iconfont">&#xe627;</i>'
--->
+</aside>
 </div>
 
 
+		
+			<a href="#modal" class="second">
+				<div class="i">
+						<i style="font-size:20px" class="sdq3 sdqfasong">
+						<span style="font-size:0px">
+						</i>
+				</div>
+			</a>
+
+
+
+
+<script>
+	$(".second .i").mouseover(function(){
+  $(".second .i span").css("font-size","18px");
+});
+	$(".second .i").mouseleave(function(){
+  $(".second .i span").css("font-size","0px");
+});
+</script>
 
 
 
@@ -1336,6 +873,129 @@ var $main = document.querySelector('.main');
 
 
 
+
+
+
+
+		<div>
+			  <article>
+				<p><strong>React笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="受控组件-推荐"><a href="#受控组件-推荐" class="headerlink" title="受控组件 (推荐)"></a>受控组件 (推荐)</h1><p><strong>特点: 现用现取</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>		//创建组件<br>		class Login extends React.Component&#123;<br>			handleSubmit = (event)=&gt;&#123;<br>				event.preventDefault() //阻止表单提交<br>				const &#123;username,password&#125; = this<br>				alert(`你输入的用户名是：$&#123;username.value&#125;,你输入的密码是：$&#123;password.value&#125;`)<br>			&#125;<br>			render()&#123;<br>				return(<br>					<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">onSubmit</span>=<span class="hljs-string">&#123;this.handleSubmit&#125;</span>&gt;</span><br>						用户名：<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&#123;c</span> =&gt;</span> this.username = c&#125; type=&quot;text&quot; name=&quot;username&quot;/&gt;<br>						密码：<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&#123;c</span> =&gt;</span> this.password = c&#125; type=&quot;password&quot; name=&quot;password&quot;/&gt;<br>						<span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>登录<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>					<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br>				)<br>			&#125;<br>		&#125;<br>		//渲染组件<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">Login</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="非受控组件"><a href="#非受控组件" class="headerlink" title="非受控组件"></a>非受控组件</h1><p><strong>特点: 随着输入维护状态就是受控</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;<br>		<span class="hljs-comment">//创建组件</span><br>		<span class="hljs-keyword">class</span> <span class="hljs-title class_">Login</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">React.Component</span>&#123;<br>			handleSubmit = <span class="hljs-function">(<span class="hljs-params">event</span>)=&gt;</span>&#123;<br>				event.<span class="hljs-title function_">preventDefault</span>() <span class="hljs-comment">//阻止表单提交</span><br>				<span class="hljs-keyword">const</span> &#123;username,password&#125; = <span class="hljs-variable language_">this</span><br>				<span class="hljs-title function_">alert</span>(<span class="hljs-string">`你输入的用户名是：<span class="hljs-subst">$&#123;username.value&#125;</span>,你输入的密码是：<span class="hljs-subst">$&#123;password.value&#125;</span>`</span>)<br>			&#125;<br>			<span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;<br>				<span class="hljs-keyword">return</span>(<br>					&lt;form onSubmit=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">handleSubmit</span>&#125;&gt;<br>						用户名：&lt;input ref=&#123;<span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">username</span> = c&#125; type=<span class="hljs-string">&quot;text&quot;</span> name=<span class="hljs-string">&quot;username&quot;</span>/&gt;<br>						密码：&lt;input ref=&#123;<span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">password</span> = c&#125; type=<span class="hljs-string">&quot;password&quot;</span> name=<span class="hljs-string">&quot;password&quot;</span>/&gt;<br>						&lt;button&gt;登录&lt;/button&gt;<br>					&lt;/form&gt;<br>				)<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//渲染组件</span><br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Login</span>/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test&#x27;</span>))<br>	&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
+
+
+			  </article>
+		</div>
+		
+		
+
+
+		 	
+				<style>
+.veditor {
+    background: url('images/评论区/史迪奇睡觉.gif') no-repeat #fcfcfc!important;
+    background-size: auto 130px!important;
+    background-position: right bottom!important;
+}
+</style>
+<div id="vcomments" class="comment">
+
+</div>
+<script>
+	window.valine = new Valine({
+		el: '#vcomments',
+		appId: 'QqqoNLFAJzeDU9WPBVYk7UBj-MdYXbMMI',
+		appKey: 'hzwk2U93vOE4IdBWQXvda2mJ',
+		avatar: 'robohash',
+		placeholder: '我叫史迪奇',
+		path: window.location.pathname,   //[重点] 记得添加path路径
+		enableQQ:'true'
+	});
+	
+    // 使用方法 https://valine.js.org/quickstart.html
+	/*
+		var $vcomments = document.querySelector('.comment');
+		var $div= document.createElement('div');
+		$div.setAttribute("id","#vcomments");
+		$vcomments.appendChild($div);
+    new Valine({
+        el: '#vcomments',
+        appId: 'QqqoNLFAJzeDU9WPBVYk7UBj-MdYXbMMI',
+        appKey: 'hzwk2U93vOE4IdBWQXvda2mJ',
+		avatar: 'robohash',
+        placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ',
+    });*/
+        //placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ',
+</script>
+
+<script>
+/*//$(function() 
+$(window).load(function(){
+	// 去valine版权
+	$('.info').css("display","none");
+	// 去valine位移
+	$('.vmeta').css("padding-right","66px");
+	$('.vcontrol').css("padding-right","66px");
+	$('.vctrl').css("padding-right","66px");
+	$('#veditor').removeAttr("placeholder");
+	$("#veditor").attr("placeholder","输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写，支持markdown 格式编写 ");
+	$('.v .vwrap .vheader .vinput:nth-child(3)').removeAttr("placeholder");
+	$(".v .vwrap .vheader .vinput:nth-child(3)").attr("placeholder","你的HOME(例：https://www.baidu.com)");
+	$(".info").after(" <p>&copy; </p>");
+});*/
+</script>
+			
+		
+	  
+	
+		
+
+
+<div class="copy">
+<i></i>
+<strong>本文作者：</strong>
+	
+	 
+			史迪奇<br>
+        
+	
+<strong>本文链接：</strong>
+	<a href="https://sdq3.gitee.io/React-Controlled-Uncontrolle.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;React-Controlled-Uncontrolle.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;React-Controlled-Uncontrolle.html</a><br>
+</div>
+
+	  
+	</div>
+</div>
+<script>
+	(function(){
+		var jmz = {};
+		jmz.GetLength = function(str) {
+			var realLength = 0, len = str.length, charCode = -1;
+			for (var i = 0; i < len; i++) {
+				charCode = str.charCodeAt(i);
+				if (charCode >= 0 && charCode <= 128) 
+					  realLength += 1;
+				else
+					  realLength += 1;
+			}
+			return realLength;
+		};
+		//console.log(str);
+		var article = document.querySelector('.sdq-post article').innerHTML.trim();
+
+		var b = article.replace(/<.*?>/ig,"");
+		
+		$('.post-count').html(jmz.GetLength(b)+"字");
+	})()
+
+
+
+</script>
 
 
     				
