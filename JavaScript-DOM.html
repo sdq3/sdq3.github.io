@@ -190,9 +190,9 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>130
+					<span>文章</span>134
 					<span>标签</span>0
-					<span>分类</span>21
+					<span>分类</span>22
 				</div>		
 			<div class="social-btns">
 				
@@ -378,8 +378,15 @@
         
 
         <li>
-          <a href="/categories/小程序开发/">小程序开发</a>
+          <a href="/categories/大数据/">大数据</a>
           <span>1</span>
+        </li>
+
+        
+
+        <li>
+          <a href="/categories/小程序开发/">小程序开发</a>
+          <span>4</span>
         </li>
 
         
@@ -439,23 +446,23 @@
       <ul>
         
           <li>
+            <a href="/Applet-logic-interface.html">小程序 逻辑与界面(快速入门)</a>
+          </li>
+        
+          <li>
+            <a href="/Applet-WXML-WXSS-JS%E2%80%94JSON.html">小程序 页面结构(快速入门)</a>
+          </li>
+        
+          <li>
+            <a href="/Big-data-analyst.html">大数据分析师 (比赛)</a>
+          </li>
+        
+          <li>
+            <a href="/Applet-WXML.html">小程序 模板语法</a>
+          </li>
+        
+          <li>
             <a href="/React-Controlled-Uncontrolle.html">React 受控组件与非受控组件</a>
-          </li>
-        
-          <li>
-            <a href="/ES6-Arrow-function.html">ES6 箭头函数</a>
-          </li>
-        
-          <li>
-            <a href="/Three.js-vector.html">Three.js 向量</a>
-          </li>
-        
-          <li>
-            <a href="/Applet-Global-profile.html">小程序 全局配置文件</a>
-          </li>
-        
-          <li>
-            <a href="/React-state-props-refs.html">React 组件实例的三大属性</a>
           </li>
         
       </ul>
@@ -906,12 +913,14 @@ var $main = document.querySelector('.main');
 
 <p><strong>然后浏览器输入来实现 创建效果</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs HTML">// 创建style<br>document.getElementsByTagName(&#x27;head&#x27;)[0].appendChild(style)<br></code></pre></td></tr></table></figure>
-<h2 id="操作表单-验证"><a href="#操作表单-验证" class="headerlink" title="操作表单 (验证)"></a>操作表单 (验证)</h2><pre><code>+ 文本框 text
-+ 下拉框 &lt;select&gt;
-+ 单选框 radio
-+ 多选框 checkbox
-+ 隐藏域 hidden
-+ 密码框  password</code></pre>
+<h2 id="操作表单-验证"><a href="#操作表单-验证" class="headerlink" title="操作表单 (验证)"></a>操作表单 (验证)</h2><ul>
+<li>文本框 text</li>
+<li>下拉框 <select></select></li>
+<li>单选框 radio</li>
+<li>多选框 checkbox</li>
+<li>隐藏域 hidden</li>
+<li>密码框  password</li>
+</ul>
 <h3 id="获得提交的信息"><a href="#获得提交的信息" class="headerlink" title="获得提交的信息"></a>获得提交的信息</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&lt;form action=<span class="hljs-string">&quot;list&quot;</span>&gt;<br>&lt;p&gt;<br>    &lt;span&gt;实验品编号: &lt;/span&gt;<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;name&quot;</span>&gt;</span></span><br>&lt;/p&gt;<br>    &lt;!-- 多选框的值, 就是定义好value --&gt;<br>    &lt;p&gt;<br>        &lt;span&gt;实验品编号: &lt;/span&gt;<br>        &lt;input type=<span class="hljs-string">&quot;radio&quot;</span> name=<span class="hljs-string">&quot;See&quot;</span> vlaue=<span class="hljs-string">&quot;Yes&quot;</span> id=<span class="hljs-string">&quot;Yes&quot;</span>&gt;有看过<br>        &lt;input type=<span class="hljs-string">&quot;radio&quot;</span> name=<span class="hljs-string">&quot;See&quot;</span> vlaue=<span class="hljs-string">&quot;No&quot;</span> id=<span class="hljs-string">&quot;No&quot;</span>&gt;没看过<br>    &lt;/p&gt;<br><br>&lt;/div&gt;<br><br>&lt;script&gt;<br>    <span class="hljs-keyword">var</span> <span class="hljs-title class_">See</span> = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;name&quot;</span>)<br>    <span class="hljs-keyword">var</span> <span class="hljs-title class_">Yes</span> = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;Yes&quot;</span>)<br>    <span class="hljs-keyword">var</span> <span class="hljs-variable constant_">NO</span> = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createRlement</span>(<span class="hljs-string">&quot;No&quot;</span>)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
 <p><strong>然后浏览器输入来实现 创建效果</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs HTML">// 得到输入框的值<br>See.value<br>// 修改输入框的值<br>See.value = &#x27;333&#x27;<br></code></pre></td></tr></table></figure>
