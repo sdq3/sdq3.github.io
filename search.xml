@@ -683,22 +683,6 @@ var tools = (function(){
       </categories>
   </entry>
   <entry>
-    <title>CSS 伪类选择器</title>
-    <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
-    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$ &lt;style&gt;<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:first</span>-child&#123;   //first-child意思是选中第一个<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:last-child</span>&#123;   //last-child意思是选中最后一个<br>      <span class="hljs-attribute">color</span>: blue;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:nth-child</span>(<span class="hljs-number">2</span>)&#123;   //选中p1: 定位到父元素, 选择当前的第一个元素也就是选择当前p元素的父级元素, 选中父级元素的第一个, 并且是当前元素才生效<br>      <span class="hljs-attribute">color</span>: yellow;   //黄色字体<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:last-child</span>&#123;   //last-child意思是选中最后一个<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:nth-of-type</span>(<span class="hljs-number">2</span>)&#123;   //nth-of-type意思是选中父类下元素的第二个类型<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>$ &lt;/style&gt;<br>$ &lt;body&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p1&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p2&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p3&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">ul</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇骑士&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇打手&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇国王&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">ul</span>&gt;<br>$ &lt;/body&gt;<br></code></pre></td></tr></table></figure>
-
-
-
-
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>CSS 三种基本选择器</title>
     <url>/CSS-selector.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
@@ -716,6 +700,22 @@ var tools = (function(){
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><strong>标签选择器: 选择一类标签 标签名{}</strong></p>
 <p><strong>类/class选择器: 选择所有的class属性一致的标签, 跨标签 .类名{}</strong></p>
 <p><strong>id选择器: 全局唯一 id名{}</strong></p>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>CSS 伪类选择器</title>
+    <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$ &lt;style&gt;<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:first</span>-child&#123;   //first-child意思是选中第一个<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:last-child</span>&#123;   //last-child意思是选中最后一个<br>      <span class="hljs-attribute">color</span>: blue;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:nth-child</span>(<span class="hljs-number">2</span>)&#123;   //选中p1: 定位到父元素, 选择当前的第一个元素也就是选择当前p元素的父级元素, 选中父级元素的第一个, 并且是当前元素才生效<br>      <span class="hljs-attribute">color</span>: yellow;   //黄色字体<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:last-child</span>&#123;   //last-child意思是选中最后一个<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:nth-of-type</span>(<span class="hljs-number">2</span>)&#123;   //nth-of-type意思是选中父类下元素的第二个类型<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>$ &lt;/style&gt;<br>$ &lt;body&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p1&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p2&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p3&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">ul</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇骑士&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇打手&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇国王&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">ul</span>&gt;<br>$ &lt;/body&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+
 ]]></content>
       <categories>
         <category>CSS</category>
@@ -1035,6 +1035,21 @@ $</style>
 <h1 id="git-分支查看与切换"><a href="#git-分支查看与切换" class="headerlink" title="git 分支查看与切换"></a>git 分支查看与切换</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">查看所有分支</span><br>git branch -a<br><br><span class="hljs-meta"># </span><span class="language-bash">查看当前使用分支(结果列表中前面标*号的表示当前使用分支)</span><br>git branch<br><br><span class="hljs-meta"># </span><span class="language-bash">切换分支</span><br>git checkout [分支名]<br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Git</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>HTML iframe内联框架</title>
+    <url>/HTML-iframe.html</url>
+    <content><![CDATA[<p><strong>HTML个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;path&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;mainFrame&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;mainFrame&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><strong>其中path是引用页面地址 mainFrame是框架标识名</strong></p>
+<h1 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h1><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;demo_iframe.html&quot;</span> <span class="hljs-attr">frameborder</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;xxx/xxx.html&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>HTML</category>
       </categories>
   </entry>
   <entry>
@@ -1378,21 +1393,6 @@ $</style>
       </categories>
   </entry>
   <entry>
-    <title>HTML iframe内联框架</title>
-    <url>/HTML-iframe.html</url>
-    <content><![CDATA[<p><strong>HTML个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;path&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;mainFrame&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;mainFrame&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p><strong>其中path是引用页面地址 mainFrame是框架标识名</strong></p>
-<h1 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h1><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;demo_iframe.html&quot;</span> <span class="hljs-attr">frameborder</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h1 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;xxx/xxx.html&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>HTML</category>
-      </categories>
-  </entry>
-  <entry>
     <title>HTML 表格</title>
     <url>/HTML-form.html</url>
     <content><![CDATA[<p><strong>HTML个人整理</strong></p>
@@ -1527,47 +1527,6 @@ $</style>
       </categories>
   </entry>
   <entry>
-    <title>JavaScript BOM</title>
-    <url>/JavaScript-BOM.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="window"><a href="#window" class="headerlink" title="window"></a>window</h1><p><strong>作用: 有关浏览器窗口</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">alert</span>(<span class="hljs-number">1</span>)<br>undefind<br><span class="hljs-variable language_">window</span>.<span class="hljs-property">innerHeight</span><br><span class="hljs-number">790</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-property">innerWidth</span><br><span class="hljs-number">918</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-property">outerHeight</span><br><span class="hljs-number">28</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-property">outerWidth</span><br><span class="hljs-number">160</span><br></code></pre></td></tr></table></figure>
-<h1 id="Navigator"><a href="#Navigator" class="headerlink" title="Navigator"></a>Navigator</h1><p><strong>作用: 封装浏览器信息</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">navigator.<span class="hljs-property">appName</span><br><span class="hljs-string">&quot;Netscape&quot;</span><br>navigator.<span class="hljs-property">appVersion</span><br><span class="hljs-string">&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36&quot;</span><br>navigator.<span class="hljs-property">userAgent</span><br><span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36&quot;</span><br>navigator.<span class="hljs-property">platform</span><br><span class="hljs-string">&quot;Win32&quot;</span><br></code></pre></td></tr></table></figure>
-<h1 id="screen"><a href="#screen" class="headerlink" title="screen"></a>screen</h1><p><strong>作用: 代表屏幕尺寸</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">screen.<span class="hljs-property">width</span><br><span class="hljs-number">1536</span><br>screen.<span class="hljs-property">height</span><br><span class="hljs-number">864</span><br></code></pre></td></tr></table></figure>
-<h1 id="location-重要"><a href="#location-重要" class="headerlink" title="location (重要)"></a>location (重要)</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 主机</span><br><span class="hljs-attr">host</span>: <span class="hljs-string">&quot;www.baidu.com&quot;</span><br><span class="hljs-comment">// 当前指向的位置</span><br><span class="hljs-attr">href</span>: <span class="hljs-string">&quot;http://www.baidu.com/&quot;</span><br><span class="hljs-comment">// 协议</span><br><span class="hljs-attr">protocol</span>: <span class="hljs-string">&quot;http:&quot;</span><br><span class="hljs-comment">//重新加载/刷新</span><br><span class="hljs-attr">reload</span>: ƒ <span class="hljs-title function_">reload</span>()<br><span class="hljs-comment">// 设置新的地址</span><br>location.<span class="hljs-title function_">assign</span>(<span class="hljs-string">&#x27;https://sdq3.gitee.io/&#x27;</span>)<br></code></pre></td></tr></table></figure>
-<h1 id="document"><a href="#document" class="headerlink" title="document"></a>document</h1><p><strong>document 表示当前页面, HTML DOM文档树</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-variable language_">document</span>.<span class="hljs-property">title</span><br><span class="hljs-string">&quot;百度一下，你就知道&quot;</span><br><span class="hljs-variable language_">document</span>.<span class="hljs-property">title</span> = <span class="hljs-string">&quot;我叫史迪奇&quot;</span><br><span class="hljs-string">&quot;我叫史迪奇&quot;</span><br></code></pre></td></tr></table></figure>
-<p><strong>获取具体的文档树节点</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">dl</span> <span class="hljs-attr">id</span> =<span class="hljs-string">&quot;app&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>史迪奇国王<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>史迪奇骑士<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dl</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>    var dl = document.getElementById(&#x27;app&#x27;)<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p><strong>获取cookie</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span><br><span class="hljs-string">&quot;BIDUPSID=EC9E21CA08B01D9E2E577F635293067...&quot;</span><br></code></pre></td></tr></table></figure>
-<p><strong>劫持cookie原理</strong><br>    + 劫持cookie: 获取你的cookie然后上传的它的服务器<br>    + 预防: 服务器端设置 cokie: httpOnly</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;script src=<span class="hljs-string">&quot;sdq.js&quot;</span>&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure>
-<h1 id="history"><a href="#history" class="headerlink" title="history"></a>history</h1><p><strong>代表浏览器的历史记录</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 前进</span><br>history.<span class="hljs-title function_">forward</span>()<br><span class="hljs-comment">// 返回</span><br>history.<span class="hljs-title function_">back</span>()<br></code></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
     <title>JavaScript jQuery</title>
     <url>/JavaScript-jQuery.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
@@ -1643,6 +1602,47 @@ $</style>
 </body>
 
 </html>
+
+
+
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript BOM</title>
+    <url>/JavaScript-BOM.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="window"><a href="#window" class="headerlink" title="window"></a>window</h1><p><strong>作用: 有关浏览器窗口</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">alert</span>(<span class="hljs-number">1</span>)<br>undefind<br><span class="hljs-variable language_">window</span>.<span class="hljs-property">innerHeight</span><br><span class="hljs-number">790</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-property">innerWidth</span><br><span class="hljs-number">918</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-property">outerHeight</span><br><span class="hljs-number">28</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-property">outerWidth</span><br><span class="hljs-number">160</span><br></code></pre></td></tr></table></figure>
+<h1 id="Navigator"><a href="#Navigator" class="headerlink" title="Navigator"></a>Navigator</h1><p><strong>作用: 封装浏览器信息</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">navigator.<span class="hljs-property">appName</span><br><span class="hljs-string">&quot;Netscape&quot;</span><br>navigator.<span class="hljs-property">appVersion</span><br><span class="hljs-string">&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36&quot;</span><br>navigator.<span class="hljs-property">userAgent</span><br><span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36&quot;</span><br>navigator.<span class="hljs-property">platform</span><br><span class="hljs-string">&quot;Win32&quot;</span><br></code></pre></td></tr></table></figure>
+<h1 id="screen"><a href="#screen" class="headerlink" title="screen"></a>screen</h1><p><strong>作用: 代表屏幕尺寸</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">screen.<span class="hljs-property">width</span><br><span class="hljs-number">1536</span><br>screen.<span class="hljs-property">height</span><br><span class="hljs-number">864</span><br></code></pre></td></tr></table></figure>
+<h1 id="location-重要"><a href="#location-重要" class="headerlink" title="location (重要)"></a>location (重要)</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 主机</span><br><span class="hljs-attr">host</span>: <span class="hljs-string">&quot;www.baidu.com&quot;</span><br><span class="hljs-comment">// 当前指向的位置</span><br><span class="hljs-attr">href</span>: <span class="hljs-string">&quot;http://www.baidu.com/&quot;</span><br><span class="hljs-comment">// 协议</span><br><span class="hljs-attr">protocol</span>: <span class="hljs-string">&quot;http:&quot;</span><br><span class="hljs-comment">//重新加载/刷新</span><br><span class="hljs-attr">reload</span>: ƒ <span class="hljs-title function_">reload</span>()<br><span class="hljs-comment">// 设置新的地址</span><br>location.<span class="hljs-title function_">assign</span>(<span class="hljs-string">&#x27;https://sdq3.gitee.io/&#x27;</span>)<br></code></pre></td></tr></table></figure>
+<h1 id="document"><a href="#document" class="headerlink" title="document"></a>document</h1><p><strong>document 表示当前页面, HTML DOM文档树</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-variable language_">document</span>.<span class="hljs-property">title</span><br><span class="hljs-string">&quot;百度一下，你就知道&quot;</span><br><span class="hljs-variable language_">document</span>.<span class="hljs-property">title</span> = <span class="hljs-string">&quot;我叫史迪奇&quot;</span><br><span class="hljs-string">&quot;我叫史迪奇&quot;</span><br></code></pre></td></tr></table></figure>
+<p><strong>获取具体的文档树节点</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">dl</span> <span class="hljs-attr">id</span> =<span class="hljs-string">&quot;app&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>史迪奇国王<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>史迪奇骑士<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dl</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>    var dl = document.getElementById(&#x27;app&#x27;)<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><strong>获取cookie</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span><br><span class="hljs-string">&quot;BIDUPSID=EC9E21CA08B01D9E2E577F635293067...&quot;</span><br></code></pre></td></tr></table></figure>
+<p><strong>劫持cookie原理</strong><br>    + 劫持cookie: 获取你的cookie然后上传的它的服务器<br>    + 预防: 服务器端设置 cokie: httpOnly</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;script src=<span class="hljs-string">&quot;sdq.js&quot;</span>&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h1 id="history"><a href="#history" class="headerlink" title="history"></a>history</h1><p><strong>代表浏览器的历史记录</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 前进</span><br>history.<span class="hljs-title function_">forward</span>()<br><span class="hljs-comment">// 返回</span><br>history.<span class="hljs-title function_">back</span>()<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1835,7 +1835,7 @@ $</style>
   </entry>
   <entry>
     <title>JavaScript 函数的定义和参数获取</title>
-    <url>/JavaScript-function.html</url>
+    <url>/JavaScript-definition-obtain.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
 <a id="more"></a>
 
@@ -1856,7 +1856,7 @@ $</style>
   </entry>
   <entry>
     <title>JavaScript 函数的定义和参数获取</title>
-    <url>/JavaScript-definition-obtain.html</url>
+    <url>/JavaScript-function.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
 <a id="more"></a>
 
@@ -1932,6 +1932,29 @@ $</style>
       </categories>
   </entry>
   <entry>
+    <title>JavaScript 数据类型之(对象)</title>
+    <url>/JavaScript-object.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象"><a href="#JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象" class="headerlink" title="JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象"></a>JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> 对象名 = &#123;    <br>    属性名: 属性值<br>    属性名: 属性值<br>    属性名: 属性值<br>$ &#125; <br>$<br>$ <span class="hljs-comment">/*通过下标取值和赋值*/</span><br>$ <span class="hljs-keyword">var</span> person = &#123;<br>   <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;sdq&quot;</span>,<br>   <span class="hljs-attr">age</span>: <span class="hljs-number">3</span>,<br>   <span class="hljs-attr">email</span>: <span class="hljs-string">&quot;???????@???&quot;</span><br>   <span class="hljs-attr">score</span>: <span class="hljs-number">0</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>若干个键值对 js中对象, {…..}表示一个对象, 键值对描述属性xxxx: xxxx, 多个属性之间使用逗号隔开, 最后一个属性不加逗号</strong></p>
+<h1 id="对象赋值"><a href="#对象赋值" class="headerlink" title="对象赋值"></a>对象赋值</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-property">name</span> = <span class="hljs-string">&quot;sdq&quot;</span>      <span class="hljs-comment">/*这里赋值sdq*/</span><br>person.<span class="hljs-property">name</span>              <span class="hljs-comment">/*这里输出sdq*/</span><br></code></pre></td></tr></table></figure>
+<h1 id="undefined-使用不存在对象-不会报错"><a href="#undefined-使用不存在对象-不会报错" class="headerlink" title="undefined 使用不存在对象, 不会报错"></a>undefined 使用不存在对象, 不会报错</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-property">sdz</span><br><span class="hljs-literal">undefined</span><br></code></pre></td></tr></table></figure>
+<h1 id="delete-动态的删减属性"><a href="#delete-动态的删减属性" class="headerlink" title="delete 动态的删减属性"></a>delete 动态的删减属性</h1><p><strong>例子</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">$ <span class="hljs-keyword">delete</span> person.<span class="hljs-property">name</span><br>$ <span class="hljs-literal">true</span><br>$ person<br></code></pre></td></tr></table></figure>
+<h1 id="动态的添加给新的属性添加值"><a href="#动态的添加给新的属性添加值" class="headerlink" title="动态的添加给新的属性添加值"></a>动态的添加给新的属性添加值</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-property">sdq</span> = <span class="hljs-string">&quot;sdz&quot;</span>  <span class="hljs-comment">/*这里赋值sdz*/</span><br>person      <br></code></pre></td></tr></table></figure>
+<h1 id="判断属性值是否在这个对象-属性值是否在这个对象"><a href="#判断属性值是否在这个对象-属性值是否在这个对象" class="headerlink" title="判断属性值是否在这个对象  属性值是否在这个对象"></a>判断属性值是否在这个对象  属性值是否在这个对象</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-string">&quot;sdq&quot;</span> <span class="hljs-keyword">in</span> person        <br><span class="hljs-literal">true</span>         <br><span class="hljs-string">&quot;sdqz&quot;</span> <span class="hljs-keyword">in</span> person   <br><span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
+<h1 id="判断属性是否是这个对象自身拥有的-hasOwnProperty"><a href="#判断属性是否是这个对象自身拥有的-hasOwnProperty" class="headerlink" title="判断属性是否是这个对象自身拥有的 hasOwnProperty()"></a>判断属性是否是这个对象自身拥有的 hasOwnProperty()</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-title function_">hasOwnProperty</span>(<span class="hljs-string">&quot;toString&quot;</span>)<br><span class="hljs-literal">false</span>       <br>person.<span class="hljs-title function_">hasOwnProperty</span>(<span class="hljs-string">&quot;sdq&quot;</span>)<br><span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
     <title>JavaScript 面向对象</title>
     <url>/JavaScript-object-oriented.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
@@ -1984,29 +2007,6 @@ $</style>
 <h1 id="join-连接符"><a href="#join-连接符" class="headerlink" title="join 连接符"></a>join 连接符</h1><p><strong>例子</strong></p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">(<span class="hljs-number">3</span>)[<span class="hljs-string">&quot;C&quot;</span>,<span class="hljs-string">&quot;B&quot;</span>,<span class="hljs-string">&quot;A&quot;</span>] <br>arr.<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27;-&#x27;</span>)         <span class="hljs-comment">/*使用特定的字符串连接*/</span>   <br><span class="hljs-comment">/*结果输出&quot;C-B-A&quot;*/</span>       <br></code></pre></td></tr></table></figure>
 <h1 id="多位数组"><a href="#多位数组" class="headerlink" title="多位数组"></a>多位数组</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">arr = [[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>],[<span class="hljs-string">&quot;5&quot;</span>,<span class="hljs-string">&quot;6&quot;</span>]];<br>arr[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]   <br><span class="hljs-comment">/*结果输出4*/</span>  <br></code></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript 数据类型之(对象)</title>
-    <url>/JavaScript-object.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象"><a href="#JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象" class="headerlink" title="JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象"></a>JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> 对象名 = &#123;    <br>    属性名: 属性值<br>    属性名: 属性值<br>    属性名: 属性值<br>$ &#125; <br>$<br>$ <span class="hljs-comment">/*通过下标取值和赋值*/</span><br>$ <span class="hljs-keyword">var</span> person = &#123;<br>   <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;sdq&quot;</span>,<br>   <span class="hljs-attr">age</span>: <span class="hljs-number">3</span>,<br>   <span class="hljs-attr">email</span>: <span class="hljs-string">&quot;???????@???&quot;</span><br>   <span class="hljs-attr">score</span>: <span class="hljs-number">0</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<p><strong>若干个键值对 js中对象, {…..}表示一个对象, 键值对描述属性xxxx: xxxx, 多个属性之间使用逗号隔开, 最后一个属性不加逗号</strong></p>
-<h1 id="对象赋值"><a href="#对象赋值" class="headerlink" title="对象赋值"></a>对象赋值</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-property">name</span> = <span class="hljs-string">&quot;sdq&quot;</span>      <span class="hljs-comment">/*这里赋值sdq*/</span><br>person.<span class="hljs-property">name</span>              <span class="hljs-comment">/*这里输出sdq*/</span><br></code></pre></td></tr></table></figure>
-<h1 id="undefined-使用不存在对象-不会报错"><a href="#undefined-使用不存在对象-不会报错" class="headerlink" title="undefined 使用不存在对象, 不会报错"></a>undefined 使用不存在对象, 不会报错</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-property">sdz</span><br><span class="hljs-literal">undefined</span><br></code></pre></td></tr></table></figure>
-<h1 id="delete-动态的删减属性"><a href="#delete-动态的删减属性" class="headerlink" title="delete 动态的删减属性"></a>delete 动态的删减属性</h1><p><strong>例子</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">$ <span class="hljs-keyword">delete</span> person.<span class="hljs-property">name</span><br>$ <span class="hljs-literal">true</span><br>$ person<br></code></pre></td></tr></table></figure>
-<h1 id="动态的添加给新的属性添加值"><a href="#动态的添加给新的属性添加值" class="headerlink" title="动态的添加给新的属性添加值"></a>动态的添加给新的属性添加值</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-property">sdq</span> = <span class="hljs-string">&quot;sdz&quot;</span>  <span class="hljs-comment">/*这里赋值sdz*/</span><br>person      <br></code></pre></td></tr></table></figure>
-<h1 id="判断属性值是否在这个对象-属性值是否在这个对象"><a href="#判断属性值是否在这个对象-属性值是否在这个对象" class="headerlink" title="判断属性值是否在这个对象  属性值是否在这个对象"></a>判断属性值是否在这个对象  属性值是否在这个对象</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-string">&quot;sdq&quot;</span> <span class="hljs-keyword">in</span> person        <br><span class="hljs-literal">true</span>         <br><span class="hljs-string">&quot;sdqz&quot;</span> <span class="hljs-keyword">in</span> person   <br><span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
-<h1 id="判断属性是否是这个对象自身拥有的-hasOwnProperty"><a href="#判断属性是否是这个对象自身拥有的-hasOwnProperty" class="headerlink" title="判断属性是否是这个对象自身拥有的 hasOwnProperty()"></a>判断属性是否是这个对象自身拥有的 hasOwnProperty()</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-title function_">hasOwnProperty</span>(<span class="hljs-string">&quot;toString&quot;</span>)<br><span class="hljs-literal">false</span>       <br>person.<span class="hljs-title function_">hasOwnProperty</span>(<span class="hljs-string">&quot;sdq&quot;</span>)<br><span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
 
 
 
@@ -2237,6 +2237,26 @@ $
       </categories>
   </entry>
   <entry>
+    <title>React Props</title>
+    <url>/React-Props.html</url>
+    <content><![CDATA[<p><strong>React笔记</strong></p>
+<a id="more"></a>
+
+<h3 id="state-和-props-主要的区别在于-props-是不可变的-而-state-可以根据与用户交互来改变-这就是为什么有些容器组件需要定义-state-来更新和修改数据-而子组件只能通过-props-来传递数据"><a href="#state-和-props-主要的区别在于-props-是不可变的-而-state-可以根据与用户交互来改变-这就是为什么有些容器组件需要定义-state-来更新和修改数据-而子组件只能通过-props-来传递数据" class="headerlink" title="state 和 props 主要的区别在于 props 是不可变的,  而 state 可以根据与用户交互来改变  这就是为什么有些容器组件需要定义 state 来更新和修改数据, 而子组件只能通过 props 来传递数据"></a>state 和 props 主要的区别在于 props 是不可变的,  而 state 可以根据与用户交互来改变  这就是为什么有些容器组件需要定义 state 来更新和修改数据, 而子组件只能通过 props 来传递数据</h3><h1 id="最基本的使用-Props"><a href="#最基本的使用-Props" class="headerlink" title="最基本的使用 Props"></a>最基本的使用 Props</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function MyNameIsStitch(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫 &#123;props.name&#125;!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br><br>const element = <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;史迪奇&quot;</span>/&gt;</span>;<br><br>ReactDOM.render(<br>	element,<br>	document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+<h1 id="默认-Props"><a href="#默认-Props" class="headerlink" title="默认 Props"></a>默认 Props</h1><p><strong>解析: 通过组件类的 defaultProps 属性为 props 设置默认值</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>class MyNameIsStitch extends React.Component &#123;<br>  render() &#123;<br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫&#123;this.props.name&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br><br>MyNameIsStitch.defaultProps = &#123;<br>  name: &#x27;史迪奇&#x27;<br>&#125;;<br><br>const element = <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>;<br><br>ReactDOM.render(<br>  element,<br>  document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="State-和-Props"><a href="#State-和-Props" class="headerlink" title="State 和 Props"></a>State 和 Props</h1><p><strong>解析: 父组件中设置 state 并通过在子组件上使用 props 将其传递到子组件上</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br><br>class WebSite extends React.Component &#123;<br>  constructor() &#123;<br>      super();<br><br>      this.state = &#123;<br>        name: &quot;我叫史迪奇&quot;,<br>        site: &quot;https://sdq3.gitee.io&quot;<br>      &#125;<br>    &#125;<br>  render() &#123;<br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">Name</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&#123;this.state.name&#125;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">Site</span> <span class="hljs-attr">site</span>=<span class="hljs-string">&#123;this.state.site&#125;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br><br><br><br>class Name extends React.Component &#123;<br>  render() &#123;<br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>&#123;this.props.name&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br> <br>class Site extends React.Component &#123;<br>  render() &#123;<br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&#123;this.props.site&#125;</span>&gt;</span><br>        &#123;this.props.site&#125;<br>      <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br> <br>ReactDOM.render(<br>  <span class="hljs-tag">&lt;<span class="hljs-name">WebSite</span> /&gt;</span>,<br>  document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="Props-验证"><a href="#Props-验证" class="headerlink" title="Props 验证"></a>Props 验证</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>var title = &quot;史迪奇&quot;;<br><br>class MyNameIsStitch extends React.Component &#123;<br>  render() &#123;<br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫&#123;this.props.title&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br><br>MyNameIsStitch.propTypes = &#123;<br>  title: PropTypes.string<br>&#125;;<br>ReactDOM.render(<br>    <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&#123;title&#125;</span> /&gt;</span>,<br>    document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="更多验证器"><a href="#更多验证器" class="headerlink" title="更多验证器"></a>更多验证器</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-title class_">MyComponent</span>.<span class="hljs-property">propTypes</span> = &#123;<br>   &#123;<span class="hljs-comment">/*  可以声明 prop 为指定的 JS 基本数据类型, 默认情况, 这些数据是可选的  */</span>&#125;<br>   <span class="hljs-attr">optionalArray</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">array</span>,<br>    <span class="hljs-attr">optionalBool</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">bool</span>,<br>    <span class="hljs-attr">optionalFunc</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">func</span>,<br>    <span class="hljs-attr">optionalNumber</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">number</span>,<br>    <span class="hljs-attr">optionalObject</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">object</span>,<br>    <span class="hljs-attr">optionalString</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">string</span>,<br> <br>     可以被渲染的对象 numbers, strings, elements 或 array<br>    <span class="hljs-attr">optionalNode</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">node</span>,<br> <br>    &#123;<span class="hljs-comment">/*  React 元素  */</span>&#125; <br>    <span class="hljs-attr">optionalElement</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">element</span>,<br> <br>    &#123;<span class="hljs-comment">/*  用 JS 的 instanceof 操作符声明 prop 为类的实例  */</span>&#125; <br>    <span class="hljs-attr">optionalMessage</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-title function_">instanceOf</span>(<span class="hljs-title class_">Message</span>),<br> <br>    &#123;<span class="hljs-comment">/*  用 enum 来限制 prop 只接受指定的值  */</span>&#125; <br>    <span class="hljs-attr">optionalEnum</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-title function_">oneOf</span>([<span class="hljs-string">&#x27;News&#x27;</span>, <span class="hljs-string">&#x27;Photos&#x27;</span>]),<br> <br>    &#123;<span class="hljs-comment">/*  可以是多个对象类型中的一个  */</span>&#125; <br>    <span class="hljs-attr">optionalUnion</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-title function_">oneOfType</span>([<br>      <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">string</span>,<br>      <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">number</span>,<br>      <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-title function_">instanceOf</span>(<span class="hljs-title class_">Message</span>)<br>    ]),<br> <br>    &#123;<span class="hljs-comment">/*  指定类型组成的数组  */</span>&#125; <br>    <span class="hljs-attr">optionalArrayOf</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-title function_">arrayOf</span>(<span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">number</span>),<br> <br>    &#123;<span class="hljs-comment">/*  指定类型的属性构成的对象  */</span>&#125; <br>    <span class="hljs-attr">optionalObjectOf</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-title function_">objectOf</span>(<span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">number</span>),<br> <br>    &#123;<span class="hljs-comment">/*  特定 shape 参数的对象  */</span>&#125; <br>    <span class="hljs-attr">optionalObjectWithShape</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-title function_">shape</span>(&#123;<br>      <span class="hljs-attr">color</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">string</span>,<br>      <span class="hljs-attr">fontSize</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">number</span><br>    &#125;),<br> <br>    &#123;<span class="hljs-comment">/*  任意类型加上 `isRequired` 来使 prop 不可空  */</span>&#125; <br>    <span class="hljs-attr">requiredFunc</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">func</span>.<span class="hljs-property">isRequired</span>,<br> <br>    &#123;<span class="hljs-comment">/*  不可空的任意类型  */</span>&#125; <br>    <span class="hljs-attr">requiredAny</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">any</span>.<span class="hljs-property">isRequired</span>,<br> <br>    &#123;<span class="hljs-comment">/*  自定义验证器如果验证失败需要返回一个 Error 对象不要直接使用 `console.warn` 或抛异常, 因为这样 `oneOfType` 会失效  */</span>&#125; <br>    <span class="hljs-attr">customProp</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">props, propName, componentName</span>) &#123;<br>      <span class="hljs-keyword">if</span> (!<span class="hljs-regexp">/matchme/</span>.<span class="hljs-title function_">test</span>(props[propName])) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">&#x27;Validation failed!&#x27;</span>);<br>      &#125;<br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>React</category>
+      </categories>
+  </entry>
+  <entry>
     <title>React Refs</title>
     <url>/React-Refs.html</url>
     <content><![CDATA[<p><strong>React笔记</strong></p>
@@ -2253,26 +2273,6 @@ $
 
 
 ]]></content>
-      <categories>
-        <category>React</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>React Props</title>
-    <url>/React-Props.html</url>
-    <content><![CDATA[<p><strong>React笔记</strong></p>
-<a id="more"></a>
-
-<h3 id="state-和-props-主要的区别在于-props-是不可变的-而-state-可以根据与用户交互来改变-这就是为什么有些容器组件需要定义-state-来更新和修改数据-而子组件只能通过-props-来传递数据"><a href="#state-和-props-主要的区别在于-props-是不可变的-而-state-可以根据与用户交互来改变-这就是为什么有些容器组件需要定义-state-来更新和修改数据-而子组件只能通过-props-来传递数据" class="headerlink" title="state 和 props 主要的区别在于 props 是不可变的,  而 state 可以根据与用户交互来改变  这就是为什么有些容器组件需要定义 state 来更新和修改数据, 而子组件只能通过 props 来传递数据"></a>state 和 props 主要的区别在于 props 是不可变的,  而 state 可以根据与用户交互来改变  这就是为什么有些容器组件需要定义 state 来更新和修改数据, 而子组件只能通过 props 来传递数据</h3><h1 id="最基本的使用-Props"><a href="#最基本的使用-Props" class="headerlink" title="最基本的使用 Props"></a>最基本的使用 Props</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function MyNameIsStitch(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫 &#123;props.name&#125;!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br><br>const element = <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;史迪奇&quot;</span>/&gt;</span>;<br><br>ReactDOM.render(<br>	element,<br>	document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-
-<h1 id="默认-Props"><a href="#默认-Props" class="headerlink" title="默认 Props"></a>默认 Props</h1><p><strong>解析: 通过组件类的 defaultProps 属性为 props 设置默认值</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>class MyNameIsStitch extends React.Component &#123;<br>  render() &#123;<br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫&#123;this.props.name&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br><br>MyNameIsStitch.defaultProps = &#123;<br>  name: &#x27;史迪奇&#x27;<br>&#125;;<br><br>const element = <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>;<br><br>ReactDOM.render(<br>  element,<br>  document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<h1 id="State-和-Props"><a href="#State-和-Props" class="headerlink" title="State 和 Props"></a>State 和 Props</h1><p><strong>解析: 父组件中设置 state 并通过在子组件上使用 props 将其传递到子组件上</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br><br>class WebSite extends React.Component &#123;<br>  constructor() &#123;<br>      super();<br><br>      this.state = &#123;<br>        name: &quot;我叫史迪奇&quot;,<br>        site: &quot;https://sdq3.gitee.io&quot;<br>      &#125;<br>    &#125;<br>  render() &#123;<br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">Name</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&#123;this.state.name&#125;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">Site</span> <span class="hljs-attr">site</span>=<span class="hljs-string">&#123;this.state.site&#125;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br><br><br><br>class Name extends React.Component &#123;<br>  render() &#123;<br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>&#123;this.props.name&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br> <br>class Site extends React.Component &#123;<br>  render() &#123;<br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&#123;this.props.site&#125;</span>&gt;</span><br>        &#123;this.props.site&#125;<br>      <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br> <br>ReactDOM.render(<br>  <span class="hljs-tag">&lt;<span class="hljs-name">WebSite</span> /&gt;</span>,<br>  document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h1 id="Props-验证"><a href="#Props-验证" class="headerlink" title="Props 验证"></a>Props 验证</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>var title = &quot;史迪奇&quot;;<br><br>class MyNameIsStitch extends React.Component &#123;<br>  render() &#123;<br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫&#123;this.props.title&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br><br>MyNameIsStitch.propTypes = &#123;<br>  title: PropTypes.string<br>&#125;;<br>ReactDOM.render(<br>    <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&#123;title&#125;</span> /&gt;</span>,<br>    document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h1 id="更多验证器"><a href="#更多验证器" class="headerlink" title="更多验证器"></a>更多验证器</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-title class_">MyComponent</span>.<span class="hljs-property">propTypes</span> = &#123;<br>   &#123;<span class="hljs-comment">/*  可以声明 prop 为指定的 JS 基本数据类型, 默认情况, 这些数据是可选的  */</span>&#125;<br>   <span class="hljs-attr">optionalArray</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">array</span>,<br>    <span class="hljs-attr">optionalBool</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">bool</span>,<br>    <span class="hljs-attr">optionalFunc</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">func</span>,<br>    <span class="hljs-attr">optionalNumber</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">number</span>,<br>    <span class="hljs-attr">optionalObject</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">object</span>,<br>    <span class="hljs-attr">optionalString</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">string</span>,<br> <br>     可以被渲染的对象 numbers, strings, elements 或 array<br>    <span class="hljs-attr">optionalNode</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">node</span>,<br> <br>    &#123;<span class="hljs-comment">/*  React 元素  */</span>&#125; <br>    <span class="hljs-attr">optionalElement</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">element</span>,<br> <br>    &#123;<span class="hljs-comment">/*  用 JS 的 instanceof 操作符声明 prop 为类的实例  */</span>&#125; <br>    <span class="hljs-attr">optionalMessage</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-title function_">instanceOf</span>(<span class="hljs-title class_">Message</span>),<br> <br>    &#123;<span class="hljs-comment">/*  用 enum 来限制 prop 只接受指定的值  */</span>&#125; <br>    <span class="hljs-attr">optionalEnum</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-title function_">oneOf</span>([<span class="hljs-string">&#x27;News&#x27;</span>, <span class="hljs-string">&#x27;Photos&#x27;</span>]),<br> <br>    &#123;<span class="hljs-comment">/*  可以是多个对象类型中的一个  */</span>&#125; <br>    <span class="hljs-attr">optionalUnion</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-title function_">oneOfType</span>([<br>      <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">string</span>,<br>      <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">number</span>,<br>      <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-title function_">instanceOf</span>(<span class="hljs-title class_">Message</span>)<br>    ]),<br> <br>    &#123;<span class="hljs-comment">/*  指定类型组成的数组  */</span>&#125; <br>    <span class="hljs-attr">optionalArrayOf</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-title function_">arrayOf</span>(<span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">number</span>),<br> <br>    &#123;<span class="hljs-comment">/*  指定类型的属性构成的对象  */</span>&#125; <br>    <span class="hljs-attr">optionalObjectOf</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-title function_">objectOf</span>(<span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">number</span>),<br> <br>    &#123;<span class="hljs-comment">/*  特定 shape 参数的对象  */</span>&#125; <br>    <span class="hljs-attr">optionalObjectWithShape</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-title function_">shape</span>(&#123;<br>      <span class="hljs-attr">color</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">string</span>,<br>      <span class="hljs-attr">fontSize</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">number</span><br>    &#125;),<br> <br>    &#123;<span class="hljs-comment">/*  任意类型加上 `isRequired` 来使 prop 不可空  */</span>&#125; <br>    <span class="hljs-attr">requiredFunc</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">func</span>.<span class="hljs-property">isRequired</span>,<br> <br>    &#123;<span class="hljs-comment">/*  不可空的任意类型  */</span>&#125; <br>    <span class="hljs-attr">requiredAny</span>: <span class="hljs-title class_">React</span>.<span class="hljs-property">PropTypes</span>.<span class="hljs-property">any</span>.<span class="hljs-property">isRequired</span>,<br> <br>    &#123;<span class="hljs-comment">/*  自定义验证器如果验证失败需要返回一个 Error 对象不要直接使用 `console.warn` 或抛异常, 因为这样 `oneOfType` 会失效  */</span>&#125; <br>    <span class="hljs-attr">customProp</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">props, propName, componentName</span>) &#123;<br>      <span class="hljs-keyword">if</span> (!<span class="hljs-regexp">/matchme/</span>.<span class="hljs-title function_">test</span>(props[propName])) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">&#x27;Validation failed!&#x27;</span>);<br>      &#125;<br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>React</category>
       </categories>
@@ -2920,6 +2920,22 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>TypeScript 使用Jquery库</title>
+    <url>/TypeScript-Jquery.html</url>
+    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
+<a id="more"></a>
+
+<p><strong><a href="https://wwr.lanzoui.com/iFfQ7shdb4d">未打包文件</a></strong></p>
+<ul>
+<li>密码: sdq3</li>
+</ul>
+<h1 id="Jquery的引入"><a href="#Jquery的引入" class="headerlink" title="Jquery的引入"></a>Jquery的引入</h1><h3 id="html文件"><a href="#html文件" class="headerlink" title="html文件"></a>html文件</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript">&lt;!<span class="hljs-variable constant_">DOCTYPE</span> html&gt;<br>&lt;html lang=<span class="hljs-string">&quot;en&quot;</span>&gt;<br>&lt;head&gt;<br>    &lt;meta charset=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;<br><br>    &lt;!-- 引入jquery --&gt;<br>    &lt;script src=<span class="hljs-string">&quot;https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js&quot;</span>&gt;&lt;/script&gt;<br>    &lt;script src=<span class="hljs-string">&quot;./page.ts&quot;</span>&gt;&lt;/script&gt;<br>   &lt;title&gt;史迪奇国王&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>    <br>&lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure>
+<h3 id="page-ts"><a href="#page-ts" class="headerlink" title="page.ts"></a>page.ts</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 解决报错问题 或者 npm i @types/jquery 和 cnpm i @types/jquery </span><br><span class="hljs-keyword">declare</span> <span class="hljs-keyword">var</span> <span class="hljs-attr">$</span>: <span class="hljs-built_in">any</span>;<br><br><span class="hljs-keyword">const</span> <span class="hljs-attr">sdq</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;史迪奇&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sdq);<br><br>$(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;史迪奇&quot;</span>);<br>&#125;);<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>TypeScript</category>
+      </categories>
+  </entry>
+  <entry>
     <title>TypeScript 命名空间</title>
     <url>/TypeScript-NameSpace.html</url>
     <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
@@ -2952,17 +2968,21 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>TypeScript 使用Jquery库</title>
-    <url>/TypeScript-Jquery.html</url>
+    <title>TypeScript数组类型注解的方法</title>
+    <url>/TypeScript-array.html</url>
     <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
 <a id="more"></a>
 
-<p><strong><a href="https://wwr.lanzoui.com/iFfQ7shdb4d">未打包文件</a></strong></p>
-<ul>
-<li>密码: sdq3</li>
-</ul>
-<h1 id="Jquery的引入"><a href="#Jquery的引入" class="headerlink" title="Jquery的引入"></a>Jquery的引入</h1><h3 id="html文件"><a href="#html文件" class="headerlink" title="html文件"></a>html文件</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript">&lt;!<span class="hljs-variable constant_">DOCTYPE</span> html&gt;<br>&lt;html lang=<span class="hljs-string">&quot;en&quot;</span>&gt;<br>&lt;head&gt;<br>    &lt;meta charset=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;<br><br>    &lt;!-- 引入jquery --&gt;<br>    &lt;script src=<span class="hljs-string">&quot;https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js&quot;</span>&gt;&lt;/script&gt;<br>    &lt;script src=<span class="hljs-string">&quot;./page.ts&quot;</span>&gt;&lt;/script&gt;<br>   &lt;title&gt;史迪奇国王&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>    <br>&lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure>
-<h3 id="page-ts"><a href="#page-ts" class="headerlink" title="page.ts"></a>page.ts</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 解决报错问题 或者 npm i @types/jquery 和 cnpm i @types/jquery </span><br><span class="hljs-keyword">declare</span> <span class="hljs-keyword">var</span> <span class="hljs-attr">$</span>: <span class="hljs-built_in">any</span>;<br><br><span class="hljs-keyword">const</span> <span class="hljs-attr">sdq</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;史迪奇&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sdq);<br><br>$(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;史迪奇&quot;</span>);<br>&#125;);<br></code></pre></td></tr></table></figure>]]></content>
+
+<h3 id="常见的"><a href="#常见的" class="headerlink" title="常见的"></a>常见的</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript">数字型<br><span class="hljs-keyword">const</span> numberArr : <span class="hljs-built_in">number</span>[] = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>]<br><br>字符串型<br><span class="hljs-keyword">const</span> stringArr : <span class="hljs-built_in">string</span>[] = [<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>,<span class="hljs-string">&#x27;d&#x27;</span>,<span class="hljs-string">&#x27;e&#x27;</span>]<br></code></pre></td></tr></table></figure>
+<h3 id="不常见的"><a href="#不常见的" class="headerlink" title="不常见的"></a>不常见的</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span>  : <span class="hljs-title class_">UndefinedArr</span> : <span class="hljs-title class_">Undefined</span>[] = [<span class="hljs-title class_">Undefined</span>,<span class="hljs-title class_">Undefined</span>,<span class="hljs-title class_">Undefined</span>]<br></code></pre></td></tr></table></figure>
+<h3 id="多类型"><a href="#多类型" class="headerlink" title="多类型"></a>多类型</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> arr : (nuber | <span class="hljs-built_in">string</span>)[] = [<span class="hljs-number">2</span>,<span class="hljs-string">&quot;史迪奇&quot;</span>,<span class="hljs-number">3</span>]<br></code></pre></td></tr></table></figure>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> <span class="hljs-attr">sdq</span>: &#123;<span class="hljs-attr">name</span>:<span class="hljs-built_in">string</span>,<span class="hljs-attr">age</span>:<span class="hljs-built_in">number</span>&#125;[] = [<br>    &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;史迪奇&quot;</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">2001</span>&#125;,<br>    &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;史迪仔&quot;</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">2001</span>&#125;<br>]<br></code></pre></td></tr></table></figure>
+<p><strong>typr alias 类型别名</strong></p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">type</span> sdz =&#123;<span class="hljs-attr">name</span>:<span class="hljs-built_in">string</span>,<span class="hljs-attr">age</span>:<span class="hljs-built_in">number</span>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Madam</span> &#123;<br>    <span class="hljs-attr">name</span>:<span class="hljs-built_in">string</span>;<br>    <span class="hljs-attr">age</span>:<span class="hljs-built_in">number</span>;<br>&#125;<br><span class="hljs-keyword">const</span> <span class="hljs-attr">sdq</span>: <span class="hljs-title class_">Madam</span>[] = [<br>    &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;史迪奇&quot;</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">2001</span>&#125;,<br>    &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;史迪仔&quot;</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">2001</span>&#125;<br>]<br></code></pre></td></tr></table></figure>
+<h3 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> <span class="hljs-attr">sdq</span>:[<span class="hljs-built_in">string</span>,<span class="hljs-built_in">string</span>,<span class="hljs-built_in">number</span>] = [<span class="hljs-string">&#x27;史迪奇&#x27;</span>,<span class="hljs-string">&#x27;雄性&#x27;</span>,<span class="hljs-number">626</span>]<br></code></pre></td></tr></table></figure>
+<p><strong>列表包元组</strong></p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> <span class="hljs-attr">sdq</span>:[<span class="hljs-built_in">string</span>,<span class="hljs-built_in">string</span>,<span class="hljs-built_in">number</span>] []= [<br>    [<span class="hljs-string">&#x27;史迪奇&#x27;</span>,<span class="hljs-string">&#x27;雄性&#x27;</span>,<span class="hljs-number">626</span>],<br>    [<span class="hljs-string">&#x27;鲁本&#x27;</span>,<span class="hljs-string">&#x27;雄性&#x27;</span>,<span class="hljs-number">625</span>],<br>    [<span class="hljs-string">&#x27;安琪&#x27;</span>,<span class="hljs-string">&#x27;雌性&#x27;</span>,<span class="hljs-number">624</span>]<br>]<br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>TypeScript</category>
       </categories>
@@ -2984,26 +3004,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <li>如果TS无法自动分析变量的话, 我们就需要使用类型注释</li>
 </ul>
 ]]></content>
-      <categories>
-        <category>TypeScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>TypeScript数组类型注解的方法</title>
-    <url>/TypeScript-array.html</url>
-    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
-<a id="more"></a>
-
-
-<h3 id="常见的"><a href="#常见的" class="headerlink" title="常见的"></a>常见的</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript">数字型<br><span class="hljs-keyword">const</span> numberArr : <span class="hljs-built_in">number</span>[] = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>]<br><br>字符串型<br><span class="hljs-keyword">const</span> stringArr : <span class="hljs-built_in">string</span>[] = [<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>,<span class="hljs-string">&#x27;d&#x27;</span>,<span class="hljs-string">&#x27;e&#x27;</span>]<br></code></pre></td></tr></table></figure>
-<h3 id="不常见的"><a href="#不常见的" class="headerlink" title="不常见的"></a>不常见的</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span>  : <span class="hljs-title class_">UndefinedArr</span> : <span class="hljs-title class_">Undefined</span>[] = [<span class="hljs-title class_">Undefined</span>,<span class="hljs-title class_">Undefined</span>,<span class="hljs-title class_">Undefined</span>]<br></code></pre></td></tr></table></figure>
-<h3 id="多类型"><a href="#多类型" class="headerlink" title="多类型"></a>多类型</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> arr : (nuber | <span class="hljs-built_in">string</span>)[] = [<span class="hljs-number">2</span>,<span class="hljs-string">&quot;史迪奇&quot;</span>,<span class="hljs-number">3</span>]<br></code></pre></td></tr></table></figure>
-<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> <span class="hljs-attr">sdq</span>: &#123;<span class="hljs-attr">name</span>:<span class="hljs-built_in">string</span>,<span class="hljs-attr">age</span>:<span class="hljs-built_in">number</span>&#125;[] = [<br>    &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;史迪奇&quot;</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">2001</span>&#125;,<br>    &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;史迪仔&quot;</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">2001</span>&#125;<br>]<br></code></pre></td></tr></table></figure>
-<p><strong>typr alias 类型别名</strong></p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">type</span> sdz =&#123;<span class="hljs-attr">name</span>:<span class="hljs-built_in">string</span>,<span class="hljs-attr">age</span>:<span class="hljs-built_in">number</span>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Madam</span> &#123;<br>    <span class="hljs-attr">name</span>:<span class="hljs-built_in">string</span>;<br>    <span class="hljs-attr">age</span>:<span class="hljs-built_in">number</span>;<br>&#125;<br><span class="hljs-keyword">const</span> <span class="hljs-attr">sdq</span>: <span class="hljs-title class_">Madam</span>[] = [<br>    &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;史迪奇&quot;</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">2001</span>&#125;,<br>    &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;史迪仔&quot;</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">2001</span>&#125;<br>]<br></code></pre></td></tr></table></figure>
-<h3 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> <span class="hljs-attr">sdq</span>:[<span class="hljs-built_in">string</span>,<span class="hljs-built_in">string</span>,<span class="hljs-built_in">number</span>] = [<span class="hljs-string">&#x27;史迪奇&#x27;</span>,<span class="hljs-string">&#x27;雄性&#x27;</span>,<span class="hljs-number">626</span>]<br></code></pre></td></tr></table></figure>
-<p><strong>列表包元组</strong></p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> <span class="hljs-attr">sdq</span>:[<span class="hljs-built_in">string</span>,<span class="hljs-built_in">string</span>,<span class="hljs-built_in">number</span>] []= [<br>    [<span class="hljs-string">&#x27;史迪奇&#x27;</span>,<span class="hljs-string">&#x27;雄性&#x27;</span>,<span class="hljs-number">626</span>],<br>    [<span class="hljs-string">&#x27;鲁本&#x27;</span>,<span class="hljs-string">&#x27;雄性&#x27;</span>,<span class="hljs-number">625</span>],<br>    [<span class="hljs-string">&#x27;安琪&#x27;</span>,<span class="hljs-string">&#x27;雌性&#x27;</span>,<span class="hljs-number">624</span>]<br>]<br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>TypeScript</category>
       </categories>
@@ -5532,22 +5532,6 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 ]]></content>
   </entry>
   <entry>
-    <title>跟我一起学数学</title>
-    <url>/mathematics.html</url>
-    <content><![CDATA[<p><strong>走进数学的奇妙世界</strong></p>
-<a id="more"></a>
-
-<h1 id="高斯算法"><a href="#高斯算法" class="headerlink" title="高斯算法"></a>高斯算法</h1><p><strong>用于解决 1+2+3+4+5+6+7……一直加到n</strong></p>
-<figure class="highlight gcode"><table><tr><td class="code"><pre><code class="hljs gcode"><span class="hljs-comment">(首项 + 末项)</span> * 项数 / <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
-
-
-<h1 id="衡量算法"><a href="#衡量算法" class="headerlink" title="衡量算法"></a>衡量算法</h1><p><strong>时间复杂度和空间复杂度</strong></p>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
     <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
     <url>/Thread-Process.html</url>
     <content><![CDATA[<p><strong>概念</strong></p>
@@ -5562,6 +5546,22 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 <h1 id="注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行"><a href="#注意-线程开启不一定马上执行，JVM去告诉操作系统-线程的处理，操作系统再去告诉-CPU怎么处理线程，由CPU调度执行" class="headerlink" title="注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行"></a>注意: 线程开启不一定马上执行，JVM去告诉操作系统 线程的处理，操作系统再去告诉 CPU怎么处理线程，由CPU调度执行</h1>]]></content>
       <categories>
         <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>跟我一起学数学</title>
+    <url>/mathematics.html</url>
+    <content><![CDATA[<p><strong>走进数学的奇妙世界</strong></p>
+<a id="more"></a>
+
+<h1 id="高斯算法"><a href="#高斯算法" class="headerlink" title="高斯算法"></a>高斯算法</h1><p><strong>用于解决 1+2+3+4+5+6+7……一直加到n</strong></p>
+<figure class="highlight gcode"><table><tr><td class="code"><pre><code class="hljs gcode"><span class="hljs-comment">(首项 + 末项)</span> * 项数 / <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+
+
+<h1 id="衡量算法"><a href="#衡量算法" class="headerlink" title="衡量算法"></a>衡量算法</h1><p><strong>时间复杂度和空间复杂度</strong></p>
+]]></content>
+      <categories>
+        <category>算法</category>
       </categories>
   </entry>
   <entry>
