@@ -195,9 +195,9 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>134
+					<span>文章</span>148
 					<span>标签</span>0
-					<span>分类</span>22
+					<span>分类</span>24
 				</div>		
 			<div class="social-btns">
 				
@@ -286,7 +286,7 @@
 
         <li>
           <a href="/categories/CSS/">CSS</a>
-          <span>9</span>
+          <span>11</span>
         </li>
 
         
@@ -384,14 +384,14 @@
 
         <li>
           <a href="/categories/大数据/">大数据</a>
-          <span>1</span>
+          <span>3</span>
         </li>
 
         
 
         <li>
           <a href="/categories/小程序开发/">小程序开发</a>
-          <span>4</span>
+          <span>6</span>
         </li>
 
         
@@ -425,8 +425,22 @@
         
 
         <li>
+          <a href="/categories/跟我一起学数学/">跟我一起学数学</a>
+          <span>6</span>
+        </li>
+
+        
+
+        <li>
+          <a href="/categories/需求分析图/">需求分析图</a>
+          <span>1</span>
+        </li>
+
+        
+
+        <li>
           <a href="/categories/鲲鹏云/">鲲鹏云</a>
-          <span>3</span>
+          <span>4</span>
         </li>
 
         
@@ -451,23 +465,23 @@
       <ul>
         
           <li>
-            <a href="/Applet-logic-interface.html">小程序 逻辑与界面(快速入门)</a>
+            <a href="/derivative-differentiate.html">导数与微分 (第二章)</a>
           </li>
         
           <li>
-            <a href="/Applet-WXML-WXSS-JS%E2%80%94JSON.html">小程序 页面结构(快速入门)</a>
+            <a href="/Function-limit.html">函数与极限 (第一章)</a>
           </li>
         
           <li>
-            <a href="/Big-data-analyst.html">大数据分析师 (比赛)</a>
+            <a href="/Advanced-mathematics-learning-plan.html">高等数学学习计划</a>
           </li>
         
           <li>
-            <a href="/Applet-WXML.html">小程序 模板语法</a>
+            <a href="/limit-of-sequence.html">数列的极限</a>
           </li>
         
           <li>
-            <a href="/React-Controlled-Uncontrolle.html">React 受控组件与非受控组件</a>
+            <a href="/What-is-a-function.html">啥是函数</a>
           </li>
         
       </ul>
@@ -1277,7 +1291,8 @@ function timeElapse(date){
 
 
 
-<div class="toping"></div>
+
+	
 
 
 <script>
@@ -1939,152 +1954,6 @@ $(document).ready(function () {
 
 
 
-
-
-<!-- 
-<style>
-.vditor-speech {    
-	position: absolute;
-    display: none;
-    background-color: #1d2125;
-    border: 1px solid #2ca9e6;
-    box-shadow: 0 0.3rem 2rem rgba(0, 255, 149, 0.6);
-    border-radius: 3px;
-    padding: 6px;
-    cursor: pointer;
-    color: #b9b9b9;
-	margin-top: 20px;
-	z-index: 9999;
-        }
-.vditor-speech--current, .vditor-speech:hover {
-            color: #fff
-        }
-.vditor-speech svg {
-            height: 14px;
-            width: 14px;
-            fill: currentColor;
-            display: block;
-            stroke-width: 0;
-            stroke: currentColor;
-        }
-</style>
-<script>
-   if (window.addEventListener) { window.addEventListener("load",sdqread, false);} 
-   else if (window.attachEvent) {window.attachEvent("onload",sdqread); }
-    else{ window.onload =sdqread; }
-	
-  function sdqread(){
-
-function speak(text){if(!isBlank(text)){var src="https://api.heycmm.cn/speak/"+text;if(src.length<=2083){var n=document.querySelector(".Audio-speech");if(!n){(n=document.createElement("AUDIO")).className="Audio-speech";}else{document.getElementById("audios").style.display="block";}
-n.setAttribute("id","audios");n.setAttribute("src",src);n.setAttribute("controls","controls");n.play()}}else{document.getElementById("audios").pause();document.getElementById("audios").style.display="none"}}
-function trim(str){if(str==null){return""}
-return str.toString().replace(/(^\s*)|(\s*$)|\r|\n/g,"")}
-function isBlank(str){if(str==null||trim(str)==""){return true}
-return false}
-var play_svg_1='<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">\n'+'<path d="M6 0v32l20-15.977-20-16.023z"></path>\n'+'</svg>\n';var pause_svg_1='<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">\n'+'<path d="M11 0h-6c-0.553 0-1 0.448-1 1v30c0 0.553 0.447 1 1 1h6c0.553 0 1-0.447 1-1v-30c0-0.552-0.447-1-1-1zM27 0h-6c-0.553 0-1 0.448-1 1v30c0 0.553 0.447 1 1 1h6c0.553 0 1-0.447 1-1v-30c0-0.552-0.447-1-1-1z"></path>\n'+'</svg>\n';var speechDom=document.querySelector(".vditor-speech");if(!speechDom){speechDom=document.createElement("div");speechDom.className="vditor-speech";document.body.insertAdjacentElement("beforeend",speechDom);speechDom.onclick=function(){if(speechDom.className==="vditor-speech"){var utterThis=speechDom.getAttribute("data-text");
-speak(utterThis);speechDom.className="vditor-speech vditor-speech--current";speechDom.innerHTML=pause_svg_1;}
-var selection=window.getSelection();selection.removeAllRanges();selection.addRange(window.vditorSpeechRange);};document.body.addEventListener("click",function(){if(getSelection().toString().trim()===""&&speechDom.style.display==="block"){speechDom.className="vditor-speech";speechSynthesis.cancel();speechDom.style.display="none";}});}
-document.addEventListener("mouseup",function(event){var text=getSelection().toString().trim();speechSynthesis.cancel();if(getSelection().toString().trim()===""){if(speechDom.style.display==="block"){speechDom.className="vditor-speech";speechDom.style.display="none";}
-return;}
-window.vditorSpeechRange=getSelection().getRangeAt(0).cloneRange();var rect=getSelection().getRangeAt(0).getBoundingClientRect();speechDom.innerHTML=play_svg_1;speechDom.style.display="block";speechDom.style.top=(rect.top+rect.height+document.querySelector("html").scrollTop-20)+"px";speechDom.style.left=(event.screenX+2)+"px";speechDom.setAttribute("data-text",text);});
-	
-  }
-	
-	// 。。。
-	
-/*	
-	   var play_svg_1 = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">\n' +
-       '<path d="M6 0v32l20-15.977-20-16.023z"></path>\n' +
-       '</svg>\n';
-   var pause_svg_1 = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">\n' +
-       '<path d="M11 0h-6c-0.553 0-1 0.448-1 1v30c0 0.553 0.447 1 1 1h6c0.553 0 1-0.447 1-1v-30c0-0.552-0.447-1-1-1zM27 0h-6c-0.553 0-1 0.448-1 1v30c0 0.553 0.447 1 1 1h6c0.553 0 1-0.447 1-1v-30c0-0.552-0.447-1-1-1z"></path>\n' +
-       '</svg>\n';
-    var speechDom = document.querySelector(".vditor-speech");
-    var lang = "zh_CN";
-    if (!speechDom) {
-        speechDom = document.createElement("div");
-        speechDom.className = "vditor-speech";
-        document.body.insertAdjacentElement("beforeend", speechDom);
-        var getVoice = function () {
-            var voices = speechSynthesis.getVoices();
-            var currentVoice;
-            var defaultVoice;
-            voices.forEach(function (item) {
-              if (item.lang === lang.replace("_", "-")) {
-                    currentVoice = item;
-                }
-                if (item["default"]) {
-                    defaultVoice = item;
-                }
-            });
-            if (!currentVoice) {
-                currentVoice = defaultVoice;
-            }
-            return currentVoice;
-        };
-        if (speechSynthesis.onvoiceschanged !== undefined) {
-            speechSynthesis.onvoiceschanged = getVoice;
-        }
-        var voice_1 = getVoice();
-        speechDom.onclick = function () {
-            if (speechDom.className === "vditor-speech") {
-                var utterThis = new SpeechSynthesisUtterance(speechDom.getAttribute("data-text"));
-                utterThis.voice = voice_1;
-                utterThis.onend = function () {
-                    speechDom.className = "vditor-speech";
-                    speechSynthesis.cancel();
-                    speechDom.innerHTML = play_svg_1;
-                };
-                speechSynthesis.speak(utterThis);
-                speechDom.className = "vditor-speech vditor-speech--current";
-                speechDom.innerHTML = pause_svg_1;
-            }
-            else {
-                if (speechSynthesis.speaking) {
-                    if (speechSynthesis.paused) {
-                        speechSynthesis.resume();
-                        speechDom.innerHTML = pause_svg_1;
-                    }
-                    else {
-                        speechSynthesis.pause();
-                        speechDom.innerHTML = play_svg_1;
-                    }
-                }
-            }
-            var selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(window.vditorSpeechRange);
-        };
-        document.body.addEventListener("click", function () {
-            if (getSelection().toString().trim() === "" && speechDom.style.display === "block") {
-                speechDom.className = "vditor-speech";
-                speechSynthesis.cancel();
-                speechDom.style.display = "none";
-            }
-        });
-    }
-   document.addEventListener("mouseup", function (event) {
-        var text = getSelection().toString().trim();
-        speechSynthesis.cancel();
-        if (getSelection().toString().trim() === "") {
-            if (speechDom.style.display === "block") {
-                speechDom.className = "vditor-speech";
-                speechDom.style.display = "none";
-            }
-            return;
-        }
-        window.vditorSpeechRange = getSelection().getRangeAt(0).cloneRange();
-        var rect = getSelection().getRangeAt(0).getBoundingClientRect();
-        speechDom.innerHTML = play_svg_1;
-        speechDom.style.display = "block";
-        speechDom.style.top = (rect.top + rect.height + document.querySelector("html").scrollTop - 20) + "px";
-        speechDom.style.left = (event.screenX + 2) + "px";
-        speechDom.setAttribute("data-text", text);
-    });*/
-</script>
-
-
- -->
 
 
 
@@ -3610,17 +3479,13 @@ $(".sdq-festival").attr("id","childrensDay");
 
 
 
-<script src="/js/drop-down.js"></script>
-
-
-
-
 	
 
  
 		<div class="sdq-pjax">
-		<script src="/js/pjax/jquery.pjax.js"></script>
-			<script type="text/javascript">
+        <script src="/js/pjax/jquery.pjax.js"></script>
+        <script type="text/javascript">
+			
 $(document).ready(function () {
 	$(document).pjax('a[target!=_blank]', '.main', {fragment: '.main',timeout: 8000});
 
@@ -3645,12 +3510,13 @@ $(document).ready(function () {
 	postcolor();								 
 	styleS();
 	sdqlazyload();
+	sdqMathjax();
 	
 	}); /*end ready pjax*/
 
 	
 function linker(){
-/* 外链保护 */
+/* 外链保护http://link.zhd99.cn */
 	 
 }
 		
@@ -3682,17 +3548,17 @@ function copycodes(){
 	
 	/* 代码高度 判断 */
 	
-	//  $("figure td pre").scroll(function(){
-    //     $("figure td:nth-child(1) pre").scrollTop($(this).scrollTop()); // 纵向滚动条
-    //     $("figure td:nth-child(2) pre").scrollLeft($(this).scrollLeft()); // 横向滚动条
-    // });
+	 $("figure td pre").scroll(function(){
+        $("figure td:nth-child(1) pre").scrollTop($(this).scrollTop()); // 纵向滚动条
+        $("figure td:nth-child(2) pre").scrollLeft($(this).scrollLeft()); // 横向滚动条
+    });
 	
 		!function (e, t, a) {
 		  /* code */
 		  var initCopyCode = function(){
 			var copyHtml = '';
 			copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-			copyHtml += '  <i class="fa fa-globe"></i><span>复制</span>';
+			copyHtml += '  <i class="fa fa-globe"></i><span>copy</span>';
 			copyHtml += '</button>';
 			  // 设置 放置位置↓
 			$("figure td:nth-child(2) pre").before(copyHtml);
@@ -3738,7 +3604,7 @@ function tocs(){
 	} else {
 		 window.onload = consoleTest;
 function consoleTest(){
-		// console.log("\n %c vbj %c \n", "color: #FFF; background:#030307; padding:5px 0;", "background: #85adfede; padding:5px 0;");
+		console.log("\n %c hexo-theme-sdq vbj %c https://github.com/ZHD99/hexo-theme-sdq \n", "color: #FFF; background:#030307; padding:5px 0;", "background: #85adfede; padding:5px 0;");
 		var str = function () {
 
         }
@@ -3864,9 +3730,85 @@ function sdqlazyload(){
     else{ window.onload = sdqlazyload; }
 
 
+	
+	
 
 });  /* end */
-</script>
+
+								
+/* 公式功能 */
+function sdqMathjax(){
+	
+	// var $head = document.querySelector('head');
+	// var $wrapper = document.createElement("script");
+	// $wrapper.src = '/js/mathjax.js';
+	// $head.appendChild($wrapper);
+	window.MathJax = {
+		loader: {load: ['input/asciimath']},
+		startup: {
+		  pageReady: function () {
+			//
+			// Synchronize menu renderer item with on-screen popup menu
+			//
+			var select = document.getElementById('Renderer');
+			if (select) {
+			  var renderer = MathJax.startup.document.menu.settings.renderer;
+			  var menu = MathJax.startup.document.menu.menu;
+			  var item = (menu.getPool ? menu.getPool() : menu.pool).lookup('renderer');
+			  select.value = renderer;
+			  if (renderer !== 'CHTML') item.setValue(renderer);
+			  item.registerCallback(function () {
+				var value = item.getValue();
+				if (value !== select.value) select.value = value;
+			  });
+			  window.setMode = function (renderer) {
+				if (item.getValue() !== renderer) item.setValue(renderer);
+			  }
+			  //
+			  //  Set up processing of input content
+			  //
+			  var input = document.getElementById('MathInput');
+			  var output = document.getElementById('MathPreview');
+			  var button = document.getElementById('renderHTML');
+			  output.innerHTML = input.value.trim();
+			  window.typesetInput = function () {
+				button.disabled = true;
+				output.innerHTML = input.value.trim();
+				MathJax.texReset();
+				MathJax.typesetClear();
+				MathJax.typesetPromise([output]).catch(function (err) {
+				  output.innerHTML = '';
+				  output.appendChild(document.createTextNode(err.message));
+				  console.error(err);
+				}).then(function () {
+				  button.disabled = false;
+				});
+			  }
+			  input.oninput = typesetInput;
+			}
+	  
+			return MathJax.startup.defaultPageReady();
+		  }
+		},
+		tex: {
+		  inlineMath: [['$', '$'], ['\\(', '\\)']],
+		  processEscapes: true
+		}
+	  };
+	var script = document.createElement('script');
+	script.src = '/js/mathjax.js';
+	script.setAttribute('id', 'MathJax-script');
+	document.head.appendChild(script);
+
+} /* end */
+
+/*  */
+function sdq11(){
+	
+
+} /* end */
+
+        </script>
 		</div>
 
 
@@ -3874,7 +3816,10 @@ function sdqlazyload(){
 	<link rel="stylesheet" type="text/css" href="/resources/toc/toc.css"> 
 	<script src="/resources/toc/jquery.pageslide.js"></script> 
 	
-  <script type="text/javascript" src="/js/copycode/clipboard.min.js"></script>  
+    <script type="text/javascript" src="/js/copycode/clipboard.min.js"></script>  
+    
+    <script type="text/javascript" id="MathJax-script" src="/js/mathjax.js"></script>  
+  
 
 
  
