@@ -1538,5 +1538,21 @@ svg[id^="mermaid-"] {
     height: 153px;
 }
 
+/* 数学公式 */
+.shuxue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shuxue2 {
+    margin-left: 17px;
+    box-sizing: border-box;
+}
+@media all and (max-width: 483px) {
+    .shuxue {
+        flex-direction: column;
+    }
+}
+
 
 
