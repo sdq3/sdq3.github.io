@@ -865,181 +865,196 @@ var $main = document.querySelector('.main');
 		}
 	}
 	.box {
-		display: flex !important;
-		flex-direction: row !important;
-		flex-wrap: wrap !important;
-		justify-content: center !important;
-		text-decoration: none !important;
-		color: #000 !important;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		text-decoration: none;
+		color: #000;
 	}
-	.a {
-		transition: 0.3s !important;
-		width: 26% !important;
-		display: flex !important;
-		flex-direction: row !important;
-		list-style: none !important;
+	.words {
+		transition: 0.3s;
+		width: 25% ;
+		display: flex;
+		flex-direction: row;
+		list-style: none;
 		/* 页面布局 */
-		padding: 10px !important;
-  		border-radius: 10px !important;
-  		/* 边距 */
-  		margin: 10px !important;
-		text-decoration: none !important;
-		color: #000 !important;
+		padding: 0.9375rem;
+  		border-radius: 0.625rem;
+  		/* 外边距 */
+  		margin: 0.9375rem;
+		text-decoration: none;
+		color: #000;
 		background-color: rgba(255, 255, 255, 0.5);
 		/* box-shadow: 0px 0px 10px 0px cornflowerblue ; */
 	}
-	.a:hover {
-		animation: animation1 5s infinite !important;
-		transform: translateY(-7px);
+
+	.words:hover {
+		animation: animation1 5s infinite;
+		transform: translateY(-0.4375rem);
 	}
 	img {
-		width: 100% !important;
-		height: 100% !important;
-		object-fit: cover !important;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 	}
-	.a .div {
-		width: 90% !important;
+	.words > .block {
+		width: 90%;
 		/* background-color: crimson; */
 	}
-	.a .div:nth-child(1) {
-		width: 35% !important;
-		overflow: hidden !important;
-		border-radius: 10px !important;
+	.words  .block:nth-child(1) {
+		width: 35%;
+		overflow: hidden;
+		border-radius: 0.8125rem;
   		/* 屏幕宽度33.33后再取33.33% */
     	width: calc(33.33% - 1.62rem);
     	/* vw单位是相对于视口（屏幕）宽度的 */
     	/* height: calc(33.33vw/3 - 1.6rem); */
-    	margin: 1.2rem 0 0 1.2rem;
+		/* 图片位置 */
+    	margin: 1.2rem 1.2rem 1.2rem 1.2rem;
 		/* 调试 */
     	/* outline: 1px solid #dedede; */
 	}
-	.a .div:nth-child(2) {
-		display: flex !important;
-		flex-direction: column !important;
-		justify-content: center !important;
-		align-items: center !important;
+	.words > .block:nth-child(2) {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
-	@media all and (max-width:1026px) {
-		.a {
-			width: 93% !important;
+
+	@media screen and (max-width:1024px) and (min-width:767px)   {
+		.words {
+			width: 45%;
 		}
 	}
+
+	@media screen and (max-width:689px) and (min-width:320px) {
+		.words {
+			width: 93%;
+		}
+
+	}
+
+
+
 	a:hover:after{opacity:0}
 </style>
+
 <div class="sdq-post">
 <!-- <article> -->
 <div class="box">
-	<a class="a" target="_blank" href="https://sdqos.github.io">
-		<div class="div">
+	<a class="words" target="_blank" href="https://sdqos.github.io">
+		<div class="block">
 			<img src="./史迪奇的后花园.jpg">
 		</div>
-		<div class="div">
+		<div class="block">
 			<span>史迪奇的后花园</span>
 			<!-- <span>miaoshu</span> -->
 		</div>
 	</a>
-	<a class="a" target="_blank" href="https://blog.glumi.cn">
-		<div class="div">
+	<a class="words" target="_blank" href="https://blog.glumi.cn">
+		<div class="block">
 			<img src="./images/头像/陈陈菌.jpg">
 		</div>
-		<div class="div">
+		<div class="block">
 			<span>陈陈菌</span>
 			<!-- <span>miaoshu</span> -->
 		</div>
 	</a>
-	<a class="a" target="_blank" href="https://blog.lemonbigbig.top">
-		<div class="div">
+	<a class="words" target="_blank" href="https://blog.lemonbigbig.top">
+		<div class="block">
 			<img src="./images/头像/lemon大雄.jpg">
 		</div>
-		<div class="div">
+		<div class="block">
 			<span>lemon大雄</span>
 			<!-- <span>miaoshu</span> -->
 		</div>
 	</a>
-	<a class="a" target="_blank" href="https://blog.gzxiaobai.cn">
-		<div class="div">
+	<a class="words" target="_blank" href="https://blog.gzxiaobai.cn">
+		<div class="block">
 			<img src="https://i.loli.net/2021/05/15/QdcDz8P721AfEMR.jpg">
 		</div>
-		<div class="div">
+		<div class="block">
 			<span>神楽シロ_Official</span>
 			<!-- <span>神楽シロ_Officiald</span> -->
 		</div>
 	</a>
-	<a class="a" target="_blank" href="https://x1a071.github.io">
-		<div class="div">
+	<a class="words" target="_blank" href="https://x1a071.github.io">
+		<div class="block">
 			<img src="./images/头像/x1a071.jpg">
 		</div>
-		<div class="div">
+		<div class="block">
 			<span>x1a071</span>
 			<!-- <span>神楽シロ_Officiald</span> -->
 		</div>
 	</a>
-	<a class="a" target="_blank" href="https://blog.vaewhite.com">
-		<div class="div">
+	<a class="words" target="_blank" href="https://blog.vaewhite.com">
+		<div class="block">
 			<img src="https://sdn.geekzu.org/avatar/255b930a1b1a7c07500181e6f7db6fed">
 		</div>
-		<div class="div">
+		<div class="block">
 			<span>VaeWhite</span>
 			<!-- <span>神楽シロ_Officiald</span> -->
 		</div>
 	</a>
-	<a class="a" target="_blank" href="https://blog.xingzhige.com">
-		<div class="div">
+	<a class="words" target="_blank" href="https://blog.xingzhige.com">
+		<div class="block">
 			<img src="https://q2.qlogo.cn/headimg_dl?dst_uin=2598974824&spec=5">
 		</div>
-		<div class="div">
+		<div class="block">
 			<span>星语</span>
 			<!-- <span>神楽シロ_Officiald</span> -->
 		</div>
 	</a>
-	<a class="a" target="_blank" href="https://blog.pangao.vip">
-		<div class="div">
+	<a class="words" target="_blank" href="https://blog.pangao.vip">
+		<div class="block">
 			<img src="https://cdn.jsdelivr.net/gh/pangao1990/pangao1990.github.io@master/images/avatar.jpg">
 		</div>
-		<div class="div">
+		<div class="block">
 			<span>潘高的小站</span>
 			<!-- <span>神楽シロ_Officiald</span> -->
 		</div>
 	</a>
-	<a class="a" target="_blank" href="https://www.sqlsec.com/">
-		<div class="div">
+	<a class="words" target="_blank" href="https://www.sqlsec.com/">
+		<div class="block">
 			<img src="https://image.3001.net/images/20210606/16229390604952.png">
 		</div>
-		<div class="div">
+		<div class="block">
 			<span>国光</span>
 			<!-- <span>miaoshu</span> -->
 		</div>
 	</a>
-	<a class="a" target="_blank" href="https://mcenjoy.cn">
-		<div class="div">
+	<a class="words" target="_blank" href="https://mcenjoy.cn">
+		<div class="block">
 		  <img src="https://mcenjoy.cn/avatar">
 		</div>
-		<div class="div">
+		<div class="block">
 		  <span>Enjoy的博客</span>
 		  <!-- <span>神楽シロ_Officiald</span> -->
 		</div>
 	  </a>
-	  <a class="a" target="_blank" href="">
-		<div class="div">
+	  <a class="words" target="_blank" href="">
+		<div class="block">
 		  <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F19%2F12%2F20%2Fffbb8a6b1ce560222402f8f980f8049f.jpg">
 		</div>
-		<div class="div">
+		<div class="block">
 		  <span>空位出租</span>
 		  <!-- <span>神楽シロ_Officiald</span> -->
 		</div>
 	  </a>
-	  <a class="a" target="_blank" href="">
-		<div class="div">
+	  <a class="words" target="_blank" href="">
+		<div class="block">
 		  <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F19%2F12%2F20%2Fffbb8a6b1ce560222402f8f980f8049f.jpg">
 		</div>
-		<div class="div">
+		<div class="block">
 		  <span>空位出租</span>
 		  <!-- <span>神楽シロ_Officiald</span> -->
 		</div>
 	  </a>
+</div>
 </div>
 <!-- </article> -->
-</div>
+
     				
 					
 	
