@@ -67,73 +67,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Android ROM移植</title>
-    <url>/Android-ROM-transplant.html</url>
-    <content><![CDATA[<p><strong>本人是用Arch，顺便来传一下教</strong><br><img src="/images/编译Android/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
-<a id="more"></a>
-
-<p><strong>此教程针对 高通和联发科 64位就多替换lib64 等有64字眼的</strong></p>
-<h1 id="移植-刷机包-ROM-建议在Linux的平台是-下载个解压软件"><a href="#移植-刷机包-ROM-建议在Linux的平台是-下载个解压软件" class="headerlink" title="移植 刷机包/ROM 建议在Linux的平台是 下载个解压软件"></a>移植 刷机包/ROM 建议在Linux的平台是 下载个解压软件</h1><ul>
-<li>推荐sdat2</li>
-</ul>
-<h2 id="移植boot-img"><a href="#移植boot-img" class="headerlink" title="移植boot.img"></a>移植boot.img</h2><ul>
-<li>步骤: 解压出官方booT和要移植包的boot, 替换进入官方<ul>
-<li>替换文件: dt.img和zlmagewe 没有这个文件的话就无视</li>
-</ul>
-</li>
-</ul>
-<p><strong>可以开机之后 再进行以下操作</strong></p>
-<ul>
-<li>开机失败就替换fstab.qcom为官方</li>
-</ul>
-<h2 id="刷机脚本修改"><a href="#刷机脚本修改" class="headerlink" title="刷机脚本修改"></a>刷机脚本修改</h2><ul>
-<li>1.机型验证<ul>
-<li>getprop开头的那行删除，如果安装中断的话就是这行没删完,</li>
-</ul>
-</li>
-<li>2.分区挂卸<ul>
-<li>分区注意mmcblk0p字眼的记得改成官方的</li>
-</ul>
-</li>
-<li>3.删除底层文件刷入<ul>
-<li>底层文件一般在包里面，正常的包有system(system.dat…), boot.img,META—INF, data其他多余的未知文件和文件夹就是底层文件, 这些必须删除, 不然就可能会黑砖</li>
-</ul>
-</li>
-</ul>
-<p><strong>参考脚本 一般放在META-INF里面</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">ui_print(&quot;Patching firmware images...&quot;);<br>ifelse(msm.boot_update(&quot;main&quot;), (<br>package_extract_file(&quot;firmware-update/tz.mbn&quot;, &quot;/dev/block/bootdevice/by-name/tz&quot;);<br>package_extract_file(&quot;firmware-update/hyp.mbn&quot;, &quot;/dev/block/bootdevice/by-name/hyp&quot;);<br>package_extract_file(&quot;firmware-update/sbl1.mbn&quot;, &quot;/dev/block/bootdevice/by-name/sbl1&quot;);<br>package_extract_file(&quot;firmware-update/rpm.mbn&quot;, &quot;/dev/block/bootdevice/by-name/rpm&quot;);<br>package_extract_file(&quot;firmware-update/emmc_appsboot.mbn&quot;, &quot;/dev/block/bootdevice/by-name/aboot&quot;);<br>), &quot;&quot;);<br>ifelse(msm.boot_update(&quot;backup&quot;), (<br>package_extract_file(&quot;firmware-update/tz.mbn&quot;, &quot;/dev/block/bootdevice/by-name/tzbak&quot;);<br>package_extract_file(&quot;firmware-update/hyp.mbn&quot;, &quot;/dev/block/bootdevice/by-name/hypbak&quot;);<br>package_extract_file(&quot;firmware-update/sbl1.mbn&quot;, &quot;/dev/block/bootdevice/by-name/sbl1bak&quot;);<br>package_extract_file(&quot;firmware-update/rpm.mbn&quot;, &quot;/dev/block/bootdevice/by-name/rpmbak&quot;);<br>package_extract_file(&quot;firmware-update/emmc_appsboot.mbn&quot;, &quot;/dev/block/bootdevice/by-name/abootbak&quot;);<br>), &quot;&quot;);<br>msm.boot_update(&quot;finalize&quot;);<br>package_extract_file(&quot;firmware-update/NON-HLOS.bin&quot;, &quot;/dev/block/bootdevice/by-name/modem&quot;);<br></code></pre></td></tr></table></figure>
-
-
-<h2 id="WIFI修复"><a href="#WIFI修复" class="headerlink" title="WIFI修复"></a>WIFI修复</h2><ul>
-<li>步骤: 以下文件或文件夹替换为官方 没有就不替换</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/etc/firmware/wlan<br>system/etc/wifi<br>system/lib/modules/pronto<br>system/lib/modules/wlan.ko<br></code></pre></td></tr></table></figure>
-<p><strong>可以用WIFI之后 再进行以下操作</strong></p>
-<ul>
-<li>还是不行再看看boot.img里面的init.qcom.rc对比官方boot里面的init.qcom.rc修改 还不行就看刷机脚本, 改里面的wifi软链接</li>
-</ul>
-<h3 id="内存卡使用修复"><a href="#内存卡使用修复" class="headerlink" title="内存卡使用修复"></a>内存卡使用修复</h3><ul>
-<li>以下文件替换或修改为官方</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/etc/permissions/platform.xml<br></code></pre></td></tr></table></figure>
-<h3 id="修复按键"><a href="#修复按键" class="headerlink" title="修复按键"></a>修复按键</h3><ul>
-<li>以下文件替换或修改为官方</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/usr/icu<br>system/usr/idc<br><br>//不行再多替换 <br>system/usr/keylayout/Generic.kl<br></code></pre></td></tr></table></figure>
-<h3 id="修复声音"><a href="#修复声音" class="headerlink" title="修复声音"></a>修复声音</h3><p><strong>以下文件替换为官方</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">    方法1:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换etc/mixer开头的<br><br>    方法2:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换system/hw/audio.primary.msmxxxx.so(64位多替换system/lib64/hw/audio.primary.msmxxxx.so)<br><br>    方法3:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换system/lib/hw/audio开头的（64位多替换system/lib64/hw/audio）<br><br>    方法4:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换以下:<br>    system/etc/mixer开头的<br>    system/lib/hw/audio.primary.msmxxxx.so<br>    (64位多替换system/lib64/hw/audio.primary.msmxxxx.so)<br><br>    方法5:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换以下:<br>    system/etc/audio和mixer开头的<br>    system/lib/hw/audio开头的<br>    (64位多替换system/lib64/hw/audio开头的)<br><br>注: lib和lib64文件夹里面的audio开头(不包括hw文件夹)64位替换了不卡屏，但32位可能会卡屏<br></code></pre></td></tr></table></figure>
-<h3 id="修改型号"><a href="#修改型号" class="headerlink" title="修改型号"></a>修改型号</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 品牌<br>ro.product.brand=xiaomi<br>// 型号<br>ro.product.name=2<br>// 关于手机显示的型号<br>ro.product.model=redmi 2<br>// 分辨率<br>ro.sf.lcd_density=320 <br>// 这个也是有关型号的<br>ro.build.product=2<br>// 虚拟按键  1是关0是开，没有这行的就加进去<br>qemu.hw.mainkeys=0 <br></code></pre></td></tr></table></figure>
-<h3 id="修复相机"><a href="#修复相机" class="headerlink" title="修复相机"></a>修复相机</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 把System/lib文件夹里面的文件替换成官方包的文件，可以解决相机打开停止的BUG问题<br>libcamalgo.so<br>libcamera_client.so<br>libcameracustom.so<br>libcameraservice.so<br>libmhal.so<br>libmhalcontent.so<br>libmhaldrv.so<br>libmhalmdp.so<br>libmhalpipe.so<br>libmhalscenario.so<br>libmhalutility.so<br></code></pre></td></tr></table></figure>
-
-<h3 id="修复传感器"><a href="#修复传感器" class="headerlink" title="修复传感器"></a>修复传感器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 替换System/lib/hw  文件夹里面<br>sensors.default.so<br></code></pre></td></tr></table></figure>
-
-<h1>移植有风险, 不保证无bug</h1>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Arch系统包桌面傻瓜式安装 (有手就行)</title>
     <url>/Arch-install.html</url>
     <content><![CDATA[<p><strong>本人是Arch教徒过来传一下教</strong> </p>
@@ -259,6 +192,73 @@
 <h1 id="Vim命令"><a href="#Vim命令" class="headerlink" title="Vim命令"></a>Vim命令</h1><p><strong>按A键是编辑模式</strong><br><strong>按回车键是执行</strong><br><strong>按两下D键是剪切</strong><br><strong>按两下G键是回到第一行</strong><br><strong>按P键粘贴</strong><br><strong>按N键查找下一个</strong><br><strong>按ESC 然后输入 :wq 是保存并退出</strong></p>
 <h1 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">pacman -S neofetch</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">neofetch</span><br></code></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Android ROM移植</title>
+    <url>/Android-ROM-transplant.html</url>
+    <content><![CDATA[<p><strong>本人是用Arch，顺便来传一下教</strong><br><img src="/images/编译Android/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
+<a id="more"></a>
+
+<p><strong>此教程针对 高通和联发科 64位就多替换lib64 等有64字眼的</strong></p>
+<h1 id="移植-刷机包-ROM-建议在Linux的平台是-下载个解压软件"><a href="#移植-刷机包-ROM-建议在Linux的平台是-下载个解压软件" class="headerlink" title="移植 刷机包/ROM 建议在Linux的平台是 下载个解压软件"></a>移植 刷机包/ROM 建议在Linux的平台是 下载个解压软件</h1><ul>
+<li>推荐sdat2</li>
+</ul>
+<h2 id="移植boot-img"><a href="#移植boot-img" class="headerlink" title="移植boot.img"></a>移植boot.img</h2><ul>
+<li>步骤: 解压出官方booT和要移植包的boot, 替换进入官方<ul>
+<li>替换文件: dt.img和zlmagewe 没有这个文件的话就无视</li>
+</ul>
+</li>
+</ul>
+<p><strong>可以开机之后 再进行以下操作</strong></p>
+<ul>
+<li>开机失败就替换fstab.qcom为官方</li>
+</ul>
+<h2 id="刷机脚本修改"><a href="#刷机脚本修改" class="headerlink" title="刷机脚本修改"></a>刷机脚本修改</h2><ul>
+<li>1.机型验证<ul>
+<li>getprop开头的那行删除，如果安装中断的话就是这行没删完,</li>
+</ul>
+</li>
+<li>2.分区挂卸<ul>
+<li>分区注意mmcblk0p字眼的记得改成官方的</li>
+</ul>
+</li>
+<li>3.删除底层文件刷入<ul>
+<li>底层文件一般在包里面，正常的包有system(system.dat…), boot.img,META—INF, data其他多余的未知文件和文件夹就是底层文件, 这些必须删除, 不然就可能会黑砖</li>
+</ul>
+</li>
+</ul>
+<p><strong>参考脚本 一般放在META-INF里面</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">ui_print(&quot;Patching firmware images...&quot;);<br>ifelse(msm.boot_update(&quot;main&quot;), (<br>package_extract_file(&quot;firmware-update/tz.mbn&quot;, &quot;/dev/block/bootdevice/by-name/tz&quot;);<br>package_extract_file(&quot;firmware-update/hyp.mbn&quot;, &quot;/dev/block/bootdevice/by-name/hyp&quot;);<br>package_extract_file(&quot;firmware-update/sbl1.mbn&quot;, &quot;/dev/block/bootdevice/by-name/sbl1&quot;);<br>package_extract_file(&quot;firmware-update/rpm.mbn&quot;, &quot;/dev/block/bootdevice/by-name/rpm&quot;);<br>package_extract_file(&quot;firmware-update/emmc_appsboot.mbn&quot;, &quot;/dev/block/bootdevice/by-name/aboot&quot;);<br>), &quot;&quot;);<br>ifelse(msm.boot_update(&quot;backup&quot;), (<br>package_extract_file(&quot;firmware-update/tz.mbn&quot;, &quot;/dev/block/bootdevice/by-name/tzbak&quot;);<br>package_extract_file(&quot;firmware-update/hyp.mbn&quot;, &quot;/dev/block/bootdevice/by-name/hypbak&quot;);<br>package_extract_file(&quot;firmware-update/sbl1.mbn&quot;, &quot;/dev/block/bootdevice/by-name/sbl1bak&quot;);<br>package_extract_file(&quot;firmware-update/rpm.mbn&quot;, &quot;/dev/block/bootdevice/by-name/rpmbak&quot;);<br>package_extract_file(&quot;firmware-update/emmc_appsboot.mbn&quot;, &quot;/dev/block/bootdevice/by-name/abootbak&quot;);<br>), &quot;&quot;);<br>msm.boot_update(&quot;finalize&quot;);<br>package_extract_file(&quot;firmware-update/NON-HLOS.bin&quot;, &quot;/dev/block/bootdevice/by-name/modem&quot;);<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="WIFI修复"><a href="#WIFI修复" class="headerlink" title="WIFI修复"></a>WIFI修复</h2><ul>
+<li>步骤: 以下文件或文件夹替换为官方 没有就不替换</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/etc/firmware/wlan<br>system/etc/wifi<br>system/lib/modules/pronto<br>system/lib/modules/wlan.ko<br></code></pre></td></tr></table></figure>
+<p><strong>可以用WIFI之后 再进行以下操作</strong></p>
+<ul>
+<li>还是不行再看看boot.img里面的init.qcom.rc对比官方boot里面的init.qcom.rc修改 还不行就看刷机脚本, 改里面的wifi软链接</li>
+</ul>
+<h3 id="内存卡使用修复"><a href="#内存卡使用修复" class="headerlink" title="内存卡使用修复"></a>内存卡使用修复</h3><ul>
+<li>以下文件替换或修改为官方</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/etc/permissions/platform.xml<br></code></pre></td></tr></table></figure>
+<h3 id="修复按键"><a href="#修复按键" class="headerlink" title="修复按键"></a>修复按键</h3><ul>
+<li>以下文件替换或修改为官方</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/usr/icu<br>system/usr/idc<br><br>//不行再多替换 <br>system/usr/keylayout/Generic.kl<br></code></pre></td></tr></table></figure>
+<h3 id="修复声音"><a href="#修复声音" class="headerlink" title="修复声音"></a>修复声音</h3><p><strong>以下文件替换为官方</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">    方法1:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换etc/mixer开头的<br><br>    方法2:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换system/hw/audio.primary.msmxxxx.so(64位多替换system/lib64/hw/audio.primary.msmxxxx.so)<br><br>    方法3:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换system/lib/hw/audio开头的（64位多替换system/lib64/hw/audio）<br><br>    方法4:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换以下:<br>    system/etc/mixer开头的<br>    system/lib/hw/audio.primary.msmxxxx.so<br>    (64位多替换system/lib64/hw/audio.primary.msmxxxx.so)<br><br>    方法5:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换以下:<br>    system/etc/audio和mixer开头的<br>    system/lib/hw/audio开头的<br>    (64位多替换system/lib64/hw/audio开头的)<br><br>注: lib和lib64文件夹里面的audio开头(不包括hw文件夹)64位替换了不卡屏，但32位可能会卡屏<br></code></pre></td></tr></table></figure>
+<h3 id="修改型号"><a href="#修改型号" class="headerlink" title="修改型号"></a>修改型号</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 品牌<br>ro.product.brand=xiaomi<br>// 型号<br>ro.product.name=2<br>// 关于手机显示的型号<br>ro.product.model=redmi 2<br>// 分辨率<br>ro.sf.lcd_density=320 <br>// 这个也是有关型号的<br>ro.build.product=2<br>// 虚拟按键  1是关0是开，没有这行的就加进去<br>qemu.hw.mainkeys=0 <br></code></pre></td></tr></table></figure>
+<h3 id="修复相机"><a href="#修复相机" class="headerlink" title="修复相机"></a>修复相机</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 把System/lib文件夹里面的文件替换成官方包的文件，可以解决相机打开停止的BUG问题<br>libcamalgo.so<br>libcamera_client.so<br>libcameracustom.so<br>libcameraservice.so<br>libmhal.so<br>libmhalcontent.so<br>libmhaldrv.so<br>libmhalmdp.so<br>libmhalpipe.so<br>libmhalscenario.so<br>libmhalutility.so<br></code></pre></td></tr></table></figure>
+
+<h3 id="修复传感器"><a href="#修复传感器" class="headerlink" title="修复传感器"></a>修复传感器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 替换System/lib/hw  文件夹里面<br>sensors.default.so<br></code></pre></td></tr></table></figure>
+
+<h1>移植有风险, 不保证无bug</h1>
 ]]></content>
       <categories>
         <category>Linux</category>
@@ -713,6 +713,22 @@ var tools = (function(){
       </categories>
   </entry>
   <entry>
+    <title>CSS 伪类选择器</title>
+    <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$ &lt;style&gt;<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:first</span>-child&#123;   //first-child意思是选中第一个<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:last-child</span>&#123;   //last-child意思是选中最后一个<br>      <span class="hljs-attribute">color</span>: blue;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:nth-child</span>(<span class="hljs-number">2</span>)&#123;   //选中p1: 定位到父元素, 选择当前的第一个元素也就是选择当前p元素的父级元素, 选中父级元素的第一个, 并且是当前元素才生效<br>      <span class="hljs-attribute">color</span>: yellow;   //黄色字体<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:last-child</span>&#123;   //last-child意思是选中最后一个<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:nth-of-type</span>(<span class="hljs-number">2</span>)&#123;   //nth-of-type意思是选中父类下元素的第二个类型<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>$ &lt;/style&gt;<br>$ &lt;body&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p1&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p2&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p3&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">ul</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇骑士&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇打手&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇国王&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">ul</span>&gt;<br>$ &lt;/body&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
     <title>CSS 三种基本选择器</title>
     <url>/CSS-selector.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
@@ -730,22 +746,6 @@ var tools = (function(){
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><strong>标签选择器: 选择一类标签 标签名{}</strong></p>
 <p><strong>类/class选择器: 选择所有的class属性一致的标签, 跨标签 .类名{}</strong></p>
 <p><strong>id选择器: 全局唯一 id名{}</strong></p>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>CSS 伪类选择器</title>
-    <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
-    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$ &lt;style&gt;<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:first</span>-child&#123;   //first-child意思是选中第一个<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:last-child</span>&#123;   //last-child意思是选中最后一个<br>      <span class="hljs-attribute">color</span>: blue;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:nth-child</span>(<span class="hljs-number">2</span>)&#123;   //选中p1: 定位到父元素, 选择当前的第一个元素也就是选择当前p元素的父级元素, 选中父级元素的第一个, 并且是当前元素才生效<br>      <span class="hljs-attribute">color</span>: yellow;   //黄色字体<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:last-child</span>&#123;   //last-child意思是选中最后一个<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:nth-of-type</span>(<span class="hljs-number">2</span>)&#123;   //nth-of-type意思是选中父类下元素的第二个类型<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>$ &lt;/style&gt;<br>$ &lt;body&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p1&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p2&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p3&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">ul</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇骑士&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇打手&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇国王&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">ul</span>&gt;<br>$ &lt;/body&gt;<br></code></pre></td></tr></table></figure>
-
-
-
-
 ]]></content>
       <categories>
         <category>CSS</category>
@@ -932,6 +932,50 @@ var tools = (function(){
       </categories>
   </entry>
   <entry>
+    <title>CSS-边距-边框-阴影-浮动-定位-透明-z-index-动画</title>
+    <url>/CSS8.html</url>
+    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="内外边距"><a href="#内外边距" class="headerlink" title="内外边距"></a>内外边距</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">&lt;style&gt;<br>    <span class="hljs-selector-tag">div</span>&#123;<br>       <span class="hljs-comment">/* margin是外边距 1 2 3 4 分别对应 上 下 左 右  */</span><br>       <span class="hljs-attribute">margin</span>:<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>; <br>       <span class="hljs-comment">/* padding是内边距 上下左右的边距都是33px */</span><br>       <span class="hljs-attribute">padding</span>:<span class="hljs-number">33px</span>;       <br>        &#125;<br>  &lt;/style&gt;<br></code></pre></td></tr></table></figure>
+<p>![](/images/BodhiLinux安装教程(</p>
+<p>)/1.jpg)</p>
+<h1 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$&lt;style&gt;<br><span class="hljs-selector-tag">div</span>&#123;<br>     <span class="hljs-comment">/* border是边框 3px是边框的粗细 soshed是边框的样式 black是边框的颜色 */</span><br>     <span class="hljs-attribute">border</span>: <span class="hljs-number">3px</span> soshed black;<br>      &#125;<br>$&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+<h1 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a>圆角边框</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$&lt;style&gt;<br><span class="hljs-selector-tag">div</span>&#123;<br>     <span class="hljs-comment">/* border是边框 10px是边框的粗细 solid是边框的样式 blue是边框的颜色 */</span><br>     <span class="hljs-attribute">border</span>: <span class="hljs-number">10px</span> solid blue;<br>     <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">100px</span>;  //<span class="hljs-number">100px</span>这是圆角边框 这个值可以随便改很好玩的<br>      &#125;<br>$&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+<h1 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$&lt;style&gt; <br><span class="hljs-selector-tag">div</span>&#123;<br>   <span class="hljs-attribute">width</span>:<span class="hljs-number">300px</span>;  //宽<br>   <span class="hljs-attribute">height</span>:<span class="hljs-number">100px</span>;  //高<br>   <span class="hljs-attribute">background-color</span>:<span class="hljs-number">#ff9900</span>;  //颜色<br>   -moz-<span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">10px</span> <span class="hljs-number">10px</span> <span class="hljs-number">5px</span> <span class="hljs-number">#888888</span>; 老的 Firefox <br>   <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">10px</span> <span class="hljs-number">10px</span> <span class="hljs-number">5px</span> <span class="hljs-number">#888888</span>; //<span class="hljs-attribute">box-shadow</span> 属性向框添加一个或多个阴影<br>   &#125;<br>$&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+<h1 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$&lt;style&gt; <br><span class="hljs-selector-tag">div</span>&#123;<br>   <span class="hljs-attribute">display</span>: inline-block;  //将对象呈现为inline对象，但是对象的作为daoblock对象呈现<br>   <span class="hljs-attribute">float</span><span class="hljs-selector-pseudo">:right</span>;  //<span class="hljs-attribute">float</span>浮动 <span class="hljs-attribute">right</span>右<br>   <span class="hljs-attribute">clear</span>: right;  //右侧不允许有浮动元素<br>   <span class="hljs-attribute">clear</span>: left;  //左侧不允许有浮动元素<br>   <span class="hljs-attribute">clear</span>: both;  //两侧都不允许有浮动元素<br>   &#125;<br>$&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+<!-- **解决方法 增加父级元素的高度**
+**解决方法 增加一个空的div标签, 清除浮动** -->
+<h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$&lt;style&gt; <br><span class="hljs-selector-tag">div</span>&#123;<br>   //固定定位<br>   <span class="hljs-attribute">position</span>: fixed;<br>   //绝对定位    没有父级元素定位的前提下, 相对浏览器定位<br>   <span class="hljs-attribute">position</span>: absolute;<br>   //相对定位<br>   <span class="hljs-attribute">position</span>: relative;<br>   &#125;<br>$&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+<h1 id="透明"><a href="#透明" class="headerlink" title="透明"></a>透明</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$&lt;style&gt; <br><span class="hljs-selector-tag">div</span>&#123;<br>    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.5</span>;<br>   &#125;<br>$&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+<h1 id="z-index"><a href="#z-index" class="headerlink" title="z-index"></a>z-index</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$&lt;style&gt;<br> <span class="hljs-selector-tag">p</span>&#123;<br>     <span class="hljs-attribute">position</span>:absolute;  //绝对定位<br>     <span class="hljs-attribute">left</span>:<span class="hljs-number">0px</span>;  //左侧<br>     <span class="hljs-attribute">top</span>:<span class="hljs-number">0px</span>;   //<span class="hljs-attribute">top</span>规定元素的顶部边缘<br>     <span class="hljs-attribute">z-index</span>:-<span class="hljs-number">1</span>;<br> &#125;<br>$&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+<h1 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h1><style> 
+ div {
+     width: 100px;  //宽
+     height: 100px;  //高
+     background-color: red; //颜色
+     animation-name: example;  //animation-name 属性为 @keyframes 动画规定名称
+     animation-duration: 4s; //4秒
+ }
+$
+@keyframes example {    //animation-name 属性为 @keyframes 动画规定名称
+         from {background-color: red;}  //变化颜色
+         to {background-color: yellow;}  //最后颜色
+          }
+$</style>
+
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
     <title>CSS 三种导入样式</title>
     <url>/CSS-Import-styles.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
@@ -981,50 +1025,6 @@ var tools = (function(){
       </categories>
   </entry>
   <entry>
-    <title>CSS-边距-边框-阴影-浮动-定位-透明-z-index-动画</title>
-    <url>/CSS8.html</url>
-    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="内外边距"><a href="#内外边距" class="headerlink" title="内外边距"></a>内外边距</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">&lt;style&gt;<br>    <span class="hljs-selector-tag">div</span>&#123;<br>       <span class="hljs-comment">/* margin是外边距 1 2 3 4 分别对应 上 下 左 右  */</span><br>       <span class="hljs-attribute">margin</span>:<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>; <br>       <span class="hljs-comment">/* padding是内边距 上下左右的边距都是33px */</span><br>       <span class="hljs-attribute">padding</span>:<span class="hljs-number">33px</span>;       <br>        &#125;<br>  &lt;/style&gt;<br></code></pre></td></tr></table></figure>
-<p>![](/images/BodhiLinux安装教程(</p>
-<p>)/1.jpg)</p>
-<h1 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$&lt;style&gt;<br><span class="hljs-selector-tag">div</span>&#123;<br>     <span class="hljs-comment">/* border是边框 3px是边框的粗细 soshed是边框的样式 black是边框的颜色 */</span><br>     <span class="hljs-attribute">border</span>: <span class="hljs-number">3px</span> soshed black;<br>      &#125;<br>$&lt;/style&gt;<br></code></pre></td></tr></table></figure>
-<h1 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a>圆角边框</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$&lt;style&gt;<br><span class="hljs-selector-tag">div</span>&#123;<br>     <span class="hljs-comment">/* border是边框 10px是边框的粗细 solid是边框的样式 blue是边框的颜色 */</span><br>     <span class="hljs-attribute">border</span>: <span class="hljs-number">10px</span> solid blue;<br>     <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">100px</span>;  //<span class="hljs-number">100px</span>这是圆角边框 这个值可以随便改很好玩的<br>      &#125;<br>$&lt;/style&gt;<br></code></pre></td></tr></table></figure>
-<h1 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$&lt;style&gt; <br><span class="hljs-selector-tag">div</span>&#123;<br>   <span class="hljs-attribute">width</span>:<span class="hljs-number">300px</span>;  //宽<br>   <span class="hljs-attribute">height</span>:<span class="hljs-number">100px</span>;  //高<br>   <span class="hljs-attribute">background-color</span>:<span class="hljs-number">#ff9900</span>;  //颜色<br>   -moz-<span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">10px</span> <span class="hljs-number">10px</span> <span class="hljs-number">5px</span> <span class="hljs-number">#888888</span>; 老的 Firefox <br>   <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">10px</span> <span class="hljs-number">10px</span> <span class="hljs-number">5px</span> <span class="hljs-number">#888888</span>; //<span class="hljs-attribute">box-shadow</span> 属性向框添加一个或多个阴影<br>   &#125;<br>$&lt;/style&gt;<br></code></pre></td></tr></table></figure>
-<h1 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$&lt;style&gt; <br><span class="hljs-selector-tag">div</span>&#123;<br>   <span class="hljs-attribute">display</span>: inline-block;  //将对象呈现为inline对象，但是对象的作为daoblock对象呈现<br>   <span class="hljs-attribute">float</span><span class="hljs-selector-pseudo">:right</span>;  //<span class="hljs-attribute">float</span>浮动 <span class="hljs-attribute">right</span>右<br>   <span class="hljs-attribute">clear</span>: right;  //右侧不允许有浮动元素<br>   <span class="hljs-attribute">clear</span>: left;  //左侧不允许有浮动元素<br>   <span class="hljs-attribute">clear</span>: both;  //两侧都不允许有浮动元素<br>   &#125;<br>$&lt;/style&gt;<br></code></pre></td></tr></table></figure>
-<!-- **解决方法 增加父级元素的高度**
-**解决方法 增加一个空的div标签, 清除浮动** -->
-<h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$&lt;style&gt; <br><span class="hljs-selector-tag">div</span>&#123;<br>   //固定定位<br>   <span class="hljs-attribute">position</span>: fixed;<br>   //绝对定位    没有父级元素定位的前提下, 相对浏览器定位<br>   <span class="hljs-attribute">position</span>: absolute;<br>   //相对定位<br>   <span class="hljs-attribute">position</span>: relative;<br>   &#125;<br>$&lt;/style&gt;<br></code></pre></td></tr></table></figure>
-<h1 id="透明"><a href="#透明" class="headerlink" title="透明"></a>透明</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$&lt;style&gt; <br><span class="hljs-selector-tag">div</span>&#123;<br>    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.5</span>;<br>   &#125;<br>$&lt;/style&gt;<br></code></pre></td></tr></table></figure>
-<h1 id="z-index"><a href="#z-index" class="headerlink" title="z-index"></a>z-index</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$&lt;style&gt;<br> <span class="hljs-selector-tag">p</span>&#123;<br>     <span class="hljs-attribute">position</span>:absolute;  //绝对定位<br>     <span class="hljs-attribute">left</span>:<span class="hljs-number">0px</span>;  //左侧<br>     <span class="hljs-attribute">top</span>:<span class="hljs-number">0px</span>;   //<span class="hljs-attribute">top</span>规定元素的顶部边缘<br>     <span class="hljs-attribute">z-index</span>:-<span class="hljs-number">1</span>;<br> &#125;<br>$&lt;/style&gt;<br></code></pre></td></tr></table></figure>
-<h1 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h1><style> 
- div {
-     width: 100px;  //宽
-     height: 100px;  //高
-     background-color: red; //颜色
-     animation-name: example;  //animation-name 属性为 @keyframes 动画规定名称
-     animation-duration: 4s; //4秒
- }
-$
-@keyframes example {    //animation-name 属性为 @keyframes 动画规定名称
-         from {background-color: red;}  //变化颜色
-         to {background-color: yellow;}  //最后颜色
-          }
-$</style>
-
-
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>ES6 let知识</title>
     <url>/ES6-let.html</url>
     <content><![CDATA[<p><strong>ES6学习笔记</strong></p>
@@ -1039,21 +1039,6 @@ $</style>
 <iframe id="iframe" scrolling="no" src="./html/let案例.html"></iframe>]]></content>
       <categories>
         <category>ES6</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Git 知识</title>
-    <url>/Git.html</url>
-    <content><![CDATA[<p><strong>Git学习笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="Git-全局设置"><a href="#Git-全局设置" class="headerlink" title="Git 全局设置"></a>Git 全局设置</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">名称</span><br>git config --global user.name &quot;名称&quot;<br><span class="hljs-meta"># </span><span class="language-bash">邮箱</span><br>git config --global user.email &quot;邮箱&quot;<br></code></pre></td></tr></table></figure>
-
-
-<h2 id="创建-git-仓库"><a href="#创建-git-仓库" class="headerlink" title="创建 git 仓库"></a>创建 git 仓库</h2><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">创建sdq文件夹</span><br>mkdir sdq<br><br><span class="hljs-meta"># </span><span class="language-bash">打开sdq文件夹</span><br>cd sdq<br><br><span class="hljs-meta"># </span><span class="language-bash">初始化</span><br>git init<br><span class="hljs-meta"># </span><span class="language-bash">创建说明文档</span><br>touch README.md<br><br><span class="hljs-meta"># </span><span class="language-bash">添加说明文档</span><br>git add README.md<br><br><span class="hljs-meta"># </span><span class="language-bash">添加说明内容</span><br>git commit -m &quot;史迪奇&quot;<br><br><span class="hljs-meta"># </span><span class="language-bash">关联远程存储库 sdz为存储库名</span><br>git remote add sdz https:#gitee.com/sdq3/web.git<br><br><span class="hljs-meta"># </span><span class="language-bash">开始上传 master分支名称</span><br>git push -u sdz master<br></code></pre></td></tr></table></figure>
-<h1 id="git-分支查看与切换"><a href="#git-分支查看与切换" class="headerlink" title="git 分支查看与切换"></a>git 分支查看与切换</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">查看所有分支</span><br>git branch -a<br><br><span class="hljs-meta"># </span><span class="language-bash">查看当前使用分支(结果列表中前面标*号的表示当前使用分支)</span><br>git branch<br><br><span class="hljs-meta"># </span><span class="language-bash">切换分支</span><br>git checkout [分支名]<br></code></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Git</category>
       </categories>
   </entry>
   <entry>
@@ -1085,18 +1070,18 @@ $</style>
       </categories>
   </entry>
   <entry>
-    <title>HTML iframe内联框架</title>
-    <url>/HTML-iframe.html</url>
-    <content><![CDATA[<p><strong>HTML个人整理</strong></p>
+    <title>Git 知识</title>
+    <url>/Git.html</url>
+    <content><![CDATA[<p><strong>Git学习笔记</strong></p>
 <a id="more"></a>
 
-<h1 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;path&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;mainFrame&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;mainFrame&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p><strong>其中path是引用页面地址 mainFrame是框架标识名</strong></p>
-<h1 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h1><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;demo_iframe.html&quot;</span> <span class="hljs-attr">frameborder</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h1 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;xxx/xxx.html&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>]]></content>
+<h1 id="Git-全局设置"><a href="#Git-全局设置" class="headerlink" title="Git 全局设置"></a>Git 全局设置</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">名称</span><br>git config --global user.name &quot;名称&quot;<br><span class="hljs-meta"># </span><span class="language-bash">邮箱</span><br>git config --global user.email &quot;邮箱&quot;<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="创建-git-仓库"><a href="#创建-git-仓库" class="headerlink" title="创建 git 仓库"></a>创建 git 仓库</h2><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">创建sdq文件夹</span><br>mkdir sdq<br><br><span class="hljs-meta"># </span><span class="language-bash">打开sdq文件夹</span><br>cd sdq<br><br><span class="hljs-meta"># </span><span class="language-bash">初始化</span><br>git init<br><span class="hljs-meta"># </span><span class="language-bash">创建说明文档</span><br>touch README.md<br><br><span class="hljs-meta"># </span><span class="language-bash">添加说明文档</span><br>git add README.md<br><br><span class="hljs-meta"># </span><span class="language-bash">添加说明内容</span><br>git commit -m &quot;史迪奇&quot;<br><br><span class="hljs-meta"># </span><span class="language-bash">关联远程存储库 sdz为存储库名</span><br>git remote add sdz https:#gitee.com/sdq3/web.git<br><br><span class="hljs-meta"># </span><span class="language-bash">开始上传 master分支名称</span><br>git push -u sdz master<br></code></pre></td></tr></table></figure>
+<h1 id="git-分支查看与切换"><a href="#git-分支查看与切换" class="headerlink" title="git 分支查看与切换"></a>git 分支查看与切换</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">查看所有分支</span><br>git branch -a<br><br><span class="hljs-meta"># </span><span class="language-bash">查看当前使用分支(结果列表中前面标*号的表示当前使用分支)</span><br>git branch<br><br><span class="hljs-meta"># </span><span class="language-bash">切换分支</span><br>git checkout [分支名]<br></code></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>HTML</category>
+        <category>Git</category>
       </categories>
   </entry>
   <entry>
@@ -1435,6 +1420,21 @@ $</style>
 <!-- ![](/images/HTML可操作大集合/表单元素格式.jpg) -->
 
 <h1 id="只要input都需要value值和name值-这样就可以养成好习惯"><a href="#只要input都需要value值和name值-这样就可以养成好习惯" class="headerlink" title="只要input都需要value值和name值, 这样就可以养成好习惯"></a>只要input都需要value值和name值, 这样就可以养成好习惯</h1>]]></content>
+      <categories>
+        <category>HTML</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>HTML iframe内联框架</title>
+    <url>/HTML-iframe.html</url>
+    <content><![CDATA[<p><strong>HTML个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;path&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;mainFrame&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;mainFrame&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><strong>其中path是引用页面地址 mainFrame是框架标识名</strong></p>
+<h1 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h1><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;demo_iframe.html&quot;</span> <span class="hljs-attr">frameborder</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;xxx/xxx.html&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>HTML</category>
       </categories>
@@ -2231,30 +2231,6 @@ $
       </categories>
   </entry>
   <entry>
-    <title>React JSX</title>
-    <url>/React-JSX.html</url>
-    <content><![CDATA[<p><strong>React笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="JSX的优点"><a href="#JSX的优点" class="headerlink" title="JSX的优点"></a>JSX的优点</h1><ul>
-<li>JSX 执行更快，因为它在编译为 JavaScript 代码后进行了优化</li>
-<li>它是类型安全的，在编译过程中就能发现错误</li>
-<li>使用 JSX 编写模板更加简单快速</li>
-</ul>
-<h3 id="标识符像-class-和-for-不建议作为-XML-属性名-作为替代-React-DOM-使用-className-和-htmlFor-来做对应的属性"><a href="#标识符像-class-和-for-不建议作为-XML-属性名-作为替代-React-DOM-使用-className-和-htmlFor-来做对应的属性" class="headerlink" title="标识符像 class 和 for 不建议作为 XML 属性名 作为替代 React DOM 使用 className 和 htmlFor 来做对应的属性"></a>标识符像 class 和 for 不建议作为 XML 属性名 作为替代 React DOM 使用 className 和 htmlFor 来做对应的属性</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br>.sdq&#123;<br>	float: left; <br>  heigh: 50px;<br>  width: 50px;<br>&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;root&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>  &#123;/*  className = class  */&#125; <br>	const element = <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;sdq&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>	ReactDOM.render(element, document.getElementById(&#x27;root&#x27;));<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h3 id="使用-JSX"><a href="#使用-JSX" class="headerlink" title="使用 JSX"></a>使用 JSX</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>    ReactDOM.render(<br>    	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    	<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>    	<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>安琪<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>      &#123;/*  添加自定义属性需要使用 data- 前缀  */&#125; <br>      <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">data-myattribute</span> = <span class="hljs-string">&quot;somevalue&quot;</span>&gt;</span>鲁本<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    	,<br>    	document.getElementById(&#x27;example&#x27;)<br>    );<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h3 id="独立文件"><a href="#独立文件" class="headerlink" title="独立文件"></a>独立文件</h3><p><strong>React JSX 代码可以放在一个独立文件上</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sdq.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h3 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>      ReactDOM.render(<br>      	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>          &#123;/*  逻辑运算 表达式写在花括号 &#123;&#125;  */&#125;<br>      	  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>https://sdq&#123;1+2&#125;.gitee.io<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      	,<br>      	document.getElementById(&#x27;example&#x27;)<br>      );<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p><strong>JSX 中不能使用 if else 语句，但可以使用 conditional (三元运算) 表达式来替代</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br> var i = 3;<br>    ReactDOM.render(<br>    	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    	  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>&#123;i == 3 ? &#x27;True!&#x27; : &#x27;False&#x27;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>&#123;i != 3 ? &#x27;True!&#x27; : &#x27;False&#x27;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    	,<br>    	document.getElementById(&#x27;example&#x27;)<br>    );<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>    &#123;/*  创建数组  */&#125;<br>    var arr = [<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>,<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>安琪<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>,<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>鲁本<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span><br>    ];<br>    ReactDOM.render(<br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>&#123;arr&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>,<br>      document.getElementById(&#x27;example&#x27;)<br>    );<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>React</category>
-      </categories>
-  </entry>
-  <entry>
     <title>React JSX进一步学习</title>
     <url>/React-JSX-one.html</url>
     <content><![CDATA[<p><strong>React笔记</strong></p>
@@ -2278,6 +2254,30 @@ $
 <p><font color="#DC143C">效果</font></p>
 <iframe id="iframe" src="./html/jsx小练习.html"></iframe>
 
+]]></content>
+      <categories>
+        <category>React</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>React JSX</title>
+    <url>/React-JSX.html</url>
+    <content><![CDATA[<p><strong>React笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="JSX的优点"><a href="#JSX的优点" class="headerlink" title="JSX的优点"></a>JSX的优点</h1><ul>
+<li>JSX 执行更快，因为它在编译为 JavaScript 代码后进行了优化</li>
+<li>它是类型安全的，在编译过程中就能发现错误</li>
+<li>使用 JSX 编写模板更加简单快速</li>
+</ul>
+<h3 id="标识符像-class-和-for-不建议作为-XML-属性名-作为替代-React-DOM-使用-className-和-htmlFor-来做对应的属性"><a href="#标识符像-class-和-for-不建议作为-XML-属性名-作为替代-React-DOM-使用-className-和-htmlFor-来做对应的属性" class="headerlink" title="标识符像 class 和 for 不建议作为 XML 属性名 作为替代 React DOM 使用 className 和 htmlFor 来做对应的属性"></a>标识符像 class 和 for 不建议作为 XML 属性名 作为替代 React DOM 使用 className 和 htmlFor 来做对应的属性</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br>.sdq&#123;<br>	float: left; <br>  heigh: 50px;<br>  width: 50px;<br>&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;root&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>  &#123;/*  className = class  */&#125; <br>	const element = <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;sdq&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>	ReactDOM.render(element, document.getElementById(&#x27;root&#x27;));<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="使用-JSX"><a href="#使用-JSX" class="headerlink" title="使用 JSX"></a>使用 JSX</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>    ReactDOM.render(<br>    	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    	<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>    	<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>安琪<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>      &#123;/*  添加自定义属性需要使用 data- 前缀  */&#125; <br>      <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">data-myattribute</span> = <span class="hljs-string">&quot;somevalue&quot;</span>&gt;</span>鲁本<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    	,<br>    	document.getElementById(&#x27;example&#x27;)<br>    );<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="独立文件"><a href="#独立文件" class="headerlink" title="独立文件"></a>独立文件</h3><p><strong>React JSX 代码可以放在一个独立文件上</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sdq.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>      ReactDOM.render(<br>      	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>          &#123;/*  逻辑运算 表达式写在花括号 &#123;&#125;  */&#125;<br>      	  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>https://sdq&#123;1+2&#125;.gitee.io<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      	,<br>      	document.getElementById(&#x27;example&#x27;)<br>      );<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><strong>JSX 中不能使用 if else 语句，但可以使用 conditional (三元运算) 表达式来替代</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br> var i = 3;<br>    ReactDOM.render(<br>    	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    	  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>&#123;i == 3 ? &#x27;True!&#x27; : &#x27;False&#x27;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>&#123;i != 3 ? &#x27;True!&#x27; : &#x27;False&#x27;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    	,<br>    	document.getElementById(&#x27;example&#x27;)<br>    );<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>    &#123;/*  创建数组  */&#125;<br>    var arr = [<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>,<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>安琪<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>,<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>鲁本<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span><br>    ];<br>    ReactDOM.render(<br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>&#123;arr&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>,<br>      document.getElementById(&#x27;example&#x27;)<br>    );<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>React</category>
@@ -2514,26 +2514,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>React 组件</title>
-    <url>/React-subassembly.html</url>
-    <content><![CDATA[<p><strong>React笔记</strong></p>
-<a id="more"></a>
-
-
-<h1 id="封装组件"><a href="#封装组件" class="headerlink" title="封装组件"></a>封装组件</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function Name(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站名称：&#123;props.name&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function Url(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站地址：&#123;props.url&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function Nickname(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站小名：&#123;props.nickname&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function App() &#123;<br>	return (<br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Name</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;史迪奇的博客&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Url</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Nickname</span> <span class="hljs-attr">nickname</span>=<span class="hljs-string">&quot;我叫史迪奇&quot;</span> /&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	);<br>&#125;<br><br>ReactDOM.render(<br>	 <span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>,<br>	document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p><strong>正常定义组件</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">function MyNameIsStitch(props) &#123;<br>    return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><strong>ES6 class 来定义组件</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">class MyNameIsStitch extends React.Component &#123;<br>  render() &#123;<br>    return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><strong>用户自定义组件</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function MyNameIsStitch(props) &#123;<br>  &#123;/*  name 属性通过 props.name 来获取  */&#125;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫&#123;props.name&#125;!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br><br>const element = <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;史迪奇&quot;</span>/&gt;</span>;<br><br>ReactDOM.render(<br>	element,<br>	document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h1 id="复合组件"><a href="#复合组件" class="headerlink" title="复合组件"></a>复合组件</h1><p><strong>解析: 就是可以通过创建多个组件来合成一个组件</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function Name(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站名称：&#123;props.name&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function Url(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站地址：&#123;props.url&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function Nickname(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站小名：&#123;props.nickname&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function App() &#123;<br>	return (<br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Name</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;史迪奇的博客&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Url</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Nickname</span> <span class="hljs-attr">nickname</span>=<span class="hljs-string">&quot;我叫史迪奇&quot;</span> /&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	);<br>&#125;<br><br>ReactDOM.render(<br>	 <span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>,<br>	document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>React</category>
-      </categories>
-  </entry>
-  <entry>
     <title>React 组件 API</title>
     <url>/React-API.html</url>
     <content><![CDATA[<p><strong>React笔记</strong></p>
@@ -2588,6 +2568,26 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <li>isMounted()方法用于判断组件是否已挂载到DOM中 可以使用该方法保证了setState()和forceUpdate()在异步场景下的调用不会出错</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&#123;<span class="hljs-comment">/*  返回值: true或false, 表示组件是否已挂载到DOM中  */</span>&#125; <br>bool <span class="hljs-title function_">isMounted</span>()<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>React</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>React 组件</title>
+    <url>/React-subassembly.html</url>
+    <content><![CDATA[<p><strong>React笔记</strong></p>
+<a id="more"></a>
+
+
+<h1 id="封装组件"><a href="#封装组件" class="headerlink" title="封装组件"></a>封装组件</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function Name(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站名称：&#123;props.name&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function Url(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站地址：&#123;props.url&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function Nickname(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站小名：&#123;props.nickname&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function App() &#123;<br>	return (<br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Name</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;史迪奇的博客&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Url</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Nickname</span> <span class="hljs-attr">nickname</span>=<span class="hljs-string">&quot;我叫史迪奇&quot;</span> /&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	);<br>&#125;<br><br>ReactDOM.render(<br>	 <span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>,<br>	document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><strong>正常定义组件</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">function MyNameIsStitch(props) &#123;<br>    return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>ES6 class 来定义组件</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">class MyNameIsStitch extends React.Component &#123;<br>  render() &#123;<br>    return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>用户自定义组件</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function MyNameIsStitch(props) &#123;<br>  &#123;/*  name 属性通过 props.name 来获取  */&#125;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫&#123;props.name&#125;!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br><br>const element = <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;史迪奇&quot;</span>/&gt;</span>;<br><br>ReactDOM.render(<br>	element,<br>	document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="复合组件"><a href="#复合组件" class="headerlink" title="复合组件"></a>复合组件</h1><p><strong>解析: 就是可以通过创建多个组件来合成一个组件</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function Name(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站名称：&#123;props.name&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function Url(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站地址：&#123;props.url&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function Nickname(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站小名：&#123;props.nickname&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function App() &#123;<br>	return (<br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Name</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;史迪奇的博客&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Url</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Nickname</span> <span class="hljs-attr">nickname</span>=<span class="hljs-string">&quot;我叫史迪奇&quot;</span> /&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	);<br>&#125;<br><br>ReactDOM.render(<br>	 <span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>,<br>	document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>React</category>
       </categories>
@@ -2843,23 +2843,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 ]]></content>
   </entry>
   <entry>
-    <title>Three.js 第一枪</title>
-    <url>/Three.html</url>
-    <content><![CDATA[<p><strong>Three.js学习笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>第一枪<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br>    body &#123;<br>    /* 边距 */<br>      margin: 0;<br>      overflow: hidden;<br>      /* 隐藏body窗口区域滚动条 */<br>    &#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>  <span class="hljs-comment">&lt;!--这个是别人弄的网络连接--&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://www.yanhuangxueyuan.com/versions/threejsR92/build/three.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>    /**<br>     * 创建场景对象sdq=Scene<br>     */<br>    let sdq = new THREE.Scene();<br>    /**<br>     * 创建网格模型<br>     */<br>    // let wuti = new THREE.SphereGeometry(90, 50, 150); //创建一个球体几何对象(大小, 圆度, 弧度)<br>    let wuti = new THREE.BoxGeometry(150, 150, 150); //创建一个立方体几何对象Geometry,(宽, 高, 长); <br>    let material = new THREE.MeshLambertMaterial(&#123;<br>    //   物体颜色<br>        color: 0xDC143C<br>    &#125;); //材质对象Material<br>    var mesh = new THREE.Mesh(wuti, material); //网格模型对象Mesh<br>    sdq.add(mesh); //网格模型添加到场景中<br>    /**<br>     * 光源设置<br>     */<br>    //点光源<br>    var point = new THREE.PointLight(0xffffff);<br><br>    point.position.set(260, 600, 200); //点光源位置(亮点位置, 光源强弱, 亮点位置)<br>    sdq.add(point); //点光源添加到场景中<br>    //环境光 <br>    var ambient = new THREE.AmbientLight(0x444444);<br>    // 是否照射<br>    sdq.add(ambient);<br>    /**<br>     * 相机设置<br>     */<br>    let width = window.innerWidth; //窗口宽度<br>    let height = window.innerHeight; //窗口高度<br>    let k = width / height; //窗口宽高比<br>    let s = 250; //大小 数值越小越大<br>    //创建了一个正射投影相机对象<br>    let camera = new THREE.OrthographicCamera(-s * k, s * k, s, -s, 1, 1000);<br>    camera.position.set(200, 300, 200); //设置相机位置<br>    camera.lookAt(sdq.position); //设置相机方向(指向的场景对象)<br>    /**<br>     * 创建渲染器对象<br>     */<br>    let renderer = new THREE.WebGLRenderer();<br>    renderer.setSize(width, height);//设置渲染区域尺寸<br>    renderer.setClearColor(0xb9d3ff, 1); //设置背景颜色<br>    document.body.appendChild(renderer.domElement); //body元素中插入canvas对象<br>    //执行渲染操作   指定场景 相机作为参数<br>    renderer.render(sdq, camera);<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p><font color="#DC143C">正方体</font></p>
-<iframe id="iframe" src="./html/正方体.html"></iframe>
-
-<p><font color="#DC143C">球体</font></p>
-<iframe id="iframe" src="./html/球体.html"></iframe>
-]]></content>
-      <categories>
-        <category>Three.js</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Three.js 向量</title>
     <url>/Three.js-vector.html</url>
     <content><![CDATA[<p><strong>Three.js学习笔记</strong></p>
@@ -2950,6 +2933,23 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 
 
 
+]]></content>
+      <categories>
+        <category>Three.js</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Three.js 第一枪</title>
+    <url>/Three.html</url>
+    <content><![CDATA[<p><strong>Three.js学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>第一枪<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br>    body &#123;<br>    /* 边距 */<br>      margin: 0;<br>      overflow: hidden;<br>      /* 隐藏body窗口区域滚动条 */<br>    &#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>  <span class="hljs-comment">&lt;!--这个是别人弄的网络连接--&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://www.yanhuangxueyuan.com/versions/threejsR92/build/three.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>    /**<br>     * 创建场景对象sdq=Scene<br>     */<br>    let sdq = new THREE.Scene();<br>    /**<br>     * 创建网格模型<br>     */<br>    // let wuti = new THREE.SphereGeometry(90, 50, 150); //创建一个球体几何对象(大小, 圆度, 弧度)<br>    let wuti = new THREE.BoxGeometry(150, 150, 150); //创建一个立方体几何对象Geometry,(宽, 高, 长); <br>    let material = new THREE.MeshLambertMaterial(&#123;<br>    //   物体颜色<br>        color: 0xDC143C<br>    &#125;); //材质对象Material<br>    var mesh = new THREE.Mesh(wuti, material); //网格模型对象Mesh<br>    sdq.add(mesh); //网格模型添加到场景中<br>    /**<br>     * 光源设置<br>     */<br>    //点光源<br>    var point = new THREE.PointLight(0xffffff);<br><br>    point.position.set(260, 600, 200); //点光源位置(亮点位置, 光源强弱, 亮点位置)<br>    sdq.add(point); //点光源添加到场景中<br>    //环境光 <br>    var ambient = new THREE.AmbientLight(0x444444);<br>    // 是否照射<br>    sdq.add(ambient);<br>    /**<br>     * 相机设置<br>     */<br>    let width = window.innerWidth; //窗口宽度<br>    let height = window.innerHeight; //窗口高度<br>    let k = width / height; //窗口宽高比<br>    let s = 250; //大小 数值越小越大<br>    //创建了一个正射投影相机对象<br>    let camera = new THREE.OrthographicCamera(-s * k, s * k, s, -s, 1, 1000);<br>    camera.position.set(200, 300, 200); //设置相机位置<br>    camera.lookAt(sdq.position); //设置相机方向(指向的场景对象)<br>    /**<br>     * 创建渲染器对象<br>     */<br>    let renderer = new THREE.WebGLRenderer();<br>    renderer.setSize(width, height);//设置渲染区域尺寸<br>    renderer.setClearColor(0xb9d3ff, 1); //设置背景颜色<br>    document.body.appendChild(renderer.domElement); //body元素中插入canvas对象<br>    //执行渲染操作   指定场景 相机作为参数<br>    renderer.render(sdq, camera);<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><font color="#DC143C">正方体</font></p>
+<iframe id="iframe" src="./html/正方体.html"></iframe>
+
+<p><font color="#DC143C">球体</font></p>
+<iframe id="iframe" src="./html/球体.html"></iframe>
 ]]></content>
       <categories>
         <category>Three.js</category>
@@ -3171,6 +3171,34 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>TypeScript静态数据类型</title>
+    <url>/TypeScript-type.html</url>
+    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="TypeScript中的基础静态数据类型有"><a href="#TypeScript中的基础静态数据类型有" class="headerlink" title="TypeScript中的基础静态数据类型有"></a>TypeScript中的基础静态数据类型有</h1><ul>
+<li>Undefined :</li>
+<li>Number : 数值类型;</li>
+<li>string : 字符串类型;</li>
+<li>Boolean : 布尔类型；</li>
+<li>enum : 枚举类型；</li>
+<li>any : 任意类型，一个牛X的类型；</li>
+<li>void : 空类型；</li>
+<li>Array : 数组类型;</li>
+<li>Tuple : 元祖类型；</li>
+<li>Null : 空类型</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> count : <span class="hljs-built_in">number</span> = <span class="hljs-number">333</span>;<br><span class="hljs-keyword">const</span> myNname : <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;史迪奇&quot;</span>;<br></code></pre></td></tr></table></figure>
+<h1 id="还包含对象类型-数组类型-类类型-函数类型"><a href="#还包含对象类型-数组类型-类类型-函数类型" class="headerlink" title="还包含对象类型 数组类型 类类型 函数类型"></a>还包含对象类型 数组类型 类类型 函数类型</h1><h3 id="对象类型"><a href="#对象类型" class="headerlink" title="对象类型"></a>对象类型</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> sdq : &#123;<br>    <span class="hljs-attr">name</span>:<span class="hljs-built_in">string</span>,<br>    <span class="hljs-attr">age</span>:<span class="hljs-built_in">number</span><br>&#125; = &#123;<br>    name = <span class="hljs-string">&quot;史迪奇&quot;</span>,<br>    age = <span class="hljs-number">18</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="数组类型"><a href="#数组类型" class="headerlink" title="数组类型"></a>数组类型</h3><p><strong>对象类型也可以是数组, 但是类型必须一致</strong></p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> sdq : <span class="hljs-built_in">string</span> [] = [<span class="hljs-string">&#x27;史迪奇&#x27;</span>,<span class="hljs-string">&#x27;独眼霹雳&#x27;</span>,<span class="hljs-string">&#x27;强霸&#x27;</span>]<br></code></pre></td></tr></table></figure>
+<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Experimentalarticle</span>&#123;&#125;<br><span class="hljs-keyword">const</span> sdq : <span class="hljs-title class_">Experimentalarticle</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Experimentalarticle</span>()<br><br><span class="hljs-keyword">const</span> sdz : <span class="hljs-function">()=&gt;</span><span class="hljs-built_in">string</span> = <span class="hljs-function">() =&gt;</span>&#123;<span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;史迪奇&#x27;</span>&#125;<br></code></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>TypeScript</category>
+      </categories>
+  </entry>
+  <entry>
     <title>TypeScript 配置文件</title>
     <url>/TypeScript-config.html</url>
     <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
@@ -3195,34 +3223,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-string">&quot;sourceMap&quot;</span>: <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
 <h3 id="noUnusedLocals属性-和-noUnusedParameters属性"><a href="#noUnusedLocals属性-和-noUnusedParameters属性" class="headerlink" title="noUnusedLocals属性 和 noUnusedParameters属性"></a>noUnusedLocals属性 和 noUnusedParameters属性</h3><p><strong>作用: 提示未使用变量和未使用方法</strong></p>
 <figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-string">&quot;noUnusedLocals&quot;</span>: <span class="hljs-literal">true</span>,       <span class="hljs-comment">//打包时进行提示未使用的变量    </span><br><span class="hljs-string">&quot;noUnusedParameters&quot;</span>: <span class="hljs-literal">true</span>    <span class="hljs-comment">//打包是进行提示未使用的方法</span><br></code></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>TypeScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>TypeScript静态数据类型</title>
-    <url>/TypeScript-type.html</url>
-    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="TypeScript中的基础静态数据类型有"><a href="#TypeScript中的基础静态数据类型有" class="headerlink" title="TypeScript中的基础静态数据类型有"></a>TypeScript中的基础静态数据类型有</h1><ul>
-<li>Undefined :</li>
-<li>Number : 数值类型;</li>
-<li>string : 字符串类型;</li>
-<li>Boolean : 布尔类型；</li>
-<li>enum : 枚举类型；</li>
-<li>any : 任意类型，一个牛X的类型；</li>
-<li>void : 空类型；</li>
-<li>Array : 数组类型;</li>
-<li>Tuple : 元祖类型；</li>
-<li>Null : 空类型</li>
-</ul>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> count : <span class="hljs-built_in">number</span> = <span class="hljs-number">333</span>;<br><span class="hljs-keyword">const</span> myNname : <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;史迪奇&quot;</span>;<br></code></pre></td></tr></table></figure>
-<h1 id="还包含对象类型-数组类型-类类型-函数类型"><a href="#还包含对象类型-数组类型-类类型-函数类型" class="headerlink" title="还包含对象类型 数组类型 类类型 函数类型"></a>还包含对象类型 数组类型 类类型 函数类型</h1><h3 id="对象类型"><a href="#对象类型" class="headerlink" title="对象类型"></a>对象类型</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> sdq : &#123;<br>    <span class="hljs-attr">name</span>:<span class="hljs-built_in">string</span>,<br>    <span class="hljs-attr">age</span>:<span class="hljs-built_in">number</span><br>&#125; = &#123;<br>    name = <span class="hljs-string">&quot;史迪奇&quot;</span>,<br>    age = <span class="hljs-number">18</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="数组类型"><a href="#数组类型" class="headerlink" title="数组类型"></a>数组类型</h3><p><strong>对象类型也可以是数组, 但是类型必须一致</strong></p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> sdq : <span class="hljs-built_in">string</span> [] = [<span class="hljs-string">&#x27;史迪奇&#x27;</span>,<span class="hljs-string">&#x27;独眼霹雳&#x27;</span>,<span class="hljs-string">&#x27;强霸&#x27;</span>]<br></code></pre></td></tr></table></figure>
-<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Experimentalarticle</span>&#123;&#125;<br><span class="hljs-keyword">const</span> sdq : <span class="hljs-title class_">Experimentalarticle</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Experimentalarticle</span>()<br><br><span class="hljs-keyword">const</span> sdz : <span class="hljs-function">()=&gt;</span><span class="hljs-built_in">string</span> = <span class="hljs-function">() =&gt;</span>&#123;<span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;史迪奇&#x27;</span>&#125;<br></code></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>TypeScript</category>
@@ -3544,6 +3544,120 @@ python数据类型
       </categories>
   </entry>
   <entry>
+    <title>函数与极限 (第一章)</title>
+    <url>/Function-limit.html</url>
+    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
+<a id="more"></a>
+
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="考点1-求函数的定义域"><a href="#考点1-求函数的定义域" class="headerlink" title="考点1: 求函数的定义域"></a>考点1: 求函数的定义域</h2><h3 id="函数三要素-自变量-x-因变量-y-对应法则-f"><a href="#函数三要素-自变量-x-因变量-y-对应法则-f" class="headerlink" title="函数三要素: 自变量 x 因变量 y 对应法则 f"></a>函数三要素: 自变量 x 因变量 y 对应法则 f</h3><ul>
+<li>记为: y = f ( x )  </li>
+</ul>
+<h3 id="函数的定义域-自变量-x-的取值范围"><a href="#函数的定义域-自变量-x-的取值范围" class="headerlink" title="函数的定义域: 自变量 x 的取值范围"></a>函数的定义域: 自变量 x 的取值范围</h3><h3 id="解题思路-求解不等式方程组"><a href="#解题思路-求解不等式方程组" class="headerlink" title="解题思路: 求解不等式方程组"></a>解题思路: 求解不等式方程组</h3><ul>
+<li>若函数是几个函数的四则混合式, 则应各部分定义域的交集  </li>
+<li>若为分段函数, 则取各部分定义域的并集</li>
+</ul>
+<h2 id="考点2-函数奇偶性的判定"><a href="#考点2-函数奇偶性的判定" class="headerlink" title="考点2: 函数奇偶性的判定"></a>考点2: 函数奇偶性的判定</h2><ul>
+<li>偶次方是偶 </li>
+<li>奇次方是奇</li>
+<li>sin 是奇</li>
+<li>cos 是偶</li>
+<li>tan 是奇</li>
+<li>常数是偶</li>
+</ul>
+<h3 id="1-定义法-定义域D关于原点对称"><a href="#1-定义法-定义域D关于原点对称" class="headerlink" title="(1) 定义法: 定义域D关于原点对称"></a>(1) 定义法: 定义域D关于原点对称</h3><ul>
+<li>若 f ( -x ) = -f ( x ), 则称 f ( x ) 为<font color="#ef5b9c">奇函数  奇函数关于原点对称</font>  </li>
+</ul>
+<div class="mermaid">
+graph LR
+A[" f ( -x ) "]--恒等变形-->B[" -f ( x ) "]
+</div>
+
+<ul>
+<li>若 f( -x ) = f ( x ), 则称 f ( x ) 为<font color="#87CEEB">偶函数  偶函数关于y轴对称</font>  </li>
+</ul>
+<div class="mermaid">
+graph LR
+A[" f ( -x ) "]--恒等变形-->B[" f ( x ) "]
+</div>
+
+
+<h3 id="2-公式法"><a href="#2-公式法" class="headerlink" title="(2) 公式法:"></a>(2) 公式法:</h3><h4>加减: </h4>
+
+<ul>
+<li><p><font color="#ef5b9c">奇</font> ± <font color="#ef5b9c">奇</font> = <font color="#ef5b9c">奇</font></p>
+</li>
+<li><p><font color="#87CEEB">偶</font> ± <font color="#87CEEB">偶</font> = <font color="#87CEEB">偶</font></p>
+</li>
+<li><p><font color="#ef5b9c">奇</font> ± <font color="#87CEEB">偶</font> = <font color="#9b95c9">非奇非偶</font></p>
+</li>
+</ul>
+<h4>乘除: </h4>
+
+<ul>
+<li><p><font color="#ef5b9c">奇</font> x/÷ <font color="#ef5b9c">奇</font> = <font color="#87CEEB">偶</font></p>
+</li>
+<li><p><font color="#87CEEB">偶</font> x/÷ <font color="#87CEEB">偶</font> = <font color="#87CEEB">偶</font></p>
+</li>
+<li><p><font color="#ef5b9c">奇</font> x/÷ <font color="#87CEEB">偶</font> = <font color="#ef5b9c">奇</font></p>
+</li>
+</ul>
+<h1 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h1><h2 id="考点1-夹逼准则"><a href="#考点1-夹逼准则" class="headerlink" title="考点1: 夹逼准则"></a>考点1: 夹逼准则</h2><h4>若数列 { xₙ }, { yₙ }, { zₙ } 满足下列条件</h4>
+
+<ul>
+<li><p>(1) 从某项开始有 xₙ ≤ yₙ ≤ zₙ</p>
+</li>
+<li><p>(2) lim xₙ ( n ➝ ∞ ) = lim zₙ ( n ➝ ∞ ) = A, 则数列{ yₙ }的极限存在, 且 lim yₙ ( n ➝ ∞ ) = A</p>
+</li>
+</ul>
+<!-- ![](/images/学数学/夹逼准则.jpg) -->
+
+<h2 id="考点2-两个重要极限"><a href="#考点2-两个重要极限" class="headerlink" title="考点2: 两个重要极限"></a>考点2: 两个重要极限</h2><h3>重要极限一:</h3>
+
+<div class="shuxue"> $$\;\lim_{x\rightarrow0}\frac{\sin\;x}x\;=\;1$$<span class="shuxue2">或</span><span class="shuxue2">$$\lim_{\lbrack\;\rbrack\rightarrow0}\frac{\sin\;\lbrack\;\rbrack}{\lbrack\;\rbrack}\;=\;1$$</span> </div>
+
+<h3>例如: </h3>
+
+<div class="shuxue"> $$\lim_{x\rightarrow0}\frac{\sin\;3x}x\;=\;\underset{x\rightarrow0}{3\;\lim}\frac{\sin\;3x}{3x}\;=\;3$$</div>
+
+
+
+<!-- ![](/images/学数学/两个重要极限.jpg) -->
+
+<h3>重要极限二:</h3>
+
+<div class="shuxue"> $$\lim_{x\rightarrow0}{(\;1\;+\;x\;)}^\frac1x\;=\;e\;$$<span class="shuxue2">或</span><span class="shuxue2">$$\lim_{x\rightarrow\infty}{(\;1\;+\;\frac1x\;)}^{x\;=\;e}$$</span></div>
+
+<!-- ![](/images/学数学/两个重要极限2.jpg) -->
+
+<h2 id="考点2-等价无穷小求极限"><a href="#考点2-等价无穷小求极限" class="headerlink" title="考点2: 等价无穷小求极限"></a>考点2: 等价无穷小求极限</h2><h3>常见的等价无穷小:</h3>
+
+<p>当x→0时,</p>
+<p><font color="#7bbfea">(1)</font><div class="shuxue"><span class="shuxue2">x</span><span class="shuxue2"><del></del></span> <span class="shuxue2">$$\sin;x$$</span><span class="shuxue2"></span> <span class="shuxue2">$$\tan;x$$</span><span class="shuxue2"><del></del></span><span class="shuxue2">$$arc\sin;x$$</span><span class="shuxue2"></span><span class="shuxue2">$$arc\tan;x$$</span><span class="shuxue2"><del></del></span><span class="shuxue2">$$\ln\left(;1;+;x\right)$$</span><span class="shuxue2"></span> &lt;span ;class=”shuxue2”&gt;$$e^{x;}$$</div></p>
+<p><font color="#7bbfea">(2)</font><div class="shuxue"><span class="shuxue2">$$1-\cos;x;\sim;\frac12x^2$$</span></div></p>
+<p><font color="#7bbfea">(3)</font><div class="shuxue"><span class="shuxue2">$$\left(;1;+;x;\right)^{a;}-1;\sim;ax$$</span></div></p>
+<p><font color="#ed1941">注意:</font> x ➝ 0 时,<div class="shuxue"><span class="shuxue2">$$\left(;1;+;x;\right)^\frac12;-1;\sim;;\frac12x,;\sqrt{1+x}-1;\sim;\frac12x$$</span></div></p>
+<!-- <div class="shuxue">
+$$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\left(1+x\right)\;\sim\;e^{x\;}-1$$</div> -->
+
+<!-- ![](/images/学数学/等价无穷小求极限.jpg) -->
+
+
+<h2 id="考点4-零点定理证明方程根的存在性"><a href="#考点4-零点定理证明方程根的存在性" class="headerlink" title="考点4: 零点定理证明方程根的存在性"></a>考点4: 零点定理证明方程根的存在性</h2><h3 id="零点定理"><a href="#零点定理" class="headerlink" title="零点定理:"></a>零点定理:</h3><ul>
+<li>设 f ( x ) 在 [ a , b ] 闭区间上连续, 且f ( a ) · f ( b ) &lt; 0 则∃ § ∈ ( a , b ) 使得f ( § ) = 0</li>
+</ul>
+<h3 id="考点5-零点定理证明方程根的存在性"><a href="#考点5-零点定理证明方程根的存在性" class="headerlink" title="考点5: 零点定理证明方程根的存在性"></a>考点5: 零点定理证明方程根的存在性</h3><h4>证明题解题步骤: </h4>
+
+<ul>
+<li>移动构造辅助函数 f ( x ) </li>
+<li>验证 f ( a ) · f ( b ) &lt; 0</li>
+<li>由零点定理结论: f ( x ) 在 ( a , b ) 内存在零点, 方程有实根</li>
+</ul>
+]]></content>
+      <categories>
+        <category>跟我一起学数学</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Android同步源码和编译ROM傻瓜式 (有手就行)</title>
     <url>/Android-compile.html</url>
     <content><![CDATA[<p><strong>本人是用Arch，顺便来传一下教</strong><br><img src="/images/编译Android/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
@@ -3633,120 +3747,6 @@ python数据类型
 <h1 id="祝福大家能自己动手做出属于自己的ROM"><a href="#祝福大家能自己动手做出属于自己的ROM" class="headerlink" title="祝福大家能自己动手做出属于自己的ROM"></a>祝福大家能自己动手做出属于自己的ROM</h1>]]></content>
       <categories>
         <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>函数与极限 (第一章)</title>
-    <url>/Function-limit.html</url>
-    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
-<a id="more"></a>
-
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="考点1-求函数的定义域"><a href="#考点1-求函数的定义域" class="headerlink" title="考点1: 求函数的定义域"></a>考点1: 求函数的定义域</h2><h3 id="函数三要素-自变量x-因变量y-对应法则f"><a href="#函数三要素-自变量x-因变量y-对应法则f" class="headerlink" title="函数三要素: 自变量x 因变量y 对应法则f"></a>函数三要素: 自变量x 因变量y 对应法则f</h3><ul>
-<li>记为: y=f(x)  </li>
-</ul>
-<h3 id="函数的定义域-自变量x-的取值范围"><a href="#函数的定义域-自变量x-的取值范围" class="headerlink" title="函数的定义域: 自变量x 的取值范围"></a>函数的定义域: 自变量x 的取值范围</h3><h3 id="解题思路-求解不等式方程组"><a href="#解题思路-求解不等式方程组" class="headerlink" title="解题思路: 求解不等式方程组"></a>解题思路: 求解不等式方程组</h3><ul>
-<li>若函数是几个函数的四则混合式, 则应各部分定义域的交集  </li>
-<li>若为分段函数, 则取各部分定义域的并集</li>
-</ul>
-<h2 id="考点2-函数奇偶性的判定"><a href="#考点2-函数奇偶性的判定" class="headerlink" title="考点2: 函数奇偶性的判定"></a>考点2: 函数奇偶性的判定</h2><ul>
-<li>偶次方是偶 </li>
-<li>奇次方是奇</li>
-<li>sin是奇</li>
-<li>cos是偶</li>
-<li>tan是奇</li>
-<li>常数是偶</li>
-</ul>
-<h3 id="1-定义法-定义域D关于原点对称"><a href="#1-定义法-定义域D关于原点对称" class="headerlink" title="(1) 定义法: 定义域D关于原点对称"></a>(1) 定义法: 定义域D关于原点对称</h3><ul>
-<li>若f(-x)=-f(x), 则称f(x)为<font color="#ef5b9c">奇函数  奇函数关于原点对称</font>  </li>
-</ul>
-<div class="mermaid">
-graph LR
-A["f(-x)"]--恒等变形-->B["-f(x)"]
-</div>
-
-<ul>
-<li>若f(-x)=f(x), 则称f(x)为<font color="#87CEEB">偶函数  偶函数关于y轴对称</font>  </li>
-</ul>
-<div class="mermaid">
-graph LR
-A["f(-x)"]--恒等变形-->B["f(x)"]
-</div>
-
-
-<h3 id="2-公式法"><a href="#2-公式法" class="headerlink" title="(2) 公式法:"></a>(2) 公式法:</h3><h4>加减: </h4>
-
-<ul>
-<li><p><font color="#ef5b9c">奇</font> ± <font color="#ef5b9c">奇</font> = <font color="#ef5b9c">奇</font></p>
-</li>
-<li><p><font color="#87CEEB">偶</font> ± <font color="#87CEEB">偶</font> = <font color="#87CEEB">偶</font></p>
-</li>
-<li><p><font color="#ef5b9c">奇</font> ± <font color="#87CEEB">偶</font> = <font color="#9b95c9">非奇非偶</font></p>
-</li>
-</ul>
-<h4>乘除: </h4>
-
-<ul>
-<li><p><font color="#ef5b9c">奇</font> x/÷ <font color="#ef5b9c">奇</font> = <font color="#87CEEB">偶</font></p>
-</li>
-<li><p><font color="#87CEEB">偶</font> x/÷ <font color="#87CEEB">偶</font> = <font color="#87CEEB">偶</font></p>
-</li>
-<li><p><font color="#ef5b9c">奇</font> x/÷ <font color="#87CEEB">偶</font> = <font color="#ef5b9c">奇</font></p>
-</li>
-</ul>
-<h1 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h1><h2 id="考点1-夹逼准则"><a href="#考点1-夹逼准则" class="headerlink" title="考点1: 夹逼准则"></a>考点1: 夹逼准则</h2><h4>若数列 {xₙ}, {yₙ}, {zₙ} 满足下列条件</h4>
-
-<ul>
-<li><p>(1) 从某项开始有 xₙ ≤ yₙ ≤ zₙ</p>
-</li>
-<li><p>(2) lim xₙ(n➝∞) = lim zₙ(n➝∞)=A, 则数列{yₙ}的极限存在, 且lim yₙ(n➝∞) = A</p>
-</li>
-</ul>
-<!-- ![](/images/学数学/夹逼准则.jpg) -->
-
-<h2 id="考点2-两个重要极限"><a href="#考点2-两个重要极限" class="headerlink" title="考点2: 两个重要极限"></a>考点2: 两个重要极限</h2><h3>重要极限一:</h3>
-
-<div class="shuxue"> $$\lim_{x\rightarrow0}\frac{\sin\;x}x\;=\;1$$<span class="shuxue2">或</span><span class="shuxue2">$$\lim_{\lbrack\;\rbrack\rightarrow0}\frac{\sin\;\lbrack\;\rbrack}{\lbrack\;\rbrack}\;=\;1$$</span> </div>
-
-<h3>例如: </h3>
-
-<div class="shuxue"> $$\lim_{x\rightarrow0}\frac{\sin\;3x}x\;=\;\underset{x\rightarrow0}{3\;\lim}\frac{\sin\;3x}{3x}\;=\;3$$</div>
-
-
-
-<!-- ![](/images/学数学/两个重要极限.jpg) -->
-
-<h3>重要极限二:</h3>
-
-<div class="shuxue"> $$\lim_{x\rightarrow0}{(1+x)}^\frac1x\;=\;e\;$$<span class="shuxue2">或</span><span class="shuxue2">$$\lim_{x\rightarrow\infty}{(1+\frac1x)}^{x\;=\;e}$$</span></div>
-
-<!-- ![](/images/学数学/两个重要极限2.jpg) -->
-
-<h2 id="考点2-等价无穷小求极限"><a href="#考点2-等价无穷小求极限" class="headerlink" title="考点2: 等价无穷小求极限"></a>考点2: 等价无穷小求极限</h2><h3>常见的等价无穷小:</h3>
-
-<p>当x→0时,</p>
-<p><font color="#7bbfea">(1)</font><div class="shuxue"><span class="shuxue2">x</span><span class="shuxue2"><del></del></span> <span class="shuxue2">$$\sin;x$$</span><span class="shuxue2"></span> <span class="shuxue2">$$\tan;x$$</span><span class="shuxue2"><del></del></span><span class="shuxue2">$$arc\sin;x$$</span><span class="shuxue2"></span><span class="shuxue2">$$arc\tan;x$$</span><span class="shuxue2"><del></del></span><span class="shuxue2">$$\ln\left(1+x\right)$$</span><span class="shuxue2"></span> <span class="shuxue2">$$e^{x;}$$</span></div></p>
-<p><font color="#7bbfea">(2)</font><div class="shuxue"><span class="shuxue2">$$1-\cos;x;\sim;\frac12x^2$$</span></div></p>
-<p><font color="#7bbfea">(3)</font><div class="shuxue"><span class="shuxue2">$$\left(1+x\right)^{a;}-1;\sim;ax$$</span></div></p>
-<p><font color="#ed1941">注意:</font> x➝0时,<div class="shuxue"><span class="shuxue2">$$\left(1+x\right)^\frac12;-1;\sim;;\frac12x,;\sqrt{1+x}-1;\sim;\frac12x$$</span></div></p>
-<!-- <div class="shuxue">
-$$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\left(1+x\right)\;\sim\;e^{x\;}-1$$</div> -->
-
-<!-- ![](/images/学数学/等价无穷小求极限.jpg) -->
-
-
-<h2 id="考点4-零点定理证明方程根的存在性"><a href="#考点4-零点定理证明方程根的存在性" class="headerlink" title="考点4: 零点定理证明方程根的存在性"></a>考点4: 零点定理证明方程根的存在性</h2><h3 id="零点定理"><a href="#零点定理" class="headerlink" title="零点定理:"></a>零点定理:</h3><ul>
-<li>设f(x)在[a,b]闭区间上连续, 且f(a)·f(b)&lt;0 则∃§∈(a,b) 使得f(§)=0</li>
-</ul>
-<h3 id="考点5-零点定理证明方程根的存在性"><a href="#考点5-零点定理证明方程根的存在性" class="headerlink" title="考点5: 零点定理证明方程根的存在性"></a>考点5: 零点定理证明方程根的存在性</h3><h4>证明题解题步骤: </h4>
-
-<ul>
-<li>移动构造辅助函数f(x)</li>
-<li>验证f(a)·f(b)&lt;0</li>
-<li>由零点定理结论: f(x)在(a,b)内存在零点, 方程有实根</li>
-</ul>
-]]></content>
-      <categories>
-        <category>跟我一起学数学</category>
       </categories>
   </entry>
   <entry>
@@ -4065,22 +4065,71 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
     <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
 <a id="more"></a>
 
-<h1 id="导数的概念与运算法则"><a href="#导数的概念与运算法则" class="headerlink" title="导数的概念与运算法则"></a>导数的概念与运算法则</h1><h2 id="考点1-导数的定义"><a href="#考点1-导数的定义" class="headerlink" title="考点1: 导数的定义"></a>考点1: 导数的定义</h2><div class="shuxue">$$\lim_{\triangle x\rightarrow\infty}\frac{f(x_0+\triangle x)-f(x_0)}{\triangle x}$$ <span class="shuxue2">是按顺序是v额. 存在, 则称</span></div>
+<h1 id="导数的概念与运算法则"><a href="#导数的概念与运算法则" class="headerlink" title="导数的概念与运算法则"></a>导数的概念与运算法则</h1><h2 id="考点1-导数的定义"><a href="#考点1-导数的定义" class="headerlink" title="考点1: 导数的定义"></a>考点1: 导数的定义</h2><h3>定义:</h3>
 
-<!-- ![](/images/学数学/导数的定义.jpg) -->
+<div class="shuxue">若$$\lim_{\triangle x\rightarrow\infty}\frac{f(\;x_0\;+\;\triangle x\;)-f(\;x_0\;)}{\triangle x}\\$$ 存在,则称 $$\;y=f(x)\;\\\\$$ 在 $$\;\;x_0\;\;\\\\$$ 处可导</div>
 
+<div class="shuxue">称该极限为,$$\;y=f(x)\;\\\\$$在$$\;\;x_0\;\;\\\\$$ 处的导数 </div>
 
-
-
-
-
+<div class="shuxue">记作: <span class="shuxue2">$$f\;'\;(\;x_0\;)\;,\;\\\\$$</span><span>$$f\;'\;(\;x_0\;)\;,\;\\\\$$</span><span>$${}_{\;x\;=\;x_0\;}\\\\$$</span></div>
 
 
+<h3>特别的:</h3>
+
+<div class="shuxue">$$f\;'\;(\;x_0\;)\;=\;\lim_{\triangle x\rightarrow0}\frac{f(\;x_0\;+\;\triangle x\;)\;-\;f\left(\;x_0\;\right)}{\triangle x}\\$$</div>
+
+<div class="shuxue">$$=\lim_{x\rightarrow0}\frac{f(\;x\;)\;-\;f\left(\;x_0\;\right)}{x\;-\;x_0}\\\\$$ </div>
+
+<div class="shuxue"><span>$$\;f\;'\;\left(\;x\;\right),\;\;\\\\$$</span><span>$$\;y\;'\;,\;\frac{\displaystyle dy}{\displaystyle dx}\;\\\\$$</span><span>$$\frac{\displaystyle dy}{\displaystyle dx}\;\\\\$$</span></div>
+
+<h3>导函数记作:</h3>
+
+<div class="shuxue"><span class="shuxue2">$$\;f\;'\;\left(\;x\;\right),\;\;y\;'\;,\;\frac{dy}{dx}\;$$</span></div>
 
 
+<h2 id="考点2-高阶导数"><a href="#考点2-高阶导数" class="headerlink" title="考点2: 高阶导数"></a>考点2: 高阶导数</h2><h3 id="求n阶段方法"><a href="#求n阶段方法" class="headerlink" title="求n阶段方法:"></a>求n阶段方法:</h3><h4>求出f(x)的前几阶导, 总结规律, 得n阶导</h4>
+
+<h4>高阶导数公式:</h4>
+
+<p><font color="#7bbfea">(1)</font></p>
+<div class="shuxue"><span>$${(\;e\;^{x\;})}^{\;(\;n\;)}\;=\;e^x,$$</span><span>$$(\;e^{\;ax\;+\;b}\;)\;^{(\;n\;)}\;=\;a^{\;n\;}e\;^{ax\;+\;b},\;$$</span><span>$${(\;a^{x\;})}^{(\;n\;)}\;=\;{(\;\ln\;a\;)}^{\;n}\;a^{\;x}$$</span></div>
+
+<p><font color="#7bbfea">(2)</font></p>
+<div class="shuxue"><span>$$\left(\;x^n\;\right)^{(\;n\;)}\;=\;n!,\;$$</span><span>$$\left(\;x^m\;\right)^{(\;n\;)\;}\;=\;$$</span><span>$$0.\;( \;m < n\;)$$</span></div>
 
 
-]]></content>
+<p><font color="#7bbfea">(3)</font></p>
+<div class="shuxue"><span>$${(\;\sin\;x\;)}^{\;(\;n\;)\;}=\;\sin\;(\;x\;+\;\frac{n\;\mathrm\pi}2\;),\\\\$$</span><span>$${(\;\cos\;x)}^{\;(\;n\;)}\;=\;\cos\;(\;x\;+\;\frac{n\;\mathrm\pi}2\;)\\\\$$</span></div>
+
+
+<h2 id="考点3-求隐函数的导数"><a href="#考点3-求隐函数的导数" class="headerlink" title="考点3: 求隐函数的导数"></a>考点3: 求隐函数的导数</h2><div class="shuxue">定义: 显函数 $$ \;y\; \;=\; f\; (\; x\; )\;$$, 隐函数$$ \;F \; ( \;x \;,\; y \; ) \; = \; 0\;$$</div>
+
+<h3>解题方法:</h3>
+
+<h4>方法一: 复合函数法</h4>
+
+<div class="shuxue">方程 $$\;F\;=\;(\;x\;,\;y\;)\;=\;0\;$$, 两边同时对$$\;x\;$$求导, 解出$$\;y'\;$$ </div>
+
+<div class="shuxue">注意: <span>$$\;x\;$$</span>是<span>$$\;y\;$$</span>的函数</div>
+
+<h4>方法二: 公式法</h4>
+
+<p><font color="#7bbfea">(1)</font></p>
+<div class="shuxue">构造二次元函数 $$\;F\;=\;(\;x\;,\;y\;)\;$$</div>
+
+<p><font color="#7bbfea">(2)</font></p>
+<div class="shuxue">求偏导数 $$\;F_x\;(\;x\;,\;y\;),\;F_{y\;}(\;x\;,\;y\;)\;$$</div>
+
+<p><font color="#7bbfea">(3)</font></p>
+<div class="shuxue">带公式 $$\;\frac{dy}{dx}\;=\;-\;\frac{Fx\;(\;x\;,\;y\;)}{Fy\;(\;x\;,\;y\;)}$$</div>
+
+<h2 id="考点4-求参数方程的导数"><a href="#考点4-求参数方程的导数" class="headerlink" title="考点4: 求参数方程的导数"></a>考点4: 求参数方程的导数</h2><p><font color="#7bbfea">(1)</font></p>
+<div class="shuxue">参数方程: $$\;\left\{\begin{array}{l}x\;=\;\varphi\;(\;t\;)\\y\;=\;\psi\;(\;t\;)\end{array}\right.\;$$</div>
+
+<p><font color="#7bbfea">(2)</font></p>
+<div class="shuxue">求导公式: $$\;\frac{dy}{dx}\;=\;\frac{dy\;/\;dt}{dx/\;dt}\;=\;\frac{\psi\;'\;(\;t\;)\;}{\varphi\;'\;(\;t\;)}$$</div>
+
+<div class="shuxue">$$\;\frac{d^2\;y}{d^{2\;}x}\;=\;\frac d{dx}\;\left(\;\frac{dy}{dx}\;\right)\;=\;\frac{d\;(\;{\displaystyle\frac{dy}{dx}}\;)\;/\;dt}{dx\;/\;dt}$$</div>]]></content>
       <categories>
         <category>跟我一起学数学</category>
       </categories>
@@ -4485,6 +4534,77 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
       </categories>
   </entry>
   <entry>
+    <title>微分中值定理及导数的应用 (第三章)</title>
+    <url>/differential-theorem-derivative.html</url>
+    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
+<a id="more"></a>
+
+<h1 id="第一节-微分中值定理及洛必达法则"><a href="#第一节-微分中值定理及洛必达法则" class="headerlink" title="第一节 微分中值定理及洛必达法则"></a>第一节 微分中值定理及洛必达法则</h1><h2 id="考点1-罗尔定理"><a href="#考点1-罗尔定理" class="headerlink" title="考点1: 罗尔定理"></a>考点1: 罗尔定理</h2><h3><span>设 f ( x )满足:</span></h3>
+
+<p><font color="#7bbfea">(1) 在 [ a , b ]上连续</font></p>
+<p><font color="#7bbfea">(2) 在 ( a , b )内可导</font></p>
+<p><font color="#7bbfea">(3) f ( a ) = f ( b ), 则 ∃ § ∈ ( a , b )</font></p>
+<h3>特别的:</h3>
+
+<div class="shuxue">$$f\;'\;(\;x_0\;)\;=\;\lim_{\triangle x\rightarrow0}\frac{f(\;x_0\;+\;\triangle x\;)\;-\;f\left(\;x_0\;\right)}{\triangle x}\\$$</div>
+
+<div class="shuxue">$$=\lim_{x\rightarrow0}\frac{f(\;x\;)\;-\;f\left(\;x_0\;\right)}{x\;-\;x_0}\\\\$$ </div>
+
+<div class="shuxue"><span>$$\;f\;'\;\left(\;x\;\right),\;\;\\\\$$</span><span>$$\;y\;'\;,\;\frac{\displaystyle dy}{\displaystyle dx}\;\\\\$$</span><span>$$\frac{\displaystyle dy}{\displaystyle dx}\;\\\\$$</span></div>
+
+<h3>导函数记作:</h3>
+
+<div class="shuxue"><span class="shuxue2">$$\;f\;'\;\left(\;x\;\right),\;\;y\;'\;,\;\frac{dy}{dx}\;$$</span></div>
+
+
+<h2 id="考点2-高阶导数"><a href="#考点2-高阶导数" class="headerlink" title="考点2: 高阶导数"></a>考点2: 高阶导数</h2><h3 id="求n阶段方法"><a href="#求n阶段方法" class="headerlink" title="求n阶段方法:"></a>求n阶段方法:</h3><h4>求出f(x)的前几阶导, 总结规律, 得n阶导</h4>
+
+<h4>高阶导数公式:</h4>
+
+<p><font color="#7bbfea">(1)</font></p>
+<div class="shuxue"><span>$${(\;e\;^{x\;})}^{\;(\;n\;)}\;=\;e^x,$$</span><span>$$(\;e^{\;ax\;+\;b}\;)\;^{(\;n\;)}\;=\;a^{\;n\;}e\;^{ax\;+\;b},\;$$</span><span>$${(\;a^{x\;})}^{(\;n\;)}\;=\;{(\;\ln\;a\;)}^{\;n}\;a^{\;x}$$</span></div>
+
+<p><font color="#7bbfea">(2)</font></p>
+<div class="shuxue"><span>$$\left(\;x^n\;\right)^{(\;n\;)}\;=\;n!,\;$$</span><span>$$\left(\;x^m\;\right)^{(\;n\;)\;}\;=\;$$</span><span>$$0.\;( \;m < n\;)$$</span></div>
+
+
+<p><font color="#7bbfea">(3)</font></p>
+<div class="shuxue"><span>$${(\;\sin\;x\;)}^{\;(\;n\;)\;}=\;\sin\;(\;x\;+\;\frac{n\;\mathrm\pi}2\;),\\\\$$</span><span>$${(\;\cos\;x)}^{\;(\;n\;)}\;=\;\cos\;(\;x\;+\;\frac{n\;\mathrm\pi}2\;)\\\\$$</span></div>
+
+
+<h2 id="考点3-求隐函数的导数"><a href="#考点3-求隐函数的导数" class="headerlink" title="考点3: 求隐函数的导数"></a>考点3: 求隐函数的导数</h2><div class="shuxue">定义: 显函数 $$ \;y\; \;=\; f\; (\; x\; )\;$$, 隐函数$$ \;F \; ( \;x \;,\; y \; ) \; = \; 0\;$$</div>
+
+<h3>解题方法:</h3>
+
+<h4>方法一: 复合函数法</h4>
+
+<div class="shuxue">方程 $$\;F\;=\;(\;x\;,\;y\;)\;=\;0\;$$, 两边同时对$$\;x\;$$求导, 解出$$\;y'\;$$ </div>
+
+<div class="shuxue">注意: <span>$$\;x\;$$</span>是<span>$$\;y\;$$</span>的函数</div>
+
+<h4>方法二: 公式法</h4>
+
+<p><font color="#7bbfea">(1)</font></p>
+<div class="shuxue">构造二次元函数 $$\;F\;=\;(\;x\;,\;y\;)\;$$</div>
+
+<p><font color="#7bbfea">(2)</font></p>
+<div class="shuxue">求偏导数 $$\;F_x\;(\;x\;,\;y\;),\;F_{y\;}(\;x\;,\;y\;)\;$$</div>
+
+<p><font color="#7bbfea">(3)</font></p>
+<div class="shuxue">带公式 $$\;\frac{dy}{dx}\;=\;-\;\frac{Fx\;(\;x\;,\;y\;)}{Fy\;(\;x\;,\;y\;)}$$</div>
+
+<h2 id="考点4-求参数方程的导数"><a href="#考点4-求参数方程的导数" class="headerlink" title="考点4: 求参数方程的导数"></a>考点4: 求参数方程的导数</h2><p><font color="#7bbfea">(1)</font></p>
+<div class="shuxue">参数方程: $$\;\left\{\begin{array}{l}x\;=\;\varphi\;(\;t\;)\\y\;=\;\psi\;(\;t\;)\end{array}\right.\;$$</div>
+
+<p><font color="#7bbfea">(2)</font></p>
+<div class="shuxue">求导公式: $$\;\frac{dy}{dx}\;=\;\frac{dy\;/\;dt}{dx/\;dt}\;=\;\frac{\psi\;'\;(\;t\;)\;}{\varphi\;'\;(\;t\;)}$$</div>
+
+<div class="shuxue">$$\;\frac{d^2\;y}{d^{2\;}x}\;=\;\frac d{dx}\;\left(\;\frac{dy}{dx}\;\right)\;=\;\frac{d\;(\;{\displaystyle\frac{dy}{dx}}\;)\;/\;dt}{dx\;/\;dt}$$</div>]]></content>
+      <categories>
+        <category>跟我一起学数学</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Python 数据类型(我失忆了)</title>
     <url>/python-type.html</url>
     <content><![CDATA[<p><strong>我真的失忆了</strong></p>
@@ -4528,26 +4648,6 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
       <categories>
         <category>Python</category>
       </categories>
-  </entry>
-  <entry>
-    <title>职教星2.8.2(搬运软件)</title>
-    <url>/zjx2.8.1.html</url>
-    <content><![CDATA[<p><strong>职教星2.8.2</strong></p>
-<a id="more"></a>
-
-<p><strong>本人找了3天, 相当不容易</strong></p>
-<p><strong>有的人甚至拿别人的软件来卖钱, 拿着别人的劳动成果来赚钱, 实在容忍不了越想越气</strong></p>
-<h1 id="在我这里拿走职教星2-8-2有两点要求"><a href="#在我这里拿走职教星2-8-2有两点要求" class="headerlink" title="在我这里拿走职教星2.8.2有两点要求"></a>在我这里拿走职教星2.8.2有两点要求</h1><p><strong>1. 不能大势宣传 因为怕职教云知道就会做出应对措施</strong></p>
-<p><strong>2. 帮助别人别谈钱, 帮助别人, 别人会看在心里, 然后别人会以你为榜样的去帮助那些需要帮助的人</strong></p>
-<h1>拿走的请在下面评论区留言: "我遵守承诺"</h1>
-
-<h1 id="记住千万别成为那些盗取别人劳动成果来赚钱的人渣"><a href="#记住千万别成为那些盗取别人劳动成果来赚钱的人渣" class="headerlink" title="记住千万别成为那些盗取别人劳动成果来赚钱的人渣"></a>记住千万别成为那些盗取别人劳动成果来赚钱的人渣</h1><h1 style="color:red;font-size:50px">这个是承诺的格式, 这是承诺请, 认真对待</h1>
-
-<p><img src="/images/%E8%81%8C%E6%95%99%E6%98%9F/%E6%89%BF%E8%AF%BA.jpg"></p>
-<h1 style="color:red;font-size:50px">截图一定要让我看见QQ头像, 记住使用之前把所有安全软件都关了, 自带的也要</h1>
-
-<p><img src="/images/%E8%81%8C%E6%95%99%E6%98%9F/%E6%88%AA%E5%9B%BE%E6%A0%BC%E5%BC%8F.jpg"></p>
-<h1 id="本放链接-想要的话-自己带着承诺完的截图来找我-我给你密码"><a href="#本放链接-想要的话-自己带着承诺完的截图来找我-我给你密码" class="headerlink" title="本放链接!!! 想要的话, 自己带着承诺完的截图来找我, 我给你密码"></a>本放<a href="https://wwr.lanzoui.com/iRu7Bqsx7od">链接</a>!!! 想要的话, 自己带着承诺完的截图来找<a href="https://wpa.qq.com/msgrd?v=3&uin=3083329400&site=qq&menu=yes">我</a>, 我给你密码</h1>]]></content>
   </entry>
   <entry>
     <title>数列的极限</title>
@@ -4594,6 +4694,26 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
       <categories>
         <category>跟我一起学数学</category>
       </categories>
+  </entry>
+  <entry>
+    <title>职教星2.8.2(搬运软件)</title>
+    <url>/zjx2.8.1.html</url>
+    <content><![CDATA[<p><strong>职教星2.8.2</strong></p>
+<a id="more"></a>
+
+<p><strong>本人找了3天, 相当不容易</strong></p>
+<p><strong>有的人甚至拿别人的软件来卖钱, 拿着别人的劳动成果来赚钱, 实在容忍不了越想越气</strong></p>
+<h1 id="在我这里拿走职教星2-8-2有两点要求"><a href="#在我这里拿走职教星2-8-2有两点要求" class="headerlink" title="在我这里拿走职教星2.8.2有两点要求"></a>在我这里拿走职教星2.8.2有两点要求</h1><p><strong>1. 不能大势宣传 因为怕职教云知道就会做出应对措施</strong></p>
+<p><strong>2. 帮助别人别谈钱, 帮助别人, 别人会看在心里, 然后别人会以你为榜样的去帮助那些需要帮助的人</strong></p>
+<h1>拿走的请在下面评论区留言: "我遵守承诺"</h1>
+
+<h1 id="记住千万别成为那些盗取别人劳动成果来赚钱的人渣"><a href="#记住千万别成为那些盗取别人劳动成果来赚钱的人渣" class="headerlink" title="记住千万别成为那些盗取别人劳动成果来赚钱的人渣"></a>记住千万别成为那些盗取别人劳动成果来赚钱的人渣</h1><h1 style="color:red;font-size:50px">这个是承诺的格式, 这是承诺请, 认真对待</h1>
+
+<p><img src="/images/%E8%81%8C%E6%95%99%E6%98%9F/%E6%89%BF%E8%AF%BA.jpg"></p>
+<h1 style="color:red;font-size:50px">截图一定要让我看见QQ头像, 记住使用之前把所有安全软件都关了, 自带的也要</h1>
+
+<p><img src="/images/%E8%81%8C%E6%95%99%E6%98%9F/%E6%88%AA%E5%9B%BE%E6%A0%BC%E5%BC%8F.jpg"></p>
+<h1 id="本放链接-想要的话-自己带着承诺完的截图来找我-我给你密码"><a href="#本放链接-想要的话-自己带着承诺完的截图来找我-我给你密码" class="headerlink" title="本放链接!!! 想要的话, 自己带着承诺完的截图来找我, 我给你密码"></a>本放<a href="https://wwr.lanzoui.com/iRu7Bqsx7od">链接</a>!!! 想要的话, 自己带着承诺完的截图来找<a href="https://wpa.qq.com/msgrd?v=3&uin=3083329400&site=qq&menu=yes">我</a>, 我给你密码</h1>]]></content>
   </entry>
   <entry>
     <title>映射与函数</title>
@@ -5124,16 +5244,6 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
       </categories>
   </entry>
   <entry>
-    <title>爬虫 verify参数与CA证书(吃牢饭集合)</title>
-    <url>/reptile-verify-CA.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br><span class="hljs-comment"># 例如校园网</span><br>url = <span class="hljs-string">&quot;https://sam.huat.edu.cn:8443/selfservice/&quot;</span><br><br>response = requests.get(url, verify=<span class="hljs-literal">False</span>)<br><br><span class="hljs-built_in">print</span>(response.content)<br><span class="hljs-built_in">print</span>(response.text)<br></code></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
     <title>爬虫 xpath(牢饭吃到饱)</title>
     <url>/reptile-xpath.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -5258,6 +5368,16 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
 <li>返回由Element对象构成的列表: xpath规则字符串匹配的是标签, 列表中的Element对象可以继续进行xpath</li>
 </ul>
 ]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>爬虫 verify参数与CA证书(吃牢饭集合)</title>
+    <url>/reptile-verify-CA.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br><span class="hljs-comment"># 例如校园网</span><br>url = <span class="hljs-string">&quot;https://sam.huat.edu.cn:8443/selfservice/&quot;</span><br><br>response = requests.get(url, verify=<span class="hljs-literal">False</span>)<br><br><span class="hljs-built_in">print</span>(response.content)<br><span class="hljs-built_in">print</span>(response.text)<br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>爬虫</category>
       </categories>
@@ -6118,25 +6238,6 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
       </categories>
   </entry>
   <entry>
-    <title>爬虫 访问百度翻译(牢饭吃到饱)</title>
-    <url>/reptile-Baidutranslate.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-
-<h1 id="导入requests"><a href="#导入requests" class="headerlink" title="导入requests"></a>导入requests</h1><!--more-->
-<p><strong>打开cmd输入以下代码</strong></p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs PowerShell">pip install requests<br></code></pre></td></tr></table></figure>
-<h1 id="百度翻译案例"><a href="#百度翻译案例" class="headerlink" title="百度翻译案例"></a>百度翻译案例</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&quot;https://fanyi.baidu.com/sug&quot;</span><br><br>s = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入你要翻译的英文单词&quot;</span>)<br><br>dat = &#123;<br>        <span class="hljs-string">&quot;kw&quot;</span>:s<br>    &#125;<br><br>tou = &#123;<br>    <span class="hljs-string">&quot;user-agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Mobile Safari/537.36&quot;</span><br>&#125;<br><br>pachon = requests.post(url,headers=tou,data=dat)<br><br><span class="hljs-built_in">print</span>(pachon)<br><br><span class="hljs-built_in">print</span>(pachon.json())<br><br>pachon.close()  <span class="hljs-comment">#断开/关闭连接, 一定要断开</span><br></code></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
     <title>电脑刷BIOS(保姆级教程)</title>
     <url>/BOIS.html</url>
     <content><![CDATA[<p><strong>电脑刷BIOS简单到不能再简单</strong></p>
@@ -6167,6 +6268,25 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 <figure class="highlight ebnf"><table><tr><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">flashme</span><br></code></pre></td></tr></table></figure>
 <p><img src="/images/%E5%88%B7BIOS/%E5%88%B7BIOS.jpg"></p>
 <h3 id="神州SL7D3-神州SL7S3-神州SL7S4用的BIOS"><a href="#神州SL7D3-神州SL7S3-神州SL7S4用的BIOS" class="headerlink" title="神州SL7D3 神州SL7S3 神州SL7S4用的BIOS"></a>神州SL7D3 神州SL7S3 神州SL7S4<a href="https://wwr.lanzoui.com/iFiRVs7ehij">用的BIOS</a></h3>]]></content>
+  </entry>
+  <entry>
+    <title>爬虫 访问百度翻译(牢饭吃到饱)</title>
+    <url>/reptile-Baidutranslate.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+
+<h1 id="导入requests"><a href="#导入requests" class="headerlink" title="导入requests"></a>导入requests</h1><!--more-->
+<p><strong>打开cmd输入以下代码</strong></p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs PowerShell">pip install requests<br></code></pre></td></tr></table></figure>
+<h1 id="百度翻译案例"><a href="#百度翻译案例" class="headerlink" title="百度翻译案例"></a>百度翻译案例</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&quot;https://fanyi.baidu.com/sug&quot;</span><br><br>s = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入你要翻译的英文单词&quot;</span>)<br><br>dat = &#123;<br>        <span class="hljs-string">&quot;kw&quot;</span>:s<br>    &#125;<br><br>tou = &#123;<br>    <span class="hljs-string">&quot;user-agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Mobile Safari/537.36&quot;</span><br>&#125;<br><br>pachon = requests.post(url,headers=tou,data=dat)<br><br><span class="hljs-built_in">print</span>(pachon)<br><br><span class="hljs-built_in">print</span>(pachon.json())<br><br>pachon.close()  <span class="hljs-comment">#断开/关闭连接, 一定要断开</span><br></code></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
   </entry>
   <entry>
     <title>百度搜索技巧</title>
@@ -6708,6 +6828,150 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
       </categories>
   </entry>
   <entry>
+    <title>鲲鹏微认证(日后会更新)</title>
+    <url>/Kunpeng-micro-authentication.html</url>
+    <content><![CDATA[<p><strong>鲲鹏微认证笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="C-C-代码迁移"><a href="#C-C-代码迁移" class="headerlink" title="C/C++代码迁移"></a>C/C++代码迁移</h1><h2 id="编译型语言"><a href="#编译型语言" class="headerlink" title="编译型语言"></a>编译型语言</h2><ul>
+<li>典型的如C/C++/Go语言, 都属于编译型语言, 编译型语言开发的程序从x86处理器迁移到鲲鹏处理器时, 必须经过重新编译才能运行</li>
+</ul>
+<ul>
+<li>从源码到程序的过程<ul>
+<li>源码需要由编译器, 汇编器翻译成机器指令, 再通过链接器链接库函数生成机器语言程序<br>
+<br>
+
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight brainfuck"><table><tr><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">源码</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">预处理</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">预编译文件</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">编译</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">汇编代码</span>    --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">汇编</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">目标文件</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">链接</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">可执行文件</span><br><br><span class="hljs-comment">testc</span>      <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">E</span> <span class="hljs-comment">testc</span> <span class="hljs-literal">-</span><span class="hljs-comment">o</span> <span class="hljs-comment">testi</span>      <span class="hljs-comment">texti</span>       <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testio</span> <span class="hljs-comment">tests</span>      <span class="hljs-comment">texts</span>          <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testso</span> <span class="hljs-comment">testo</span>     <span class="hljs-comment">testo</span>       <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testso</span> <span class="hljs-comment">testo</span>     <span class="hljs-comment">text</span><br></code></pre></td></tr></table></figure>
+<h2 id="C-C-代码需要迁移的原因"><a href="#C-C-代码需要迁移的原因" class="headerlink" title="C/C++代码需要迁移的原因"></a>C/C++代码需要迁移的原因</h2><ul>
+<li>架构差异:<ul>
+<li>x86和鲲鹏处理器(aarch64)属于不同架构</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>指令极差异:<ul>
+<li>x86属于复杂指令集</li>
+<li>鲲鹏处理器(aarch64)属于精简指令集</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>向量寄存器的差异:<ul>
+<li>x86和鲲鹏处理器(aarch64)使用向量寄存器不同, 向量指令集也存在差异</li>
+</ul>
+</li>
+</ul>
+<h1 id="C-C-代码构建编译过程"><a href="#C-C-代码构建编译过程" class="headerlink" title="C/C++代码构建编译过程"></a>C/C++代码构建编译过程</h1><h2 id="C-C-代码工程主要包括两类文件"><a href="#C-C-代码工程主要包括两类文件" class="headerlink" title="C/C++代码工程主要包括两类文件:"></a>C/C++代码工程主要包括两类文件:</h2><ul>
+<li>编译构建脚本<ul>
+<li>Makefile CmakeListstxt Configure autogensh bootstrapsh等等</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>C/C++源码<ul>
+<li>src examples tests等等</li>
+</ul>
+</li>
+</ul>
+<h2 id="可能涉及到的移植项"><a href="#可能涉及到的移植项" class="headerlink" title="可能涉及到的移植项"></a>可能涉及到的移植项</h2><ul>
+<li>编译构建脚本类文件<ul>
+<li>编译选项的移植(指定数据类型, 生成代码特性, 目标执行器架构, 处理器硬件加速功能等)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>C/C++代码类文件<ul>
+<li>编译宏移植(用户自定义宏移植, 编译器自定义宏移植)</li>
+<li>编译器自带builtin函数移植</li>
+<li>内联汇编移植</li>
+<li>SSE intrinsic函数移植(MMX/SEE类函数移植, AVX函数移植)</li>
+</ul>
+</li>
+</ul>
+<!-- # C/C++代码编译构建过程
+
+~~~
+
+~~~ -->
+
+<h1 id="直接真题-CTRL-F"><a href="#直接真题-CTRL-F" class="headerlink" title="直接真题 CTRL+F"></a>直接真题 CTRL+F</h1><h2 id="判断题"><a href="#判断题" class="headerlink" title="判断题"></a>判断题</h2><p><strong>yum和rpm安装方式本质都是基于RPM包来安装软件</strong> √</p>
+<p><strong>交叉编译是在一个平台 上生成另一个平台上可执行的代码</strong> √</p>
+<p><strong>BenchmarkSQL使用GCC编译进行编译安装</strong> ×</p>
+<p><strong>Dockerfile中的每一条指令 都分别对应镜像的每一层</strong> √</p>
+<p><strong>C/C++语言属于编译型语言，其编译后得到的可执行程序执行时依赖的指令是与CPU架构不相关的，因此此类应用程序不需要移植</strong> ×</p>
+<p><strong>Centos是开源的操作系统，Debian不属于开源操作系统</strong> ×</p>
+<p><strong>Tai Shan服务器的CPU是ARM架构的</strong> √</p>
+<p><strong>华为鲲鹏云服务产品发布前，需要先加入鲲鹏凌云伙伴计划并通过鲲鹏云服务兼容性认证</strong> √</p>
+<p><strong>通过”ps -ef | grep PostgreSQL ”命令可以确认数据库进程是否启动</strong> ×</p>
+<p><strong>为方便客户业务的统一部署， 镜像服务建立起了镜像与弹性云服务器之间 镜像与裸金属服务器之间 以及镜像与外部文件之间的直接联系</strong> √</p>
+<p><strong>一个弹性公网IP能同时给多个弹性云服务器使用</strong> ×</p>
+<p><strong>华为鲲鹏性能优化工具支持分析C/C+ +和Java Mixed-Mode两种应用程序类型</strong> √</p>
+<p><strong>对于Java类应用程序进行性能分析时，由于受java的jit编译的限制，函数分析结果中只能查看到对应的源码，无法查看汇编和代码流图</strong> √</p>
+<p><strong>HiBench支持在编译时指定编译模块</strong> √</p>
+<p><strong>docker的基础镜像中包含父镜像</strong> ×</p>
+<p><strong>华为鲲鹏云服务可提供KC1型ECS和KS1型BMS</strong> √</p>
+<p><strong>Tai Shan服务器必须使用特殊的专有内存和硬盘</strong> x</p>
+<p><strong>Java/Python的虚拟机不支撑再鲲鹏上源码编译, 只能使用yum方式安装</strong> x</p>
+<!-- **个人理解Python是解释型语言,Java在鲲鹏里面也被强制列为解释型语言** -->
+<!-- **用户想安装按RPM方式发行的软件, 只需简单地输入命令rpm -ivh xxxrpm即可** -->
+<h2 id="单选题"><a href="#单选题" class="headerlink" title="单选题"></a>单选题</h2><p>类RedHat系统提供了什么命令来安装, 卸载和升级rpm软件包    (A)<br>    A rpm<br>    B dpkg<br>    C tar<br>    D apt-get</p>
+<p>下面哪个工具不属于鲲鹏开发套件?      (A)<br>    A 分析扫码工具<br>    B 代码迁移工具<br>    C 性能调优工具<br>    D Vtune</p>
+<p>使用命令rpmbuild -bb XX spec (XX表示文件名)制作RPM包时，RPM包生成在什么目录下?      (C)<br>A BUILD B SOURCE C RPMS D SPEC</p>
+<p>在BenchmarkSQL执行以下哪个脚本，可以对表中写入数据?      (A)<br>A runLoader sh B runBenchmark sh C runDatabaseBuild sh D runDatabaseDestroy Sh</p>
+<p>BenchmarkSQL执行以下哪个脚本加载数据?      (B)<br>A runBenchmark sh B runDat abaseBuild sh C runDat abaseDestroy sh D runLoader sh</p>
+<p>代码扫描工具Dependency Advisor是部署在哪种架构的服务器或者弹性云服务器上?      (D)<br>A ARM B 鲲鹏 C Power D x86</p>
+<p>以下哪个不属于镜像管理特性?      (D)<br>A 修改镜像 B 删除镜像 C 镜像导出 D 查询镜像</p>
+<p>Hi Bench是什么？      (C)<br>A 大数据开发框架 B 大数据可视化平台 C 大数据基准测试套件 D 大数据分析工具</p>
+<p>关于容器的删除操作，以下哪项是正确的？      (C)<br>A 可通过”docker rm &lt;容器ID&gt;”删除正在运行的容器<br>B 可通过”docker rmi &lt;容器ID&gt;”删除已停止的容器<br>C 可通过”docker rm &lt;容器ID&gt;”删除已停止的容器<br>D 可通过”docker rmi &lt;容器ID&gt;”删除正在运行的容器</p>
+<p>关于华为鲲鹏迁移工具分析报告提供的依赖库so文件的操作建议，以下哪项是不正确的?      (A)<br>A 目前不存在鲲鹏平台无法识别的依赖库So文件<br>B 鲲鹏平台不支持该类依赖库S0文件,需要用户自行处理<br>C 如果依赖库so文件已经过鲲鹏平台验证，但无二进制安装包,则需要用户下载依赖库源码，然后上传至目标服务器进行编译安装<br>D 如果依赖库S0文件已经过鲲鹏平台验证，且已有二进制安装包,则用户可以直按将工具提供的开源版本依赖库安装包下载到本地，然后上传至目标服务器进行安装使用</p>
+<p>以下关于web界面访问华为鲲鹏代码迁移工具的方式,描述正确的是      (A)<br>A 单用户单任务访问<br>B 多用户多任务并发访间<br>C 多用户同时访问<br>D 单用户多任务访问</p>
+<p>以下哪个选项不是iSula通用容器引辈的特点?      (C)<br>A 升级不中断业务 B 增强安全性和调测特性 C 大幅提升容器性能 D 快速灵活</p>
+<p>在修改BenchmarkSQL连接PostereSQL的配置文件时，关于runMins和runTxnsPerTerminal这两个参数的设置，以下哪项是正确的?      (A)<br>A 必须有一个设定为0  B 必须相等 C 均为0   D 必须不相等，且均不为0</p>
+<p>扫描工具Dependency Advi sor支持以下哪种使用模式?      (A)<br>A web B make C test D name</p>
+<p>如果要放开外部对弹性云服务器的8080端口访问，可以通过配置以下哪项功能实现?      (C)<br>A 弹性公网IP带宽 B 主机组 C 安全组 D VPC子网</p>
+<p>系统盘镜像类型不包含以下哪个      (A)<br>A 机架服务器系统盘镜像 B 普通云服务器系统盘镜像 C GPU加速云服务器系统盘镜像 D 裸金属云服务器系统盘镜像</p>
+<p>私有镜像通过以下哪个功能可以实现本地业务部署和公有云业务部署的统一化持久化?      (A)<br>A 镜像导出  B 镜像市场 C 镜像复制 D 镜像共享</p>
+<p>以下哪个命令表示只生成rpm源代码的命令?      (B)<br>A rpmbuild -ba B rpmbuild- bs C rpmbuild -bc D rpmbuild -bb</p>
+<p>以下哪个不是使用rpm工具安装软件?      (A)<br>A 自动安装依赖包 B 全自动安装 C 能够进行数据库的记载 D 自定义安装路径</p>
+<p>提供预装操作系统 应用环境和各类软件的优质第三方镜像是属于以下哪种镜像?      (C)<br>A 共享镜像 B 私有镜像 C 市场镜像 D 公共镜像</p>
+<p>ssh协议默认端口号是什么?      (C)<br>A 9600 B 23 C 22 D 513</p>
+<p>关于容器相关概念的描述，以下哪项是错误的?      (C)<br>A 标签:可用于识别不同的变体或版本<br>B 仓库: 一个软件库， 存储了可下载并安装在系统中的软件包<br>C 镜像:容器的运行实例<br>D 容器:image的运行实例</p>
+<p>使用gcc编译时，编译选项-march的作用是什么?      (A)<br>A 指定指令集<br>B 指定cpu型号<br>C 指定流水线<br>D 提升兼容性</p>
+<p>下列哪个是华为鲲鹏生态兼容的非国产操作系统?      (C)<br>A BCLinux<br>B openEuler<br>C Ubuntu<br>D Kylin</p>
+<p>谁是Linux之父?      (D)<br>A Richard Matthew Stal lman B Andrew Morton C Bill Gates D LimusTorval ds</p>
+<h2 id="多选题"><a href="#多选题" class="headerlink" title="多选题"></a>多选题</h2><p>可以从哪些方面对Post greSQL进行性能调优?      (A C)<br>A 数据库参数 B 硬件 C 编译参数 D 操作系统</p>
+<p>使用BenchmarkSQL前需要进行哪些操作?      (A C D)<br>A 配置环境变量 B 重启服务器 C 安装JDK  D 使环境变量生效</p>
+<p>关于rpm包和SRPM包的描述，以下正确的是?      (A B D)<br>A SRPM包含源代码而RPM不包含 B rpm包可以直接安装，SRPM包不可以 C 两者都可修改编译参数 D rpm包是已编译的程序，而SRPM不是</p>
+<p>镜像服务的典型应用场景有哪些?      (A B C)<br>A 快速部署应用 B 批量复制弹性云服务器 C 传统业务上云 D 实时同步数据</p>
+<p>镜像文件一般包括以下哪些内容?      (A C)<br>A 预装的软件 B 数据盘 C 操作系统 D 系统盘</p>
+<p>以下哪些不是针对spec文件的操作命令?      (A B)<br>A cmake B makefile C make D make install</p>
+<p>rpm安装包有哪些优点?      (A B C D)<br>A 提供软件版本资讯，软件名称，软件用途等相关信息，便于了解软件<br>B 内含编译程序，免编译<br>C 使用数据库记录rpm文件的相关参数，便于升级 移除 查询与验证<br>D 预先检查系统版本，可避免文 件被错误安装</p>
+<p>创建C/C++程序性能分析任务时，以下关于分析类型，描述正确的是?      (A B C)<br>A Profile System,即采集整个服务器系统，无需关注系统中有哪些类型的应用在运行，采集时长需要配置参数控制，适用于多业务混合运行和有子进程的场景<br>B Attach to Process,即该采集对象针对正在运行的应用程序，通过关联到运行该应用程序的PID的方式，来实时跟踪和采集该应用程序的性能数据,采集时长需要配置参数控制，适用于某些应用需要长时间持续运行和采集的场景<br>C Launch Application,即采集启动的时候，同时启动Application,采集时长受Appl ication的执行时间来控制，适用于Application运行时间较短的场景<br>D C/C++程序仅支持Launch Application和Attach to Process两种分析类型</p>
+<p>以下哪些属于Dockerfile的指令？      (A B C D)<br>A FROM B CMD C EXPOSE D RUN</p>
+<p>关于使用源码方式安装加速引擎软件，以下说法正确的有哪些?      (A B C D)<br>A 编译安装zlib加速库<br>B 在下载好的源码目录下，使用make命令编译加速器<br>C 编译安装加速器OpenSSL引擎<br>D 编译安装Warpdrive驱动开发库<br>E 安装openssl 111a或以上版本<br>F 安装内核开发包kernel-devel</p>
+<p>同一段C/C++代码，在鲲鹏处理器与x86架构处理器上编译的可执行程序有哪些不同?      (A B)<br>A 指令 B 指令使用的寄存器 C 功能 D 文件结构</p>
+<p>以下关于X6000 V5描述正确的是?      (A C D)<br>A 机框支持2个3000w电源<br>B 每个服务器节点支持3个半高半长标准PCIe插槽<br>C 支持4个半宽双路服务器节点<br>D 每个服务器节点支持16个DDR4 DIM插槽</p>
+<p>以下哪些场景属于数据密集紧耦合场景?      (C D)<br>A 基因测序<br>B 流体动力学<br>C 天气预测<br>D 环境预测</p>
+<p>在PostgreSQL迁移流程中，包含以下哪些步骤?      (A D)<br>A 迁移分析 B 性能测试 C 环境准备 D 源码修改</p>
+<p>通过以下哪些方式可以获取华为鲲鹏系列服务?      (B C)<br>A 购买华为云鲲鹏弹性云服务器<br>B 购买基于x86架构的弹性云服务器<br>C 购买RH服务器<br>D 购买Tai shan服务器</p>
+<p>私有镜像包含以下哪些功能?      (A B C D)<br>A 镜像加密 B 镜像共享 C 镜像导出 D 镜像复制</p>
+<p>在华为公有云中，私有镜像包括?      (B C)<br>A 市场镜像 B 系统镜像 C 数据镜像 D 共享镜像</p>
+<p>docker run -p 6379:6379 v $PWD/data:/data -d t_arm64v8/centos_ redis:505 redis server –appendonly yes关于此命令的描述，以下哪些是正确的?      (B C D)<br>A “6379:6379” :将主机的6379端口映射到容器的6379端口<br>B “appendonly yes”，打开持久化配置<br>C 该命令功能是启动容器，并在容器启动时候执行容器内的redis-server服务<br>D “$PWD/data: /data” :将主机中当前目录下的data挂载到容器的/data</p>
+<p>使用华为鲲鹏代码迁移工具对源码进行扫描分析时，需要进行哪些方面的检查和分析?      (A B C D)<br>A 检查x86平台与鲲鹏平台相异的编译器宏 编译选项 buildin函数 attribute函数等列表<br>B 对比输入的(S0文件名)列表和S0依赖库白名单<br>C 扫描分析用户软件目标二进制文件依赖的源文件集合<br>D 检查Make file中的编译链接</p>
+<p>C/C++语言开发的源码在编译时，以下哪些模块是不需要的？      (B C)<br>A 汇编器 B 存储器 C 加载器 D 编译器</p>
+<p>以下哪些是Tai Shan大数据方案使用的主要服务器型号?      (A B)<br>A 2280均衡型 B 5280存储型 C XA320计算节点 D X6000高密型</p>
+<p>以下关于华为鲲鹏920的特点描述正确的有哪些?      (C D)<br>A 性能可匹配Intel Skylake(V5) 高端处理器型号<br>B CPU最多支持2个100GE网口，支持RoCE特性<br>C 相比同等性能的Intel处理器，功耗更低<br>D 支持8内存通道，带宽高于Intel Skyl ake (V5)的6通道</p>
+<p>BenchmarkSQL配置文件中loadWorkers指的是什么（ ）<br>A、并发用户数<br>B、数据库装载并发数<br>C、数据库并行数<br>D、数据库表的数量<br>答案：B<br>TPCC衡量标准是什么？<br>A、QphH<br>B、响应时间<br>C、tpmC<br>D、TPS<br>答案：C<br>Porting Advisor工具在移植源码过程中的作用是？<br>A、分析源码，并给出移植工作量<br>B、分析源码，并给出分析报告和源码修改建议<br>C、分析源码，并修改源码<br>D、分析源码，并给出性能优化建议<br>答案：B<br>华为鲲鹏BMS云服务器最高可提供多少核？<br>A、32<br>B、48<br>C、62<br>D、128<br>答案：D<br>IMS私有镜像类型不包括以下哪项？<br>A、系统盘镜像<br>B、整体镜像<br>C、数据盘镜像<br>D、整机镜像<br>答案：B<br>可以根据设定的寻路协议实时自动优化网络结构，以保持客户使用的网络持续稳定、高效.这句话是关于以下哪项的描述？<br>A、静态BGP<br>B、全动态BGP<br>C、独享宽带<br>D、共享宽带<br>答案：B<br>以下哪条命令可以查看docker镜像？<br>A、docker images<br>B、docker list<br>C、docker container ls<br>D、docker -a<br>答案：A<br>以下哪个工具可以用于鲲鹏平台上进行代码迁移？<br>A、Tuning kit<br>B、Dependency Advisor<br>C、Porting Advisor<br>D、GCC<br>答案：C<br>Suse操作系统是从哪个版本开始处于Kunpeng 920的OS生态圈？<br>A、SLES 12.3<br>B、SLES 12.4<br>C、SLES 15<br>D、SLES 15.1<br>答案：D<br>以下哪项不是TaiShan服务器的优点？<br>A、国产化，自主安全可控<br>B、多物理核心，并发性能高<br>C、低功耗，绿色节能<br>D、生态完备，上层应用支持好<br>答案：D<br>以下哪个不是华为云鲲鹏生态帮助伙伴/开发者商业变现的方式?<br>A、华为鲲鹏严选馆:鲲鹏应用，优先推荐，快速商业变现<br>B、华为提供鲲鹏人才培养:专业培训，完善的鲲鹏工程师认证体系<br>C、华为提供鲲鹏原厂认证:专业团队，专业工具，1对1技术支持<br>D、华为鲲鹏云专业服务:客户业务系统一站式搬迁服务<br>答案：D<br>金融行业的鲲鹏硬替代应用不包括以下哪项?<br>A、经营分析<br>B、核心应用<br>C、办公支撑<br>D、互联网银行<br>答案：B<br>以下哪种工具可用于制作RPM包?<br>A、rpm-cmake<br>B、rpm make<br>C、rpm-test<br>D、rpm-build<br>答案：D<br>对PostgreSQL的编译参数进行调优时需要在CFLAGS字段中添加哪些选项<br>A、-march= and<br>B、-march=armv8- a+crc+lse<br>C、-march=armv8-a<br>D、march =X86<br>答案：B<br>以下哪个是BenchmarkSQL连接PostgreSQL的配置文件?<br>A、props.mysq1<br>B、props.pg<br>C、props.ora<br>D、props.percona<br>答案：B<br>以下哪种语言的源码文件不能用Porting Advisor迁移工具进行迁移分析?<br>A、C++<br>B、C<br>C、Java<br>D、汇编<br>答案：C<br>在华为云上，通过以下哪种方式或工具可以访问外网?<br>A、弹性公网IP<br>B、云硬盘<br>C、VPC<br>D、镜像<br>答案：A<br>在仅有x86服务器或者云服务器下，如何编译出ARM环境下执行的程序?<br>A、安装交叉编译环境，通过交叉编译环境执行编译<br>B、直接编译<br>C、使用x86下新版本gcc编译<br>D、修改权限编译<br>答案：A<br>关于加密镜像的描述，以下哪项是正确的?<br>A、使用加密的弹性云服务器创建的镜像为加密镜像<br>B、使用加密镜像创建的弹性云服务器不一定被加密<br>C、使用加密的弹性云服务器创建的镜像密钥与加密云服务器的密钥不同<br>D、使用加密的弹性云服务器创建的镜像为非加密镜像<br>答案：A<br>以下关于镜像的描述，不正确的是?<br>A、用户可以快速复制私有镜像，不受region限制<br>B、查询镜像时，支持通过标签过滤查询镜像<br>C、通过导入外部镜像文件创建镜像时，不支持qcow2格式<br>D、支持key-value类型的镜像标签<br>答案：C<br>多选题<br>以下哪些属于华为云鲲鹏伙伴计划？<br>A、鲲鹏凌云伙伴计划<br>B、鲲鹏智数伙伴计划<br>C、鲲鹏展翅伙伴计划<br>D、鲲鹏翱翔伙伴计划<br>答案：ABC<br>以下哪些属于鲲鹏通用解决方案？<br>A、HCSO解决方案<br>B、大数据解决方案<br>C、HPC解决方案<br>D、分布式存储<br>答案：ABCD<br>华为鲲鹏性能优化工具能够提供（ ）方面的性能分析结果<br>A、分析Top热点函数<br>B、分析函数火焰图<br>C、分析热点函数代码映射<br>D、分析不同函数对应top-down模型的各指标值<br>答案：ABCD<br>华为鲲鹏性能优化工具支持从哪些维度分析应用的性能瓶颈？<br>A、C/C++<br>B、Java Mixed-Mode<br>C、Locks and Waits<br>D、LLC&amp;DDR<br>答案：AB<br>下列哪些选项可能会影响WRF性能<br>A、网络带宽<br>B、并行线程数<br>C、内存刷新频率<br>D、存储读写速度<br>答案：ABCD<br>HiBench支持的框架有哪些？<br>A、flinkbench<br>B、hadoopbench<br>C、stormbench<br>D、sparkbench<br>答案：ABCD<br>弱内存序问题主要与如下那些因素相关？<br>A、多线程<br>B、多进程<br>C、不同CPU之间Cache同步<br>D、一级、二级、三级Cache间数据同步<br>E、不同core之间Cache同步<br>答案：ACE<br>在向鲲鹏处理器迁移软件时，以下哪些是可能导致编译错误或告警的原因？<br>A、编译选项<br>B、数据类型不同<br>C、汇编指令<br>D、弱内存序问题<br>答案：ABC<br>关于Docker的镜像仓库，说法正确的是？<br>A、实现Docker镜像的全局存储<br>B、提供API接口<br>C、提供Docker镜像的下载/推送/查询<br>D、可用于租户管理<br>答案：ABCD<br>关于执行命令“docker ps -a”后，显示的标题含义描述，正确的是？<br>A、CONTAINER ID:容器的唯一表示ID<br>B、IMAGE:创建容器时使用的镜像<br>C、COMMAND:容器最后运行的命令<br>D、CREATED:创建容器的时间<br>答案：ABCD<br>华为鲲鹏代码迁移工具能够提供（ ）方面的移植评估结果<br>A、扫描源码中有多少个安装包<br>B、扫描源码中有多少可以移植的依赖库SO文件<br>C、扫描源码中有多少行可以移植的C/C++代码、汇编代码<br>D、预估移植所需的工作量<br>答案：BC<br>华为鲲鹏代码迁移工具适用于以下哪些类型的应用程序？<br>A、C/C++<br>B、Java<br>C、汇编<br>D、Python<br>答案：AC<br>为什么x86架构处理器上的软件在鲲鹏处理器使用时需要移植？<br>A、两种处理器的指令集不同<br>B、源代码需要按照目标处理的指令集编译成指令才能运行<br>C、编译型语言由编译器静态编译成指令和数据<br>D、解释型语言由语言的虚拟机在运行时将源码/字节码编译成指令和数据<br>答案：ABCD<br>TaiShan 200机架服务器包含哪些型号？<br>A、2280<br>B、5280<br>C、2480<br>D、X6000<br>答案：ABC<br>华为鲲鹏920处理器内置了那些加速器？<br>A、.SSL加速引擎<br>B、加解密加速引擎<br>C、压缩解压缩加速引擎<br>D、语音识别加速引擎<br>答案：ABC<br>以下哪些关于华为鲲鹏920处理器的描述是正确的（）？<br>A、最多支持64核<br>B、采用了7nm的制造工艺<br>C、支持PCIe 4.0接口，并兼容PCIe 3.0/2.0/1.0<br>D、支持多种加速器<br>答案：ABCD<br>围绕鲲鹏计算产业，华为提供（ ）支持<br>A、云服务<br>B、工具链<br>C、社区服务<br>D、专业服务<br>答案：ABCD<br>华为鲲鹏计算产业相关产品有哪些？<br>A、华为鲲鹏处理器<br>B、TaiShan服务器<br>C、华为云鲲鹏云服务<br>D、X86服务器<br>答案：ABC<br>以下哪些是鲲鹏社区可以提供的服务？<br>A、获得海量软件的迁移指导<br>B、了解鲲鹏解决方案<br>C、获取最新的鲲鹏咨询<br>D、直接获得社区扶持<br>答案：ABC<br>镜像有哪些类别？<br>A、公共镜像<br>B、自由镜像<br>C、私有镜像<br>D、共享镜像<br>答案：ACD<br>以下哪些子文件包含在rpmbuild文件夹的目录结构中？<br>A、SOURCE<br>B、BUILD<br>C、SPEC<br>D、SRPMS<br>答案：BD<br>以下哪些命令可以安装C语言开发环境？<br>A、apt-get groupinstall build-essential<br>B、apt-get install build-essential<br>C、yum install Development Tools<br>D、yum groupinstall Development Tools<br>答案：BD<br>关于 Dockerfile 的描述，以下哪些是正确的？<br>A、Dockerfile一般包含四部分内容：基础镜像信息、维护者信息、镜像操作指令和容器启动时执行指令<br>B、Dockerfile中，第一条指令必须为 FROM指令<br>C、EXPOSE在Dockerfile中是必选的<br>D、完成Dockerfile编写后，可以通过docker build命令来创建镜像<br>答案：ABD<br>华为鲲鹏云服务包括以下哪些？<br>A、华为鲲鹏裸金属服务器<br>B、鲲鹏弹性云服务器<br>C、鲲鹏容器<br>D、鲲鹏云手机<br>答案：ABCD<br>以下哪些属于华为鲲鹏920芯片的特点？<br>A、集成最多64个自研核<br>B、支持8通道DDR4控制器<br>C、支持CCIX接口<br>D、只支持GE/10GE网络<br>答案：ABC<br>以下哪些属于鲲鹏软件栈发布的五大软件领域？<br>A、操作系统<br>B、游戏软件<br>C、基础软件<br>D、应用软件<br>答案：ACD<br>在BenchmarkSQL连接PostgreSQL前，在PostgreSQL侧需要修改哪些文件<br>A、pg_ident.conf<br>B、PosgreSQL.conf<br>C、pg_hba.conf<br>D、PostgreSQL.auto.conf<br>答案：BC<br>BenchmarkSQL可以对哪些数据库进行测试?<br>A、Post gresSQL<br>B、Oracle<br>C、SQL Server<br>D、MySQL<br>答案：ABCD<br>判断题<br>鲲鹏计算平台已经兼容的操作系统可通过<a href="http://support.huawei.com/onlinetoolweb/ftca/index?serise=9%E9%93%BE%E6%8E%A5%E6%9F%A5%E8%AF%A2">http://support.huawei.com/onlinetoolweb/ftca/index?serise=9链接查询</a> √<br>华为云鲲鹏社区目前是否提供软件下载功能？ √<br>可以执行rpmbuild -ba redis.spec生成二进制文件 ×<br>使用华为鲲鹏性能优化工具对C/C++应用程序进行性能分析时，能够查看到函数源代码、汇编代码，以及函数汇编代码basic block的控制流图 √<br>CPU性能和网络带宽都会影响HPC性能 √<br>纯Java语言开发的代码，无依赖的SO库文件不需要编译，可以直接在JVM（Java虚拟机）中运行 √<br>鲲鹏处理器和x86处理器的add指令是一样的 ×<br>Tune是一种通过非侵入式系统画像的负载感知方法，识别业务并匹配最佳资源模型，实时响应业务特征变化的AI自动调优系统 √<br>Android手机应用在鲲鹏云服务上运行仍需要指令翻译器 ×<br>在BenchmarkSQL的测试结果中，Running Average tpmTOTAL 值和Current tpmTOTAL值越高，表示性能越差. ×<br>Porting Advisor工具界面中的GCC版本需要与后台操作系统中的GCC版本保持一致 ×<br>rpm包中包含所有源代码文件 ×<br>私有镜像不能通过外部镜像文件创建 ×</p>
+]]></content>
+      <categories>
+        <category>鲲鹏云</category>
+      </categories>
+  </entry>
+  <entry>
     <title>鲲鹏题库</title>
     <url>/Kunpeng-question.html</url>
     <content><![CDATA[<p><strong>鲲鹏笔记+题库</strong></p>
@@ -7233,150 +7497,6 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 <li>云备份</li>
 </ol>
 <font color="#F08080">正确答案 A B C D<br>解答: 注意问的是整机镜像</font>]]></content>
-      <categories>
-        <category>鲲鹏云</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>鲲鹏微认证(日后会更新)</title>
-    <url>/Kunpeng-micro-authentication.html</url>
-    <content><![CDATA[<p><strong>鲲鹏微认证笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="C-C-代码迁移"><a href="#C-C-代码迁移" class="headerlink" title="C/C++代码迁移"></a>C/C++代码迁移</h1><h2 id="编译型语言"><a href="#编译型语言" class="headerlink" title="编译型语言"></a>编译型语言</h2><ul>
-<li>典型的如C/C++/Go语言, 都属于编译型语言, 编译型语言开发的程序从x86处理器迁移到鲲鹏处理器时, 必须经过重新编译才能运行</li>
-</ul>
-<ul>
-<li>从源码到程序的过程<ul>
-<li>源码需要由编译器, 汇编器翻译成机器指令, 再通过链接器链接库函数生成机器语言程序<br>
-<br>
-
-</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight brainfuck"><table><tr><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">源码</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">预处理</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">预编译文件</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">编译</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">汇编代码</span>    --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">汇编</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">目标文件</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">链接</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">可执行文件</span><br><br><span class="hljs-comment">testc</span>      <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">E</span> <span class="hljs-comment">testc</span> <span class="hljs-literal">-</span><span class="hljs-comment">o</span> <span class="hljs-comment">testi</span>      <span class="hljs-comment">texti</span>       <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testio</span> <span class="hljs-comment">tests</span>      <span class="hljs-comment">texts</span>          <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testso</span> <span class="hljs-comment">testo</span>     <span class="hljs-comment">testo</span>       <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testso</span> <span class="hljs-comment">testo</span>     <span class="hljs-comment">text</span><br></code></pre></td></tr></table></figure>
-<h2 id="C-C-代码需要迁移的原因"><a href="#C-C-代码需要迁移的原因" class="headerlink" title="C/C++代码需要迁移的原因"></a>C/C++代码需要迁移的原因</h2><ul>
-<li>架构差异:<ul>
-<li>x86和鲲鹏处理器(aarch64)属于不同架构</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>指令极差异:<ul>
-<li>x86属于复杂指令集</li>
-<li>鲲鹏处理器(aarch64)属于精简指令集</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>向量寄存器的差异:<ul>
-<li>x86和鲲鹏处理器(aarch64)使用向量寄存器不同, 向量指令集也存在差异</li>
-</ul>
-</li>
-</ul>
-<h1 id="C-C-代码构建编译过程"><a href="#C-C-代码构建编译过程" class="headerlink" title="C/C++代码构建编译过程"></a>C/C++代码构建编译过程</h1><h2 id="C-C-代码工程主要包括两类文件"><a href="#C-C-代码工程主要包括两类文件" class="headerlink" title="C/C++代码工程主要包括两类文件:"></a>C/C++代码工程主要包括两类文件:</h2><ul>
-<li>编译构建脚本<ul>
-<li>Makefile CmakeListstxt Configure autogensh bootstrapsh等等</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>C/C++源码<ul>
-<li>src examples tests等等</li>
-</ul>
-</li>
-</ul>
-<h2 id="可能涉及到的移植项"><a href="#可能涉及到的移植项" class="headerlink" title="可能涉及到的移植项"></a>可能涉及到的移植项</h2><ul>
-<li>编译构建脚本类文件<ul>
-<li>编译选项的移植(指定数据类型, 生成代码特性, 目标执行器架构, 处理器硬件加速功能等)</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>C/C++代码类文件<ul>
-<li>编译宏移植(用户自定义宏移植, 编译器自定义宏移植)</li>
-<li>编译器自带builtin函数移植</li>
-<li>内联汇编移植</li>
-<li>SSE intrinsic函数移植(MMX/SEE类函数移植, AVX函数移植)</li>
-</ul>
-</li>
-</ul>
-<!-- # C/C++代码编译构建过程
-
-~~~
-
-~~~ -->
-
-<h1 id="直接真题-CTRL-F"><a href="#直接真题-CTRL-F" class="headerlink" title="直接真题 CTRL+F"></a>直接真题 CTRL+F</h1><h2 id="判断题"><a href="#判断题" class="headerlink" title="判断题"></a>判断题</h2><p><strong>yum和rpm安装方式本质都是基于RPM包来安装软件</strong> √</p>
-<p><strong>交叉编译是在一个平台 上生成另一个平台上可执行的代码</strong> √</p>
-<p><strong>BenchmarkSQL使用GCC编译进行编译安装</strong> ×</p>
-<p><strong>Dockerfile中的每一条指令 都分别对应镜像的每一层</strong> √</p>
-<p><strong>C/C++语言属于编译型语言，其编译后得到的可执行程序执行时依赖的指令是与CPU架构不相关的，因此此类应用程序不需要移植</strong> ×</p>
-<p><strong>Centos是开源的操作系统，Debian不属于开源操作系统</strong> ×</p>
-<p><strong>Tai Shan服务器的CPU是ARM架构的</strong> √</p>
-<p><strong>华为鲲鹏云服务产品发布前，需要先加入鲲鹏凌云伙伴计划并通过鲲鹏云服务兼容性认证</strong> √</p>
-<p><strong>通过”ps -ef | grep PostgreSQL ”命令可以确认数据库进程是否启动</strong> ×</p>
-<p><strong>为方便客户业务的统一部署， 镜像服务建立起了镜像与弹性云服务器之间 镜像与裸金属服务器之间 以及镜像与外部文件之间的直接联系</strong> √</p>
-<p><strong>一个弹性公网IP能同时给多个弹性云服务器使用</strong> ×</p>
-<p><strong>华为鲲鹏性能优化工具支持分析C/C+ +和Java Mixed-Mode两种应用程序类型</strong> √</p>
-<p><strong>对于Java类应用程序进行性能分析时，由于受java的jit编译的限制，函数分析结果中只能查看到对应的源码，无法查看汇编和代码流图</strong> √</p>
-<p><strong>HiBench支持在编译时指定编译模块</strong> √</p>
-<p><strong>docker的基础镜像中包含父镜像</strong> ×</p>
-<p><strong>华为鲲鹏云服务可提供KC1型ECS和KS1型BMS</strong> √</p>
-<p><strong>Tai Shan服务器必须使用特殊的专有内存和硬盘</strong> x</p>
-<p><strong>Java/Python的虚拟机不支撑再鲲鹏上源码编译, 只能使用yum方式安装</strong> x</p>
-<!-- **个人理解Python是解释型语言,Java在鲲鹏里面也被强制列为解释型语言** -->
-<!-- **用户想安装按RPM方式发行的软件, 只需简单地输入命令rpm -ivh xxxrpm即可** -->
-<h2 id="单选题"><a href="#单选题" class="headerlink" title="单选题"></a>单选题</h2><p>类RedHat系统提供了什么命令来安装, 卸载和升级rpm软件包    (A)<br>    A rpm<br>    B dpkg<br>    C tar<br>    D apt-get</p>
-<p>下面哪个工具不属于鲲鹏开发套件?      (A)<br>    A 分析扫码工具<br>    B 代码迁移工具<br>    C 性能调优工具<br>    D Vtune</p>
-<p>使用命令rpmbuild -bb XX spec (XX表示文件名)制作RPM包时，RPM包生成在什么目录下?      (C)<br>A BUILD B SOURCE C RPMS D SPEC</p>
-<p>在BenchmarkSQL执行以下哪个脚本，可以对表中写入数据?      (A)<br>A runLoader sh B runBenchmark sh C runDatabaseBuild sh D runDatabaseDestroy Sh</p>
-<p>BenchmarkSQL执行以下哪个脚本加载数据?      (B)<br>A runBenchmark sh B runDat abaseBuild sh C runDat abaseDestroy sh D runLoader sh</p>
-<p>代码扫描工具Dependency Advisor是部署在哪种架构的服务器或者弹性云服务器上?      (D)<br>A ARM B 鲲鹏 C Power D x86</p>
-<p>以下哪个不属于镜像管理特性?      (D)<br>A 修改镜像 B 删除镜像 C 镜像导出 D 查询镜像</p>
-<p>Hi Bench是什么？      (C)<br>A 大数据开发框架 B 大数据可视化平台 C 大数据基准测试套件 D 大数据分析工具</p>
-<p>关于容器的删除操作，以下哪项是正确的？      (C)<br>A 可通过”docker rm &lt;容器ID&gt;”删除正在运行的容器<br>B 可通过”docker rmi &lt;容器ID&gt;”删除已停止的容器<br>C 可通过”docker rm &lt;容器ID&gt;”删除已停止的容器<br>D 可通过”docker rmi &lt;容器ID&gt;”删除正在运行的容器</p>
-<p>关于华为鲲鹏迁移工具分析报告提供的依赖库so文件的操作建议，以下哪项是不正确的?      (A)<br>A 目前不存在鲲鹏平台无法识别的依赖库So文件<br>B 鲲鹏平台不支持该类依赖库S0文件,需要用户自行处理<br>C 如果依赖库so文件已经过鲲鹏平台验证，但无二进制安装包,则需要用户下载依赖库源码，然后上传至目标服务器进行编译安装<br>D 如果依赖库S0文件已经过鲲鹏平台验证，且已有二进制安装包,则用户可以直按将工具提供的开源版本依赖库安装包下载到本地，然后上传至目标服务器进行安装使用</p>
-<p>以下关于web界面访问华为鲲鹏代码迁移工具的方式,描述正确的是      (A)<br>A 单用户单任务访问<br>B 多用户多任务并发访间<br>C 多用户同时访问<br>D 单用户多任务访问</p>
-<p>以下哪个选项不是iSula通用容器引辈的特点?      (C)<br>A 升级不中断业务 B 增强安全性和调测特性 C 大幅提升容器性能 D 快速灵活</p>
-<p>在修改BenchmarkSQL连接PostereSQL的配置文件时，关于runMins和runTxnsPerTerminal这两个参数的设置，以下哪项是正确的?      (A)<br>A 必须有一个设定为0  B 必须相等 C 均为0   D 必须不相等，且均不为0</p>
-<p>扫描工具Dependency Advi sor支持以下哪种使用模式?      (A)<br>A web B make C test D name</p>
-<p>如果要放开外部对弹性云服务器的8080端口访问，可以通过配置以下哪项功能实现?      (C)<br>A 弹性公网IP带宽 B 主机组 C 安全组 D VPC子网</p>
-<p>系统盘镜像类型不包含以下哪个      (A)<br>A 机架服务器系统盘镜像 B 普通云服务器系统盘镜像 C GPU加速云服务器系统盘镜像 D 裸金属云服务器系统盘镜像</p>
-<p>私有镜像通过以下哪个功能可以实现本地业务部署和公有云业务部署的统一化持久化?      (A)<br>A 镜像导出  B 镜像市场 C 镜像复制 D 镜像共享</p>
-<p>以下哪个命令表示只生成rpm源代码的命令?      (B)<br>A rpmbuild -ba B rpmbuild- bs C rpmbuild -bc D rpmbuild -bb</p>
-<p>以下哪个不是使用rpm工具安装软件?      (A)<br>A 自动安装依赖包 B 全自动安装 C 能够进行数据库的记载 D 自定义安装路径</p>
-<p>提供预装操作系统 应用环境和各类软件的优质第三方镜像是属于以下哪种镜像?      (C)<br>A 共享镜像 B 私有镜像 C 市场镜像 D 公共镜像</p>
-<p>ssh协议默认端口号是什么?      (C)<br>A 9600 B 23 C 22 D 513</p>
-<p>关于容器相关概念的描述，以下哪项是错误的?      (C)<br>A 标签:可用于识别不同的变体或版本<br>B 仓库: 一个软件库， 存储了可下载并安装在系统中的软件包<br>C 镜像:容器的运行实例<br>D 容器:image的运行实例</p>
-<p>使用gcc编译时，编译选项-march的作用是什么?      (A)<br>A 指定指令集<br>B 指定cpu型号<br>C 指定流水线<br>D 提升兼容性</p>
-<p>下列哪个是华为鲲鹏生态兼容的非国产操作系统?      (C)<br>A BCLinux<br>B openEuler<br>C Ubuntu<br>D Kylin</p>
-<p>谁是Linux之父?      (D)<br>A Richard Matthew Stal lman B Andrew Morton C Bill Gates D LimusTorval ds</p>
-<h2 id="多选题"><a href="#多选题" class="headerlink" title="多选题"></a>多选题</h2><p>可以从哪些方面对Post greSQL进行性能调优?      (A C)<br>A 数据库参数 B 硬件 C 编译参数 D 操作系统</p>
-<p>使用BenchmarkSQL前需要进行哪些操作?      (A C D)<br>A 配置环境变量 B 重启服务器 C 安装JDK  D 使环境变量生效</p>
-<p>关于rpm包和SRPM包的描述，以下正确的是?      (A B D)<br>A SRPM包含源代码而RPM不包含 B rpm包可以直接安装，SRPM包不可以 C 两者都可修改编译参数 D rpm包是已编译的程序，而SRPM不是</p>
-<p>镜像服务的典型应用场景有哪些?      (A B C)<br>A 快速部署应用 B 批量复制弹性云服务器 C 传统业务上云 D 实时同步数据</p>
-<p>镜像文件一般包括以下哪些内容?      (A C)<br>A 预装的软件 B 数据盘 C 操作系统 D 系统盘</p>
-<p>以下哪些不是针对spec文件的操作命令?      (A B)<br>A cmake B makefile C make D make install</p>
-<p>rpm安装包有哪些优点?      (A B C D)<br>A 提供软件版本资讯，软件名称，软件用途等相关信息，便于了解软件<br>B 内含编译程序，免编译<br>C 使用数据库记录rpm文件的相关参数，便于升级 移除 查询与验证<br>D 预先检查系统版本，可避免文 件被错误安装</p>
-<p>创建C/C++程序性能分析任务时，以下关于分析类型，描述正确的是?      (A B C)<br>A Profile System,即采集整个服务器系统，无需关注系统中有哪些类型的应用在运行，采集时长需要配置参数控制，适用于多业务混合运行和有子进程的场景<br>B Attach to Process,即该采集对象针对正在运行的应用程序，通过关联到运行该应用程序的PID的方式，来实时跟踪和采集该应用程序的性能数据,采集时长需要配置参数控制，适用于某些应用需要长时间持续运行和采集的场景<br>C Launch Application,即采集启动的时候，同时启动Application,采集时长受Appl ication的执行时间来控制，适用于Application运行时间较短的场景<br>D C/C++程序仅支持Launch Application和Attach to Process两种分析类型</p>
-<p>以下哪些属于Dockerfile的指令？      (A B C D)<br>A FROM B CMD C EXPOSE D RUN</p>
-<p>关于使用源码方式安装加速引擎软件，以下说法正确的有哪些?      (A B C D)<br>A 编译安装zlib加速库<br>B 在下载好的源码目录下，使用make命令编译加速器<br>C 编译安装加速器OpenSSL引擎<br>D 编译安装Warpdrive驱动开发库<br>E 安装openssl 111a或以上版本<br>F 安装内核开发包kernel-devel</p>
-<p>同一段C/C++代码，在鲲鹏处理器与x86架构处理器上编译的可执行程序有哪些不同?      (A B)<br>A 指令 B 指令使用的寄存器 C 功能 D 文件结构</p>
-<p>以下关于X6000 V5描述正确的是?      (A C D)<br>A 机框支持2个3000w电源<br>B 每个服务器节点支持3个半高半长标准PCIe插槽<br>C 支持4个半宽双路服务器节点<br>D 每个服务器节点支持16个DDR4 DIM插槽</p>
-<p>以下哪些场景属于数据密集紧耦合场景?      (C D)<br>A 基因测序<br>B 流体动力学<br>C 天气预测<br>D 环境预测</p>
-<p>在PostgreSQL迁移流程中，包含以下哪些步骤?      (A D)<br>A 迁移分析 B 性能测试 C 环境准备 D 源码修改</p>
-<p>通过以下哪些方式可以获取华为鲲鹏系列服务?      (B C)<br>A 购买华为云鲲鹏弹性云服务器<br>B 购买基于x86架构的弹性云服务器<br>C 购买RH服务器<br>D 购买Tai shan服务器</p>
-<p>私有镜像包含以下哪些功能?      (A B C D)<br>A 镜像加密 B 镜像共享 C 镜像导出 D 镜像复制</p>
-<p>在华为公有云中，私有镜像包括?      (B C)<br>A 市场镜像 B 系统镜像 C 数据镜像 D 共享镜像</p>
-<p>docker run -p 6379:6379 v $PWD/data:/data -d t_arm64v8/centos_ redis:505 redis server –appendonly yes关于此命令的描述，以下哪些是正确的?      (B C D)<br>A “6379:6379” :将主机的6379端口映射到容器的6379端口<br>B “appendonly yes”，打开持久化配置<br>C 该命令功能是启动容器，并在容器启动时候执行容器内的redis-server服务<br>D “$PWD/data: /data” :将主机中当前目录下的data挂载到容器的/data</p>
-<p>使用华为鲲鹏代码迁移工具对源码进行扫描分析时，需要进行哪些方面的检查和分析?      (A B C D)<br>A 检查x86平台与鲲鹏平台相异的编译器宏 编译选项 buildin函数 attribute函数等列表<br>B 对比输入的(S0文件名)列表和S0依赖库白名单<br>C 扫描分析用户软件目标二进制文件依赖的源文件集合<br>D 检查Make file中的编译链接</p>
-<p>C/C++语言开发的源码在编译时，以下哪些模块是不需要的？      (B C)<br>A 汇编器 B 存储器 C 加载器 D 编译器</p>
-<p>以下哪些是Tai Shan大数据方案使用的主要服务器型号?      (A B)<br>A 2280均衡型 B 5280存储型 C XA320计算节点 D X6000高密型</p>
-<p>以下关于华为鲲鹏920的特点描述正确的有哪些?      (C D)<br>A 性能可匹配Intel Skylake(V5) 高端处理器型号<br>B CPU最多支持2个100GE网口，支持RoCE特性<br>C 相比同等性能的Intel处理器，功耗更低<br>D 支持8内存通道，带宽高于Intel Skyl ake (V5)的6通道</p>
-<p>BenchmarkSQL配置文件中loadWorkers指的是什么（ ）<br>A、并发用户数<br>B、数据库装载并发数<br>C、数据库并行数<br>D、数据库表的数量<br>答案：B<br>TPCC衡量标准是什么？<br>A、QphH<br>B、响应时间<br>C、tpmC<br>D、TPS<br>答案：C<br>Porting Advisor工具在移植源码过程中的作用是？<br>A、分析源码，并给出移植工作量<br>B、分析源码，并给出分析报告和源码修改建议<br>C、分析源码，并修改源码<br>D、分析源码，并给出性能优化建议<br>答案：B<br>华为鲲鹏BMS云服务器最高可提供多少核？<br>A、32<br>B、48<br>C、62<br>D、128<br>答案：D<br>IMS私有镜像类型不包括以下哪项？<br>A、系统盘镜像<br>B、整体镜像<br>C、数据盘镜像<br>D、整机镜像<br>答案：B<br>可以根据设定的寻路协议实时自动优化网络结构，以保持客户使用的网络持续稳定、高效.这句话是关于以下哪项的描述？<br>A、静态BGP<br>B、全动态BGP<br>C、独享宽带<br>D、共享宽带<br>答案：B<br>以下哪条命令可以查看docker镜像？<br>A、docker images<br>B、docker list<br>C、docker container ls<br>D、docker -a<br>答案：A<br>以下哪个工具可以用于鲲鹏平台上进行代码迁移？<br>A、Tuning kit<br>B、Dependency Advisor<br>C、Porting Advisor<br>D、GCC<br>答案：C<br>Suse操作系统是从哪个版本开始处于Kunpeng 920的OS生态圈？<br>A、SLES 12.3<br>B、SLES 12.4<br>C、SLES 15<br>D、SLES 15.1<br>答案：D<br>以下哪项不是TaiShan服务器的优点？<br>A、国产化，自主安全可控<br>B、多物理核心，并发性能高<br>C、低功耗，绿色节能<br>D、生态完备，上层应用支持好<br>答案：D<br>以下哪个不是华为云鲲鹏生态帮助伙伴/开发者商业变现的方式?<br>A、华为鲲鹏严选馆:鲲鹏应用，优先推荐，快速商业变现<br>B、华为提供鲲鹏人才培养:专业培训，完善的鲲鹏工程师认证体系<br>C、华为提供鲲鹏原厂认证:专业团队，专业工具，1对1技术支持<br>D、华为鲲鹏云专业服务:客户业务系统一站式搬迁服务<br>答案：D<br>金融行业的鲲鹏硬替代应用不包括以下哪项?<br>A、经营分析<br>B、核心应用<br>C、办公支撑<br>D、互联网银行<br>答案：B<br>以下哪种工具可用于制作RPM包?<br>A、rpm-cmake<br>B、rpm make<br>C、rpm-test<br>D、rpm-build<br>答案：D<br>对PostgreSQL的编译参数进行调优时需要在CFLAGS字段中添加哪些选项<br>A、-march= and<br>B、-march=armv8- a+crc+lse<br>C、-march=armv8-a<br>D、march =X86<br>答案：B<br>以下哪个是BenchmarkSQL连接PostgreSQL的配置文件?<br>A、props.mysq1<br>B、props.pg<br>C、props.ora<br>D、props.percona<br>答案：B<br>以下哪种语言的源码文件不能用Porting Advisor迁移工具进行迁移分析?<br>A、C++<br>B、C<br>C、Java<br>D、汇编<br>答案：C<br>在华为云上，通过以下哪种方式或工具可以访问外网?<br>A、弹性公网IP<br>B、云硬盘<br>C、VPC<br>D、镜像<br>答案：A<br>在仅有x86服务器或者云服务器下，如何编译出ARM环境下执行的程序?<br>A、安装交叉编译环境，通过交叉编译环境执行编译<br>B、直接编译<br>C、使用x86下新版本gcc编译<br>D、修改权限编译<br>答案：A<br>关于加密镜像的描述，以下哪项是正确的?<br>A、使用加密的弹性云服务器创建的镜像为加密镜像<br>B、使用加密镜像创建的弹性云服务器不一定被加密<br>C、使用加密的弹性云服务器创建的镜像密钥与加密云服务器的密钥不同<br>D、使用加密的弹性云服务器创建的镜像为非加密镜像<br>答案：A<br>以下关于镜像的描述，不正确的是?<br>A、用户可以快速复制私有镜像，不受region限制<br>B、查询镜像时，支持通过标签过滤查询镜像<br>C、通过导入外部镜像文件创建镜像时，不支持qcow2格式<br>D、支持key-value类型的镜像标签<br>答案：C<br>多选题<br>以下哪些属于华为云鲲鹏伙伴计划？<br>A、鲲鹏凌云伙伴计划<br>B、鲲鹏智数伙伴计划<br>C、鲲鹏展翅伙伴计划<br>D、鲲鹏翱翔伙伴计划<br>答案：ABC<br>以下哪些属于鲲鹏通用解决方案？<br>A、HCSO解决方案<br>B、大数据解决方案<br>C、HPC解决方案<br>D、分布式存储<br>答案：ABCD<br>华为鲲鹏性能优化工具能够提供（ ）方面的性能分析结果<br>A、分析Top热点函数<br>B、分析函数火焰图<br>C、分析热点函数代码映射<br>D、分析不同函数对应top-down模型的各指标值<br>答案：ABCD<br>华为鲲鹏性能优化工具支持从哪些维度分析应用的性能瓶颈？<br>A、C/C++<br>B、Java Mixed-Mode<br>C、Locks and Waits<br>D、LLC&amp;DDR<br>答案：AB<br>下列哪些选项可能会影响WRF性能<br>A、网络带宽<br>B、并行线程数<br>C、内存刷新频率<br>D、存储读写速度<br>答案：ABCD<br>HiBench支持的框架有哪些？<br>A、flinkbench<br>B、hadoopbench<br>C、stormbench<br>D、sparkbench<br>答案：ABCD<br>弱内存序问题主要与如下那些因素相关？<br>A、多线程<br>B、多进程<br>C、不同CPU之间Cache同步<br>D、一级、二级、三级Cache间数据同步<br>E、不同core之间Cache同步<br>答案：ACE<br>在向鲲鹏处理器迁移软件时，以下哪些是可能导致编译错误或告警的原因？<br>A、编译选项<br>B、数据类型不同<br>C、汇编指令<br>D、弱内存序问题<br>答案：ABC<br>关于Docker的镜像仓库，说法正确的是？<br>A、实现Docker镜像的全局存储<br>B、提供API接口<br>C、提供Docker镜像的下载/推送/查询<br>D、可用于租户管理<br>答案：ABCD<br>关于执行命令“docker ps -a”后，显示的标题含义描述，正确的是？<br>A、CONTAINER ID:容器的唯一表示ID<br>B、IMAGE:创建容器时使用的镜像<br>C、COMMAND:容器最后运行的命令<br>D、CREATED:创建容器的时间<br>答案：ABCD<br>华为鲲鹏代码迁移工具能够提供（ ）方面的移植评估结果<br>A、扫描源码中有多少个安装包<br>B、扫描源码中有多少可以移植的依赖库SO文件<br>C、扫描源码中有多少行可以移植的C/C++代码、汇编代码<br>D、预估移植所需的工作量<br>答案：BC<br>华为鲲鹏代码迁移工具适用于以下哪些类型的应用程序？<br>A、C/C++<br>B、Java<br>C、汇编<br>D、Python<br>答案：AC<br>为什么x86架构处理器上的软件在鲲鹏处理器使用时需要移植？<br>A、两种处理器的指令集不同<br>B、源代码需要按照目标处理的指令集编译成指令才能运行<br>C、编译型语言由编译器静态编译成指令和数据<br>D、解释型语言由语言的虚拟机在运行时将源码/字节码编译成指令和数据<br>答案：ABCD<br>TaiShan 200机架服务器包含哪些型号？<br>A、2280<br>B、5280<br>C、2480<br>D、X6000<br>答案：ABC<br>华为鲲鹏920处理器内置了那些加速器？<br>A、.SSL加速引擎<br>B、加解密加速引擎<br>C、压缩解压缩加速引擎<br>D、语音识别加速引擎<br>答案：ABC<br>以下哪些关于华为鲲鹏920处理器的描述是正确的（）？<br>A、最多支持64核<br>B、采用了7nm的制造工艺<br>C、支持PCIe 4.0接口，并兼容PCIe 3.0/2.0/1.0<br>D、支持多种加速器<br>答案：ABCD<br>围绕鲲鹏计算产业，华为提供（ ）支持<br>A、云服务<br>B、工具链<br>C、社区服务<br>D、专业服务<br>答案：ABCD<br>华为鲲鹏计算产业相关产品有哪些？<br>A、华为鲲鹏处理器<br>B、TaiShan服务器<br>C、华为云鲲鹏云服务<br>D、X86服务器<br>答案：ABC<br>以下哪些是鲲鹏社区可以提供的服务？<br>A、获得海量软件的迁移指导<br>B、了解鲲鹏解决方案<br>C、获取最新的鲲鹏咨询<br>D、直接获得社区扶持<br>答案：ABC<br>镜像有哪些类别？<br>A、公共镜像<br>B、自由镜像<br>C、私有镜像<br>D、共享镜像<br>答案：ACD<br>以下哪些子文件包含在rpmbuild文件夹的目录结构中？<br>A、SOURCE<br>B、BUILD<br>C、SPEC<br>D、SRPMS<br>答案：BD<br>以下哪些命令可以安装C语言开发环境？<br>A、apt-get groupinstall build-essential<br>B、apt-get install build-essential<br>C、yum install Development Tools<br>D、yum groupinstall Development Tools<br>答案：BD<br>关于 Dockerfile 的描述，以下哪些是正确的？<br>A、Dockerfile一般包含四部分内容：基础镜像信息、维护者信息、镜像操作指令和容器启动时执行指令<br>B、Dockerfile中，第一条指令必须为 FROM指令<br>C、EXPOSE在Dockerfile中是必选的<br>D、完成Dockerfile编写后，可以通过docker build命令来创建镜像<br>答案：ABD<br>华为鲲鹏云服务包括以下哪些？<br>A、华为鲲鹏裸金属服务器<br>B、鲲鹏弹性云服务器<br>C、鲲鹏容器<br>D、鲲鹏云手机<br>答案：ABCD<br>以下哪些属于华为鲲鹏920芯片的特点？<br>A、集成最多64个自研核<br>B、支持8通道DDR4控制器<br>C、支持CCIX接口<br>D、只支持GE/10GE网络<br>答案：ABC<br>以下哪些属于鲲鹏软件栈发布的五大软件领域？<br>A、操作系统<br>B、游戏软件<br>C、基础软件<br>D、应用软件<br>答案：ACD<br>在BenchmarkSQL连接PostgreSQL前，在PostgreSQL侧需要修改哪些文件<br>A、pg_ident.conf<br>B、PosgreSQL.conf<br>C、pg_hba.conf<br>D、PostgreSQL.auto.conf<br>答案：BC<br>BenchmarkSQL可以对哪些数据库进行测试?<br>A、Post gresSQL<br>B、Oracle<br>C、SQL Server<br>D、MySQL<br>答案：ABCD<br>判断题<br>鲲鹏计算平台已经兼容的操作系统可通过<a href="http://support.huawei.com/onlinetoolweb/ftca/index?serise=9%E9%93%BE%E6%8E%A5%E6%9F%A5%E8%AF%A2">http://support.huawei.com/onlinetoolweb/ftca/index?serise=9链接查询</a> √<br>华为云鲲鹏社区目前是否提供软件下载功能？ √<br>可以执行rpmbuild -ba redis.spec生成二进制文件 ×<br>使用华为鲲鹏性能优化工具对C/C++应用程序进行性能分析时，能够查看到函数源代码、汇编代码，以及函数汇编代码basic block的控制流图 √<br>CPU性能和网络带宽都会影响HPC性能 √<br>纯Java语言开发的代码，无依赖的SO库文件不需要编译，可以直接在JVM（Java虚拟机）中运行 √<br>鲲鹏处理器和x86处理器的add指令是一样的 ×<br>Tune是一种通过非侵入式系统画像的负载感知方法，识别业务并匹配最佳资源模型，实时响应业务特征变化的AI自动调优系统 √<br>Android手机应用在鲲鹏云服务上运行仍需要指令翻译器 ×<br>在BenchmarkSQL的测试结果中，Running Average tpmTOTAL 值和Current tpmTOTAL值越高，表示性能越差. ×<br>Porting Advisor工具界面中的GCC版本需要与后台操作系统中的GCC版本保持一致 ×<br>rpm包中包含所有源代码文件 ×<br>私有镜像不能通过外部镜像文件创建 ×</p>
-]]></content>
       <categories>
         <category>鲲鹏云</category>
       </categories>
