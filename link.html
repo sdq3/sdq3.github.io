@@ -878,9 +878,11 @@ var $main = document.querySelector('.main');
 		display: flex !important;
 		flex-direction: row !important;
 		list-style: none !important;
+		/* 页面布局 */
 		padding: 10px !important;
-		border-radius: 10px !important;
-		margin: 10px !important;
+  		border-radius: 10px !important;
+  		/* 边距 */
+  		margin: 10px !important;
 		text-decoration: none !important;
 		color: #000 !important;
 		background-color: rgba(255, 255, 255, 0.5);
@@ -902,7 +904,14 @@ var $main = document.querySelector('.main');
 	.a .div:nth-child(1) {
 		width: 35% !important;
 		overflow: hidden !important;
-		border-radius: 23px !important;
+		border-radius: 10px !important;
+  		/* 屏幕宽度33.33后再取33.33% */
+    	width: calc(33.33% - 1.62rem);
+    	/* vw单位是相对于视口（屏幕）宽度的 */
+    	/* height: calc(33.33vw/3 - 1.6rem); */
+    	margin: 1.2rem 0 0 1.2rem;
+		/* 调试 */
+    	/* outline: 1px solid #dedede; */
 	}
 	.a .div:nth-child(2) {
 		display: flex !important;
@@ -910,7 +919,7 @@ var $main = document.querySelector('.main');
 		justify-content: center !important;
 		align-items: center !important;
 	}
-	@media all and (max-width:760px) {
+	@media all and (max-width:1026px) {
 		.a {
 			width: 93% !important;
 		}
@@ -1003,31 +1012,31 @@ var $main = document.querySelector('.main');
 	</a>
 	<a class="a" target="_blank" href="https://mcenjoy.cn">
 		<div class="div">
-			<img src="https://mcenjoy.cn/wp-content/uploads/2020/05/aguvm-o0e05-001.ico">
+		  <img src="https://mcenjoy.cn/wp-content/uploads/2020/05/aguvm-o0e05-001.ico">
 		</div>
 		<div class="div">
-			<span>Enjoy的博客</span>
-			<!-- <span>神楽シロ_Officiald</span> -->
+		  <span>Enjoy的博客</span>
+		  <!-- <span>神楽シロ_Officiald</span> -->
 		</div>
-	</a>
-	<a class="a" target="_blank" href="">
+	  </a>
+	  <a class="a" target="_blank" href="">
 		<div class="div">
-			<img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F19%2F12%2F20%2Fffbb8a6b1ce560222402f8f980f8049f.jpg">
-		</div>
-		<div class="div">
-			<span>空位出租</span>
-			<!-- <span>神楽シロ_Officiald</span> -->
-		</div>
-	</a>
-	<a class="a" target="_blank" href="">
-		<div class="div">
-			<img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180224%2Fe599850ce57f4c79a7362adbfd56ec0e.jpeg">
+		  <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F19%2F12%2F20%2Fffbb8a6b1ce560222402f8f980f8049f.jpg">
 		</div>
 		<div class="div">
-			<span>空位出租</span>
-			<!-- <span>神楽シロ_Officiald</span> -->
+		  <span>空位出租</span>
+		  <!-- <span>神楽シロ_Officiald</span> -->
 		</div>
-	</a>
+	  </a>
+	  <a class="a" target="_blank" href="">
+		<div class="div">
+		  <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F19%2F12%2F20%2Fffbb8a6b1ce560222402f8f980f8049f.jpg">
+		</div>
+		<div class="div">
+		  <span>空位出租</span>
+		  <!-- <span>神楽シロ_Officiald</span> -->
+		</div>
+	  </a>
 </div>
 <!-- </article> -->
 </div>
