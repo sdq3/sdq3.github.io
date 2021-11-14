@@ -67,204 +67,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Android ROM移植</title>
-    <url>/Android-ROM-transplant.html</url>
-    <content><![CDATA[<p><strong>本人是用Arch，顺便来传一下教</strong><br><img src="/images/编译Android/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
-<a id="more"></a>
-
-<p><strong>此教程针对 高通和联发科 64位就多替换lib64 等有64字眼的</strong></p>
-<h1 id="移植-刷机包-ROM-建议在Linux的平台是-下载个解压软件"><a href="#移植-刷机包-ROM-建议在Linux的平台是-下载个解压软件" class="headerlink" title="移植 刷机包/ROM 建议在Linux的平台是 下载个解压软件"></a>移植 刷机包/ROM 建议在Linux的平台是 下载个解压软件</h1><ul>
-<li>推荐sdat2</li>
-</ul>
-<h2 id="移植boot-img"><a href="#移植boot-img" class="headerlink" title="移植boot.img"></a>移植boot.img</h2><ul>
-<li>步骤: 解压出官方booT和要移植包的boot, 替换进入官方<ul>
-<li>替换文件: dt.img和zlmagewe 没有这个文件的话就无视</li>
-</ul>
-</li>
-</ul>
-<p><strong>可以开机之后 再进行以下操作</strong></p>
-<ul>
-<li>开机失败就替换fstab.qcom为官方</li>
-</ul>
-<h2 id="刷机脚本修改"><a href="#刷机脚本修改" class="headerlink" title="刷机脚本修改"></a>刷机脚本修改</h2><ul>
-<li>1.机型验证<ul>
-<li>getprop开头的那行删除，如果安装中断的话就是这行没删完,</li>
-</ul>
-</li>
-<li>2.分区挂卸<ul>
-<li>分区注意mmcblk0p字眼的记得改成官方的</li>
-</ul>
-</li>
-<li>3.删除底层文件刷入<ul>
-<li>底层文件一般在包里面，正常的包有system(system.dat…), boot.img,META—INF, data其他多余的未知文件和文件夹就是底层文件, 这些必须删除, 不然就可能会黑砖</li>
-</ul>
-</li>
-</ul>
-<p><strong>参考脚本 一般放在META-INF里面</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">ui_print(&quot;Patching firmware images...&quot;);<br>ifelse(msm.boot_update(&quot;main&quot;), (<br>package_extract_file(&quot;firmware-update/tz.mbn&quot;, &quot;/dev/block/bootdevice/by-name/tz&quot;);<br>package_extract_file(&quot;firmware-update/hyp.mbn&quot;, &quot;/dev/block/bootdevice/by-name/hyp&quot;);<br>package_extract_file(&quot;firmware-update/sbl1.mbn&quot;, &quot;/dev/block/bootdevice/by-name/sbl1&quot;);<br>package_extract_file(&quot;firmware-update/rpm.mbn&quot;, &quot;/dev/block/bootdevice/by-name/rpm&quot;);<br>package_extract_file(&quot;firmware-update/emmc_appsboot.mbn&quot;, &quot;/dev/block/bootdevice/by-name/aboot&quot;);<br>), &quot;&quot;);<br>ifelse(msm.boot_update(&quot;backup&quot;), (<br>package_extract_file(&quot;firmware-update/tz.mbn&quot;, &quot;/dev/block/bootdevice/by-name/tzbak&quot;);<br>package_extract_file(&quot;firmware-update/hyp.mbn&quot;, &quot;/dev/block/bootdevice/by-name/hypbak&quot;);<br>package_extract_file(&quot;firmware-update/sbl1.mbn&quot;, &quot;/dev/block/bootdevice/by-name/sbl1bak&quot;);<br>package_extract_file(&quot;firmware-update/rpm.mbn&quot;, &quot;/dev/block/bootdevice/by-name/rpmbak&quot;);<br>package_extract_file(&quot;firmware-update/emmc_appsboot.mbn&quot;, &quot;/dev/block/bootdevice/by-name/abootbak&quot;);<br>), &quot;&quot;);<br>msm.boot_update(&quot;finalize&quot;);<br>package_extract_file(&quot;firmware-update/NON-HLOS.bin&quot;, &quot;/dev/block/bootdevice/by-name/modem&quot;);<br></code></pre></td></tr></table></figure>
-
-
-<h2 id="WIFI修复"><a href="#WIFI修复" class="headerlink" title="WIFI修复"></a>WIFI修复</h2><ul>
-<li>步骤: 以下文件或文件夹替换为官方 没有就不替换</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/etc/firmware/wlan<br>system/etc/wifi<br>system/lib/modules/pronto<br>system/lib/modules/wlan.ko<br></code></pre></td></tr></table></figure>
-<p><strong>可以用WIFI之后 再进行以下操作</strong></p>
-<ul>
-<li>还是不行再看看boot.img里面的init.qcom.rc对比官方boot里面的init.qcom.rc修改 还不行就看刷机脚本, 改里面的wifi软链接</li>
-</ul>
-<h3 id="内存卡使用修复"><a href="#内存卡使用修复" class="headerlink" title="内存卡使用修复"></a>内存卡使用修复</h3><ul>
-<li>以下文件替换或修改为官方</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/etc/permissions/platform.xml<br></code></pre></td></tr></table></figure>
-<h3 id="修复按键"><a href="#修复按键" class="headerlink" title="修复按键"></a>修复按键</h3><ul>
-<li>以下文件替换或修改为官方</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/usr/icu<br>system/usr/idc<br><br>//不行再多替换 <br>system/usr/keylayout/Generic.kl<br></code></pre></td></tr></table></figure>
-<h3 id="修复声音"><a href="#修复声音" class="headerlink" title="修复声音"></a>修复声音</h3><p><strong>以下文件替换为官方</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">    方法1:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换etc/mixer开头的<br><br>    方法2:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换system/hw/audio.primary.msmxxxx.so(64位多替换system/lib64/hw/audio.primary.msmxxxx.so)<br><br>    方法3:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换system/lib/hw/audio开头的（64位多替换system/lib64/hw/audio）<br><br>    方法4:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换以下:<br>    system/etc/mixer开头的<br>    system/lib/hw/audio.primary.msmxxxx.so<br>    (64位多替换system/lib64/hw/audio.primary.msmxxxx.so)<br><br>    方法5:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换以下:<br>    system/etc/audio和mixer开头的<br>    system/lib/hw/audio开头的<br>    (64位多替换system/lib64/hw/audio开头的)<br><br>注: lib和lib64文件夹里面的audio开头(不包括hw文件夹)64位替换了不卡屏，但32位可能会卡屏<br></code></pre></td></tr></table></figure>
-<h3 id="修改型号"><a href="#修改型号" class="headerlink" title="修改型号"></a>修改型号</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 品牌<br>ro.product.brand=xiaomi<br>// 型号<br>ro.product.name=2<br>// 关于手机显示的型号<br>ro.product.model=redmi 2<br>// 分辨率<br>ro.sf.lcd_density=320 <br>// 这个也是有关型号的<br>ro.build.product=2<br>// 虚拟按键  1是关0是开，没有这行的就加进去<br>qemu.hw.mainkeys=0 <br></code></pre></td></tr></table></figure>
-<h3 id="修复相机"><a href="#修复相机" class="headerlink" title="修复相机"></a>修复相机</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 把System/lib文件夹里面的文件替换成官方包的文件，可以解决相机打开停止的BUG问题<br>libcamalgo.so<br>libcamera_client.so<br>libcameracustom.so<br>libcameraservice.so<br>libmhal.so<br>libmhalcontent.so<br>libmhaldrv.so<br>libmhalmdp.so<br>libmhalpipe.so<br>libmhalscenario.so<br>libmhalutility.so<br></code></pre></td></tr></table></figure>
-
-<h3 id="修复传感器"><a href="#修复传感器" class="headerlink" title="修复传感器"></a>修复传感器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 替换System/lib/hw  文件夹里面<br>sensors.default.so<br></code></pre></td></tr></table></figure>
-
-<h1>移植有风险, 不保证无bug</h1>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Arch系统包桌面傻瓜式安装 (有手就行)</title>
-    <url>/Arch-install.html</url>
-    <content><![CDATA[<p><strong>本人是Arch教徒过来传一下教</strong> </p>
-<img src="/images/Arch傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;">
-<a id="more"></a>
-
-<p><strong>在Windows里用DiskGenius转GPT之后 删除你所要安装Arch的分区</strong></p>
-<img src="/images/Arch傻瓜式安装/转GPT格式.jpg" style="width: 300px; height: 150px;">
-
-<p><strong>磁盘变更还可以用Lixux命令来 不建议使用</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">partrd /dev/xxx  //你要变更的磁盘</span><br></code></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">gpt</span><br></code></pre></td></tr></table></figure>
-<p>然后退出</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">quit</span><br></code></pre></td></tr></table></figure>
-<h1 id="第一步-先要有一个启动盘-这里推荐清华大学开源软件镜像站"><a href="#第一步-先要有一个启动盘-这里推荐清华大学开源软件镜像站" class="headerlink" title="第一步 先要有一个启动盘 这里推荐清华大学开源软件镜像站"></a>第一步 先要有一个启动盘 这里推荐<a href="https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/">清华大学开源软件镜像站</a></h1><h1 id="第二步-引导界面选择第一个-进入U盘"><a href="#第二步-引导界面选择第一个-进入U盘" class="headerlink" title="第二步 引导界面选择第一个 进入U盘"></a>第二步 引导界面选择第一个 进入U盘</h1><p><strong>先检查一下是不是UEFI启动,输入以下命令，有输出就代码是UEFI启动，检查BIOS设置是否为UEFI, BIOS设置每个机型都不一样</strong></p>
-<p><code>bash  $ ls /sys/firmware/efi/efivars</code></p>
-<h1 id="第三步-检查网络连接"><a href="#第三步-检查网络连接" class="headerlink" title="第三步 检查网络连接"></a>第三步 检查网络连接</h1><p><strong>建议直接插网线，然后ping一下百度，有反应继续 没反应检查网线</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">ping www.baidu.com</span><br></code></pre></td></tr></table></figure>
-
-<p>然后CTRL+Z退出</p>
-<p><strong>如果你想用WIFI就执行以下步骤</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">iwctl</span><br></code></pre></td></tr></table></figure>
-<p><strong>查看网卡 通常都是wlan0</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">device list</span><br></code></pre></td></tr></table></figure>
-<p><strong>以下命令是扫描你范围内的无线网卡</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">station wlan0 get-networks</span><br></code></pre></td></tr></table></figure>
-
-<p><strong>找到你的WIFI</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">station wlan0 connect xxx    //无线网卡名字通常是wlan0，WIFI名字xxx</span><br></code></pre></td></tr></table></figure>
-<p><strong>Passphrase:是让你输密码</strong></p>
-<p><strong>然后以下命令退出</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash"><span class="hljs-built_in">exit</span></span><br></code></pre></td></tr></table></figure>
-<h1 id="第四步-设置系统时钟更新-与网络时间同步"><a href="#第四步-设置系统时钟更新-与网络时间同步" class="headerlink" title="第四步 设置系统时钟更新 与网络时间同步"></a>第四步 设置系统时钟更新 与网络时间同步</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">timedatectl set-ntp <span class="hljs-literal">true</span></span><br></code></pre></td></tr></table></figure>
-<p><strong>查看是否执行完同步</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">timedatectl status</span><br></code></pre></td></tr></table></figure>
-<h1 id="第五步-更换镜像源"><a href="#第五步-更换镜像源" class="headerlink" title="第五步 更换镜像源"></a>第五步 更换镜像源</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">vim /etc/pamcan.d/mtrrorlist</span><br></code></pre></td></tr></table></figure>
-<p><strong>查找: Server = <a href="https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch">https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch</a></strong></p>
-<h1 id="第六步-分区"><a href="#第六步-分区" class="headerlink" title="第六步 分区"></a>第六步 分区</h1><p><strong>查看分区</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">lsblk</span><br></code></pre></td></tr></table></figure>
-<p><strong>然后正式分区</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">cfdisk /dev/xxx   //你要变更的磁盘</span><br></code></pre></td></tr></table></figure>
-<p><strong>终于到这里了 这里是图形化界面很好查找</strong><br><img src="/images/Arch傻瓜式安装/图形化界面.jpg" style="width: 750px; height: 100px;"></p>
-<p><strong>(New是新建) (Resize是调整大小) (Quit是退出) (Type是类型) (Heip是帮助) (Wrire是保存) (Dump是丢弃)</strong></p>
-<p><strong>步骤: 先点New建一个300M的文件，然后点Type选择EFI System点击，再点New建一个2G的文件，然后点Type选择Linux swap点击，最后点New建一个(根目录)主分区把剩下的所有内存用上，然后点Type选择Linux filesystem点击，然后Wrire回车，并输入yes，然后拍照，点击Quit退出</strong></p>
-<img src="/images/Arch傻瓜式安装/例子.jpg" style="width: 900px; height: 300px;">
-
-<p><strong>以防万一，检查一下</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">cfdisk -l</span><br></code></pre></td></tr></table></figure>
-<h1 id="第七步-格式化操作"><a href="#第七步-格式化操作" class="headerlink" title="第七步 格式化操作"></a>第七步 格式化操作</h1><p><strong>格式化主分区(根目录)</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">mkfs.ext4 /dev/xxx   //就是你刚刚Linux filesystem的</span><br></code></pre></td></tr></table></figure>
-<p><strong>格式化EFI分区</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">mkfs.vfat /dev/xxx     //就是你刚刚EFI System的</span><br></code></pre></td></tr></table></figure>
-<p><strong>格式化swap分区</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">mkfswap -f /dev/xxx     //就是你刚刚Linux swap的</span><br></code></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">swapon /dev/xxx     //就是你刚刚Linux swap的</span><br></code></pre></td></tr></table></figure>
-<h1 id="第八步-挂载"><a href="#第八步-挂载" class="headerlink" title="第八步 挂载"></a>第八步 挂载</h1><p><strong>挂载根目录 注意/mnt前面有空格</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">mount /dev/(就是你刚刚Linux filesystem的) /mnt</span><br></code></pre></td></tr></table></figure>
-<p><strong>挂载EFI分区 先创建boot目录 再里面创建EFI目录 注意/mnt前面还有空格</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">mkdir /mnt/boot</span><br></code></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">mkdir /mnt/boot/EFI</span><br></code></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">mount /dev/xxx /mnt/boot/EFI       //xxx就是你刚刚EFI System的</span><br></code></pre></td></tr></table></figure>
-<h1 id="第九步-安装系统"><a href="#第九步-安装系统" class="headerlink" title="第九步 安装系统"></a>第九步 安装系统</h1><p><strong>这三个包必安装</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">pacstrap /mnt base linux linux-firmware</span><br></code></pre></td></tr></table></figure>
-<p><strong>然后安装功能性软件 联网的有dhcpcd iwd，编辑器有vim，提权有sudo</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">pacstrap /mnt dhcpcd iwd vim sudo</span><br></code></pre></td></tr></table></figure>
-<p><strong>然后定义etc分区</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span><br></code></pre></td></tr></table></figure>
-<p><strong>以防万一还是检查一下</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">cat /mnt/etc/fstab</span><br></code></pre></td></tr></table></figure>
-<h1 id="第七步-把环境迁移到新系统"><a href="#第七步-把环境迁移到新系统" class="headerlink" title="第七步 把环境迁移到新系统"></a>第七步 把环境迁移到新系统</h1><p><strong>迁移命令</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">arch-chroot /mnt</span><br></code></pre></td></tr></table></figure>
-<p><strong>创建时区 例如: 上海</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">ln -sf /usr.share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></code></pre></td></tr></table></figure>
-<p><strong>同步时区</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">hwclock --systohc</span><br></code></pre></td></tr></table></figure>
-<p><strong>设置语言 留意en_US.UTF-8 UTF-8</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">vim /etc/locale.gen</span><br></code></pre></td></tr></table></figure>
-<p><strong>然后生成</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">locale-gen</span><br></code></pre></td></tr></table></figure>
-<p><strong>然后输入内容</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;LANG=EN_us.utf-8 &gt; /etc/locale.conf&#x27;</span></span><br></code></pre></td></tr></table></figure>
-<p><strong>以防万一 检查一下</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">cat /etc/locale.conf</span><br></code></pre></td></tr></table></figure>
-<h1 id="第八步-用户设置"><a href="#第八步-用户设置" class="headerlink" title="第八步 用户设置"></a>第八步 用户设置</h1><p><strong>Root用户设置密码</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">passwd root</span><br></code></pre></td></tr></table></figure>
-<p><strong>intel英特尔CPU安装这个</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">pacman -S intel-ucode</span><br></code></pre></td></tr></table></figure>
-<p><strong>AMD超微CPU安装这个</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">pacman -S amd-ucode</span><br></code></pre></td></tr></table></figure>
-<h1 id="第九步-安装引导程序"><a href="#第九步-安装引导程序" class="headerlink" title="第九步 安装引导程序"></a>第九步 安装引导程序</h1><p><strong>安装grub引导</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">pacman -S grub efibootmgr</span><br></code></pre></td></tr></table></figure>
-<p><strong>然后给grub引导取个名字</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">grub-install --target=x86_64-efi --efi-directory=/bootloader-id=Arch      //这里我起Arch 顺便起个名字就好了</span><br></code></pre></td></tr></table></figure>
-<p><strong>生成配置文件</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">grub-mkconfig -o /boot/grub/grub.cfg</span><br></code></pre></td></tr></table></figure>
-<p><strong>退出安装环境</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash"><span class="hljs-built_in">exit</span></span><br></code></pre></td></tr></table></figure>
-<p><strong>卸载分区</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">umount -R /mnt</span><br></code></pre></td></tr></table></figure>
-<p><strong>然后重启一下 可选择物理重启和命令重启</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">reboot</span><br></code></pre></td></tr></table></figure>
-<img src="/images/Arch傻瓜式安装/效果.jpg" style="width: 318px; height: 144px;">
-
-<h1 id="第九步-安装到此为止-安装桌面玩下看"><a href="#第九步-安装到此为止-安装桌面玩下看" class="headerlink" title="第九步 安装到此为止 安装桌面玩下看"></a>第九步 安装到此为止 安装桌面玩下看</h1><h1 id="桌面环境"><a href="#桌面环境" class="headerlink" title="桌面环境"></a>桌面环境</h1><p><strong>创建用户 有利于提权</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">useradd -m -g users G wheel -s /bin/bash xxx     //xxx是你顺便起个用户名</span><br></code></pre></td></tr></table></figure>
-<p><strong>创建密码</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">passwd wallen</span><br></code></pre></td></tr></table></figure>
-<p><strong>编辑新用户权限 %wheel ALL=(ALL) ALL</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">EDITOR=vim visudo</span><br></code></pre></td></tr></table></figure>
-<p><strong>创建桌面环境命令和其他必要软件命令  dolpin是文件管理器  konsole是终端</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">pacman -S plasma-meta dolphin konsole</span><br></code></pre></td></tr></table></figure>
-<p><strong>配置sddm设置为开机自启</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">systemctl <span class="hljs-built_in">enable</span> sddm</span><br></code></pre></td></tr></table></figure>
-<p><strong>开启一下32位支持库 有些程序还是32位 所以要装一些库</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo vim /etc/pacman.conf</span><br></code></pre></td></tr></table></figure>
-<p><strong>配置</strong></p>
-<img src="/images/Arch傻瓜式安装/配置.jpg" style="width: 900px; height: 300px;">
-
-<p><strong>刷新数据库内容</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">pacmam -Syyu</span><br></code></pre></td></tr></table></figure>
-<p><strong>然后重启一下 可选择物理重启和命令重启</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">reboot</span><br></code></pre></td></tr></table></figure>
-<h1 id="Vim命令"><a href="#Vim命令" class="headerlink" title="Vim命令"></a>Vim命令</h1><p><strong>按A键是编辑模式</strong><br><strong>按回车键是执行</strong><br><strong>按两下D键是剪切</strong><br><strong>按两下G键是回到第一行</strong><br><strong>按P键粘贴</strong><br><strong>按N键查找下一个</strong><br><strong>按ESC 然后输入 :wq 是保存并退出</strong></p>
-<h1 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">pacman -S neofetch</span><br></code></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">neofetch</span><br></code></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Anroid 项目结构</title>
     <url>/Anroid-structure.html</url>
     <content><![CDATA[<p><strong>未完待续</strong></p>
@@ -642,6 +444,204 @@ var tools = (function(){
       </categories>
   </entry>
   <entry>
+    <title>Android ROM移植</title>
+    <url>/Android-ROM-transplant.html</url>
+    <content><![CDATA[<p><strong>本人是用Arch，顺便来传一下教</strong><br><img src="/images/编译Android/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
+<a id="more"></a>
+
+<p><strong>此教程针对 高通和联发科 64位就多替换lib64 等有64字眼的</strong></p>
+<h1 id="移植-刷机包-ROM-建议在Linux的平台是-下载个解压软件"><a href="#移植-刷机包-ROM-建议在Linux的平台是-下载个解压软件" class="headerlink" title="移植 刷机包/ROM 建议在Linux的平台是 下载个解压软件"></a>移植 刷机包/ROM 建议在Linux的平台是 下载个解压软件</h1><ul>
+<li>推荐sdat2</li>
+</ul>
+<h2 id="移植boot-img"><a href="#移植boot-img" class="headerlink" title="移植boot.img"></a>移植boot.img</h2><ul>
+<li>步骤: 解压出官方booT和要移植包的boot, 替换进入官方<ul>
+<li>替换文件: dt.img和zlmagewe 没有这个文件的话就无视</li>
+</ul>
+</li>
+</ul>
+<p><strong>可以开机之后 再进行以下操作</strong></p>
+<ul>
+<li>开机失败就替换fstab.qcom为官方</li>
+</ul>
+<h2 id="刷机脚本修改"><a href="#刷机脚本修改" class="headerlink" title="刷机脚本修改"></a>刷机脚本修改</h2><ul>
+<li>1.机型验证<ul>
+<li>getprop开头的那行删除，如果安装中断的话就是这行没删完,</li>
+</ul>
+</li>
+<li>2.分区挂卸<ul>
+<li>分区注意mmcblk0p字眼的记得改成官方的</li>
+</ul>
+</li>
+<li>3.删除底层文件刷入<ul>
+<li>底层文件一般在包里面，正常的包有system(system.dat…), boot.img,META—INF, data其他多余的未知文件和文件夹就是底层文件, 这些必须删除, 不然就可能会黑砖</li>
+</ul>
+</li>
+</ul>
+<p><strong>参考脚本 一般放在META-INF里面</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">ui_print(&quot;Patching firmware images...&quot;);<br>ifelse(msm.boot_update(&quot;main&quot;), (<br>package_extract_file(&quot;firmware-update/tz.mbn&quot;, &quot;/dev/block/bootdevice/by-name/tz&quot;);<br>package_extract_file(&quot;firmware-update/hyp.mbn&quot;, &quot;/dev/block/bootdevice/by-name/hyp&quot;);<br>package_extract_file(&quot;firmware-update/sbl1.mbn&quot;, &quot;/dev/block/bootdevice/by-name/sbl1&quot;);<br>package_extract_file(&quot;firmware-update/rpm.mbn&quot;, &quot;/dev/block/bootdevice/by-name/rpm&quot;);<br>package_extract_file(&quot;firmware-update/emmc_appsboot.mbn&quot;, &quot;/dev/block/bootdevice/by-name/aboot&quot;);<br>), &quot;&quot;);<br>ifelse(msm.boot_update(&quot;backup&quot;), (<br>package_extract_file(&quot;firmware-update/tz.mbn&quot;, &quot;/dev/block/bootdevice/by-name/tzbak&quot;);<br>package_extract_file(&quot;firmware-update/hyp.mbn&quot;, &quot;/dev/block/bootdevice/by-name/hypbak&quot;);<br>package_extract_file(&quot;firmware-update/sbl1.mbn&quot;, &quot;/dev/block/bootdevice/by-name/sbl1bak&quot;);<br>package_extract_file(&quot;firmware-update/rpm.mbn&quot;, &quot;/dev/block/bootdevice/by-name/rpmbak&quot;);<br>package_extract_file(&quot;firmware-update/emmc_appsboot.mbn&quot;, &quot;/dev/block/bootdevice/by-name/abootbak&quot;);<br>), &quot;&quot;);<br>msm.boot_update(&quot;finalize&quot;);<br>package_extract_file(&quot;firmware-update/NON-HLOS.bin&quot;, &quot;/dev/block/bootdevice/by-name/modem&quot;);<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="WIFI修复"><a href="#WIFI修复" class="headerlink" title="WIFI修复"></a>WIFI修复</h2><ul>
+<li>步骤: 以下文件或文件夹替换为官方 没有就不替换</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/etc/firmware/wlan<br>system/etc/wifi<br>system/lib/modules/pronto<br>system/lib/modules/wlan.ko<br></code></pre></td></tr></table></figure>
+<p><strong>可以用WIFI之后 再进行以下操作</strong></p>
+<ul>
+<li>还是不行再看看boot.img里面的init.qcom.rc对比官方boot里面的init.qcom.rc修改 还不行就看刷机脚本, 改里面的wifi软链接</li>
+</ul>
+<h3 id="内存卡使用修复"><a href="#内存卡使用修复" class="headerlink" title="内存卡使用修复"></a>内存卡使用修复</h3><ul>
+<li>以下文件替换或修改为官方</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/etc/permissions/platform.xml<br></code></pre></td></tr></table></figure>
+<h3 id="修复按键"><a href="#修复按键" class="headerlink" title="修复按键"></a>修复按键</h3><ul>
+<li>以下文件替换或修改为官方</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/usr/icu<br>system/usr/idc<br><br>//不行再多替换 <br>system/usr/keylayout/Generic.kl<br></code></pre></td></tr></table></figure>
+<h3 id="修复声音"><a href="#修复声音" class="headerlink" title="修复声音"></a>修复声音</h3><p><strong>以下文件替换为官方</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">    方法1:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换etc/mixer开头的<br><br>    方法2:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换system/hw/audio.primary.msmxxxx.so(64位多替换system/lib64/hw/audio.primary.msmxxxx.so)<br><br>    方法3:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换system/lib/hw/audio开头的（64位多替换system/lib64/hw/audio）<br><br>    方法4:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换以下:<br>    system/etc/mixer开头的<br>    system/lib/hw/audio.primary.msmxxxx.so<br>    (64位多替换system/lib64/hw/audio.primary.msmxxxx.so)<br><br>    方法5:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换以下:<br>    system/etc/audio和mixer开头的<br>    system/lib/hw/audio开头的<br>    (64位多替换system/lib64/hw/audio开头的)<br><br>注: lib和lib64文件夹里面的audio开头(不包括hw文件夹)64位替换了不卡屏，但32位可能会卡屏<br></code></pre></td></tr></table></figure>
+<h3 id="修改型号"><a href="#修改型号" class="headerlink" title="修改型号"></a>修改型号</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 品牌<br>ro.product.brand=xiaomi<br>// 型号<br>ro.product.name=2<br>// 关于手机显示的型号<br>ro.product.model=redmi 2<br>// 分辨率<br>ro.sf.lcd_density=320 <br>// 这个也是有关型号的<br>ro.build.product=2<br>// 虚拟按键  1是关0是开，没有这行的就加进去<br>qemu.hw.mainkeys=0 <br></code></pre></td></tr></table></figure>
+<h3 id="修复相机"><a href="#修复相机" class="headerlink" title="修复相机"></a>修复相机</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 把System/lib文件夹里面的文件替换成官方包的文件，可以解决相机打开停止的BUG问题<br>libcamalgo.so<br>libcamera_client.so<br>libcameracustom.so<br>libcameraservice.so<br>libmhal.so<br>libmhalcontent.so<br>libmhaldrv.so<br>libmhalmdp.so<br>libmhalpipe.so<br>libmhalscenario.so<br>libmhalutility.so<br></code></pre></td></tr></table></figure>
+
+<h3 id="修复传感器"><a href="#修复传感器" class="headerlink" title="修复传感器"></a>修复传感器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 替换System/lib/hw  文件夹里面<br>sensors.default.so<br></code></pre></td></tr></table></figure>
+
+<h1>移植有风险, 不保证无bug</h1>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Arch系统包桌面傻瓜式安装 (有手就行)</title>
+    <url>/Arch-install.html</url>
+    <content><![CDATA[<p><strong>本人是Arch教徒过来传一下教</strong> </p>
+<img src="/images/Arch傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;">
+<a id="more"></a>
+
+<p><strong>在Windows里用DiskGenius转GPT之后 删除你所要安装Arch的分区</strong></p>
+<img src="/images/Arch傻瓜式安装/转GPT格式.jpg" style="width: 300px; height: 150px;">
+
+<p><strong>磁盘变更还可以用Lixux命令来 不建议使用</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">partrd /dev/xxx  //你要变更的磁盘</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">gpt</span><br></code></pre></td></tr></table></figure>
+<p>然后退出</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">quit</span><br></code></pre></td></tr></table></figure>
+<h1 id="第一步-先要有一个启动盘-这里推荐清华大学开源软件镜像站"><a href="#第一步-先要有一个启动盘-这里推荐清华大学开源软件镜像站" class="headerlink" title="第一步 先要有一个启动盘 这里推荐清华大学开源软件镜像站"></a>第一步 先要有一个启动盘 这里推荐<a href="https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/">清华大学开源软件镜像站</a></h1><h1 id="第二步-引导界面选择第一个-进入U盘"><a href="#第二步-引导界面选择第一个-进入U盘" class="headerlink" title="第二步 引导界面选择第一个 进入U盘"></a>第二步 引导界面选择第一个 进入U盘</h1><p><strong>先检查一下是不是UEFI启动,输入以下命令，有输出就代码是UEFI启动，检查BIOS设置是否为UEFI, BIOS设置每个机型都不一样</strong></p>
+<p><code>bash  $ ls /sys/firmware/efi/efivars</code></p>
+<h1 id="第三步-检查网络连接"><a href="#第三步-检查网络连接" class="headerlink" title="第三步 检查网络连接"></a>第三步 检查网络连接</h1><p><strong>建议直接插网线，然后ping一下百度，有反应继续 没反应检查网线</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">ping www.baidu.com</span><br></code></pre></td></tr></table></figure>
+
+<p>然后CTRL+Z退出</p>
+<p><strong>如果你想用WIFI就执行以下步骤</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">iwctl</span><br></code></pre></td></tr></table></figure>
+<p><strong>查看网卡 通常都是wlan0</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">device list</span><br></code></pre></td></tr></table></figure>
+<p><strong>以下命令是扫描你范围内的无线网卡</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">station wlan0 get-networks</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>找到你的WIFI</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">station wlan0 connect xxx    //无线网卡名字通常是wlan0，WIFI名字xxx</span><br></code></pre></td></tr></table></figure>
+<p><strong>Passphrase:是让你输密码</strong></p>
+<p><strong>然后以下命令退出</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash"><span class="hljs-built_in">exit</span></span><br></code></pre></td></tr></table></figure>
+<h1 id="第四步-设置系统时钟更新-与网络时间同步"><a href="#第四步-设置系统时钟更新-与网络时间同步" class="headerlink" title="第四步 设置系统时钟更新 与网络时间同步"></a>第四步 设置系统时钟更新 与网络时间同步</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">timedatectl set-ntp <span class="hljs-literal">true</span></span><br></code></pre></td></tr></table></figure>
+<p><strong>查看是否执行完同步</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">timedatectl status</span><br></code></pre></td></tr></table></figure>
+<h1 id="第五步-更换镜像源"><a href="#第五步-更换镜像源" class="headerlink" title="第五步 更换镜像源"></a>第五步 更换镜像源</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">vim /etc/pamcan.d/mtrrorlist</span><br></code></pre></td></tr></table></figure>
+<p><strong>查找: Server = <a href="https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch">https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch</a></strong></p>
+<h1 id="第六步-分区"><a href="#第六步-分区" class="headerlink" title="第六步 分区"></a>第六步 分区</h1><p><strong>查看分区</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">lsblk</span><br></code></pre></td></tr></table></figure>
+<p><strong>然后正式分区</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">cfdisk /dev/xxx   //你要变更的磁盘</span><br></code></pre></td></tr></table></figure>
+<p><strong>终于到这里了 这里是图形化界面很好查找</strong><br><img src="/images/Arch傻瓜式安装/图形化界面.jpg" style="width: 750px; height: 100px;"></p>
+<p><strong>(New是新建) (Resize是调整大小) (Quit是退出) (Type是类型) (Heip是帮助) (Wrire是保存) (Dump是丢弃)</strong></p>
+<p><strong>步骤: 先点New建一个300M的文件，然后点Type选择EFI System点击，再点New建一个2G的文件，然后点Type选择Linux swap点击，最后点New建一个(根目录)主分区把剩下的所有内存用上，然后点Type选择Linux filesystem点击，然后Wrire回车，并输入yes，然后拍照，点击Quit退出</strong></p>
+<img src="/images/Arch傻瓜式安装/例子.jpg" style="width: 900px; height: 300px;">
+
+<p><strong>以防万一，检查一下</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">cfdisk -l</span><br></code></pre></td></tr></table></figure>
+<h1 id="第七步-格式化操作"><a href="#第七步-格式化操作" class="headerlink" title="第七步 格式化操作"></a>第七步 格式化操作</h1><p><strong>格式化主分区(根目录)</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">mkfs.ext4 /dev/xxx   //就是你刚刚Linux filesystem的</span><br></code></pre></td></tr></table></figure>
+<p><strong>格式化EFI分区</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">mkfs.vfat /dev/xxx     //就是你刚刚EFI System的</span><br></code></pre></td></tr></table></figure>
+<p><strong>格式化swap分区</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">mkfswap -f /dev/xxx     //就是你刚刚Linux swap的</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">swapon /dev/xxx     //就是你刚刚Linux swap的</span><br></code></pre></td></tr></table></figure>
+<h1 id="第八步-挂载"><a href="#第八步-挂载" class="headerlink" title="第八步 挂载"></a>第八步 挂载</h1><p><strong>挂载根目录 注意/mnt前面有空格</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">mount /dev/(就是你刚刚Linux filesystem的) /mnt</span><br></code></pre></td></tr></table></figure>
+<p><strong>挂载EFI分区 先创建boot目录 再里面创建EFI目录 注意/mnt前面还有空格</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">mkdir /mnt/boot</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">mkdir /mnt/boot/EFI</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">mount /dev/xxx /mnt/boot/EFI       //xxx就是你刚刚EFI System的</span><br></code></pre></td></tr></table></figure>
+<h1 id="第九步-安装系统"><a href="#第九步-安装系统" class="headerlink" title="第九步 安装系统"></a>第九步 安装系统</h1><p><strong>这三个包必安装</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">pacstrap /mnt base linux linux-firmware</span><br></code></pre></td></tr></table></figure>
+<p><strong>然后安装功能性软件 联网的有dhcpcd iwd，编辑器有vim，提权有sudo</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">pacstrap /mnt dhcpcd iwd vim sudo</span><br></code></pre></td></tr></table></figure>
+<p><strong>然后定义etc分区</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span><br></code></pre></td></tr></table></figure>
+<p><strong>以防万一还是检查一下</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">cat /mnt/etc/fstab</span><br></code></pre></td></tr></table></figure>
+<h1 id="第七步-把环境迁移到新系统"><a href="#第七步-把环境迁移到新系统" class="headerlink" title="第七步 把环境迁移到新系统"></a>第七步 把环境迁移到新系统</h1><p><strong>迁移命令</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">arch-chroot /mnt</span><br></code></pre></td></tr></table></figure>
+<p><strong>创建时区 例如: 上海</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">ln -sf /usr.share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></code></pre></td></tr></table></figure>
+<p><strong>同步时区</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">hwclock --systohc</span><br></code></pre></td></tr></table></figure>
+<p><strong>设置语言 留意en_US.UTF-8 UTF-8</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">vim /etc/locale.gen</span><br></code></pre></td></tr></table></figure>
+<p><strong>然后生成</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">locale-gen</span><br></code></pre></td></tr></table></figure>
+<p><strong>然后输入内容</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;LANG=EN_us.utf-8 &gt; /etc/locale.conf&#x27;</span></span><br></code></pre></td></tr></table></figure>
+<p><strong>以防万一 检查一下</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">cat /etc/locale.conf</span><br></code></pre></td></tr></table></figure>
+<h1 id="第八步-用户设置"><a href="#第八步-用户设置" class="headerlink" title="第八步 用户设置"></a>第八步 用户设置</h1><p><strong>Root用户设置密码</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">passwd root</span><br></code></pre></td></tr></table></figure>
+<p><strong>intel英特尔CPU安装这个</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">pacman -S intel-ucode</span><br></code></pre></td></tr></table></figure>
+<p><strong>AMD超微CPU安装这个</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">pacman -S amd-ucode</span><br></code></pre></td></tr></table></figure>
+<h1 id="第九步-安装引导程序"><a href="#第九步-安装引导程序" class="headerlink" title="第九步 安装引导程序"></a>第九步 安装引导程序</h1><p><strong>安装grub引导</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">pacman -S grub efibootmgr</span><br></code></pre></td></tr></table></figure>
+<p><strong>然后给grub引导取个名字</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">grub-install --target=x86_64-efi --efi-directory=/bootloader-id=Arch      //这里我起Arch 顺便起个名字就好了</span><br></code></pre></td></tr></table></figure>
+<p><strong>生成配置文件</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">grub-mkconfig -o /boot/grub/grub.cfg</span><br></code></pre></td></tr></table></figure>
+<p><strong>退出安装环境</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash"><span class="hljs-built_in">exit</span></span><br></code></pre></td></tr></table></figure>
+<p><strong>卸载分区</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">umount -R /mnt</span><br></code></pre></td></tr></table></figure>
+<p><strong>然后重启一下 可选择物理重启和命令重启</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">reboot</span><br></code></pre></td></tr></table></figure>
+<img src="/images/Arch傻瓜式安装/效果.jpg" style="width: 318px; height: 144px;">
+
+<h1 id="第九步-安装到此为止-安装桌面玩下看"><a href="#第九步-安装到此为止-安装桌面玩下看" class="headerlink" title="第九步 安装到此为止 安装桌面玩下看"></a>第九步 安装到此为止 安装桌面玩下看</h1><h1 id="桌面环境"><a href="#桌面环境" class="headerlink" title="桌面环境"></a>桌面环境</h1><p><strong>创建用户 有利于提权</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">useradd -m -g users G wheel -s /bin/bash xxx     //xxx是你顺便起个用户名</span><br></code></pre></td></tr></table></figure>
+<p><strong>创建密码</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">passwd wallen</span><br></code></pre></td></tr></table></figure>
+<p><strong>编辑新用户权限 %wheel ALL=(ALL) ALL</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">EDITOR=vim visudo</span><br></code></pre></td></tr></table></figure>
+<p><strong>创建桌面环境命令和其他必要软件命令  dolpin是文件管理器  konsole是终端</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">pacman -S plasma-meta dolphin konsole</span><br></code></pre></td></tr></table></figure>
+<p><strong>配置sddm设置为开机自启</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">systemctl <span class="hljs-built_in">enable</span> sddm</span><br></code></pre></td></tr></table></figure>
+<p><strong>开启一下32位支持库 有些程序还是32位 所以要装一些库</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo vim /etc/pacman.conf</span><br></code></pre></td></tr></table></figure>
+<p><strong>配置</strong></p>
+<img src="/images/Arch傻瓜式安装/配置.jpg" style="width: 900px; height: 300px;">
+
+<p><strong>刷新数据库内容</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">pacmam -Syyu</span><br></code></pre></td></tr></table></figure>
+<p><strong>然后重启一下 可选择物理重启和命令重启</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">reboot</span><br></code></pre></td></tr></table></figure>
+<h1 id="Vim命令"><a href="#Vim命令" class="headerlink" title="Vim命令"></a>Vim命令</h1><p><strong>按A键是编辑模式</strong><br><strong>按回车键是执行</strong><br><strong>按两下D键是剪切</strong><br><strong>按两下G键是回到第一行</strong><br><strong>按P键粘贴</strong><br><strong>按N键查找下一个</strong><br><strong>按ESC 然后输入 :wq 是保存并退出</strong></p>
+<h1 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">pacman -S neofetch</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">neofetch</span><br></code></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Bodhi Linux安装教程(老电脑的福利)</title>
     <url>/Bodhi-Linux.html</url>
     <content><![CDATA[<p><strong>本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版</strong></p>
@@ -785,6 +785,22 @@ var tools = (function(){
       </categories>
   </entry>
   <entry>
+    <title>CSS 属性选择器(常用)</title>
+    <url>/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$ &lt;style&gt;<br>$<br><span class="hljs-selector-class">.sdq1</span> <span class="hljs-selector-tag">a</span>&#123; <br>     <span class="hljs-attribute">float</span>: left;  //<span class="hljs-attribute">left</span>往左<span class="hljs-attribute">float</span>浮动<br>     dispay: block;  //dispay规定元素应该生成的框的类型block此元素将显示为块级元素，此元素前后会带有换行符。<br>     heigh: <span class="hljs-number">50px</span>;  //heigh高度<br>     <span class="hljs-attribute">width</span>: <span class="hljs-number">50px</span>;  //<span class="hljs-attribute">width</span>宽度<br>     <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;  //<span class="hljs-attribute">border-radius</span>圆角边框<br>     <br>     <span class="hljs-attribute">text-align</span>: center;   //<span class="hljs-attribute">text-align</span>对齐center剧中<br>     <span class="hljs-attribute">color</span>: yellow;  //<span class="hljs-attribute">color</span>文字颜色<br>     <span class="hljs-attribute">text-decoration</span>: none;  //<span class="hljs-attribute">text-decoration</span>下划线<span class="hljs-attribute">none</span>不显示<br>     <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">5px</span>;    //<span class="hljs-attribute">margin-right</span>外边距向右<br>     <span class="hljs-attribute">font</span>: bold <span class="hljs-number">20px</span>/<span class="hljs-number">50px</span> Arial;   //<span class="hljs-attribute">font</span>设置文字的字体bold字体大小<span class="hljs-number">20px</span>字体的大小<span class="hljs-number">50px</span>行高Arial是一种字体<br> &#125;<br>  //格式<span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[]</span>&#123;&#125;  存在id的属性的元素  <br> a[class*=first]&#123;        //=是绝对等于  *=是包含这个元素<br>     <span class="hljs-attribute">background</span>: yellow;<br> &#125;<br> a[href^=xxy]&#123;          //^=表示以什么开头     <br>     <span class="hljs-attribute">background</span>: green;<br> &#125;<br> a[href$=ghfgh]&#123;          //$=表示以什么结尾     <br>     <span class="hljs-attribute">background</span>: powder;<br> &#125;<br>  <br>$ &lt;/style&gt;<br>$ &lt;body&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;<br>&lt;a href=&quot;xxy.fgdhrth&quot; class=&quot;links item first&quot; id=&quot;first&quot;&gt;史迪奇&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪仔&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪奇骑士&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪奇国王&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪奇勇士&lt;a&gt;<br>&lt;a href=&quot;hh.ghfgh&quot; class=&quot;links item&quot;&gt;史迪奇巫师&lt;a&gt;<br>&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>$ &lt;/body&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
     <title>CSS 正方体旋转效果</title>
     <url>/CSS-cube.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
@@ -888,22 +904,6 @@ var tools = (function(){
             <div class="plane-bottom">下面</div>
         </div>
     </div> -->
-
-
-
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>CSS 属性选择器(常用)</title>
-    <url>/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
-    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$ &lt;style&gt;<br>$<br><span class="hljs-selector-class">.sdq1</span> <span class="hljs-selector-tag">a</span>&#123; <br>     <span class="hljs-attribute">float</span>: left;  //<span class="hljs-attribute">left</span>往左<span class="hljs-attribute">float</span>浮动<br>     dispay: block;  //dispay规定元素应该生成的框的类型block此元素将显示为块级元素，此元素前后会带有换行符。<br>     heigh: <span class="hljs-number">50px</span>;  //heigh高度<br>     <span class="hljs-attribute">width</span>: <span class="hljs-number">50px</span>;  //<span class="hljs-attribute">width</span>宽度<br>     <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;  //<span class="hljs-attribute">border-radius</span>圆角边框<br>     <br>     <span class="hljs-attribute">text-align</span>: center;   //<span class="hljs-attribute">text-align</span>对齐center剧中<br>     <span class="hljs-attribute">color</span>: yellow;  //<span class="hljs-attribute">color</span>文字颜色<br>     <span class="hljs-attribute">text-decoration</span>: none;  //<span class="hljs-attribute">text-decoration</span>下划线<span class="hljs-attribute">none</span>不显示<br>     <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">5px</span>;    //<span class="hljs-attribute">margin-right</span>外边距向右<br>     <span class="hljs-attribute">font</span>: bold <span class="hljs-number">20px</span>/<span class="hljs-number">50px</span> Arial;   //<span class="hljs-attribute">font</span>设置文字的字体bold字体大小<span class="hljs-number">20px</span>字体的大小<span class="hljs-number">50px</span>行高Arial是一种字体<br> &#125;<br>  //格式<span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[]</span>&#123;&#125;  存在id的属性的元素  <br> a[class*=first]&#123;        //=是绝对等于  *=是包含这个元素<br>     <span class="hljs-attribute">background</span>: yellow;<br> &#125;<br> a[href^=xxy]&#123;          //^=表示以什么开头     <br>     <span class="hljs-attribute">background</span>: green;<br> &#125;<br> a[href$=ghfgh]&#123;          //$=表示以什么结尾     <br>     <span class="hljs-attribute">background</span>: powder;<br> &#125;<br>  <br>$ &lt;/style&gt;<br>$ &lt;body&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;<br>&lt;a href=&quot;xxy.fgdhrth&quot; class=&quot;links item first&quot; id=&quot;first&quot;&gt;史迪奇&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪仔&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪奇骑士&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪奇国王&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪奇勇士&lt;a&gt;<br>&lt;a href=&quot;hh.ghfgh&quot; class=&quot;links item&quot;&gt;史迪奇巫师&lt;a&gt;<br>&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>$ &lt;/body&gt;<br></code></pre></td></tr></table></figure>
-
 
 
 
@@ -1070,21 +1070,6 @@ $</style>
       </categories>
   </entry>
   <entry>
-    <title>Git 知识</title>
-    <url>/Git.html</url>
-    <content><![CDATA[<p><strong>Git学习笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="Git-全局设置"><a href="#Git-全局设置" class="headerlink" title="Git 全局设置"></a>Git 全局设置</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">名称</span><br>git config --global user.name &quot;名称&quot;<br><span class="hljs-meta"># </span><span class="language-bash">邮箱</span><br>git config --global user.email &quot;邮箱&quot;<br></code></pre></td></tr></table></figure>
-
-
-<h2 id="创建-git-仓库"><a href="#创建-git-仓库" class="headerlink" title="创建 git 仓库"></a>创建 git 仓库</h2><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">创建sdq文件夹</span><br>mkdir sdq<br><br><span class="hljs-meta"># </span><span class="language-bash">打开sdq文件夹</span><br>cd sdq<br><br><span class="hljs-meta"># </span><span class="language-bash">初始化</span><br>git init<br><span class="hljs-meta"># </span><span class="language-bash">创建说明文档</span><br>touch README.md<br><br><span class="hljs-meta"># </span><span class="language-bash">添加说明文档</span><br>git add README.md<br><br><span class="hljs-meta"># </span><span class="language-bash">添加说明内容</span><br>git commit -m &quot;史迪奇&quot;<br><br><span class="hljs-meta"># </span><span class="language-bash">关联远程存储库 sdz为存储库名</span><br>git remote add sdz https:#gitee.com/sdq3/web.git<br><br><span class="hljs-meta"># </span><span class="language-bash">开始上传 master分支名称</span><br>git push -u sdz master<br></code></pre></td></tr></table></figure>
-<h1 id="git-分支查看与切换"><a href="#git-分支查看与切换" class="headerlink" title="git 分支查看与切换"></a>git 分支查看与切换</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">查看所有分支</span><br>git branch -a<br><br><span class="hljs-meta"># </span><span class="language-bash">查看当前使用分支(结果列表中前面标*号的表示当前使用分支)</span><br>git branch<br><br><span class="hljs-meta"># </span><span class="language-bash">切换分支</span><br>git checkout [分支名]<br></code></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-  </entry>
-  <entry>
     <title>HTML iframe内联框架</title>
     <url>/HTML-iframe.html</url>
     <content><![CDATA[<p><strong>HTML个人整理</strong></p>
@@ -1097,6 +1082,21 @@ $</style>
 <h1 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;xxx/xxx.html&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>HTML</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Git 知识</title>
+    <url>/Git.html</url>
+    <content><![CDATA[<p><strong>Git学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="Git-全局设置"><a href="#Git-全局设置" class="headerlink" title="Git 全局设置"></a>Git 全局设置</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">名称</span><br>git config --global user.name &quot;名称&quot;<br><span class="hljs-meta"># </span><span class="language-bash">邮箱</span><br>git config --global user.email &quot;邮箱&quot;<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="创建-git-仓库"><a href="#创建-git-仓库" class="headerlink" title="创建 git 仓库"></a>创建 git 仓库</h2><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">创建sdq文件夹</span><br>mkdir sdq<br><br><span class="hljs-meta"># </span><span class="language-bash">打开sdq文件夹</span><br>cd sdq<br><br><span class="hljs-meta"># </span><span class="language-bash">初始化</span><br>git init<br><span class="hljs-meta"># </span><span class="language-bash">创建说明文档</span><br>touch README.md<br><br><span class="hljs-meta"># </span><span class="language-bash">添加说明文档</span><br>git add README.md<br><br><span class="hljs-meta"># </span><span class="language-bash">添加说明内容</span><br>git commit -m &quot;史迪奇&quot;<br><br><span class="hljs-meta"># </span><span class="language-bash">关联远程存储库 sdz为存储库名</span><br>git remote add sdz https:#gitee.com/sdq3/web.git<br><br><span class="hljs-meta"># </span><span class="language-bash">开始上传 master分支名称</span><br>git push -u sdz master<br></code></pre></td></tr></table></figure>
+<h1 id="git-分支查看与切换"><a href="#git-分支查看与切换" class="headerlink" title="git 分支查看与切换"></a>git 分支查看与切换</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">查看所有分支</span><br>git branch -a<br><br><span class="hljs-meta"># </span><span class="language-bash">查看当前使用分支(结果列表中前面标*号的表示当前使用分支)</span><br>git branch<br><br><span class="hljs-meta"># </span><span class="language-bash">切换分支</span><br>git checkout [分支名]<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Git</category>
       </categories>
   </entry>
   <entry>
@@ -1979,6 +1979,29 @@ $</style>
       </categories>
   </entry>
   <entry>
+    <title>JavaScript 数据类型之(对象)</title>
+    <url>/JavaScript-object.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象"><a href="#JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象" class="headerlink" title="JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象"></a>JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> 对象名 = &#123;    <br>    属性名: 属性值<br>    属性名: 属性值<br>    属性名: 属性值<br>$ &#125; <br>$<br>$ <span class="hljs-comment">/*通过下标取值和赋值*/</span><br>$ <span class="hljs-keyword">var</span> person = &#123;<br>   <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;sdq&quot;</span>,<br>   <span class="hljs-attr">age</span>: <span class="hljs-number">3</span>,<br>   <span class="hljs-attr">email</span>: <span class="hljs-string">&quot;???????@???&quot;</span><br>   <span class="hljs-attr">score</span>: <span class="hljs-number">0</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>若干个键值对 js中对象, {…..}表示一个对象, 键值对描述属性xxxx: xxxx, 多个属性之间使用逗号隔开, 最后一个属性不加逗号</strong></p>
+<h1 id="对象赋值"><a href="#对象赋值" class="headerlink" title="对象赋值"></a>对象赋值</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-property">name</span> = <span class="hljs-string">&quot;sdq&quot;</span>      <span class="hljs-comment">/*这里赋值sdq*/</span><br>person.<span class="hljs-property">name</span>              <span class="hljs-comment">/*这里输出sdq*/</span><br></code></pre></td></tr></table></figure>
+<h1 id="undefined-使用不存在对象-不会报错"><a href="#undefined-使用不存在对象-不会报错" class="headerlink" title="undefined 使用不存在对象, 不会报错"></a>undefined 使用不存在对象, 不会报错</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-property">sdz</span><br><span class="hljs-literal">undefined</span><br></code></pre></td></tr></table></figure>
+<h1 id="delete-动态的删减属性"><a href="#delete-动态的删减属性" class="headerlink" title="delete 动态的删减属性"></a>delete 动态的删减属性</h1><p><strong>例子</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">$ <span class="hljs-keyword">delete</span> person.<span class="hljs-property">name</span><br>$ <span class="hljs-literal">true</span><br>$ person<br></code></pre></td></tr></table></figure>
+<h1 id="动态的添加给新的属性添加值"><a href="#动态的添加给新的属性添加值" class="headerlink" title="动态的添加给新的属性添加值"></a>动态的添加给新的属性添加值</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-property">sdq</span> = <span class="hljs-string">&quot;sdz&quot;</span>  <span class="hljs-comment">/*这里赋值sdz*/</span><br>person      <br></code></pre></td></tr></table></figure>
+<h1 id="判断属性值是否在这个对象-属性值是否在这个对象"><a href="#判断属性值是否在这个对象-属性值是否在这个对象" class="headerlink" title="判断属性值是否在这个对象  属性值是否在这个对象"></a>判断属性值是否在这个对象  属性值是否在这个对象</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-string">&quot;sdq&quot;</span> <span class="hljs-keyword">in</span> person        <br><span class="hljs-literal">true</span>         <br><span class="hljs-string">&quot;sdqz&quot;</span> <span class="hljs-keyword">in</span> person   <br><span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
+<h1 id="判断属性是否是这个对象自身拥有的-hasOwnProperty"><a href="#判断属性是否是这个对象自身拥有的-hasOwnProperty" class="headerlink" title="判断属性是否是这个对象自身拥有的 hasOwnProperty()"></a>判断属性是否是这个对象自身拥有的 hasOwnProperty()</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-title function_">hasOwnProperty</span>(<span class="hljs-string">&quot;toString&quot;</span>)<br><span class="hljs-literal">false</span>       <br>person.<span class="hljs-title function_">hasOwnProperty</span>(<span class="hljs-string">&quot;sdq&quot;</span>)<br><span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
     <title>JavaScript 面向对象</title>
     <url>/JavaScript-object-oriented.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
@@ -2002,29 +2025,6 @@ $</style>
 
 
 
-
-
-
-]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript 数据类型之(对象)</title>
-    <url>/JavaScript-object.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象"><a href="#JavaScript也是一种面向对象的语言-所有的键都是字符串-值可以是任意对象" class="headerlink" title="JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象"></a>JavaScript也是一种面向对象的语言 所有的键都是字符串 值可以是任意对象</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> 对象名 = &#123;    <br>    属性名: 属性值<br>    属性名: 属性值<br>    属性名: 属性值<br>$ &#125; <br>$<br>$ <span class="hljs-comment">/*通过下标取值和赋值*/</span><br>$ <span class="hljs-keyword">var</span> person = &#123;<br>   <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;sdq&quot;</span>,<br>   <span class="hljs-attr">age</span>: <span class="hljs-number">3</span>,<br>   <span class="hljs-attr">email</span>: <span class="hljs-string">&quot;???????@???&quot;</span><br>   <span class="hljs-attr">score</span>: <span class="hljs-number">0</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<p><strong>若干个键值对 js中对象, {…..}表示一个对象, 键值对描述属性xxxx: xxxx, 多个属性之间使用逗号隔开, 最后一个属性不加逗号</strong></p>
-<h1 id="对象赋值"><a href="#对象赋值" class="headerlink" title="对象赋值"></a>对象赋值</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-property">name</span> = <span class="hljs-string">&quot;sdq&quot;</span>      <span class="hljs-comment">/*这里赋值sdq*/</span><br>person.<span class="hljs-property">name</span>              <span class="hljs-comment">/*这里输出sdq*/</span><br></code></pre></td></tr></table></figure>
-<h1 id="undefined-使用不存在对象-不会报错"><a href="#undefined-使用不存在对象-不会报错" class="headerlink" title="undefined 使用不存在对象, 不会报错"></a>undefined 使用不存在对象, 不会报错</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-property">sdz</span><br><span class="hljs-literal">undefined</span><br></code></pre></td></tr></table></figure>
-<h1 id="delete-动态的删减属性"><a href="#delete-动态的删减属性" class="headerlink" title="delete 动态的删减属性"></a>delete 动态的删减属性</h1><p><strong>例子</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">$ <span class="hljs-keyword">delete</span> person.<span class="hljs-property">name</span><br>$ <span class="hljs-literal">true</span><br>$ person<br></code></pre></td></tr></table></figure>
-<h1 id="动态的添加给新的属性添加值"><a href="#动态的添加给新的属性添加值" class="headerlink" title="动态的添加给新的属性添加值"></a>动态的添加给新的属性添加值</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-property">sdq</span> = <span class="hljs-string">&quot;sdz&quot;</span>  <span class="hljs-comment">/*这里赋值sdz*/</span><br>person      <br></code></pre></td></tr></table></figure>
-<h1 id="判断属性值是否在这个对象-属性值是否在这个对象"><a href="#判断属性值是否在这个对象-属性值是否在这个对象" class="headerlink" title="判断属性值是否在这个对象  属性值是否在这个对象"></a>判断属性值是否在这个对象  属性值是否在这个对象</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-string">&quot;sdq&quot;</span> <span class="hljs-keyword">in</span> person        <br><span class="hljs-literal">true</span>         <br><span class="hljs-string">&quot;sdqz&quot;</span> <span class="hljs-keyword">in</span> person   <br><span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
-<h1 id="判断属性是否是这个对象自身拥有的-hasOwnProperty"><a href="#判断属性是否是这个对象自身拥有的-hasOwnProperty" class="headerlink" title="判断属性是否是这个对象自身拥有的 hasOwnProperty()"></a>判断属性是否是这个对象自身拥有的 hasOwnProperty()</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">person.<span class="hljs-title function_">hasOwnProperty</span>(<span class="hljs-string">&quot;toString&quot;</span>)<br><span class="hljs-literal">false</span>       <br>person.<span class="hljs-title function_">hasOwnProperty</span>(<span class="hljs-string">&quot;sdq&quot;</span>)<br><span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
 
 
 
@@ -2113,21 +2113,6 @@ $</style>
       </categories>
   </entry>
   <entry>
-    <title>Java面向对象思维之构造方法需的重载</title>
-    <url>/Object-oriented-constructor-heavy-load.html</url>
-    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h1><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java"> <span class="hljs-comment">//成员变量</span><br>$ <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Car</span> &#123;<br>$ String color;  <span class="hljs-comment">//颜色</span><br>$ <span class="hljs-type">int</span> wheel;   <span class="hljs-comment">//轮子</span><br>$ <span class="hljs-type">int</span> seat;   <span class="hljs-comment">//座位</span><br>$ &#125;<br></code></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">$ <span class="hljs-keyword">public</span> <span class="hljs-title function_">Car</span><span class="hljs-params">(String color,  <span class="hljs-type">int</span> seat)</span> &#123; <br>   设置属性信息<br>   <span class="hljs-built_in">this</span>.color = color; 颜色<br>   <span class="hljs-built_in">this</span>.seat = seat; 座位<br>$ &#125;<br></code></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">$ <span class="hljs-keyword">public</span> <span class="hljs-title function_">Car</span><span class="hljs-params">(String color, <span class="hljs-type">int</span> wheel, <span class="hljs-type">int</span> seat)</span> &#123; <br>   设置属性信息<br>   <span class="hljs-built_in">this</span>(color,seat);  <span class="hljs-comment">//this还可以调用当前累中其他的构造方法</span><br>   <span class="hljs-built_in">this</span>.wheel = wheel; 轮子<br>$ &#125;<br></code></pre></td></tr></table></figure>
-<h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java"> <span class="hljs-comment">//成员方法</span><br>$ <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[ ] args)</span> &#123;<br>   <span class="hljs-type">Car</span> <span class="hljs-variable">c1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Car</span>(<span class="hljs-string">&quot;透明&quot;</span>,<span class="hljs-number">9</span>);<br>   <span class="hljs-type">Car</span> <span class="hljs-variable">c2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Car</span>(<span class="hljs-string">&quot;黄&quot;</span>,<span class="hljs-number">5</span>,<span class="hljs-number">9</span>);<br>   &#125;<br>$ &#125;<br></code></pre></td></tr></table></figure>
-<h1 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h1>]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Java面向对象思维之构造方法</title>
     <url>/Object-oriented-constructor.html</url>
     <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
@@ -2163,6 +2148,21 @@ $
 ``` -->
 
 ]]></content>
+  </entry>
+  <entry>
+    <title>Java面向对象思维之构造方法需的重载</title>
+    <url>/Object-oriented-constructor-heavy-load.html</url>
+    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="例如造一辆车-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 例如 车有颜色 车有轮子 车座位</h1><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java"> <span class="hljs-comment">//成员变量</span><br>$ <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Car</span> &#123;<br>$ String color;  <span class="hljs-comment">//颜色</span><br>$ <span class="hljs-type">int</span> wheel;   <span class="hljs-comment">//轮子</span><br>$ <span class="hljs-type">int</span> seat;   <span class="hljs-comment">//座位</span><br>$ &#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">$ <span class="hljs-keyword">public</span> <span class="hljs-title function_">Car</span><span class="hljs-params">(String color,  <span class="hljs-type">int</span> seat)</span> &#123; <br>   设置属性信息<br>   <span class="hljs-built_in">this</span>.color = color; 颜色<br>   <span class="hljs-built_in">this</span>.seat = seat; 座位<br>$ &#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">$ <span class="hljs-keyword">public</span> <span class="hljs-title function_">Car</span><span class="hljs-params">(String color, <span class="hljs-type">int</span> wheel, <span class="hljs-type">int</span> seat)</span> &#123; <br>   设置属性信息<br>   <span class="hljs-built_in">this</span>(color,seat);  <span class="hljs-comment">//this还可以调用当前累中其他的构造方法</span><br>   <span class="hljs-built_in">this</span>.wheel = wheel; 轮子<br>$ &#125;<br></code></pre></td></tr></table></figure>
+<h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java"> <span class="hljs-comment">//成员方法</span><br>$ <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[ ] args)</span> &#123;<br>   <span class="hljs-type">Car</span> <span class="hljs-variable">c1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Car</span>(<span class="hljs-string">&quot;透明&quot;</span>,<span class="hljs-number">9</span>);<br>   <span class="hljs-type">Car</span> <span class="hljs-variable">c2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Car</span>(<span class="hljs-string">&quot;黄&quot;</span>,<span class="hljs-number">5</span>,<span class="hljs-number">9</span>);<br>   &#125;<br>$ &#125;<br></code></pre></td></tr></table></figure>
+<h1 id="注意是this-可以访问其他构造方法"><a href="#注意是this-可以访问其他构造方法" class="headerlink" title="注意是this()可以访问其他构造方法"></a>注意是this()可以访问其他构造方法</h1>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
   </entry>
   <entry>
     <title>React AJAX</title>
@@ -2304,6 +2304,25 @@ $
       </categories>
   </entry>
   <entry>
+    <title>React State(状态)</title>
+    <url>/React-State.html</url>
+    <content><![CDATA[<p><strong>React笔记</strong></p>
+<a id="more"></a>
+
+
+<h1 id="将生命周期方法添加到类中"><a href="#将生命周期方法添加到类中" class="headerlink" title="将生命周期方法添加到类中"></a>将生命周期方法添加到类中</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>class MyNameIsStitch extends React.Component &#123;<br>  constructor(props) &#123;<br>    super(props);<br>    this.state = &#123;date: new Date()&#125;;<br>  &#125;<br>  &#123;/*  生命周期钩子 钩子上设置一个定时器  */&#125;<br>  componentDidMount() &#123;<br>    this.timerID = setInterval(<br>      () =&gt; this.tick(),<br>      1000<br>    );<br>  &#125;<br>  &#123;/*  生命周期钩子 钩子中卸载定时器  */&#125;<br>  componentWillUnmount() &#123;<br>    clearInterval(this.timerID);<br>  &#125;<br><br>  tick() &#123;<br>    this.setState(&#123;<br>      date: new Date()<br>    &#125;);<br>  &#125;<br><br>  render() &#123;<br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>你浪费的时间 &#123;this.state.date.toLocaleTimeString()&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br><br>ReactDOM.render(<br>  <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> /&gt;</span>,<br>  document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+<h1 id="自顶向下或单向数据流"><a href="#自顶向下或单向数据流" class="headerlink" title="自顶向下或单向数据流"></a>自顶向下或单向数据流</h1><p><strong>解析: 所有组件都是真正隔离的</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function FormattedDate(props) &#123;<br>  return <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>你浪费的时间 &#123;props.date.toLocaleTimeString()&#125;.<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>;<br>&#125;<br><br>class MyNameIsStitch extends React.Component &#123;<br>  constructor(props) &#123;<br>    super(props);<br>    this.state = &#123;date: new Date()&#125;;<br>  &#125;<br><br>  componentDidMount() &#123;<br>    this.timerID = setInterval(<br>      () =&gt; this.tick(),<br>      1000<br>    );<br>  &#125;<br><br>  componentWillUnmount() &#123;<br>    clearInterval(this.timerID);<br>  &#125;<br><br>  tick() &#123;<br>    this.setState(&#123;<br>      date: new Date()<br>    &#125;);<br>  &#125;<br><br>  render() &#123;<br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">FormattedDate</span> <span class="hljs-attr">date</span>=<span class="hljs-string">&#123;this.state.date&#125;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br><br>function App() &#123;<br>  return (<br>    &#123;/*  创建App 组件 它渲染三个  */&#125;<br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> /&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  );<br>&#125;<br><br>ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>, document.getElementById(&#x27;example&#x27;));<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>有状态组件中使用无状态组件   也可以在无状态组件中使用有状态组件</strong></p>
+]]></content>
+      <categories>
+        <category>React</category>
+      </categories>
+  </entry>
+  <entry>
     <title>React Refs</title>
     <url>/React-Refs.html</url>
     <content><![CDATA[<p><strong>React笔记</strong></p>
@@ -2319,25 +2338,6 @@ $
 <iframe id="iframe" src="./html/React Refs.html"></iframe>
 
 
-]]></content>
-      <categories>
-        <category>React</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>React State(状态)</title>
-    <url>/React-State.html</url>
-    <content><![CDATA[<p><strong>React笔记</strong></p>
-<a id="more"></a>
-
-
-<h1 id="将生命周期方法添加到类中"><a href="#将生命周期方法添加到类中" class="headerlink" title="将生命周期方法添加到类中"></a>将生命周期方法添加到类中</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>class MyNameIsStitch extends React.Component &#123;<br>  constructor(props) &#123;<br>    super(props);<br>    this.state = &#123;date: new Date()&#125;;<br>  &#125;<br>  &#123;/*  生命周期钩子 钩子上设置一个定时器  */&#125;<br>  componentDidMount() &#123;<br>    this.timerID = setInterval(<br>      () =&gt; this.tick(),<br>      1000<br>    );<br>  &#125;<br>  &#123;/*  生命周期钩子 钩子中卸载定时器  */&#125;<br>  componentWillUnmount() &#123;<br>    clearInterval(this.timerID);<br>  &#125;<br><br>  tick() &#123;<br>    this.setState(&#123;<br>      date: new Date()<br>    &#125;);<br>  &#125;<br><br>  render() &#123;<br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>你浪费的时间 &#123;this.state.date.toLocaleTimeString()&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br><br>ReactDOM.render(<br>  <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> /&gt;</span>,<br>  document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-
-<h1 id="自顶向下或单向数据流"><a href="#自顶向下或单向数据流" class="headerlink" title="自顶向下或单向数据流"></a>自顶向下或单向数据流</h1><p><strong>解析: 所有组件都是真正隔离的</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function FormattedDate(props) &#123;<br>  return <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>你浪费的时间 &#123;props.date.toLocaleTimeString()&#125;.<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>;<br>&#125;<br><br>class MyNameIsStitch extends React.Component &#123;<br>  constructor(props) &#123;<br>    super(props);<br>    this.state = &#123;date: new Date()&#125;;<br>  &#125;<br><br>  componentDidMount() &#123;<br>    this.timerID = setInterval(<br>      () =&gt; this.tick(),<br>      1000<br>    );<br>  &#125;<br><br>  componentWillUnmount() &#123;<br>    clearInterval(this.timerID);<br>  &#125;<br><br>  tick() &#123;<br>    this.setState(&#123;<br>      date: new Date()<br>    &#125;);<br>  &#125;<br><br>  render() &#123;<br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">FormattedDate</span> <span class="hljs-attr">date</span>=<span class="hljs-string">&#123;this.state.date&#125;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br><br>function App() &#123;<br>  return (<br>    &#123;/*  创建App 组件 它渲染三个  */&#125;<br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> /&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  );<br>&#125;<br><br>ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>, document.getElementById(&#x27;example&#x27;));<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p><strong>有状态组件中使用无状态组件   也可以在无状态组件中使用有状态组件</strong></p>
 ]]></content>
       <categories>
         <category>React</category>
@@ -2743,6 +2743,22 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>SQL Server T-SQL 存储过程</title>
+    <url>/SQL-storage.html</url>
+    <content><![CDATA[<p><strong>SQL Server个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="创建变量"><a href="#创建变量" class="headerlink" title="创建变量"></a>创建变量</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL">$ <span class="hljs-keyword">declare</span> 变量名 数据类型 常量<br></code></pre></td></tr></table></figure>
+<h1 id="查询变量"><a href="#查询变量" class="headerlink" title="查询变量"></a>查询变量</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL">$ <span class="hljs-keyword">select</span> 变量名<br></code></pre></td></tr></table></figure>
+<h1 id="创建存储过程"><a href="#创建存储过程" class="headerlink" title="创建存储过程"></a>创建存储过程</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL">$ <span class="hljs-keyword">create</span> <span class="hljs-keyword">Procedure</span> 存储过程名 <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> 字段 <span class="hljs-keyword">from</span> 表名<br></code></pre></td></tr></table></figure>
+<h1 id="执行存储过程"><a href="#执行存储过程" class="headerlink" title="执行存储过程"></a>执行存储过程</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL">$ <span class="hljs-keyword">EXECUTE</span> 存储过程名<br></code></pre></td></tr></table></figure>
+<h1 id="删除存储过程"><a href="#删除存储过程" class="headerlink" title="删除存储过程"></a>删除存储过程</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL">$ <span class="hljs-keyword">drop</span> proc 存储过程名<br></code></pre></td></tr></table></figure>
+<h1 id="Procedure-简写为-proc"><a href="#Procedure-简写为-proc" class="headerlink" title="Procedure 简写为: proc"></a>Procedure 简写为: proc</h1>]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+  </entry>
+  <entry>
     <title>SQL Server T-SQL 从创建数据库到创建数据表到插入数据</title>
     <url>/SQL-kbl.html</url>
     <content><![CDATA[<p><strong>SQL Server个人整理</strong></p>
@@ -2764,22 +2780,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <p><strong>例子</strong></p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL">$ <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> sdq;<br></code></pre></td></tr></table></figure>
 ]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>SQL Server T-SQL 存储过程</title>
-    <url>/SQL-storage.html</url>
-    <content><![CDATA[<p><strong>SQL Server个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="创建变量"><a href="#创建变量" class="headerlink" title="创建变量"></a>创建变量</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL">$ <span class="hljs-keyword">declare</span> 变量名 数据类型 常量<br></code></pre></td></tr></table></figure>
-<h1 id="查询变量"><a href="#查询变量" class="headerlink" title="查询变量"></a>查询变量</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL">$ <span class="hljs-keyword">select</span> 变量名<br></code></pre></td></tr></table></figure>
-<h1 id="创建存储过程"><a href="#创建存储过程" class="headerlink" title="创建存储过程"></a>创建存储过程</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL">$ <span class="hljs-keyword">create</span> <span class="hljs-keyword">Procedure</span> 存储过程名 <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> 字段 <span class="hljs-keyword">from</span> 表名<br></code></pre></td></tr></table></figure>
-<h1 id="执行存储过程"><a href="#执行存储过程" class="headerlink" title="执行存储过程"></a>执行存储过程</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL">$ <span class="hljs-keyword">EXECUTE</span> 存储过程名<br></code></pre></td></tr></table></figure>
-<h1 id="删除存储过程"><a href="#删除存储过程" class="headerlink" title="删除存储过程"></a>删除存储过程</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL">$ <span class="hljs-keyword">drop</span> proc 存储过程名<br></code></pre></td></tr></table></figure>
-<h1 id="Procedure-简写为-proc"><a href="#Procedure-简写为-proc" class="headerlink" title="Procedure 简写为: proc"></a>Procedure 简写为: proc</h1>]]></content>
       <categories>
         <category>数据库</category>
       </categories>
@@ -3089,6 +3089,17 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>TypeScript 枚举类型</title>
+    <url>/TypeScript-Enum.html</url>
+    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="非常常见的一种类型"><a href="#非常常见的一种类型" class="headerlink" title="非常常见的一种类型"></a>非常常见的一种类型</h1><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-built_in">enum</span> <span class="hljs-title class_">Status</span> &#123;<br>  <span class="hljs-title class_">Reuben</span> = <span class="hljs-number">625</span>,<br>  <span class="hljs-title class_">Angel</span> = <span class="hljs-number">624</span>,<br>  <span class="hljs-title class_">Stitch</span> = <span class="hljs-number">626</span>,<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">getServe</span>(<span class="hljs-params">status: <span class="hljs-built_in">any</span></span>) &#123;<br>  <span class="hljs-keyword">if</span> (status === <span class="hljs-title class_">Status</span>.<span class="hljs-property">Reuben</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;鲁本&quot;</span>;<br>  &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (status === <span class="hljs-title class_">Status</span>.<span class="hljs-property">Angel</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;安琪&quot;</span>;<br>  &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (status === <span class="hljs-title class_">Status</span>.<span class="hljs-property">Stitch</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;史迪奇&quot;</span>;<br>  &#125;<br>&#125;<br><br><span class="hljs-keyword">const</span> result = <span class="hljs-title function_">getServe</span>(<span class="hljs-title class_">Status</span>.<span class="hljs-property">AngelStitch</span>);<br><br><span class="hljs-comment">// 可以凭实验品编号查询</span><br><span class="hljs-comment">// const result = getServe(626);</span><br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`实验品<span class="hljs-subst">$&#123;result&#125;</span>`</span>);<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>TypeScript</category>
+      </categories>
+  </entry>
+  <entry>
     <title>TypeScript 泛型</title>
     <url>/TypeScript-genericity.html</url>
     <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
@@ -3100,17 +3111,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <h1 id="类中使用泛型"><a href="#类中使用泛型" class="headerlink" title="类中使用泛型"></a>类中使用泛型</h1><h3 id="泛型类中基本使用"><a href="#泛型类中基本使用" class="headerlink" title="泛型类中基本使用"></a>泛型类中基本使用</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Syp</span> &lt;sdq&gt; &#123;<br>  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> syps: sdq[]</span>) &#123;&#125;<br>  <span class="hljs-title function_">getSyp</span>(<span class="hljs-attr">index</span>: <span class="hljs-built_in">number</span>): sdq &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">syps</span>[index];<br>  &#125;<br>&#125;<br><br><span class="hljs-keyword">const</span> syp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Syp</span>([<span class="hljs-string">&quot;史迪奇&quot;</span>, <span class="hljs-string">&quot;鲁本&quot;</span>, <span class="hljs-string">&quot;安琪&quot;</span>]);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(syp.<span class="hljs-title function_">getSyp</span>(<span class="hljs-number">1</span>));<br></code></pre></td></tr></table></figure>
 <h3 id="泛型中的继承"><a href="#泛型中的继承" class="headerlink" title="泛型中的继承"></a>泛型中的继承</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">interface</span> SDQ&#123;<br>  <span class="hljs-attr">name</span>:<span class="hljs-built_in">string</span>;<br>&#125;<br><br><span class="hljs-comment">// 继承SDQ</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Syp</span> &lt;sdq <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">SDQ</span>&gt; &#123;<br>  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> syps: sdq[]</span>) &#123;&#125;<br>  <span class="hljs-title function_">getSyp</span>(<span class="hljs-attr">index</span>: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">string</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">syps</span>[index].<span class="hljs-property">name</span>;<br>  &#125;<br>&#125;<br><br><span class="hljs-keyword">const</span> syp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Syp</span>([<br>  &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;史迪奇&quot;</span>&#125;,<br>  &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;鲁本&quot;</span>&#125;,<br>  &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;安琪&quot;</span>&#125;<br>]);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(syp.<span class="hljs-title function_">getSyp</span>(<span class="hljs-number">0</span>));<br></code></pre></td></tr></table></figure>
 <h3 id="泛型的约束"><a href="#泛型的约束" class="headerlink" title="泛型的约束"></a>泛型的约束</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 约束: 要么是number要么是string</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Syp</span> &lt;sdq <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">number</span> | <span class="hljs-built_in">string</span>&gt; &#123;<br>  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> syps: sdq[]</span>) &#123;&#125;<br>  <span class="hljs-title function_">getSyp</span>(<span class="hljs-attr">index</span>: <span class="hljs-built_in">number</span>): sdq &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">syps</span>[index];<br>  &#125;<br>&#125;<br><br><span class="hljs-keyword">const</span> syp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Syp</span> &lt;<span class="hljs-built_in">string</span>&gt;([<span class="hljs-string">&quot;史迪奇&quot;</span>, <span class="hljs-string">&quot;鲁本&quot;</span>, <span class="hljs-string">&quot;安琪&quot;</span>]);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(syp.<span class="hljs-title function_">getSyp</span>(<span class="hljs-number">1</span>));<br></code></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>TypeScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>TypeScript 枚举类型</title>
-    <url>/TypeScript-Enum.html</url>
-    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="非常常见的一种类型"><a href="#非常常见的一种类型" class="headerlink" title="非常常见的一种类型"></a>非常常见的一种类型</h1><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-built_in">enum</span> <span class="hljs-title class_">Status</span> &#123;<br>  <span class="hljs-title class_">Reuben</span> = <span class="hljs-number">625</span>,<br>  <span class="hljs-title class_">Angel</span> = <span class="hljs-number">624</span>,<br>  <span class="hljs-title class_">Stitch</span> = <span class="hljs-number">626</span>,<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">getServe</span>(<span class="hljs-params">status: <span class="hljs-built_in">any</span></span>) &#123;<br>  <span class="hljs-keyword">if</span> (status === <span class="hljs-title class_">Status</span>.<span class="hljs-property">Reuben</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;鲁本&quot;</span>;<br>  &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (status === <span class="hljs-title class_">Status</span>.<span class="hljs-property">Angel</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;安琪&quot;</span>;<br>  &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (status === <span class="hljs-title class_">Status</span>.<span class="hljs-property">Stitch</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;史迪奇&quot;</span>;<br>  &#125;<br>&#125;<br><br><span class="hljs-keyword">const</span> result = <span class="hljs-title function_">getServe</span>(<span class="hljs-title class_">Status</span>.<span class="hljs-property">AngelStitch</span>);<br><br><span class="hljs-comment">// 可以凭实验品编号查询</span><br><span class="hljs-comment">// const result = getServe(626);</span><br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`实验品<span class="hljs-subst">$&#123;result&#125;</span>`</span>);<br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>TypeScript</category>
       </categories>
@@ -3303,20 +3303,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>Vue.js 网页笔记本</title>
-    <url>/Vue-network-books.html</url>
-    <content><![CDATA[<p><strong>Vue.js个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="演示代码"><a href="#演示代码" class="headerlink" title="演示代码"></a>演示代码</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;js/vue.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;js/marked.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;js/moment.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;css/icon.css&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;css/style.css&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;notebook&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;side-bar&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;toolbar&quot;</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">&quot;addNote&quot;</span> <span class="hljs-attr">v-bind:title</span>=<span class="hljs-string">&quot;addButtonTitle&quot;</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;material-icons&quot;</span>&gt;</span>add_box<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>                    新建笔记<br>                <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br>            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;notes&quot;</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;note in notes&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;note&quot;</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">&quot;selectNote(note)&quot;</span> <span class="hljs-attr">v-bind:class</span>=<span class="hljs-string">&quot;&#123;selected:note === selectedNote&#125;&quot;</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon material-icons&quot;</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;note.favorite&quot;</span>&gt;</span>star<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>                    &#123;&#123;note.title&#125;&#125;<br>                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;selectedNote&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;main&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;toolbar&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;selectedNote.title&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;请输入笔记标题&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">&quot;removeNote&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;删除笔记&quot;</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;material-icons&quot;</span>&gt;</span>delete<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">&quot;favoriteNote&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;收藏笔记&quot;</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;material-icons&quot;</span>&gt;</span>&#123;&#123;selectedNote.favorite?&#x27;star&#x27;:&#x27;star_border&#x27;&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span> <br>            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;selectedNote.content&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><br><br>            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;toolbar status-bar&quot;</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;date&quot;</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;label&quot;</span>&gt;</span>创建日期: <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;value&quot;</span>&gt;</span>&#123;&#123;selectedNote.created | changeDate&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><br>                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;lines&quot;</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;label&quot;</span>&gt;</span>行数: <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;value&quot;</span>&gt;</span>&#123;&#123;linesCount&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><br>                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;words&quot;</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;label&quot;</span>&gt;</span>单词数: <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;value&quot;</span>&gt;</span>&#123;&#123;wordsCount&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><br>                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;characters&quot;</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;label&quot;</span>&gt;</span>字符数: <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;value&quot;</span>&gt;</span>&#123;&#123;charactersCount&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;preview&quot;</span> <span class="hljs-attr">v-html</span>=<span class="hljs-string">&quot;notePreview&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><br>    var app=new Vue(&#123;<br>        el:&#x27;#notebook&#x27;,<br>        data()&#123;<br>            return&#123;<br>                notes:JSON.parse(localStorage.getItem(&#x27;notes&#x27;)) || [],<br>                selectedId:localStorage.getItem(&quot;selected-id&quot;) || null,<br>            &#125;<br>        &#125;,<br>        methods:&#123;<br>                    saveNote(v)&#123;<br>                        localStorage.setItem(&#x27;notes&#x27;,JSON.stringify(this.notes))<br>                        console.log(&quot;笔记已经保存! &quot;,new Date())<br>                    &#125;,<br>                    addNote()&#123;<br>                        const time = Date.now()<br>                        const note = <br>                        &#123;<br>                            id:String(time),<br>                            title:&#x27;New Note&#x27; + (this.notes.length+1),<br>                            content:&#x27;Hi,Wellcome to write a new note!&#x27;,<br>                            created:time,<br>                            favorite:false,<br>                        &#125;<br>                        this.notes.push(note)<br>                    &#125;,<br>                    selectNote(v)&#123;<br>                        this.selectedId=v.id<br>                    &#125;,<br>                    removeNote()&#123;<br>                        if (this.selectedNote &amp;&amp; confirm(&#x27;确定删除笔记?&#x27;))<br>                        &#123;<br>                            const index = this.notes.indexOf(this.selectedNote)<br>                            if(index !== -1)<br>                            &#123;<br>                                this.notes.splice(index,1)&#125;<br>                        &#125;<br>                    &#125;,<br>                    <br>                    favoriteNote()<br>                    &#123;<br>                        this.selectedNote.favorite=!this.selectedNote.favorite<br>                    &#125;<br>                &#125;,<br>        computed:&#123;<br>                notePreview()&#123;<br>                    return this.selectedNote?marked(this.selectedNote.content):&#x27;&#x27;<br>                &#125;,<br>                addButtonTitle()&#123;<br>                    return this.notes.length+&#x27; note(s) already&#x27;<br>                &#125;,<br>                selectedNote()&#123;<br>                    return this.notes.find(note=&gt;note.id===this.selectedId)<br>                &#125;,<br>                sortedNotes()&#123;<br>                    return this.notes.slice().sort((a,b)=&gt;a.created-b.created).sort((a,b)=&gt;(a.favorite===b.favorite)?0:a.favorite?-1:1)<br>                &#125;,<br>                linesCount()&#123;<br>                    if(this.selectedNote)<br>                    &#123;<br>                        return this.selectedNote.content.split(/\r\n|\r|\n/).length<br>                    &#125;<br>                &#125;,<br>            wordsCount()&#123;<br>                if(this.selectedNote)&#123;<br>                    var s = this.selectedNote.content;<br>                    s = s.replace(/\n/g,&#x27;&#x27;)<br>                    s = s.replace(/(^\s*)|(\s*$)/gi,&#x27;&#x27;)<br>                    s = s.replace(/\s\s+/gi,&#x27;&#x27;)<br>                    return s.split(&#x27; &#x27;).length<br>                &#125;<br>            &#125;,<br>                    charactersCount()&#123;<br>                        if(this.selectedNote)&#123;<br>                        return this.selectedNote.content.split(&#x27;&#x27;).length<br>                        &#125;<br>                    &#125;<br>            &#125;,<br>            watch:&#123;<br>                notes:&#123;<br>                    handler:&#x27;saveNote&#x27;,<br>                    deep:true,<br>                &#125;,<br>                selectedId(v)&#123;<br>                    localStorage.setItem(&#x27;selected-id&#x27;,v)<br>                &#125;<br>            &#125;,<br>            filters:&#123;<br>                changeDate(v)&#123;<br>                    return moment(v).format(&#x27;YYYY-MM-DD&#x27;)<br>                &#125;<br>            &#125;,<br>    &#125;)<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p><font color="#DC143C">直接实战</font></p>
-<p><a href="./项目/项目工程.html" target="_blank">演示效果</a></p>
-]]></content>
-      <categories>
-        <category>Vue.js</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Vue.js 表单输入绑定的基础用法</title>
     <url>/Vue-usage.html</url>
     <content><![CDATA[<p><strong>Vue.js个人整理</strong></p>
@@ -3420,6 +3406,20 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <h1 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h1><h1 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h1><h1 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h1>]]></content>
       <categories>
         <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Vue.js 网页笔记本</title>
+    <url>/Vue-network-books.html</url>
+    <content><![CDATA[<p><strong>Vue.js个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="演示代码"><a href="#演示代码" class="headerlink" title="演示代码"></a>演示代码</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;js/vue.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;js/marked.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;js/moment.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;css/icon.css&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;css/style.css&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;notebook&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;side-bar&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;toolbar&quot;</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">&quot;addNote&quot;</span> <span class="hljs-attr">v-bind:title</span>=<span class="hljs-string">&quot;addButtonTitle&quot;</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;material-icons&quot;</span>&gt;</span>add_box<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>                    新建笔记<br>                <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br>            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;notes&quot;</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;note in notes&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;note&quot;</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">&quot;selectNote(note)&quot;</span> <span class="hljs-attr">v-bind:class</span>=<span class="hljs-string">&quot;&#123;selected:note === selectedNote&#125;&quot;</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon material-icons&quot;</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;note.favorite&quot;</span>&gt;</span>star<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>                    &#123;&#123;note.title&#125;&#125;<br>                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;selectedNote&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;main&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;toolbar&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;selectedNote.title&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;请输入笔记标题&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">&quot;removeNote&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;删除笔记&quot;</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;material-icons&quot;</span>&gt;</span>delete<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">&quot;favoriteNote&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;收藏笔记&quot;</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;material-icons&quot;</span>&gt;</span>&#123;&#123;selectedNote.favorite?&#x27;star&#x27;:&#x27;star_border&#x27;&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span> <br>            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;selectedNote.content&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><br><br>            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;toolbar status-bar&quot;</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;date&quot;</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;label&quot;</span>&gt;</span>创建日期: <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;value&quot;</span>&gt;</span>&#123;&#123;selectedNote.created | changeDate&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><br>                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;lines&quot;</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;label&quot;</span>&gt;</span>行数: <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;value&quot;</span>&gt;</span>&#123;&#123;linesCount&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><br>                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;words&quot;</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;label&quot;</span>&gt;</span>单词数: <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;value&quot;</span>&gt;</span>&#123;&#123;wordsCount&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><br>                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;characters&quot;</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;label&quot;</span>&gt;</span>字符数: <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;value&quot;</span>&gt;</span>&#123;&#123;charactersCount&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;preview&quot;</span> <span class="hljs-attr">v-html</span>=<span class="hljs-string">&quot;notePreview&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><br>    var app=new Vue(&#123;<br>        el:&#x27;#notebook&#x27;,<br>        data()&#123;<br>            return&#123;<br>                notes:JSON.parse(localStorage.getItem(&#x27;notes&#x27;)) || [],<br>                selectedId:localStorage.getItem(&quot;selected-id&quot;) || null,<br>            &#125;<br>        &#125;,<br>        methods:&#123;<br>                    saveNote(v)&#123;<br>                        localStorage.setItem(&#x27;notes&#x27;,JSON.stringify(this.notes))<br>                        console.log(&quot;笔记已经保存! &quot;,new Date())<br>                    &#125;,<br>                    addNote()&#123;<br>                        const time = Date.now()<br>                        const note = <br>                        &#123;<br>                            id:String(time),<br>                            title:&#x27;New Note&#x27; + (this.notes.length+1),<br>                            content:&#x27;Hi,Wellcome to write a new note!&#x27;,<br>                            created:time,<br>                            favorite:false,<br>                        &#125;<br>                        this.notes.push(note)<br>                    &#125;,<br>                    selectNote(v)&#123;<br>                        this.selectedId=v.id<br>                    &#125;,<br>                    removeNote()&#123;<br>                        if (this.selectedNote &amp;&amp; confirm(&#x27;确定删除笔记?&#x27;))<br>                        &#123;<br>                            const index = this.notes.indexOf(this.selectedNote)<br>                            if(index !== -1)<br>                            &#123;<br>                                this.notes.splice(index,1)&#125;<br>                        &#125;<br>                    &#125;,<br>                    <br>                    favoriteNote()<br>                    &#123;<br>                        this.selectedNote.favorite=!this.selectedNote.favorite<br>                    &#125;<br>                &#125;,<br>        computed:&#123;<br>                notePreview()&#123;<br>                    return this.selectedNote?marked(this.selectedNote.content):&#x27;&#x27;<br>                &#125;,<br>                addButtonTitle()&#123;<br>                    return this.notes.length+&#x27; note(s) already&#x27;<br>                &#125;,<br>                selectedNote()&#123;<br>                    return this.notes.find(note=&gt;note.id===this.selectedId)<br>                &#125;,<br>                sortedNotes()&#123;<br>                    return this.notes.slice().sort((a,b)=&gt;a.created-b.created).sort((a,b)=&gt;(a.favorite===b.favorite)?0:a.favorite?-1:1)<br>                &#125;,<br>                linesCount()&#123;<br>                    if(this.selectedNote)<br>                    &#123;<br>                        return this.selectedNote.content.split(/\r\n|\r|\n/).length<br>                    &#125;<br>                &#125;,<br>            wordsCount()&#123;<br>                if(this.selectedNote)&#123;<br>                    var s = this.selectedNote.content;<br>                    s = s.replace(/\n/g,&#x27;&#x27;)<br>                    s = s.replace(/(^\s*)|(\s*$)/gi,&#x27;&#x27;)<br>                    s = s.replace(/\s\s+/gi,&#x27;&#x27;)<br>                    return s.split(&#x27; &#x27;).length<br>                &#125;<br>            &#125;,<br>                    charactersCount()&#123;<br>                        if(this.selectedNote)&#123;<br>                        return this.selectedNote.content.split(&#x27;&#x27;).length<br>                        &#125;<br>                    &#125;<br>            &#125;,<br>            watch:&#123;<br>                notes:&#123;<br>                    handler:&#x27;saveNote&#x27;,<br>                    deep:true,<br>                &#125;,<br>                selectedId(v)&#123;<br>                    localStorage.setItem(&#x27;selected-id&#x27;,v)<br>                &#125;<br>            &#125;,<br>            filters:&#123;<br>                changeDate(v)&#123;<br>                    return moment(v).format(&#x27;YYYY-MM-DD&#x27;)<br>                &#125;<br>            &#125;,<br>    &#125;)<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><font color="#DC143C">直接实战</font></p>
+<p><a href="./项目/项目工程.html" target="_blank">演示效果</a></p>
+]]></content>
+      <categories>
+        <category>Vue.js</category>
       </categories>
   </entry>
   <entry>
@@ -4933,6 +4933,65 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
       </categories>
   </entry>
   <entry>
+    <title>爬虫 network(牢饭吃到饱)</title>
+    <url>/reptile-network.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="network抓包"><a href="#network抓包" class="headerlink" title="network抓包"></a>network抓包</h1><ul>
+<li>名称: Preserver log <ul>
+<li>功能:保存抓包的历史记录</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>名称: Filter <ul>
+<li>功能: 过滤清空</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>名称: XHR<ul>
+<li>功能: 大部分情况的ajax请求</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>名称: js<ul>
+<li>功能:js请求</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>名称: css<ul>
+<li>功能: css请求</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>名称: Ever Listeners<ul>
+<li>功能: 事件的监听<ul>
+<li>名称: click</li>
+<li>功能: 加密</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="js解析"><a href="#js解析" class="headerlink" title="js解析"></a>js解析</h1><ul>
+<li>定位js文件<ul>
+<li>通过initiator定位到js文件</li>
+<li>通过seach搜索关键字定位的js文件</li>
+<li>通过元素绑定的事件监听函数找到js文件</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
     <title>爬虫 requests模块(吃牢饭集合)</title>
     <url>/reptile-header-requests.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -5044,65 +5103,6 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
 
 
 
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>爬虫 network(牢饭吃到饱)</title>
-    <url>/reptile-network.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="network抓包"><a href="#network抓包" class="headerlink" title="network抓包"></a>network抓包</h1><ul>
-<li>名称: Preserver log <ul>
-<li>功能:保存抓包的历史记录</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>名称: Filter <ul>
-<li>功能: 过滤清空</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>名称: XHR<ul>
-<li>功能: 大部分情况的ajax请求</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>名称: js<ul>
-<li>功能:js请求</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>名称: css<ul>
-<li>功能: css请求</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>名称: Ever Listeners<ul>
-<li>功能: 事件的监听<ul>
-<li>名称: click</li>
-<li>功能: 加密</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="js解析"><a href="#js解析" class="headerlink" title="js解析"></a>js解析</h1><ul>
-<li>定位js文件<ul>
-<li>通过initiator定位到js文件</li>
-<li>通过seach搜索关键字定位的js文件</li>
-<li>通过元素绑定的事件监听函数找到js文件</li>
-</ul>
-</li>
-</ul>
 ]]></content>
       <categories>
         <category>爬虫</category>
@@ -5865,39 +5865,6 @@ option && myChart.setOption(option);
       </categories>
   </entry>
   <entry>
-    <title>爬虫 概念(牢饭吃到饱)</title>
-    <url>/reptile-concept.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-
-<h1 id="服务器渲染"><a href="#服务器渲染" class="headerlink" title="服务器渲染"></a>服务器渲染</h1><p><strong>其实就是在服务器那边直接把数据和HTMl整合在一起, 统一返回浏览器, 其实源代码就是网站的基本面貌, 之所以有可视化界面都是浏览器的功劳</strong></p>
-<h1 id="客户端渲染"><a href="#客户端渲染" class="headerlink" title="客户端渲染"></a>客户端渲染</h1><p><strong>第一次只是请求HTMl骨架, 第二次请求拿到数据, 然后在你的浏览器中组合变形</strong></p>
-<h1 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h1><p><strong>HTTP协议传输的就是网站源代码</strong></p>
-<h1 id="HTTP协议把一条消息分为三大块内容"><a href="#HTTP协议把一条消息分为三大块内容" class="headerlink" title="HTTP协议把一条消息分为三大块内容"></a>HTTP协议把一条消息分为三大块内容</h1><h1>请求: </h1>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">请求行 -&gt; 请求方式(get/post) 请求url地址 协议<br><br>请求头 -&gt; 放一些服务器要使用的附加信息<br><br>请求体 -&gt; 一般放一些请求参数<br></code></pre></td></tr></table></figure>
-<h1>响应: </h1>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">状态行 -&gt;  协议 状态码 例如:<span class="hljs-number">404</span><br><br>响应头 -&gt; 放一些客户端要使用的附加信息<br><br>响应体 -&gt; 服务器返回的真正客户端要使用的内容 例如:HTML, json等等<br></code></pre></td></tr></table></figure>
-<h1 id="请求头中最常见的一些重要内容"><a href="#请求头中最常见的一些重要内容" class="headerlink" title="请求头中最常见的一些重要内容"></a>请求头中最常见的一些重要内容</h1><p><strong>User-Agent: 请求载体的身份标识(用啥发送的请求)</strong></p>
-<p><strong>Referer: 防盗链(这次请求是从哪个页面来的? 防爬会用到)</strong></p>
-<p><strong>cookie: 本地字符串数据信息(用户登陆信息, 防爬的token)</strong></p>
-<h1 id="响应头中一些重要的内容"><a href="#响应头中一些重要的内容" class="headerlink" title="响应头中一些重要的内容"></a>响应头中一些重要的内容</h1><p><strong>cookie: 本地字符串数据信息(用户登陆信息, 防爬的token)</strong></p>
-<p><strong>各种神奇的莫名其妙的字符串(一般都是yoken字样,防止各种攻击和防爬)</strong></p>
-<h1 id="请求方式"><a href="#请求方式" class="headerlink" title="请求方式"></a>请求方式</h1><p><strong>GET: 显示提交</strong></p>
-<p>查询用的多</p>
-<p><strong>POST: 隐示提交</strong></p>
-<p>增加,修改,上传服务器里面的数据</p>
-<h1 id="数据解析的三种方式"><a href="#数据解析的三种方式" class="headerlink" title="数据解析的三种方式"></a>数据解析的三种方式</h1><p><strong><a href="https://sdq3.gitee.io/reptile-re.html">re解析</a></strong></p>
-<p><strong><a href="https://sdq3.gitee.io/reptile-bs4-lxml.html">bs4解析</a></strong></p>
-<p><strong><a href="https://sdq3.gitee.io/reptile-xpath.html">xpath解析</a></strong></p>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
     <title>爬虫 数据提取(吃牢饭集合)</title>
     <url>/reptile-Extraction.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -5950,6 +5917,39 @@ option && myChart.setOption(option);
 <h1 id="jsonpath模块"><a href="#jsonpath模块" class="headerlink" title="jsonpath模块"></a>jsonpath模块</h1><p><a href="https://sdq3.gitee.io/reptile-jsonpath.html">详细说明</a></p>
 <h1 id="lxml模块"><a href="#lxml模块" class="headerlink" title="lxml模块"></a>lxml模块</h1><p><a href="https://sdq3.gitee.io/bs4-lxml.html">详细说明</a></p>
 <h1 id="xpath模块"><a href="#xpath模块" class="headerlink" title="xpath模块"></a>xpath模块</h1><p><a href="https://sdq3.gitee.io/reptile-xpath.html">详细说明</a></p>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>爬虫 概念(牢饭吃到饱)</title>
+    <url>/reptile-concept.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+
+<h1 id="服务器渲染"><a href="#服务器渲染" class="headerlink" title="服务器渲染"></a>服务器渲染</h1><p><strong>其实就是在服务器那边直接把数据和HTMl整合在一起, 统一返回浏览器, 其实源代码就是网站的基本面貌, 之所以有可视化界面都是浏览器的功劳</strong></p>
+<h1 id="客户端渲染"><a href="#客户端渲染" class="headerlink" title="客户端渲染"></a>客户端渲染</h1><p><strong>第一次只是请求HTMl骨架, 第二次请求拿到数据, 然后在你的浏览器中组合变形</strong></p>
+<h1 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h1><p><strong>HTTP协议传输的就是网站源代码</strong></p>
+<h1 id="HTTP协议把一条消息分为三大块内容"><a href="#HTTP协议把一条消息分为三大块内容" class="headerlink" title="HTTP协议把一条消息分为三大块内容"></a>HTTP协议把一条消息分为三大块内容</h1><h1>请求: </h1>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">请求行 -&gt; 请求方式(get/post) 请求url地址 协议<br><br>请求头 -&gt; 放一些服务器要使用的附加信息<br><br>请求体 -&gt; 一般放一些请求参数<br></code></pre></td></tr></table></figure>
+<h1>响应: </h1>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">状态行 -&gt;  协议 状态码 例如:<span class="hljs-number">404</span><br><br>响应头 -&gt; 放一些客户端要使用的附加信息<br><br>响应体 -&gt; 服务器返回的真正客户端要使用的内容 例如:HTML, json等等<br></code></pre></td></tr></table></figure>
+<h1 id="请求头中最常见的一些重要内容"><a href="#请求头中最常见的一些重要内容" class="headerlink" title="请求头中最常见的一些重要内容"></a>请求头中最常见的一些重要内容</h1><p><strong>User-Agent: 请求载体的身份标识(用啥发送的请求)</strong></p>
+<p><strong>Referer: 防盗链(这次请求是从哪个页面来的? 防爬会用到)</strong></p>
+<p><strong>cookie: 本地字符串数据信息(用户登陆信息, 防爬的token)</strong></p>
+<h1 id="响应头中一些重要的内容"><a href="#响应头中一些重要的内容" class="headerlink" title="响应头中一些重要的内容"></a>响应头中一些重要的内容</h1><p><strong>cookie: 本地字符串数据信息(用户登陆信息, 防爬的token)</strong></p>
+<p><strong>各种神奇的莫名其妙的字符串(一般都是yoken字样,防止各种攻击和防爬)</strong></p>
+<h1 id="请求方式"><a href="#请求方式" class="headerlink" title="请求方式"></a>请求方式</h1><p><strong>GET: 显示提交</strong></p>
+<p>查询用的多</p>
+<p><strong>POST: 隐示提交</strong></p>
+<p>增加,修改,上传服务器里面的数据</p>
+<h1 id="数据解析的三种方式"><a href="#数据解析的三种方式" class="headerlink" title="数据解析的三种方式"></a>数据解析的三种方式</h1><p><strong><a href="https://sdq3.gitee.io/reptile-re.html">re解析</a></strong></p>
+<p><strong><a href="https://sdq3.gitee.io/reptile-bs4-lxml.html">bs4解析</a></strong></p>
+<p><strong><a href="https://sdq3.gitee.io/reptile-xpath.html">xpath解析</a></strong></p>
 ]]></content>
       <categories>
         <category>爬虫</category>
@@ -6135,6 +6135,57 @@ option && myChart.setOption(option);
       </categories>
   </entry>
   <entry>
+    <title>爬虫 访问百度翻译(牢饭吃到饱)</title>
+    <url>/reptile-Baidutranslate.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+
+<h1 id="导入requests"><a href="#导入requests" class="headerlink" title="导入requests"></a>导入requests</h1><!--more-->
+<p><strong>打开cmd输入以下代码</strong></p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs PowerShell">pip install requests<br></code></pre></td></tr></table></figure>
+<h1 id="百度翻译案例"><a href="#百度翻译案例" class="headerlink" title="百度翻译案例"></a>百度翻译案例</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&quot;https://fanyi.baidu.com/sug&quot;</span><br><br>s = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入你要翻译的英文单词&quot;</span>)<br><br>dat = &#123;<br>        <span class="hljs-string">&quot;kw&quot;</span>:s<br>    &#125;<br><br>tou = &#123;<br>    <span class="hljs-string">&quot;user-agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Mobile Safari/537.36&quot;</span><br>&#125;<br><br>pachon = requests.post(url,headers=tou,data=dat)<br><br><span class="hljs-built_in">print</span>(pachon)<br><br><span class="hljs-built_in">print</span>(pachon.json())<br><br>pachon.close()  <span class="hljs-comment">#断开/关闭连接, 一定要断开</span><br></code></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>电脑刷BIOS(保姆级教程)</title>
+    <url>/BOIS.html</url>
+    <content><![CDATA[<p><strong>电脑刷BIOS简单到不能再简单</strong></p>
+<a id="more"></a>
+<h1 id="刷BIOS需谨慎-不然会想我一样花100快去重新烧录"><a href="#刷BIOS需谨慎-不然会想我一样花100快去重新烧录" class="headerlink" title="刷BIOS需谨慎, 不然会想我一样花100快去重新烧录"></a>刷BIOS需谨慎, 不然会想我一样花100快去重新烧录</h1><h3 id="首先下载Windows刷BIOS文件"><a href="#首先下载Windows刷BIOS文件" class="headerlink" title="首先下载Windows刷BIOS文件"></a>首先下载<a href="https://wwr.lanzoui.com/iLf2Is7cohi">Windows刷BIOS文件</a></h3><ul>
+<li>密码:sdq3</li>
+<li>把文件拖入C盘根目录解压</li>
+</ul>
+<p><strong>以管理员的方式打开</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> C:/刷BIOS<br></code></pre></td></tr></table></figure>
+<p><strong>备份命令 支持很多格式的备份</strong></p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><code class="hljs stylus">fptw64<span class="hljs-selector-class">.exe</span> -d 备份<span class="hljs-selector-class">.bin</span> -bios<br></code></pre></td></tr></table></figure>
+<p><strong>写入命令 支持很多格式的写入</strong></p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><code class="hljs stylus">fptw64<span class="hljs-selector-class">.exe</span> -f 写入<span class="hljs-selector-class">.bin</span> -bios<br></code></pre></td></tr></table></figure>
+<h1 id="dos刷BIOS"><a href="#dos刷BIOS" class="headerlink" title="dos刷BIOS"></a>dos刷BIOS</h1><h3 id="下载微PE把要刷写的BIOS文件U盘"><a href="#下载微PE把要刷写的BIOS文件U盘" class="headerlink" title="下载微PE把要刷写的BIOS文件U盘"></a>下载<a href="https://download.csdn.net/download/qq_44948696/20695927">微PE</a>把要刷写的BIOS文件U盘</h3><p><img src="/images/%E5%88%B7BIOS/%E5%BE%AEPE1.jpg"></p>
+<p><img src="/images/%E5%88%B7BIOS/%E5%BE%AEPE2.jpg"></p>
+<h3 id="运行MaxDos工具箱"><a href="#运行MaxDos工具箱" class="headerlink" title="运行MaxDos工具箱"></a>运行MaxDos工具箱</h3><p><strong>查看</strong></p>
+<figure class="highlight dos"><table><tr><td class="code"><pre><code class="hljs dos"><span class="hljs-built_in">dir</span><br></code></pre></td></tr></table></figure>
+<p><strong>切换分区</strong></p>
+<figure class="highlight avrasm"><table><tr><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">A:</span><br><br><span class="hljs-symbol">B:</span><br></code></pre></td></tr></table></figure>
+<p><strong>刷新进EC目录下EC</strong></p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">ECFlash</span><br></code></pre></td></tr></table></figure>
+<p><img src="/images/%E5%88%B7BIOS/%E5%88%B7EC.jpg"></p>
+<p><strong>进BIOS目录下刷写BIOS</strong></p>
+<p><strong>快</strong></p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">meset</span> <br></code></pre></td></tr></table></figure>
+<p><strong>慢</strong></p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">flashme</span><br></code></pre></td></tr></table></figure>
+<p><img src="/images/%E5%88%B7BIOS/%E5%88%B7BIOS.jpg"></p>
+<h3 id="神州SL7D3-神州SL7S3-神州SL7S4用的BIOS"><a href="#神州SL7D3-神州SL7S3-神州SL7S4用的BIOS" class="headerlink" title="神州SL7D3 神州SL7S3 神州SL7S4用的BIOS"></a>神州SL7D3 神州SL7S3 神州SL7S4<a href="https://wwr.lanzoui.com/iFiRVs7ehij">用的BIOS</a></h3>]]></content>
+  </entry>
+  <entry>
     <title>爬虫 请求头和响应头(吃牢饭集合)</title>
     <url>/reptile-header.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -6236,57 +6287,6 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
       <categories>
         <category>爬虫</category>
       </categories>
-  </entry>
-  <entry>
-    <title>爬虫 访问百度翻译(牢饭吃到饱)</title>
-    <url>/reptile-Baidutranslate.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-
-<h1 id="导入requests"><a href="#导入requests" class="headerlink" title="导入requests"></a>导入requests</h1><!--more-->
-<p><strong>打开cmd输入以下代码</strong></p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs PowerShell">pip install requests<br></code></pre></td></tr></table></figure>
-<h1 id="百度翻译案例"><a href="#百度翻译案例" class="headerlink" title="百度翻译案例"></a>百度翻译案例</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&quot;https://fanyi.baidu.com/sug&quot;</span><br><br>s = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入你要翻译的英文单词&quot;</span>)<br><br>dat = &#123;<br>        <span class="hljs-string">&quot;kw&quot;</span>:s<br>    &#125;<br><br>tou = &#123;<br>    <span class="hljs-string">&quot;user-agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Mobile Safari/537.36&quot;</span><br>&#125;<br><br>pachon = requests.post(url,headers=tou,data=dat)<br><br><span class="hljs-built_in">print</span>(pachon)<br><br><span class="hljs-built_in">print</span>(pachon.json())<br><br>pachon.close()  <span class="hljs-comment">#断开/关闭连接, 一定要断开</span><br></code></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>电脑刷BIOS(保姆级教程)</title>
-    <url>/BOIS.html</url>
-    <content><![CDATA[<p><strong>电脑刷BIOS简单到不能再简单</strong></p>
-<a id="more"></a>
-<h1 id="刷BIOS需谨慎-不然会想我一样花100快去重新烧录"><a href="#刷BIOS需谨慎-不然会想我一样花100快去重新烧录" class="headerlink" title="刷BIOS需谨慎, 不然会想我一样花100快去重新烧录"></a>刷BIOS需谨慎, 不然会想我一样花100快去重新烧录</h1><h3 id="首先下载Windows刷BIOS文件"><a href="#首先下载Windows刷BIOS文件" class="headerlink" title="首先下载Windows刷BIOS文件"></a>首先下载<a href="https://wwr.lanzoui.com/iLf2Is7cohi">Windows刷BIOS文件</a></h3><ul>
-<li>密码:sdq3</li>
-<li>把文件拖入C盘根目录解压</li>
-</ul>
-<p><strong>以管理员的方式打开</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> C:/刷BIOS<br></code></pre></td></tr></table></figure>
-<p><strong>备份命令 支持很多格式的备份</strong></p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><code class="hljs stylus">fptw64<span class="hljs-selector-class">.exe</span> -d 备份<span class="hljs-selector-class">.bin</span> -bios<br></code></pre></td></tr></table></figure>
-<p><strong>写入命令 支持很多格式的写入</strong></p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><code class="hljs stylus">fptw64<span class="hljs-selector-class">.exe</span> -f 写入<span class="hljs-selector-class">.bin</span> -bios<br></code></pre></td></tr></table></figure>
-<h1 id="dos刷BIOS"><a href="#dos刷BIOS" class="headerlink" title="dos刷BIOS"></a>dos刷BIOS</h1><h3 id="下载微PE把要刷写的BIOS文件U盘"><a href="#下载微PE把要刷写的BIOS文件U盘" class="headerlink" title="下载微PE把要刷写的BIOS文件U盘"></a>下载<a href="https://download.csdn.net/download/qq_44948696/20695927">微PE</a>把要刷写的BIOS文件U盘</h3><p><img src="/images/%E5%88%B7BIOS/%E5%BE%AEPE1.jpg"></p>
-<p><img src="/images/%E5%88%B7BIOS/%E5%BE%AEPE2.jpg"></p>
-<h3 id="运行MaxDos工具箱"><a href="#运行MaxDos工具箱" class="headerlink" title="运行MaxDos工具箱"></a>运行MaxDos工具箱</h3><p><strong>查看</strong></p>
-<figure class="highlight dos"><table><tr><td class="code"><pre><code class="hljs dos"><span class="hljs-built_in">dir</span><br></code></pre></td></tr></table></figure>
-<p><strong>切换分区</strong></p>
-<figure class="highlight avrasm"><table><tr><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">A:</span><br><br><span class="hljs-symbol">B:</span><br></code></pre></td></tr></table></figure>
-<p><strong>刷新进EC目录下EC</strong></p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">ECFlash</span><br></code></pre></td></tr></table></figure>
-<p><img src="/images/%E5%88%B7BIOS/%E5%88%B7EC.jpg"></p>
-<p><strong>进BIOS目录下刷写BIOS</strong></p>
-<p><strong>快</strong></p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">meset</span> <br></code></pre></td></tr></table></figure>
-<p><strong>慢</strong></p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">flashme</span><br></code></pre></td></tr></table></figure>
-<p><img src="/images/%E5%88%B7BIOS/%E5%88%B7BIOS.jpg"></p>
-<h3 id="神州SL7D3-神州SL7S3-神州SL7S4用的BIOS"><a href="#神州SL7D3-神州SL7S3-神州SL7S4用的BIOS" class="headerlink" title="神州SL7D3 神州SL7S3 神州SL7S4用的BIOS"></a>神州SL7D3 神州SL7S3 神州SL7S4<a href="https://wwr.lanzoui.com/iFiRVs7ehij">用的BIOS</a></h3>]]></content>
   </entry>
   <entry>
     <title>百度搜索技巧</title>
