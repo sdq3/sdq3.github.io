@@ -995,19 +995,6 @@ $</style>
       </categories>
   </entry>
   <entry>
-    <title>EJS常用标签</title>
-    <url>/EJS.html</url>
-    <content><![CDATA[<p><strong>EJS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h1><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs EJS"> &#x2F;&#x2F;用于控制流<br> &lt;%    %&gt;    &#x2F;&#x2F;逻辑代码输出(JS编辑), 如 if, for等使用 <br><br> &#x2F;&#x2F;用于转义的输出 <br> &lt;%&#x3D;  %&gt;     &#x2F;&#x2F;输出 HTML转义后  的字符串 到模板中      用于转义的输出<br><br> &#x2F;&#x2F;用于非转义的输出<br> &lt;%-  %&gt;     &#x2F;&#x2F;输出 原始的HTML串到模板中, 不对HTML进行转义    &lt;&gt;被浏览器识别  看做HTML  <br><br> &lt;%_ _%&gt;     &#x2F;&#x2F;控制流使用空白字符移除模式<br> <br> &lt;%#   %&gt;    &#x2F;&#x2F;注释<br><br> &lt;%%  %&gt;     &#x2F;&#x2F;直接输出 &lt;%  %&gt;<br><br> -%&gt;         &#x2F;&#x2F;结束标签用于换行移除模式<br><br>自定义分隔符 (例如, 使用 &#39;&lt;? ?&gt;&#39; 代替 &#39;&lt;% %&gt;&#39;)<br></code></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>EJS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>CSS 定位布局</title>
     <url>/CSS-Static-Relative-Absolute-Fixed-Sticky.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
@@ -1022,6 +1009,19 @@ $</style>
 ]]></content>
       <categories>
         <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>EJS常用标签</title>
+    <url>/EJS.html</url>
+    <content><![CDATA[<p><strong>EJS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h1><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs EJS"> &#x2F;&#x2F;用于控制流<br> &lt;%    %&gt;    &#x2F;&#x2F;逻辑代码输出(JS编辑), 如 if, for等使用 <br><br> &#x2F;&#x2F;用于转义的输出 <br> &lt;%&#x3D;  %&gt;     &#x2F;&#x2F;输出 HTML转义后  的字符串 到模板中      用于转义的输出<br><br> &#x2F;&#x2F;用于非转义的输出<br> &lt;%-  %&gt;     &#x2F;&#x2F;输出 原始的HTML串到模板中, 不对HTML进行转义    &lt;&gt;被浏览器识别  看做HTML  <br><br> &lt;%_ _%&gt;     &#x2F;&#x2F;控制流使用空白字符移除模式<br> <br> &lt;%#   %&gt;    &#x2F;&#x2F;注释<br><br> &lt;%%  %&gt;     &#x2F;&#x2F;直接输出 &lt;%  %&gt;<br><br> -%&gt;         &#x2F;&#x2F;结束标签用于换行移除模式<br><br>自定义分隔符 (例如, 使用 &#39;&lt;? ?&gt;&#39; 代替 &#39;&lt;% %&gt;&#39;)<br></code></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>EJS</category>
       </categories>
   </entry>
   <entry>
@@ -1095,6 +1095,21 @@ $</style>
 <h1 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h1><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;demo_iframe.html&quot;</span> <span class="hljs-attr">frameborder</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <h1 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;xxx/xxx.html&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>HTML</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>HTML 表格</title>
+    <url>/HTML-form.html</url>
+    <content><![CDATA[<p><strong>HTML个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="table"><a href="#table" class="headerlink" title="table"></a>table</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ tr  //行<br>$ td  //列<br></code></pre></td></tr></table></figure>
+
+<h1 id="跨列"><a href="#跨列" class="headerlink" title="跨列"></a>跨列</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">tb</span> <span class="hljs-attr">cospan</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="跨行"><a href="#跨行" class="headerlink" title="跨行"></a>跨行</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">tb</span> <span class="hljs-attr">rowspan</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure>
+]]></content>
       <categories>
         <category>HTML</category>
       </categories>
@@ -1468,21 +1483,6 @@ $</style>
 <img src="/images/Hexo博客/案例.jpg">]]></content>
       <categories>
         <category>搭建博客</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>HTML 表格</title>
-    <url>/HTML-form.html</url>
-    <content><![CDATA[<p><strong>HTML个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="table"><a href="#table" class="headerlink" title="table"></a>table</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ tr  //行<br>$ td  //列<br></code></pre></td></tr></table></figure>
-
-<h1 id="跨列"><a href="#跨列" class="headerlink" title="跨列"></a>跨列</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">tb</span> <span class="hljs-attr">cospan</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h1 id="跨行"><a href="#跨行" class="headerlink" title="跨行"></a>跨行</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">tb</span> <span class="hljs-attr">rowspan</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>HTML</category>
       </categories>
   </entry>
   <entry>
@@ -2514,6 +2514,26 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>React 组件</title>
+    <url>/React-subassembly.html</url>
+    <content><![CDATA[<p><strong>React笔记</strong></p>
+<a id="more"></a>
+
+
+<h1 id="封装组件"><a href="#封装组件" class="headerlink" title="封装组件"></a>封装组件</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function Name(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站名称：&#123;props.name&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function Url(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站地址：&#123;props.url&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function Nickname(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站小名：&#123;props.nickname&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function App() &#123;<br>	return (<br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Name</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;史迪奇的博客&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Url</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Nickname</span> <span class="hljs-attr">nickname</span>=<span class="hljs-string">&quot;我叫史迪奇&quot;</span> /&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	);<br>&#125;<br><br>ReactDOM.render(<br>	 <span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>,<br>	document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><strong>正常定义组件</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">function MyNameIsStitch(props) &#123;<br>    return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>ES6 class 来定义组件</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">class MyNameIsStitch extends React.Component &#123;<br>  render() &#123;<br>    return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>用户自定义组件</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function MyNameIsStitch(props) &#123;<br>  &#123;/*  name 属性通过 props.name 来获取  */&#125;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫&#123;props.name&#125;!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br><br>const element = <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;史迪奇&quot;</span>/&gt;</span>;<br><br>ReactDOM.render(<br>	element,<br>	document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="复合组件"><a href="#复合组件" class="headerlink" title="复合组件"></a>复合组件</h1><p><strong>解析: 就是可以通过创建多个组件来合成一个组件</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function Name(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站名称：&#123;props.name&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function Url(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站地址：&#123;props.url&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function Nickname(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站小名：&#123;props.nickname&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function App() &#123;<br>	return (<br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Name</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;史迪奇的博客&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Url</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Nickname</span> <span class="hljs-attr">nickname</span>=<span class="hljs-string">&quot;我叫史迪奇&quot;</span> /&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	);<br>&#125;<br><br>ReactDOM.render(<br>	 <span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>,<br>	document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>React</category>
+      </categories>
+  </entry>
+  <entry>
     <title>React 组件 API</title>
     <url>/React-API.html</url>
     <content><![CDATA[<p><strong>React笔记</strong></p>
@@ -2568,26 +2588,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <li>isMounted()方法用于判断组件是否已挂载到DOM中 可以使用该方法保证了setState()和forceUpdate()在异步场景下的调用不会出错</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&#123;<span class="hljs-comment">/*  返回值: true或false, 表示组件是否已挂载到DOM中  */</span>&#125; <br>bool <span class="hljs-title function_">isMounted</span>()<br></code></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>React</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>React 组件</title>
-    <url>/React-subassembly.html</url>
-    <content><![CDATA[<p><strong>React笔记</strong></p>
-<a id="more"></a>
-
-
-<h1 id="封装组件"><a href="#封装组件" class="headerlink" title="封装组件"></a>封装组件</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function Name(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站名称：&#123;props.name&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function Url(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站地址：&#123;props.url&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function Nickname(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站小名：&#123;props.nickname&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function App() &#123;<br>	return (<br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Name</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;史迪奇的博客&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Url</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Nickname</span> <span class="hljs-attr">nickname</span>=<span class="hljs-string">&quot;我叫史迪奇&quot;</span> /&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	);<br>&#125;<br><br>ReactDOM.render(<br>	 <span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>,<br>	document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p><strong>正常定义组件</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">function MyNameIsStitch(props) &#123;<br>    return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><strong>ES6 class 来定义组件</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">class MyNameIsStitch extends React.Component &#123;<br>  render() &#123;<br>    return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><strong>用户自定义组件</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function MyNameIsStitch(props) &#123;<br>  &#123;/*  name 属性通过 props.name 来获取  */&#125;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫&#123;props.name&#125;!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br><br>const element = <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;史迪奇&quot;</span>/&gt;</span>;<br><br>ReactDOM.render(<br>	element,<br>	document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h1 id="复合组件"><a href="#复合组件" class="headerlink" title="复合组件"></a>复合组件</h1><p><strong>解析: 就是可以通过创建多个组件来合成一个组件</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function Name(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站名称：&#123;props.name&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function Url(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站地址：&#123;props.url&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function Nickname(props) &#123;<br>	return <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>网站小名：&#123;props.nickname&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>&#125;<br>function App() &#123;<br>	return (<br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Name</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;史迪奇的博客&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Url</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">Nickname</span> <span class="hljs-attr">nickname</span>=<span class="hljs-string">&quot;我叫史迪奇&quot;</span> /&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	);<br>&#125;<br><br>ReactDOM.render(<br>	 <span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>,<br>	document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>React</category>
       </categories>
@@ -2799,17 +2799,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>String 比较</title>
-    <url>/String-compare.html</url>
-    <content><![CDATA[<p><strong>个人笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="String-比较"><a href="#String-比较" class="headerlink" title="String 比较"></a>String 比较</h1><p><strong>当String进行比较时应该用equals</strong></p>
-<p><strong>因为equals是String类重写后的用于比较字符串内容的方法</strong></p>
-<p><strong>为什么不用==进行比较, 因为==是用于比较地址值</strong></p>
-]]></content>
-  </entry>
-  <entry>
     <title>大数据 Spark</title>
     <url>/Spark.html</url>
     <content><![CDATA[<p><strong>Spark个人整理</strong></p>
@@ -2841,6 +2830,17 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       <categories>
         <category>大数据</category>
       </categories>
+  </entry>
+  <entry>
+    <title>String 比较</title>
+    <url>/String-compare.html</url>
+    <content><![CDATA[<p><strong>个人笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="String-比较"><a href="#String-比较" class="headerlink" title="String 比较"></a>String 比较</h1><p><strong>当String进行比较时应该用equals</strong></p>
+<p><strong>因为equals是String类重写后的用于比较字符串内容的方法</strong></p>
+<p><strong>为什么不用==进行比较, 因为==是用于比较地址值</strong></p>
+]]></content>
   </entry>
   <entry>
     <title>Three.js 向量</title>
@@ -3116,23 +3116,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>TypeScript 联合类型和类型保护</title>
-    <url>/TypeScript-Union-type-protection.html</url>
-    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="联合类型"><a href="#联合类型" class="headerlink" title="联合类型"></a>联合类型</h1><p><strong>关键符好是 | 是联合类型</strong></p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 接口</span><br><span class="hljs-keyword">interface</span> SDQ &#123;<br>  <span class="hljs-attr">anjiao</span>: <span class="hljs-built_in">boolean</span>;<br>  <span class="hljs-attr">say</span>: <span class="hljs-function">() =&gt;</span> &#123;&#125;;<br>&#125;<br><span class="hljs-comment">// 接口</span><br><span class="hljs-keyword">interface</span> SDZ &#123;<br>  <span class="hljs-attr">anjiao</span>: <span class="hljs-built_in">boolean</span>;<br>  <span class="hljs-attr">skill</span>: <span class="hljs-function">() =&gt;</span> &#123;&#125;;<br>&#125;<br><br><span class="hljs-comment">// 联合类型的关键符合是 | </span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">subject</span>(<span class="hljs-params"><span class="hljs-built_in">Number</span>: SDQ | SDZ</span>) &#123;<br>  <span class="hljs-keyword">if</span>(<span class="hljs-title class_">Number</span>.<span class="hljs-property">anjiao</span>)&#123;<br>    (<span class="hljs-title class_">Number</span> <span class="hljs-keyword">as</span> <span class="hljs-variable constant_">SDZ</span>).<span class="hljs-property">skill</span><br>  &#125;<span class="hljs-keyword">else</span>&#123;<br>    (<span class="hljs-title class_">Number</span> <span class="hljs-keyword">as</span> <span class="hljs-variable constant_">SDQ</span>).<span class="hljs-property">say</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h1 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h1><p><strong>类型保护/类型断言</strong></p>
-<h2 id="as语法"><a href="#as语法" class="headerlink" title="as语法"></a>as语法</h2><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 接口</span><br><span class="hljs-keyword">interface</span> SDQ &#123;<br>  <span class="hljs-attr">anjiao</span>: <span class="hljs-built_in">boolean</span>;<br>  <span class="hljs-attr">say</span>: <span class="hljs-function">() =&gt;</span> &#123;&#125;;<br>&#125;<br><span class="hljs-comment">// 接口</span><br><span class="hljs-keyword">interface</span> SDZ &#123;<br>  <span class="hljs-attr">anjiao</span>: <span class="hljs-built_in">boolean</span>;<br>  <span class="hljs-attr">skill</span>: <span class="hljs-function">() =&gt;</span> &#123;&#125;;<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">subject</span>(<span class="hljs-params"><span class="hljs-built_in">Number</span>: SDQ | SDZ</span>) &#123;<br><span class="hljs-comment">// 可以通过断言number as Teacher然后直接调用skill方法</span><br>  <span class="hljs-keyword">if</span>(<span class="hljs-title class_">Number</span>.<span class="hljs-property">anjiao</span>)&#123;<br>    (<span class="hljs-title class_">Number</span> <span class="hljs-keyword">as</span> <span class="hljs-variable constant_">SDZ</span>).<span class="hljs-property">skill</span><br>  &#125;<span class="hljs-keyword">else</span>&#123;<br>    (<span class="hljs-title class_">Number</span> <span class="hljs-keyword">as</span> <span class="hljs-variable constant_">SDQ</span>).<span class="hljs-property">say</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="in语法"><a href="#in语法" class="headerlink" title="in语法"></a>in语法</h2><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">subjectTwo</span>(<span class="hljs-params"><span class="hljs-built_in">Number</span>: SDQ | SDZ</span>) &#123;<br><span class="hljs-comment">// in来判断number里有没有skill()方</span><br>  <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;skill&quot;</span> <span class="hljs-keyword">in</span> <span class="hljs-title class_">Number</span>) &#123;<br>    <span class="hljs-title class_">Number</span>.<span class="hljs-title function_">skill</span>();<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-title class_">Number</span>.<span class="hljs-title function_">say</span>();<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="typeof语法"><a href="#typeof语法" class="headerlink" title="typeof语法"></a>typeof语法</h2><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sdq</span>(<span class="hljs-params">first: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span>, second: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span></span>) &#123;<br><span class="hljs-comment">// typeof来判断是不是string</span><br>  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> first === <span class="hljs-string">&quot;string&quot;</span> || <span class="hljs-keyword">typeof</span> second === <span class="hljs-string">&quot;string&quot;</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">$&#123;first&#125;</span><span class="hljs-subst">$&#123;second&#125;</span>`</span>;<br>  &#125;<br>  <span class="hljs-keyword">return</span> first + second;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="instanceof语法"><a href="#instanceof语法" class="headerlink" title="instanceof语法"></a>instanceof语法</h2><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sdz</span>(<span class="hljs-params">first: <span class="hljs-built_in">object</span> | NumberObj, second: <span class="hljs-built_in">object</span> | NumberObj</span>) &#123;<br>  <span class="hljs-keyword">if</span> (first <span class="hljs-keyword">instanceof</span> <span class="hljs-title class_">NumberObj</span> &amp;&amp; second <span class="hljs-keyword">instanceof</span> <span class="hljs-title class_">NumberObj</span>) &#123;<br>    <span class="hljs-keyword">return</span> first.<span class="hljs-property">count</span> + second.<span class="hljs-property">count</span>;<br>  &#125;<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>TypeScript</category>
-      </categories>
-  </entry>
-  <entry>
     <title>TypeScript类</title>
     <url>/TypeScript-class.html</url>
     <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
@@ -3152,6 +3135,23 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">SDQ</span>&#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-title class_">MyName</span>()&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;我叫史迪奇&quot;</span><br>    &#125;<br>&#125;<br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable constant_">SDQ</span>.<span class="hljs-title class_">MyName</span>())<br></code></pre></td></tr></table></figure>
 <h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript">抽象类<br><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">sdq</span> &#123;<br>    <span class="hljs-keyword">abstract</span> <span class="hljs-title function_">skill</span>()<br>&#125;<br><br>抽象方法<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">cifan</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">sdq</span>&#123;<br>    业务逻辑<br>    <span class="hljs-title function_">skill</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;进食&quot;</span>)<br>    &#125;<br>&#125;<br><br>抽象方法<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">shuijiao</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">sdq</span>&#123;<br>    业务逻辑<br>    <span class="hljs-title function_">skill</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;睡觉&quot;</span>)<br>    &#125;<br>&#125;<br><br>抽象方法<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">pohuai</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">sdq</span>&#123;<br>    业务逻辑<br>    <span class="hljs-title function_">skill</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;破坏&quot;</span>)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="只读方法"><a href="#只读方法" class="headerlink" title="只读方法"></a>只读方法</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">SDQ</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">readonly</span> _name :<span class="hljs-built_in">string</span>;<br>    <span class="hljs-title function_">constructor</span>(<span class="hljs-params">name:<span class="hljs-built_in">string</span> </span>)&#123;<br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">_name</span> = name;<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">const</span> sdq = <span class="hljs-keyword">new</span> <span class="hljs-title function_">SDQ</span>(<span class="hljs-string">&#x27;史迪仔&#x27;</span>)<br><br>无法分配到 <span class="hljs-string">&quot;_name&quot;</span> ，因为它是只读属性<br>sdq.<span class="hljs-property">_name</span>= <span class="hljs-string">&#x27;史迪奇&#x27;</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sdq.<span class="hljs-property">_name</span>)<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>TypeScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>TypeScript 联合类型和类型保护</title>
+    <url>/TypeScript-Union-type-protection.html</url>
+    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="联合类型"><a href="#联合类型" class="headerlink" title="联合类型"></a>联合类型</h1><p><strong>关键符好是 | 是联合类型</strong></p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 接口</span><br><span class="hljs-keyword">interface</span> SDQ &#123;<br>  <span class="hljs-attr">anjiao</span>: <span class="hljs-built_in">boolean</span>;<br>  <span class="hljs-attr">say</span>: <span class="hljs-function">() =&gt;</span> &#123;&#125;;<br>&#125;<br><span class="hljs-comment">// 接口</span><br><span class="hljs-keyword">interface</span> SDZ &#123;<br>  <span class="hljs-attr">anjiao</span>: <span class="hljs-built_in">boolean</span>;<br>  <span class="hljs-attr">skill</span>: <span class="hljs-function">() =&gt;</span> &#123;&#125;;<br>&#125;<br><br><span class="hljs-comment">// 联合类型的关键符合是 | </span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">subject</span>(<span class="hljs-params"><span class="hljs-built_in">Number</span>: SDQ | SDZ</span>) &#123;<br>  <span class="hljs-keyword">if</span>(<span class="hljs-title class_">Number</span>.<span class="hljs-property">anjiao</span>)&#123;<br>    (<span class="hljs-title class_">Number</span> <span class="hljs-keyword">as</span> <span class="hljs-variable constant_">SDZ</span>).<span class="hljs-property">skill</span><br>  &#125;<span class="hljs-keyword">else</span>&#123;<br>    (<span class="hljs-title class_">Number</span> <span class="hljs-keyword">as</span> <span class="hljs-variable constant_">SDQ</span>).<span class="hljs-property">say</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h1><p><strong>类型保护/类型断言</strong></p>
+<h2 id="as语法"><a href="#as语法" class="headerlink" title="as语法"></a>as语法</h2><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 接口</span><br><span class="hljs-keyword">interface</span> SDQ &#123;<br>  <span class="hljs-attr">anjiao</span>: <span class="hljs-built_in">boolean</span>;<br>  <span class="hljs-attr">say</span>: <span class="hljs-function">() =&gt;</span> &#123;&#125;;<br>&#125;<br><span class="hljs-comment">// 接口</span><br><span class="hljs-keyword">interface</span> SDZ &#123;<br>  <span class="hljs-attr">anjiao</span>: <span class="hljs-built_in">boolean</span>;<br>  <span class="hljs-attr">skill</span>: <span class="hljs-function">() =&gt;</span> &#123;&#125;;<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">subject</span>(<span class="hljs-params"><span class="hljs-built_in">Number</span>: SDQ | SDZ</span>) &#123;<br><span class="hljs-comment">// 可以通过断言number as Teacher然后直接调用skill方法</span><br>  <span class="hljs-keyword">if</span>(<span class="hljs-title class_">Number</span>.<span class="hljs-property">anjiao</span>)&#123;<br>    (<span class="hljs-title class_">Number</span> <span class="hljs-keyword">as</span> <span class="hljs-variable constant_">SDZ</span>).<span class="hljs-property">skill</span><br>  &#125;<span class="hljs-keyword">else</span>&#123;<br>    (<span class="hljs-title class_">Number</span> <span class="hljs-keyword">as</span> <span class="hljs-variable constant_">SDQ</span>).<span class="hljs-property">say</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="in语法"><a href="#in语法" class="headerlink" title="in语法"></a>in语法</h2><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">subjectTwo</span>(<span class="hljs-params"><span class="hljs-built_in">Number</span>: SDQ | SDZ</span>) &#123;<br><span class="hljs-comment">// in来判断number里有没有skill()方</span><br>  <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;skill&quot;</span> <span class="hljs-keyword">in</span> <span class="hljs-title class_">Number</span>) &#123;<br>    <span class="hljs-title class_">Number</span>.<span class="hljs-title function_">skill</span>();<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-title class_">Number</span>.<span class="hljs-title function_">say</span>();<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="typeof语法"><a href="#typeof语法" class="headerlink" title="typeof语法"></a>typeof语法</h2><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sdq</span>(<span class="hljs-params">first: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span>, second: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span></span>) &#123;<br><span class="hljs-comment">// typeof来判断是不是string</span><br>  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> first === <span class="hljs-string">&quot;string&quot;</span> || <span class="hljs-keyword">typeof</span> second === <span class="hljs-string">&quot;string&quot;</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">$&#123;first&#125;</span><span class="hljs-subst">$&#123;second&#125;</span>`</span>;<br>  &#125;<br>  <span class="hljs-keyword">return</span> first + second;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="instanceof语法"><a href="#instanceof语法" class="headerlink" title="instanceof语法"></a>instanceof语法</h2><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sdz</span>(<span class="hljs-params">first: <span class="hljs-built_in">object</span> | NumberObj, second: <span class="hljs-built_in">object</span> | NumberObj</span>) &#123;<br>  <span class="hljs-keyword">if</span> (first <span class="hljs-keyword">instanceof</span> <span class="hljs-title class_">NumberObj</span> &amp;&amp; second <span class="hljs-keyword">instanceof</span> <span class="hljs-title class_">NumberObj</span>) &#123;<br>    <span class="hljs-keyword">return</span> first.<span class="hljs-property">count</span> + second.<span class="hljs-property">count</span>;<br>  &#125;<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>TypeScript</category>
       </categories>
