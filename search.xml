@@ -1,73 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Android ROM移植</title>
-    <url>/Android-ROM-transplant.html</url>
-    <content><![CDATA[<p><strong>本人是用Arch，顺便来传一下教</strong><br><img src="/images/编译Android/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
-<a id="more"></a>
-
-<p><strong>此教程针对 高通和联发科 64位就多替换lib64 等有64字眼的</strong></p>
-<h1 id="移植-刷机包-ROM-建议在Linux的平台是-下载个解压软件"><a href="#移植-刷机包-ROM-建议在Linux的平台是-下载个解压软件" class="headerlink" title="移植 刷机包/ROM 建议在Linux的平台是 下载个解压软件"></a>移植 刷机包/ROM 建议在Linux的平台是 下载个解压软件</h1><ul>
-<li>推荐sdat2</li>
-</ul>
-<h2 id="移植boot-img"><a href="#移植boot-img" class="headerlink" title="移植boot.img"></a>移植boot.img</h2><ul>
-<li>步骤: 解压出官方booT和要移植包的boot, 替换进入官方<ul>
-<li>替换文件: dt.img和zlmagewe 没有这个文件的话就无视</li>
-</ul>
-</li>
-</ul>
-<p><strong>可以开机之后 再进行以下操作</strong></p>
-<ul>
-<li>开机失败就替换fstab.qcom为官方</li>
-</ul>
-<h2 id="刷机脚本修改"><a href="#刷机脚本修改" class="headerlink" title="刷机脚本修改"></a>刷机脚本修改</h2><ul>
-<li>1.机型验证<ul>
-<li>getprop开头的那行删除，如果安装中断的话就是这行没删完,</li>
-</ul>
-</li>
-<li>2.分区挂卸<ul>
-<li>分区注意mmcblk0p字眼的记得改成官方的</li>
-</ul>
-</li>
-<li>3.删除底层文件刷入<ul>
-<li>底层文件一般在包里面，正常的包有system(system.dat…), boot.img,META—INF, data其他多余的未知文件和文件夹就是底层文件, 这些必须删除, 不然就可能会黑砖</li>
-</ul>
-</li>
-</ul>
-<p><strong>参考脚本 一般放在META-INF里面</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">ui_print(&quot;Patching firmware images...&quot;);<br>ifelse(msm.boot_update(&quot;main&quot;), (<br>package_extract_file(&quot;firmware-update/tz.mbn&quot;, &quot;/dev/block/bootdevice/by-name/tz&quot;);<br>package_extract_file(&quot;firmware-update/hyp.mbn&quot;, &quot;/dev/block/bootdevice/by-name/hyp&quot;);<br>package_extract_file(&quot;firmware-update/sbl1.mbn&quot;, &quot;/dev/block/bootdevice/by-name/sbl1&quot;);<br>package_extract_file(&quot;firmware-update/rpm.mbn&quot;, &quot;/dev/block/bootdevice/by-name/rpm&quot;);<br>package_extract_file(&quot;firmware-update/emmc_appsboot.mbn&quot;, &quot;/dev/block/bootdevice/by-name/aboot&quot;);<br>), &quot;&quot;);<br>ifelse(msm.boot_update(&quot;backup&quot;), (<br>package_extract_file(&quot;firmware-update/tz.mbn&quot;, &quot;/dev/block/bootdevice/by-name/tzbak&quot;);<br>package_extract_file(&quot;firmware-update/hyp.mbn&quot;, &quot;/dev/block/bootdevice/by-name/hypbak&quot;);<br>package_extract_file(&quot;firmware-update/sbl1.mbn&quot;, &quot;/dev/block/bootdevice/by-name/sbl1bak&quot;);<br>package_extract_file(&quot;firmware-update/rpm.mbn&quot;, &quot;/dev/block/bootdevice/by-name/rpmbak&quot;);<br>package_extract_file(&quot;firmware-update/emmc_appsboot.mbn&quot;, &quot;/dev/block/bootdevice/by-name/abootbak&quot;);<br>), &quot;&quot;);<br>msm.boot_update(&quot;finalize&quot;);<br>package_extract_file(&quot;firmware-update/NON-HLOS.bin&quot;, &quot;/dev/block/bootdevice/by-name/modem&quot;);<br></code></pre></td></tr></table></figure>
-
-
-<h2 id="WIFI修复"><a href="#WIFI修复" class="headerlink" title="WIFI修复"></a>WIFI修复</h2><ul>
-<li>步骤: 以下文件或文件夹替换为官方 没有就不替换</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/etc/firmware/wlan<br>system/etc/wifi<br>system/lib/modules/pronto<br>system/lib/modules/wlan.ko<br></code></pre></td></tr></table></figure>
-<p><strong>可以用WIFI之后 再进行以下操作</strong></p>
-<ul>
-<li>还是不行再看看boot.img里面的init.qcom.rc对比官方boot里面的init.qcom.rc修改 还不行就看刷机脚本, 改里面的wifi软链接</li>
-</ul>
-<h3 id="内存卡使用修复"><a href="#内存卡使用修复" class="headerlink" title="内存卡使用修复"></a>内存卡使用修复</h3><ul>
-<li>以下文件替换或修改为官方</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/etc/permissions/platform.xml<br></code></pre></td></tr></table></figure>
-<h3 id="修复按键"><a href="#修复按键" class="headerlink" title="修复按键"></a>修复按键</h3><ul>
-<li>以下文件替换或修改为官方</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/usr/icu<br>system/usr/idc<br><br>//不行再多替换 <br>system/usr/keylayout/Generic.kl<br></code></pre></td></tr></table></figure>
-<h3 id="修复声音"><a href="#修复声音" class="headerlink" title="修复声音"></a>修复声音</h3><p><strong>以下文件替换为官方</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">    方法1:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换etc/mixer开头的<br><br>    方法2:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换system/hw/audio.primary.msmxxxx.so(64位多替换system/lib64/hw/audio.primary.msmxxxx.so)<br><br>    方法3:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换system/lib/hw/audio开头的（64位多替换system/lib64/hw/audio）<br><br>    方法4:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换以下:<br>    system/etc/mixer开头的<br>    system/lib/hw/audio.primary.msmxxxx.so<br>    (64位多替换system/lib64/hw/audio.primary.msmxxxx.so)<br><br>    方法5:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换以下:<br>    system/etc/audio和mixer开头的<br>    system/lib/hw/audio开头的<br>    (64位多替换system/lib64/hw/audio开头的)<br><br>注: lib和lib64文件夹里面的audio开头(不包括hw文件夹)64位替换了不卡屏，但32位可能会卡屏<br></code></pre></td></tr></table></figure>
-<h3 id="修改型号"><a href="#修改型号" class="headerlink" title="修改型号"></a>修改型号</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 品牌<br>ro.product.brand=xiaomi<br>// 型号<br>ro.product.name=2<br>// 关于手机显示的型号<br>ro.product.model=redmi 2<br>// 分辨率<br>ro.sf.lcd_density=320 <br>// 这个也是有关型号的<br>ro.build.product=2<br>// 虚拟按键  1是关0是开，没有这行的就加进去<br>qemu.hw.mainkeys=0 <br></code></pre></td></tr></table></figure>
-<h3 id="修复相机"><a href="#修复相机" class="headerlink" title="修复相机"></a>修复相机</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 把System/lib文件夹里面的文件替换成官方包的文件，可以解决相机打开停止的BUG问题<br>libcamalgo.so<br>libcamera_client.so<br>libcameracustom.so<br>libcameraservice.so<br>libmhal.so<br>libmhalcontent.so<br>libmhaldrv.so<br>libmhalmdp.so<br>libmhalpipe.so<br>libmhalscenario.so<br>libmhalutility.so<br></code></pre></td></tr></table></figure>
-
-<h3 id="修复传感器"><a href="#修复传感器" class="headerlink" title="修复传感器"></a>修复传感器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 替换System/lib/hw  文件夹里面<br>sensors.default.so<br></code></pre></td></tr></table></figure>
-
-<h1>移植有风险, 不保证无bug</h1>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
     <title>33种编程语言的HelloWorld</title>
     <url>/HelloWorld.html</url>
     <content><![CDATA[<p><strong>我的核心代码</strong></p>
@@ -508,6 +441,73 @@ var tools = (function(){
 </ul></ul></ul></ul>]]></content>
       <categories>
         <category>Android</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Android ROM移植</title>
+    <url>/Android-ROM-transplant.html</url>
+    <content><![CDATA[<p><strong>本人是用Arch，顺便来传一下教</strong><br><img src="/images/编译Android/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
+<a id="more"></a>
+
+<p><strong>此教程针对 高通和联发科 64位就多替换lib64 等有64字眼的</strong></p>
+<h1 id="移植-刷机包-ROM-建议在Linux的平台是-下载个解压软件"><a href="#移植-刷机包-ROM-建议在Linux的平台是-下载个解压软件" class="headerlink" title="移植 刷机包/ROM 建议在Linux的平台是 下载个解压软件"></a>移植 刷机包/ROM 建议在Linux的平台是 下载个解压软件</h1><ul>
+<li>推荐sdat2</li>
+</ul>
+<h2 id="移植boot-img"><a href="#移植boot-img" class="headerlink" title="移植boot.img"></a>移植boot.img</h2><ul>
+<li>步骤: 解压出官方booT和要移植包的boot, 替换进入官方<ul>
+<li>替换文件: dt.img和zlmagewe 没有这个文件的话就无视</li>
+</ul>
+</li>
+</ul>
+<p><strong>可以开机之后 再进行以下操作</strong></p>
+<ul>
+<li>开机失败就替换fstab.qcom为官方</li>
+</ul>
+<h2 id="刷机脚本修改"><a href="#刷机脚本修改" class="headerlink" title="刷机脚本修改"></a>刷机脚本修改</h2><ul>
+<li>1.机型验证<ul>
+<li>getprop开头的那行删除，如果安装中断的话就是这行没删完,</li>
+</ul>
+</li>
+<li>2.分区挂卸<ul>
+<li>分区注意mmcblk0p字眼的记得改成官方的</li>
+</ul>
+</li>
+<li>3.删除底层文件刷入<ul>
+<li>底层文件一般在包里面，正常的包有system(system.dat…), boot.img,META—INF, data其他多余的未知文件和文件夹就是底层文件, 这些必须删除, 不然就可能会黑砖</li>
+</ul>
+</li>
+</ul>
+<p><strong>参考脚本 一般放在META-INF里面</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">ui_print(&quot;Patching firmware images...&quot;);<br>ifelse(msm.boot_update(&quot;main&quot;), (<br>package_extract_file(&quot;firmware-update/tz.mbn&quot;, &quot;/dev/block/bootdevice/by-name/tz&quot;);<br>package_extract_file(&quot;firmware-update/hyp.mbn&quot;, &quot;/dev/block/bootdevice/by-name/hyp&quot;);<br>package_extract_file(&quot;firmware-update/sbl1.mbn&quot;, &quot;/dev/block/bootdevice/by-name/sbl1&quot;);<br>package_extract_file(&quot;firmware-update/rpm.mbn&quot;, &quot;/dev/block/bootdevice/by-name/rpm&quot;);<br>package_extract_file(&quot;firmware-update/emmc_appsboot.mbn&quot;, &quot;/dev/block/bootdevice/by-name/aboot&quot;);<br>), &quot;&quot;);<br>ifelse(msm.boot_update(&quot;backup&quot;), (<br>package_extract_file(&quot;firmware-update/tz.mbn&quot;, &quot;/dev/block/bootdevice/by-name/tzbak&quot;);<br>package_extract_file(&quot;firmware-update/hyp.mbn&quot;, &quot;/dev/block/bootdevice/by-name/hypbak&quot;);<br>package_extract_file(&quot;firmware-update/sbl1.mbn&quot;, &quot;/dev/block/bootdevice/by-name/sbl1bak&quot;);<br>package_extract_file(&quot;firmware-update/rpm.mbn&quot;, &quot;/dev/block/bootdevice/by-name/rpmbak&quot;);<br>package_extract_file(&quot;firmware-update/emmc_appsboot.mbn&quot;, &quot;/dev/block/bootdevice/by-name/abootbak&quot;);<br>), &quot;&quot;);<br>msm.boot_update(&quot;finalize&quot;);<br>package_extract_file(&quot;firmware-update/NON-HLOS.bin&quot;, &quot;/dev/block/bootdevice/by-name/modem&quot;);<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="WIFI修复"><a href="#WIFI修复" class="headerlink" title="WIFI修复"></a>WIFI修复</h2><ul>
+<li>步骤: 以下文件或文件夹替换为官方 没有就不替换</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/etc/firmware/wlan<br>system/etc/wifi<br>system/lib/modules/pronto<br>system/lib/modules/wlan.ko<br></code></pre></td></tr></table></figure>
+<p><strong>可以用WIFI之后 再进行以下操作</strong></p>
+<ul>
+<li>还是不行再看看boot.img里面的init.qcom.rc对比官方boot里面的init.qcom.rc修改 还不行就看刷机脚本, 改里面的wifi软链接</li>
+</ul>
+<h3 id="内存卡使用修复"><a href="#内存卡使用修复" class="headerlink" title="内存卡使用修复"></a>内存卡使用修复</h3><ul>
+<li>以下文件替换或修改为官方</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/etc/permissions/platform.xml<br></code></pre></td></tr></table></figure>
+<h3 id="修复按键"><a href="#修复按键" class="headerlink" title="修复按键"></a>修复按键</h3><ul>
+<li>以下文件替换或修改为官方</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/usr/icu<br>system/usr/idc<br><br>//不行再多替换 <br>system/usr/keylayout/Generic.kl<br></code></pre></td></tr></table></figure>
+<h3 id="修复声音"><a href="#修复声音" class="headerlink" title="修复声音"></a>修复声音</h3><p><strong>以下文件替换为官方</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">    方法1:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换etc/mixer开头的<br><br>    方法2:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换system/hw/audio.primary.msmxxxx.so(64位多替换system/lib64/hw/audio.primary.msmxxxx.so)<br><br>    方法3:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换system/lib/hw/audio开头的（64位多替换system/lib64/hw/audio）<br><br>    方法4:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换以下:<br>    system/etc/mixer开头的<br>    system/lib/hw/audio.primary.msmxxxx.so<br>    (64位多替换system/lib64/hw/audio.primary.msmxxxx.so)<br><br>    方法5:对比system里面的bin、etc、lib、vendor/lib（64位多对比lib64、vendor/lib64），把官方包多余的加进去，再替换以下:<br>    system/etc/audio和mixer开头的<br>    system/lib/hw/audio开头的<br>    (64位多替换system/lib64/hw/audio开头的)<br><br>注: lib和lib64文件夹里面的audio开头(不包括hw文件夹)64位替换了不卡屏，但32位可能会卡屏<br></code></pre></td></tr></table></figure>
+<h3 id="修改型号"><a href="#修改型号" class="headerlink" title="修改型号"></a>修改型号</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 品牌<br>ro.product.brand=xiaomi<br>// 型号<br>ro.product.name=2<br>// 关于手机显示的型号<br>ro.product.model=redmi 2<br>// 分辨率<br>ro.sf.lcd_density=320 <br>// 这个也是有关型号的<br>ro.build.product=2<br>// 虚拟按键  1是关0是开，没有这行的就加进去<br>qemu.hw.mainkeys=0 <br></code></pre></td></tr></table></figure>
+<h3 id="修复相机"><a href="#修复相机" class="headerlink" title="修复相机"></a>修复相机</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 把System/lib文件夹里面的文件替换成官方包的文件，可以解决相机打开停止的BUG问题<br>libcamalgo.so<br>libcamera_client.so<br>libcameracustom.so<br>libcameraservice.so<br>libmhal.so<br>libmhalcontent.so<br>libmhaldrv.so<br>libmhalmdp.so<br>libmhalpipe.so<br>libmhalscenario.so<br>libmhalutility.so<br></code></pre></td></tr></table></figure>
+
+<h3 id="修复传感器"><a href="#修复传感器" class="headerlink" title="修复传感器"></a>修复传感器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 替换System/lib/hw  文件夹里面<br>sensors.default.so<br></code></pre></td></tr></table></figure>
+
+<h1>移植有风险, 不保证无bug</h1>
+]]></content>
+      <categories>
+        <category>Linux</category>
       </categories>
   </entry>
   <entry>
@@ -995,19 +995,6 @@ $</style>
       </categories>
   </entry>
   <entry>
-    <title>EJS常用标签</title>
-    <url>/EJS.html</url>
-    <content><![CDATA[<p><strong>EJS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h1><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs EJS"> &#x2F;&#x2F;用于控制流<br> &lt;%    %&gt;    &#x2F;&#x2F;逻辑代码输出(JS编辑), 如 if, for等使用 <br><br> &#x2F;&#x2F;用于转义的输出 <br> &lt;%&#x3D;  %&gt;     &#x2F;&#x2F;输出 HTML转义后  的字符串 到模板中      用于转义的输出<br><br> &#x2F;&#x2F;用于非转义的输出<br> &lt;%-  %&gt;     &#x2F;&#x2F;输出 原始的HTML串到模板中, 不对HTML进行转义    &lt;&gt;被浏览器识别  看做HTML  <br><br> &lt;%_ _%&gt;     &#x2F;&#x2F;控制流使用空白字符移除模式<br> <br> &lt;%#   %&gt;    &#x2F;&#x2F;注释<br><br> &lt;%%  %&gt;     &#x2F;&#x2F;直接输出 &lt;%  %&gt;<br><br> -%&gt;         &#x2F;&#x2F;结束标签用于换行移除模式<br><br>自定义分隔符 (例如, 使用 &#39;&lt;? ?&gt;&#39; 代替 &#39;&lt;% %&gt;&#39;)<br></code></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>EJS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>CSS 定位布局</title>
     <url>/CSS-Static-Relative-Absolute-Fixed-Sticky.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
@@ -1022,6 +1009,19 @@ $</style>
 ]]></content>
       <categories>
         <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>EJS常用标签</title>
+    <url>/EJS.html</url>
+    <content><![CDATA[<p><strong>EJS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h1><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs EJS"> &#x2F;&#x2F;用于控制流<br> &lt;%    %&gt;    &#x2F;&#x2F;逻辑代码输出(JS编辑), 如 if, for等使用 <br><br> &#x2F;&#x2F;用于转义的输出 <br> &lt;%&#x3D;  %&gt;     &#x2F;&#x2F;输出 HTML转义后  的字符串 到模板中      用于转义的输出<br><br> &#x2F;&#x2F;用于非转义的输出<br> &lt;%-  %&gt;     &#x2F;&#x2F;输出 原始的HTML串到模板中, 不对HTML进行转义    &lt;&gt;被浏览器识别  看做HTML  <br><br> &lt;%_ _%&gt;     &#x2F;&#x2F;控制流使用空白字符移除模式<br> <br> &lt;%#   %&gt;    &#x2F;&#x2F;注释<br><br> &lt;%%  %&gt;     &#x2F;&#x2F;直接输出 &lt;%  %&gt;<br><br> -%&gt;         &#x2F;&#x2F;结束标签用于换行移除模式<br><br>自定义分隔符 (例如, 使用 &#39;&lt;? ?&gt;&#39; 代替 &#39;&lt;% %&gt;&#39;)<br></code></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>EJS</category>
       </categories>
   </entry>
   <entry>
@@ -1882,7 +1882,7 @@ $</style>
   </entry>
   <entry>
     <title>JavaScript 函数的定义和参数获取</title>
-    <url>/JavaScript-definition-obtain.html</url>
+    <url>/JavaScript-function.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
 <a id="more"></a>
 
@@ -1903,7 +1903,7 @@ $</style>
   </entry>
   <entry>
     <title>JavaScript 函数的定义和参数获取</title>
-    <url>/JavaScript-function.html</url>
+    <url>/JavaScript-definition-obtain.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
 <a id="more"></a>
 
@@ -2181,6 +2181,30 @@ $
       </categories>
   </entry>
   <entry>
+    <title>React JSX</title>
+    <url>/React-JSX.html</url>
+    <content><![CDATA[<p><strong>React笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="JSX的优点"><a href="#JSX的优点" class="headerlink" title="JSX的优点"></a>JSX的优点</h1><ul>
+<li>JSX 执行更快，因为它在编译为 JavaScript 代码后进行了优化</li>
+<li>它是类型安全的，在编译过程中就能发现错误</li>
+<li>使用 JSX 编写模板更加简单快速</li>
+</ul>
+<h3 id="标识符像-class-和-for-不建议作为-XML-属性名-作为替代-React-DOM-使用-className-和-htmlFor-来做对应的属性"><a href="#标识符像-class-和-for-不建议作为-XML-属性名-作为替代-React-DOM-使用-className-和-htmlFor-来做对应的属性" class="headerlink" title="标识符像 class 和 for 不建议作为 XML 属性名 作为替代 React DOM 使用 className 和 htmlFor 来做对应的属性"></a>标识符像 class 和 for 不建议作为 XML 属性名 作为替代 React DOM 使用 className 和 htmlFor 来做对应的属性</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br>.sdq&#123;<br>	float: left; <br>  heigh: 50px;<br>  width: 50px;<br>&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;root&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>  &#123;/*  className = class  */&#125; <br>	const element = <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;sdq&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>	ReactDOM.render(element, document.getElementById(&#x27;root&#x27;));<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="使用-JSX"><a href="#使用-JSX" class="headerlink" title="使用 JSX"></a>使用 JSX</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>    ReactDOM.render(<br>    	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    	<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>    	<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>安琪<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>      &#123;/*  添加自定义属性需要使用 data- 前缀  */&#125; <br>      <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">data-myattribute</span> = <span class="hljs-string">&quot;somevalue&quot;</span>&gt;</span>鲁本<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    	,<br>    	document.getElementById(&#x27;example&#x27;)<br>    );<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="独立文件"><a href="#独立文件" class="headerlink" title="独立文件"></a>独立文件</h3><p><strong>React JSX 代码可以放在一个独立文件上</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sdq.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>      ReactDOM.render(<br>      	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>          &#123;/*  逻辑运算 表达式写在花括号 &#123;&#125;  */&#125;<br>      	  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>https://sdq&#123;1+2&#125;.gitee.io<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      	,<br>      	document.getElementById(&#x27;example&#x27;)<br>      );<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><strong>JSX 中不能使用 if else 语句，但可以使用 conditional (三元运算) 表达式来替代</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br> var i = 3;<br>    ReactDOM.render(<br>    	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    	  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>&#123;i == 3 ? &#x27;True!&#x27; : &#x27;False&#x27;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>&#123;i != 3 ? &#x27;True!&#x27; : &#x27;False&#x27;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    	,<br>    	document.getElementById(&#x27;example&#x27;)<br>    );<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>    &#123;/*  创建数组  */&#125;<br>    var arr = [<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>,<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>安琪<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>,<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>鲁本<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span><br>    ];<br>    ReactDOM.render(<br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>&#123;arr&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>,<br>      document.getElementById(&#x27;example&#x27;)<br>    );<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>React</category>
+      </categories>
+  </entry>
+  <entry>
     <title>React Hooks</title>
     <url>/React-Hooks.html</url>
     <content><![CDATA[<p><strong>React笔记</strong></p>
@@ -2225,30 +2249,6 @@ $
 
 
 
-]]></content>
-      <categories>
-        <category>React</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>React JSX</title>
-    <url>/React-JSX.html</url>
-    <content><![CDATA[<p><strong>React笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="JSX的优点"><a href="#JSX的优点" class="headerlink" title="JSX的优点"></a>JSX的优点</h1><ul>
-<li>JSX 执行更快，因为它在编译为 JavaScript 代码后进行了优化</li>
-<li>它是类型安全的，在编译过程中就能发现错误</li>
-<li>使用 JSX 编写模板更加简单快速</li>
-</ul>
-<h3 id="标识符像-class-和-for-不建议作为-XML-属性名-作为替代-React-DOM-使用-className-和-htmlFor-来做对应的属性"><a href="#标识符像-class-和-for-不建议作为-XML-属性名-作为替代-React-DOM-使用-className-和-htmlFor-来做对应的属性" class="headerlink" title="标识符像 class 和 for 不建议作为 XML 属性名 作为替代 React DOM 使用 className 和 htmlFor 来做对应的属性"></a>标识符像 class 和 for 不建议作为 XML 属性名 作为替代 React DOM 使用 className 和 htmlFor 来做对应的属性</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br>.sdq&#123;<br>	float: left; <br>  heigh: 50px;<br>  width: 50px;<br>&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;root&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>  &#123;/*  className = class  */&#125; <br>	const element = <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;sdq&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>	ReactDOM.render(element, document.getElementById(&#x27;root&#x27;));<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h3 id="使用-JSX"><a href="#使用-JSX" class="headerlink" title="使用 JSX"></a>使用 JSX</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>    ReactDOM.render(<br>    	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    	<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>    	<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>安琪<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>      &#123;/*  添加自定义属性需要使用 data- 前缀  */&#125; <br>      <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">data-myattribute</span> = <span class="hljs-string">&quot;somevalue&quot;</span>&gt;</span>鲁本<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    	,<br>    	document.getElementById(&#x27;example&#x27;)<br>    );<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h3 id="独立文件"><a href="#独立文件" class="headerlink" title="独立文件"></a>独立文件</h3><p><strong>React JSX 代码可以放在一个独立文件上</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sdq.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h3 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>      ReactDOM.render(<br>      	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>          &#123;/*  逻辑运算 表达式写在花括号 &#123;&#125;  */&#125;<br>      	  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>https://sdq&#123;1+2&#125;.gitee.io<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      	,<br>      	document.getElementById(&#x27;example&#x27;)<br>      );<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p><strong>JSX 中不能使用 if else 语句，但可以使用 conditional (三元运算) 表达式来替代</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br> var i = 3;<br>    ReactDOM.render(<br>    	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    	  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>&#123;i == 3 ? &#x27;True!&#x27; : &#x27;False&#x27;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>&#123;i != 3 ? &#x27;True!&#x27; : &#x27;False&#x27;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    	,<br>    	document.getElementById(&#x27;example&#x27;)<br>    );<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>    &#123;/*  创建数组  */&#125;<br>    var arr = [<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>,<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>安琪<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>,<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>鲁本<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span><br>    ];<br>    ReactDOM.render(<br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>&#123;arr&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>,<br>      document.getElementById(&#x27;example&#x27;)<br>    );<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>React</category>
@@ -3171,6 +3171,34 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>TypeScript静态数据类型</title>
+    <url>/TypeScript-type.html</url>
+    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="TypeScript中的基础静态数据类型有"><a href="#TypeScript中的基础静态数据类型有" class="headerlink" title="TypeScript中的基础静态数据类型有"></a>TypeScript中的基础静态数据类型有</h1><ul>
+<li>Undefined :</li>
+<li>Number : 数值类型;</li>
+<li>string : 字符串类型;</li>
+<li>Boolean : 布尔类型；</li>
+<li>enum : 枚举类型；</li>
+<li>any : 任意类型，一个牛X的类型；</li>
+<li>void : 空类型；</li>
+<li>Array : 数组类型;</li>
+<li>Tuple : 元祖类型；</li>
+<li>Null : 空类型</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> count : <span class="hljs-built_in">number</span> = <span class="hljs-number">333</span>;<br><span class="hljs-keyword">const</span> myNname : <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;史迪奇&quot;</span>;<br></code></pre></td></tr></table></figure>
+<h1 id="还包含对象类型-数组类型-类类型-函数类型"><a href="#还包含对象类型-数组类型-类类型-函数类型" class="headerlink" title="还包含对象类型 数组类型 类类型 函数类型"></a>还包含对象类型 数组类型 类类型 函数类型</h1><h3 id="对象类型"><a href="#对象类型" class="headerlink" title="对象类型"></a>对象类型</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> sdq : &#123;<br>    <span class="hljs-attr">name</span>:<span class="hljs-built_in">string</span>,<br>    <span class="hljs-attr">age</span>:<span class="hljs-built_in">number</span><br>&#125; = &#123;<br>    name = <span class="hljs-string">&quot;史迪奇&quot;</span>,<br>    age = <span class="hljs-number">18</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="数组类型"><a href="#数组类型" class="headerlink" title="数组类型"></a>数组类型</h3><p><strong>对象类型也可以是数组, 但是类型必须一致</strong></p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> sdq : <span class="hljs-built_in">string</span> [] = [<span class="hljs-string">&#x27;史迪奇&#x27;</span>,<span class="hljs-string">&#x27;独眼霹雳&#x27;</span>,<span class="hljs-string">&#x27;强霸&#x27;</span>]<br></code></pre></td></tr></table></figure>
+<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Experimentalarticle</span>&#123;&#125;<br><span class="hljs-keyword">const</span> sdq : <span class="hljs-title class_">Experimentalarticle</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Experimentalarticle</span>()<br><br><span class="hljs-keyword">const</span> sdz : <span class="hljs-function">()=&gt;</span><span class="hljs-built_in">string</span> = <span class="hljs-function">() =&gt;</span>&#123;<span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;史迪奇&#x27;</span>&#125;<br></code></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>TypeScript</category>
+      </categories>
+  </entry>
+  <entry>
     <title>TypeScript 配置文件</title>
     <url>/TypeScript-config.html</url>
     <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
@@ -3201,29 +3229,14 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>TypeScript静态数据类型</title>
-    <url>/TypeScript-type.html</url>
+    <title>TypeScript函数参数和返回类型的注解</title>
+    <url>/TypeScript-hscsfhlxdzj.html</url>
     <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
 <a id="more"></a>
 
-<h1 id="TypeScript中的基础静态数据类型有"><a href="#TypeScript中的基础静态数据类型有" class="headerlink" title="TypeScript中的基础静态数据类型有"></a>TypeScript中的基础静态数据类型有</h1><ul>
-<li>Undefined :</li>
-<li>Number : 数值类型;</li>
-<li>string : 字符串类型;</li>
-<li>Boolean : 布尔类型；</li>
-<li>enum : 枚举类型；</li>
-<li>any : 任意类型，一个牛X的类型；</li>
-<li>void : 空类型；</li>
-<li>Array : 数组类型;</li>
-<li>Tuple : 元祖类型；</li>
-<li>Null : 空类型</li>
-</ul>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> count : <span class="hljs-built_in">number</span> = <span class="hljs-number">333</span>;<br><span class="hljs-keyword">const</span> myNname : <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;史迪奇&quot;</span>;<br></code></pre></td></tr></table></figure>
-<h1 id="还包含对象类型-数组类型-类类型-函数类型"><a href="#还包含对象类型-数组类型-类类型-函数类型" class="headerlink" title="还包含对象类型 数组类型 类类型 函数类型"></a>还包含对象类型 数组类型 类类型 函数类型</h1><h3 id="对象类型"><a href="#对象类型" class="headerlink" title="对象类型"></a>对象类型</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> sdq : &#123;<br>    <span class="hljs-attr">name</span>:<span class="hljs-built_in">string</span>,<br>    <span class="hljs-attr">age</span>:<span class="hljs-built_in">number</span><br>&#125; = &#123;<br>    name = <span class="hljs-string">&quot;史迪奇&quot;</span>,<br>    age = <span class="hljs-number">18</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="数组类型"><a href="#数组类型" class="headerlink" title="数组类型"></a>数组类型</h3><p><strong>对象类型也可以是数组, 但是类型必须一致</strong></p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> sdq : <span class="hljs-built_in">string</span> [] = [<span class="hljs-string">&#x27;史迪奇&#x27;</span>,<span class="hljs-string">&#x27;独眼霹雳&#x27;</span>,<span class="hljs-string">&#x27;强霸&#x27;</span>]<br></code></pre></td></tr></table></figure>
-<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Experimentalarticle</span>&#123;&#125;<br><span class="hljs-keyword">const</span> sdq : <span class="hljs-title class_">Experimentalarticle</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Experimentalarticle</span>()<br><br><span class="hljs-keyword">const</span> sdz : <span class="hljs-function">()=&gt;</span><span class="hljs-built_in">string</span> = <span class="hljs-function">() =&gt;</span>&#123;<span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;史迪奇&#x27;</span>&#125;<br></code></pre></td></tr></table></figure>
-]]></content>
+
+<p><strong>先复制对象再对象后面加个类型</strong></p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getTotal</span>(<span class="hljs-params">&#123;one, two&#125;</span>) : &#123;one : <span class="hljs-built_in">number</span>,two : <span class="hljs-built_in">number</span>&#125; &#123;<br>    <span class="hljs-keyword">return</span> one + two;<br>&#125;<br><span class="hljs-keyword">const</span> total = <span class="hljs-title function_">add</span>(&#123;<span class="hljs-attr">one</span>:<span class="hljs-number">1</span>,<span class="hljs-attr">two</span>:<span class="hljs-number">2</span>&#125;)<br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>TypeScript</category>
       </categories>
@@ -3265,19 +3278,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <h1 id="view和Model双向绑定"><a href="#view和Model双向绑定" class="headerlink" title="view和Model双向绑定"></a>view和Model双向绑定</h1>]]></content>
       <categories>
         <category>Vue.js</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>TypeScript函数参数和返回类型的注解</title>
-    <url>/TypeScript-hscsfhlxdzj.html</url>
-    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
-<a id="more"></a>
-
-
-<p><strong>先复制对象再对象后面加个类型</strong></p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getTotal</span>(<span class="hljs-params">&#123;one, two&#125;</span>) : &#123;one : <span class="hljs-built_in">number</span>,two : <span class="hljs-built_in">number</span>&#125; &#123;<br>    <span class="hljs-keyword">return</span> one + two;<br>&#125;<br><span class="hljs-keyword">const</span> total = <span class="hljs-title function_">add</span>(&#123;<span class="hljs-attr">one</span>:<span class="hljs-number">1</span>,<span class="hljs-attr">two</span>:<span class="hljs-number">2</span>&#125;)<br></code></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>TypeScript</category>
       </categories>
   </entry>
   <entry>
@@ -3370,56 +3370,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 ]]></content>
       <categories>
         <category>Vue.js</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Arch wsl的傻瓜式安装 (有手就行)</title>
-    <url>/Arch-Wsl-install.html</url>
-    <content><![CDATA[<p><strong>本人是Arch教徒过来传一下教</strong> </p>
-<img src="/images/wsl傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;">
-<a id="more"></a>
-
-<h1 id="第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下"><a href="#第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下" class="headerlink" title="第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下"></a>第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下</h1><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux<br></code></pre></td></tr></table></figure>
-<img src="/images/wsl傻瓜式安装/按照提示重启电脑.jpg" style="width: 300px; height: 300px;">
-
-<p><strong>按照提示重启电脑</strong></p>
-<h1 id="第二步-下载文件"><a href="#第二步-下载文件" class="headerlink" title="第二步 下载文件"></a>第二步 下载文件</h1><p><strong>然后下载<a href="https://github.com/yuk7/ArchWSL">Arch WSL</a></strong></p>
-<img src="/images/wsl傻瓜式安装/Arch wsl下载.jpg">
-<br>
-<img src="/images/wsl傻瓜式安装/Arch wsl下载版本.jpg">
-
-<p><strong>那个安装证书是给appx版的arch wsl用的</strong></p>
-<p><strong>你已经安装zip版的</strong></p>
-<p><strong>没有必要安两次</strong></p>
-<p><strong>只用需要用到zip</strong></p>
-<h1 id="第三步-配置Arch-Wsl"><a href="#第三步-配置Arch-Wsl" class="headerlink" title="第三步 配置Arch Wsl"></a>第三步 配置Arch Wsl</h1><img src="/images/wsl傻瓜式安装/Arch wsl配置.jpg" style="width: 800px; height: 500px;">
-
-<p><strong>反正按照我这个改，保存是ctrl + x 回车</strong></p>
-<h1 id="第四步-配置相关参数"><a href="#第四步-配置相关参数" class="headerlink" title="第四步 配置相关参数"></a>第四步 配置相关参数</h1><p><strong>这里会提示配置  按照我的方法配置</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ Arch.exe//这个是启动后的显示<br>[root@PC-NAME user]<span class="hljs-comment"># passwd       //这个是用户名输完名字输密码</span><br></code></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ Arch.exe<br>[root@PC-NAME]<span class="hljs-comment"># EDITOR=nano visudo</span><br>    %wheel      ALL=(ALL) ALL<br>    (setup sudoers file.)<br></code></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ [root@PC-NAME]<span class="hljs-comment"># useradd -m -G wheel -s /bin/bash &#123;username&#125;</span><br>(add user)<br></code></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ [root@PC-NAME user]<span class="hljs-comment"># passwd &#123;username&#125;      //&#123;&#125;换成你的用户名,记住不需要打&#123;&#125;</span><br>(<span class="hljs-built_in">set</span> default user password)<br></code></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ [root@PC-NAME user]<span class="hljs-comment"># exit  //退出</span><br></code></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ Arch.exe config --default-user &#123;username&#125;<br>    (setting to default user)     //现在是root用户,不用加sudo<br></code></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ sudo pacman-key --init<br></code></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ [user@PC-NAME]$ sudo pacman-key --init<br></code></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ [root@PC-NAME]$ sudo pacman-key --populate<br></code></pre></td></tr></table></figure>
-<h1 id="第五步-安装完后操作"><a href="#第五步-安装完后操作" class="headerlink" title="第五步 安装完后操作"></a>第五步 安装完后操作</h1><p><strong>下面是<a href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/">换源</a></strong></p>
-<p><strong>打开nano /etc/pacman.d/mirrorlist 然后再最顶端添加 切记去##</strong></p>
-<img src="/images/wsl傻瓜式安装/Arch wsl配置文件.jpg" style="width: 800px; height: 500px;">
-<br>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ Server = https:mirrors.tuna.tsinghua.edu.cn/archlinux/<span class="hljs-variable">$repo</span>/os/<span class="hljs-variable">$arch</span><br></code></pre></td></tr></table></figure>
-**然后就可以 更新软件包缓存**
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ sudo pacman -Syy<br></code></pre></td></tr></table></figure>
-<h1 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h1><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ pacman -S neofetch<br></code></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ neofetch<br></code></pre></td></tr></table></figure>
-<img src="/images/wsl傻瓜式安装/Arch wsl.jpg" style="width: 800px; height: 500px;">
-
-<h1 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h1><h1 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h1><h1 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h1>]]></content>
-      <categories>
-        <category>Linux</category>
       </categories>
   </entry>
   <entry>
@@ -3530,6 +3480,56 @@ python数据类型
 ]]></content>
       <categories>
         <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Arch wsl的傻瓜式安装 (有手就行)</title>
+    <url>/Arch-Wsl-install.html</url>
+    <content><![CDATA[<p><strong>本人是Arch教徒过来传一下教</strong> </p>
+<img src="/images/wsl傻瓜式安装/Arch教徒.jpg" style="width: 200px; height: 200px;">
+<a id="more"></a>
+
+<h1 id="第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下"><a href="#第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下" class="headerlink" title="第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下"></a>第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下</h1><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux<br></code></pre></td></tr></table></figure>
+<img src="/images/wsl傻瓜式安装/按照提示重启电脑.jpg" style="width: 300px; height: 300px;">
+
+<p><strong>按照提示重启电脑</strong></p>
+<h1 id="第二步-下载文件"><a href="#第二步-下载文件" class="headerlink" title="第二步 下载文件"></a>第二步 下载文件</h1><p><strong>然后下载<a href="https://github.com/yuk7/ArchWSL">Arch WSL</a></strong></p>
+<img src="/images/wsl傻瓜式安装/Arch wsl下载.jpg">
+<br>
+<img src="/images/wsl傻瓜式安装/Arch wsl下载版本.jpg">
+
+<p><strong>那个安装证书是给appx版的arch wsl用的</strong></p>
+<p><strong>你已经安装zip版的</strong></p>
+<p><strong>没有必要安两次</strong></p>
+<p><strong>只用需要用到zip</strong></p>
+<h1 id="第三步-配置Arch-Wsl"><a href="#第三步-配置Arch-Wsl" class="headerlink" title="第三步 配置Arch Wsl"></a>第三步 配置Arch Wsl</h1><img src="/images/wsl傻瓜式安装/Arch wsl配置.jpg" style="width: 800px; height: 500px;">
+
+<p><strong>反正按照我这个改，保存是ctrl + x 回车</strong></p>
+<h1 id="第四步-配置相关参数"><a href="#第四步-配置相关参数" class="headerlink" title="第四步 配置相关参数"></a>第四步 配置相关参数</h1><p><strong>这里会提示配置  按照我的方法配置</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ Arch.exe//这个是启动后的显示<br>[root@PC-NAME user]<span class="hljs-comment"># passwd       //这个是用户名输完名字输密码</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ Arch.exe<br>[root@PC-NAME]<span class="hljs-comment"># EDITOR=nano visudo</span><br>    %wheel      ALL=(ALL) ALL<br>    (setup sudoers file.)<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ [root@PC-NAME]<span class="hljs-comment"># useradd -m -G wheel -s /bin/bash &#123;username&#125;</span><br>(add user)<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ [root@PC-NAME user]<span class="hljs-comment"># passwd &#123;username&#125;      //&#123;&#125;换成你的用户名,记住不需要打&#123;&#125;</span><br>(<span class="hljs-built_in">set</span> default user password)<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ [root@PC-NAME user]<span class="hljs-comment"># exit  //退出</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ Arch.exe config --default-user &#123;username&#125;<br>    (setting to default user)     //现在是root用户,不用加sudo<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ sudo pacman-key --init<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ [user@PC-NAME]$ sudo pacman-key --init<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ [root@PC-NAME]$ sudo pacman-key --populate<br></code></pre></td></tr></table></figure>
+<h1 id="第五步-安装完后操作"><a href="#第五步-安装完后操作" class="headerlink" title="第五步 安装完后操作"></a>第五步 安装完后操作</h1><p><strong>下面是<a href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/">换源</a></strong></p>
+<p><strong>打开nano /etc/pacman.d/mirrorlist 然后再最顶端添加 切记去##</strong></p>
+<img src="/images/wsl傻瓜式安装/Arch wsl配置文件.jpg" style="width: 800px; height: 500px;">
+<br>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ Server = https:mirrors.tuna.tsinghua.edu.cn/archlinux/<span class="hljs-variable">$repo</span>/os/<span class="hljs-variable">$arch</span><br></code></pre></td></tr></table></figure>
+**然后就可以 更新软件包缓存**
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ sudo pacman -Syy<br></code></pre></td></tr></table></figure>
+<h1 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h1><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ pacman -S neofetch<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ neofetch<br></code></pre></td></tr></table></figure>
+<img src="/images/wsl傻瓜式安装/Arch wsl.jpg" style="width: 800px; height: 500px;">
+
+<h1 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h1><h1 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h1><h1 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h1>]]></content>
+      <categories>
+        <category>Linux</category>
       </categories>
   </entry>
   <entry>
@@ -4135,6 +4135,47 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
       </categories>
   </entry>
   <entry>
+    <title>小程序 组键(快速入门)</title>
+    <url>/Applet-assembly.html</url>
+    <content><![CDATA[<p><strong>小程序学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="基础组键"><a href="#基础组键" class="headerlink" title="基础组键"></a><a href="https://weui.io/">基础组键</a></h1><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs wxml">&lt;view class&#x3D;&quot;container&quot;&gt;<br>&lt;!-- type 用于定义图标类型 只能规定范围的类型 除了这些其他用图片 --&gt;<br>&lt;icon type&#x3D;&quot;success_no_circle&quot;&gt;&lt;&#x2F;inco&gt;<br>&lt;&#x2F;view&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="基础内容组键"><a href="#基础内容组键" class="headerlink" title="基础内容组键"></a>基础内容组键</h2><ul>
+<li><a href="https://weui.io/#article">Article</a></li>
+<li><a href="https://weui.io/#badge">Badge</a></li>
+<li><a href="https://weui.io/#flex">Flex</a></li>
+<li><a href="https://weui.io/#footer">Footer</a></li>
+<li><a href="https://weui.io/#gallery">Gallery</a></li>
+<li><a href="https://weui.io/#grid">Grid</a></li>
+<li><a href="https://weui.io/#lcons">lcons</a></li>
+<li><a href="https://weui.io/#loading">Loading</a></li>
+<li><a href="https://weui.io/#panel">Panel</a></li>
+<li><a href="https://weui.io/#preview">Preview</a></li>
+<li><a href="https://weui.io/#progress">Progress</a></li>
+</ul>
+<h2 id="表单组键"><a href="#表单组键" class="headerlink" title="表单组键"></a>表单组键</h2><ul>
+<li><a href="https://weui.io/#button">Button</a></li>
+<li><a href="https://weui.io/#form">Form</a></li>
+<li><a href="https://weui.io/#list">List</a></li>
+<li><a href="https://weui.io/#slider">Slider</a></li>
+<li><a href="https://weui.io/#uploader">Uploader</a></li>
+</ul>
+<h2 id="操作反馈组件"><a href="#操作反馈组件" class="headerlink" title="操作反馈组件"></a>操作反馈组件</h2><ul>
+<li><a href="https://weui.io/#actionsheet">Actionsheet</a></li>
+<li><a href="https://weui.io/#dialog">Dialog</a></li>
+<li><a href="https://weui.io/#half-screen-dialog">Halt-screen Dialog</a></li>
+<li><a href="https://weui.io/#msg">Msg</a></li>
+<li><a href="https://weui.io/#picker">Picker</a></li>
+<li><a href="https://weui.io/#toast">Toast</a></li>
+<li><a href="https://weui.io/#top-tips">TopTips</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>小程序开发</category>
+      </categories>
+  </entry>
+  <entry>
     <title>小程序 全局配置文件</title>
     <url>/Applet-Global-profile.html</url>
     <content><![CDATA[<p><strong>小程序学习笔记</strong></p>
@@ -4284,47 +4325,6 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
 <td align="left"></td>
 </tr>
 </tbody></table>
-]]></content>
-      <categories>
-        <category>小程序开发</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>小程序 组键(快速入门)</title>
-    <url>/Applet-assembly.html</url>
-    <content><![CDATA[<p><strong>小程序学习笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="基础组键"><a href="#基础组键" class="headerlink" title="基础组键"></a><a href="https://weui.io/">基础组键</a></h1><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs wxml">&lt;view class&#x3D;&quot;container&quot;&gt;<br>&lt;!-- type 用于定义图标类型 只能规定范围的类型 除了这些其他用图片 --&gt;<br>&lt;icon type&#x3D;&quot;success_no_circle&quot;&gt;&lt;&#x2F;inco&gt;<br>&lt;&#x2F;view&gt;<br></code></pre></td></tr></table></figure>
-<h2 id="基础内容组键"><a href="#基础内容组键" class="headerlink" title="基础内容组键"></a>基础内容组键</h2><ul>
-<li><a href="https://weui.io/#article">Article</a></li>
-<li><a href="https://weui.io/#badge">Badge</a></li>
-<li><a href="https://weui.io/#flex">Flex</a></li>
-<li><a href="https://weui.io/#footer">Footer</a></li>
-<li><a href="https://weui.io/#gallery">Gallery</a></li>
-<li><a href="https://weui.io/#grid">Grid</a></li>
-<li><a href="https://weui.io/#lcons">lcons</a></li>
-<li><a href="https://weui.io/#loading">Loading</a></li>
-<li><a href="https://weui.io/#panel">Panel</a></li>
-<li><a href="https://weui.io/#preview">Preview</a></li>
-<li><a href="https://weui.io/#progress">Progress</a></li>
-</ul>
-<h2 id="表单组键"><a href="#表单组键" class="headerlink" title="表单组键"></a>表单组键</h2><ul>
-<li><a href="https://weui.io/#button">Button</a></li>
-<li><a href="https://weui.io/#form">Form</a></li>
-<li><a href="https://weui.io/#list">List</a></li>
-<li><a href="https://weui.io/#slider">Slider</a></li>
-<li><a href="https://weui.io/#uploader">Uploader</a></li>
-</ul>
-<h2 id="操作反馈组件"><a href="#操作反馈组件" class="headerlink" title="操作反馈组件"></a>操作反馈组件</h2><ul>
-<li><a href="https://weui.io/#actionsheet">Actionsheet</a></li>
-<li><a href="https://weui.io/#dialog">Dialog</a></li>
-<li><a href="https://weui.io/#half-screen-dialog">Halt-screen Dialog</a></li>
-<li><a href="https://weui.io/#msg">Msg</a></li>
-<li><a href="https://weui.io/#picker">Picker</a></li>
-<li><a href="https://weui.io/#toast">Toast</a></li>
-<li><a href="https://weui.io/#top-tips">TopTips</a></li>
-</ul>
 ]]></content>
       <categories>
         <category>小程序开发</category>
@@ -6257,28 +6257,6 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
       </categories>
   </entry>
   <entry>
-    <title>百度搜索技巧</title>
-    <url>/baidu.html</url>
-    <content><![CDATA[<p><strong>技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="精确匹配"><a href="#精确匹配" class="headerlink" title="精确匹配"></a>精确匹配</h1><p>搜索关键字加” “就行了 用法: “史迪奇”</p>
-<h1 id="消除无关性"><a href="#消除无关性" class="headerlink" title="消除无关性"></a>消除无关性</h1><p>搜索关键字加(-)就行了 用法: (-史迪奇)</p>
-<h1 id="并行搜索"><a href="#并行搜索" class="headerlink" title="并行搜索"></a>并行搜索</h1><p>搜索关键字加(|)就行了 用法: (史迪奇|史迪仔)</p>
-<h1 id="搜索范围限定在网页标题中"><a href="#搜索范围限定在网页标题中" class="headerlink" title="搜索范围限定在网页标题中"></a>搜索范围限定在网页标题中</h1><p>搜索关键字加intitle:就行了 用法: intitle:史迪奇</p>
-<h1 id="搜索范围限定在特定站点中"><a href="#搜索范围限定在特定站点中" class="headerlink" title="搜索范围限定在特定站点中"></a>搜索范围限定在特定站点中</h1><p>知道站点的前提下 site:站点域名就行了不要带http: 用法: intitle:<a href="https://sdq3.gitee.io/baidu.html">https://sdq3.gitee.io/baidu.html</a></p>
-<h1 id="搜索范围限定在url链接"><a href="#搜索范围限定在url链接" class="headerlink" title="搜索范围限定在url链接"></a>搜索范围限定在url链接</h1><p>搜索关键字加inurl: 就行了 用法:史迪奇 inurl:小怪物</p>
-<h1 id="特定格式的文档检索"><a href="#特定格式的文档检索" class="headerlink" title="特定格式的文档检索"></a>特定格式的文档检索</h1><p>搜索关键字加filetype: 就行了   用法:filetype:PDF 如PDF、DOC、XLS等</p>
-<h1 id="精确匹配-电影-小说"><a href="#精确匹配-电影-小说" class="headerlink" title="精确匹配 电影 小说"></a>精确匹配 电影 小说</h1><p>搜索关键字加&lt;&gt;就行了 用法: &lt;史迪奇&gt;</p>
-<h1 id="开始连接和正在连接"><a href="#开始连接和正在连接" class="headerlink" title="开始连接和正在连接"></a>开始连接和正在连接</h1><p>搜索关键字加(开始连接|正在连接)就行了  用法: 星际宝贝(开始连接|正在连接)</p>
-<h1 id="计算器功能"><a href="#计算器功能" class="headerlink" title="计算器功能"></a>计算器功能</h1><p>搜索关键字加数字加减就行了  用法: 史迪奇*3-2+1</p>
-<h1 id="仅搜索网站标题"><a href="#仅搜索网站标题" class="headerlink" title="仅搜索网站标题"></a>仅搜索网站标题</h1><p>搜索关键字加t:就行了 用法: t:史迪奇</p>
-<h1 id="仅搜索网站的网址"><a href="#仅搜索网站的网址" class="headerlink" title="仅搜索网站的网址"></a>仅搜索网站的网址</h1><p>搜索关键字加u:就行了 用法: u:sdq3.gitee.io</p>
-<h1 id="关键字都必须包含"><a href="#关键字都必须包含" class="headerlink" title="关键字都必须包含"></a>关键字都必须包含</h1><p>搜索关键字加 +就行了 用法: 史迪奇 +史迪仔 +是个人</p>
-<h1 id="减去想要去除的关键词"><a href="#减去想要去除的关键词" class="headerlink" title="减去想要去除的关键词"></a>减去想要去除的关键词</h1><p>搜索关键字加 -就行了 用法: 史迪奇 -不是个人</p>
-]]></content>
-  </entry>
-  <entry>
     <title>电脑刷BIOS(保姆级教程)</title>
     <url>/BOIS.html</url>
     <content><![CDATA[<p><strong>电脑刷BIOS简单到不能再简单</strong></p>
@@ -6309,6 +6287,28 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 <figure class="highlight ebnf"><table><tr><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">flashme</span><br></code></pre></td></tr></table></figure>
 <p><img src="/images/%E5%88%B7BIOS/%E5%88%B7BIOS.jpg"></p>
 <h3 id="神州SL7D3-神州SL7S3-神州SL7S4用的BIOS"><a href="#神州SL7D3-神州SL7S3-神州SL7S4用的BIOS" class="headerlink" title="神州SL7D3 神州SL7S3 神州SL7S4用的BIOS"></a>神州SL7D3 神州SL7S3 神州SL7S4<a href="https://wwr.lanzoui.com/iFiRVs7ehij">用的BIOS</a></h3>]]></content>
+  </entry>
+  <entry>
+    <title>百度搜索技巧</title>
+    <url>/baidu.html</url>
+    <content><![CDATA[<p><strong>技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="精确匹配"><a href="#精确匹配" class="headerlink" title="精确匹配"></a>精确匹配</h1><p>搜索关键字加” “就行了 用法: “史迪奇”</p>
+<h1 id="消除无关性"><a href="#消除无关性" class="headerlink" title="消除无关性"></a>消除无关性</h1><p>搜索关键字加(-)就行了 用法: (-史迪奇)</p>
+<h1 id="并行搜索"><a href="#并行搜索" class="headerlink" title="并行搜索"></a>并行搜索</h1><p>搜索关键字加(|)就行了 用法: (史迪奇|史迪仔)</p>
+<h1 id="搜索范围限定在网页标题中"><a href="#搜索范围限定在网页标题中" class="headerlink" title="搜索范围限定在网页标题中"></a>搜索范围限定在网页标题中</h1><p>搜索关键字加intitle:就行了 用法: intitle:史迪奇</p>
+<h1 id="搜索范围限定在特定站点中"><a href="#搜索范围限定在特定站点中" class="headerlink" title="搜索范围限定在特定站点中"></a>搜索范围限定在特定站点中</h1><p>知道站点的前提下 site:站点域名就行了不要带http: 用法: intitle:<a href="https://sdq3.gitee.io/baidu.html">https://sdq3.gitee.io/baidu.html</a></p>
+<h1 id="搜索范围限定在url链接"><a href="#搜索范围限定在url链接" class="headerlink" title="搜索范围限定在url链接"></a>搜索范围限定在url链接</h1><p>搜索关键字加inurl: 就行了 用法:史迪奇 inurl:小怪物</p>
+<h1 id="特定格式的文档检索"><a href="#特定格式的文档检索" class="headerlink" title="特定格式的文档检索"></a>特定格式的文档检索</h1><p>搜索关键字加filetype: 就行了   用法:filetype:PDF 如PDF、DOC、XLS等</p>
+<h1 id="精确匹配-电影-小说"><a href="#精确匹配-电影-小说" class="headerlink" title="精确匹配 电影 小说"></a>精确匹配 电影 小说</h1><p>搜索关键字加&lt;&gt;就行了 用法: &lt;史迪奇&gt;</p>
+<h1 id="开始连接和正在连接"><a href="#开始连接和正在连接" class="headerlink" title="开始连接和正在连接"></a>开始连接和正在连接</h1><p>搜索关键字加(开始连接|正在连接)就行了  用法: 星际宝贝(开始连接|正在连接)</p>
+<h1 id="计算器功能"><a href="#计算器功能" class="headerlink" title="计算器功能"></a>计算器功能</h1><p>搜索关键字加数字加减就行了  用法: 史迪奇*3-2+1</p>
+<h1 id="仅搜索网站标题"><a href="#仅搜索网站标题" class="headerlink" title="仅搜索网站标题"></a>仅搜索网站标题</h1><p>搜索关键字加t:就行了 用法: t:史迪奇</p>
+<h1 id="仅搜索网站的网址"><a href="#仅搜索网站的网址" class="headerlink" title="仅搜索网站的网址"></a>仅搜索网站的网址</h1><p>搜索关键字加u:就行了 用法: u:sdq3.gitee.io</p>
+<h1 id="关键字都必须包含"><a href="#关键字都必须包含" class="headerlink" title="关键字都必须包含"></a>关键字都必须包含</h1><p>搜索关键字加 +就行了 用法: 史迪奇 +史迪仔 +是个人</p>
+<h1 id="减去想要去除的关键词"><a href="#减去想要去除的关键词" class="headerlink" title="减去想要去除的关键词"></a>减去想要去除的关键词</h1><p>搜索关键字加 -就行了 用法: 史迪奇 -不是个人</p>
+]]></content>
   </entry>
   <entry>
     <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
