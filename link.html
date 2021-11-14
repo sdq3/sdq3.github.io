@@ -923,7 +923,20 @@ var $main = document.querySelector('.main');
 		align-items: center;
 	}
 
-	@media screen and (max-height:87.5rem) and (min-height:47.9375rem)   {
+	@media screen and (max-width:69.4375rem) and (min-width:47.876rem)   {
+		.words {
+			width: 45%;
+		}
+	}
+
+	@media screen and (max-width:47.875rem) and (min-width:0rem){
+		.words {
+			width: 93%;
+		}
+
+	}
+
+	/* @media screen and (max-height:87.5rem) and (min-height:47.9375rem)   {
 		.words {
 			width: 45%;
 		}
@@ -934,8 +947,7 @@ var $main = document.querySelector('.main');
 			width: 93%;
 		}
 
-	}
-
+	} */
 
 
 	a:hover:after{opacity:0}
