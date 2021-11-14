@@ -923,7 +923,24 @@ var $main = document.querySelector('.main');
 		align-items: center;
 	}
 
-	@media screen and (max-width:1388.75px) and (min-width:957.52px)   {
+/* rem width */
+
+	@media screen and (max-width:69.4375rem) and (min-width:47.876rem)   {
+		.words {
+			width: 45%;
+		}
+	}
+
+	@media screen and (max-width:47.875rem) and (min-width:0rem){
+		.words {
+			width: 93%;
+		}
+
+	}
+
+/* px width */
+
+	/* @media screen and (max-width:1388.75px) and (min-width:957.52px)   {
 		.words {
 			width: 45%;
 		}
@@ -934,7 +951,9 @@ var $main = document.querySelector('.main');
 			width: 93%;
 		}
 
-	}
+	} */
+
+/* rem height */
 
 	/* @media screen and (max-height:87.5rem) and (min-height:47.9375rem)   {
 		.words {
@@ -949,6 +968,20 @@ var $main = document.querySelector('.main');
 
 	} */
 
+/* px height */
+
+	/* @media screen and (max-height:87.5rem) and (min-height:47.9375rem)   {
+		.words {
+			width: 45%;
+		}
+	}
+
+	@media screen and (min-height:47.9374rem) and (min-height:0rem){
+		.words {
+			width: 93%;
+		}
+
+	} */
 
 	a:hover:after{opacity:0}
 </style>
