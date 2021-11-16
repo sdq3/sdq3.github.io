@@ -984,6 +984,8 @@ var $main = document.querySelector('.main');
 </ul>
 </li>
 </ul>
+<br>
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 获取当前所有的标签页的句柄构成的列表</span><br>current_windows = browser.window_handles<br><br><span class="hljs-comment"># 根据标签页句柄列表索引下标进行切换</span><br>browser.switch_to.window(current_windous[<span class="hljs-number">0</span>])<br></code></pre></td></tr></table></figure>
 <h1 id="窗口切换"><a href="#窗口切换" class="headerlink" title="窗口切换"></a>窗口切换</h1><p><strong>ifame是html中常用的一种技术, 即一个页面嵌套</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 操作frame外边的元素需要切换出去</span><br>Windows = browser.window_handles<br>browser.switch_to.window(windows[<span class="hljs-number">0</span>])<br>content = browser.find_element_by_class_name().text<br><span class="hljs-built_in">print</span>(content)<br>browser.quit()<br></code></pre></td></tr></table></figure>
@@ -992,6 +994,11 @@ var $main = document.querySelector('.main');
 <h1 id="无界面模式"><a href="#无界面模式" class="headerlink" title="无界面模式"></a>无界面模式</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 实例化配置对象</span><br>options = webdriver.ChromeOptions()<br><br><span class="hljs-comment"># 配置对象添加开启无界面模式的命令</span><br>options.add_argument(<span class="hljs-string">&quot;--headless&quot;</span>)<br><br><span class="hljs-comment"># 配置对象添加禁用gpu的命令</span><br>options.add_argument(<span class="hljs-string">&quot;--disable-gpu&quot;</span>)<br><br><span class="hljs-comment"># 实例化带有配置对象的browser对象</span><br>browser = webdriver.Chrome(chrome_options=options)<br></code></pre></td></tr></table></figure>
 <h1 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 实例化配置对象</span><br>options = webdriver.ChromeOptions()<br><br><span class="hljs-comment"># 配置对象添加使用代理ip的命令</span><br>options.add_argument(<span class="hljs-string">&quot;--proxy-server=http://202.20.16.82:9527&quot;</span>)<br><br><span class="hljs-comment"># 配置对象添加禁用gpu的命令</span><br>options.add_argument(<span class="hljs-string">&quot;--disable-gpu&quot;</span>)<br><br><span class="hljs-comment"># 实例化带有配置对象的browser对象</span><br>browser = webdriver.Chrome(<span class="hljs-string">&#x27;./chromedriver&#x27;</span>,chome_options=options)<br></code></pre></td></tr></table></figure>
 <h1 id="替换user-agent-上网设备"><a href="#替换user-agent-上网设备" class="headerlink" title="替换user-agent(上网设备)"></a>替换user-agent(上网设备)</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 实例化配置对象</span><br>options = webdriver.ChromeOptions()<br><br><span class="hljs-comment"># 配置对象添加使用代理ip的命令</span><br>options.add_argument(<span class="hljs-string">&quot;--user-agent=Mozilla/5.0 HAHA&quot;</span>)<br><br><span class="hljs-comment"># 配置对象添加禁用gpu的命令</span><br>options.add_argument(<span class="hljs-string">&quot;--disable-gpu&quot;</span>)<br><br><span class="hljs-comment"># 实例化带有配置对象的browser对象</span><br>browser = webdriver.Chrome(<span class="hljs-string">&#x27;./chromedriver&#x27;</span>,chome_options=options)<br></code></pre></td></tr></table></figure>
+<br>
+
+<br>
+
+<br>
 			  </article>
 		</div>
 		
@@ -1437,16 +1444,16 @@ var myPlaylist = new jPlayerPlaylist({
   	volume: .14
 });
 var latest = [{
-    title: "默",
-    artist: "那英",
-    mp3: "http://music.163.com/song/media/outer/url?id=31473269.mp3 ",
-    poster: "http://p1.music.126.net/OCGt5ln0lPPtPbVJ3VEKtA==/109951163020570422.jpg?param=130y130"
+    title: "群星-【管弦乐版】再飞行",
+    artist: "Passkou",
+    mp3: "http://music.163.com/song/media/outer/url?id=1855460819.mp3",
+    poster: "https://p1.music.126.net/q0GvJjnTg7_zivL5AhdcTw==/109951166131556349.jpg?param=200y200"
 }];
 var spirit = [{
-    title: "M19+20",
-    artist: "梶浦由記",
-    mp3: "http://music.163.com/song/media/outer/url?id=591753.mp3 ",
-    poster: "http://p1.music.126.net/lW4YKD6cMgm32nI66CzWVg==/5702067301704441.jpg?param=130y130"
+    title: "星游记的光暗mix",
+    artist: "逃跑计划",
+    mp3: "http://music.163.com/song/media/outer/url?id=498188351.mp3",
+    poster: "http://p1.music.126.net/_zQow97RImuouvgy0ur9xw==/109951166111971604.jpg?param=130y130"
 }];
 	
 }
