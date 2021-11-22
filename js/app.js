@@ -20,6 +20,7 @@ $(window).on("load", function () {
 	
 	//加载中延迟...................
 	$("#sdq").delay(1000).addClass("wrapShow");
+	$("#sdq").css('display','block');
 	
 	
 	
