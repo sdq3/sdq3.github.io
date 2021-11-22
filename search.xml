@@ -1012,6 +1012,403 @@ $</style>
       </categories>
   </entry>
   <entry>
+    <title>C语 数据类型 运算符 表达式</title>
+    <url>/C-type-operator-operator.html</url>
+    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="C语-数据类型"><a href="#C语-数据类型" class="headerlink" title="C语 数据类型"></a>C语 数据类型</h1><ol>
+<li><p>基本数据类型: 整型 实型(又称浮点型) 字符型 三种</p>
+</li>
+<li><p>构造类型: 数组类型 结构体类型 检举类型 联合类型</p>
+</li>
+<li><p>指针类型: 指针是一种特殊的, 同时又是具有重要作用的数据类型, 其值用来表示某个变量在内存中的地址</p>
+</li>
+<li><p>空类型: 空类型 void用来声明函数的返回值类型为空(既不需要函数的返回值)</p>
+</li>
+</ol>
+<div class="mermaid">
+    graph LR
+    A[" 数据类型 "]-->B[" 基本类型 "] 
+    B[" 基本类型 "]-->U[" 整型 "]
+    B[" 基本类型 "]-->D[" 字符型 "]
+    B[" 基本类型 "]-->E[" 实型(浮点型) "]
+    A[" 数据类型 "]-->F[" 构造类型 "] 
+    F[" 构造类型 "]-->G[" 数组类型 "]
+    F[" 构造类型 "]-->H[" 结构体类型 "]
+    F[" 构造类型 "]-->I[" 共有类型 "]
+    F[" 构造类型 "]-->J[" 检举类型 "]
+    A[" 数据类型 "]-->K[" 指针类型 "] 
+    A[" 数据类型 "]-->L[" 空类型 "] 
+</div>
+
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+
+<h3 id="整型有-基本整型-短整型-长整型-无符号整型-无符号短整型-无符号长整型"><a href="#整型有-基本整型-短整型-长整型-无符号整型-无符号短整型-无符号长整型" class="headerlink" title="整型有 基本整型 短整型 长整型 无符号整型 无符号短整型 无符号长整型"></a>整型有 基本整型 短整型 长整型 无符号整型 无符号短整型 无符号长整型</h3><h3 id="实型-又称浮点型-有-单精度实型-双精度实型"><a href="#实型-又称浮点型-有-单精度实型-双精度实型" class="headerlink" title="实型(又称浮点型)有 单精度实型 双精度实型"></a>实型(又称浮点型)有 单精度实型 双精度实型</h3><br>
+
+<table>
+<thead>
+<tr>
+<th align="center">类型关键字</th>
+<th align="center">长度/字节</th>
+<th align="center">取值范围</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">int</td>
+<td align="center">2</td>
+<td align="center">-32 768~32 767</td>
+<td align="center">有符号的基本整型</td>
+</tr>
+<tr>
+<td align="center">unsigned</td>
+<td align="center">2</td>
+<td align="center">0~65 535</td>
+<td align="center">无符号的基本整型</td>
+</tr>
+<tr>
+<td align="center">short</td>
+<td align="center">2</td>
+<td align="center">-32 768~32768</td>
+<td align="center">有符号短整型</td>
+</tr>
+<tr>
+<td align="center">unsigned short</td>
+<td align="center">2</td>
+<td align="center">0~65 535</td>
+<td align="center">无符号短整型</td>
+</tr>
+<tr>
+<td align="center">long</td>
+<td align="center">4</td>
+<td align="center">-2 147 383 648~2 147 383 648</td>
+<td align="center">有符号长整型</td>
+</tr>
+<tr>
+<td align="center">unsigned long</td>
+<td align="center">4</td>
+<td align="center">0~4 294 967 295</td>
+<td align="center">无符号长整型</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">4</td>
+<td align="center">-3.4×10³⁸~3.4×10³⁸</td>
+<td align="center">单精度实型</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">8</td>
+<td align="center">-1.7×10³⁰⁸~1.7×10³⁰⁸</td>
+<td align="center">双精度实型</td>
+</tr>
+<tr>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">0~255</td>
+<td align="center">字符型</td>
+</tr>
+</tbody></table>
+<br>
+
+<h1 id="常量与变量"><a href="#常量与变量" class="headerlink" title="常量与变量"></a>常量与变量</h1><h4>整型常量</h4>
+
+<ul>
+<li><p>十进制整数: 由数字1<del>9开头, 其余各位由0</del>9组成</p>
+</li>
+<li><p>八进制整数: 由数字0开头, 其余各位由0~7组成, 在书写时要加前缀 0 (零)</p>
+</li>
+<li><p>十六进制整数: 由数字 0x 或者 0X 开头, 其余各位由0<del>9与字母a</del>f (0X 开头为A~F)组成, 在书写时要加前缀 0x 或者 0X</p>
+</li>
+</ul>
+<h4>实型常量</h4>
+
+<ul>
+<li><p>十进制整数: 由数字和小数点组成 (注意必须加小数点)</p>
+</li>
+<li><p>指数型势: 用带指数记数法来表示 123E2 或 123e2 都代表 123x10²</p>
+</li>
+</ul>
+<h4>字符型常量</h4>
+
+<ul>
+<li><p>字符常量: 一对单引号括起来的单个字符 包括字符和字符之间的空格</p>
+</li>
+<li><p>字符串常量: 一对双引号括起来的字符序列 包括字符(字符串)和字符(字符串)之间的空格</p>
+</li>
+<li><p>字符串中字符的格式代表字符串的长度 长度为0的字符串(即一个字符都没有的字符串)称作: 空串</p>
+</li>
+</ul>
+<p><strong>C语言规定: 在储存字符串常量时, 由系统在字符串末尾自动添加一个 \0 作为字符串的结束标志</strong></p>
+<br>
+
+<table>
+<thead>
+<tr>
+<th align="center">s</th>
+<th align="center">d</th>
+<th align="center">q</th>
+<th align="center">\0</th>
+</tr>
+</thead>
+</table>
+<!-- <table>
+   <tr align="center">
+     <th>s</th>
+     <th>d</th>
+     <th>q</th>
+     <th>\0</th>
+   </tr>
+</table>  -->
+
+<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><ul>
+<li><p>概念: 在程序运行过程中其值可以改变的量称为变量 变量要有变量名, 在内存中占有一定的存储单元, 储存单元存放的是该变量的值 所以每个变量要有 变量名 和 变量值 两要素</p>
+</li>
+<li><p>变量名: 每个变量都必须有一个变量名, 变量命名遵守标识符命名规则, 变量名应取见名知意</p>
+</li>
+<li><p>变量值: 在程序运行过程中, 变量值储存在内存中, 不同类型的变量占用的内存单元(字节)数不同 在程序中, 通过变量名来引用变量的值</p>
+</li>
+<li><p>总体概况: 变量名实际上是一个符合的地址, 在对程序编译连接时由系统给每一个变量名分配一个内存地址 在程序中从变量中取值, 实际上是通过变量名找到相应的内存地址, 从其储存单元中读取数据</p>
+</li>
+</ul>
+<h3 id="整体变量"><a href="#整体变量" class="headerlink" title="整体变量"></a>整体变量</h3><h5>整体变量的分类: </h5>
+
+<ul>
+<li><p>整型变量分四类:</p>
+<ul>
+<li><p>基本整型(int)</p>
+</li>
+<li><p>短整型(short[int])</p>
+</li>
+<li><p>长整型(long[int])</p>
+</li>
+<li><p>无符号整型</p>
+<ul>
+<li><p>无符号整型(unsigned[int]) 只能用来储存无符号整数</p>
+</li>
+<li><p>无符号短整型(unsigned short) 只能用来储存无符号整数</p>
+</li>
+<li><p>无符号长整型(unsigned long ) 只能用来储存无符号整数</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5>整体变量在内存中占用的内存字节数和值域: </h5>
+
+<ul>
+<li><p>16位操作系统 int占2个字节</p>
+</li>
+<li><p>32位操作系统 int占4个字节</p>
+</li>
+<li><p>long型 ≥ int型 ≥ short型 </p>
+</li>
+</ul>
+<h5>整形变量的定义</h5>
+
+<ul>
+<li>先定义, 后使用</li>
+</ul>
+<h3 id="实型-浮点型-变量"><a href="#实型-浮点型-变量" class="headerlink" title="实型(浮点型)变量"></a>实型(浮点型)变量</h3><ul>
+<li><p>单精度型: 类型关键字为float, 一般占4个字节(32位), 携带7个有效数字</p>
+</li>
+<li><p>双精度型: 类型关键字为double, 一般占8个字节(32位), 提供15个有效数字</p>
+</li>
+</ul>
+<h3 id="字符变量"><a href="#字符变量" class="headerlink" title="字符变量"></a>字符变量</h3><ul>
+<li>字符型: 类型关键字为char, 一般占1个字节内存单元</li>
+</ul>
+<h1 id="变量赋初值"><a href="#变量赋初值" class="headerlink" title="变量赋初值"></a>变量赋初值</h1><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">变量类型 变量名 = 值<br></code></pre></td></tr></table></figure>
+<h1 id="各类数值型数据间混合运算"><a href="#各类数值型数据间混合运算" class="headerlink" title="各类数值型数据间混合运算"></a>各类数值型数据间混合运算</h1><div class="mermaid">
+graph TB
+    A[" 低 "]-->B[" 高 "]
+    C[" float "]-->D[" double "]
+    E[" long "]-->D[" double "]
+    F[" unsigned "]-->E[" long "]
+    G[" int "]-->F[" unsigned "]
+    H[" char "]-->G[" int "]
+    I[" short "]-->G[" int "]
+</div>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+]]></content>
+      <categories>
+        <category>C语</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>C语 程序结构</title>
+    <url>/C-main().html</url>
+    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="总体结构"><a href="#总体结构" class="headerlink" title="总体结构"></a>总体结构</h1><ul>
+<li>一个完整的C语言程序是由一个且<font color="#FA8072">只能有一个 main() 函数 (又称主要函数)</font> 和 若干个其他函数结合而成, 或仅由一个 main() 构成</li>
+</ul>
+<h1 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h1><ul>
+<li><p><font color="#FA8072">函数</font>是C语言的<font color="#FA8072">基本单位</font>, 所有的C语言程序都是由一个 mian() 函数或一个 mian() 函数与多个其它函数构成的 mian() 函数的作用相当于其他高级语言的<font color="#FA8072">主程序</font> 其他函数的作用相当于子程序</p>
+</li>
+<li><p><font color="#FA8072">函数</font>一般包括数据的定义部分和执行部分 <font color="#FA8072">数据定义部分 (也称声明部分)</font>用于定义程序用到的所有<font color="#FA8072">变量的名字和变量类型</font>, 并可以对变量指定初值 执行部分用于完成程序所规定的各项操作</p>
+</li>
+<li><p>C语言程序总是从 mian() 函数开始执行 一个C语言开始执行 一个C语言程序总是从 mian() 函数开始执行, 而不论其在程序中位置如何 主函数执行完毕, 亦即程序执行完毕 习惯上将主函数  mian() 放在最前头</p>
+</li>
+</ul>
+<h1 id="函数的一般结构"><a href="#函数的一般结构" class="headerlink" title="函数的一般结构"></a>函数的一般结构</h1><ul>
+<li>任何函数(包括主函数 main() )都是由函数说明和函数体两部分组成</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">[函数类型] 函数名 (函数参数表)   <span class="hljs-comment">/* 函数说明部分 */</span><br>&#123;<br>    说明语句部分;   <span class="hljs-comment">/* 函数体部分 */</span><br>    执行语句部分；  <span class="hljs-comment">/* 函数体部分 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="语法符号约定"><a href="#语法符号约定" class="headerlink" title="语法符号约定"></a>语法符号约定</h3><ul>
+<li>[…]  方括号表示可选 (既可以指定也可以缺省)</li>
+<li>… 省略号表示前面的项可以重复</li>
+<li>| 表示是两侧的项必选其一 </li>
+</ul>
+<h3 id="函数说明"><a href="#函数说明" class="headerlink" title="函数说明"></a>函数说明</h3><ul>
+<li>由函数类型(可缺省) 函数名和函数参数表 三部分组成</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">数据类型 参数<span class="hljs-number">1</span> [, 数据类型 参数<span class="hljs-number">2</span> .。。]<br></code></pre></td></tr></table></figure>
+<h3 id="函数体"><a href="#函数体" class="headerlink" title="函数体"></a>函数体</h3><ul>
+<li>大括号(必须配对使用)内的说明语句部分和执行【语句部分为函数体</li>
+</ul>
+<h4 id="说明语句部分"><a href="#说明语句部分" class="headerlink" title="说明语句部分"></a>说明语句部分</h4><ul>
+<li>说明语句部分由变量定义, 自定义类型定义, 自定义函数说明, 外部变量说明等部分组成, 其中变量定义是主要的</li>
+</ul>
+<h4 id="执行语句部分"><a href="#执行语句部分" class="headerlink" title="执行语句部分"></a>执行语句部分</h4><ul>
+<li>执行语句部分由若干条执行语句构成</li>
+</ul>
+<h4 id="源程序书写格式"><a href="#源程序书写格式" class="headerlink" title="源程序书写格式"></a>源程序书写格式</h4><ul>
+<li><p>所有语句都必须以分号 “;” 结束, 函数的最后一个语句也不例外</p>
+</li>
+<li><p>程序行的书写格式自由, 即允许一条内写几条语句, 也允许一条语句分成几行写</p>
+</li>
+<li><p>/* 要注释的代码 */ 必须按照注释格式注释</p>
+</li>
+<li><p>注释可以单站一行, 也可以跟在语句的后面, 如果一行写不下, 可另起一行继续写</p>
+</li>
+<li><p>注释中 /* 可以是任意中文 符合  */ 在非中文 环境显示乱码 但是不影响程序的执行</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>C语</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>C语 符号</title>
+    <url>/C-Symbols.html</url>
+    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h1><ul>
+<li><p>只能由英文字母, 数字和下划线构成, 长度 1 ~ 32</p>
+</li>
+<li><p>必须以字母或者下划线开头</p>
+</li>
+<li><p>严格区分<font color="    #FA8072">大</font> <font color="#7bafea">小</font>写</p>
+</li>
+<li><p>不能以 <font color="    #FA8072">关键字</font> 作为标识符</p>
+</li>
+<li><p>由于系统内部使用了一些以下划线开头的标识符, 为了防止冲突建议用户尽量避免使用下划线开头的标识符</p>
+</li>
+<li><p>标识符应该做到 见名知意 用英文或者缩写或者拼音</p>
+</li>
+</ul>
+<h1 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h1><h4>C语言系统定义了32个专用名字</h4>
+
+<div class="mermaid">
+graph LR
+A[" 控制语句关键字 (12个) "]-->B[" break "]
+A[" 控制语句关键字 (12个) "]-->C[" case "]
+A[" 控制语句关键字 (12个) "]-->D[" continue "]
+A[" 控制语句关键字 (12个) "]-->E[" defaulf "]
+A[" 控制语句关键字 (12个) "]-->F[" do "]
+A[" 控制语句关键字 (12个) "]-->G[" break "]
+A[" 控制语句关键字 (12个) "]-->H[" else "]
+A[" 控制语句关键字 (12个) "]-->I[" for "]
+A[" 控制语句关键字 (12个) "]-->J[" goto "]
+A[" 控制语句关键字 (12个) "]-->K[" if "]
+A[" 控制语句关键字 (12个) "]-->L[" return "]
+A[" 控制语句关键字 (12个) "]-->M[" switch "]
+A[" 控制语句关键字 (12个) "]-->N[" while "]
+</div>
+
+<div class="mermaid">
+graph LR
+A[" 数据类型关键字 (12个) "]-->B[" char "]
+A[" 数据类型关键字 (12个) "]-->C[" enum "]
+A[" 数据类型关键字 (12个) "]-->D[" double "]
+A[" 数据类型关键字 (12个) "]-->E[" long "]
+A[" 数据类型关键字 (12个) "]-->F[" float "]
+A[" 数据类型关键字 (12个) "]-->G[" int "]
+A[" 数据类型关键字 (12个) "]-->H[" shoat "]
+A[" 数据类型关键字 (12个) "]-->I[" int "]
+A[" 数据类型关键字 (12个) "]-->J[" short "]
+A[" 数据类型关键字 (12个) "]-->K[" signed "]
+A[" 数据类型关键字 (12个) "]-->L[" stuct "]
+A[" 数据类型关键字 (12个) "]-->M[" unsigned "]
+A[" 数据类型关键字 (12个) "]-->N[" union "]
+A[" 数据类型关键字 (12个) "]-->O[" void "]
+</div>
+
+
+<div class="mermaid">
+graph LR
+A[" 储存类型关键字 (4个) "]-->B[" auto "]
+A[" 储存类型关键字 (4个) "]-->C[" exetern "]
+A[" 储存类型关键字 (4个) "]-->D[" register "]
+A[" 储存类型关键字 (4个) "]-->E[" static "]
+</div>
+
+<div class="mermaid">
+graph LR
+A[" 其它关键字 (4个) "]-->B[" const "]
+A[" 其它关键字 (4个) "]-->C[" sizeof "]
+A[" 其它关键字 (4个) "]-->D[" typedef "]
+A[" 其它关键字 (4个) "]-->E[" volatle "]
+</div>
+]]></content>
+      <categories>
+        <category>C语</category>
+      </categories>
+  </entry>
+  <entry>
     <title>EJS常用标签</title>
     <url>/EJS.html</url>
     <content><![CDATA[<p><strong>EJS个人整理</strong></p>
@@ -1070,21 +1467,6 @@ $</style>
       </categories>
   </entry>
   <entry>
-    <title>Git 知识</title>
-    <url>/Git.html</url>
-    <content><![CDATA[<p><strong>Git学习笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="Git-全局设置"><a href="#Git-全局设置" class="headerlink" title="Git 全局设置"></a>Git 全局设置</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">名称</span><br>git config --global user.name &quot;名称&quot;<br><span class="hljs-meta"># </span><span class="language-bash">邮箱</span><br>git config --global user.email &quot;邮箱&quot;<br></code></pre></td></tr></table></figure>
-
-
-<h2 id="创建-git-仓库"><a href="#创建-git-仓库" class="headerlink" title="创建 git 仓库"></a>创建 git 仓库</h2><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">创建sdq文件夹</span><br>mkdir sdq<br><br><span class="hljs-meta"># </span><span class="language-bash">打开sdq文件夹</span><br>cd sdq<br><br><span class="hljs-meta"># </span><span class="language-bash">初始化</span><br>git init<br><span class="hljs-meta"># </span><span class="language-bash">创建说明文档</span><br>touch README.md<br><br><span class="hljs-meta"># </span><span class="language-bash">添加说明文档</span><br>git add README.md<br><br><span class="hljs-meta"># </span><span class="language-bash">添加说明内容</span><br>git commit -m &quot;史迪奇&quot;<br><br><span class="hljs-meta"># </span><span class="language-bash">关联远程存储库 sdz为存储库名</span><br>git remote add sdz https:#gitee.com/sdq3/web.git<br><br><span class="hljs-meta"># </span><span class="language-bash">开始上传 master分支名称</span><br>git push -u sdz master<br></code></pre></td></tr></table></figure>
-<h1 id="git-分支查看与切换"><a href="#git-分支查看与切换" class="headerlink" title="git 分支查看与切换"></a>git 分支查看与切换</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">查看所有分支</span><br>git branch -a<br><br><span class="hljs-meta"># </span><span class="language-bash">查看当前使用分支(结果列表中前面标*号的表示当前使用分支)</span><br>git branch<br><br><span class="hljs-meta"># </span><span class="language-bash">切换分支</span><br>git checkout [分支名]<br></code></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-  </entry>
-  <entry>
     <title>HTML iframe内联框架</title>
     <url>/HTML-iframe.html</url>
     <content><![CDATA[<p><strong>HTML个人整理</strong></p>
@@ -1097,6 +1479,21 @@ $</style>
 <h1 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;xxx/xxx.html&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>HTML</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Git 知识</title>
+    <url>/Git.html</url>
+    <content><![CDATA[<p><strong>Git学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="Git-全局设置"><a href="#Git-全局设置" class="headerlink" title="Git 全局设置"></a>Git 全局设置</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">名称</span><br>git config --global user.name &quot;名称&quot;<br><span class="hljs-meta"># </span><span class="language-bash">邮箱</span><br>git config --global user.email &quot;邮箱&quot;<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="创建-git-仓库"><a href="#创建-git-仓库" class="headerlink" title="创建 git 仓库"></a>创建 git 仓库</h2><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">创建sdq文件夹</span><br>mkdir sdq<br><br><span class="hljs-meta"># </span><span class="language-bash">打开sdq文件夹</span><br>cd sdq<br><br><span class="hljs-meta"># </span><span class="language-bash">初始化</span><br>git init<br><span class="hljs-meta"># </span><span class="language-bash">创建说明文档</span><br>touch README.md<br><br><span class="hljs-meta"># </span><span class="language-bash">添加说明文档</span><br>git add README.md<br><br><span class="hljs-meta"># </span><span class="language-bash">添加说明内容</span><br>git commit -m &quot;史迪奇&quot;<br><br><span class="hljs-meta"># </span><span class="language-bash">关联远程存储库 sdz为存储库名</span><br>git remote add sdz https:#gitee.com/sdq3/web.git<br><br><span class="hljs-meta"># </span><span class="language-bash">开始上传 master分支名称</span><br>git push -u sdz master<br></code></pre></td></tr></table></figure>
+<h1 id="git-分支查看与切换"><a href="#git-分支查看与切换" class="headerlink" title="git 分支查看与切换"></a>git 分支查看与切换</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">查看所有分支</span><br>git branch -a<br><br><span class="hljs-meta"># </span><span class="language-bash">查看当前使用分支(结果列表中前面标*号的表示当前使用分支)</span><br>git branch<br><br><span class="hljs-meta"># </span><span class="language-bash">切换分支</span><br>git checkout [分支名]<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Git</category>
       </categories>
   </entry>
   <entry>
@@ -1486,94 +1883,6 @@ $</style>
       </categories>
   </entry>
   <entry>
-    <title>Java Swing 图形界面速背表(未完工)</title>
-    <url>/Java-Swing.html</url>
-    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
-<a id="more"></a>
-
-<blockquote>
-<h1 id="JavaSwing-布局管理器"><a href="#JavaSwing-布局管理器" class="headerlink" title="JavaSwing 布局管理器"></a>JavaSwing 布局管理器</h1></blockquote>
-<p>getWigth 得到宽度 或者 控件的高度<br>getHeight 得到高度 或者 控件的宽度<br>root.setLayout(layoutMgr) 给容器设置一个布局器<br>layoutMgr.layoutContainer(…) 当容器改变大小时，自动调用布局器重新布局<br>Perferred Size 指控件最佳大小<br>Dimension 表示尺寸信息 size.width/size.height</p>
-<h1 id="FlowLayout-流式布局"><a href="#FlowLayout-流式布局" class="headerlink" title="FlowLayout (流式布局)"></a>FlowLayout (流式布局)</h1><p>setPreferred Size() 控制每个控件的显示高度和宽度</p>
-<p>GridLayout (网格布局)</p>
-<p>GridBagLayout (网格袋布局)</p>
-<p>BoxLayout (箱式布局)</p>
-<p>GroupLayout (分组布局)</p>
-<p>AFXLayout  (水平布局)</p>
-<h1 id="AfAnyWhere-自由位置布局"><a href="#AfAnyWhere-自由位置布局" class="headerlink" title="AfAnyWhere (自由位置布局)"></a>AfAnyWhere (自由位置布局)</h1><p>new AfMargin(top,left,botton,right)</p>
-<h1 id="CardLayout-卡片布局"><a href="#CardLayout-卡片布局" class="headerlink" title="CardLayout (卡片布局)"></a>CardLayout (卡片布局)</h1><p>CardLayout.show(pane,”name”)</p>
-<h1 id="BorderLayout-边界布局"><a href="#BorderLayout-边界布局" class="headerlink" title="BorderLayout (边界布局)"></a>BorderLayout (边界布局)</h1><p>setPreferrendSize() 对于上下边界调高度，左右边界调宽度<br>PAGE_START 上边界<br>PAGE_END 下边界<br>LINE_START 左边界<br>LINE_END 右边<br>CENTER 中央</p>
-<p>SpringLayout (弹性布局)</p>
-<p>null (绝对布局)</p>
-<blockquote>
-<h1 id="JavaSwing-基本组件"><a href="#JavaSwing-基本组件" class="headerlink" title="JavaSwing 基本组件"></a>JavaSwing 基本组件</h1></blockquote>
-<h1 id="JLabel-标签"><a href="#JLabel-标签" class="headerlink" title="JLabel (标签)"></a>JLabel (标签)</h1><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">$ <span class="hljs-type">JLabel</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;我是JLabel&quot;</span>);<br>$ contenntPane.add(x);<br>$ <span class="hljs-comment">//也可以用一行</span><br>$ contenntPane.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;我是JLabel&quot;</span>);<br></code></pre></td></tr></table></figure>
-<p>JLabel 用于显示短文本或图标<br>setText() 设置文件<br>setFont() 设置字体<br>setForeground() 设置文件颜色<br>setToolTipText() 设置工具提示<br>getText() 取得用户输入</p>
-<h2 id="JButton-按钮"><a href="#JButton-按钮" class="headerlink" title="JButton (按钮)"></a>JButton (按钮)</h2><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">$ <span class="hljs-type">JButton</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JButton</span>(<span class="hljs-string">&quot;我是JButton&quot;</span>);<br>$ contenntPane.add(x);<br>$ <span class="hljs-comment">//也可以用一行</span><br>$ contenntPane.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JButton</span>(<span class="hljs-string">&quot;我是JButton&quot;</span>);<br></code></pre></td></tr></table></figure>
-
-<p>JRadioButton (单选按钮)</p>
-<h1 id="JCheckBox-复选框"><a href="#JCheckBox-复选框" class="headerlink" title="JCheckBox (复选框)"></a>JCheckBox (复选框)</h1><p>getSelected() 选中状态<br>setSelected() 设置<br>getText() 选项文字<br>addActionListener() 用户选中/取消时触发</p>
-<p>JToggleButton (开关按钮)</p>
-<h1 id="JTextField-文本框-或者-单行文本框"><a href="#JTextField-文本框-或者-单行文本框" class="headerlink" title="JTextField (文本框 或者 单行文本框)"></a>JTextField (文本框 或者 单行文本框)</h1><p>JTextField 用于显示单行文本<br>new JTextField(10) 其中,10用于表示列数，用于计算宽度(并不是字数限制)<br>setText() 设置文本<br>getText() 获取文本<br>setFont() 设置字体</p>
-<h1 id="JoptionPane-消息框"><a href="#JoptionPane-消息框" class="headerlink" title="JoptionPane 消息框"></a>JoptionPane 消息框</h1><p>JoptionPane.showMessageDialog() 提示消息框<br>showMessageDialog  简单消息提示<br>showConfirmDialog  简单消息确认<br>showInputDialog  简单数据输入<br>showoptionDialog  简单选择输入<br>Blocked 阻塞<br>JoptionPane.showInputDialog() 提示消息框</p>
-<p>JPasswordField (密码框)</p>
-<h2 id="JTextArea-文本区域-或者-多行文本框"><a href="#JTextArea-文本区域-或者-多行文本框" class="headerlink" title="JTextArea (文本区域 或者 多行文本框)"></a>JTextArea (文本区域 或者 多行文本框)</h2><p>JComboBox (下拉列表框)</p>
-<p>JList (列表框)</p>
-<p>JProgressBar (进度条)</p>
-<p>JSlider (滑块)</p>
-<blockquote>
-<h1 id="JavaSwing-面板组件"><a href="#JavaSwing-面板组件" class="headerlink" title="JavaSwing 面板组件"></a>JavaSwing 面板组件</h1></blockquote>
-<p>JPanel (面板)</p>
-<p>JScrollPane (滚动面板)</p>
-<p>JSplitPane (分隔面板)</p>
-<p>JTabbedPane (选项卡面板)</p>
-<p>JLayeredPane (层级面板)</p>
-<blockquote>
-<h1 id="JavaSwing-其他组件"><a href="#JavaSwing-其他组件" class="headerlink" title="JavaSwing 其他组件"></a>JavaSwing 其他组件</h1></blockquote>
-<p>JFrame (窗口)[一般存放标题]<br>setTitle  (设置标题)</p>
-<p>Container (内容面板)</p>
-<h1 id="setVisible-设置窗口大小-和-setVisble-显示窗口大小"><a href="#setVisible-设置窗口大小-和-setVisble-显示窗口大小" class="headerlink" title="setVisible (设置窗口大小) 和 setVisble(显示窗口大小)"></a>setVisible (设置窗口大小) 和 setVisble(显示窗口大小)</h1><p>setVisible(boolean)方法是用来显示/隐藏GUI组件的。<br>需要显示则使用true，需要隐藏则使用false</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">$ <span class="hljs-title function_">setVisible</span><span class="hljs-params">(<span class="hljs-literal">true</span>)</span>  <span class="hljs-comment">//例如这个</span><br></code></pre></td></tr></table></figure>
-<p>意思是说数据模型已经构造好了，允许JVM可以根据数据模型执行paint方法开始画图并显示到屏幕上了，并不是显示图形，而是可以运行开始画图，要把setVisible()方法放到最后面，代码是按顺序执行的 ，如果把setVisible()放在前边，后边再添加其他组件的时候，有可能不会显示出来</p>
-<p>JDialog, JOptionPane (对话框)</p>
-<p>JFileChooser (文件选择器)</p>
-<p>JColorChooser (颜色选择器)</p>
-<h1 id="JMenuBar-菜单栏"><a href="#JMenuBar-菜单栏" class="headerlink" title="JMenuBar (菜单栏)"></a>JMenuBar (菜单栏)</h1><p>JMenuBar (菜单项)<br>JMenu (菜单)<br>JMenuItem (菜单项)</p>
-<h1 id="JToolBar-工具栏"><a href="#JToolBar-工具栏" class="headerlink" title="JToolBar (工具栏)"></a>JToolBar (工具栏)</h1><p>JButton 工具按钮<br>setIcin() 图标<br>setAction Command() 命令<br>setToolTipText() 提示文字<br>add Action Listener() 事件处理</p>
-<p>JPopupMenu (弹出菜单 或者 上下文菜单 或者 右键菜单)<br>JPopupMenu 创建<br>JMenuItem  添加<br>添加鼠标右键的响应，显示窗口菜单<br>菜单项被点击时，执行事件处理</p>
-<p>JTable (表格)</p>
-<p>JTree (树)</p>
-<p>JInternalFrame (内部窗口)</p>
-<blockquote>
-<h1 id="JavaSwing-相关特性-了解就行"><a href="#JavaSwing-相关特性-了解就行" class="headerlink" title="JavaSwing 相关特性(了解就行)"></a>JavaSwing 相关特性(了解就行)</h1></blockquote>
-<p>组件的位置和尺寸</p>
-<h1 id="组件边框-Border"><a href="#组件边框-Border" class="headerlink" title="组件边框 (Border)"></a>组件边框 (Border)</h1><p>Border本身就是一个接口<br>Padding: 边框与它的内容之间的间距<br>Margin: 边框与它外面的容器之间的间距</p>
-<h1 id="AfBorder-添加边框和边距"><a href="#AfBorder-添加边框和边距" class="headerlink" title="AfBorder 添加边框和边距"></a>AfBorder 添加边框和边距</h1><p>addPadding() 内边距<br>addMargin() 外边距<br>addOuterBorder() 外边添加Border<br>addInnerBorder() 里面添加Border</p>
-<h1 id="AfPanel-用于快速布局"><a href="#AfPanel-用于快速布局" class="headerlink" title="AfPanel 用于快速布局"></a>AfPanel 用于快速布局</h1><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">$ <span class="hljs-type">AfPanel</span> <span class="hljs-variable">p</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">AfPanel</span>();<br>$ p.padding();  <span class="hljs-comment">//设置内边距</span><br>$ p.margin();  <span class="hljs-comment">//设置外边距</span><br>$ p.preferredWidth();  <span class="hljs-comment">//设置PrefedSise的宽度</span><br>$ p.preferredHeight();  <span class="hljs-comment">//设置PrefedSise的高度</span><br></code></pre></td></tr></table></figure>
-<h1 id="图片缩放工具"><a href="#图片缩放工具" class="headerlink" title="图片缩放工具"></a>图片缩放工具</h1><p>fitXY()  XY方向拉伸占满<br>fitCenter()  居中显示，并保持长宽比<br>fitCenterInside() 如果图片较小，则居中显示，如果图片越出范围，则舒服显示</p>
-<h1 id="图片显示控件"><a href="#图片显示控件" class="headerlink" title="图片显示控件"></a>图片显示控件</h1><p>AfImageView  图片显示控件<br>setScaleType()  设置缩放类型<br>setImage()  显示图片<br>setBgColor()  设置背景图</p>
-<h1 id="鼠标事件-MouseEvent"><a href="#鼠标事件-MouseEvent" class="headerlink" title="鼠标事件 MouseEvent"></a>鼠标事件 MouseEvent</h1><p>addMouseliskener()<br>鼠标点击 mouseClicked<br>鼠标按下 mousePressed<br>鼠标抬起 mouseExited<br>鼠标移入 mouseEntered<br>鼠标移出 mouseExited<br>addMouseMotionliskener()<br>鼠标移动 mouseMoved<br>鼠标拖动 mouseDragged<br>addMouseWheelListener<br>鼠标滚动 mouseWheelMoved</p>
-<p>事件处理</p>
-<p>多线程并发与线程安全</p>
-<p>拖拽功能</p>
-<p>系统托盘 (System Tray)</p>
-<p>闪屏 (Splash Screen)</p>
-<h1 id="Java-AWT-Swing-其他相关"><a href="#Java-AWT-Swing-其他相关" class="headerlink" title="Java AWT/Swing 其他相关"></a>Java AWT/Swing 其他相关</h1><p>Java绘图: 使用Graphics类绘制线段, 矩形, 椭圆/圆弧/扇形, 图片, 文本</p>
-<p>Java图片操作 — 图片的读取, 绘制, 缩放, 裁剪, 保存</p>
-<p>Java代码截屏: 使用 Java 代码截取电脑屏幕并保存</p>
-<p>Java模拟鼠标键盘输入事件 — Robot 类</p>
-<p>Java操作桌面应用 — Desktop 类</p>
-<p>Java操作系统剪贴板(Clipboard)实现复制和粘贴 –&gt;</p>
-<h1 id="特别提醒-AWT-例如-Label-Button"><a href="#特别提醒-AWT-例如-Label-Button" class="headerlink" title="特别提醒 AWT 例如: Label,Button"></a>特别提醒 AWT 例如: Label,Button</h1><h1 id="特别提醒-Swing-例如-JLabel-JButton-只要是以J开头的"><a href="#特别提醒-Swing-例如-JLabel-JButton-只要是以J开头的" class="headerlink" title="特别提醒 Swing 例如: JLabel,JButton 只要是以J开头的"></a>特别提醒 Swing 例如: JLabel,JButton 只要是以J开头的</h1><h1 id="ActionListener-是一个接口，所以派生时用impleme"><a href="#ActionListener-是一个接口，所以派生时用impleme" class="headerlink" title="ActionListener 是一个接口，所以派生时用impleme"></a>ActionListener 是一个接口，所以派生时用impleme</h1><p>addActionListener(…)  传入的参数</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">$ Button.addActionListener(x);  <span class="hljs-comment">//意思是把什么交给谁，例如button(按键) 和 x </span><br></code></pre></td></tr></table></figure>
-<h1 id="演示drawString（）方法的示例程序"><a href="#演示drawString（）方法的示例程序" class="headerlink" title="演示drawString（）方法的示例程序:"></a>演示drawString（）方法的示例程序:</h1><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">drawString示例程序<br>$<span class="hljs-keyword">import</span> java.awt.*; <br>$<span class="hljs-keyword">import</span> java.applet.*; <br>$<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HelloWorldApplet</span>扩展Applet &#123;     <br>$ <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">paint</span><span class="hljs-params">(Graphics g)</span>&#123;         <br>$ g.drawString(<span class="hljs-string">&quot;Hello World&quot;</span>，<span class="hljs-number">100</span>,<span class="hljs-number">100</span>);<br></code></pre></td></tr></table></figure>
-<h1 id="显示消息对话框"><a href="#显示消息对话框" class="headerlink" title="显示消息对话框"></a>显示消息对话框</h1><p>showMessageDialog(“里面的文字”)<br>f.setVisible(true)<br>f.setTitle(“框框上的文字”)<br>charAt<br>看见actionPerformed 就要implements ActionListener<br><strong>(Button saveButton = new Button)</strong><br>saveButton.addActionListener(this);没什么加就this<br>(ActionListener=监听器)<br>(this=当前对象的意思)<br>(super是父级对象)<br><strong>如果Container contentPane = newContainer();</strong><br><strong>就Container contentPane = getContentPane();</strong><br>有Thread就想起Runnable</p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
     <title>JavaScript jQuery</title>
     <url>/JavaScript-jQuery.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
@@ -1696,6 +2005,94 @@ $</style>
 ]]></content>
       <categories>
         <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java Swing 图形界面速背表(未完工)</title>
+    <url>/Java-Swing.html</url>
+    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
+<a id="more"></a>
+
+<blockquote>
+<h1 id="JavaSwing-布局管理器"><a href="#JavaSwing-布局管理器" class="headerlink" title="JavaSwing 布局管理器"></a>JavaSwing 布局管理器</h1></blockquote>
+<p>getWigth 得到宽度 或者 控件的高度<br>getHeight 得到高度 或者 控件的宽度<br>root.setLayout(layoutMgr) 给容器设置一个布局器<br>layoutMgr.layoutContainer(…) 当容器改变大小时，自动调用布局器重新布局<br>Perferred Size 指控件最佳大小<br>Dimension 表示尺寸信息 size.width/size.height</p>
+<h1 id="FlowLayout-流式布局"><a href="#FlowLayout-流式布局" class="headerlink" title="FlowLayout (流式布局)"></a>FlowLayout (流式布局)</h1><p>setPreferred Size() 控制每个控件的显示高度和宽度</p>
+<p>GridLayout (网格布局)</p>
+<p>GridBagLayout (网格袋布局)</p>
+<p>BoxLayout (箱式布局)</p>
+<p>GroupLayout (分组布局)</p>
+<p>AFXLayout  (水平布局)</p>
+<h1 id="AfAnyWhere-自由位置布局"><a href="#AfAnyWhere-自由位置布局" class="headerlink" title="AfAnyWhere (自由位置布局)"></a>AfAnyWhere (自由位置布局)</h1><p>new AfMargin(top,left,botton,right)</p>
+<h1 id="CardLayout-卡片布局"><a href="#CardLayout-卡片布局" class="headerlink" title="CardLayout (卡片布局)"></a>CardLayout (卡片布局)</h1><p>CardLayout.show(pane,”name”)</p>
+<h1 id="BorderLayout-边界布局"><a href="#BorderLayout-边界布局" class="headerlink" title="BorderLayout (边界布局)"></a>BorderLayout (边界布局)</h1><p>setPreferrendSize() 对于上下边界调高度，左右边界调宽度<br>PAGE_START 上边界<br>PAGE_END 下边界<br>LINE_START 左边界<br>LINE_END 右边<br>CENTER 中央</p>
+<p>SpringLayout (弹性布局)</p>
+<p>null (绝对布局)</p>
+<blockquote>
+<h1 id="JavaSwing-基本组件"><a href="#JavaSwing-基本组件" class="headerlink" title="JavaSwing 基本组件"></a>JavaSwing 基本组件</h1></blockquote>
+<h1 id="JLabel-标签"><a href="#JLabel-标签" class="headerlink" title="JLabel (标签)"></a>JLabel (标签)</h1><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">$ <span class="hljs-type">JLabel</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;我是JLabel&quot;</span>);<br>$ contenntPane.add(x);<br>$ <span class="hljs-comment">//也可以用一行</span><br>$ contenntPane.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;我是JLabel&quot;</span>);<br></code></pre></td></tr></table></figure>
+<p>JLabel 用于显示短文本或图标<br>setText() 设置文件<br>setFont() 设置字体<br>setForeground() 设置文件颜色<br>setToolTipText() 设置工具提示<br>getText() 取得用户输入</p>
+<h2 id="JButton-按钮"><a href="#JButton-按钮" class="headerlink" title="JButton (按钮)"></a>JButton (按钮)</h2><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">$ <span class="hljs-type">JButton</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JButton</span>(<span class="hljs-string">&quot;我是JButton&quot;</span>);<br>$ contenntPane.add(x);<br>$ <span class="hljs-comment">//也可以用一行</span><br>$ contenntPane.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JButton</span>(<span class="hljs-string">&quot;我是JButton&quot;</span>);<br></code></pre></td></tr></table></figure>
+
+<p>JRadioButton (单选按钮)</p>
+<h1 id="JCheckBox-复选框"><a href="#JCheckBox-复选框" class="headerlink" title="JCheckBox (复选框)"></a>JCheckBox (复选框)</h1><p>getSelected() 选中状态<br>setSelected() 设置<br>getText() 选项文字<br>addActionListener() 用户选中/取消时触发</p>
+<p>JToggleButton (开关按钮)</p>
+<h1 id="JTextField-文本框-或者-单行文本框"><a href="#JTextField-文本框-或者-单行文本框" class="headerlink" title="JTextField (文本框 或者 单行文本框)"></a>JTextField (文本框 或者 单行文本框)</h1><p>JTextField 用于显示单行文本<br>new JTextField(10) 其中,10用于表示列数，用于计算宽度(并不是字数限制)<br>setText() 设置文本<br>getText() 获取文本<br>setFont() 设置字体</p>
+<h1 id="JoptionPane-消息框"><a href="#JoptionPane-消息框" class="headerlink" title="JoptionPane 消息框"></a>JoptionPane 消息框</h1><p>JoptionPane.showMessageDialog() 提示消息框<br>showMessageDialog  简单消息提示<br>showConfirmDialog  简单消息确认<br>showInputDialog  简单数据输入<br>showoptionDialog  简单选择输入<br>Blocked 阻塞<br>JoptionPane.showInputDialog() 提示消息框</p>
+<p>JPasswordField (密码框)</p>
+<h2 id="JTextArea-文本区域-或者-多行文本框"><a href="#JTextArea-文本区域-或者-多行文本框" class="headerlink" title="JTextArea (文本区域 或者 多行文本框)"></a>JTextArea (文本区域 或者 多行文本框)</h2><p>JComboBox (下拉列表框)</p>
+<p>JList (列表框)</p>
+<p>JProgressBar (进度条)</p>
+<p>JSlider (滑块)</p>
+<blockquote>
+<h1 id="JavaSwing-面板组件"><a href="#JavaSwing-面板组件" class="headerlink" title="JavaSwing 面板组件"></a>JavaSwing 面板组件</h1></blockquote>
+<p>JPanel (面板)</p>
+<p>JScrollPane (滚动面板)</p>
+<p>JSplitPane (分隔面板)</p>
+<p>JTabbedPane (选项卡面板)</p>
+<p>JLayeredPane (层级面板)</p>
+<blockquote>
+<h1 id="JavaSwing-其他组件"><a href="#JavaSwing-其他组件" class="headerlink" title="JavaSwing 其他组件"></a>JavaSwing 其他组件</h1></blockquote>
+<p>JFrame (窗口)[一般存放标题]<br>setTitle  (设置标题)</p>
+<p>Container (内容面板)</p>
+<h1 id="setVisible-设置窗口大小-和-setVisble-显示窗口大小"><a href="#setVisible-设置窗口大小-和-setVisble-显示窗口大小" class="headerlink" title="setVisible (设置窗口大小) 和 setVisble(显示窗口大小)"></a>setVisible (设置窗口大小) 和 setVisble(显示窗口大小)</h1><p>setVisible(boolean)方法是用来显示/隐藏GUI组件的。<br>需要显示则使用true，需要隐藏则使用false</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">$ <span class="hljs-title function_">setVisible</span><span class="hljs-params">(<span class="hljs-literal">true</span>)</span>  <span class="hljs-comment">//例如这个</span><br></code></pre></td></tr></table></figure>
+<p>意思是说数据模型已经构造好了，允许JVM可以根据数据模型执行paint方法开始画图并显示到屏幕上了，并不是显示图形，而是可以运行开始画图，要把setVisible()方法放到最后面，代码是按顺序执行的 ，如果把setVisible()放在前边，后边再添加其他组件的时候，有可能不会显示出来</p>
+<p>JDialog, JOptionPane (对话框)</p>
+<p>JFileChooser (文件选择器)</p>
+<p>JColorChooser (颜色选择器)</p>
+<h1 id="JMenuBar-菜单栏"><a href="#JMenuBar-菜单栏" class="headerlink" title="JMenuBar (菜单栏)"></a>JMenuBar (菜单栏)</h1><p>JMenuBar (菜单项)<br>JMenu (菜单)<br>JMenuItem (菜单项)</p>
+<h1 id="JToolBar-工具栏"><a href="#JToolBar-工具栏" class="headerlink" title="JToolBar (工具栏)"></a>JToolBar (工具栏)</h1><p>JButton 工具按钮<br>setIcin() 图标<br>setAction Command() 命令<br>setToolTipText() 提示文字<br>add Action Listener() 事件处理</p>
+<p>JPopupMenu (弹出菜单 或者 上下文菜单 或者 右键菜单)<br>JPopupMenu 创建<br>JMenuItem  添加<br>添加鼠标右键的响应，显示窗口菜单<br>菜单项被点击时，执行事件处理</p>
+<p>JTable (表格)</p>
+<p>JTree (树)</p>
+<p>JInternalFrame (内部窗口)</p>
+<blockquote>
+<h1 id="JavaSwing-相关特性-了解就行"><a href="#JavaSwing-相关特性-了解就行" class="headerlink" title="JavaSwing 相关特性(了解就行)"></a>JavaSwing 相关特性(了解就行)</h1></blockquote>
+<p>组件的位置和尺寸</p>
+<h1 id="组件边框-Border"><a href="#组件边框-Border" class="headerlink" title="组件边框 (Border)"></a>组件边框 (Border)</h1><p>Border本身就是一个接口<br>Padding: 边框与它的内容之间的间距<br>Margin: 边框与它外面的容器之间的间距</p>
+<h1 id="AfBorder-添加边框和边距"><a href="#AfBorder-添加边框和边距" class="headerlink" title="AfBorder 添加边框和边距"></a>AfBorder 添加边框和边距</h1><p>addPadding() 内边距<br>addMargin() 外边距<br>addOuterBorder() 外边添加Border<br>addInnerBorder() 里面添加Border</p>
+<h1 id="AfPanel-用于快速布局"><a href="#AfPanel-用于快速布局" class="headerlink" title="AfPanel 用于快速布局"></a>AfPanel 用于快速布局</h1><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">$ <span class="hljs-type">AfPanel</span> <span class="hljs-variable">p</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">AfPanel</span>();<br>$ p.padding();  <span class="hljs-comment">//设置内边距</span><br>$ p.margin();  <span class="hljs-comment">//设置外边距</span><br>$ p.preferredWidth();  <span class="hljs-comment">//设置PrefedSise的宽度</span><br>$ p.preferredHeight();  <span class="hljs-comment">//设置PrefedSise的高度</span><br></code></pre></td></tr></table></figure>
+<h1 id="图片缩放工具"><a href="#图片缩放工具" class="headerlink" title="图片缩放工具"></a>图片缩放工具</h1><p>fitXY()  XY方向拉伸占满<br>fitCenter()  居中显示，并保持长宽比<br>fitCenterInside() 如果图片较小，则居中显示，如果图片越出范围，则舒服显示</p>
+<h1 id="图片显示控件"><a href="#图片显示控件" class="headerlink" title="图片显示控件"></a>图片显示控件</h1><p>AfImageView  图片显示控件<br>setScaleType()  设置缩放类型<br>setImage()  显示图片<br>setBgColor()  设置背景图</p>
+<h1 id="鼠标事件-MouseEvent"><a href="#鼠标事件-MouseEvent" class="headerlink" title="鼠标事件 MouseEvent"></a>鼠标事件 MouseEvent</h1><p>addMouseliskener()<br>鼠标点击 mouseClicked<br>鼠标按下 mousePressed<br>鼠标抬起 mouseExited<br>鼠标移入 mouseEntered<br>鼠标移出 mouseExited<br>addMouseMotionliskener()<br>鼠标移动 mouseMoved<br>鼠标拖动 mouseDragged<br>addMouseWheelListener<br>鼠标滚动 mouseWheelMoved</p>
+<p>事件处理</p>
+<p>多线程并发与线程安全</p>
+<p>拖拽功能</p>
+<p>系统托盘 (System Tray)</p>
+<p>闪屏 (Splash Screen)</p>
+<h1 id="Java-AWT-Swing-其他相关"><a href="#Java-AWT-Swing-其他相关" class="headerlink" title="Java AWT/Swing 其他相关"></a>Java AWT/Swing 其他相关</h1><p>Java绘图: 使用Graphics类绘制线段, 矩形, 椭圆/圆弧/扇形, 图片, 文本</p>
+<p>Java图片操作 — 图片的读取, 绘制, 缩放, 裁剪, 保存</p>
+<p>Java代码截屏: 使用 Java 代码截取电脑屏幕并保存</p>
+<p>Java模拟鼠标键盘输入事件 — Robot 类</p>
+<p>Java操作桌面应用 — Desktop 类</p>
+<p>Java操作系统剪贴板(Clipboard)实现复制和粘贴 –&gt;</p>
+<h1 id="特别提醒-AWT-例如-Label-Button"><a href="#特别提醒-AWT-例如-Label-Button" class="headerlink" title="特别提醒 AWT 例如: Label,Button"></a>特别提醒 AWT 例如: Label,Button</h1><h1 id="特别提醒-Swing-例如-JLabel-JButton-只要是以J开头的"><a href="#特别提醒-Swing-例如-JLabel-JButton-只要是以J开头的" class="headerlink" title="特别提醒 Swing 例如: JLabel,JButton 只要是以J开头的"></a>特别提醒 Swing 例如: JLabel,JButton 只要是以J开头的</h1><h1 id="ActionListener-是一个接口，所以派生时用impleme"><a href="#ActionListener-是一个接口，所以派生时用impleme" class="headerlink" title="ActionListener 是一个接口，所以派生时用impleme"></a>ActionListener 是一个接口，所以派生时用impleme</h1><p>addActionListener(…)  传入的参数</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">$ Button.addActionListener(x);  <span class="hljs-comment">//意思是把什么交给谁，例如button(按键) 和 x </span><br></code></pre></td></tr></table></figure>
+<h1 id="演示drawString（）方法的示例程序"><a href="#演示drawString（）方法的示例程序" class="headerlink" title="演示drawString（）方法的示例程序:"></a>演示drawString（）方法的示例程序:</h1><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">drawString示例程序<br>$<span class="hljs-keyword">import</span> java.awt.*; <br>$<span class="hljs-keyword">import</span> java.applet.*; <br>$<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HelloWorldApplet</span>扩展Applet &#123;     <br>$ <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">paint</span><span class="hljs-params">(Graphics g)</span>&#123;         <br>$ g.drawString(<span class="hljs-string">&quot;Hello World&quot;</span>，<span class="hljs-number">100</span>,<span class="hljs-number">100</span>);<br></code></pre></td></tr></table></figure>
+<h1 id="显示消息对话框"><a href="#显示消息对话框" class="headerlink" title="显示消息对话框"></a>显示消息对话框</h1><p>showMessageDialog(“里面的文字”)<br>f.setVisible(true)<br>f.setTitle(“框框上的文字”)<br>charAt<br>看见actionPerformed 就要implements ActionListener<br><strong>(Button saveButton = new Button)</strong><br>saveButton.addActionListener(this);没什么加就this<br>(ActionListener=监听器)<br>(this=当前对象的意思)<br>(super是父级对象)<br><strong>如果Container contentPane = newContainer();</strong><br><strong>就Container contentPane = getContentPane();</strong><br>有Thread就想起Runnable</p>
+]]></content>
+      <categories>
+        <category>Java</category>
       </categories>
   </entry>
   <entry>
@@ -4277,6 +4674,117 @@ python数据类型
 <h1 id="本放链接-想要的话-自己带着承诺完的截图来找我-我给你密码"><a href="#本放链接-想要的话-自己带着承诺完的截图来找我-我给你密码" class="headerlink" title="本放链接!!! 想要的话, 自己带着承诺完的截图来找我, 我给你密码"></a>本放<a href="https://wwr.lanzoui.com/iRu7Bqsx7od">链接</a>!!! 想要的话, 自己带着承诺完的截图来找<a href="https://wpa.qq.com/msgrd?v=3&uin=3083329400&site=qq&menu=yes">我</a>, 我给你密码</h1>]]></content>
   </entry>
   <entry>
+    <title>游戏篇 修仙狂扁小朋友(攻略)</title>
+    <url>/Dad-n-Me.html</url>
+    <content><![CDATA[<p><strong>游戏体验</strong></p>
+<a id="more"></a>
+
+<h1 id="这游戏非常好玩-在死了几十回之后我准备删除游戏时我终于发现的奥秘-突然想起老爹的话-“必须要用魔法来打败魔法”"><a href="#这游戏非常好玩-在死了几十回之后我准备删除游戏时我终于发现的奥秘-突然想起老爹的话-“必须要用魔法来打败魔法”" class="headerlink" title="这游戏非常好玩 在死了几十回之后我准备删除游戏时我终于发现的奥秘 突然想起老爹的话 “必须要用魔法来打败魔法”"></a>这<a href="https://wwc.lanzoui.com/ijWYdwqid3c">游戏</a>非常好玩 在死了几十回之后我准备删除游戏时我终于发现的奥秘 突然想起老爹的话 “必须要用魔法来打败魔法”</h1><ul>
+<li>密码: sdq3</li>
+</ul>
+<h4>移动: </h4>
+
+<ul>
+<li><p>上走: W</p>
+</li>
+<li><p>下走: S</p>
+</li>
+<li><p>左走: A</p>
+</li>
+<li><p>右走: D</p>
+</li>
+</ul>
+<h4>普攻: </h4>
+
+<ul>
+<li><p>轻攻击: J</p>
+</li>
+<li><p>重攻击: K</p>
+</li>
+<li><p>举起双手: L</p>
+</li>
+</ul>
+<!-- <h4>普通连招: </h4>
+
+* 拥抱: shift + 移动 + J 
+
+* 风车拳: shift  + 移动 + k
+
+* 马步冲拳:  -->
+
+<h1 id="小型火焰-魔法远程"><a href="#小型火焰-魔法远程" class="headerlink" title="小型火焰 (魔法远程)"></a>小型火焰 (魔法远程)</h1><ul>
+<li><p>远程技能: 蓄力释放时一个威力如原子弹般无比强的小型火焰, 适合远程消耗对手</p>
+</li>
+<li><p>耗蓝量: 0</p>
+</li>
+<li><p>技能冷却时间: 击中目标后会有1s的冷却时间</p>
+</li>
+<li><p>学习方法: 击败火拳小子后获得此技能</p>
+</li>
+<li><p>出招表: shift + 移动 + L</p>
+</li>
+</ul>
+<h1 id="必学-五行八卦定-魔法控制"><a href="#必学-五行八卦定-魔法控制" class="headerlink" title="必学 五行八卦定 (魔法控制)"></a>必学 五行八卦定 (魔法控制)</h1><ul>
+<li><p>控制技能: 释放 一个五行八卦 定住敌人和自己</p>
+</li>
+<li><p>耗蓝量: 0</p>
+</li>
+<li><p>技能冷却时间: 技能使用后会有1s的冷却时间</p>
+</li>
+<li><p>学习方法: 击败四位摆阵足球运动员后获得此技能</p>
+</li>
+<li><p>出招表: shift + 移动 + L</p>
+</li>
+</ul>
+<h1 id="必学-爱的拥抱-霸体免伤"><a href="#必学-爱的拥抱-霸体免伤" class="headerlink" title="必学 爱的拥抱 (霸体免伤)"></a>必学 爱的拥抱 (霸体免伤)</h1><ul>
+<li><p>霸体技能: 给前方敌人一个爱的拥抱 使用技能期间 有一小段位移 期间获得短时间 霸体 和 100%免伤</p>
+</li>
+<li><p>耗蓝量: 0</p>
+</li>
+<li><p>技能冷却时间: 0</p>
+</li>
+<li><p>学习方法: 击败所有修仙篮球队成员后获得此技能</p>
+</li>
+<li><p>出招表: shift + 移动 + J</p>
+</li>
+</ul>
+<h1 id="幻影护体-增加移速"><a href="#幻影护体-增加移速" class="headerlink" title="幻影护体 (增加移速)"></a>幻影护体 (增加移速)</h1><ul>
+<li><p>强化技能: 放弃上走与下走获得幻影特效 然后变身成四手霸王 同时永久增加移动速度 </p>
+</li>
+<li><p>耗蓝量: 0</p>
+</li>
+<li><p>技能冷却时间: 0</p>
+</li>
+<li><p>学习方法: 击败两名飞车党后获得此技能</p>
+</li>
+<li><p>出招表: shift + 移动  </p>
+</li>
+</ul>
+<h1 id="通关攻略"><a href="#通关攻略" class="headerlink" title="通关攻略"></a>通关攻略</h1><!-- <video src="/video/要用魔法对付魔法.mp4" controls="controls">
+必须要用魔法来打败魔法
+</video> -->
+
+<p><a href="https://tb-video.bdstatic.com/tieba-smallvideo-transcode-crf/190887335_77c12571a0a77457125c968adf80e508_bd58fe85fffb_0.mp4?vt=0&pt=3&ver=&cr=3&cd=0&sid=&ft=8&tbau=2021-11-23_e23591a296fb62d41dbff5c9e03408485e6dc91a93a9384f982df70ed1387745&ptid=7621448231">博主通过教程</a> 始想和作者要游戏的源码, 然后自己把生命改成无限, 不然太难玩了 我都死69次了真是又菜又爱玩, 然后发现要以魔法打败魔法</p>
+<p><a href="https://www.bilibili.com/video/BV1AU4y1u7Uo">老番茄通过教程</a></p>
+<!-- <video src="/video/要用魔法对付魔法.mp4" controls="controls">
+要用魔法对付魔法
+</video> -->
+
+
+<!-- 
+
+<h4>当你学会五行八卦后, 用封印住会御剑飞行的飞车党 之后变成四手霸王</h4>
+
+# 只打篮球仙人 连招 先用五行八卦定 将其封印 或者 风车拳 (shift  + D + k) 加 五行八卦定 复制控制 记作拉扯着打 与敌人保持一个身位 -->
+
+
+
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+  </entry>
+  <entry>
     <title>爬虫 Beautiful Soup(牢饭吃到饱)</title>
     <url>/reptile-bs4-lxml.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -4302,21 +4810,6 @@ python数据类型
       </categories>
   </entry>
   <entry>
-    <title>爬虫 cookie(吃牢饭集合)</title>
-    <url>/reptile-cookie.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="headers中携带cookie"><a href="#headers中携带cookie" class="headerlink" title="headers中携带cookie"></a>headers中携带cookie</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    <span class="hljs-string">&quot;Cookie&quot;</span>: <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br>&#125;<br><br>respinse = requests.get(url, headers=headers,)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(respinse.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(respinse.content)<br></code></pre></td></tr></table></figure>
-<h1 id="构建cookie字典"><a href="#构建cookie字典" class="headerlink" title="构建cookie字典"></a>构建cookie字典</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br><span class="hljs-comment"># 构造请求头字典</span><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    &#125;<br><br>temp = <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><br><br>cookie_list = temp.split(<span class="hljs-string">&#x27;; &#x27;</span>)<br><br><span class="hljs-comment"># 熟练方案</span><br><br>cookies = &#123; cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[<span class="hljs-number">0</span>]:cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[-<span class="hljs-number">1</span>] <span class="hljs-keyword">for</span> cookie <span class="hljs-keyword">in</span> cookie_list&#125;<br><br><span class="hljs-comment"># 稳妥方案</span><br><span class="hljs-comment"># cookies = &#123;&#125;</span><br><br><span class="hljs-comment"># for cookie in cookie_list:</span><br><span class="hljs-comment">#     cookies[cookie.split(&#x27;=&#x27;)[0]] = cookie.split(&#x27;=&#x27;)[-1]</span><br><br><span class="hljs-comment"># print(cookies)</span><br><br><span class="hljs-comment"># # 构造cookie字典</span><br><br>response = requests.get(url, headers=headers,cookies=cookies)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(response.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github3.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(response.content)<br></code></pre></td></tr></table></figure>
-<h1 id="cookieJar对象转换成cookie字典方法"><a href="#cookieJar对象转换成cookie字典方法" class="headerlink" title="cookieJar对象转换成cookie字典方法"></a>cookieJar对象转换成cookie字典方法</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://www.baidu.com&#x27;</span><br><br><span class="hljs-comment"># 设置(timeout)访问时长为3秒, 然后就断开</span><br>response = response.get(url, timeout=<span class="hljs-number">3</span>)<br><br><span class="hljs-built_in">print</span>(response.cookies)<br><br><span class="hljs-comment"># 将对象转字典</span><br>dict_cookie = requests.utils.dict_from_cookiejar(response.cookies)<br><span class="hljs-built_in">print</span>(dict_cookie)<br><br><span class="hljs-comment"># 将字典转换为对象</span><br>jar_cookies = requests.utils.cookiejar_from_dict(dict_cookies)<br><span class="hljs-built_in">print</span>(jar_cookies)<br></code></pre></td></tr></table></figure>
-<!--副作用丢失域名 这个不要紧我们自己知道这个cookie对应哪个域名的-->
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
     <title>爬虫 http和https(吃牢饭集合)</title>
     <url>/reptile-http-https.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -4335,6 +4828,21 @@ python数据类型
 
 <p><strong>可以打开浏览器访问一个url, 右键检查, 点击network, 点选一个url, 查看http协议的形式</strong></p>
 <h1 id="HTTPS因为要加密缘故相比HTTP较慢一些-性能低一些-但是比HTTP更安全"><a href="#HTTPS因为要加密缘故相比HTTP较慢一些-性能低一些-但是比HTTP更安全" class="headerlink" title="HTTPS因为要加密缘故相比HTTP较慢一些,性能低一些, 但是比HTTP更安全"></a>HTTPS因为要加密缘故相比HTTP较慢一些,性能低一些, 但是比HTTP更安全</h1>]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>爬虫 cookie(吃牢饭集合)</title>
+    <url>/reptile-cookie.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="headers中携带cookie"><a href="#headers中携带cookie" class="headerlink" title="headers中携带cookie"></a>headers中携带cookie</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    <span class="hljs-string">&quot;Cookie&quot;</span>: <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br>&#125;<br><br>respinse = requests.get(url, headers=headers,)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(respinse.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(respinse.content)<br></code></pre></td></tr></table></figure>
+<h1 id="构建cookie字典"><a href="#构建cookie字典" class="headerlink" title="构建cookie字典"></a>构建cookie字典</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br><span class="hljs-comment"># 构造请求头字典</span><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    &#125;<br><br>temp = <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><br><br>cookie_list = temp.split(<span class="hljs-string">&#x27;; &#x27;</span>)<br><br><span class="hljs-comment"># 熟练方案</span><br><br>cookies = &#123; cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[<span class="hljs-number">0</span>]:cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[-<span class="hljs-number">1</span>] <span class="hljs-keyword">for</span> cookie <span class="hljs-keyword">in</span> cookie_list&#125;<br><br><span class="hljs-comment"># 稳妥方案</span><br><span class="hljs-comment"># cookies = &#123;&#125;</span><br><br><span class="hljs-comment"># for cookie in cookie_list:</span><br><span class="hljs-comment">#     cookies[cookie.split(&#x27;=&#x27;)[0]] = cookie.split(&#x27;=&#x27;)[-1]</span><br><br><span class="hljs-comment"># print(cookies)</span><br><br><span class="hljs-comment"># # 构造cookie字典</span><br><br>response = requests.get(url, headers=headers,cookies=cookies)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(response.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github3.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(response.content)<br></code></pre></td></tr></table></figure>
+<h1 id="cookieJar对象转换成cookie字典方法"><a href="#cookieJar对象转换成cookie字典方法" class="headerlink" title="cookieJar对象转换成cookie字典方法"></a>cookieJar对象转换成cookie字典方法</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://www.baidu.com&#x27;</span><br><br><span class="hljs-comment"># 设置(timeout)访问时长为3秒, 然后就断开</span><br>response = response.get(url, timeout=<span class="hljs-number">3</span>)<br><br><span class="hljs-built_in">print</span>(response.cookies)<br><br><span class="hljs-comment"># 将对象转字典</span><br>dict_cookie = requests.utils.dict_from_cookiejar(response.cookies)<br><span class="hljs-built_in">print</span>(dict_cookie)<br><br><span class="hljs-comment"># 将字典转换为对象</span><br>jar_cookies = requests.utils.cookiejar_from_dict(dict_cookies)<br><span class="hljs-built_in">print</span>(jar_cookies)<br></code></pre></td></tr></table></figure>
+<!--副作用丢失域名 这个不要紧我们自己知道这个cookie对应哪个域名的-->
+]]></content>
       <categories>
         <category>爬虫</category>
       </categories>
@@ -5419,32 +5927,7 @@ option && myChart.setOption(option);
 <li>为了更好的显示数据, 侧重点是为显示</li>
 <li>html是显示效果更好, 用于展示数据</li>
 </ul>
-<h1 id="常用的数据解析方法"><a href="#常用的数据解析方法" class="headerlink" title="常用的数据解析方法"></a>常用的数据解析方法</h1><!-- <iframe scrolling = "no" src="./html/爬虫 数据提取.html"></iframe> -->
-
-<div class="mermaid">
-graph LR
-    A[" 数据解析 "]-->B[" json "]
-    A[" 数据解析 "]-->C[" 非结构化数据 "]
-    B[" 数据化数据 "]-->D[" json "]
-    D[" json "]-->E[" json模块 "]
-    D[" json "]-->F[" jsonpath模块 "]
-    B[" 数据化数据 "]-->H[" xml "]
-    H[" xml "]-->I[" re模块 "]
-    I[" re模块 "]-->J[" 正则语法 "]
-    H[" xml "]-->K[" lxml模块 "]
-    K[" lxml模块 "]-->L[" xpath语法 "]
-    C[" 非结构化数据 "]-->M[" html "]
-    M[" html "]-->N[" re模块 "]
-    N[" re模块 "]-->O[" 正则语法 "]
-    M[" html "]-->P[" lxml模块 "]
-    P[" lxml模块 "]-->Q[" xpath语法 "]
-    M[" html "]-->R[" beautifulsoup "]
-    R[" beautifulsoup "]-->S[" xpath语法 "]
-    R[" beautifulsoup "]-->T[" 正则语法 "]
-    R[" beautifulsoup "]-->U[" css选择器 "]
-    M[" html "]-->V[" pyquery "]
-    V[" pyquery "]-->W[" css选择器 "]
-</div>
+<h1 id="常用的数据解析方法"><a href="#常用的数据解析方法" class="headerlink" title="常用的数据解析方法"></a>常用的数据解析方法</h1><iframe scrolling="no" src="./html/爬虫 数据提取.html"></iframe>
 
 
 <h1 id="jsonpath模块"><a href="#jsonpath模块" class="headerlink" title="jsonpath模块"></a>jsonpath模块</h1><p><a href="https://sdq3.gitee.io/reptile-jsonpath.html">详细说明</a></p>
@@ -5508,26 +5991,6 @@ graph LR
       </categories>
   </entry>
   <entry>
-    <title>爬虫 正则表达式(牢饭吃到饱)</title>
-    <url>/reptile-RegEx.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-
-<h1 id="正则表达式的优点和缺点"><a href="#正则表达式的优点和缺点" class="headerlink" title="正则表达式的优点和缺点"></a>正则表达式的优点和缺点</h1><p><strong>优点: 速度快, 效率高, 准确度高</strong></p>
-<p><strong>缺点: 优点老手福利, 新手? ? ?</strong></p>
-<h1 id="正则表达式的概念"><a href="#正则表达式的概念" class="headerlink" title="正则表达式的概念"></a>正则表达式的概念</h1><p><strong>使用元字符进行排列组合用来匹配字符串</strong></p>
-<h1 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h1><p><strong>常用元字符</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">.          匹配除换行符以外的任意字符<br>    <br>\w         匹配字母或数字或下划线<br>    <br>\s         匹配任意的空白符<br>    <br>\d         匹配数字<br>    <br>\n         匹配一个换行符<br>    <br>\t         匹配一个制表符<br>    <br>^          匹配字符串的开始<br>    <br>        匹配字符串的结尾<br>    <br>\w         匹配非字母或数字或下划线<br>    <br>\D         匹配非数字<br>    <br>\S         匹配非空白符<br>    <br>a|b        匹配字符a或字符b<br>    <br>()         匹配括号内的表达式, 也表示一个组<br>    <br>[]         匹配字符中的字符    例如 [a-zA-z0-<span class="hljs-number">9</span>]<br>    <br>[^]        匹配除了字符组中字符的所有字符<br></code></pre></td></tr></table></figure>
-<p><strong>量词: 控制前面的元字符出现的次数</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">*          重复零次或更多次 <br><br>+          重复一次或更多次<br><br>?          重复零次或一次  说白了就是出现或者不出现<br><br>&#123;n&#125;        重复n次<br><br>&#123;n,&#125;       重复n次或更多次<br><br>&#123;n,m&#125;      重复n到m次<br></code></pre></td></tr></table></figure>
-<p><strong>贪婪匹配和惰性匹配</strong></p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><code class="hljs markdown">.<span class="hljs-emphasis">*          贪婪匹配      说白了就是尽可能多的匹配</span><br><br>.<span class="hljs-emphasis">*?         惰性匹配      说白了就是尽可能少的匹配</span><br></code></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
     <title>爬虫 比Python功能更加强大的node.js简介(牢饭吃到饱)未完待续</title>
     <url>/reptile-python%E2%80%94node.js.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -5562,6 +6025,26 @@ graph LR
 <h1 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h1><p><strong>打开这个<a href="http://www.ichong123.com/maomao">网址</a></strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 所有用到的库</span><br><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">import</span> re<br><span class="hljs-keyword">import</span> time<br><br><span class="hljs-comment"># 要爬的链接</span><br>url = <span class="hljs-string">&quot;http://www.ichong123.com/maomao&quot;</span><br><br><span class="hljs-comment"># 请求头</span><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span><br>&#125;<br><br>paqv = requests.get( url=url, headers=headers )<br><br><span class="hljs-comment"># 根据网站的编码来换</span><br>paqv.encoding = <span class="hljs-string">&#x27;utf-8&#x27;</span><br><br><span class="hljs-comment"># xiazai = paqv.text</span><br><br><span class="hljs-comment"># print(xiazai)</span><br><br><span class="hljs-comment"># 正则表达式 re.S单行匹配(正则解析比较多) re.M多行匹配()</span><br>sdq1 = re.<span class="hljs-built_in">compile</span>(<span class="hljs-string">r&#x27;&lt;div class=&quot;pet_s&quot;&gt;.*?&lt;img src=(?P&lt;mao&gt;.*?)width&#x27;</span>,re.S)<br>paq = sdq1.finditer(paqv.text)<br>a = <span class="hljs-number">1</span><br><span class="hljs-comment"># 用循环来依次下载</span><br><span class="hljs-keyword">for</span> it <span class="hljs-keyword">in</span> paq:<br>    time.sleep(<span class="hljs-number">3</span>)  <span class="hljs-comment">#休眠3秒</span><br>    ul = it.group(<span class="hljs-string">&#x27;mao&#x27;</span>)<br>    ul2 = <span class="hljs-built_in">eval</span>(ul)  <span class="hljs-comment">#eval()函数用来执行一个字符串表达式，并返回表达式的值</span><br>    sdz = requests.get(ul2)<br><br>    <span class="hljs-comment"># 图片文件保存 选择路径</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">f&quot;E:/百度文档/mao/<span class="hljs-subst">&#123;a&#125;</span>.jpg&quot;</span>,<span class="hljs-string">&quot;wb&quot;</span>) <span class="hljs-keyword">as</span> f:<br>        f.write(sdz.content)<br>        f.close()<br>        a+=<span class="hljs-number">1</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;猫猫下载完了&quot;</span>)<br></code></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>爬虫 正则表达式(牢饭吃到饱)</title>
+    <url>/reptile-RegEx.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+
+<h1 id="正则表达式的优点和缺点"><a href="#正则表达式的优点和缺点" class="headerlink" title="正则表达式的优点和缺点"></a>正则表达式的优点和缺点</h1><p><strong>优点: 速度快, 效率高, 准确度高</strong></p>
+<p><strong>缺点: 优点老手福利, 新手? ? ?</strong></p>
+<h1 id="正则表达式的概念"><a href="#正则表达式的概念" class="headerlink" title="正则表达式的概念"></a>正则表达式的概念</h1><p><strong>使用元字符进行排列组合用来匹配字符串</strong></p>
+<h1 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h1><p><strong>常用元字符</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">.          匹配除换行符以外的任意字符<br>    <br>\w         匹配字母或数字或下划线<br>    <br>\s         匹配任意的空白符<br>    <br>\d         匹配数字<br>    <br>\n         匹配一个换行符<br>    <br>\t         匹配一个制表符<br>    <br>^          匹配字符串的开始<br>    <br>        匹配字符串的结尾<br>    <br>\w         匹配非字母或数字或下划线<br>    <br>\D         匹配非数字<br>    <br>\S         匹配非空白符<br>    <br>a|b        匹配字符a或字符b<br>    <br>()         匹配括号内的表达式, 也表示一个组<br>    <br>[]         匹配字符中的字符    例如 [a-zA-z0-<span class="hljs-number">9</span>]<br>    <br>[^]        匹配除了字符组中字符的所有字符<br></code></pre></td></tr></table></figure>
+<p><strong>量词: 控制前面的元字符出现的次数</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">*          重复零次或更多次 <br><br>+          重复一次或更多次<br><br>?          重复零次或一次  说白了就是出现或者不出现<br><br>&#123;n&#125;        重复n次<br><br>&#123;n,&#125;       重复n次或更多次<br><br>&#123;n,m&#125;      重复n到m次<br></code></pre></td></tr></table></figure>
+<p><strong>贪婪匹配和惰性匹配</strong></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><code class="hljs markdown">.<span class="hljs-emphasis">*          贪婪匹配      说白了就是尽可能多的匹配</span><br><br>.<span class="hljs-emphasis">*?         惰性匹配      说白了就是尽可能少的匹配</span><br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>爬虫</category>
       </categories>
@@ -5941,7 +6424,12 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 <h3 id="1-定义法-定义域D关于原点对称"><a href="#1-定义法-定义域D关于原点对称" class="headerlink" title="(1) 定义法: 定义域D关于原点对称"></a>(1) 定义法: 定义域D关于原点对称</h3><ul>
 <li>若 f ( -x ) = -f ( x ), 则称 f ( x ) 为<font color="#ef5b9c">奇函数  奇函数关于原点对称</font>  </li>
 </ul>
-<iframe scrolling="no" id="iframe" src="./html/函数与极限1.html"></iframe>
+<!-- <iframe scrolling = "no" id="iframe" src="./html/函数与极限1.html"></iframe> -->
+
+<div class="mermaid">
+    graph LR
+    A[" f ( -x ) "]--恒等变形-->B[" - f ( x ) "] 
+</div>
 
 <!-- <div class="mermaid"> -->
 <!-- graph LR -->
@@ -5952,8 +6440,12 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 <ul>
 <li>若 f( -x ) = f ( x ), 则称 f ( x ) 为<font color="#87CEEB">偶函数  偶函数关于y轴对称</font>  </li>
 </ul>
-<iframe scrolling="no" id="iframe" src="./html/函数与极限2.html"></iframe>
+<!-- <iframe scrolling = "no" id="iframe" src="./html/函数与极限2.html"></iframe> -->
 
+<div class="mermaid">
+    graph LR
+    A[" f ( -x ) "]--恒等变形-->B[" f ( x ) "] 
+</div>
 
 <!-- <div class="mermaid"> -->
 <!-- graph LR -->
@@ -6247,7 +6739,7 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
       </categories>
   </entry>
   <entry>
-    <title>微分中值定理及导数的应用 (第三章)</title>
+    <title>高等数学 微分中值定理及导数的应用 (第三章)</title>
     <url>/HigherMathematics-differential-derivative.html</url>
     <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
 <a id="more"></a>
@@ -6259,110 +6751,9 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
 <p><font color="#7bbfea">(3) </font>f ( a ) = f ( b ), 则 ∃ § ∈ ( a , b )</p>
 <h2 id="考点1-拉姆朗日中值定理"><a href="#考点1-拉姆朗日中值定理" class="headerlink" title="考点1: 拉姆朗日中值定理"></a>考点1: 拉姆朗日中值定理</h2><h3>设 f ( x )满足:</h3>
 
-<div class="shuxue">$$=\lim_{x\rightarrow0}\frac{f(\;x\;)\;-\;f\left(\;x_0\;\right)}{x\;-\;x_0}\\\\$$ </div>
-
-<div class="shuxue"><span>$$\;f\;'\;\left(\;x\;\right),\;\;\\\\$$</span><span>$$\;y\;'\;,\;\frac{\displaystyle dy}{\displaystyle dx}\;\\\\$$</span><span>$$\frac{\displaystyle dy}{\displaystyle dx}\;\\\\$$</span></div>
-
-<h3>导函数记作:</h3>
-
-<div class="shuxue"><span class="shuxue2">$$\;f\;'\;\left(\;x\;\right),\;\;y\;'\;,\;\frac{dy}{dx}\;$$</span></div>
-
-
-<h2 id="考点2-高阶导数"><a href="#考点2-高阶导数" class="headerlink" title="考点2: 高阶导数"></a>考点2: 高阶导数</h2><h3 id="求n阶段方法"><a href="#求n阶段方法" class="headerlink" title="求n阶段方法:"></a>求n阶段方法:</h3><h4>求出f(x)的前几阶导, 总结规律, 得n阶导</h4>
-
-<h4>高阶导数公式:</h4>
-
-<p><font color="#7bbfea">(1)</font></p>
-<div class="shuxue"><span>$${(\;e\;^{x\;})}^{\;(\;n\;)}\;=\;e^x,$$</span><span>$$(\;e^{\;ax\;+\;b}\;)\;^{(\;n\;)}\;=\;a^{\;n\;}e\;^{ax\;+\;b},\;$$</span><span>$${(\;a^{x\;})}^{(\;n\;)}\;=\;{(\;\ln\;a\;)}^{\;n}\;a^{\;x}$$</span></div>
-
-<p><font color="#7bbfea">(2)</font></p>
-<div class="shuxue"><span>$$\left(\;x^n\;\right)^{(\;n\;)}\;=\;n!,\;$$</span><span>$$\left(\;x^m\;\right)^{(\;n\;)\;}\;=\;$$</span><span>$$0.\;( \;m < n\;)$$</span></div>
-
-
-<p><font color="#7bbfea">(3)</font></p>
-<div class="shuxue"><span>$${(\;\sin\;x\;)}^{\;(\;n\;)\;}=\;\sin\;(\;x\;+\;\frac{n\;\mathrm\pi}2\;),\\\\$$</span><span>$${(\;\cos\;x)}^{\;(\;n\;)}\;=\;\cos\;(\;x\;+\;\frac{n\;\mathrm\pi}2\;)\\\\$$</span></div>
-
-
-<h2 id="考点3-求隐函数的导数"><a href="#考点3-求隐函数的导数" class="headerlink" title="考点3: 求隐函数的导数"></a>考点3: 求隐函数的导数</h2><div class="shuxue">定义: 显函数 $$ \;y\; \;=\; f\; (\; x\; )\;$$, 隐函数$$ \;F \; ( \;x \;,\; y \; ) \; = \; 0\;$$</div>
-
-<h3>解题方法:</h3>
-
-<h4>方法一: 复合函数法</h4>
-
-<div class="shuxue">方程 $$\;F\;=\;(\;x\;,\;y\;)\;=\;0\;$$, 两边同时对$$\;x\;$$求导, 解出$$\;y'\;$$ </div>
-
-<div class="shuxue">注意: <span>$$\;x\;$$</span>是<span>$$\;y\;$$</span>的函数</div>
-
-<h4>方法二: 公式法</h4>
-
-<p><font color="#7bbfea">(1)</font></p>
-<div class="shuxue">构造二次元函数 $$\;F\;=\;(\;x\;,\;y\;)\;$$</div>
-
-<p><font color="#7bbfea">(2)</font></p>
-<div class="shuxue">求偏导数 $$\;F_x\;(\;x\;,\;y\;),\;F_{y\;}(\;x\;,\;y\;)\;$$</div>
-
-<p><font color="#7bbfea">(3)</font></p>
-<div class="shuxue">带公式 $$\;\frac{dy}{dx}\;=\;-\;\frac{Fx\;(\;x\;,\;y\;)}{Fy\;(\;x\;,\;y\;)}$$</div>
-
-<h2 id="考点4-求参数方程的导数"><a href="#考点4-求参数方程的导数" class="headerlink" title="考点4: 求参数方程的导数"></a>考点4: 求参数方程的导数</h2><p><font color="#7bbfea">(1)</font></p>
-<div class="shuxue">参数方程: $$\;\left\{\begin{array}{l}x\;=\;\varphi\;(\;t\;)\\y\;=\;\psi\;(\;t\;)\end{array}\right.\;$$</div>
-
-<p><font color="#7bbfea">(2)</font></p>
-<div class="shuxue">求导公式: $$\;\frac{dy}{dx}\;=\;\frac{dy\;/\;dt}{dx/\;dt}\;=\;\frac{\psi\;'\;(\;t\;)\;}{\varphi\;'\;(\;t\;)}$$</div>
-
-<div class="shuxue">$$\;\frac{d^2\;y}{d^{2\;}x}\;=\;\frac d{dx}\;\left(\;\frac{dy}{dx}\;\right)\;=\;\frac{d\;(\;{\displaystyle\frac{dy}{dx}}\;)\;/\;dt}{dx\;/\;dt}$$</div>
-
-
-<br>
-
-<br>
-
-<br>]]></content>
-      <categories>
-        <category>跟我一起学数学</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>数列的极限</title>
-    <url>/limit-of-sequence.html</url>
-    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
-<a id="more"></a>
-
-<h1 id="数列的定义"><a href="#数列的定义" class="headerlink" title="数列的定义"></a>数列的定义</h1><h4>概念</h4>
-
-<p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%88%97%E7%9A%84%E6%A6%82%E5%BF%B5.jpg"></p>
-<h4>数列的项</h4>
-
-<p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%88%97%E7%9A%84%E9%A1%B9.jpg"></p>
-<h1 id="数列极限的定义"><a href="#数列极限的定义" class="headerlink" title="数列极限的定义"></a>数列极限的定义</h1><p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%88%97%E7%9A%84%E9%A1%B9.jpg"></p>
-<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90%E7%9A%84%E5%85%AC%E5%BC%8F.jpg"></p>
-<h1 id="收敛数列的性质"><a href="#收敛数列的性质" class="headerlink" title="收敛数列的性质"></a>收敛数列的性质</h1><p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E6%94%B6%E6%95%9B%E6%95%B0%E5%88%97%E7%9A%84%E6%80%A7%E8%B4%A8.jpg"></p>
-<!-- ### 幂函数: y=Xα (α∈R是常数)
-
-### 指数函数:y=ax (a>0,a≠1)
-
-### 对数函数:y=loga x (a>0,a≠1)
-
-### 特别地,当a=e时,记作y=lnx
-
-###  -->
-
-<!-- ⊆是包含于符号：A包含于B-则A为B的子集或等于B。
-
-⊇是包含符号：A包含B-则B为A的子集或等于A。
-
-⫋真包含：A真包含于B-则A为B的真子集，若B={1，2}，则A={1}或{2}或空集。
-
-运算符号：
-
-如加号（+），减号（－），乘号（×或·），除号（÷或/），两个集合的并集（∪），交集（∩），根号（√￣），对数（log，lg，ln，lb），比（:），绝对值符号| |，微分（d），积分（∫），闭合曲面（曲线）积分（∮）等。
-
-关系符号：
-
-如“=”是等号，“≈”是近似符号（即约等于），“≠”是不等号，“>”是大于符号，“<”是小于符号，“≥”是大于或等于符号（也可写作“≮”，即不小于），“≤”是小于或等于符号（也可写作“≯”，即不大于），“→ ”表示变量变化的趋势。
-
-“∽”是相似符号，“≌”是全等号，“∥”是平行符号，“⊥”是垂直符号，“∝”是正比例符号（表示反比例时可以利用倒数关系），“∈”是属于符号，“⊆”是包含于符号，“⊇”是包含符号，“|”表示“能整除”（例如a|b 表示“a能整除b”，而  -->
-
+<p><font color="#7bbfea">(1) </font>在 [ a , b ]上连续</p>
+<p><font color="#7bbfea">(2) </font>在 ( a , b )内可导</p>
+<p><font color="#7bbfea">(3) </font>f ( a ) = f ( b ), 则 ∃ § ∈ ( a , b ) 使 $$lim_{1\to+\infty}P(|\frac{1}{n}\sum_i^nX_i-\mu|&lt;\epsilon)=1, i=1,…,n$$  </p>
 ]]></content>
       <categories>
         <category>跟我一起学数学</category>
@@ -6677,6 +7068,52 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
 <!-- # 考试特点: 小题难度低, 重基础, 结合题较难 -->
 
 <h1 id="学习方法-课本过两遍-多做题-多总结做题方法"><a href="#学习方法-课本过两遍-多做题-多总结做题方法" class="headerlink" title="学习方法: 课本过两遍, 多做题, 多总结做题方法"></a>学习方法: 课本过两遍, 多做题, 多总结做题方法</h1>]]></content>
+      <categories>
+        <category>跟我一起学数学</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>数列的极限</title>
+    <url>/limit-of-sequence.html</url>
+    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
+<a id="more"></a>
+
+<h1 id="数列的定义"><a href="#数列的定义" class="headerlink" title="数列的定义"></a>数列的定义</h1><h4>概念</h4>
+
+<p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%88%97%E7%9A%84%E6%A6%82%E5%BF%B5.jpg"></p>
+<h4>数列的项</h4>
+
+<p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%88%97%E7%9A%84%E9%A1%B9.jpg"></p>
+<h1 id="数列极限的定义"><a href="#数列极限的定义" class="headerlink" title="数列极限的定义"></a>数列极限的定义</h1><p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%88%97%E7%9A%84%E9%A1%B9.jpg"></p>
+<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90%E7%9A%84%E5%85%AC%E5%BC%8F.jpg"></p>
+<h1 id="收敛数列的性质"><a href="#收敛数列的性质" class="headerlink" title="收敛数列的性质"></a>收敛数列的性质</h1><p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E6%94%B6%E6%95%9B%E6%95%B0%E5%88%97%E7%9A%84%E6%80%A7%E8%B4%A8.jpg"></p>
+<!-- ### 幂函数: y=Xα (α∈R是常数)
+
+### 指数函数:y=ax (a>0,a≠1)
+
+### 对数函数:y=loga x (a>0,a≠1)
+
+### 特别地,当a=e时,记作y=lnx
+
+###  -->
+
+<!-- ⊆是包含于符号：A包含于B-则A为B的子集或等于B。
+
+⊇是包含符号：A包含B-则B为A的子集或等于A。
+
+⫋真包含：A真包含于B-则A为B的真子集，若B={1，2}，则A={1}或{2}或空集。
+
+运算符号：
+
+如加号（+），减号（－），乘号（×或·），除号（÷或/），两个集合的并集（∪），交集（∩），根号（√￣），对数（log，lg，ln，lb），比（:），绝对值符号| |，微分（d），积分（∫），闭合曲面（曲线）积分（∮）等。
+
+关系符号：
+
+如“=”是等号，“≈”是近似符号（即约等于），“≠”是不等号，“>”是大于符号，“<”是小于符号，“≥”是大于或等于符号（也可写作“≮”，即不小于），“≤”是小于或等于符号（也可写作“≯”，即不大于），“→ ”表示变量变化的趋势。
+
+“∽”是相似符号，“≌”是全等号，“∥”是平行符号，“⊥”是垂直符号，“∝”是正比例符号（表示反比例时可以利用倒数关系），“∈”是属于符号，“⊆”是包含于符号，“⊇”是包含符号，“|”表示“能整除”（例如a|b 表示“a能整除b”，而  -->
+
+]]></content>
       <categories>
         <category>跟我一起学数学</category>
       </categories>
@@ -7559,324 +7996,6 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
       </categories>
   </entry>
   <entry>
-    <title>人工智比赛资料</title>
-    <url>/AI-trainer-match--examination.html</url>
-    <content><![CDATA[<p><strong>人工智能训练师个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="人工智能训练师-初赛复习资料"><a href="#人工智能训练师-初赛复习资料" class="headerlink" title="人工智能训练师 初赛复习资料"></a>人工智能训练师 初赛复习资料</h1><p><strong>2021.8.12</strong></p>
-<p><strong>1. JavaScript Object Notation(JavaScript 对象表示法, JSON是文本的数据交换格式 ）     (考判断题+多选题)</strong></p>
-<p><strong>2. JSON有两种表示结构, 对象和数组      (考判断题+多选题)</strong></p>
-<p><strong>3. JSON对象结构以”{“开始, 以”}”结束中间部分由0或多个以”,”分隔的”key(关键字)/value(值)”对构成, 关键字和值之间以”:”分隔      (考判断题)</strong></p>
-<p><strong>4. JSON数组结构以”[“开始, “]”结束中间由0或多个以”,”分隔的值列表组成   (考判断题)</strong></p>
-<p><strong>5. XML可以用来标记数据, 定义数据类型   (考单选题+判断题+多选题)</strong></p>
-<p><strong>6. XML标签对组成   (考判断题)</strong></p>
-<p><strong>7. XML根元素   (考判断题)</strong></p>
-<p><strong>8. XML关闭标签   (考判断题)</strong></p>
-<p><strong>9. XML区分大小写字母   (考判断题)</strong></p>
-<p><strong>10. XML属性必须加引号   (考判断题)</strong></p>
-<p><strong>11. TXT是文本格式   (考判断题)</strong></p>
-<p><strong>12. EXE File是可执行程序   (考判断题)</strong></p>
-<p><strong>13. DOC是20世纪90年代, 微软的格式   (考单选题+判断题)</strong></p>
-<p><strong>14. MOV它是Apple公司   (考单选题+判断题)</strong></p>
-<p><strong>15. AVI微软公1992年11月视频格式   (考单选题+判断题)</strong></p>
-<p><strong>16. JPEG后缀是.jpg或.jpeg   (考单选题+判断题)</strong></p>
-<p><strong>17. CSV格式数字和文本   (考单选题+判断题)</strong></p>
-<p><strong>18. CSV文件开头不留空, 以行为单位   (考判断题)</strong></p>
-<p><strong>19. CSV文件可含或不含列名, 含列名则居文件第一行   (考单选题+判断题)</strong></p>
-<p><strong>20. CSV文件一行数据不跨行, 无空行   (考判断题)</strong></p>
-<p><strong>21. CSV文件格式(“”)包起来   (考单选题+判断题)</strong></p>
-<p><strong>22. CSV文件内码格式不限 ASCII, Unicode 或者其他   (考单选题+判断题)</strong></p>
-<p><strong>24. FLV是视频格式   (考单选题+判断题)</strong></p>
-<p><strong>25. WPS最常用的文字, 表格, 演示, PDF阅读等多种功能   (考单选题+判断题+多选题)</strong></p>
-<p><strong>26. BLP是图片压缩格式, 体积小, 不能直接编辑, 游戏中模型贴图应用格式   (考判断题)</strong></p>
-<p><strong>27. XLS是常用的电子表格的格式   (考判断题)</strong></p>
-<p><strong>28. 在同一台计算机中, 内存比外存存取速度快   (考判断题)</strong></p>
-<p><strong>29. 32位微处理器中的32表示的技术指标是字长   (考判断题)</strong></p>
-<p><strong>30. 目前制造计算机所采用的电子器件是超大规模集成电路   (考判断题)</strong></p>
-<p><strong>31. Microsoft Office PowerPoint是演示文稿软件   (考判断题)</strong></p>
-<p><strong>32. 文本编码类型有ASCII, GB2312, Unicode, UTF-8      (考判断题+多选题)</strong></p>
-<p><strong>33. 二进制文件按二进制编码方式存储   (考判断题)</strong></p>
-<p><strong>34. 数据以二进制编码方式存储   (考判断题)</strong></p>
-<p><strong>35. 机器学习是一门多领域交叉学科, 涉及概率论, 统计学, 逼近论, 凸分析, 算法复杂度理论    (考判断题+多选题)</strong></p>
-<p><strong>36. 深度学习是图像, 声音和文本      (考判断题+多选题)</strong></p>
-<p><strong>37. 深度学习的主要方式是监督学习, 无监督学习, 半监督学习和强化学习</strong></p>
-<p><strong>38. 监督学习是监督训练或有教师学习   (考判断题)</strong></p>
-<p><strong>39. 无监督学习根据类别未知的解决模式识别中的各种问题   (考判断题)</strong></p>
-<p><strong>40. 半监督学习是同时使用未标记数据和已标记数据来进行模式识别   (考判断题)</strong></p>
-<p><strong>41. 强化学习, 用于实现特定目标的问题   (考判断题)</strong></p>
-<p><strong>42. 智能语音处理技术包括身份识别, 语种识别, 情感识别, 语音分离, 语音合成等   (考多选题)</strong></p>
-<p><strong>43. 生物特征识别技术包括步态识别, 声纹识别, 虹膜识别等   (考多选题)</strong></p>
-<p><strong>44. 立体视觉是三维几何信息   (考判断题)</strong></p>
-<p><strong>45. 自然语言处理技术未完全达到人类智能   (考判断题)</strong></p>
-<p><strong>46. 自然语言处理不一定以经过标注过的数据作为输入   (考判断题)</strong></p>
-<p><strong>47. 自然语言处理不一定以有监督学习的方式实现   (考判断题)</strong></p>
-<p><strong>48. 自然语言处理可以通过无监督学习的方式实现   (考判断题)</strong></p>
-<p><strong>49. 数据预处理是清洗, 集成, 归约, 变换  (考多选题)</strong></p>
-<p><strong>50. 数据挖掘前数据预处理提高质量, 节省时间   (考判断题)</strong></p>
-<p><strong>51. 数据变换方法包括平滑, 聚集, 泛化, 规范化等   (考多选题)</strong></p>
-<p><strong>52. 监督学习模型时将数据集分为训练集, 验证集和测试集   (考多选题)</strong></p>
-<p><strong>53. 数据分析方法包括聚类分析, 因子分析, 相关分析, 方差分析, 回归分析等   (考多选题)</strong></p>
-<p><strong>54. 缺失数据处理方法包括删除含有缺失值的记录, 均值插补, 同类均值插补等   (考多选题)</strong></p>
-<p><strong>55. 数据治理是指对于数据采集, 数据清洗, 数据标注每个阶段识别, 度量, 监控, 预警   (考多选题)</strong></p>
-<p><strong>56. 数据分割 以便于重构，存储, 重组和恢复, 创建索引和顺序扫描的效率   (考判断题+多选题)</strong></p>
-<p><strong>57. 数据清洗就是排错   (考单选题+判断题)</strong></p>
-<p><strong>58. 为了避免在数据不被窃取不被复制, 对数据传输进行压缩, 加密   (考单选题+判断题)</strong></p>
-<p><strong>59. 数据一致性检查就是为了核对和纠正   (考单选题+判断题)</strong></p>
-<p><strong>60. 采用区块链就是强加密算法和分布式   (考单选题+判断题)</strong></p>
-<p><strong>61. TP是指正样本被预测判定为正, 称作判断为真的正确情况   (考判断题)</strong></p>
-<p><strong>62. TN是指负样本被预测判定为负, 称作判断为假的正确情况   (考判断题)</strong></p>
-<p><strong>63. FP是指负样本被模型预测为正,称为误报   (考判断题)</strong></p>
-<p><strong>64. FN是指正样本被模型预测为负, 称为漏报   (考判断题)</strong></p>
-<p><strong>65. 数据标注员具备的基本素质为: 学习力, 专注力, 责任感持续的学习力是标注工作的基础, 有耐心才能坚持在标注行业, 较强专注力可提高个人工作效率      (考判断题+多选题)</strong></p>
-<p><strong>66. 数据标注员要参照数据标注规则   (考判断题)</strong></p>
-<p><strong>67. 数据标注员遇到数据标注规则模糊的地方要进行询问   (考判断题)</strong></p>
-<p><strong>68. 数据标注员要总结经验并及时汇报遇到的问题   (考判断题)</strong></p>
-<p><strong>69. 初级数据标注员应具备的职业道德规范; 掌握行业基础知识; 具备基础业务能力      (考判断题+多选题)</strong></p>
-<p><strong>70. 中级数据标注员具备职业道德和经验; 具备业务能力和责任心; 具备质检能力      (考判断题+多选题)</strong></p>
-<p><strong>71. 高级数据标注员具备的从业经验; 具备业务能力和责任心; 能独立完成各类业务的示范模板和操作培训; 具备质检能力; 具备团队管理能力      (考判断题+多选题)</strong></p>
-<p><strong>72.  数据标注规则需要不断完善; 需求方优先规则; 质检优先规则      (考判断题+多选题)</strong></p>
-<p><strong>73. 数据标注的应用场景自动驾驶, 智能安防, 智慧医疗, 工业4.0, 新零售等   (考多选题)</strong></p>
-<p><strong>74. 根据数据标注对象不同, 数据标注可分为文本标注, 语音标注, 图像标注和视频标注   (考多选题)</strong></p>
-<p><strong>75. Labelme是图像标注软件, 使用 Python 语言编写, 图形界面使用Qt   (考判断题)</strong></p>
-<p><strong>76. Labelme能对图像进行多边形, 矩形, 圆形, 多段线, 线段, 点形式, flag 形式的标注      (考判断题+多选题)</strong></p>
-<p><strong>77. Labelme可以在Ubuntu, macOS, Windows操作系统上使用   (考判断题)</strong></p>
-<p><strong>78. Labelme以JSON存储标注信息   (考判断题)</strong></p>
-<p><strong>79. LabelImg是一个图像标注软件, 使用 Python 语言编写, 图形界面使用Qt   (考判断题)</strong></p>
-<p><strong>80. LabelImg以PASCAL VOC格式的XML文件存储标注信息, 还支持YOLO格式   (考单选题+判断题)</strong></p>
-<p><strong>81. Labelbox是一个图像标注软件</strong></p>
-<p><strong>82. 常见的图像数据标注类型包括关键点标注, 矩形框标注, 图像分割, 3D框标注, 属性标注等   (考多选题)</strong></p>
-<p><strong>83. 矩形框标注是一种对目标对象进行目标检测框标注的简单处理方式, 常用于标注自动驾驶下的人, 车, 物等   (考判断题)</strong></p>
-<p><strong>84. 区域标注指是指将图像分成各具特性的区域并提取出感兴趣部分的过程   (考单选题+判断题)</strong></p>
-<p><strong>85. 属性标注是用一个或多个标签标注目标物的属性   (考判断题)</strong></p>
-<p><strong>86. 关键点标注一般用于人体脸部轮廓, 五官定位, 身体部位和动物头像等   (考多选题)</strong></p>
-<p><strong>87. 视频数据标注任务包含视频标签的时间位置, 空间位置和标签信息标注等内容      (考判断题+多选题)</strong></p>
-<p><strong>88. 视频源数据管理包含视频信息管理和视频目录管理两大块      (考判断题+多选题)</strong></p>
-<p><strong>89. 视频信息管理包含视频上传, 视频修改, 视频查询, 视频删除, 下载视频等功能   (考多选题)</strong></p>
-<p><strong>90. 视频目录管理包含添加目录, 删除目录和目录排序功能   (考多选题)</strong></p>
-<p><strong>91. 视频数据标注通过语义, 内容等方式标注, 有利于视频数据搜索, 管理和收藏      (考判断题+多选题)</strong></p>
-<p><strong>92. 相较于图像数据而言, 图像数据是在一个时间点上的数据, 而视频数据是在一段时间上连续的一系列图像数据的集合, 表达的信息更加丰富, 因此具有更广的应用场景   (考判断题)</strong></p>
-<p><strong>93. 视频数据标注目的是对场景中活动目标进行位置, 形状, 动作, 色彩等有关特征进行标注      (考判断题+多选题)</strong></p>
-<p><strong>94. 常用的图像数据标注工具包括LabelMe, LabelImg和LabelBox   (考多选题)</strong></p>
-<p><strong>95. 目前常见的标注文档存储格式包括JSON, XML, TXT   (考多选题)</strong></p>
-<p><strong>96. 图像标注是实现图像分类, 目标检测, 图像分割的基础   (考多选题)</strong></p>
-<p><strong>97. ImageNet项目标注了一千四百多万张图像, 举办了八次图像任务挑战赛   (考单选题+判断题)</strong></p>
-<p><strong>98. ImageNet项目吸引了全球的参赛队伍通过编写相关算法来完成分类, 检测和定位等子任务   (考单选题+判断题)</strong></p>
-<p><strong>99. COCO数据集是一个大型的, 丰富的物体检测, 分割和字幕数据集   (考多选题)</strong></p>
-<p><strong>100. MNIST数据集是由0-9手写数字图片和数字标签所组成的   (考单选题+判断题)</strong></p>
-<p><strong>101. MNIST数据集由60000个训练样本和10000个测试样本组成   (考单选题+判断题)</strong></p>
-<p>*<em>102. MNIST数据集每个样本都是一张28 * 28像素的灰度手写数字图像   (考单选题+判断题)*</em></p>
-<p><strong>104. CIFAR-10是一个包含60000张图片的数据集   (考单选题+判断题)</strong></p>
-<p>*<em>105. CIFAR-10中, 每个图像为32</em>32的彩色图像   (考单选题+判断题)**</p>
-<p><strong>106. CIFAR-100有100个类, 每个类包含600个图像   (考单选题+判断题)</strong></p>
-<p><strong>107. CIFAR-100中, 每类各有500个训练图像和100个测试图像      (考判断题+多选题)</strong></p>
-<p><strong>108. 在图像数据标注中, 用户的角色可以分为3类, 分别是标注员, 审核员和管理员   (考判断题)</strong></p>
-<p><strong>109. 标注员负责对图像数据进行标注   (考判断题)</strong></p>
-<p><strong>110. 审核员负责对标注好的数据进行审核   (考判断题)</strong></p>
-<p><strong>111. 管理员负责对相关人员进行管理, 并对标注任务进行发放及回收   (考判断题)</strong></p>
-<p><strong>112. 图像数据标注流程: 图像获取-&gt;图像前处理-&gt;图像预识别-&gt;图像标注-&gt;结果输出      (考判断题+多选题)</strong></p>
-<p><strong>113. 项目不同图像的获取方式也不同, 一般可通过下采集, 网络采集等方式获取所需的图像   (考单选题+判断题)</strong></p>
-<p><strong>114. 图像前处理对图像进行查重处理, 将重复的图像删除   (考判断题)</strong></p>
-<p><strong>115. 可通过特定的程序, 先对数据做一个预标注, 标注员只需校验标注结果即可, 进而大幅提高标注效率   (考判断题)</strong></p>
-<p><strong>116. 在进行标注任务时, 首先要根据标注对象, 标注要求和不同的数据集格式选择合适的标注工具   (考判断题)</strong></p>
-<p><strong>117. 图像数据标注产业的蓬勃发展为人工智能行业计算机视觉方向的兴起奠定了扎实的基础   (考判断题)</strong></p>
-<p><strong>118. 不同行业对于数据的标注要求有所差异   (考判断题)</strong></p>
-<p><strong>119. 自动驾驶行业利用带有标签的数据集来对自动驾驶模型进行训练, 使其对路面情况具备判断能力, 并能做出相应的应对策略   (考判断题)</strong></p>
-<p><strong>120. 自动驾驶行业标注内容包括路面中行人识别, 车辆识别和道路识别等      (考判断题+多选题)</strong></p>
-<p><strong>121. 智慧医疗行业主要包括对解剖部位或病变部位对应的点线面以及轮廓进行标记, 如CT断层成像数据, 需要根据病理特点标注肺部边界轮廓   (考判断题)</strong></p>
-<p><strong>122. 智能安防行业通过对复杂条件下的人脸, 道路, 车辆, 动作的数据采集与标注实现城市道路监控, 车辆人流监测, 公共安全防范等应用      (考判断题+多选题)</strong></p>
-<p><strong>123. 区域标注需同时满足均匀性和连通性的条件, 其中均匀性指的是该区域中的所有像素点都满足灰度, 纹理, 彩色等特征的某种相似性准则; 连通性是指在该区域内存在的连接任意两点的路径      (考判断题+多选题)</strong></p>
-<p><strong>124. 与矩形框标注相比, 区域标注更加精确, 标注边缘可以是多边形甚至是柔性的, 常用于自动驾驶中的道路识别   (考单选题+判断题)</strong></p>
-<p><strong>125. 标注框标注用矩形框, 四边形框框选出目标物      (考判断题+多选题)</strong></p>
-<p><strong>126. 关键点标注用一个或多个关键点标注目标物特定局部的位置   (考单选题+判断题)</strong></p>
-<p><strong>127. 区域标注用开区域或闭区域分割出目标物的轮廓   (考判断题)</strong></p>
-<p><strong>128. 目前关键点标注常用于人脸识别, 人体骨骼检测, 手势确认等方面      (考判断题+多选题)</strong></p>
-<p><strong>129. 关键点标注虽然看起来比较简单, 只要在需要标注的地方打点标注就行, 但是实现起来难度非常大, 在图片标注任务中属于高难度标注      (考判断题)</strong></p>
-<p><strong>130. 关键点的数量一般较多, 在标注过程中需要搞清楚少则几个, 多则上百个点所代表的含义, 做得多就容易错得多      (考判断题)</strong></p>
-<p><strong>131. 关键点判断标注合格的标准不是很明确, 导致标注人员不能检查自己犯的错误      (考判断题)</strong></p>
-<p><strong>132. 在人脸关键点标注项目中, 标注的人脸图片通常是二维图片的, 但是需要标注员有三维立体感, 将标注后的图片具有立体效果   (考单选题+判断题)</strong></p>
-<p><strong>133. 当遇到遮挡点或不可见点, 关键点标注需要标注人员在标注过程时具有丰富的空间想象能力   (考单选题+判断题)</strong></p>
-<p><strong>134. 框标注包括矩形标注, 自由矩形标注, 3D框标注      (考判断题+多选题)</strong></p>
-<p><strong>135. 框标注应用方位广泛, 通过拉框的方式, 选定框区域内的内容来对图片的特征进行提取</strong></p>
-<p><strong>136. 在对图片进行框标注时, 由于框的图像形状受限, 会导致所标注的范围不够精确的问题      (考判断题)</strong></p>
-<p><strong>137. 图像区域标注分为开区域标注和闭区域标注      (考判断题+多选题)</strong></p>
-<p><strong>138. 开区域标注常见的标注有: 线标注; 闭区域标注常见的标注有: 曲线标注和多边形标注   (考单选题+判断题+多选题)</strong></p>
-<p><strong>139. 针对自动分割对多目标或背景复杂的图像难以奏效, 手工标注极为耗时且标注结果不准确和不可重复这两大问题, 提出了交互式图像分割      (考判断题)</strong></p>
-<p><strong>140. 交互式智能图像分割标注针对图像分割标注的预识别算法, 实现通过机器对图像进行智能分割, 再进行人工修边和筛选, 从而大幅提高生产效率, 减少人工成本, 减少人工差错      (考判断题+多选题)</strong></p>
-<p><strong>141. 线标注通常用于自动驾驶应用中的车道线标注, 主要用于自动驾驶车辆的道路识别      (考判断题+多选题)</strong></p>
-<p><strong>142. 多边形标注较为准确, 避免了大量白色空间的视觉模型偏差, 一般用于标注街景图片, 人物, 动物, 人体部位等      (考判断题+多选题)</strong></p>
-<p><strong>147. 采样精度: 指存放一个采样值所使用的比特数采样率和采样精度越大, 记录的波形更接近原始信号, 但同时占用的存储空间也越大      (考判断题)</strong></p>
-<p><strong>148. 声道: 声道指输入或输出信号的通道通常用多声道来输入或输出不同的信号   (考单选题+判断题)</strong></p>
-<p><strong>149. 信噪比: 信噪比指信号与噪声之间的能量比, 录音时信噪比越高越好   (考单选题+判断题)</strong></p>
-<p><strong>150. 声波: 声波是由物体震动产生, 使周围的介子(如空气)产生波动   (考单选题+判断题)</strong></p>
-<p><strong>151. 声速: 声波每秒在介质中传播的距离   (考单选题+判断题)</strong></p>
-<p><strong>152. 波长: 沿着声波传播方向, 声波震动一周所传播的距离或在波形上相同的相邻两点的距离   (考单选题+判断题)</strong></p>
-<p><strong>153. 振幅: 震动物体离开平衡位置的最大距离称为振幅, 通常用A表示   (考单选题+判断题)</strong></p>
-<p><strong>154. 分贝: 分贝是增益或衰减单位, 用来描述两个相同物理量之间的相对关系   (考单选题+判断题)</strong></p>
-<p><strong>155. TTS(语音合成)即从文本到语音, 是人机对话的一部分, 是指让计算机能够说话   (考单选题+判断题)</strong></p>
-<p><strong>156. TTS中最主要的一个指标是自然度, 也就是当我们听见计算机跟我们说话时, 能否区分出了是人还是计算机   (考单选题+判断题)</strong></p>
-<p><strong>157. ASR(语音识别)是将声音转换为文字   (考单选题+判断题)</strong></p>
-<p><strong>158. 语音标注数据的典型应用场景包括: 智能医疗, 智能驾驶, 智能家居, 智能教育, 智能客服, 机器人等      (考判断题+多选题)</strong></p>
-<p><strong>159. 音色/音质: 指能够区分两种不同声音的基本特征, 比如人说话的声音和小提琴的声音在语音信号处理技术中, 人声识别研究常将音色作为重要研究对象;    (考单选题+判断题)</strong></p>
-<p><strong>160. 音调: 指声音的高低, 由声波的频率决定比如在一般情况下, 男声听起来比较低沉, 而女声听起来会比较尖锐;    (考单选题+判断题)</strong></p>
-<p><strong>161. 音强: 指声音的强弱, 由声波的振动幅度决定, 可简单理解为语音信号波形图中的信号幅度;    (考单选题+判断题)</strong></p>
-<p><strong>162. 音长: 指声音的长短, 由发音时间的长短决定</strong></p>
-<p><strong>163. 语音编码格式: 指按一定格式压缩采样和量化后的数值, 从而降低音频的数据量, 便于音频数据的存储和传输常用的编码格式有PCM(WAV), MP3等   (考单选题+判断题)</strong></p>
-<p><strong>164. 按照智能应用场景, 语音数据标注任务可划分为智能家居, 智能会议, 智能客服, 智能车载等;       (考判断题+多选题)</strong></p>
-<p><strong>165. 按照语音信号处理研究方向, 语音数据标注任务可划分为语音识别, 语音合成, 说话人识别, 情感识别, 语音分离等;       (考判断题+多选题)</strong></p>
-<p><strong>166. 按照音源与拾音器之间的距离, 语音数据标注任务可划分为近场语音, 远场语音;       (考判断题+多选题)</strong></p>
-<p><strong>167. 按照语音时长, 语音数据标注任务可划分为短语音, 长语音;    (考单选题+判断题)</strong></p>
-<p><strong>169. 按照口音, 语音数据标注任务可划分为普通话, 方言, 带地方口音的普通话等      (考判断题+多选题)</strong></p>
-<p><strong>170. 丢帧: 在语音录制过程中, 由于音频设备的问题而表现出的发音卡顿, 比如语音段中某0.1秒内突然没有声音, 0.1秒过后语音又恢复正常, 此现象称为”丢帧”丢帧是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
-<p><strong>171. 切音: 在语音录制过程中, 由于过早结束或过晚开始录制导致个别字被截断而表现出的发音不完整, 此现象称为”切音”, 切音是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
-<p><strong>172. 吞音: 在说话人发音时, 由于个别字的声母或韵母未完全发音而表现出的发音不完整, 此现象称为”吞音”; 是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
-<p><strong>173. 喷麦: 在说话人发音时, 由于距离麦克风太近而表现出的录入语音不清晰, 听起来有明显噗噗的声音, 此现象称为”喷麦”喷麦是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
-<p><strong>174. 重音: 在说话人发音时, 语音中出现两个或多个说话人, 他们的音量大小相近且有大段重叠, 无法分清主次, 此现象称为”重音”重音是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
-<p><strong>175. 空旷音: 在录制过程中, 由于周围环境较为空旷而表现出来的发音中带有回音, 此现象称为”空旷音”; 空旷音是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
-<p><strong>176. 混响: 混响是另一种常见的声学场景与回声不同, 混响是语音经多次反射, 折射后叠加而成的声音混响语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
-<p><strong>177. 通常情况下, 丢帧, 切音, 吞音, 喷麦, 重音, 空旷音, 混响等异常语音数据会被认定为无效语音      (考判断题+多选题)</strong></p>
-<p><strong>178. 数据和特征决定了机器学习的上限, 模型和算法只是逼近这个上限而已      (考判断题+多选题)</strong></p>
-<p><strong>179. 语音学软件Praat, 是一款跨平台的多功能语音学专业软件, 主要用于对数字化的语音信号进行分析, 标注, 处理及合成等实验目前, Praat语音标注常用的标注工具      (考判断题+多选题)</strong></p>
-<p><strong>180. 在操作标注软件Praat打开音频文件后, 点击Tab键可以进行播放和暂停      (考判断题+多选题)</strong></p>
-<p><strong>181. 在操作标注软件Praat标注完成后, 直接按Ctrl+s保存, 保存后为一个TextGrid文件   (考单选题+判断题)</strong></p>
-<p><strong>182. 音频切分是语音标注基础, 需要按照音频波形进行切割, 将有声频段切分出来   (考单选题+判断题)</strong></p>
-<p><strong>183. 音频切分时, 切分前后贴合音频波形, 前后留白不能超过0.05S, 贴合音频波形切分   (考单选题+判断题)</strong></p>
-<p><strong>184. 音频切分时, 句子静音间隔超过0.1s则需要切分开成两句   (考单选题+判断题)</strong></p>
-<p><strong>185. 音频切分时, 非正常人声大段噪音的情况, 中间静音部分超过 0.2S 需要切分开   (考单选题+判断题)</strong></p>
-<p><strong>186. 音频切分时, 不同角色层需要切分开   (考单选题+判断题)</strong></p>
-<p><strong>187. 标注中的噪音标签是指音频有波形, 但音频内容为非正常对话内容如波形中是电话按键音, 纯唱歌彩铃, 电流杂音等嘈杂音频标记为噪音标签N或一人说话连续的笑声, 哈欠, 呼吸声等作为噪音标签N, 极其轻的声音波形不明显可以不标   (考单选题+判断题)</strong></p>
-<p><strong>188. 进行语音角色标注时, 说话角色为客户的标记为客户 C   (考单选题+判断题)</strong></p>
-<p><strong>189. 进行语音角色标注时, 说话角色为客服的标记为客服 O   (考单选题+判断题)</strong></p>
-<p><strong>190. 进行语音角色标注时, 说话角色为非顾客或者客服音频, 电话录音系统, 电话彩铃出现正常人声, 机器人音频标记其他角色 S   (考单选题+判断题)</strong></p>
-<p><strong>191. 进行语音性别标注时, 说话角色男性标记C1,O1, 女性角色C2, O2   (考判断题)</strong></p>
-<p><strong>192. 进行背景人声标注时, 背景人声标签主要为远场人说话的音频, 能听清识别的正常转写文本, 无法听清的只标注标签即可, 例如两个人说话, 另一个人在远处说话, 归为背景人声   (考单选题+判断题)</strong></p>
-<p><strong>193. 在进行叠音标注时, 重叠标签主要通过音频波形图判断, 所有角色说话清晰, 但波形图上大块重叠, 标注重叠标签P, 标注重叠标签P后, 不能出现文本   (考单选题+判断题)</strong></p>
-<p><strong>194. 噪音标注, 噪音标签 N, 波形中是电话按键音, 纯唱歌彩铃, 电流杂音等嘈杂音频标记为噪音标签N   (考单选题+判断题)</strong></p>
-<p><strong>195. 常见的语音文件格式类型有: .WAV, .WMA, .MP3, .CDA, .MIDI, .RA等      (考判断题+多选题)</strong></p>
-<p><strong>196. 目前(2021年)语音标注主要是用于监督学习   (考单选题+判断题)</strong></p>
-<p><strong>197.  TTS(Text-to-Speech, 语音合成), 即”从文本到语音”, 是人机对话的一部分, 让机器能够说话目前在很多电话机器人上的使用很广泛, 而且几乎已经判断不出来是机器人在和你讲话   (考单选题+判断题)</strong></p>
-<p><strong>198. ASR(Automatic Speech Recognition, 语音识别), 是将声音转换为文字   (考单选题+判断题)</strong></p>
-<p><strong>199. ASR在中文领域有很大的难度, 中文由于其语言博大精深, 而且方言众多, 对于声音转换为文字具有很多不确定性   (考单选题+判断题)</strong></p>
-<p><strong>200. 语音处理工具主要包括能实现录音, 混音, 剪辑等功能的软件      (考判断题+多选题)</strong></p>
-<p><strong>201. audio-annotator是基于Javascript的 音频 标注工具, 它可以实现无形, 声谱图, 声波进行可视化标注, 通用性强, 应用广泛      (考判断题+多选题)</strong></p>
-<p><strong>202. EchoML是一种基于B/S架构的音频标注工具, 便于实现多人协同标注但需要搭建服务器   (考单选题+判断题)</strong></p>
-<p><strong>203. 语音识别, 语音合成等智能语音处理技术在单一说话人, 发音规范, 背景噪音良好的情况下已经具有较为突出的表现      (考判断题+多选题)</strong></p>
-<p><strong>204. 当前阻碍智能语音处理技术实用化的一大困难即是复杂条件下性能降低的问题在实际生活场景中, 自然发音, 口音, 复杂噪声, 声音混叠等现象随处可见, 导致语音识别性能下降      (考判断题+多选题)</strong></p>
-<p><strong>205. 随着深度学习技术的发展, 数据对于训练模型的影响越来越重要, 因此, 生产复杂场景下的智能语音数据无论对于学术研究还是对于企业开发, 均具有重大意义   (考判断题)</strong></p>
-<p><strong>206. 语音数据产品生产过程具体包括语音采集, 数据预处理, 语音数据标注, 数据质检与数据交付模块      (考判断题+多选题)</strong></p>
-<p><strong>207. 数据清洗, 信息脱敏是常见的数据预处理方法      (考判断题+多选题)</strong></p>
-<p><strong>208. 多类型, 大体量的样本空间及高质量数据是人工智能技术精度的重要保障, 语音数据标注是语音数据产品生产流程中的关键环节      (考判断题+多选题)</strong></p>
-<p><strong>209. 常见的标注文档存储格式包括XML, TXT, JSON等      (考判断题+多选题)</strong></p>
-<p><strong>210. CSV格式的文件是以逗号为分隔符的   (考判断题)</strong></p>
-<p><strong>211. LabelHub 是为大型数据标注项目提供更好的管理方式及数据安全保障的数据标注系统, 它的结果文件同时支持CSV, XML, JSON三种格式      (考判断题+多选题)</strong></p>
-<p><strong>212. 文本数据异常包括语法类异常, 语义类异常, 覆盖类异常等      (考判断题+多选题)</strong></p>
-<p><strong>213. 语法类异常主要包括词法错误, 值域格式错误, 不规则的取值等213. 语法类异常主要包括词法错误, 值域格式错误, 不规则的取值等      (考判断题+多选题)</strong></p>
-<p><strong>214. 语义类异常主要包括数据中出现矛盾, 数据中存在重复值和无效的元组等      (考判断题+多选题)</strong></p>
-<p><strong>215. 覆盖类异常主要包括数据中出现矛盾, 不规则的取值等   (考判断题)</strong></p>
-<p><strong>216. 目前(2021年)文本标注主要是用于监督学习   (考判断题)</strong></p>
-<p><strong>217. 文本标注的对象是自然语言文本   (考判断题)</strong></p>
-<p><strong>218. 自然语言到人标准是通过图灵测试   (考单选题+判断题)</strong></p>
-<p><strong>219. 目前(2021年)最先进的自然语言处理技术是基于深度学习模型的   (考单选题+判断题)</strong></p>
-<p><strong>220. 中文文本需要进行分词标注   (考判断题)</strong></p>
-<p><strong>221. 标注出一句话中的动词属于词性标注   (考判断题)</strong></p>
-<p><strong>222. 词性标注属于序列标注   (考判断题)</strong></p>
-<p><strong>223. 分词标注属于序列标注   (考判断题)</strong></p>
-<p><strong>224. 标注一句话的情感状态属于属性标注   (考判断题)</strong></p>
-<p><strong>225. 文本标注的实体类别常见的有人名PER, 地名LOC和机构名ORG   (考单选题+判断题)</strong></p>
-<p><strong>226. 常见的文本标注工具: doccano, YEDDA, Chinese-Annotator, IEPY, DeepDive, BRAT等      (考判断题+多选题)</strong></p>
-<p><strong>227. “小明给妈妈洗脚”一句话的直接宾语为脚   (考判断题)</strong></p>
-<p><strong>228. WORD文档文件的扩展名是DOC, EXCEL文档文件的扩展名是XLS   (考单选题+判断题)</strong></p>
-<p><strong>229. 机器翻译是自然语言处理领域的一个重要课题   (考单选题+判断题)</strong></p>
-<p><strong>230. Brat只能在Linux下运行   (考单选题+判断题)</strong></p>
-<p><strong>231. IEPY是一个Python开发的开源的语料标准工具   (考单选题+判断题)</strong></p>
-<p><strong>232. 文本数据标注的大致流程包括预处理, 标注, 质检和验收      (考判断题+多选题)</strong></p>
-<p><strong>233. 文本标注工具的特点扩展性强, 操作便捷, 容错性强, 数据导出格式多样, 支持多语种      (考判断题+多选题)</strong></p>
-<p><strong>234. 文本数据标注主要应用的场景包括新零售行业, 广告行业, 客服行业, 公共安全和金融行业等      (考判断题+多选题)</strong></p>
-<p><strong>235. 文本标注工具BRAT的主要功能是实体标注和关系标注      (考判断题+多选题)</strong></p>
-<p><strong>236. 阅读理解标注的一般过程是标注者快速阅读段落内容, 根据内容提问以及标记问题答案   (考单选题+判断题)</strong></p>
-<p><strong>237. 文本标注的结果一般会作为自然语言处理算法的输入   (考判断题)</strong></p>
-<p><strong>238. 文本标注包括序列标注, 关系标注和属性标注   (考单选题+判断题)</strong></p>
-<p><strong>239. 序列标注包括分词, 实体, 关键字, 韵律和意图理解标注等   (考单选题+判断题)</strong></p>
-<p><strong>240. 关系标注所标注关系包括指向关系, 修饰关系, 平行语料等   (考单选题+判断题)</strong></p>
-<p><strong>241. Chinese-Annotator是支持中文的文本标注软件   (考单选题+判断题)</strong></p>
-<p><strong>242. 韵律标注主要是为了标注出句中字词间的停顿   (考单选题+判断题)</strong></p>
-<p><strong>243. 情感标注属于属性标注   (考单选题+判断题)</strong></p>
-<p><strong>244. 自然语言对话被誉为人工智能皇冠上的宝石   (考单选题+判断题)</strong></p>
-<p><strong>245. 标注需求不能脱离人工智能应用场景   (考单选题+判断题)</strong></p>
-<p><strong>246. 总体原则是文本标注过程中必须遵守的基本原则   (考单选题+判断题)</strong></p>
-<p><strong>247. 在分词当中遇到一些专有名词时, 无需进行拆分   (考单选题+判断题)</strong></p>
-<p><strong>248. 在日常生活中的书籍, 文档等等资料都可以整合处理后变成语料库来进行使用   (考单选题+判断题)</strong></p>
-<p><strong>249. 网上抓取到的语料处理难点在于网上的文本数据的用法和教科书所讲有较大差异   (考单选题+判断题)</strong></p>
-<p><strong>250. 语料处理过程的工作量大致会占据完整的中文自然语言处理工作量的50%-70%   (考单选题+判断题)</strong></p>
-<p><strong>251. 语料处理四个方面: 数据清洗, 分词, 词性标注和去停用词      (考判断题+多选题)</strong></p>
-<p><strong>252. 可以结合分词算法来加快文本数据标注的进度   (考单选题+判断题)</strong></p>
-<p><strong>253. 分词算法常见的有: 正向最大匹配算法, 逆向最大匹配算法, 最大Ngram分值算法, 全切分算法, 双向最大最小匹配算法等   (考单选题+判断题)</strong></p>
-<p><strong>254. 词性标注, 就是给每个词语打标签, 如形容词, 动词, 名词等      (考判断题+多选题)</strong></p>
-<p><strong>255. 停用词一般指对文本特征没有任何贡献作用的字词, 比如标点符号, 语气, 人称等一些词      (考判断题+多选题)</strong></p>
-<p><strong>256. 有些场景是需要语气词来进行判断情感, 所以去停用词的操作一定要根据场景进行   (考单选题+判断题)</strong></p>
-<p><strong>257. 自然语言处理可以在很多领域上进行应用, 如: 机器翻译, 情感分析, 智能问答, 文摘生成, 文本分类, 舆论分析, 知识图谱和销售分析等      (考判断题+多选题)</strong></p>
-<p><strong>258. 对于自然语言处理工程来说, 良好的语料标注是项目成功的基础   (考单选题+判断题)</strong></p>
-<p><strong>259. 语言学主要包括以下几个分支: 句法学, 语义学, 形态学(词根, 前缀后缀等), 音系学, 语音学, 词汇, 话语分析, 语用学和篇章结构分析等      (考判断题+多选题)</strong></p>
-<p><strong>260. 语料标注涵盖在自然语言处理任务的建模和标注两个步骤中, 语料标注过程常常需要在建模和标注之间反复进行迭代, 因为很难一次性建立完美的标注模型      (考判断题+多选题)</strong></p>
-<p><strong>261. 应该建立标注标准, 将标注方式细化, 才能保证标注数据的一致性   (考单选题+判断题)</strong></p>
-<p><strong>262. 当有多人对相同数据进行标注时, 可以采取交叉标注的方式   (考单选题+判断题)</strong></p>
-<p><strong>263. 在标注过程中, 应尽可能使用自动化方式减少标注人员工作量   (考单选题+判断题)</strong></p>
-<p><strong>264. 语料库选取应注意代表性, 不能只用单一新闻源构建语料库   (考单选题+判断题)</strong></p>
-<p><strong>265. 语料库选取的平衡性要求语料库中的类别组成应该与真实数据中的比例基本一致   (考单选题+判断题)</strong></p>
-<p><strong>266. 审核过程最好由参与制定标注标准的人来执行   (考单选题+判断题)</strong></p>
-<p><strong>267. 对专业度要求比较高的标注, 最好请从业人员参与标注   (考单选题+判断题)</strong></p>
-<p><strong>268. 语义标注中的自定义标签: 意图级别配置, 功能配置和预识别配置等      (考判断题+多选题)</strong></p>
-<p><strong>269. 音调包括阴平, 阳平, 上声, 去声和轻声      (考判断题+多选题)</strong></p>
-<p><strong>270. 韵律符号#1表示韵律词边界; 韵律符号#2表示韵律短语边界; 韵律符号#3表示语调短语边界; 韵律符号#4表示句末边界      (考判断题+多选题)</strong></p>
-<p><strong>271. Chinese-Annotator是一个较为完整的系统, 包括前端, 后台和数据库   (考单选题+判断题)</strong></p>
-<p><strong>272. 质量, 一组固有特性满足要求的程度   (考单选题+判断题)</strong></p>
-<p><strong>273. 产品, 过程的结果包括了硬件(如发动机机械零件), 软件(如计算机程序, 字典), 流程性材料(如润滑油), 服务(如运输)及其任意组合   (考单选题+判断题)</strong></p>
-<p><strong>274. 硬件产品是指由制作的零件和部件组成或由其组装成的产品, 如发动机机械零件   (考单选题+判断题)</strong></p>
-<p><strong>275. 软件是指由承载在媒体上的信息组成的智力产品软件能以概念, 记录或程序的形式存在计算机程序是软件产品的一个实例材料的定义   (考单选题+判断题)</strong></p>
-<p><strong>276. 服务是指在供方和顾客接口处完成的至少一项活动的结果   (考单选题+判断题)</strong></p>
-<p><strong>277. 过程: 将输入转化为输出的相互关联或相互作用的一组活动任何一个过程都由输入, 过程活动和输出三部分组成   (考单选题+判断题)</strong></p>
-<p><strong>278. 顾客: 接受产品的组织或个人(狭义: 产品和服务的最终使用者或接受者广义: 要结合过程模型去理解, 任何一个过程输出的接受者都是顾客)      (考判断题+多选题)</strong></p>
-<p><strong>279. 质量管理的定义和方针: 质量管理: 在质量方面指挥, 控制, 组织和协调的活动质量方针: 由组织最高管理者正式发布的关于质量方面的全部意图和方向      (考判断题+多选题)</strong></p>
-<p><strong>280. 质量管理发展阶段: １检验阶段; 2, 统计质量控制阶段; 3, 全面质量管理阶段; 4, 经营质量管理阶段      (考判断题+多选题)</strong></p>
-<p><strong>281. 质量管理的八项管理原则: (1)以顾客为关注焦点(2)领导作用(3)全员参与(4)过程方法(5)管理的系统方法(6)持续改进(7)基于事实的决策方法(8)与供方互利的关系      (考判断题+多选题)</strong></p>
-<p><strong>282. PDCA循环(计划—执行—检查—处理)循环又称戴明循环      (考判断题+多选题)</strong></p>
-<p><strong>283. 6σ质量管理标准是一种以顾客为导向, 重视策划过程, 重视科学的数据分析, 明确量化的目标的一种持续改进管理模式      (考判断题+多选题)</strong></p>
-<p><strong>284. 质量屋定义及其方法, 一个完整的质量屋包括6个部分: (1)顾客需求及其权重,(2)技术需求(3)关系矩阵(4)竞争分析(5)技术需求相关关系矩阵(6)技术评估      (考判断题+多选题)</strong></p>
-<p><strong>285.  质量成本管理: 质量成本是为了确保和保证满意的质量而发生的费用以及没有达到满意稍微质量所造成的损失   (考单选题+判断题)</strong></p>
-<p><strong>286. 职能组织结构在职能组织结构中, 每一个职能部门可根据它的管理职能对其直接和非直接的下属工作部门下达工作指令   (考单选题+判断题)</strong></p>
-<p><strong>287. 线性组织结构中, 每一个工作部门只能对其直接的下属部门下达工作指令, 每一个工作部门也只有一个直接的上级部门, 因此, 每一个工作部门只有唯一一个指令源, 避免了由于矛盾的指令而影响组织系统的运行   (考单选题+判断题)</strong></p>
-<p><strong>288. 矩阵组织结构适用于大的组织系统在矩阵组织结构中, 每一项纵向和横向交汇的工作, 指令来自于纵向和横向两个工作部门, 此其指令源为两个   (考单选题+判断题)</strong></p>
-<p><strong>289. 进度管理计划为编制, 监督和控制项目进度建立准则和明确活动. 包括: 项目进度模型制定, 进度计划的发布和迭代长度, 准确度, 计量单位, 组织程序链接, 项目进度模型维护, 控制临界值, 绩效测量规则, 确定完成百分比的规则, EVM 技术, 如基准法, 固定公式法, 完成百分比法等   (考单选题+判断题)</strong></p>
-<p><strong>290. 紧前关系: FS, FF, SS, SF      (考判断题+多选题)</strong></p>
-<p><strong>291. 活动间依赖关系   (考判断题)</strong></p>
-<p><strong>292. 强制性依赖关系, 法律或合同要求的或工作的内在性质决定的依赖关系, 往往与客观限制有关      (考判断题+多选题)</strong></p>
-<p><strong>293. 选择性依赖关系, 基于具体应用领域的最佳实践或项目的某些特殊性质对活动顺序的要求来创建   (考单选题+判断题)</strong></p>
-<p><strong>294. 外部依赖关系, 项目活动与非项目活动之间的依赖关系, 不在项目团队的控制范围内   (考单选题+判断题)</strong></p>
-<p><strong>295. 内部依赖关系, 项目活动之间的紧前关系, 在项目团队的控制之中   (考单选题+判断题)</strong></p>
-<p><strong>296. 提前量&amp;滞后量(判断题+多选题)</strong></p>
-<p><strong>297. 项目进度网络图(紧前关系绘图法PDM, 前导图)+多选题)</strong></p>
-<p><strong>298. 估算活动持续时间依据的信息包括: 工作范围, 所需资源类型与技能水平, 估算的资源数量和资源日历      (考判断题+多选题)</strong></p>
-<p><strong>299. 边际收益递减规律      (考判断题+多选题)</strong></p>
-<p><strong>300. 估算活动持续时间的方法      (考判断题+多选题)</strong></p>
-<p><strong>301. 三点估算      (考判断题+多选题)</strong></p>
-<p><strong>302. 贝塔分布, Te=(O+4M+P)/6, σ=(P-O)/6      (考判断题+多选题)</strong></p>
-<p><strong>303. 三角分布, Te=(O+M+P)/3, σ=(P-O)/6      (考判断题+多选题)</strong></p>
-<p><strong>304. 正态分布(68.26%, 95.46%, 99.73%)      (考判断题+多选题)</strong></p>
-<p><strong>305. 自下而上估算(成本&amp;准确度最高)      (考判断题+多选题)</strong></p>
-<p><strong>306. 储备分析, 储备分析用于确定项目所需的应急储备量和管理储备      (考判断题)</strong></p>
-<p><strong>307. 制定进度计划      (考判断题)</strong></p>
-<p><strong>308. 进度网络分析CPM      (考判断题)</strong></p>
-<p><strong>309. CCM(资源约束型CPM)      (考判断题)</strong></p>
-<p><strong>310. 资源平滑, 利用非关键路径上活动的浮动时间, 调整非关键路径上的活动使项目资源数量减少波动      (考判断题)</strong></p>
-<p><strong>311. 会绘制分析横道图(甘特图)      (考判断题)</strong></p>
-<p><strong>312. 会绘制分析里程碑图      (考判断题)</strong></p>
-<p><strong>313. 会绘制分析项目进度网络图      (考判断题)</strong></p>
-]]></content>
-      <categories>
-        <category>人工智能</category>
-      </categories>
-  </entry>
-  <entry>
     <title>人工智比赛</title>
     <url>/AI-trainer-match.html</url>
     <content><![CDATA[<p><strong>人工智能训练师个人整理</strong></p>
@@ -8173,6 +8292,324 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
 <p><strong>295. 内部依赖关系, 项目活动之间的紧前关系, 在项目团队的控制之中   (考单选题+判断题)</strong></p>
 <p><strong>296. 提前量&amp;滞后量(判断题+多选题)</strong></p>
 <p><strong>297. 项目进度网络图(紧前关系绘图法PDM, 前导图)   (考判断题+多选题)</strong></p>
+<p><strong>298. 估算活动持续时间依据的信息包括: 工作范围, 所需资源类型与技能水平, 估算的资源数量和资源日历      (考判断题+多选题)</strong></p>
+<p><strong>299. 边际收益递减规律      (考判断题+多选题)</strong></p>
+<p><strong>300. 估算活动持续时间的方法      (考判断题+多选题)</strong></p>
+<p><strong>301. 三点估算      (考判断题+多选题)</strong></p>
+<p><strong>302. 贝塔分布, Te=(O+4M+P)/6, σ=(P-O)/6      (考判断题+多选题)</strong></p>
+<p><strong>303. 三角分布, Te=(O+M+P)/3, σ=(P-O)/6      (考判断题+多选题)</strong></p>
+<p><strong>304. 正态分布(68.26%, 95.46%, 99.73%)      (考判断题+多选题)</strong></p>
+<p><strong>305. 自下而上估算(成本&amp;准确度最高)      (考判断题+多选题)</strong></p>
+<p><strong>306. 储备分析, 储备分析用于确定项目所需的应急储备量和管理储备      (考判断题)</strong></p>
+<p><strong>307. 制定进度计划      (考判断题)</strong></p>
+<p><strong>308. 进度网络分析CPM      (考判断题)</strong></p>
+<p><strong>309. CCM(资源约束型CPM)      (考判断题)</strong></p>
+<p><strong>310. 资源平滑, 利用非关键路径上活动的浮动时间, 调整非关键路径上的活动使项目资源数量减少波动      (考判断题)</strong></p>
+<p><strong>311. 会绘制分析横道图(甘特图)      (考判断题)</strong></p>
+<p><strong>312. 会绘制分析里程碑图      (考判断题)</strong></p>
+<p><strong>313. 会绘制分析项目进度网络图      (考判断题)</strong></p>
+]]></content>
+      <categories>
+        <category>人工智能</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>人工智比赛资料</title>
+    <url>/AI-trainer-match--examination.html</url>
+    <content><![CDATA[<p><strong>人工智能训练师个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="人工智能训练师-初赛复习资料"><a href="#人工智能训练师-初赛复习资料" class="headerlink" title="人工智能训练师 初赛复习资料"></a>人工智能训练师 初赛复习资料</h1><p><strong>2021.8.12</strong></p>
+<p><strong>1. JavaScript Object Notation(JavaScript 对象表示法, JSON是文本的数据交换格式 ）     (考判断题+多选题)</strong></p>
+<p><strong>2. JSON有两种表示结构, 对象和数组      (考判断题+多选题)</strong></p>
+<p><strong>3. JSON对象结构以”{“开始, 以”}”结束中间部分由0或多个以”,”分隔的”key(关键字)/value(值)”对构成, 关键字和值之间以”:”分隔      (考判断题)</strong></p>
+<p><strong>4. JSON数组结构以”[“开始, “]”结束中间由0或多个以”,”分隔的值列表组成   (考判断题)</strong></p>
+<p><strong>5. XML可以用来标记数据, 定义数据类型   (考单选题+判断题+多选题)</strong></p>
+<p><strong>6. XML标签对组成   (考判断题)</strong></p>
+<p><strong>7. XML根元素   (考判断题)</strong></p>
+<p><strong>8. XML关闭标签   (考判断题)</strong></p>
+<p><strong>9. XML区分大小写字母   (考判断题)</strong></p>
+<p><strong>10. XML属性必须加引号   (考判断题)</strong></p>
+<p><strong>11. TXT是文本格式   (考判断题)</strong></p>
+<p><strong>12. EXE File是可执行程序   (考判断题)</strong></p>
+<p><strong>13. DOC是20世纪90年代, 微软的格式   (考单选题+判断题)</strong></p>
+<p><strong>14. MOV它是Apple公司   (考单选题+判断题)</strong></p>
+<p><strong>15. AVI微软公1992年11月视频格式   (考单选题+判断题)</strong></p>
+<p><strong>16. JPEG后缀是.jpg或.jpeg   (考单选题+判断题)</strong></p>
+<p><strong>17. CSV格式数字和文本   (考单选题+判断题)</strong></p>
+<p><strong>18. CSV文件开头不留空, 以行为单位   (考判断题)</strong></p>
+<p><strong>19. CSV文件可含或不含列名, 含列名则居文件第一行   (考单选题+判断题)</strong></p>
+<p><strong>20. CSV文件一行数据不跨行, 无空行   (考判断题)</strong></p>
+<p><strong>21. CSV文件格式(“”)包起来   (考单选题+判断题)</strong></p>
+<p><strong>22. CSV文件内码格式不限 ASCII, Unicode 或者其他   (考单选题+判断题)</strong></p>
+<p><strong>24. FLV是视频格式   (考单选题+判断题)</strong></p>
+<p><strong>25. WPS最常用的文字, 表格, 演示, PDF阅读等多种功能   (考单选题+判断题+多选题)</strong></p>
+<p><strong>26. BLP是图片压缩格式, 体积小, 不能直接编辑, 游戏中模型贴图应用格式   (考判断题)</strong></p>
+<p><strong>27. XLS是常用的电子表格的格式   (考判断题)</strong></p>
+<p><strong>28. 在同一台计算机中, 内存比外存存取速度快   (考判断题)</strong></p>
+<p><strong>29. 32位微处理器中的32表示的技术指标是字长   (考判断题)</strong></p>
+<p><strong>30. 目前制造计算机所采用的电子器件是超大规模集成电路   (考判断题)</strong></p>
+<p><strong>31. Microsoft Office PowerPoint是演示文稿软件   (考判断题)</strong></p>
+<p><strong>32. 文本编码类型有ASCII, GB2312, Unicode, UTF-8      (考判断题+多选题)</strong></p>
+<p><strong>33. 二进制文件按二进制编码方式存储   (考判断题)</strong></p>
+<p><strong>34. 数据以二进制编码方式存储   (考判断题)</strong></p>
+<p><strong>35. 机器学习是一门多领域交叉学科, 涉及概率论, 统计学, 逼近论, 凸分析, 算法复杂度理论    (考判断题+多选题)</strong></p>
+<p><strong>36. 深度学习是图像, 声音和文本      (考判断题+多选题)</strong></p>
+<p><strong>37. 深度学习的主要方式是监督学习, 无监督学习, 半监督学习和强化学习</strong></p>
+<p><strong>38. 监督学习是监督训练或有教师学习   (考判断题)</strong></p>
+<p><strong>39. 无监督学习根据类别未知的解决模式识别中的各种问题   (考判断题)</strong></p>
+<p><strong>40. 半监督学习是同时使用未标记数据和已标记数据来进行模式识别   (考判断题)</strong></p>
+<p><strong>41. 强化学习, 用于实现特定目标的问题   (考判断题)</strong></p>
+<p><strong>42. 智能语音处理技术包括身份识别, 语种识别, 情感识别, 语音分离, 语音合成等   (考多选题)</strong></p>
+<p><strong>43. 生物特征识别技术包括步态识别, 声纹识别, 虹膜识别等   (考多选题)</strong></p>
+<p><strong>44. 立体视觉是三维几何信息   (考判断题)</strong></p>
+<p><strong>45. 自然语言处理技术未完全达到人类智能   (考判断题)</strong></p>
+<p><strong>46. 自然语言处理不一定以经过标注过的数据作为输入   (考判断题)</strong></p>
+<p><strong>47. 自然语言处理不一定以有监督学习的方式实现   (考判断题)</strong></p>
+<p><strong>48. 自然语言处理可以通过无监督学习的方式实现   (考判断题)</strong></p>
+<p><strong>49. 数据预处理是清洗, 集成, 归约, 变换  (考多选题)</strong></p>
+<p><strong>50. 数据挖掘前数据预处理提高质量, 节省时间   (考判断题)</strong></p>
+<p><strong>51. 数据变换方法包括平滑, 聚集, 泛化, 规范化等   (考多选题)</strong></p>
+<p><strong>52. 监督学习模型时将数据集分为训练集, 验证集和测试集   (考多选题)</strong></p>
+<p><strong>53. 数据分析方法包括聚类分析, 因子分析, 相关分析, 方差分析, 回归分析等   (考多选题)</strong></p>
+<p><strong>54. 缺失数据处理方法包括删除含有缺失值的记录, 均值插补, 同类均值插补等   (考多选题)</strong></p>
+<p><strong>55. 数据治理是指对于数据采集, 数据清洗, 数据标注每个阶段识别, 度量, 监控, 预警   (考多选题)</strong></p>
+<p><strong>56. 数据分割 以便于重构，存储, 重组和恢复, 创建索引和顺序扫描的效率   (考判断题+多选题)</strong></p>
+<p><strong>57. 数据清洗就是排错   (考单选题+判断题)</strong></p>
+<p><strong>58. 为了避免在数据不被窃取不被复制, 对数据传输进行压缩, 加密   (考单选题+判断题)</strong></p>
+<p><strong>59. 数据一致性检查就是为了核对和纠正   (考单选题+判断题)</strong></p>
+<p><strong>60. 采用区块链就是强加密算法和分布式   (考单选题+判断题)</strong></p>
+<p><strong>61. TP是指正样本被预测判定为正, 称作判断为真的正确情况   (考判断题)</strong></p>
+<p><strong>62. TN是指负样本被预测判定为负, 称作判断为假的正确情况   (考判断题)</strong></p>
+<p><strong>63. FP是指负样本被模型预测为正,称为误报   (考判断题)</strong></p>
+<p><strong>64. FN是指正样本被模型预测为负, 称为漏报   (考判断题)</strong></p>
+<p><strong>65. 数据标注员具备的基本素质为: 学习力, 专注力, 责任感持续的学习力是标注工作的基础, 有耐心才能坚持在标注行业, 较强专注力可提高个人工作效率      (考判断题+多选题)</strong></p>
+<p><strong>66. 数据标注员要参照数据标注规则   (考判断题)</strong></p>
+<p><strong>67. 数据标注员遇到数据标注规则模糊的地方要进行询问   (考判断题)</strong></p>
+<p><strong>68. 数据标注员要总结经验并及时汇报遇到的问题   (考判断题)</strong></p>
+<p><strong>69. 初级数据标注员应具备的职业道德规范; 掌握行业基础知识; 具备基础业务能力      (考判断题+多选题)</strong></p>
+<p><strong>70. 中级数据标注员具备职业道德和经验; 具备业务能力和责任心; 具备质检能力      (考判断题+多选题)</strong></p>
+<p><strong>71. 高级数据标注员具备的从业经验; 具备业务能力和责任心; 能独立完成各类业务的示范模板和操作培训; 具备质检能力; 具备团队管理能力      (考判断题+多选题)</strong></p>
+<p><strong>72.  数据标注规则需要不断完善; 需求方优先规则; 质检优先规则      (考判断题+多选题)</strong></p>
+<p><strong>73. 数据标注的应用场景自动驾驶, 智能安防, 智慧医疗, 工业4.0, 新零售等   (考多选题)</strong></p>
+<p><strong>74. 根据数据标注对象不同, 数据标注可分为文本标注, 语音标注, 图像标注和视频标注   (考多选题)</strong></p>
+<p><strong>75. Labelme是图像标注软件, 使用 Python 语言编写, 图形界面使用Qt   (考判断题)</strong></p>
+<p><strong>76. Labelme能对图像进行多边形, 矩形, 圆形, 多段线, 线段, 点形式, flag 形式的标注      (考判断题+多选题)</strong></p>
+<p><strong>77. Labelme可以在Ubuntu, macOS, Windows操作系统上使用   (考判断题)</strong></p>
+<p><strong>78. Labelme以JSON存储标注信息   (考判断题)</strong></p>
+<p><strong>79. LabelImg是一个图像标注软件, 使用 Python 语言编写, 图形界面使用Qt   (考判断题)</strong></p>
+<p><strong>80. LabelImg以PASCAL VOC格式的XML文件存储标注信息, 还支持YOLO格式   (考单选题+判断题)</strong></p>
+<p><strong>81. Labelbox是一个图像标注软件</strong></p>
+<p><strong>82. 常见的图像数据标注类型包括关键点标注, 矩形框标注, 图像分割, 3D框标注, 属性标注等   (考多选题)</strong></p>
+<p><strong>83. 矩形框标注是一种对目标对象进行目标检测框标注的简单处理方式, 常用于标注自动驾驶下的人, 车, 物等   (考判断题)</strong></p>
+<p><strong>84. 区域标注指是指将图像分成各具特性的区域并提取出感兴趣部分的过程   (考单选题+判断题)</strong></p>
+<p><strong>85. 属性标注是用一个或多个标签标注目标物的属性   (考判断题)</strong></p>
+<p><strong>86. 关键点标注一般用于人体脸部轮廓, 五官定位, 身体部位和动物头像等   (考多选题)</strong></p>
+<p><strong>87. 视频数据标注任务包含视频标签的时间位置, 空间位置和标签信息标注等内容      (考判断题+多选题)</strong></p>
+<p><strong>88. 视频源数据管理包含视频信息管理和视频目录管理两大块      (考判断题+多选题)</strong></p>
+<p><strong>89. 视频信息管理包含视频上传, 视频修改, 视频查询, 视频删除, 下载视频等功能   (考多选题)</strong></p>
+<p><strong>90. 视频目录管理包含添加目录, 删除目录和目录排序功能   (考多选题)</strong></p>
+<p><strong>91. 视频数据标注通过语义, 内容等方式标注, 有利于视频数据搜索, 管理和收藏      (考判断题+多选题)</strong></p>
+<p><strong>92. 相较于图像数据而言, 图像数据是在一个时间点上的数据, 而视频数据是在一段时间上连续的一系列图像数据的集合, 表达的信息更加丰富, 因此具有更广的应用场景   (考判断题)</strong></p>
+<p><strong>93. 视频数据标注目的是对场景中活动目标进行位置, 形状, 动作, 色彩等有关特征进行标注      (考判断题+多选题)</strong></p>
+<p><strong>94. 常用的图像数据标注工具包括LabelMe, LabelImg和LabelBox   (考多选题)</strong></p>
+<p><strong>95. 目前常见的标注文档存储格式包括JSON, XML, TXT   (考多选题)</strong></p>
+<p><strong>96. 图像标注是实现图像分类, 目标检测, 图像分割的基础   (考多选题)</strong></p>
+<p><strong>97. ImageNet项目标注了一千四百多万张图像, 举办了八次图像任务挑战赛   (考单选题+判断题)</strong></p>
+<p><strong>98. ImageNet项目吸引了全球的参赛队伍通过编写相关算法来完成分类, 检测和定位等子任务   (考单选题+判断题)</strong></p>
+<p><strong>99. COCO数据集是一个大型的, 丰富的物体检测, 分割和字幕数据集   (考多选题)</strong></p>
+<p><strong>100. MNIST数据集是由0-9手写数字图片和数字标签所组成的   (考单选题+判断题)</strong></p>
+<p><strong>101. MNIST数据集由60000个训练样本和10000个测试样本组成   (考单选题+判断题)</strong></p>
+<p>*<em>102. MNIST数据集每个样本都是一张28 * 28像素的灰度手写数字图像   (考单选题+判断题)*</em></p>
+<p><strong>104. CIFAR-10是一个包含60000张图片的数据集   (考单选题+判断题)</strong></p>
+<p>*<em>105. CIFAR-10中, 每个图像为32</em>32的彩色图像   (考单选题+判断题)**</p>
+<p><strong>106. CIFAR-100有100个类, 每个类包含600个图像   (考单选题+判断题)</strong></p>
+<p><strong>107. CIFAR-100中, 每类各有500个训练图像和100个测试图像      (考判断题+多选题)</strong></p>
+<p><strong>108. 在图像数据标注中, 用户的角色可以分为3类, 分别是标注员, 审核员和管理员   (考判断题)</strong></p>
+<p><strong>109. 标注员负责对图像数据进行标注   (考判断题)</strong></p>
+<p><strong>110. 审核员负责对标注好的数据进行审核   (考判断题)</strong></p>
+<p><strong>111. 管理员负责对相关人员进行管理, 并对标注任务进行发放及回收   (考判断题)</strong></p>
+<p><strong>112. 图像数据标注流程: 图像获取-&gt;图像前处理-&gt;图像预识别-&gt;图像标注-&gt;结果输出      (考判断题+多选题)</strong></p>
+<p><strong>113. 项目不同图像的获取方式也不同, 一般可通过下采集, 网络采集等方式获取所需的图像   (考单选题+判断题)</strong></p>
+<p><strong>114. 图像前处理对图像进行查重处理, 将重复的图像删除   (考判断题)</strong></p>
+<p><strong>115. 可通过特定的程序, 先对数据做一个预标注, 标注员只需校验标注结果即可, 进而大幅提高标注效率   (考判断题)</strong></p>
+<p><strong>116. 在进行标注任务时, 首先要根据标注对象, 标注要求和不同的数据集格式选择合适的标注工具   (考判断题)</strong></p>
+<p><strong>117. 图像数据标注产业的蓬勃发展为人工智能行业计算机视觉方向的兴起奠定了扎实的基础   (考判断题)</strong></p>
+<p><strong>118. 不同行业对于数据的标注要求有所差异   (考判断题)</strong></p>
+<p><strong>119. 自动驾驶行业利用带有标签的数据集来对自动驾驶模型进行训练, 使其对路面情况具备判断能力, 并能做出相应的应对策略   (考判断题)</strong></p>
+<p><strong>120. 自动驾驶行业标注内容包括路面中行人识别, 车辆识别和道路识别等      (考判断题+多选题)</strong></p>
+<p><strong>121. 智慧医疗行业主要包括对解剖部位或病变部位对应的点线面以及轮廓进行标记, 如CT断层成像数据, 需要根据病理特点标注肺部边界轮廓   (考判断题)</strong></p>
+<p><strong>122. 智能安防行业通过对复杂条件下的人脸, 道路, 车辆, 动作的数据采集与标注实现城市道路监控, 车辆人流监测, 公共安全防范等应用      (考判断题+多选题)</strong></p>
+<p><strong>123. 区域标注需同时满足均匀性和连通性的条件, 其中均匀性指的是该区域中的所有像素点都满足灰度, 纹理, 彩色等特征的某种相似性准则; 连通性是指在该区域内存在的连接任意两点的路径      (考判断题+多选题)</strong></p>
+<p><strong>124. 与矩形框标注相比, 区域标注更加精确, 标注边缘可以是多边形甚至是柔性的, 常用于自动驾驶中的道路识别   (考单选题+判断题)</strong></p>
+<p><strong>125. 标注框标注用矩形框, 四边形框框选出目标物      (考判断题+多选题)</strong></p>
+<p><strong>126. 关键点标注用一个或多个关键点标注目标物特定局部的位置   (考单选题+判断题)</strong></p>
+<p><strong>127. 区域标注用开区域或闭区域分割出目标物的轮廓   (考判断题)</strong></p>
+<p><strong>128. 目前关键点标注常用于人脸识别, 人体骨骼检测, 手势确认等方面      (考判断题+多选题)</strong></p>
+<p><strong>129. 关键点标注虽然看起来比较简单, 只要在需要标注的地方打点标注就行, 但是实现起来难度非常大, 在图片标注任务中属于高难度标注      (考判断题)</strong></p>
+<p><strong>130. 关键点的数量一般较多, 在标注过程中需要搞清楚少则几个, 多则上百个点所代表的含义, 做得多就容易错得多      (考判断题)</strong></p>
+<p><strong>131. 关键点判断标注合格的标准不是很明确, 导致标注人员不能检查自己犯的错误      (考判断题)</strong></p>
+<p><strong>132. 在人脸关键点标注项目中, 标注的人脸图片通常是二维图片的, 但是需要标注员有三维立体感, 将标注后的图片具有立体效果   (考单选题+判断题)</strong></p>
+<p><strong>133. 当遇到遮挡点或不可见点, 关键点标注需要标注人员在标注过程时具有丰富的空间想象能力   (考单选题+判断题)</strong></p>
+<p><strong>134. 框标注包括矩形标注, 自由矩形标注, 3D框标注      (考判断题+多选题)</strong></p>
+<p><strong>135. 框标注应用方位广泛, 通过拉框的方式, 选定框区域内的内容来对图片的特征进行提取</strong></p>
+<p><strong>136. 在对图片进行框标注时, 由于框的图像形状受限, 会导致所标注的范围不够精确的问题      (考判断题)</strong></p>
+<p><strong>137. 图像区域标注分为开区域标注和闭区域标注      (考判断题+多选题)</strong></p>
+<p><strong>138. 开区域标注常见的标注有: 线标注; 闭区域标注常见的标注有: 曲线标注和多边形标注   (考单选题+判断题+多选题)</strong></p>
+<p><strong>139. 针对自动分割对多目标或背景复杂的图像难以奏效, 手工标注极为耗时且标注结果不准确和不可重复这两大问题, 提出了交互式图像分割      (考判断题)</strong></p>
+<p><strong>140. 交互式智能图像分割标注针对图像分割标注的预识别算法, 实现通过机器对图像进行智能分割, 再进行人工修边和筛选, 从而大幅提高生产效率, 减少人工成本, 减少人工差错      (考判断题+多选题)</strong></p>
+<p><strong>141. 线标注通常用于自动驾驶应用中的车道线标注, 主要用于自动驾驶车辆的道路识别      (考判断题+多选题)</strong></p>
+<p><strong>142. 多边形标注较为准确, 避免了大量白色空间的视觉模型偏差, 一般用于标注街景图片, 人物, 动物, 人体部位等      (考判断题+多选题)</strong></p>
+<p><strong>147. 采样精度: 指存放一个采样值所使用的比特数采样率和采样精度越大, 记录的波形更接近原始信号, 但同时占用的存储空间也越大      (考判断题)</strong></p>
+<p><strong>148. 声道: 声道指输入或输出信号的通道通常用多声道来输入或输出不同的信号   (考单选题+判断题)</strong></p>
+<p><strong>149. 信噪比: 信噪比指信号与噪声之间的能量比, 录音时信噪比越高越好   (考单选题+判断题)</strong></p>
+<p><strong>150. 声波: 声波是由物体震动产生, 使周围的介子(如空气)产生波动   (考单选题+判断题)</strong></p>
+<p><strong>151. 声速: 声波每秒在介质中传播的距离   (考单选题+判断题)</strong></p>
+<p><strong>152. 波长: 沿着声波传播方向, 声波震动一周所传播的距离或在波形上相同的相邻两点的距离   (考单选题+判断题)</strong></p>
+<p><strong>153. 振幅: 震动物体离开平衡位置的最大距离称为振幅, 通常用A表示   (考单选题+判断题)</strong></p>
+<p><strong>154. 分贝: 分贝是增益或衰减单位, 用来描述两个相同物理量之间的相对关系   (考单选题+判断题)</strong></p>
+<p><strong>155. TTS(语音合成)即从文本到语音, 是人机对话的一部分, 是指让计算机能够说话   (考单选题+判断题)</strong></p>
+<p><strong>156. TTS中最主要的一个指标是自然度, 也就是当我们听见计算机跟我们说话时, 能否区分出了是人还是计算机   (考单选题+判断题)</strong></p>
+<p><strong>157. ASR(语音识别)是将声音转换为文字   (考单选题+判断题)</strong></p>
+<p><strong>158. 语音标注数据的典型应用场景包括: 智能医疗, 智能驾驶, 智能家居, 智能教育, 智能客服, 机器人等      (考判断题+多选题)</strong></p>
+<p><strong>159. 音色/音质: 指能够区分两种不同声音的基本特征, 比如人说话的声音和小提琴的声音在语音信号处理技术中, 人声识别研究常将音色作为重要研究对象;    (考单选题+判断题)</strong></p>
+<p><strong>160. 音调: 指声音的高低, 由声波的频率决定比如在一般情况下, 男声听起来比较低沉, 而女声听起来会比较尖锐;    (考单选题+判断题)</strong></p>
+<p><strong>161. 音强: 指声音的强弱, 由声波的振动幅度决定, 可简单理解为语音信号波形图中的信号幅度;    (考单选题+判断题)</strong></p>
+<p><strong>162. 音长: 指声音的长短, 由发音时间的长短决定</strong></p>
+<p><strong>163. 语音编码格式: 指按一定格式压缩采样和量化后的数值, 从而降低音频的数据量, 便于音频数据的存储和传输常用的编码格式有PCM(WAV), MP3等   (考单选题+判断题)</strong></p>
+<p><strong>164. 按照智能应用场景, 语音数据标注任务可划分为智能家居, 智能会议, 智能客服, 智能车载等;       (考判断题+多选题)</strong></p>
+<p><strong>165. 按照语音信号处理研究方向, 语音数据标注任务可划分为语音识别, 语音合成, 说话人识别, 情感识别, 语音分离等;       (考判断题+多选题)</strong></p>
+<p><strong>166. 按照音源与拾音器之间的距离, 语音数据标注任务可划分为近场语音, 远场语音;       (考判断题+多选题)</strong></p>
+<p><strong>167. 按照语音时长, 语音数据标注任务可划分为短语音, 长语音;    (考单选题+判断题)</strong></p>
+<p><strong>169. 按照口音, 语音数据标注任务可划分为普通话, 方言, 带地方口音的普通话等      (考判断题+多选题)</strong></p>
+<p><strong>170. 丢帧: 在语音录制过程中, 由于音频设备的问题而表现出的发音卡顿, 比如语音段中某0.1秒内突然没有声音, 0.1秒过后语音又恢复正常, 此现象称为”丢帧”丢帧是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
+<p><strong>171. 切音: 在语音录制过程中, 由于过早结束或过晚开始录制导致个别字被截断而表现出的发音不完整, 此现象称为”切音”, 切音是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
+<p><strong>172. 吞音: 在说话人发音时, 由于个别字的声母或韵母未完全发音而表现出的发音不完整, 此现象称为”吞音”; 是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
+<p><strong>173. 喷麦: 在说话人发音时, 由于距离麦克风太近而表现出的录入语音不清晰, 听起来有明显噗噗的声音, 此现象称为”喷麦”喷麦是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
+<p><strong>174. 重音: 在说话人发音时, 语音中出现两个或多个说话人, 他们的音量大小相近且有大段重叠, 无法分清主次, 此现象称为”重音”重音是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
+<p><strong>175. 空旷音: 在录制过程中, 由于周围环境较为空旷而表现出来的发音中带有回音, 此现象称为”空旷音”; 空旷音是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
+<p><strong>176. 混响: 混响是另一种常见的声学场景与回声不同, 混响是语音经多次反射, 折射后叠加而成的声音混响语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
+<p><strong>177. 通常情况下, 丢帧, 切音, 吞音, 喷麦, 重音, 空旷音, 混响等异常语音数据会被认定为无效语音      (考判断题+多选题)</strong></p>
+<p><strong>178. 数据和特征决定了机器学习的上限, 模型和算法只是逼近这个上限而已      (考判断题+多选题)</strong></p>
+<p><strong>179. 语音学软件Praat, 是一款跨平台的多功能语音学专业软件, 主要用于对数字化的语音信号进行分析, 标注, 处理及合成等实验目前, Praat语音标注常用的标注工具      (考判断题+多选题)</strong></p>
+<p><strong>180. 在操作标注软件Praat打开音频文件后, 点击Tab键可以进行播放和暂停      (考判断题+多选题)</strong></p>
+<p><strong>181. 在操作标注软件Praat标注完成后, 直接按Ctrl+s保存, 保存后为一个TextGrid文件   (考单选题+判断题)</strong></p>
+<p><strong>182. 音频切分是语音标注基础, 需要按照音频波形进行切割, 将有声频段切分出来   (考单选题+判断题)</strong></p>
+<p><strong>183. 音频切分时, 切分前后贴合音频波形, 前后留白不能超过0.05S, 贴合音频波形切分   (考单选题+判断题)</strong></p>
+<p><strong>184. 音频切分时, 句子静音间隔超过0.1s则需要切分开成两句   (考单选题+判断题)</strong></p>
+<p><strong>185. 音频切分时, 非正常人声大段噪音的情况, 中间静音部分超过 0.2S 需要切分开   (考单选题+判断题)</strong></p>
+<p><strong>186. 音频切分时, 不同角色层需要切分开   (考单选题+判断题)</strong></p>
+<p><strong>187. 标注中的噪音标签是指音频有波形, 但音频内容为非正常对话内容如波形中是电话按键音, 纯唱歌彩铃, 电流杂音等嘈杂音频标记为噪音标签N或一人说话连续的笑声, 哈欠, 呼吸声等作为噪音标签N, 极其轻的声音波形不明显可以不标   (考单选题+判断题)</strong></p>
+<p><strong>188. 进行语音角色标注时, 说话角色为客户的标记为客户 C   (考单选题+判断题)</strong></p>
+<p><strong>189. 进行语音角色标注时, 说话角色为客服的标记为客服 O   (考单选题+判断题)</strong></p>
+<p><strong>190. 进行语音角色标注时, 说话角色为非顾客或者客服音频, 电话录音系统, 电话彩铃出现正常人声, 机器人音频标记其他角色 S   (考单选题+判断题)</strong></p>
+<p><strong>191. 进行语音性别标注时, 说话角色男性标记C1,O1, 女性角色C2, O2   (考判断题)</strong></p>
+<p><strong>192. 进行背景人声标注时, 背景人声标签主要为远场人说话的音频, 能听清识别的正常转写文本, 无法听清的只标注标签即可, 例如两个人说话, 另一个人在远处说话, 归为背景人声   (考单选题+判断题)</strong></p>
+<p><strong>193. 在进行叠音标注时, 重叠标签主要通过音频波形图判断, 所有角色说话清晰, 但波形图上大块重叠, 标注重叠标签P, 标注重叠标签P后, 不能出现文本   (考单选题+判断题)</strong></p>
+<p><strong>194. 噪音标注, 噪音标签 N, 波形中是电话按键音, 纯唱歌彩铃, 电流杂音等嘈杂音频标记为噪音标签N   (考单选题+判断题)</strong></p>
+<p><strong>195. 常见的语音文件格式类型有: .WAV, .WMA, .MP3, .CDA, .MIDI, .RA等      (考判断题+多选题)</strong></p>
+<p><strong>196. 目前(2021年)语音标注主要是用于监督学习   (考单选题+判断题)</strong></p>
+<p><strong>197.  TTS(Text-to-Speech, 语音合成), 即”从文本到语音”, 是人机对话的一部分, 让机器能够说话目前在很多电话机器人上的使用很广泛, 而且几乎已经判断不出来是机器人在和你讲话   (考单选题+判断题)</strong></p>
+<p><strong>198. ASR(Automatic Speech Recognition, 语音识别), 是将声音转换为文字   (考单选题+判断题)</strong></p>
+<p><strong>199. ASR在中文领域有很大的难度, 中文由于其语言博大精深, 而且方言众多, 对于声音转换为文字具有很多不确定性   (考单选题+判断题)</strong></p>
+<p><strong>200. 语音处理工具主要包括能实现录音, 混音, 剪辑等功能的软件      (考判断题+多选题)</strong></p>
+<p><strong>201. audio-annotator是基于Javascript的 音频 标注工具, 它可以实现无形, 声谱图, 声波进行可视化标注, 通用性强, 应用广泛      (考判断题+多选题)</strong></p>
+<p><strong>202. EchoML是一种基于B/S架构的音频标注工具, 便于实现多人协同标注但需要搭建服务器   (考单选题+判断题)</strong></p>
+<p><strong>203. 语音识别, 语音合成等智能语音处理技术在单一说话人, 发音规范, 背景噪音良好的情况下已经具有较为突出的表现      (考判断题+多选题)</strong></p>
+<p><strong>204. 当前阻碍智能语音处理技术实用化的一大困难即是复杂条件下性能降低的问题在实际生活场景中, 自然发音, 口音, 复杂噪声, 声音混叠等现象随处可见, 导致语音识别性能下降      (考判断题+多选题)</strong></p>
+<p><strong>205. 随着深度学习技术的发展, 数据对于训练模型的影响越来越重要, 因此, 生产复杂场景下的智能语音数据无论对于学术研究还是对于企业开发, 均具有重大意义   (考判断题)</strong></p>
+<p><strong>206. 语音数据产品生产过程具体包括语音采集, 数据预处理, 语音数据标注, 数据质检与数据交付模块      (考判断题+多选题)</strong></p>
+<p><strong>207. 数据清洗, 信息脱敏是常见的数据预处理方法      (考判断题+多选题)</strong></p>
+<p><strong>208. 多类型, 大体量的样本空间及高质量数据是人工智能技术精度的重要保障, 语音数据标注是语音数据产品生产流程中的关键环节      (考判断题+多选题)</strong></p>
+<p><strong>209. 常见的标注文档存储格式包括XML, TXT, JSON等      (考判断题+多选题)</strong></p>
+<p><strong>210. CSV格式的文件是以逗号为分隔符的   (考判断题)</strong></p>
+<p><strong>211. LabelHub 是为大型数据标注项目提供更好的管理方式及数据安全保障的数据标注系统, 它的结果文件同时支持CSV, XML, JSON三种格式      (考判断题+多选题)</strong></p>
+<p><strong>212. 文本数据异常包括语法类异常, 语义类异常, 覆盖类异常等      (考判断题+多选题)</strong></p>
+<p><strong>213. 语法类异常主要包括词法错误, 值域格式错误, 不规则的取值等213. 语法类异常主要包括词法错误, 值域格式错误, 不规则的取值等      (考判断题+多选题)</strong></p>
+<p><strong>214. 语义类异常主要包括数据中出现矛盾, 数据中存在重复值和无效的元组等      (考判断题+多选题)</strong></p>
+<p><strong>215. 覆盖类异常主要包括数据中出现矛盾, 不规则的取值等   (考判断题)</strong></p>
+<p><strong>216. 目前(2021年)文本标注主要是用于监督学习   (考判断题)</strong></p>
+<p><strong>217. 文本标注的对象是自然语言文本   (考判断题)</strong></p>
+<p><strong>218. 自然语言到人标准是通过图灵测试   (考单选题+判断题)</strong></p>
+<p><strong>219. 目前(2021年)最先进的自然语言处理技术是基于深度学习模型的   (考单选题+判断题)</strong></p>
+<p><strong>220. 中文文本需要进行分词标注   (考判断题)</strong></p>
+<p><strong>221. 标注出一句话中的动词属于词性标注   (考判断题)</strong></p>
+<p><strong>222. 词性标注属于序列标注   (考判断题)</strong></p>
+<p><strong>223. 分词标注属于序列标注   (考判断题)</strong></p>
+<p><strong>224. 标注一句话的情感状态属于属性标注   (考判断题)</strong></p>
+<p><strong>225. 文本标注的实体类别常见的有人名PER, 地名LOC和机构名ORG   (考单选题+判断题)</strong></p>
+<p><strong>226. 常见的文本标注工具: doccano, YEDDA, Chinese-Annotator, IEPY, DeepDive, BRAT等      (考判断题+多选题)</strong></p>
+<p><strong>227. “小明给妈妈洗脚”一句话的直接宾语为脚   (考判断题)</strong></p>
+<p><strong>228. WORD文档文件的扩展名是DOC, EXCEL文档文件的扩展名是XLS   (考单选题+判断题)</strong></p>
+<p><strong>229. 机器翻译是自然语言处理领域的一个重要课题   (考单选题+判断题)</strong></p>
+<p><strong>230. Brat只能在Linux下运行   (考单选题+判断题)</strong></p>
+<p><strong>231. IEPY是一个Python开发的开源的语料标准工具   (考单选题+判断题)</strong></p>
+<p><strong>232. 文本数据标注的大致流程包括预处理, 标注, 质检和验收      (考判断题+多选题)</strong></p>
+<p><strong>233. 文本标注工具的特点扩展性强, 操作便捷, 容错性强, 数据导出格式多样, 支持多语种      (考判断题+多选题)</strong></p>
+<p><strong>234. 文本数据标注主要应用的场景包括新零售行业, 广告行业, 客服行业, 公共安全和金融行业等      (考判断题+多选题)</strong></p>
+<p><strong>235. 文本标注工具BRAT的主要功能是实体标注和关系标注      (考判断题+多选题)</strong></p>
+<p><strong>236. 阅读理解标注的一般过程是标注者快速阅读段落内容, 根据内容提问以及标记问题答案   (考单选题+判断题)</strong></p>
+<p><strong>237. 文本标注的结果一般会作为自然语言处理算法的输入   (考判断题)</strong></p>
+<p><strong>238. 文本标注包括序列标注, 关系标注和属性标注   (考单选题+判断题)</strong></p>
+<p><strong>239. 序列标注包括分词, 实体, 关键字, 韵律和意图理解标注等   (考单选题+判断题)</strong></p>
+<p><strong>240. 关系标注所标注关系包括指向关系, 修饰关系, 平行语料等   (考单选题+判断题)</strong></p>
+<p><strong>241. Chinese-Annotator是支持中文的文本标注软件   (考单选题+判断题)</strong></p>
+<p><strong>242. 韵律标注主要是为了标注出句中字词间的停顿   (考单选题+判断题)</strong></p>
+<p><strong>243. 情感标注属于属性标注   (考单选题+判断题)</strong></p>
+<p><strong>244. 自然语言对话被誉为人工智能皇冠上的宝石   (考单选题+判断题)</strong></p>
+<p><strong>245. 标注需求不能脱离人工智能应用场景   (考单选题+判断题)</strong></p>
+<p><strong>246. 总体原则是文本标注过程中必须遵守的基本原则   (考单选题+判断题)</strong></p>
+<p><strong>247. 在分词当中遇到一些专有名词时, 无需进行拆分   (考单选题+判断题)</strong></p>
+<p><strong>248. 在日常生活中的书籍, 文档等等资料都可以整合处理后变成语料库来进行使用   (考单选题+判断题)</strong></p>
+<p><strong>249. 网上抓取到的语料处理难点在于网上的文本数据的用法和教科书所讲有较大差异   (考单选题+判断题)</strong></p>
+<p><strong>250. 语料处理过程的工作量大致会占据完整的中文自然语言处理工作量的50%-70%   (考单选题+判断题)</strong></p>
+<p><strong>251. 语料处理四个方面: 数据清洗, 分词, 词性标注和去停用词      (考判断题+多选题)</strong></p>
+<p><strong>252. 可以结合分词算法来加快文本数据标注的进度   (考单选题+判断题)</strong></p>
+<p><strong>253. 分词算法常见的有: 正向最大匹配算法, 逆向最大匹配算法, 最大Ngram分值算法, 全切分算法, 双向最大最小匹配算法等   (考单选题+判断题)</strong></p>
+<p><strong>254. 词性标注, 就是给每个词语打标签, 如形容词, 动词, 名词等      (考判断题+多选题)</strong></p>
+<p><strong>255. 停用词一般指对文本特征没有任何贡献作用的字词, 比如标点符号, 语气, 人称等一些词      (考判断题+多选题)</strong></p>
+<p><strong>256. 有些场景是需要语气词来进行判断情感, 所以去停用词的操作一定要根据场景进行   (考单选题+判断题)</strong></p>
+<p><strong>257. 自然语言处理可以在很多领域上进行应用, 如: 机器翻译, 情感分析, 智能问答, 文摘生成, 文本分类, 舆论分析, 知识图谱和销售分析等      (考判断题+多选题)</strong></p>
+<p><strong>258. 对于自然语言处理工程来说, 良好的语料标注是项目成功的基础   (考单选题+判断题)</strong></p>
+<p><strong>259. 语言学主要包括以下几个分支: 句法学, 语义学, 形态学(词根, 前缀后缀等), 音系学, 语音学, 词汇, 话语分析, 语用学和篇章结构分析等      (考判断题+多选题)</strong></p>
+<p><strong>260. 语料标注涵盖在自然语言处理任务的建模和标注两个步骤中, 语料标注过程常常需要在建模和标注之间反复进行迭代, 因为很难一次性建立完美的标注模型      (考判断题+多选题)</strong></p>
+<p><strong>261. 应该建立标注标准, 将标注方式细化, 才能保证标注数据的一致性   (考单选题+判断题)</strong></p>
+<p><strong>262. 当有多人对相同数据进行标注时, 可以采取交叉标注的方式   (考单选题+判断题)</strong></p>
+<p><strong>263. 在标注过程中, 应尽可能使用自动化方式减少标注人员工作量   (考单选题+判断题)</strong></p>
+<p><strong>264. 语料库选取应注意代表性, 不能只用单一新闻源构建语料库   (考单选题+判断题)</strong></p>
+<p><strong>265. 语料库选取的平衡性要求语料库中的类别组成应该与真实数据中的比例基本一致   (考单选题+判断题)</strong></p>
+<p><strong>266. 审核过程最好由参与制定标注标准的人来执行   (考单选题+判断题)</strong></p>
+<p><strong>267. 对专业度要求比较高的标注, 最好请从业人员参与标注   (考单选题+判断题)</strong></p>
+<p><strong>268. 语义标注中的自定义标签: 意图级别配置, 功能配置和预识别配置等      (考判断题+多选题)</strong></p>
+<p><strong>269. 音调包括阴平, 阳平, 上声, 去声和轻声      (考判断题+多选题)</strong></p>
+<p><strong>270. 韵律符号#1表示韵律词边界; 韵律符号#2表示韵律短语边界; 韵律符号#3表示语调短语边界; 韵律符号#4表示句末边界      (考判断题+多选题)</strong></p>
+<p><strong>271. Chinese-Annotator是一个较为完整的系统, 包括前端, 后台和数据库   (考单选题+判断题)</strong></p>
+<p><strong>272. 质量, 一组固有特性满足要求的程度   (考单选题+判断题)</strong></p>
+<p><strong>273. 产品, 过程的结果包括了硬件(如发动机机械零件), 软件(如计算机程序, 字典), 流程性材料(如润滑油), 服务(如运输)及其任意组合   (考单选题+判断题)</strong></p>
+<p><strong>274. 硬件产品是指由制作的零件和部件组成或由其组装成的产品, 如发动机机械零件   (考单选题+判断题)</strong></p>
+<p><strong>275. 软件是指由承载在媒体上的信息组成的智力产品软件能以概念, 记录或程序的形式存在计算机程序是软件产品的一个实例材料的定义   (考单选题+判断题)</strong></p>
+<p><strong>276. 服务是指在供方和顾客接口处完成的至少一项活动的结果   (考单选题+判断题)</strong></p>
+<p><strong>277. 过程: 将输入转化为输出的相互关联或相互作用的一组活动任何一个过程都由输入, 过程活动和输出三部分组成   (考单选题+判断题)</strong></p>
+<p><strong>278. 顾客: 接受产品的组织或个人(狭义: 产品和服务的最终使用者或接受者广义: 要结合过程模型去理解, 任何一个过程输出的接受者都是顾客)      (考判断题+多选题)</strong></p>
+<p><strong>279. 质量管理的定义和方针: 质量管理: 在质量方面指挥, 控制, 组织和协调的活动质量方针: 由组织最高管理者正式发布的关于质量方面的全部意图和方向      (考判断题+多选题)</strong></p>
+<p><strong>280. 质量管理发展阶段: １检验阶段; 2, 统计质量控制阶段; 3, 全面质量管理阶段; 4, 经营质量管理阶段      (考判断题+多选题)</strong></p>
+<p><strong>281. 质量管理的八项管理原则: (1)以顾客为关注焦点(2)领导作用(3)全员参与(4)过程方法(5)管理的系统方法(6)持续改进(7)基于事实的决策方法(8)与供方互利的关系      (考判断题+多选题)</strong></p>
+<p><strong>282. PDCA循环(计划—执行—检查—处理)循环又称戴明循环      (考判断题+多选题)</strong></p>
+<p><strong>283. 6σ质量管理标准是一种以顾客为导向, 重视策划过程, 重视科学的数据分析, 明确量化的目标的一种持续改进管理模式      (考判断题+多选题)</strong></p>
+<p><strong>284. 质量屋定义及其方法, 一个完整的质量屋包括6个部分: (1)顾客需求及其权重,(2)技术需求(3)关系矩阵(4)竞争分析(5)技术需求相关关系矩阵(6)技术评估      (考判断题+多选题)</strong></p>
+<p><strong>285.  质量成本管理: 质量成本是为了确保和保证满意的质量而发生的费用以及没有达到满意稍微质量所造成的损失   (考单选题+判断题)</strong></p>
+<p><strong>286. 职能组织结构在职能组织结构中, 每一个职能部门可根据它的管理职能对其直接和非直接的下属工作部门下达工作指令   (考单选题+判断题)</strong></p>
+<p><strong>287. 线性组织结构中, 每一个工作部门只能对其直接的下属部门下达工作指令, 每一个工作部门也只有一个直接的上级部门, 因此, 每一个工作部门只有唯一一个指令源, 避免了由于矛盾的指令而影响组织系统的运行   (考单选题+判断题)</strong></p>
+<p><strong>288. 矩阵组织结构适用于大的组织系统在矩阵组织结构中, 每一项纵向和横向交汇的工作, 指令来自于纵向和横向两个工作部门, 此其指令源为两个   (考单选题+判断题)</strong></p>
+<p><strong>289. 进度管理计划为编制, 监督和控制项目进度建立准则和明确活动. 包括: 项目进度模型制定, 进度计划的发布和迭代长度, 准确度, 计量单位, 组织程序链接, 项目进度模型维护, 控制临界值, 绩效测量规则, 确定完成百分比的规则, EVM 技术, 如基准法, 固定公式法, 完成百分比法等   (考单选题+判断题)</strong></p>
+<p><strong>290. 紧前关系: FS, FF, SS, SF      (考判断题+多选题)</strong></p>
+<p><strong>291. 活动间依赖关系   (考判断题)</strong></p>
+<p><strong>292. 强制性依赖关系, 法律或合同要求的或工作的内在性质决定的依赖关系, 往往与客观限制有关      (考判断题+多选题)</strong></p>
+<p><strong>293. 选择性依赖关系, 基于具体应用领域的最佳实践或项目的某些特殊性质对活动顺序的要求来创建   (考单选题+判断题)</strong></p>
+<p><strong>294. 外部依赖关系, 项目活动与非项目活动之间的依赖关系, 不在项目团队的控制范围内   (考单选题+判断题)</strong></p>
+<p><strong>295. 内部依赖关系, 项目活动之间的紧前关系, 在项目团队的控制之中   (考单选题+判断题)</strong></p>
+<p><strong>296. 提前量&amp;滞后量(判断题+多选题)</strong></p>
+<p><strong>297. 项目进度网络图(紧前关系绘图法PDM, 前导图)+多选题)</strong></p>
 <p><strong>298. 估算活动持续时间依据的信息包括: 工作范围, 所需资源类型与技能水平, 估算的资源数量和资源日历      (考判断题+多选题)</strong></p>
 <p><strong>299. 边际收益递减规律      (考判断题+多选题)</strong></p>
 <p><strong>300. 估算活动持续时间的方法      (考判断题+多选题)</strong></p>
