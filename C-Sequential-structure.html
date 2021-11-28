@@ -5,7 +5,7 @@
   
 
 <head>
-	<title>Android同步源码和编译ROM傻瓜式 (有手就行) -  我叫史迪奇</title>
+	<title>C语 顺序结构程序设计 -  我叫史迪奇</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="这是我的博客" />
@@ -872,13 +872,13 @@ var $main = document.querySelector('.main');
 <div class="sdq">
 	<div class="sdq-post" id="sdqPost">
 		<div class="sdq-title">
-			<h1>Android同步源码和编译ROM傻瓜式 (有手就行)</h1>
+			<h1>C语 顺序结构程序设计</h1>
 		</div>
 	  <div id="post" class="sdq-post-Statistics">
-            <a>2018年03月14日</a>
+            <a>2019年11月26日</a>
 		  	<a class="post-count">99 字</a>
 		
-		  <a class=" -link" href="/categories/Linux/">Linux</a>
+		  <a class=" -link" href="/categories/C%E8%AF%AD/">C语</a>
 		
 		
 	  </div>
@@ -889,7 +889,7 @@ var $main = document.querySelector('.main');
 <aside id="article-toc" class="fixed-toc">
     <div id="article-toc-inner">
         <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%98%AF-%E5%AE%89%E8%A3%85Linux-%E6%88%91%E4%BB%A5Ubuntu%E5%92%8Cdeepin%E4%B8%BA%E4%BE%8B%E5%AD%90%EF%BC%8C%E5%BB%BA%E8%AE%AE%E6%96%B0%E6%89%8B%E7%94%A8deepin"><span class="toc-text">第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%98%AF-%E7%8E%AF%E5%A2%83%E6%90%AD%E8%BD%BD"><span class="toc-text">第二是 环境搭载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%98%AF-%E5%AE%89%E8%A3%85repo"><span class="toc-text">第三是 安装repo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%98%AF-%E5%90%8C%E6%AD%A5%E6%BA%90%E7%A0%81"><span class="toc-text">第四是 同步源码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E6%98%AF-%E6%8B%89%E5%8F%96%E6%BA%90%E7%A0%81"><span class="toc-text">第五是 拉取源码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E6%98%AF-%E8%8E%B7%E5%8F%96%E6%9C%BA%E5%9E%8Bdevice"><span class="toc-text">第六是 获取机型device</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E6%98%AF-%E6%89%A7%E8%A1%8C%E7%BC%96%E8%AF%91"><span class="toc-text">第七是 执行编译</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%A6%E5%A4%96%E8%AE%BE%E7%BD%AEccache%E6%8F%90%E9%AB%98%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6"><span class="toc-text">另外设置ccache提高编译速度</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A5%9D%E7%A6%8F%E5%A4%A7%E5%AE%B6%E8%83%BD%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E5%81%9A%E5%87%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84ROM"><span class="toc-text">祝福大家能自己动手做出属于自己的ROM</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0"><span class="toc-text">C语言概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E5%8F%A5"><span class="toc-text">表达式语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E8%AF%AD%E5%8F%A5"><span class="toc-text">函数调用语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E5%90%88%E8%AF%AD%E5%8F%A5"><span class="toc-text">复合语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E8%AF%AD%E5%8F%A5"><span class="toc-text">空语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="toc-text">控制语句</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-text">程序的三种基本结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="toc-text">顺序结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84"><span class="toc-text">选择结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">单分支选择结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">双分支选择结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">多分支选择结构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="toc-text">循环结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">当型循环结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">直到循环结构</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E8%AF%AD%E5%8F%A5"><span class="toc-text">赋值语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">赋值语句其基本形式:</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA"><span class="toc-text">格式输入与输出</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#printf-%E5%87%BD%E6%95%B0-%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%85%A5%E5%87%BD%E6%95%B0"><span class="toc-text">printf()函数(格式输入函数)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">printf()函数格式说明</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scanf-%E5%87%BD%E6%95%B0-%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%85%A5%E5%87%BD%E6%95%B0"><span class="toc-text">scanf()函数(格式输入函数)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">scanf函数的格式字符及作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">scanf函数的附加格式字符及作用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E6%8E%A7%E5%88%B6-%E6%A0%BC%E5%BC%8F%E6%8E%A7%E5%88%B6%E6%98%AF%E7%94%B1%E5%8F%8C%E5%BC%95%E5%8F%B7%E6%8B%AC%E8%B5%B7%E6%9D%A5%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2-%E4%B8%8E-printf-%E5%87%BD%E6%95%B0%E4%B8%AD%E7%9A%84-%E2%80%9C%E6%A0%BC%E5%BC%8F%E6%8E%A7%E5%88%B6%E2%80%9D-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%90%AB%E4%B9%89%E7%9B%B8%E5%90%8C-%E5%85%B6%E4%B8%AD%E7%9A%84%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E-%E4%B9%9F%E4%B8%8E-printf-%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E%E7%9B%B8%E4%BC%BC-%E4%BB%A5-%E2%80%9C-%E2%80%9C-%E5%AD%97%E7%AC%A6%E5%BC%80%E5%A7%8B-%E4%BB%A5%E4%B8%80%E4%B8%AA%E6%A0%BC%E5%BC%8F%E5%AD%97%E7%AC%A6%E7%BB%93%E6%9D%9F-%E4%B8%AD%E9%97%B4%E5%8F%AF%E4%BB%A5%E6%8F%92%E5%85%A5%E9%99%84%E4%BB%B6%E8%AF%B4%E6%98%8E%E5%AD%97%E7%AC%A6-%E5%9C%A8%E6%A0%BC%E5%BC%8F%E6%8E%A7%E5%88%B6%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E8%8B%A5%E6%9C%89%E6%99%AE%E9%80%9A%E5%AD%97%E7%AC%A6-%E5%88%99%E8%BE%93%E5%85%A5%E6%97%B6%E5%8E%9F%E5%9B%A0%E8%BE%93%E5%85%A5"><span class="toc-text">格式控制: 格式控制是由双引号括起来的字符串, 与 printf 函数中的 “格式控制” 字符串含义相同, 其中的格式说明, 也与 printf 函数的格式说明相似, 以 “ % “ 字符开始, 以一个格式字符结束, 中间可以插入附件说明字符, 在格式控制字符串中若有普通字符, 则输入时原因输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%B0%E5%9D%80%E5%88%97%E8%A1%A8-%E5%8F%98%E9%87%8F%E5%9C%B0%E5%9D%80%E5%88%97%E8%A1%A8%E6%98%AF%E7%94%A8%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E7%9A%84%E8%8B%A5%E5%B9%B2%E6%8E%A5%E6%94%B6%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE%E7%9A%84%E5%8F%98%E9%87%8F%E5%9C%B0%E5%9D%80-%E5%8F%98%E9%87%8F%E5%9C%B0%E5%9D%80%E7%94%B1%E5%9C%B0%E5%9D%80%E8%BF%90%E7%AE%97%E7%AC%A6-%E2%80%9C-amp-%E2%80%9C-%E5%90%8E%E8%B7%9F%E5%8F%98%E9%87%8F%E5%90%8D%E7%BB%84%E6%88%90-%E5%8F%98%E9%87%8F%E5%9C%B0%E5%9D%80%E9%97%B4%E7%94%A8%E9%80%97%E5%8F%B7-%E2%80%9C-%E2%80%9C-%E5%88%86%E9%9A%94"><span class="toc-text">地址列表: 变量地址列表是用逗号分隔的若干接收输入数据的变量地址, 变量地址由地址运算符 “ &amp; “ 后跟变量名组成, 变量地址间用逗号 “ , “ 分隔</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-scanf-%E5%87%BD%E6%95%B0%E6%97%B6%E5%BA%94%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">使用 scanf() 函数时应注意的问题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#putchar-%E5%87%BD%E6%95%B0-%E5%AD%97%E7%AC%A6%E8%BE%93%E5%87%BA%E5%87%BD%E6%95%B0"><span class="toc-text">putchar()函数(字符输出函数)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#getchar-%E5%87%BD%E6%95%B0-%E5%AD%97%E7%AC%A6%E8%BE%93%E5%85%A5%E5%87%BD%E6%95%B0"><span class="toc-text">getchar() 函数(字符输入函数)</span></a></li></ol>
     </div>
 </aside>
 </div>
@@ -928,91 +928,410 @@ var $main = document.querySelector('.main');
 
 		<div>
 			  <article>
-				<p><strong>本人是用Arch，顺便来传一下教</strong><br><img src="/images/编译Android/Arch教徒.jpg" style="width: 200px; height: 200px;"></p>
+				<p><strong>C语学习笔记</strong></p>
 <a id="more"></a>
 
-<h1 id="第一是-安装Linux-我以Ubuntu和deepin为例子，建议新手用deepin"><a href="#第一是-安装Linux-我以Ubuntu和deepin为例子，建议新手用deepin" class="headerlink" title="第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin"></a>第一是 安装Linux 我以Ubuntu和deepin为例子，建议新手用deepin</h1><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1aW411C7NR">Ubantu的安装视频</a><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1HW411Y73e">Deepin的安装视频</a></p>
-<h1 id="第二是-环境搭载"><a href="#第二是-环境搭载" class="headerlink" title="第二是 环境搭载"></a>第二是 环境搭载</h1><p><strong>1.明确自己要开发的android版本 参考 <a target="_blank" rel="noopener" href="https://wiki.lineageos.org/">lineageos官方的wiki</a>选择合适的linux发行版(推荐ubuntu 16)推荐而已，你可以是别的shell,都没问题</strong></p>
-<p><strong>2.更新自身ubuntu的软件源  替换到etc/apt/sources.list替换完毕后执行</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get update //如果自身网速不好建议换国内源(清华 中科大 阿里)</span><br></code></pre></td></tr></table></figure>
-<p><strong><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">个人建议清华</a></strong><br><strong>deepin就更简单，直接设置里面换</strong></p>
-<p><strong>3.安装jdk，需要根据开发的android版本选择</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get update</span><br></code></pre></td></tr></table></figure>
+<h1 id="C语言概述"><a href="#C语言概述" class="headerlink" title="C语言概述"></a>C语言概述</h1><h3 id="表达式语句"><a href="#表达式语句" class="headerlink" title="表达式语句"></a>表达式语句</h3><ul>
+<li>表达式后面加一个分号, 就构成了一个表达式语句</li>
+</ul>
+<h3 id="函数调用语句"><a href="#函数调用语句" class="headerlink" title="函数调用语句"></a>函数调用语句</h3><ul>
+<li>函数调用语句由一个函数加一个分号构成</li>
+</ul>
+<h3 id="复合语句"><a href="#复合语句" class="headerlink" title="复合语句"></a>复合语句</h3><ul>
+<li>程序中用花括号 {} 将多个语句组合在一起, 称为复合语句, 又称为语句块(Block)</li>
+</ul>
+<h3 id="空语句"><a href="#空语句" class="headerlink" title="空语句"></a>空语句</h3><ul>
+<li>只有一个分号 ( ; )的语句称为空语句经常被用作循环体</li>
+</ul>
+<h3 id="控制语句"><a href="#控制语句" class="headerlink" title="控制语句"></a>控制语句</h3><ul>
+<li><p>控制程序执行顺序, 实现基本结构的语句</p>
+<ul>
+<li><p>if-else: 条件语句</p>
+</li>
+<li><p>switch: 多分支选择语句</p>
+</li>
+<li><p>for: 循环语句</p>
+</li>
+<li><p>while: 循环语句</p>
+</li>
+<li><p>do-while: 循环语句</p>
+</li>
+<li><p>continue: 结束本次循环语句</p>
+</li>
+<li><p>break: 终止执行循环语句或switch语句</p>
+</li>
+<li><p>goto: 转向语句</p>
+</li>
+<li><p>return: 函数返回值语句</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="程序的三种基本结构"><a href="#程序的三种基本结构" class="headerlink" title="程序的三种基本结构"></a>程序的三种基本结构</h1><ul>
+<li><h3 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h3></li>
+</ul>
+<div class="mermaid">
+    graph TB
+    A[" A "]-->B[" B "] 
+</div>
 
-<p><strong>4.安装 软件依赖</strong></p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev</span><br></code></pre></td></tr></table></figure>
-<p><strong>4.安装jdk，需要根据开发的android版本选择</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install openjdk-x-jdk    //x 为jdk版本数字</span><br></code></pre></td></tr></table></figure>
-<p><strong>LineageOS 14.1-15.1: OpenJDK 1.8</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">install openjdk-8-jdk</span><br></code></pre></td></tr></table></figure>
-<p><strong>LineageOS 11.0-13.0: OpenJDK 1.7</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">install openjdk-7-jdk</span><br></code></pre></td></tr></table></figure>
-<h1 id="第三是-安装repo"><a href="#第三是-安装repo" class="headerlink" title="第三是 安装repo"></a>第三是 安装repo</h1><p><strong>(1) 推荐使用mokee开源的 <a target="_blank" rel="noopener" href="https://bbs.mokeedev.com/t/topic/21">mokee repo1</a> 或者 <a target="_blank" rel="noopener" href="https://tacke.wodemo.com/entry/466371">mokee repo2</a></strong></p>
-<p><strong>(2)在终端中输入以下内容，新建bin文件夹</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">mkdir ~/bin</span><br></code></pre></td></tr></table></figure>
-<p><strong>(3)输入以下内容，将bin文件夹添加到环境变量中</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">PATH=~/bin:<span class="hljs-variable">$PATH</span></span><br></code></pre></td></tr></table></figure>
-<p><strong>(4)接着输入以下内容，下载repo文件到bin文件夹 输入这个请省略下面那一步</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo &gt; ~/bin/repo</span><br></code></pre></td></tr></table></figure>
+<ul>
+<li><h3 id="选择结构"><a href="#选择结构" class="headerlink" title="选择结构"></a>选择结构</h3></li>
+</ul>
+<h4>单分支选择结构</h4>
 
-<p><strong>如果你是欧洲人，有钱买梯子 就省略上步直接输入以下命令</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">curl http://commondatastorage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo</span><br></code></pre></td></tr></table></figure>
-<p><strong>(5)最后输入以下内容，为repo文件添加运行权限</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">$ chmod a+x ~<span class="hljs-regexp">/bin/</span>repo<br></code></pre></td></tr></table></figure>
-<h1 id="第四是-同步源码"><a href="#第四是-同步源码" class="headerlink" title="第四是 同步源码"></a>第四是 同步源码</h1><p><strong>(1) win+alt+t打开终端，输入如下，创建一个文件夹</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">mkdir ~/los      //例如: los  名字你可以顺便起</span><br></code></pre></td></tr></table></figure>
-<p><strong>(2) 进入(自己起好名字的文件夹)的文件夹，输入如下</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash"><span class="hljs-built_in">cd</span> ~/los         //例如: los 你随便起名字的文件夹</span><br></code></pre></td></tr></table></figure>
-<p><strong>(3) 由于使用repo拉取源码时，会尝试访问官方的git源更新自己，但由于是谷歌，就无法正常访问，所以在正式拉取前，我们需要先做点修改打开主目录，按组合键ctrl+H，在显示的隐藏文件中，打开.bashrc文件，将如下内容复制到你的~/.bashrc最后一行，保存退出</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash"><span class="hljs-built_in">export</span> REPO_URL=<span class="hljs-string">&#x27;https://mirrors.tuna.tsinghua.edu.cn/git/git-repo&#x27;</span></span><br></code></pre></td></tr></table></figure>
-<p><strong>(4) 获取源码拉取地址</strong><br>访问<a target="_blank" rel="noopener" href="https://github.com/LineageOS">lineage的开源地址库</a>点击android，进入如下界面，这里就看到了拉取lineage-x.x的命令</p>
-<p><strong>(5) 获取源码default</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">repo init -u git://github.com/los/android.git -b lineage-x.x       //例如: los 你随便起名字的文件夹和lineage版本</span><br></code></pre></td></tr></table></figure>
-<p><strong>(6) 输入邮箱和昵称</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">git config --global user.email xxxxxx@xxxx   //你的邮箱</span><br><span class="hljs-meta">$ </span><span class="language-bash">git config --global user.name xxxxxxxxx     //随便起一个英文昵称</span><br></code></pre></td></tr></table></figure>
-<p><strong>打开lineageOS文件夹 (如果是空的按组合键ctrl+H，显示隐藏内容)**</strong></p>
-<p><img src="/images/%E7%BC%96%E8%AF%91Android/%E5%90%8C%E6%AD%A5%E6%BA%90%E7%A0%81.png"></p>
-<p>然后更改<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/lineageOS/">链接</a></p>
-<h1 id="第五是-拉取源码"><a href="#第五是-拉取源码" class="headerlink" title="第五是 拉取源码"></a>第五是 拉取源码</h1><p><strong>输入</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">repo sync</span><br></code></pre></td></tr></table></figure>
-<p><strong>或者</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">repo sync -c -f -j8 --force-sync --no-clone-bundle</span><br></code></pre></td></tr></table></figure>
-<h1 id="第六是-获取机型device"><a href="#第六是-获取机型device" class="headerlink" title="第六是 获取机型device"></a>第六是 获取机型device</h1><p><strong>(1) 我们进入<a target="_blank" rel="noopener" href="https://github.com/LineageOS">lineage的开源项目网站</a></strong></p>
-<p><strong>(2) 在搜索框中输入(设备代号)，会看到android_device_(品牌)_(设备代号)这一项</strong></p>
-<p><strong>(3) 点击android_device_(品牌)_(设备代号)，就可以看到device的所有内容</strong></p>
-<p><strong>(4) 点击右边的Clone or download，然后复制如图中的蓝色内容，这就是此device的下载地址</strong></p>
-<p><strong>(5) 组合键ctrl+alt+t，打开终端</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash"><span class="hljs-built_in">cd</span> ~/los             //例如: los  你随便起名字的文件夹</span><br></code></pre></td></tr></table></figure>
-<p><strong>(6) 输入如下命令，回车开始同步</strong></p>
-<p>解释一下:git clone就是拷贝到本地的命令，那段网址就是我们上面复制的地址，-b后面的lineage-x.x,表示lineage-x.x的分支；device/(品牌)/(设备代号)就是要下载到地方的路径</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">git <span class="hljs-built_in">clone</span> https://github.com/LineageOS/android_device_(品牌)_(设备代号).git -b lineage-x.x device/(品牌)/(设备代号) depth=1(可加可不加，加入同步源码会小点)</span><br></code></pre></td></tr></table></figure>
-<p><strong>(7) 我们需要拉取的项目如下</strong></p>
-<img src="/images/编译Android/找机型.jpg">
+<div class="mermaid">
+    graph TB
+    A([" 起始框 "])-->P{" P "} 
+    P{" P "}-->C[" 真 "]
+    C[" 真 "]-->E[" 结果 A "]
+    P{" P "}-->D[" 假 "]
+</div>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">android_device_(品牌)_(设备代号)</span><br><br><span class="hljs-meta">$ </span><span class="language-bash">android_device_(品牌)_(处理器代号)-common</span><br><br><span class="hljs-meta">$ </span><span class="language-bash">android_device_(品牌)_(厂家)_common</span><br><br><span class="hljs-meta">$ </span><span class="language-bash">android_kernel_(品牌)_(处理器代号)</span><br><br><span class="hljs-meta">$ </span><span class="language-bash">proprietary_vendor_(品牌)</span> <br></code></pre></td></tr></table></figure>
-<p><strong>(8) <a target="_blank" rel="noopener" href="https://github.com/TheMuppets">vendor需要访问地址</a>然后搜索(你的品牌)就可以找到</strong></p>
-<p><strong>(9) 同样和同步其他项目一样</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">git <span class="hljs-built_in">clone</span> https://github.com/TheMuppets/proprietary_vendor_(品牌).git -b lineage-x.x vendor/(品牌)</span><br></code></pre></td></tr></table></figure>
-<h1 id="第七是-执行编译"><a href="#第七是-执行编译" class="headerlink" title="第七是 执行编译"></a>第七是 执行编译</h1><p><strong>(1)如果你退出了，你就按组合键ctrl+alt+t，打开终端，输入以下命令，回车，进入los             //你随便起名字的文件夹，没有的话跳过这个环节</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash"><span class="hljs-built_in">cd</span> ~/los    //例如: los 你随便起名字的文件夹</span><br></code></pre></td></tr></table></figure>
-<p><strong>(2) 初始化</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">. build/envsetup.sh</span><br></code></pre></td></tr></table></figure>
-<p><strong>(3) 输入如下命令，回车</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">breakfast xxx  //自己的机型</span><br></code></pre></td></tr></table></figure>
-<p>如果有错误，就根据错误提示到lineageOS目录检查device, kernel和vendor等是否正确</p>
-<p><strong>(4) 输入，回车，进行编译</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">brunch xxx    //自己的机型</span><br></code></pre></td></tr></table></figure>
-<p>编译耗费的时间取决于你的电脑配置情况，所以我不建议用虚拟机，如果你电脑配置相当牛逼，当我没说</p>
-<p><strong>(5)在我编译时出现了 fatal error: openssl/opensslv.h: No such file or directory 原因是libssl-dev没有安装</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install libssl-dev</span><br></code></pre></td></tr></table></figure>
-<p><strong>(6) 回到正在编译的终端中，重新输入如下命令，等待编译的完成</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">brunch //自己的机型</span><br></code></pre></td></tr></table></figure>
-<p><strong>(7) 编译完成后</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">进入主目录\(你随便起名字的文件夹)\out\target\product\(设备代号)中就可以看到我们编译好的ROM了，可以复制到手机刷入了</span><br></code></pre></td></tr></table></figure>
-<h1 id="另外设置ccache提高编译速度"><a href="#另外设置ccache提高编译速度" class="headerlink" title="另外设置ccache提高编译速度"></a>另外设置ccache提高编译速度</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash"><span class="hljs-built_in">export</span> USE_CCACHE=1</span> <br><span class="hljs-meta">$ </span><span class="language-bash"><span class="hljs-built_in">export</span> CCACHE_COMPRESS=1</span><br><span class="hljs-meta">$ </span><span class="language-bash">ccache -M 50G 或者100G</span><br></code></pre></td></tr></table></figure>
-<p><strong>防止低内存编译出错 设置大小为</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash"><span class="hljs-built_in">export</span> ANDROID_JACK_VM_ARGS=<span class="hljs-string">&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G&quot;</span></span><br></code></pre></td></tr></table></figure>
-<h1 id="祝福大家能自己动手做出属于自己的ROM"><a href="#祝福大家能自己动手做出属于自己的ROM" class="headerlink" title="祝福大家能自己动手做出属于自己的ROM"></a>祝福大家能自己动手做出属于自己的ROM</h1>
+<h4>双分支选择结构</h4>
+
+<div class="mermaid">
+    graph TB
+    A([" 起始框 "])-->P{" P "} 
+    P{" P "}-->C[" 真 "]
+    C[" 真 "]-->E[" 结果 A "]
+    P{" P "}-->D[" 假 "]
+    D[" 假 "]-->F[" 结果 B "]
+</div>
+
+<h4>多分支选择结构</h4>
+
+<div class="mermaid">
+    graph TB
+    A([" 起始框 "])-->P{" P "} 
+    P{" P "}--值1-->B[" 语句1 "]
+    P{" P "}--值2-->C[" 语句2 "]
+    P{" P "}--值n-->D[" 语句n "]
+    P{" P "}--值n+1-->E[" 语句n+1 "]
+    B[" 语句1 "]-->F[" 结果 "]
+    C[" 语句2 "]-->F[" 结果 "]
+    D[" 语句n "]-->F[" 结果 "]
+    E[" 语句n+1 "]-->F[" 结果 "]
+</div>
+
+<ul>
+<li><h3 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h3></li>
+</ul>
+<h4>当型循环结构</h4>
+
+<div class="mermaid">
+    graph TB
+    P{" P "}-->C[" 不成立 "]
+    A([" 起始框 "])-->P{" P "} 
+    P{" P "}-->B[" 成立 "]
+    B[" 成立 "]-->D[" A "]
+    D[" A "]-->P{" P "} 
+</div>
+
+<h4>直到循环结构</h4>
+
+<div class="mermaid">
+    graph TB
+    A([" 起始框 "])-->D[" A "]    
+    D[" A "]-->P{" P "}   
+    P{" P "}-->B[" 成立 "]
+    B[" 成立 "]-->A([" 起始框 "])
+    P{" P "}-->C[" 不成立 "]
+</div>
+
+<h1 id="赋值语句"><a href="#赋值语句" class="headerlink" title="赋值语句"></a>赋值语句</h1><ul>
+<li><p>C语言中的赋值号 “ = “ 是一个运算符, 而在其它大多数高级语言中, 赋值号不是运算符</p>
+</li>
+<li><p>要区别赋值表达式和赋值语句</p>
+</li>
+</ul>
+<h4>赋值语句其基本形式:</h4>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C">变量 = 表达式;<br></code></pre></td></tr></table></figure>
+<h1 id="格式输入与输出"><a href="#格式输入与输出" class="headerlink" title="格式输入与输出"></a>格式输入与输出</h1><h2 id="printf-函数-格式输入函数"><a href="#printf-函数-格式输入函数" class="headerlink" title="printf()函数(格式输入函数)"></a>printf()函数(格式输入函数)</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;格式控制&quot;</span>, 输出列表)<br></code></pre></td></tr></table></figure>
+<br>
+
+<h4>printf()函数格式说明</h4>
+
+<br>
+
+<table>
+<thead>
+<tr>
+<th align="center">格式说明</th>
+<th align="center">功 能</th>
+<th align="left">实例</th>
+<th align="center">输出结果</th>
+<th align="left">说 明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%d<br>%i</td>
+<td align="center">输出带符号的十进制整数</td>
+<td align="left">int x = -1;<br>printf(“%d”,x);</td>
+<td align="center">-1</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">%u</td>
+<td align="center">输出无符号的十进制整数</td>
+<td align="left">int x = 153;<br>printf(“%u”,x);</td>
+<td align="center">153</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">%x<br>%X</td>
+<td align="center">输出不带前导符 0X 或 0x 的无符号十六进制整数</td>
+<td align="left">int x = 2000;<br>printf(“%X”,x);</td>
+<td align="center">7D0</td>
+<td align="left">%x 表示符号 a<del>f 以小写形式表示<br>%X 表示符号 A</del>F 以大写形式表示</td>
+</tr>
+<tr>
+<td align="center">%o</td>
+<td align="center">输出无符号形式的八进制整数</td>
+<td align="left">int x = 2000;<br>printf(“%o”,x);</td>
+<td align="center">3720</td>
+<td align="left">不带前导符0</td>
+</tr>
+<tr>
+<td align="center">%f</td>
+<td align="center">输出小数形式的 单 双 精度实数</td>
+<td align="left">float x = 123.456;<br>printf(“%f”,x);</td>
+<td align="center">123.456000</td>
+<td align="left">默认6为小数</td>
+</tr>
+<tr>
+<td align="center">%e<br>%E</td>
+<td align="center">输出科学计数法形式的实数</td>
+<td align="left">float x = 123.456;<br>printf(“%e”,x);</td>
+<td align="center">1.23456e+02</td>
+<td align="left">尾部部分6位数字(包括1位整数位, 1位小数点)</td>
+</tr>
+<tr>
+<td align="center">%c</td>
+<td align="center">输出单个字符</td>
+<td align="left">char x = ‘a’;<br>printf(“%c”,x);</td>
+<td align="center">a</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">%s</td>
+<td align="center">输出字符串</td>
+<td align="left">char x[8] = “abcdfg\0”;<br>printf(“%s”,x);</td>
+<td align="center">abcdfg</td>
+<td align="left">必须以\0结束或给定长度</td>
+</tr>
+</tbody></table>
+<br>
+
+<ul>
+<li><p>格式控制:  格式控制也称 “控制字符串”, 是由双引号括起来的字符串, 用于指定输出的格式 它由格式说明, 控制字符和普通字符三部分组成</p>
+<ol>
+<li><p>格式说明: 由 “%” 字符开始, 在 “%” 后面跟有各种格式的字符, 以说明输出数据的类型, 形式, 长度, 小数位等格式 </p>
+</li>
+<li><p>控制字符: 控制字符用于控制设备的动作</p>
+</li>
+<li><p>普通字符: 除格式说明和控制字符之外, 其它字符均属于普通字符, 打印时按原样输出 例如常见的双引号内的逗号, 空格和普通字母等</p>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><p>输出列表: 需要输出的数据项由若干表达式组成, 表达式之间逗号分隔 需注意以下两点</p>
+<ul>
+<li><p>表达式可以由变量构成, 也可以由常量构成</p>
+</li>
+<li><p>表达式之间的逗号不是逗号表达式, 而是确实计算顺序自右向左进行的</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>附加说明符: 在格式说明中, 为了满足用户的高级需求, 还可在%与格式字符间插入几种附件说明, 其组成为 “% 附件说明字符格式符” </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">附加说明字符</th>
+<th align="left">意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="left">用于长整型, 可以加在格式符 d, o, x, u 的前面</td>
+</tr>
+<tr>
+<td align="center">m(正整数)</td>
+<td align="left">数据输出的最小宽度, 当数据实际宽度超过 m 时, 则按实际宽度输出; 如实际宽度短于 m 时, 则输出时前面补0或空格</td>
+</tr>
+<tr>
+<td align="center">.n(正整数)</td>
+<td align="left">对实数表示输出 n 位小数, 对字符串表示从左截取的字符个数</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="left">输出的字符或数字在域内向左对齐, 默认右对齐</td>
+</tr>
+<tr>
+<td align="center">+</td>
+<td align="left">输出的数字前带有正负号</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="left">在实际前多余空格处补0</td>
+</tr>
+<tr>
+<td align="center">#</td>
+<td align="left">用在格式字符 o 或 x 前, 输出八进制或十六进制数时带前缀 0 或 0x</td>
+</tr>
+</tbody></table>
+<h2 id="scanf-函数-格式输入函数"><a href="#scanf-函数-格式输入函数" class="headerlink" title="scanf()函数(格式输入函数)"></a>scanf()函数(格式输入函数)</h2><br>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;格式控制&quot;</span>, 地址列表)<br></code></pre></td></tr></table></figure>
+<h4>scanf函数的格式字符及作用</h4>
+
+<br>
+
+<table>
+<thead>
+<tr>
+<th align="center">格式字符</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%d<br>%i</td>
+<td align="left">输出带符号的十进制整数</td>
+</tr>
+<tr>
+<td align="center">%u</td>
+<td align="left">输出无符号的十进制整数</td>
+</tr>
+<tr>
+<td align="center">%x<br>%X</td>
+<td align="left">输出无符号十六进制整数(不区分大小写)</td>
+</tr>
+<tr>
+<td align="center">%o</td>
+<td align="left">输出无符号形式的八进制整数</td>
+</tr>
+<tr>
+<td align="center">%f</td>
+<td align="left">输出实数, 可以用小数形式或指数形式输入</td>
+</tr>
+<tr>
+<td align="center">%e<br>%E<br>%g<br>%G</td>
+<td align="left">与 %f 作用相同, %e, %f, %g 可以互相替换使用</td>
+</tr>
+<tr>
+<td align="center">%c</td>
+<td align="left">输出单个字符</td>
+</tr>
+<tr>
+<td align="center">%s</td>
+<td align="left">输出字符串, 将字符串送到一个字符数组中, 在输入时以非空字符开始, 遇到 回车 或 空格字符 结束</td>
+</tr>
+</tbody></table>
+<br>
+
+<h4>scanf函数的附加格式字符及作用</h4>
+
+<br>
+
+<table>
+<thead>
+<tr>
+<th align="center">格式修饰符</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">L <br> l</td>
+<td align="left">用在格式字符 d, o, x, u之间, 表示输入长整型数据<br>用在 f 或 e 之前, 表示输入 double型数据</td>
+</tr>
+<tr>
+<td align="center">h</td>
+<td align="left">用在格式字符 d, I, o, x 之前, 表示输入短整型数据</td>
+</tr>
+<tr>
+<td align="center">m</td>
+<td align="left">指定输入数据所占宽度, 不能用来指定实数型宽度, 应为正整数</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="left">表示该输入项在读入后不赋值给相应的变量</td>
+</tr>
+</tbody></table>
+<br>
+
+<ul>
+<li><h3 id="格式控制-格式控制是由双引号括起来的字符串-与-printf-函数中的-“格式控制”-字符串含义相同-其中的格式说明-也与-printf-函数的格式说明相似-以-“-“-字符开始-以一个格式字符结束-中间可以插入附件说明字符-在格式控制字符串中若有普通字符-则输入时原因输入"><a href="#格式控制-格式控制是由双引号括起来的字符串-与-printf-函数中的-“格式控制”-字符串含义相同-其中的格式说明-也与-printf-函数的格式说明相似-以-“-“-字符开始-以一个格式字符结束-中间可以插入附件说明字符-在格式控制字符串中若有普通字符-则输入时原因输入" class="headerlink" title="格式控制: 格式控制是由双引号括起来的字符串, 与 printf 函数中的 “格式控制” 字符串含义相同, 其中的格式说明, 也与 printf 函数的格式说明相似, 以 “ % “ 字符开始, 以一个格式字符结束, 中间可以插入附件说明字符, 在格式控制字符串中若有普通字符, 则输入时原因输入"></a>格式控制: 格式控制是由双引号括起来的字符串, 与 printf 函数中的 “格式控制” 字符串含义相同, 其中的格式说明, 也与 printf 函数的格式说明相似, 以 “ % “ 字符开始, 以一个格式字符结束, 中间可以插入附件说明字符, 在格式控制字符串中若有普通字符, 则输入时原因输入</h3></li>
+</ul>
+<ul>
+<li><h3 id="地址列表-变量地址列表是用逗号分隔的若干接收输入数据的变量地址-变量地址由地址运算符-“-amp-“-后跟变量名组成-变量地址间用逗号-“-“-分隔"><a href="#地址列表-变量地址列表是用逗号分隔的若干接收输入数据的变量地址-变量地址由地址运算符-“-amp-“-后跟变量名组成-变量地址间用逗号-“-“-分隔" class="headerlink" title="地址列表: 变量地址列表是用逗号分隔的若干接收输入数据的变量地址, 变量地址由地址运算符 “ &amp; “ 后跟变量名组成, 变量地址间用逗号 “ , “ 分隔"></a>地址列表: 变量地址列表是用逗号分隔的若干接收输入数据的变量地址, 变量地址由地址运算符 “ &amp; “ 后跟变量名组成, 变量地址间用逗号 “ , “ 分隔</h3></li>
+</ul>
+<ul>
+<li><h3 id="使用-scanf-函数时应注意的问题"><a href="#使用-scanf-函数时应注意的问题" class="headerlink" title="使用 scanf() 函数时应注意的问题"></a>使用 scanf() 函数时应注意的问题</h3></li>
+</ul>
+<ol>
+<li><p>scanf()函数地址列表中的各个参量都是变量地址, 而不是变量名 </p>
+</li>
+<li><p>如果在 “格式控制” 字符串中除格式说明以外还有其它字符, 则输入数据时在对应位置应输入与这些字符相同的字符</p>
+</li>
+<li><p>对于实型数据, 输入时不能规定其精度 </p>
+</li>
+<li><p>在用 “ %c “ 格式输入字符时, 空格符和转义字符都将作为有效的字符输入 </p>
+</li>
+<li><p>在输入数据时, 若遇到下列情况, 则认为输入数据结束 </p>
+<ul>
+<li>遇空格, 按 Enter 键 或 Tab 键 </li>
+</ul>
+<ul>
+<li>遇宽度限制 </li>
+</ul>
+<ul>
+<li>遇非法输入 </li>
+</ul>
+</li>
+<li><p>当使用多个是 scanf() 函数连续给多个字符变量赋值 每次输入都必须按 Enter 键 </p>
+</li>
+<li><p>对应 unsiged 型变量所需的数据, 可以用 “ %u, %d “ 或 “ %o, %x” 格式输入 </p>
+</li>
+<li><p>在格式控制符中加入星号时, scanf()函数将读取对应数值, 但不赋给相应变量 </p>
+</li>
+</ol>
+<br>
+
+<h1 id="putchar-函数-字符输出函数"><a href="#putchar-函数-字符输出函数" class="headerlink" title="putchar()函数(字符输出函数)"></a>putchar()函数(字符输出函数)</h1><br>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">putchar</span>(字符形或整形的常量, 变量, 表达式); <span class="hljs-comment">// 整形则输出 ASCII 码值对应的字符</span><br></code></pre></td></tr></table></figure>
+<br>
+
+<ul>
+<li>注意: 使用 putchar() 函数时必须要用文件包含命令  <strong>#include&lt;stdio.h&gt;</strong></li>
+</ul>
+<h1 id="getchar-函数-字符输入函数"><a href="#getchar-函数-字符输入函数" class="headerlink" title="getchar() 函数(字符输入函数)"></a>getchar() 函数(字符输入函数)</h1><br>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C">getchar(字符); <span class="hljs-comment">// 其函数的返回值是从输入设备输入的一个字符</span><br></code></pre></td></tr></table></figure>
+<br>
+
+<ul>
+<li><p>使用 getchar() 函数时需要注意以下问题</p>
+<ul>
+<li>getchar() 函数没有参数</li>
+</ul>
+<ul>
+<li>getchar() 函数只能接受一个字符(包括控制字符)</li>
+</ul>
+<ul>
+<li>使用 getchar() 函数前, 需加上文件包含命令  <strong>#include&lt;stdio.h&gt;</strong></li>
+</ul>
+<ul>
+<li>getchar() 函数接到的字符可以赋给一个字符型变量或整型变量, 也可以作为表达式的一部分</li>
+</ul>
+</li>
+</ul>
+
 			  </article>
 		</div>
 		
@@ -1089,7 +1408,7 @@ $(window).load(function(){
         
 	
 <strong>本文链接：</strong>
-	<a href="https://sdq3.gitee.io/Android-compile.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;Android-compile.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;Android-compile.html</a><br>
+	<a href="https://sdq3.gitee.io/C-Sequential-structure.html" title="https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;C-Sequential-structure.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;sdq3.gitee.io&#x2F;C-Sequential-structure.html</a><br>
 </div>
 
 	  
