@@ -204,9 +204,9 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>159
+					<span>文章</span>161
 					<span>标签</span>0
-					<span>分类</span>26
+					<span>分类</span>27
 				</div>		
 			<div class="social-btns">
 				
@@ -302,7 +302,7 @@
 
         <li>
           <a href="/categories/C语/">C语</a>
-          <span>9</span>
+          <span>10</span>
         </li>
 
         
@@ -406,6 +406,13 @@
         
 
         <li>
+          <a href="/categories/实用软件/">实用软件</a>
+          <span>1</span>
+        </li>
+
+        
+
+        <li>
           <a href="/categories/小程序开发/">小程序开发</a>
           <span>6</span>
         </li>
@@ -488,6 +495,10 @@
       <ul>
         
           <li>
+            <a href="/photo-video.html">手机照片视频恢复工具</a>
+          </li>
+        
+          <li>
             <a href="/Dad-n-Me.html">游戏篇 狂扁小朋友修仙版(攻略)</a>
           </li>
         
@@ -501,10 +512,6 @@
         
           <li>
             <a href="/HigherMathematics-derivative-differentiate.html">导数与微分 (第二章)</a>
-          </li>
-        
-          <li>
-            <a href="/HigherMathematics-learning-plan.html">高等数学学习计划</a>
           </li>
         
       </ul>
@@ -1028,6 +1035,93 @@ var $main = document.querySelector('.main');
 		<div class="sdq-inner-content">
 		<div class="sdq-inner-img">
 			<div class="sdq-cover-content">
+				<a href="/C-struct-union-enum.html">
+					<div class="sdq-title"> 
+						C语 结构体 共用体 检举类型
+					</div>
+				</a>
+			</div>
+			
+		</div>
+
+			<article>
+				
+				<p><strong>C语学习笔记</strong></p>
+<h1 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h1><ul>
+<li>概念: 是一种可以由自己定义的数据类型</li>
+</ul>
+<ul>
+<li>结构体可以定义成全局变量也可以定义在函数里面成局部变量 </li>
+</ul>
+<h4>结构体的定义:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">struct</span> 结构体名&#123;</span><br>    数据类型 成员<span class="hljs-number">1</span>;<br>    数据类型 成员<span class="hljs-number">2</span>;<br>    数据类型 成员<span class="hljs-number">3</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><strong>给变量类型重新命名</strong></li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> 数据类型 结构体名;<br><br>结构体名 变量名 = 赋值;<br></code></pre></td></tr></table></figure>
+<h3 id="结合一起"><a href="#结合一起" class="headerlink" title="结合一起"></a>结合一起</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> 结构体名&#123;</span><br>    数据类型 成员<span class="hljs-number">1</span>;<br>    数据类型 成员<span class="hljs-number">2</span>;<br>    数据类型 成员<span class="hljs-number">3</span>;  <br>&#125;结构体名<br></code></pre></td></tr></table></figure>
+<h1 id="结构体指针"><a href="#结构体指针" class="headerlink" title="结构体指针"></a>结构体指针</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs C">数据名 *指针 = &amp;地址;<br><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s\n&quot;</span>, b-&gt;成员)<br><span class="hljs-comment">// 或者</span><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s\n&quot;</span>, (*b).成员)<br></code></pre></td></tr></table></figure>
+<p><strong>注意: 访问成员用 . 点号</strong></p>
+<h1 id="共用体"><a href="#共用体" class="headerlink" title="共用体"></a>共用体</h1><h3 id="结构体和共用体的区别-共用体可以共用内存-结构体不行"><a href="#结构体和共用体的区别-共用体可以共用内存-结构体不行" class="headerlink" title="结构体和共用体的区别: 共用体可以共用内存, 结构体不行"></a>结构体和共用体的区别: 共用体可以共用内存, 结构体不行</h3><h2 id="结构体-1"><a href="#结构体-1" class="headerlink" title="结构体:"></a>结构体:</h2><br>
+
+<div class="mermaid">
+    graph LR
+    A[(" 结构体 ")]-->B[" 变量名1<br>变量名2<br>变量名3 "] 
+</div>
+
+<br>
+
+<h2 id="共用体-1"><a href="#共用体-1" class="headerlink" title="共用体:"></a>共用体:</h2><br>
+
+<div class="mermaid">
+    graph LR
+    A[(" 结构体 ")]-->B[" 变量名1"]
+    A[(" 结构体 ")]-->C[" 变量名2"] 
+    A[(" 结构体 ")]-->D[" 变量名3"]  
+</div>
+
+<br>
+
+<h4>共用体的定义:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">union</span> 共用体名</span><br>&#123;<br>    成员列表<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h1 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h1><ul>
+<li>枚举类型作用就是美化代码, 让代码由复杂到简单</li>
+</ul>
+<h4>枚举类型的定义:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">enum</span> 标识名</span><br>&#123;<br>    枚举项<span class="hljs-number">0</span>, 枚举项<span class="hljs-number">1</span>, 枚举项<span class="hljs-number">2</span>; <br>&#125;;<br></code></pre></td></tr></table></figure>
+<p><strong>注意: 枚举项没赋值的情况下是从 0 开始, 赋值之后是从 赋值的那个值往后 依次加 1</strong></p>
+
+				
+			</article>
+			<div class="sdq-post-Statistics">
+				<a>2019年12月09日</a>
+				
+					<a class="category-link" href="/categories/C%E8%AF%AD/">C语</a>
+				
+				
+			</div>
+		</div>
+		<a href="/C-struct-union-enum.html"><div class="sdq-more">阅读更多...</div></a>
+		
+    </div>
+    
+	
+    
+    
+		
+    <div class="sdq-post" id="sdqIndex">
+		<div class="sdq-inner-content">
+		<div class="sdq-inner-img">
+			<div class="sdq-cover-content">
 				<a href="/C-Pointer.html">
 					<div class="sdq-title"> 
 						C语 指针
@@ -1266,40 +1360,6 @@ var $main = document.querySelector('.main');
 		<div class="sdq-inner-content">
 		<div class="sdq-inner-img">
 			<div class="sdq-cover-content">
-				<a href="/C-type-operator-operator.html">
-					<div class="sdq-title"> 
-						C语 数据类型 运算符 表达式
-					</div>
-				</a>
-			</div>
-			
-		</div>
-
-			<article>
-				
-				<p><strong>C语学习笔记</strong></p>
-				
-			</article>
-			<div class="sdq-post-Statistics">
-				<a>2019年11月19日</a>
-				
-					<a class="category-link" href="/categories/C%E8%AF%AD/">C语</a>
-				
-				
-			</div>
-		</div>
-		<a href="/C-type-operator-operator.html"><div class="sdq-more">阅读更多...</div></a>
-		
-    </div>
-    
-	
-    
-    
-		
-    <div class="sdq-post" id="sdqIndex">
-		<div class="sdq-inner-content">
-		<div class="sdq-inner-img">
-			<div class="sdq-cover-content">
 				<a href="/C-main().html">
 					<div class="sdq-title"> 
 						C语 概述(程序结构)
@@ -1334,9 +1394,9 @@ var $main = document.querySelector('.main');
 		<div class="sdq-inner-content">
 		<div class="sdq-inner-img">
 			<div class="sdq-cover-content">
-				<a href="/C-Symbols.html">
+				<a href="/C-type-operator-operator.html">
 					<div class="sdq-title"> 
-						C语 符号
+						C语 数据类型 运算符 表达式
 					</div>
 				</a>
 			</div>
@@ -1349,14 +1409,14 @@ var $main = document.querySelector('.main');
 				
 			</article>
 			<div class="sdq-post-Statistics">
-				<a>2019年11月18日</a>
+				<a>2019年11月19日</a>
 				
 					<a class="category-link" href="/categories/C%E8%AF%AD/">C语</a>
 				
 				
 			</div>
 		</div>
-		<a href="/C-Symbols.html"><div class="sdq-more">阅读更多...</div></a>
+		<a href="/C-type-operator-operator.html"><div class="sdq-more">阅读更多...</div></a>
 		
     </div>
     
