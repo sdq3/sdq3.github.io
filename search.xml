@@ -134,47 +134,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Bodhi Linux安装教程(老电脑的福利)</title>
-    <url>/Bodhi-Linux.html</url>
-    <content><![CDATA[<p><strong>本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版</strong></p>
-<a id="more"></a>
-
-<p><strong>以下是我的电脑的参数</strong></p>
-<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%81%94%E6%83%B3G430.jpg"></p>
-<h1 id="第一步-安装Bodhi-Linux"><a href="#第一步-安装Bodhi-Linux" class="headerlink" title="第一步 安装Bodhi Linux"></a>第一步 安装Bodhi Linux</h1><p><strong>Bodhi Linux<a href="https://nchc.dl.sourceforge.net/project/bodhilinux/5.1.0/bodhi-5.1.0-64.iso">个人建议Standard版本</a>如果你想选择别的版本到<a href="https://www.bodhilinux.com/download/">官网找</a></strong></p>
-<p><a href="https://www.bilibili.com/video/BV1aW411C7NR">安装视频参考Ubantu的, 都是可视化界面安装</a></p>
-<h1 id="第二步-老电脑无法连接WIFI-所以终端输入以下命令"><a href="#第二步-老电脑无法连接WIFI-所以终端输入以下命令" class="headerlink" title="第二步 老电脑无法连接WIFI 所以终端输入以下命令"></a>第二步 老电脑无法连接WIFI 所以终端输入以下命令</h1><p><strong>建议用网线装机</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get update</span><br><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install bcmwl-kernel-source</span><br></code></pre></td></tr></table></figure>
-
-<p><strong>仍然没有的话 就在终端输入以下命令</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo nano /etc/modprobe.d/blacklist.conf   //nano命令ctrl+x退出，选择y后保存</span><br><span class="hljs-meta">$ </span><span class="language-bash">blacklist acer-wmi   //最后一行加入</span><br></code></pre></td></tr></table></figure>
-
-<h1 id="第三步-安装安装中文环境"><a href="#第三步-安装安装中文环境" class="headerlink" title="第三步 安装安装中文环境"></a>第三步 安装安装中文环境</h1><p><strong>安装中文字体和中文语言包</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get update</span><br><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install -y language-pack-zh-hans language-pack-zh-hans-base language-pack-gnome-zh-hans language-pack-gnome-zh-hans-base fonts-wqy-microhei</span><br></code></pre></td></tr></table></figure>
-
-<p><strong>然后按照以下打开步骤</strong></p>
-<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%871.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%872.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%873.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%874.jpg"></p>
-<h1 id="第四步安装输入法"><a href="#第四步安装输入法" class="headerlink" title="第四步安装输入法"></a>第四步安装输入法</h1><p><strong>这里<a href="https://pinyin.sogou.com/linux/">安装搜狗输入法</a></strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install fonts-droid-fallback zip   //安装它的依赖包</span><br><span class="hljs-meta">$ </span><span class="language-bash">sudo dpkg -i xxx    //xxx为下载的包名 后缀名也要</span><br></code></pre></td></tr></table></figure>
-<h1 id="第五步安装一些常用软件"><a href="#第五步安装一些常用软件" class="headerlink" title="第五步安装一些常用软件"></a>第五步安装一些常用软件</h1><p><strong>例如安装vim</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install vim   //vim是文本编辑软件</span><br></code></pre></td></tr></table></figure>
-<p><strong>例如浏览器 它自身也有web浏览器 看个人喜欢</strong></p>
-<p><strong>安装火狐浏览器和中文语言包</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get remove firefox</span><br><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install -y firefox firefox-locale-zh-hans</span><br></code></pre></td></tr></table></figure>
-<p><strong>安装谷歌浏览器</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/</span><br>wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -     //先添加源<br><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get update</span><br><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install google-chrome-stable     //安装谷歌浏览器</span><br></code></pre></td></tr></table></figure>
-<h1 id="安装neofetch"><a href="#安装neofetch" class="headerlink" title="安装neofetch"></a>安装neofetch</h1><p><strong>终端输入以下命令</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo add-apt-repository ppa:dawidd0811/neofetch</span><br><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get update</span><br><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install neofetch</span><br><span class="hljs-meta">$ </span><span class="language-bash">neofetch</span><br></code></pre></td></tr></table></figure>
-<p><strong>本人试了(CrunchBang Linux), (Zenix Linux), (antiX Linux), (Zenwalk Linux), (Xubuntu Linux), (Lubuntu Linux), (Tiny Core Linux), (SliTaz Linux), (Porteus Linux), (Puppy Linux), (Silverblue Linux), (4MLinux)等等带桌面的发行版然后就唯独Bodhi Linux最满意</strong></p>
-<p><strong>至于为什么要带桌面的发行版, 因为要日用偶尔看看B站什么的</strong></p>
-<p><strong>关于这台电脑用的硬盘 大小80G 有9724个坏道 拆掉坏掉的戴尔一条三星的DDR2 才有2G内存可以体验</strong></p>
-<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E5%9D%8F%E9%81%93.jpg"></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Anroid 项目结构</title>
     <url>/Anroid-structure.html</url>
     <content><![CDATA[<p><strong>未完待续</strong></p>
@@ -683,6 +642,47 @@ var tools = (function(){
       </categories>
   </entry>
   <entry>
+    <title>Bodhi Linux安装教程(老电脑的福利)</title>
+    <url>/Bodhi-Linux.html</url>
+    <content><![CDATA[<p><strong>本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版</strong></p>
+<a id="more"></a>
+
+<p><strong>以下是我的电脑的参数</strong></p>
+<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%81%94%E6%83%B3G430.jpg"></p>
+<h1 id="第一步-安装Bodhi-Linux"><a href="#第一步-安装Bodhi-Linux" class="headerlink" title="第一步 安装Bodhi Linux"></a>第一步 安装Bodhi Linux</h1><p><strong>Bodhi Linux<a href="https://nchc.dl.sourceforge.net/project/bodhilinux/5.1.0/bodhi-5.1.0-64.iso">个人建议Standard版本</a>如果你想选择别的版本到<a href="https://www.bodhilinux.com/download/">官网找</a></strong></p>
+<p><a href="https://www.bilibili.com/video/BV1aW411C7NR">安装视频参考Ubantu的, 都是可视化界面安装</a></p>
+<h1 id="第二步-老电脑无法连接WIFI-所以终端输入以下命令"><a href="#第二步-老电脑无法连接WIFI-所以终端输入以下命令" class="headerlink" title="第二步 老电脑无法连接WIFI 所以终端输入以下命令"></a>第二步 老电脑无法连接WIFI 所以终端输入以下命令</h1><p><strong>建议用网线装机</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get update</span><br><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install bcmwl-kernel-source</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>仍然没有的话 就在终端输入以下命令</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo nano /etc/modprobe.d/blacklist.conf   //nano命令ctrl+x退出，选择y后保存</span><br><span class="hljs-meta">$ </span><span class="language-bash">blacklist acer-wmi   //最后一行加入</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="第三步-安装安装中文环境"><a href="#第三步-安装安装中文环境" class="headerlink" title="第三步 安装安装中文环境"></a>第三步 安装安装中文环境</h1><p><strong>安装中文字体和中文语言包</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get update</span><br><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install -y language-pack-zh-hans language-pack-zh-hans-base language-pack-gnome-zh-hans language-pack-gnome-zh-hans-base fonts-wqy-microhei</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>然后按照以下打开步骤</strong></p>
+<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%871.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%872.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%873.jpg"><br><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%874.jpg"></p>
+<h1 id="第四步安装输入法"><a href="#第四步安装输入法" class="headerlink" title="第四步安装输入法"></a>第四步安装输入法</h1><p><strong>这里<a href="https://pinyin.sogou.com/linux/">安装搜狗输入法</a></strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install fonts-droid-fallback zip   //安装它的依赖包</span><br><span class="hljs-meta">$ </span><span class="language-bash">sudo dpkg -i xxx    //xxx为下载的包名 后缀名也要</span><br></code></pre></td></tr></table></figure>
+<h1 id="第五步安装一些常用软件"><a href="#第五步安装一些常用软件" class="headerlink" title="第五步安装一些常用软件"></a>第五步安装一些常用软件</h1><p><strong>例如安装vim</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install vim   //vim是文本编辑软件</span><br></code></pre></td></tr></table></figure>
+<p><strong>例如浏览器 它自身也有web浏览器 看个人喜欢</strong></p>
+<p><strong>安装火狐浏览器和中文语言包</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get remove firefox</span><br><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install -y firefox firefox-locale-zh-hans</span><br></code></pre></td></tr></table></figure>
+<p><strong>安装谷歌浏览器</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/</span><br>wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -     //先添加源<br><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get update</span><br><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install google-chrome-stable     //安装谷歌浏览器</span><br></code></pre></td></tr></table></figure>
+<h1 id="安装neofetch"><a href="#安装neofetch" class="headerlink" title="安装neofetch"></a>安装neofetch</h1><p><strong>终端输入以下命令</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">sudo add-apt-repository ppa:dawidd0811/neofetch</span><br><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get update</span><br><span class="hljs-meta">$ </span><span class="language-bash">sudo apt-get install neofetch</span><br><span class="hljs-meta">$ </span><span class="language-bash">neofetch</span><br></code></pre></td></tr></table></figure>
+<p><strong>本人试了(CrunchBang Linux), (Zenix Linux), (antiX Linux), (Zenwalk Linux), (Xubuntu Linux), (Lubuntu Linux), (Tiny Core Linux), (SliTaz Linux), (Porteus Linux), (Puppy Linux), (Silverblue Linux), (4MLinux)等等带桌面的发行版然后就唯独Bodhi Linux最满意</strong></p>
+<p><strong>至于为什么要带桌面的发行版, 因为要日用偶尔看看B站什么的</strong></p>
+<p><strong>关于这台电脑用的硬盘 大小80G 有9724个坏道 拆掉坏掉的戴尔一条三星的DDR2 才有2G内存可以体验</strong></p>
+<p><img src="/images/BodhiLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E8%80%81%E7%94%B5%E8%84%91%E7%9A%84%E7%A6%8F%E5%88%A9)/%E5%9D%8F%E9%81%93.jpg"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>CSS Flex样式</title>
     <url>/CSS-Flex.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
@@ -779,22 +779,6 @@ var tools = (function(){
 <p><strong>相邻兄弟选择器: 只有一个, 相邻(向下)</strong></p>
 <h1 id="通用选择器"><a href="#通用选择器" class="headerlink" title="通用选择器"></a>通用选择器</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$ &lt;style&gt;<br>  &#125;<br>  <span class="hljs-selector-class">.sdq</span>~<span class="hljs-selector-tag">h1</span>&#123;<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>$ &lt;/style&gt;<br>$ &lt;body&gt;<br>&lt;<span class="hljs-selector-tag">h1</span>&gt;史迪奇骑士&lt;<span class="hljs-selector-tag">h1</span>&gt;<br>&lt;h1 class=&quot;sdq1&quot;&gt;史迪奇打手&lt;h1&gt;<br>&lt;<span class="hljs-selector-tag">h1</span>&gt;史迪奇国王&lt;<span class="hljs-selector-tag">h1</span>&gt;<br>$ &lt;/body&gt;<br></code></pre></td></tr></table></figure>
 <p><strong>通用选择器: 当前选中元素的向下的所有兄弟元素</strong></p>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>CSS 属性选择器(常用)</title>
-    <url>/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
-    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$ &lt;style&gt;<br>$<br><span class="hljs-selector-class">.sdq1</span> <span class="hljs-selector-tag">a</span>&#123; <br>     <span class="hljs-attribute">float</span>: left;  //<span class="hljs-attribute">left</span>往左<span class="hljs-attribute">float</span>浮动<br>     dispay: block;  //dispay规定元素应该生成的框的类型block此元素将显示为块级元素，此元素前后会带有换行符。<br>     heigh: <span class="hljs-number">50px</span>;  //heigh高度<br>     <span class="hljs-attribute">width</span>: <span class="hljs-number">50px</span>;  //<span class="hljs-attribute">width</span>宽度<br>     <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;  //<span class="hljs-attribute">border-radius</span>圆角边框<br>     <br>     <span class="hljs-attribute">text-align</span>: center;   //<span class="hljs-attribute">text-align</span>对齐center剧中<br>     <span class="hljs-attribute">color</span>: yellow;  //<span class="hljs-attribute">color</span>文字颜色<br>     <span class="hljs-attribute">text-decoration</span>: none;  //<span class="hljs-attribute">text-decoration</span>下划线<span class="hljs-attribute">none</span>不显示<br>     <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">5px</span>;    //<span class="hljs-attribute">margin-right</span>外边距向右<br>     <span class="hljs-attribute">font</span>: bold <span class="hljs-number">20px</span>/<span class="hljs-number">50px</span> Arial;   //<span class="hljs-attribute">font</span>设置文字的字体bold字体大小<span class="hljs-number">20px</span>字体的大小<span class="hljs-number">50px</span>行高Arial是一种字体<br> &#125;<br>  //格式<span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[]</span>&#123;&#125;  存在id的属性的元素  <br> a[class*=first]&#123;        //=是绝对等于  *=是包含这个元素<br>     <span class="hljs-attribute">background</span>: yellow;<br> &#125;<br> a[href^=xxy]&#123;          //^=表示以什么开头     <br>     <span class="hljs-attribute">background</span>: green;<br> &#125;<br> a[href$=ghfgh]&#123;          //$=表示以什么结尾     <br>     <span class="hljs-attribute">background</span>: powder;<br> &#125;<br>  <br>$ &lt;/style&gt;<br>$ &lt;body&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;<br>&lt;a href=&quot;xxy.fgdhrth&quot; class=&quot;links item first&quot; id=&quot;first&quot;&gt;史迪奇&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪仔&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪奇骑士&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪奇国王&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪奇勇士&lt;a&gt;<br>&lt;a href=&quot;hh.ghfgh&quot; class=&quot;links item&quot;&gt;史迪奇巫师&lt;a&gt;<br>&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>$ &lt;/body&gt;<br></code></pre></td></tr></table></figure>
-
-
-
-
 ]]></content>
       <categories>
         <category>CSS</category>
@@ -932,6 +916,22 @@ var tools = (function(){
       </categories>
   </entry>
   <entry>
+    <title>CSS 属性选择器(常用)</title>
+    <url>/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">$ &lt;style&gt;<br>$<br><span class="hljs-selector-class">.sdq1</span> <span class="hljs-selector-tag">a</span>&#123; <br>     <span class="hljs-attribute">float</span>: left;  //<span class="hljs-attribute">left</span>往左<span class="hljs-attribute">float</span>浮动<br>     dispay: block;  //dispay规定元素应该生成的框的类型block此元素将显示为块级元素，此元素前后会带有换行符。<br>     heigh: <span class="hljs-number">50px</span>;  //heigh高度<br>     <span class="hljs-attribute">width</span>: <span class="hljs-number">50px</span>;  //<span class="hljs-attribute">width</span>宽度<br>     <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;  //<span class="hljs-attribute">border-radius</span>圆角边框<br>     <br>     <span class="hljs-attribute">text-align</span>: center;   //<span class="hljs-attribute">text-align</span>对齐center剧中<br>     <span class="hljs-attribute">color</span>: yellow;  //<span class="hljs-attribute">color</span>文字颜色<br>     <span class="hljs-attribute">text-decoration</span>: none;  //<span class="hljs-attribute">text-decoration</span>下划线<span class="hljs-attribute">none</span>不显示<br>     <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">5px</span>;    //<span class="hljs-attribute">margin-right</span>外边距向右<br>     <span class="hljs-attribute">font</span>: bold <span class="hljs-number">20px</span>/<span class="hljs-number">50px</span> Arial;   //<span class="hljs-attribute">font</span>设置文字的字体bold字体大小<span class="hljs-number">20px</span>字体的大小<span class="hljs-number">50px</span>行高Arial是一种字体<br> &#125;<br>  //格式<span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[]</span>&#123;&#125;  存在id的属性的元素  <br> a[class*=first]&#123;        //=是绝对等于  *=是包含这个元素<br>     <span class="hljs-attribute">background</span>: yellow;<br> &#125;<br> a[href^=xxy]&#123;          //^=表示以什么开头     <br>     <span class="hljs-attribute">background</span>: green;<br> &#125;<br> a[href$=ghfgh]&#123;          //$=表示以什么结尾     <br>     <span class="hljs-attribute">background</span>: powder;<br> &#125;<br>  <br>$ &lt;/style&gt;<br>$ &lt;body&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;<br>&lt;a href=&quot;xxy.fgdhrth&quot; class=&quot;links item first&quot; id=&quot;first&quot;&gt;史迪奇&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪仔&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪奇骑士&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪奇国王&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪奇勇士&lt;a&gt;<br>&lt;a href=&quot;hh.ghfgh&quot; class=&quot;links item&quot;&gt;史迪奇巫师&lt;a&gt;<br>&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>$ &lt;/body&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
     <title>CSS-边距-边框-阴影-浮动-定位-透明-z-index-动画</title>
     <url>/CSS8.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
@@ -976,23 +976,6 @@ $</style>
       </categories>
   </entry>
   <entry>
-    <title>CSS 定位布局</title>
-    <url>/CSS-Static-Relative-Absolute-Fixed-Sticky.html</url>
-    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="Static-静态定位-默认"><a href="#Static-静态定位-默认" class="headerlink" title="Static 静态定位(默认)"></a>Static 静态定位(默认)</h1><p><strong>从上到下 从左到右</strong></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-class">.box</span>&#123;<br>    <span class="hljs-attribute">position</span>: static<br>&#125;<br></code></pre></td></tr></table></figure>
-<h1 id="Relative-相对定位"><a href="#Relative-相对定位" class="headerlink" title="Relative 相对定位"></a>Relative 相对定位</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-class">.box2</span>&#123;<br>    <span class="hljs-attribute">position</span>: relative;<br>    <span class="hljs-attribute">left</span>: <span class="hljs-number">15px</span>;<br>    <span class="hljs-attribute">top</span>:<span class="hljs-number">15px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h1 id="Absolute-绝对定位"><a href="#Absolute-绝对定位" class="headerlink" title="Absolute 绝对定位"></a>Absolute 绝对定位</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-class">.box3</span>&#123;<br>    <span class="hljs-attribute">position</span>: Absolute;<br>    <span class="hljs-attribute">left</span>: <span class="hljs-number">15px</span>;<br>    <span class="hljs-attribute">top</span>:<span class="hljs-number">15px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h1 id="Fixed-固定定位"><a href="#Fixed-固定定位" class="headerlink" title="Fixed 固定定位"></a>Fixed 固定定位</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-class">.footer</span>&#123;<br>    <span class="hljs-attribute">position</span>: fixed;<br>    <span class="hljs-attribute">bottom</span>: <span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">right</span>:<span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h1 id="Sticky-粘性定位"><a href="#Sticky-粘性定位" class="headerlink" title="Sticky 粘性定位"></a>Sticky 粘性定位</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-class">.footer</span>&#123;<br>    <span class="hljs-attribute">position</span>: fixed;<br>    <span class="hljs-attribute">bottom</span>: <span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">right</span>:<span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>CSS 三种导入样式</title>
     <url>/CSS-Import-styles.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
@@ -1006,6 +989,23 @@ $</style>
 <figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"> &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style<span class="hljs-selector-class">.css</span>&quot;&gt;    //链接式  属于<span class="hljs-selector-tag">html</span><br>  <span class="hljs-keyword">@import</span> url(<span class="hljs-string">&quot;css/style.css&quot;</span>)          //导入式  属于CSS2.<span class="hljs-number">1</span> 了解就可以<br>&lt;style&gt;<br>  <span class="hljs-selector-tag">h1</span>&#123;<br>      <span class="hljs-attribute">color</span>: blue;<br>    &#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
 <p><img src="/images/CSS%E4%B8%89%E7%A7%8D%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F/%E5%A4%96%E9%83%A8%E6%A0%B7%E5%BC%8F.jpg"></p>
 <h1 id="优先级-行内样式-gt-内部样式-gt-外部样式"><a href="#优先级-行内样式-gt-内部样式-gt-外部样式" class="headerlink" title="优先级: 行内样式 &gt; 内部样式 &gt; 外部样式"></a>优先级: 行内样式 &gt; 内部样式 &gt; 外部样式</h1><p><strong>优先级看就近原则</strong></p>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>CSS 定位布局</title>
+    <url>/CSS-Static-Relative-Absolute-Fixed-Sticky.html</url>
+    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="Static-静态定位-默认"><a href="#Static-静态定位-默认" class="headerlink" title="Static 静态定位(默认)"></a>Static 静态定位(默认)</h1><p><strong>从上到下 从左到右</strong></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-class">.box</span>&#123;<br>    <span class="hljs-attribute">position</span>: static<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="Relative-相对定位"><a href="#Relative-相对定位" class="headerlink" title="Relative 相对定位"></a>Relative 相对定位</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-class">.box2</span>&#123;<br>    <span class="hljs-attribute">position</span>: relative;<br>    <span class="hljs-attribute">left</span>: <span class="hljs-number">15px</span>;<br>    <span class="hljs-attribute">top</span>:<span class="hljs-number">15px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="Absolute-绝对定位"><a href="#Absolute-绝对定位" class="headerlink" title="Absolute 绝对定位"></a>Absolute 绝对定位</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-class">.box3</span>&#123;<br>    <span class="hljs-attribute">position</span>: Absolute;<br>    <span class="hljs-attribute">left</span>: <span class="hljs-number">15px</span>;<br>    <span class="hljs-attribute">top</span>:<span class="hljs-number">15px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="Fixed-固定定位"><a href="#Fixed-固定定位" class="headerlink" title="Fixed 固定定位"></a>Fixed 固定定位</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-class">.footer</span>&#123;<br>    <span class="hljs-attribute">position</span>: fixed;<br>    <span class="hljs-attribute">bottom</span>: <span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">right</span>:<span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="Sticky-粘性定位"><a href="#Sticky-粘性定位" class="headerlink" title="Sticky 粘性定位"></a>Sticky 粘性定位</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-class">.footer</span>&#123;<br>    <span class="hljs-attribute">position</span>: fixed;<br>    <span class="hljs-attribute">bottom</span>: <span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">right</span>:<span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>CSS</category>
@@ -1249,217 +1249,6 @@ datatype *varname
 <li>函数指针有两个用途: 调用函数和做函数的参数</li>
 </ul>
 ]]></content>
-      <categories>
-        <category>C语</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>C语 数组</title>
-    <url>/C-Array.html</url>
-    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h1><h4>一维数组的定义:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">储存类型 数据类型 数组名 [ 常量表达式 ] = &#123; 初始值 &#125;<br></code></pre></td></tr></table></figure>
-<br>
-
-
-<h4>数组定义格式:</h4>
-
-<ul>
-<li>储存类型是任意项, 可以是 auto, static, extern 储存类型, 但没有 register 型</li>
-</ul>
-<ul>
-<li>数据类型可以是 int, float, char</li>
-</ul>
-<ul>
-<li>数据名符号标识符定义, 但不能与其它变量同名</li>
-</ul>
-<ul>
-<li>数组元素的下标是从0开始编号的, 否则会产生数组越界</li>
-</ul>
-<ul>
-<li>常量表达式中可以包含常量和符号, 不能包含变量</li>
-</ul>
-<h3 id="一维数组元素的引用"><a href="#一维数组元素的引用" class="headerlink" title="一维数组元素的引用"></a>一维数组元素的引用</h3><ul>
-<li>数组元素的实质为该数组所属数据类型的一个具有下标的变量, 故又称下标变量, 因此, 数组元素与具有相同数据类型的普通变量的引用完全相同</li>
-</ul>
-<h4>数组元素的引用形式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">数组名 [ 下标 ]<br></code></pre></td></tr></table></figure>
-<br>
-
-<h3 id="一维数组元素的初始化"><a href="#一维数组元素的初始化" class="headerlink" title="一维数组元素的初始化"></a>一维数组元素的初始化</h3><ul>
-<li>注意: [ ]中括号不能省略</li>
-</ul>
-<ul>
-<li>可以对数组全部元素赋值 </li>
-</ul>
-<ul>
-<li>也可以对部分元素赋初值</li>
-</ul>
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">数组类型 数组名 [ 数组元素个数 ] = &#123; 值<span class="hljs-number">1</span>, 值 <span class="hljs-number">2</span>, ..., 值 n &#125;; <br></code></pre></td></tr></table></figure>
-<br>
-
-<h1 id="一维数组-1"><a href="#一维数组-1" class="headerlink" title="一维数组"></a>一维数组</h1><h4>二维数组的定义:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">储存类型 数据类型 数组名 [ 常量表达式 e1 ] [ 常量表达式 e2 ];<br></code></pre></td></tr></table></figure>
-<br>
-
-<h3 id="二维数组元素的引用"><a href="#二维数组元素的引用" class="headerlink" title="二维数组元素的引用"></a>二维数组元素的引用</h3><ul>
-<li>不论是一维数组还是二维数组, 都不能对数组进行整体引用, 只能对具体的元素进行访问</li>
-</ul>
-<ul>
-<li>在数组元素引用要特别注意下标越界, 因为系统不检查下标越界问题, 所以程序设计者要特别注意</li>
-</ul>
-<h4>数组元素的引用形式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">数组名 [ 下标 <span class="hljs-number">1</span> ] [ 下标 <span class="hljs-number">2</span> ]<br></code></pre></td></tr></table></figure>
-<br>
-
-<h3 id="一维数组元素的初始化-1"><a href="#一维数组元素的初始化-1" class="headerlink" title="一维数组元素的初始化"></a>一维数组元素的初始化</h3><ul>
-<li>对数组全部元素赋值, 这时允许二维数组定义中缺省行下标, 但不能缺省列下标</li>
-</ul>
-<ul>
-<li>也可以对部分元素赋初值</li>
-</ul>
-<h1 id="字符数组"><a href="#字符数组" class="headerlink" title="字符数组"></a>字符数组</h1><h2 id="字符数组的定义"><a href="#字符数组的定义" class="headerlink" title="字符数组的定义"></a>字符数组的定义</h2><h4>一维数组的定义形式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">储存类型 <span class="hljs-type">char</span> 数组名 [ 常量表达式 ] = &#123; 初始值 &#125;;<br></code></pre></td></tr></table></figure>
-<br>
-
-<h4>二维数组的定义形式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">储存类型 <span class="hljs-type">char</span> 数组名 [ 常量表达式 e1 ] [ 常量表达式 e2 ] = &#123; 初始值 &#125;;<br></code></pre></td></tr></table></figure>
-<br>
-
-<h3 id="字符数组元素的初始化"><a href="#字符数组元素的初始化" class="headerlink" title="字符数组元素的初始化"></a>字符数组元素的初始化</h3><ul>
-<li>定义数组同时又可以缺省数组定义的长度, 对于二维数组, 可以缺省行下标, 但不能省列下标</li>
-</ul>
-<ul>
-<li>可以用字符串常量初始化数组: 该初始化法自动在末尾一个字符后加 ‘ \0 ‘作为结束符, 用字符串常量方式赋值比用字符常量赋值方式每行要多占一个字节</li>
-</ul>
-<ul>
-<li>在初始化中, 如果提供的字符个数多余数组元素的个数, 则作为语法错误处理, 如果字符个数小于元素个数, 则多余的数组元素自动赋空格字符</li>
-</ul>
-<h1 id="字符串处理函数"><a href="#字符串处理函数" class="headerlink" title="字符串处理函数"></a>字符串处理函数</h1><h3 id="字符串输出函数-puts"><a href="#字符串输出函数-puts" class="headerlink" title="字符串输出函数 puts"></a>字符串输出函数 puts</h3><ul>
-<li>功能: 将一个字符串 ( 以 ‘ \0 ‘ 结束的字符序列 ) 输出到终端 用 puts 函数输出的字符串中可以包含转义字符</li>
-</ul>
-<h4>字符串输出函数 puts的格式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">puts</span> (字符串数组名);<br></code></pre></td></tr></table></figure>
-<br>
-
-
-
-<h3 id="字符串输入函数-gets"><a href="#字符串输入函数-gets" class="headerlink" title="字符串输入函数 gets"></a>字符串输入函数 gets</h3><ul>
-<li>功能: 从键盘输入一个字符串到字符数组, 并且得到一个函数值, 该函数数值是字符数组的起始地址 </li>
-</ul>
-<h4>字符串输出函数 puts的格式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">gets (字符串数组名);<br></code></pre></td></tr></table></figure>
-<br>
-
-<h3 id="字符串连接函数-strcat"><a href="#字符串连接函数-strcat" class="headerlink" title="字符串连接函数 strcat"></a>字符串连接函数 strcat</h3><ul>
-<li>功能: 把字符数组 2 中的字符串接到字符数组 1中的字符串后面, 结果放在字符数组 1 中, 并取消字符数组 1 中的 ‘ \0 ‘, 函数调用后得到的返回值为字符数组 1 的首地址 </li>
-</ul>
-<h4>字符串输出函数 puts的格式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">strcat</span> ( 字符数组 <span class="hljs-number">1</span>, 字符数组 <span class="hljs-number">2</span> );<br></code></pre></td></tr></table></figure>
-<br>
-
-<h3 id="字符串复制函数-strcpy"><a href="#字符串复制函数-strcpy" class="headerlink" title="字符串复制函数 strcpy"></a>字符串复制函数 strcpy</h3><ul>
-<li><p>功能: 把字符数组 2 复制到字符数组 1 中去, 串结束符 ‘ \0 ‘ 也一同复制, 字符数组 2 可以为字符串常量, 使用时要注意</p>
-<ol>
-<li><p>字符数组 1 必须定义得足够大, 以便能存放被复制的字符串, 字符数组 2 的长度</p>
-</li>
-<li><p>“ 字符数组 1 “ 必须写成数组名形式, 不能为字符串常量</p>
-</li>
-<li><p>不能用赋值语句将一个字符串常量或字符数组直接赋给一个字符数组 </p>
-</li>
-</ol>
-</li>
-</ul>
-<ul>
-<li>使用时, 字符数组 1 必须足够大, 以便容纳连接后的新字符串 </li>
-</ul>
-<h4>字符串输出函数 puts的格式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">strcpy</span> ( 字符串数组 <span class="hljs-number">1</span> , 字符数组 <span class="hljs-number">2</span> );<br></code></pre></td></tr></table></figure>
-<br>
-
-<h3 id="字符串比较函数-strcmp"><a href="#字符串比较函数-strcmp" class="headerlink" title="字符串比较函数 strcmp"></a>字符串比较函数 strcmp</h3><ul>
-<li>功能: 按照 ASCII 码顺序比较两个字符数组中的字符串, 由函数返回值可以比较结果, 也可以用于比较两个字符串常量或数组与字符串常量</li>
-</ul>
-<p><strong>比较结果:</strong></p>
-<ul>
-<li>字符串 1 == 字符串 2, 函数值为0</li>
-</ul>
-<ul>
-<li>字符串 1 &gt; 字符串 2, 函数值为正整数</li>
-</ul>
-<ul>
-<li>字符串 1 &lt; 字符串 2, 函数值为负整数</li>
-</ul>
-<h4>字符串输出函数 puts的格式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">strcmp</span> ( 字符数组 <span class="hljs-number">1</span> , 字符数组 <span class="hljs-number">2</span> );<br></code></pre></td></tr></table></figure>
-<br>
-
-<h3 id="检测字符串长度函数-strlen"><a href="#检测字符串长度函数-strlen" class="headerlink" title="检测字符串长度函数 strlen"></a>检测字符串长度函数 strlen</h3><ul>
-<li>功能: 该函数值为字符串实际长度, 即字符串中不包含 ‘ \0 ‘在内的字符个数</li>
-</ul>
-<h4>字符串输出函数 puts的格式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">strlen</span> ( 字符数组 );<br></code></pre></td></tr></table></figure>
-<br>
-
-<h3 id="大写字母转换为小写字母函数-strlwr"><a href="#大写字母转换为小写字母函数-strlwr" class="headerlink" title="大写字母转换为小写字母函数 strlwr"></a>大写字母转换为小写字母函数 strlwr</h3><ul>
-<li>功能: 将字符串中大写字母转换成小写字母</li>
-</ul>
-<h4>字符串输出函数 puts的格式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">strlwr ( 字符数组 );<br></code></pre></td></tr></table></figure>
-<br>
-
-<h3 id="小写字母转换为大写字母-strupr"><a href="#小写字母转换为大写字母-strupr" class="headerlink" title="小写字母转换为大写字母 strupr"></a>小写字母转换为大写字母 strupr</h3><ul>
-<li>功能: 将字符串中小写字母转换成大写字母</li>
-</ul>
-<h4>字符串输出函数 puts的格式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">strupr ( 字符数组 );<br></code></pre></td></tr></table></figure>
-<br>]]></content>
       <categories>
         <category>C语</category>
       </categories>
@@ -2123,6 +1912,217 @@ graph TB
       </categories>
   </entry>
   <entry>
+    <title>C语 数组</title>
+    <url>/C-Array.html</url>
+    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h1><h4>一维数组的定义:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">储存类型 数据类型 数组名 [ 常量表达式 ] = &#123; 初始值 &#125;<br></code></pre></td></tr></table></figure>
+<br>
+
+
+<h4>数组定义格式:</h4>
+
+<ul>
+<li>储存类型是任意项, 可以是 auto, static, extern 储存类型, 但没有 register 型</li>
+</ul>
+<ul>
+<li>数据类型可以是 int, float, char</li>
+</ul>
+<ul>
+<li>数据名符号标识符定义, 但不能与其它变量同名</li>
+</ul>
+<ul>
+<li>数组元素的下标是从0开始编号的, 否则会产生数组越界</li>
+</ul>
+<ul>
+<li>常量表达式中可以包含常量和符号, 不能包含变量</li>
+</ul>
+<h3 id="一维数组元素的引用"><a href="#一维数组元素的引用" class="headerlink" title="一维数组元素的引用"></a>一维数组元素的引用</h3><ul>
+<li>数组元素的实质为该数组所属数据类型的一个具有下标的变量, 故又称下标变量, 因此, 数组元素与具有相同数据类型的普通变量的引用完全相同</li>
+</ul>
+<h4>数组元素的引用形式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">数组名 [ 下标 ]<br></code></pre></td></tr></table></figure>
+<br>
+
+<h3 id="一维数组元素的初始化"><a href="#一维数组元素的初始化" class="headerlink" title="一维数组元素的初始化"></a>一维数组元素的初始化</h3><ul>
+<li>注意: [ ]中括号不能省略</li>
+</ul>
+<ul>
+<li>可以对数组全部元素赋值 </li>
+</ul>
+<ul>
+<li>也可以对部分元素赋初值</li>
+</ul>
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">数组类型 数组名 [ 数组元素个数 ] = &#123; 值<span class="hljs-number">1</span>, 值 <span class="hljs-number">2</span>, ..., 值 n &#125;; <br></code></pre></td></tr></table></figure>
+<br>
+
+<h1 id="一维数组-1"><a href="#一维数组-1" class="headerlink" title="一维数组"></a>一维数组</h1><h4>二维数组的定义:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">储存类型 数据类型 数组名 [ 常量表达式 e1 ] [ 常量表达式 e2 ];<br></code></pre></td></tr></table></figure>
+<br>
+
+<h3 id="二维数组元素的引用"><a href="#二维数组元素的引用" class="headerlink" title="二维数组元素的引用"></a>二维数组元素的引用</h3><ul>
+<li>不论是一维数组还是二维数组, 都不能对数组进行整体引用, 只能对具体的元素进行访问</li>
+</ul>
+<ul>
+<li>在数组元素引用要特别注意下标越界, 因为系统不检查下标越界问题, 所以程序设计者要特别注意</li>
+</ul>
+<h4>数组元素的引用形式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">数组名 [ 下标 <span class="hljs-number">1</span> ] [ 下标 <span class="hljs-number">2</span> ]<br></code></pre></td></tr></table></figure>
+<br>
+
+<h3 id="一维数组元素的初始化-1"><a href="#一维数组元素的初始化-1" class="headerlink" title="一维数组元素的初始化"></a>一维数组元素的初始化</h3><ul>
+<li>对数组全部元素赋值, 这时允许二维数组定义中缺省行下标, 但不能缺省列下标</li>
+</ul>
+<ul>
+<li>也可以对部分元素赋初值</li>
+</ul>
+<h1 id="字符数组"><a href="#字符数组" class="headerlink" title="字符数组"></a>字符数组</h1><h2 id="字符数组的定义"><a href="#字符数组的定义" class="headerlink" title="字符数组的定义"></a>字符数组的定义</h2><h4>一维数组的定义形式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">储存类型 <span class="hljs-type">char</span> 数组名 [ 常量表达式 ] = &#123; 初始值 &#125;;<br></code></pre></td></tr></table></figure>
+<br>
+
+<h4>二维数组的定义形式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">储存类型 <span class="hljs-type">char</span> 数组名 [ 常量表达式 e1 ] [ 常量表达式 e2 ] = &#123; 初始值 &#125;;<br></code></pre></td></tr></table></figure>
+<br>
+
+<h3 id="字符数组元素的初始化"><a href="#字符数组元素的初始化" class="headerlink" title="字符数组元素的初始化"></a>字符数组元素的初始化</h3><ul>
+<li>定义数组同时又可以缺省数组定义的长度, 对于二维数组, 可以缺省行下标, 但不能省列下标</li>
+</ul>
+<ul>
+<li>可以用字符串常量初始化数组: 该初始化法自动在末尾一个字符后加 ‘ \0 ‘作为结束符, 用字符串常量方式赋值比用字符常量赋值方式每行要多占一个字节</li>
+</ul>
+<ul>
+<li>在初始化中, 如果提供的字符个数多余数组元素的个数, 则作为语法错误处理, 如果字符个数小于元素个数, 则多余的数组元素自动赋空格字符</li>
+</ul>
+<h1 id="字符串处理函数"><a href="#字符串处理函数" class="headerlink" title="字符串处理函数"></a>字符串处理函数</h1><h3 id="字符串输出函数-puts"><a href="#字符串输出函数-puts" class="headerlink" title="字符串输出函数 puts"></a>字符串输出函数 puts</h3><ul>
+<li>功能: 将一个字符串 ( 以 ‘ \0 ‘ 结束的字符序列 ) 输出到终端 用 puts 函数输出的字符串中可以包含转义字符</li>
+</ul>
+<h4>字符串输出函数 puts的格式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">puts</span> (字符串数组名);<br></code></pre></td></tr></table></figure>
+<br>
+
+
+
+<h3 id="字符串输入函数-gets"><a href="#字符串输入函数-gets" class="headerlink" title="字符串输入函数 gets"></a>字符串输入函数 gets</h3><ul>
+<li>功能: 从键盘输入一个字符串到字符数组, 并且得到一个函数值, 该函数数值是字符数组的起始地址 </li>
+</ul>
+<h4>字符串输出函数 puts的格式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">gets (字符串数组名);<br></code></pre></td></tr></table></figure>
+<br>
+
+<h3 id="字符串连接函数-strcat"><a href="#字符串连接函数-strcat" class="headerlink" title="字符串连接函数 strcat"></a>字符串连接函数 strcat</h3><ul>
+<li>功能: 把字符数组 2 中的字符串接到字符数组 1中的字符串后面, 结果放在字符数组 1 中, 并取消字符数组 1 中的 ‘ \0 ‘, 函数调用后得到的返回值为字符数组 1 的首地址 </li>
+</ul>
+<h4>字符串输出函数 puts的格式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">strcat</span> ( 字符数组 <span class="hljs-number">1</span>, 字符数组 <span class="hljs-number">2</span> );<br></code></pre></td></tr></table></figure>
+<br>
+
+<h3 id="字符串复制函数-strcpy"><a href="#字符串复制函数-strcpy" class="headerlink" title="字符串复制函数 strcpy"></a>字符串复制函数 strcpy</h3><ul>
+<li><p>功能: 把字符数组 2 复制到字符数组 1 中去, 串结束符 ‘ \0 ‘ 也一同复制, 字符数组 2 可以为字符串常量, 使用时要注意</p>
+<ol>
+<li><p>字符数组 1 必须定义得足够大, 以便能存放被复制的字符串, 字符数组 2 的长度</p>
+</li>
+<li><p>“ 字符数组 1 “ 必须写成数组名形式, 不能为字符串常量</p>
+</li>
+<li><p>不能用赋值语句将一个字符串常量或字符数组直接赋给一个字符数组 </p>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>使用时, 字符数组 1 必须足够大, 以便容纳连接后的新字符串 </li>
+</ul>
+<h4>字符串输出函数 puts的格式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">strcpy</span> ( 字符串数组 <span class="hljs-number">1</span> , 字符数组 <span class="hljs-number">2</span> );<br></code></pre></td></tr></table></figure>
+<br>
+
+<h3 id="字符串比较函数-strcmp"><a href="#字符串比较函数-strcmp" class="headerlink" title="字符串比较函数 strcmp"></a>字符串比较函数 strcmp</h3><ul>
+<li>功能: 按照 ASCII 码顺序比较两个字符数组中的字符串, 由函数返回值可以比较结果, 也可以用于比较两个字符串常量或数组与字符串常量</li>
+</ul>
+<p><strong>比较结果:</strong></p>
+<ul>
+<li>字符串 1 == 字符串 2, 函数值为0</li>
+</ul>
+<ul>
+<li>字符串 1 &gt; 字符串 2, 函数值为正整数</li>
+</ul>
+<ul>
+<li>字符串 1 &lt; 字符串 2, 函数值为负整数</li>
+</ul>
+<h4>字符串输出函数 puts的格式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">strcmp</span> ( 字符数组 <span class="hljs-number">1</span> , 字符数组 <span class="hljs-number">2</span> );<br></code></pre></td></tr></table></figure>
+<br>
+
+<h3 id="检测字符串长度函数-strlen"><a href="#检测字符串长度函数-strlen" class="headerlink" title="检测字符串长度函数 strlen"></a>检测字符串长度函数 strlen</h3><ul>
+<li>功能: 该函数值为字符串实际长度, 即字符串中不包含 ‘ \0 ‘在内的字符个数</li>
+</ul>
+<h4>字符串输出函数 puts的格式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">strlen</span> ( 字符数组 );<br></code></pre></td></tr></table></figure>
+<br>
+
+<h3 id="大写字母转换为小写字母函数-strlwr"><a href="#大写字母转换为小写字母函数-strlwr" class="headerlink" title="大写字母转换为小写字母函数 strlwr"></a>大写字母转换为小写字母函数 strlwr</h3><ul>
+<li>功能: 将字符串中大写字母转换成小写字母</li>
+</ul>
+<h4>字符串输出函数 puts的格式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">strlwr ( 字符数组 );<br></code></pre></td></tr></table></figure>
+<br>
+
+<h3 id="小写字母转换为大写字母-strupr"><a href="#小写字母转换为大写字母-strupr" class="headerlink" title="小写字母转换为大写字母 strupr"></a>小写字母转换为大写字母 strupr</h3><ul>
+<li>功能: 将字符串中小写字母转换成大写字母</li>
+</ul>
+<h4>字符串输出函数 puts的格式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">strupr ( 字符数组 );<br></code></pre></td></tr></table></figure>
+<br>]]></content>
+      <categories>
+        <category>C语</category>
+      </categories>
+  </entry>
+  <entry>
     <title>C语 符号</title>
     <url>/C-Symbols.html</url>
     <content><![CDATA[<p><strong>C语学习笔记</strong></p>
@@ -2195,6 +2195,67 @@ A[" 其它关键字 (4个) "]-->C[" sizeof "]
 A[" 其它关键字 (4个) "]-->D[" typedef "]
 A[" 其它关键字 (4个) "]-->E[" volatle "]
 </div>
+]]></content>
+      <categories>
+        <category>C语</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>C语 结构体 共用体 检举类型</title>
+    <url>/C-struct-union-enum.html</url>
+    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
+<h1 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h1><ul>
+<li>概念: 是一种可以由自己定义的数据类型</li>
+</ul>
+<ul>
+<li>结构体可以定义成全局变量也可以定义在函数里面成局部变量 </li>
+</ul>
+<h4>结构体的定义:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">struct</span> 结构体名&#123;</span><br>    数据类型 成员<span class="hljs-number">1</span>;<br>    数据类型 成员<span class="hljs-number">2</span>;<br>    数据类型 成员<span class="hljs-number">3</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><strong>给变量类型重新命名</strong></li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> 数据类型 结构体名;<br><br>结构体名 变量名 = 赋值;<br></code></pre></td></tr></table></figure>
+<h3 id="结合一起"><a href="#结合一起" class="headerlink" title="结合一起"></a>结合一起</h3><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> 结构体名&#123;</span><br>    数据类型 成员<span class="hljs-number">1</span>;<br>    数据类型 成员<span class="hljs-number">2</span>;<br>    数据类型 成员<span class="hljs-number">3</span>;  <br>&#125;结构体名<br></code></pre></td></tr></table></figure>
+<h1 id="结构体指针"><a href="#结构体指针" class="headerlink" title="结构体指针"></a>结构体指针</h1><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">数据名 *指针 = &amp;地址;<br><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s\n&quot;</span>, b-&gt;成员)<br><span class="hljs-comment">// 或者</span><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s\n&quot;</span>, (*b).成员)<br></code></pre></td></tr></table></figure>
+<p><strong>注意: 访问成员用 . 点号</strong></p>
+<h1 id="共用体"><a href="#共用体" class="headerlink" title="共用体"></a>共用体</h1><h3 id="结构体和共用体的区别-共用体可以共用内存-结构体不行"><a href="#结构体和共用体的区别-共用体可以共用内存-结构体不行" class="headerlink" title="结构体和共用体的区别: 共用体可以共用内存, 结构体不行"></a>结构体和共用体的区别: 共用体可以共用内存, 结构体不行</h3><h2 id="结构体-1"><a href="#结构体-1" class="headerlink" title="结构体:"></a>结构体:</h2><br>
+
+<div class="mermaid">
+    graph LR
+    A[(" 结构体 ")]-->B[" 变量名1<br>变量名2<br>变量名3 "] 
+</div>
+
+<br>
+
+<h2 id="共用体-1"><a href="#共用体-1" class="headerlink" title="共用体:"></a>共用体:</h2><br>
+
+<div class="mermaid">
+    graph LR
+    A[(" 结构体 ")]-->B[" 变量名1"]
+    A[(" 结构体 ")]-->C[" 变量名2"] 
+    A[(" 结构体 ")]-->D[" 变量名3"]  
+</div>
+
+<br>
+
+<h4>共用体的定义:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">union</span> 共用体名</span><br>&#123;<br>    成员列表<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h1 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h1><ul>
+<li>枚举类型作用就是美化代码, 让代码由复杂到简单</li>
+</ul>
+<h4>枚举类型的定义:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">enum</span> 标识名</span><br>&#123;<br>    枚举项<span class="hljs-number">0</span>, 枚举项<span class="hljs-number">1</span>, 枚举项<span class="hljs-number">2</span>; <br>&#125;;<br></code></pre></td></tr></table></figure>
+<p><strong>注意: 枚举项没赋值的情况下是从 0 开始, 赋值之后是从 赋值的那个值往后 依次加 1</strong></p>
 ]]></content>
       <categories>
         <category>C语</category>
@@ -2396,67 +2457,6 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
 </ul>
 <p>–&gt;</p>
 -->]]></content>
-      <categories>
-        <category>C语</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>C语 结构体 共用体 检举类型</title>
-    <url>/C-struct-union-enum.html</url>
-    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
-<h1 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h1><ul>
-<li>概念: 是一种可以由自己定义的数据类型</li>
-</ul>
-<ul>
-<li>结构体可以定义成全局变量也可以定义在函数里面成局部变量 </li>
-</ul>
-<h4>结构体的定义:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">struct</span> 结构体名&#123;</span><br>    数据类型 成员<span class="hljs-number">1</span>;<br>    数据类型 成员<span class="hljs-number">2</span>;<br>    数据类型 成员<span class="hljs-number">3</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<ul>
-<li><strong>给变量类型重新命名</strong></li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> 数据类型 结构体名;<br><br>结构体名 变量名 = 赋值;<br></code></pre></td></tr></table></figure>
-<h3 id="结合一起"><a href="#结合一起" class="headerlink" title="结合一起"></a>结合一起</h3><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> 结构体名&#123;</span><br>    数据类型 成员<span class="hljs-number">1</span>;<br>    数据类型 成员<span class="hljs-number">2</span>;<br>    数据类型 成员<span class="hljs-number">3</span>;  <br>&#125;结构体名<br></code></pre></td></tr></table></figure>
-<h1 id="结构体指针"><a href="#结构体指针" class="headerlink" title="结构体指针"></a>结构体指针</h1><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">数据名 *指针 = &amp;地址;<br><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s\n&quot;</span>, b-&gt;成员)<br><span class="hljs-comment">// 或者</span><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s\n&quot;</span>, (*b).成员)<br></code></pre></td></tr></table></figure>
-<p><strong>注意: 访问成员用 . 点号</strong></p>
-<h1 id="共用体"><a href="#共用体" class="headerlink" title="共用体"></a>共用体</h1><h3 id="结构体和共用体的区别-共用体可以共用内存-结构体不行"><a href="#结构体和共用体的区别-共用体可以共用内存-结构体不行" class="headerlink" title="结构体和共用体的区别: 共用体可以共用内存, 结构体不行"></a>结构体和共用体的区别: 共用体可以共用内存, 结构体不行</h3><h2 id="结构体-1"><a href="#结构体-1" class="headerlink" title="结构体:"></a>结构体:</h2><br>
-
-<div class="mermaid">
-    graph LR
-    A[(" 结构体 ")]-->B[" 变量名1<br>变量名2<br>变量名3 "] 
-</div>
-
-<br>
-
-<h2 id="共用体-1"><a href="#共用体-1" class="headerlink" title="共用体:"></a>共用体:</h2><br>
-
-<div class="mermaid">
-    graph LR
-    A[(" 结构体 ")]-->B[" 变量名1"]
-    A[(" 结构体 ")]-->C[" 变量名2"] 
-    A[(" 结构体 ")]-->D[" 变量名3"]  
-</div>
-
-<br>
-
-<h4>共用体的定义:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">union</span> 共用体名</span><br>&#123;<br>    成员列表<br>&#125;;<br></code></pre></td></tr></table></figure>
-<h1 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h1><ul>
-<li>枚举类型作用就是美化代码, 让代码由复杂到简单</li>
-</ul>
-<h4>枚举类型的定义:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">enum</span> 标识名</span><br>&#123;<br>    枚举项<span class="hljs-number">0</span>, 枚举项<span class="hljs-number">1</span>, 枚举项<span class="hljs-number">2</span>; <br>&#125;;<br></code></pre></td></tr></table></figure>
-<p><strong>注意: 枚举项没赋值的情况下是从 0 开始, 赋值之后是从 赋值的那个值往后 依次加 1</strong></p>
-]]></content>
       <categories>
         <category>C语</category>
       </categories>
@@ -2931,21 +2931,6 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>HTML iframe内联框架</title>
-    <url>/HTML-iframe.html</url>
-    <content><![CDATA[<p><strong>HTML个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;path&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;mainFrame&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;mainFrame&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p><strong>其中path是引用页面地址 mainFrame是框架标识名</strong></p>
-<h1 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h1><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;demo_iframe.html&quot;</span> <span class="hljs-attr">frameborder</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h1 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;xxx/xxx.html&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>HTML</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Git 知识</title>
     <url>/Git.html</url>
     <content><![CDATA[<p><strong>Git学习笔记</strong></p>
@@ -2958,6 +2943,21 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
 <h1 id="git-分支查看与切换"><a href="#git-分支查看与切换" class="headerlink" title="git 分支查看与切换"></a>git 分支查看与切换</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">查看所有分支</span><br>git branch -a<br><br><span class="hljs-meta"># </span><span class="language-bash">查看当前使用分支(结果列表中前面标*号的表示当前使用分支)</span><br>git branch<br><br><span class="hljs-meta"># </span><span class="language-bash">切换分支</span><br>git checkout [分支名]<br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Git</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>HTML iframe内联框架</title>
+    <url>/HTML-iframe.html</url>
+    <content><![CDATA[<p><strong>HTML个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;path&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;mainFrame&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;mainFrame&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><strong>其中path是引用页面地址 mainFrame是框架标识名</strong></p>
+<h1 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h1><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;demo_iframe.html&quot;</span> <span class="hljs-attr">frameborder</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">$ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;xxx/xxx.html&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>$ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>HTML</category>
       </categories>
   </entry>
   <entry>
@@ -3476,118 +3476,6 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>JavaScript jQuery</title>
-    <url>/JavaScript-jQuery.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;script src=<span class="hljs-string">&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;</span>&gt;&lt;/script&gt;<br><br><br>&lt;script&gt;<br>   <span class="hljs-comment">// 选择器就是css的选择器</span><br>   $(<span class="hljs-string">&#x27;#test-jquey&#x27;</span>).<span class="hljs-title function_">click</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)<br>        <span class="hljs-title function_">alert</span>(<span class="hljs-string">&#x27;我叫史迪奇&#x27;</span>)<br>   )<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
-<h1 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;script&gt;<br><span class="hljs-comment">//原生js的css选择器</span><br>    <span class="hljs-comment">// 标签选择器</span><br>    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByTagName</span>();<br>    <span class="hljs-comment">// id选择器</span><br>    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsById</span>();<br>    <span class="hljs-comment">// 类 class选择器</span><br>    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByClassName</span>();<br>    <br><span class="hljs-comment">// jQuery的css选择器</span><br>    <span class="hljs-comment">// 标签选择器</span><br>    $(<span class="hljs-string">&#x27;p&#x27;</span>).<span class="hljs-title function_">click</span>()<br>    <span class="hljs-comment">// id选择器</span><br>    $(<span class="hljs-string">&#x27;#id3&#x27;</span>).<span class="hljs-title function_">click</span>()<br>    <span class="hljs-comment">// 类 class选择器</span><br>    $(<span class="hljs-string">&#x27;.class3&#x27;</span>).<span class="hljs-title function_">click</span>()<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
-<h1 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h1><p><strong>鼠标事件</strong><br>    + mousedown()按下<br>    + mouseenter()当鼠标指针穿过元素时<br>    + mouseleave()离开<br>    + mousemove()移动<br>    + mouseout()当鼠标指针从元素上移开时<br>    + mouseover()点击结束<br>    + mouseup()元素上放松鼠标按钮</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>定位板<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br>        #divMove &#123;<br>            width: 500px;<br>            height: 500px;<br>            border: 1px solid blue;<br>        &#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-comment">&lt;!--要求: 获取鼠标当前的一个坐标--&gt;</span><br>    mouse: <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;mouseMove&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;divMove&quot;</span>&gt;</span><br>        在这里移动鼠标<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>        // 当网页元素加载完毕之后, 响应事件<br>        $(function() &#123;<br>            $(&#x27;#divMove&#x27;).mousemove(function(e) &#123;<br>                $(&#x27;#mouseMove&#x27;).text(&#x27;x:&#x27; + e.pageX + &#x27;y:&#x27; + e.pageY)<br>            &#125;)<br>        &#125;);<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<!DOCTYPE html>
-<html lang="cn">
-
-<head>
-    <title>定位板</title>
-    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-    <style>
-        #divMove {
-            width: 500px;
-            height: 500px;
-            border: 1px solid blue;
-        }
-    </style>
-</head>
-
-<body>
-    <!--要求: 获取鼠标当前的一个坐标-->
-    mouse: <span id="mouseMove"></span>
-    <div id="divMove">
-        在这里移动鼠标
-    </div>
-    <script>
-        // 当网页元素加载完毕之后, 响应事件
-        $(function() {
-            $('#divMove').mousemove(function(e) {
-                $('#mouseMove').text('x:' + e.pageX + 'y:' + e.pageY)
-            })
-        });
-    </script>
-</body>
-
-</html>
-
-<h1 id="操作-DOM元素"><a href="#操作-DOM元素" class="headerlink" title="操作 DOM元素"></a>操作 DOM元素</h1><h3 id="节点文本操作"><a href="#节点文本操作" class="headerlink" title="节点文本操作"></a>节点文本操作</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;head&gt;<br>    &lt;title&gt;节点文本操作&lt;/title&gt;<br>    &lt;script src=<span class="hljs-string">&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;</span>&gt;&lt;/script&gt;<br>&lt;/head&gt;<br><br>&lt;body&gt;<br>    &lt;ul id=<span class="hljs-string">&quot;Syp&quot;</span>&gt;实验品<br>        &lt;li name=<span class="hljs-string">&quot;Stitch&quot;</span>&gt;史迪奇&lt;/li&gt;<br>        &lt;li name=<span class="hljs-string">&quot;Reuben&quot;</span>&gt;鲁本&lt;/li&gt;<br>        &lt;li name=<span class="hljs-string">&quot;Angel&quot;</span>&gt;安琪&lt;/li&gt;<br>    &lt;/ul&gt;<br>    &lt;script&gt;<br>        $(<span class="hljs-string">&#x27;#Syp li[name=Stitch]&#x27;</span>).<span class="hljs-title function_">text</span>()<br>        $(<span class="hljs-string">&#x27;#Syp&#x27;</span>).<span class="hljs-property">html</span><br>    &lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
-<p><strong>浏览器输入来实现效果</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 获得值</span><br>$(<span class="hljs-string">&#x27;#Syp li[name=Stitch]&#x27;</span>).<span class="hljs-title function_">text</span>()<br><span class="hljs-comment">// 设置值</span><br>$(<span class="hljs-string">&#x27;#Syp li[name=Stitch]&#x27;</span>).<span class="hljs-title function_">text</span>(<span class="hljs-string">&quot;我叫史迪奇&quot;</span>)<br><span class="hljs-comment">// 获得值</span><br>$(<span class="hljs-string">&#x27;#Syp&#x27;</span>).<span class="hljs-title function_">html</span>()<br><span class="hljs-comment">// 设置值</span><br>$(<span class="hljs-string">&#x27;#Syp&#x27;</span>).<span class="hljs-title function_">html</span>(<span class="hljs-string">&quot;&lt;strong&gt;我叫史迪奇&lt;/strong&gt;&quot;</span>)<br></code></pre></td></tr></table></figure>
-<h3 id="css的操作"><a href="#css的操作" class="headerlink" title="css的操作"></a>css的操作</h3><p><strong>浏览器输入来实现效果</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">$(<span class="hljs-string">&#x27;#Syp li[name=Stitch]&#x27;</span>).<span class="hljs-title function_">css</span>(&#123;<span class="hljs-string">&quot;color&quot;</span>:<span class="hljs-string">&quot;blue&quot;</span>&#125;)<br></code></pre></td></tr></table></figure>
-<h3 id="元素的显示与隐藏"><a href="#元素的显示与隐藏" class="headerlink" title="元素的显示与隐藏"></a>元素的显示与隐藏</h3><p><strong>浏览器输入来实现效果</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 本质 display: none;</span><br>    <span class="hljs-comment">// 显示</span><br>    $(<span class="hljs-string">&#x27;#Syp li[name=Stitch]&#x27;</span>).<span class="hljs-title function_">show</span>()<br>    <span class="hljs-comment">// 隐藏</span><br>    $(<span class="hljs-string">&#x27;#Syp li[name=Stitch]&#x27;</span>).<span class="hljs-title function_">hide</span>()<br></code></pre></td></tr></table></figure>
-<h3 id="window操作"><a href="#window操作" class="headerlink" title="window操作"></a>window操作</h3><p><strong>浏览器输入来实现效果</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 查看窗口宽度</span><br>$(<span class="hljs-variable language_">window</span>).<span class="hljs-title function_">width</span>()<br><span class="hljs-comment">// 查看窗口高度</span><br>$(<span class="hljs-variable language_">window</span>).<span class="hljs-title function_">height</span>()<br><span class="hljs-comment">// 切换显示与隐藏</span><br>$(<span class="hljs-string">&#x27;#Syp li[name=Stitch]&#x27;</span>).<span class="hljs-title function_">toggle</span>();<br></code></pre></td></tr></table></figure>
-<h3 id="ajax操作"><a href="#ajax操作" class="headerlink" title="ajax操作"></a>ajax操作</h3><p><strong>浏览器输入来实现效果</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">$(<span class="hljs-string">&quot;#Syp&quot;</span>).<span class="hljs-title function_">ajax</span>()<br><br>$.<span class="hljs-title function_">ajax</span>(&#123; <span class="hljs-attr">url</span>: <span class="hljs-string">&quot;test.html&quot;</span>, <span class="hljs-attr">context</span>: <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>, <span class="hljs-attr">success</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>    $(<span class="hljs-variable language_">this</span>).<span class="hljs-title function_">addClass</span>(<span class="hljs-string">&quot;done&quot;</span>);<br>&#125;&#125;);<br></code></pre></td></tr></table></figure>
-<p><font color="#DC143C">以下为实验对象</font></p>
-<!DOCTYPE html>
-<html lang="cn">
-
-<head>
-    <title>节点文本操作</title>
-    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-</head>
-
-<body>
-    <ul id="Syp">实验品
-        <li name="Stitch">史迪奇</li>
-        <li name="Reuben">鲁本</li>
-        <li name="Angel">安琪</li>
-    </ul>
-    <script>
-        $('#Syp li[name=Stitch]').text()
-        $('#Syp').html
-    </script>
-</body>
-
-</html>
-
-
-
-]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript 函数</title>
-    <url>/JavaScript-apply-Data.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="方法的定义和调用"><a href="#方法的定义和调用" class="headerlink" title="方法的定义和调用"></a>方法的定义和调用</h1><h2 id="定义方法"><a href="#定义方法" class="headerlink" title="定义方法"></a>定义方法</h2><p><strong>方法就是把函数放在对象里面 对象只有两个东西: 属性和方法</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> sdq = &#123;<br>    <span class="hljs-comment">// 名称</span><br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;史迪奇&quot;</span>,、<br>    <span class="hljs-comment">// 编号</span><br>    <span class="hljs-attr">number</span>: <span class="hljs-number">626</span>,<br><br>    <span class="hljs-comment">//方法</span><br>    计算编号: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-comment">// 今年 - 编号</span><br>        <span class="hljs-keyword">var</span> now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>().<span class="hljs-title function_">getFullYear</span>():<br>        <span class="hljs-keyword">return</span> now - <span class="hljs-variable language_">this</span>.<span class="hljs-property">nuber</span>;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// 属性</span><br>sdq.<span class="hljs-property">name</span><br><span class="hljs-comment">// 方法 (方法一定带括号)</span><br>sdq.<span class="hljs-title function_">number</span>()<br></code></pre></td></tr></table></figure>
-<p><strong>另类写法</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getSdq</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-keyword">var</span> now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>().<span class="hljs-title function_">getFullYear</span>():<br>        <span class="hljs-keyword">return</span> now - <span class="hljs-variable language_">this</span>.<span class="hljs-property">nuber</span>;<br>    &#125;<br><br><span class="hljs-keyword">var</span> sdq = &#123;<br>    <span class="hljs-comment">// 名称</span><br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;史迪奇&quot;</span>,、<br>    <span class="hljs-comment">// 编号</span><br>    <span class="hljs-attr">number</span>: <span class="hljs-number">626</span>,<br>    <span class="hljs-attr">sdq3</span>: getSdq<br>&#125;<br><br><span class="hljs-comment">// 提示: 正常</span><br>sdq.<span class="hljs-property">name</span><br><span class="hljs-comment">// 提示: NaN window</span><br>sdq.<span class="hljs-title function_">number</span>()<br></code></pre></td></tr></table></figure>
-<h1 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h1><p><strong>控制this指向</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getSdq</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-keyword">var</span> now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>().<span class="hljs-title function_">getFullYear</span>():<br>        <span class="hljs-keyword">return</span> now - <span class="hljs-variable language_">this</span>.<span class="hljs-property">nuber</span>;<br>    &#125;<br><br><span class="hljs-keyword">var</span> sdq = &#123;<br>    <span class="hljs-comment">// 名称</span><br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;史迪奇&quot;</span>,、<br>    <span class="hljs-comment">// 编号</span><br>    <span class="hljs-attr">number</span>: <span class="hljs-number">626</span>,<br>    <span class="hljs-attr">sdq3</span>: getSdq<br>&#125;<br><br><span class="hljs-comment">// this 指向 sdq 参数为空</span><br>etSdq.<span class="hljs-title function_">apply</span>(sdq,[]);<br></code></pre></td></tr></table></figure>
-<h1 id="var和let和const的区别"><a href="#var和let和const的区别" class="headerlink" title="var和let和const的区别"></a>var和let和const的区别</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">const</span> 定义常量<br><span class="hljs-keyword">let</span> 有区域<br><span class="hljs-keyword">var</span> 整个函数内都有效<br></code></pre></td></tr></table></figure>
-<h1 id="内部对象"><a href="#内部对象" class="headerlink" title="内部对象"></a>内部对象</h1><h2 id="标准对象"><a href="#标准对象" class="headerlink" title="标准对象"></a>标准对象</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">typeof</span> <span class="hljs-number">333</span><br><span class="hljs-string">&quot;number&quot;</span><br><br><span class="hljs-keyword">typeof</span> <span class="hljs-string">&#x27;333&#x27;</span><br><span class="hljs-string">&quot;string&quot;</span><br><br><span class="hljs-keyword">typeof</span> <span class="hljs-literal">true</span><br><span class="hljs-string">&quot;boolean&quot;</span><br><br><span class="hljs-keyword">typeof</span> <span class="hljs-title class_">Na</span>N<br><span class="hljs-string">&quot;number&quot;</span><br><br><span class="hljs-keyword">typeof</span> []<br><span class="hljs-string">&quot;object&quot;</span><br><br><span class="hljs-keyword">typeof</span> &#123;&#125;<br><span class="hljs-string">&quot;object&quot;</span><br><br><span class="hljs-keyword">typeof</span> <span class="hljs-title class_">Math</span>.<span class="hljs-property">sdq</span><br><span class="hljs-string">&quot;function&quot;</span><br><br><span class="hljs-keyword">typeof</span> <span class="hljs-literal">undefined</span><br><span class="hljs-string">&quot;undefined&quot;</span><br></code></pre></td></tr></table></figure>
-<h2 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h2><h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>();<br><br>now.<span class="hljs-title function_">getFullYear</span>(); <span class="hljs-comment">// 年</span><br>now.<span class="hljs-title function_">getMonth</span>();    <span class="hljs-comment">// 月 0-11</span><br>now.<span class="hljs-title function_">getDate</span>();     <span class="hljs-comment">// 日</span><br>now.<span class="hljs-title function_">getDay</span>();      <span class="hljs-comment">// 星期几</span><br>now.<span class="hljs-title function_">getHours</span>();    <span class="hljs-comment">// 时</span><br>now.<span class="hljs-title function_">getMinutes</span>();  <span class="hljs-comment">// 分</span><br>now.<span class="hljs-title function_">getseconds</span>();  <span class="hljs-comment">// 秒</span><br>now.<span class="hljs-title function_">getTime</span>();     <span class="hljs-comment">// 时间截 全世界统一 1970 1.1 0:00:00 毫秒数</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(一窜数字))  <span class="hljs-comment">//时间截转为时间</span><br></code></pre></td></tr></table></figure>
-<p><strong>转换</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(一窜数字);<br><br><span class="hljs-title class_">Sat</span> <span class="hljs-title class_">Jan</span> <span class="hljs-number">04</span> <span class="hljs-number">2021</span> <span class="hljs-number">10</span>:<span class="hljs-number">48</span>:<span class="hljs-number">35</span> <span class="hljs-variable constant_">GMT</span>+<span class="hljs-number">0800</span> (中国标准时间)<br><br>now.<span class="hljs-property">toLocaleString</span>  <span class="hljs-comment">// 注意, 调用是一个方法/方式 非属性</span><br><br>f <span class="hljs-title function_">toLocaleString</span>(<span class="hljs-params"></span>) &#123;[native code]&#125;<br><br>now.<span class="hljs-title function_">toLocaleString</span>()<br><span class="hljs-string">&quot;2020/1/4 上午10:51:25&quot;</span><br><br>now.<span class="hljs-title function_">toGMTString</span>()<br><span class="hljs-string">&quot;Sat, 03 Jan 2021 05:48:42&quot;</span><br></code></pre></td></tr></table></figure>
-<h2 id="json字符串js对象的转换"><a href="#json字符串js对象的转换" class="headerlink" title="json字符串js对象的转换"></a>json字符串js对象的转换</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> user = &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;史迪奇&quot;</span>,<br>    <span class="hljs-attr">number</span>: <span class="hljs-number">626</span>,<br>    <span class="hljs-attr">sex</span>: <span class="hljs-string">&quot;未知&quot;</span><br>&#125;<br><br><span class="hljs-comment">// 对象转化json字符串 &#123;&quot;name&quot;:&quot;史迪奇&quot;, &quot;number&quot;:626, &quot;sex&quot;: &quot;未知&quot;&#125;</span><br><span class="hljs-keyword">var</span> jsonUser = <span class="hljs-variable constant_">JSON</span>.<span class="hljs-title function_">stringify</span>(user);<br><br><span class="hljs-comment">// json 字符串转化对象 参数为 json字符串</span><br><span class="hljs-keyword">var</span> obj = <span class="hljs-variable constant_">JSON</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-string">&#x27;&#123;&quot;name&quot;:&quot;史迪奇&quot;, &quot;number&quot;:626, &quot;sex&quot;: &quot;未知&quot;&#125;&#x27;</span>);<br></code></pre></td></tr></table></figure>
-<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><ul>
-<li>原生的js写法 xhr 异步请求</li>
-<li>jQuey 封装的方法 $(“#name”).ajax(“”)</li>
-<li>axios 请求</li>
-</ul>
-]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
     <title>JavaScript DOM</title>
     <url>/JavaScript-DOM.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
@@ -3714,6 +3602,118 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
 
 
 </form></form>]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript jQuery</title>
+    <url>/JavaScript-jQuery.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;script src=<span class="hljs-string">&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;</span>&gt;&lt;/script&gt;<br><br><br>&lt;script&gt;<br>   <span class="hljs-comment">// 选择器就是css的选择器</span><br>   $(<span class="hljs-string">&#x27;#test-jquey&#x27;</span>).<span class="hljs-title function_">click</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)<br>        <span class="hljs-title function_">alert</span>(<span class="hljs-string">&#x27;我叫史迪奇&#x27;</span>)<br>   )<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h1 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;script&gt;<br><span class="hljs-comment">//原生js的css选择器</span><br>    <span class="hljs-comment">// 标签选择器</span><br>    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByTagName</span>();<br>    <span class="hljs-comment">// id选择器</span><br>    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsById</span>();<br>    <span class="hljs-comment">// 类 class选择器</span><br>    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByClassName</span>();<br>    <br><span class="hljs-comment">// jQuery的css选择器</span><br>    <span class="hljs-comment">// 标签选择器</span><br>    $(<span class="hljs-string">&#x27;p&#x27;</span>).<span class="hljs-title function_">click</span>()<br>    <span class="hljs-comment">// id选择器</span><br>    $(<span class="hljs-string">&#x27;#id3&#x27;</span>).<span class="hljs-title function_">click</span>()<br>    <span class="hljs-comment">// 类 class选择器</span><br>    $(<span class="hljs-string">&#x27;.class3&#x27;</span>).<span class="hljs-title function_">click</span>()<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h1 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h1><p><strong>鼠标事件</strong><br>    + mousedown()按下<br>    + mouseenter()当鼠标指针穿过元素时<br>    + mouseleave()离开<br>    + mousemove()移动<br>    + mouseout()当鼠标指针从元素上移开时<br>    + mouseover()点击结束<br>    + mouseup()元素上放松鼠标按钮</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>定位板<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br>        #divMove &#123;<br>            width: 500px;<br>            height: 500px;<br>            border: 1px solid blue;<br>        &#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-comment">&lt;!--要求: 获取鼠标当前的一个坐标--&gt;</span><br>    mouse: <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;mouseMove&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;divMove&quot;</span>&gt;</span><br>        在这里移动鼠标<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>        // 当网页元素加载完毕之后, 响应事件<br>        $(function() &#123;<br>            $(&#x27;#divMove&#x27;).mousemove(function(e) &#123;<br>                $(&#x27;#mouseMove&#x27;).text(&#x27;x:&#x27; + e.pageX + &#x27;y:&#x27; + e.pageY)<br>            &#125;)<br>        &#125;);<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <title>定位板</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <style>
+        #divMove {
+            width: 500px;
+            height: 500px;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!--要求: 获取鼠标当前的一个坐标-->
+    mouse: <span id="mouseMove"></span>
+    <div id="divMove">
+        在这里移动鼠标
+    </div>
+    <script>
+        // 当网页元素加载完毕之后, 响应事件
+        $(function() {
+            $('#divMove').mousemove(function(e) {
+                $('#mouseMove').text('x:' + e.pageX + 'y:' + e.pageY)
+            })
+        });
+    </script>
+</body>
+
+</html>
+
+<h1 id="操作-DOM元素"><a href="#操作-DOM元素" class="headerlink" title="操作 DOM元素"></a>操作 DOM元素</h1><h3 id="节点文本操作"><a href="#节点文本操作" class="headerlink" title="节点文本操作"></a>节点文本操作</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;head&gt;<br>    &lt;title&gt;节点文本操作&lt;/title&gt;<br>    &lt;script src=<span class="hljs-string">&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;</span>&gt;&lt;/script&gt;<br>&lt;/head&gt;<br><br>&lt;body&gt;<br>    &lt;ul id=<span class="hljs-string">&quot;Syp&quot;</span>&gt;实验品<br>        &lt;li name=<span class="hljs-string">&quot;Stitch&quot;</span>&gt;史迪奇&lt;/li&gt;<br>        &lt;li name=<span class="hljs-string">&quot;Reuben&quot;</span>&gt;鲁本&lt;/li&gt;<br>        &lt;li name=<span class="hljs-string">&quot;Angel&quot;</span>&gt;安琪&lt;/li&gt;<br>    &lt;/ul&gt;<br>    &lt;script&gt;<br>        $(<span class="hljs-string">&#x27;#Syp li[name=Stitch]&#x27;</span>).<span class="hljs-title function_">text</span>()<br>        $(<span class="hljs-string">&#x27;#Syp&#x27;</span>).<span class="hljs-property">html</span><br>    &lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
+<p><strong>浏览器输入来实现效果</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 获得值</span><br>$(<span class="hljs-string">&#x27;#Syp li[name=Stitch]&#x27;</span>).<span class="hljs-title function_">text</span>()<br><span class="hljs-comment">// 设置值</span><br>$(<span class="hljs-string">&#x27;#Syp li[name=Stitch]&#x27;</span>).<span class="hljs-title function_">text</span>(<span class="hljs-string">&quot;我叫史迪奇&quot;</span>)<br><span class="hljs-comment">// 获得值</span><br>$(<span class="hljs-string">&#x27;#Syp&#x27;</span>).<span class="hljs-title function_">html</span>()<br><span class="hljs-comment">// 设置值</span><br>$(<span class="hljs-string">&#x27;#Syp&#x27;</span>).<span class="hljs-title function_">html</span>(<span class="hljs-string">&quot;&lt;strong&gt;我叫史迪奇&lt;/strong&gt;&quot;</span>)<br></code></pre></td></tr></table></figure>
+<h3 id="css的操作"><a href="#css的操作" class="headerlink" title="css的操作"></a>css的操作</h3><p><strong>浏览器输入来实现效果</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">$(<span class="hljs-string">&#x27;#Syp li[name=Stitch]&#x27;</span>).<span class="hljs-title function_">css</span>(&#123;<span class="hljs-string">&quot;color&quot;</span>:<span class="hljs-string">&quot;blue&quot;</span>&#125;)<br></code></pre></td></tr></table></figure>
+<h3 id="元素的显示与隐藏"><a href="#元素的显示与隐藏" class="headerlink" title="元素的显示与隐藏"></a>元素的显示与隐藏</h3><p><strong>浏览器输入来实现效果</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 本质 display: none;</span><br>    <span class="hljs-comment">// 显示</span><br>    $(<span class="hljs-string">&#x27;#Syp li[name=Stitch]&#x27;</span>).<span class="hljs-title function_">show</span>()<br>    <span class="hljs-comment">// 隐藏</span><br>    $(<span class="hljs-string">&#x27;#Syp li[name=Stitch]&#x27;</span>).<span class="hljs-title function_">hide</span>()<br></code></pre></td></tr></table></figure>
+<h3 id="window操作"><a href="#window操作" class="headerlink" title="window操作"></a>window操作</h3><p><strong>浏览器输入来实现效果</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 查看窗口宽度</span><br>$(<span class="hljs-variable language_">window</span>).<span class="hljs-title function_">width</span>()<br><span class="hljs-comment">// 查看窗口高度</span><br>$(<span class="hljs-variable language_">window</span>).<span class="hljs-title function_">height</span>()<br><span class="hljs-comment">// 切换显示与隐藏</span><br>$(<span class="hljs-string">&#x27;#Syp li[name=Stitch]&#x27;</span>).<span class="hljs-title function_">toggle</span>();<br></code></pre></td></tr></table></figure>
+<h3 id="ajax操作"><a href="#ajax操作" class="headerlink" title="ajax操作"></a>ajax操作</h3><p><strong>浏览器输入来实现效果</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">$(<span class="hljs-string">&quot;#Syp&quot;</span>).<span class="hljs-title function_">ajax</span>()<br><br>$.<span class="hljs-title function_">ajax</span>(&#123; <span class="hljs-attr">url</span>: <span class="hljs-string">&quot;test.html&quot;</span>, <span class="hljs-attr">context</span>: <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>, <span class="hljs-attr">success</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>    $(<span class="hljs-variable language_">this</span>).<span class="hljs-title function_">addClass</span>(<span class="hljs-string">&quot;done&quot;</span>);<br>&#125;&#125;);<br></code></pre></td></tr></table></figure>
+<p><font color="#DC143C">以下为实验对象</font></p>
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <title>节点文本操作</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <ul id="Syp">实验品
+        <li name="Stitch">史迪奇</li>
+        <li name="Reuben">鲁本</li>
+        <li name="Angel">安琪</li>
+    </ul>
+    <script>
+        $('#Syp li[name=Stitch]').text()
+        $('#Syp').html
+    </script>
+</body>
+
+</html>
+
+
+
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript 函数</title>
+    <url>/JavaScript-apply-Data.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="方法的定义和调用"><a href="#方法的定义和调用" class="headerlink" title="方法的定义和调用"></a>方法的定义和调用</h1><h2 id="定义方法"><a href="#定义方法" class="headerlink" title="定义方法"></a>定义方法</h2><p><strong>方法就是把函数放在对象里面 对象只有两个东西: 属性和方法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> sdq = &#123;<br>    <span class="hljs-comment">// 名称</span><br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;史迪奇&quot;</span>,、<br>    <span class="hljs-comment">// 编号</span><br>    <span class="hljs-attr">number</span>: <span class="hljs-number">626</span>,<br><br>    <span class="hljs-comment">//方法</span><br>    计算编号: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-comment">// 今年 - 编号</span><br>        <span class="hljs-keyword">var</span> now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>().<span class="hljs-title function_">getFullYear</span>():<br>        <span class="hljs-keyword">return</span> now - <span class="hljs-variable language_">this</span>.<span class="hljs-property">nuber</span>;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// 属性</span><br>sdq.<span class="hljs-property">name</span><br><span class="hljs-comment">// 方法 (方法一定带括号)</span><br>sdq.<span class="hljs-title function_">number</span>()<br></code></pre></td></tr></table></figure>
+<p><strong>另类写法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getSdq</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-keyword">var</span> now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>().<span class="hljs-title function_">getFullYear</span>():<br>        <span class="hljs-keyword">return</span> now - <span class="hljs-variable language_">this</span>.<span class="hljs-property">nuber</span>;<br>    &#125;<br><br><span class="hljs-keyword">var</span> sdq = &#123;<br>    <span class="hljs-comment">// 名称</span><br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;史迪奇&quot;</span>,、<br>    <span class="hljs-comment">// 编号</span><br>    <span class="hljs-attr">number</span>: <span class="hljs-number">626</span>,<br>    <span class="hljs-attr">sdq3</span>: getSdq<br>&#125;<br><br><span class="hljs-comment">// 提示: 正常</span><br>sdq.<span class="hljs-property">name</span><br><span class="hljs-comment">// 提示: NaN window</span><br>sdq.<span class="hljs-title function_">number</span>()<br></code></pre></td></tr></table></figure>
+<h1 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h1><p><strong>控制this指向</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getSdq</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-keyword">var</span> now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>().<span class="hljs-title function_">getFullYear</span>():<br>        <span class="hljs-keyword">return</span> now - <span class="hljs-variable language_">this</span>.<span class="hljs-property">nuber</span>;<br>    &#125;<br><br><span class="hljs-keyword">var</span> sdq = &#123;<br>    <span class="hljs-comment">// 名称</span><br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;史迪奇&quot;</span>,、<br>    <span class="hljs-comment">// 编号</span><br>    <span class="hljs-attr">number</span>: <span class="hljs-number">626</span>,<br>    <span class="hljs-attr">sdq3</span>: getSdq<br>&#125;<br><br><span class="hljs-comment">// this 指向 sdq 参数为空</span><br>etSdq.<span class="hljs-title function_">apply</span>(sdq,[]);<br></code></pre></td></tr></table></figure>
+<h1 id="var和let和const的区别"><a href="#var和let和const的区别" class="headerlink" title="var和let和const的区别"></a>var和let和const的区别</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">const</span> 定义常量<br><span class="hljs-keyword">let</span> 有区域<br><span class="hljs-keyword">var</span> 整个函数内都有效<br></code></pre></td></tr></table></figure>
+<h1 id="内部对象"><a href="#内部对象" class="headerlink" title="内部对象"></a>内部对象</h1><h2 id="标准对象"><a href="#标准对象" class="headerlink" title="标准对象"></a>标准对象</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">typeof</span> <span class="hljs-number">333</span><br><span class="hljs-string">&quot;number&quot;</span><br><br><span class="hljs-keyword">typeof</span> <span class="hljs-string">&#x27;333&#x27;</span><br><span class="hljs-string">&quot;string&quot;</span><br><br><span class="hljs-keyword">typeof</span> <span class="hljs-literal">true</span><br><span class="hljs-string">&quot;boolean&quot;</span><br><br><span class="hljs-keyword">typeof</span> <span class="hljs-title class_">Na</span>N<br><span class="hljs-string">&quot;number&quot;</span><br><br><span class="hljs-keyword">typeof</span> []<br><span class="hljs-string">&quot;object&quot;</span><br><br><span class="hljs-keyword">typeof</span> &#123;&#125;<br><span class="hljs-string">&quot;object&quot;</span><br><br><span class="hljs-keyword">typeof</span> <span class="hljs-title class_">Math</span>.<span class="hljs-property">sdq</span><br><span class="hljs-string">&quot;function&quot;</span><br><br><span class="hljs-keyword">typeof</span> <span class="hljs-literal">undefined</span><br><span class="hljs-string">&quot;undefined&quot;</span><br></code></pre></td></tr></table></figure>
+<h2 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h2><h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>();<br><br>now.<span class="hljs-title function_">getFullYear</span>(); <span class="hljs-comment">// 年</span><br>now.<span class="hljs-title function_">getMonth</span>();    <span class="hljs-comment">// 月 0-11</span><br>now.<span class="hljs-title function_">getDate</span>();     <span class="hljs-comment">// 日</span><br>now.<span class="hljs-title function_">getDay</span>();      <span class="hljs-comment">// 星期几</span><br>now.<span class="hljs-title function_">getHours</span>();    <span class="hljs-comment">// 时</span><br>now.<span class="hljs-title function_">getMinutes</span>();  <span class="hljs-comment">// 分</span><br>now.<span class="hljs-title function_">getseconds</span>();  <span class="hljs-comment">// 秒</span><br>now.<span class="hljs-title function_">getTime</span>();     <span class="hljs-comment">// 时间截 全世界统一 1970 1.1 0:00:00 毫秒数</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(一窜数字))  <span class="hljs-comment">//时间截转为时间</span><br></code></pre></td></tr></table></figure>
+<p><strong>转换</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(一窜数字);<br><br><span class="hljs-title class_">Sat</span> <span class="hljs-title class_">Jan</span> <span class="hljs-number">04</span> <span class="hljs-number">2021</span> <span class="hljs-number">10</span>:<span class="hljs-number">48</span>:<span class="hljs-number">35</span> <span class="hljs-variable constant_">GMT</span>+<span class="hljs-number">0800</span> (中国标准时间)<br><br>now.<span class="hljs-property">toLocaleString</span>  <span class="hljs-comment">// 注意, 调用是一个方法/方式 非属性</span><br><br>f <span class="hljs-title function_">toLocaleString</span>(<span class="hljs-params"></span>) &#123;[native code]&#125;<br><br>now.<span class="hljs-title function_">toLocaleString</span>()<br><span class="hljs-string">&quot;2020/1/4 上午10:51:25&quot;</span><br><br>now.<span class="hljs-title function_">toGMTString</span>()<br><span class="hljs-string">&quot;Sat, 03 Jan 2021 05:48:42&quot;</span><br></code></pre></td></tr></table></figure>
+<h2 id="json字符串js对象的转换"><a href="#json字符串js对象的转换" class="headerlink" title="json字符串js对象的转换"></a>json字符串js对象的转换</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> user = &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;史迪奇&quot;</span>,<br>    <span class="hljs-attr">number</span>: <span class="hljs-number">626</span>,<br>    <span class="hljs-attr">sex</span>: <span class="hljs-string">&quot;未知&quot;</span><br>&#125;<br><br><span class="hljs-comment">// 对象转化json字符串 &#123;&quot;name&quot;:&quot;史迪奇&quot;, &quot;number&quot;:626, &quot;sex&quot;: &quot;未知&quot;&#125;</span><br><span class="hljs-keyword">var</span> jsonUser = <span class="hljs-variable constant_">JSON</span>.<span class="hljs-title function_">stringify</span>(user);<br><br><span class="hljs-comment">// json 字符串转化对象 参数为 json字符串</span><br><span class="hljs-keyword">var</span> obj = <span class="hljs-variable constant_">JSON</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-string">&#x27;&#123;&quot;name&quot;:&quot;史迪奇&quot;, &quot;number&quot;:626, &quot;sex&quot;: &quot;未知&quot;&#125;&#x27;</span>);<br></code></pre></td></tr></table></figure>
+<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><ul>
+<li>原生的js写法 xhr 异步请求</li>
+<li>jQuey 封装的方法 $(“#name”).ajax(“”)</li>
+<li>axios 请求</li>
+</ul>
+]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>
@@ -3954,6 +3954,25 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>Java面向对象思维之构造方法</title>
+    <url>/Object-oriented-constructor.html</url>
+    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h1><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java"> <span class="hljs-comment">//成员变量</span><br>$ <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Car</span> &#123;<br>$ String color;  <span class="hljs-comment">//颜色</span><br>$ <span class="hljs-type">int</span> wheel;   <span class="hljs-comment">//轮子</span><br>$ <span class="hljs-type">int</span> seat;   <span class="hljs-comment">//座位</span><br>$ &#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">$ 自动生成一个无参数的构造方法 <span class="hljs-keyword">public</span> <span class="hljs-title function_">Car</span><span class="hljs-params">()</span> &#123; <br>$ <span class="hljs-keyword">public</span> <span class="hljs-title function_">Car</span><span class="hljs-params">(String color, <span class="hljs-type">int</span> wheel, <span class="hljs-type">int</span> seat)</span> &#123; <span class="hljs-comment">//这里给它添加参数  </span><br>   设置属性信息<br>   <span class="hljs-built_in">this</span>.color = color; 颜色<br>   <span class="hljs-built_in">this</span>.wheel = wheel; 轮子<br>   <span class="hljs-built_in">this</span>.seat = seat; 座位<br>$ &#125;<br></code></pre></td></tr></table></figure>
+<h1 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h1><p><strong>例如 车能飞</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java"> <span class="hljs-comment">//成员方法</span><br>$ <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">fly</span>()&#123;<br>$ System.out.println(<span class="hljs-built_in">this</span>.color+<span class="hljs-string">&quot;车能飞&quot;</span>);<br>$ &#125;<br></code></pre></td></tr></table></figure>
+<p><strong>例如 车可以潜水</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java"> <span class="hljs-comment">//成员方法</span><br>$ <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">diving</span>()&#123;<br>$ System.out.println(<span class="hljs-built_in">this</span>.diving+<span class="hljs-string">&quot;车可以下水&quot;</span>);<br>$ &#125;<br></code></pre></td></tr></table></figure>
+<h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java"> <span class="hljs-comment">//成员方法</span><br>$ <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[ ] args)</span> &#123;<br>   <span class="hljs-type">Car</span> <span class="hljs-variable">c1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Car</span>(<span class="hljs-string">&quot;透明&quot;</span>,<span class="hljs-number">5</span>,<span class="hljs-number">9</span>);<br>   <span class="hljs-type">Car</span> <span class="hljs-variable">c2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Car</span>(<span class="hljs-string">&quot;黄&quot;</span>,<span class="hljs-number">5</span>,<span class="hljs-number">9</span>);<br>   c1.fly();<br>   c1.diving();<br>$ <br>   c2.fly();<br>   c2.diving();<br>   &#125;<br>$ &#125;<br></code></pre></td></tr></table></figure>
+<h1 id="构造方法需要注意"><a href="#构造方法需要注意" class="headerlink" title="构造方法需要注意"></a>构造方法需要注意</h1><p><strong>没有返回值这一项</strong><br><strong>在new的时候, 给对象设置属性信息</strong><br><strong>Java会默认自动的送每个类一个无参数的构造方法, 如果你写了构造方法, 那么Java就不送了</strong></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Java核心面向对象之this</title>
     <url>/Object-oriented-this.html</url>
     <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
@@ -3968,25 +3987,6 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
 <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java"> <span class="hljs-comment">//成员方法</span><br>$ <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">diving</span>()&#123;<br>$ System.out.println(<span class="hljs-built_in">this</span>.color+<span class="hljs-string">&quot;车可以下水&quot;</span>);<br>$ &#125;<br></code></pre></td></tr></table></figure>
 <h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">$ <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[ ] args)</span> &#123;<br>$ 	  <span class="hljs-type">Car</span> <span class="hljs-variable">c1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Car</span>();   <span class="hljs-comment">//先创建一辆车</span><br>$ 	  c1.color = <span class="hljs-string">&quot;透明&quot;</span>;  <span class="hljs-comment">//我的车是透明色</span><br>$ 	  c1.wheel = <span class="hljs-number">5</span>;  <span class="hljs-comment">//众所周知所以车都是5个轮子</span><br>    c1.seat = <span class="hljs-number">9</span>; <span class="hljs-comment">//我的车 里面坐4个 车前绑1个人用来刹车 车顶坐1个人</span><br>    c1.run();<br>    c1.fly();<br>    c1.diving();<br>$<br>    <span class="hljs-type">Car</span> <span class="hljs-variable">c2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Car</span>();   <span class="hljs-comment">//先创建一辆车</span><br>$	  c2.color = <span class="hljs-string">&quot;黄&quot;</span>;  <span class="hljs-comment">//我的车是屎黄</span><br>$	  c2.wheel = <span class="hljs-number">5</span>;  <span class="hljs-comment">//众所周知所以车都是5个轮子</span><br>    c2.seat = <span class="hljs-number">9</span>; <span class="hljs-comment">//我的车 里面坐4个 车前绑1个人用来刹车 车顶坐1个人</span><br>    c2.run();<br>    c2.fly();<br>    c2.diving();<br>$	&#125;<br>$ &#125;<br></code></pre></td></tr></table></figure>
 <h1 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h1><p><strong>this: 当前类的对象</strong><br><strong>this可以在方法内部获取到对象中的属性信息</strong><br><strong>this还可以区分局部变量和成员变量</strong></p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Java面向对象思维之构造方法</title>
-    <url>/Object-oriented-constructor.html</url>
-    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h1><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java"> <span class="hljs-comment">//成员变量</span><br>$ <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Car</span> &#123;<br>$ String color;  <span class="hljs-comment">//颜色</span><br>$ <span class="hljs-type">int</span> wheel;   <span class="hljs-comment">//轮子</span><br>$ <span class="hljs-type">int</span> seat;   <span class="hljs-comment">//座位</span><br>$ &#125;<br></code></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">$ 自动生成一个无参数的构造方法 <span class="hljs-keyword">public</span> <span class="hljs-title function_">Car</span><span class="hljs-params">()</span> &#123; <br>$ <span class="hljs-keyword">public</span> <span class="hljs-title function_">Car</span><span class="hljs-params">(String color, <span class="hljs-type">int</span> wheel, <span class="hljs-type">int</span> seat)</span> &#123; <span class="hljs-comment">//这里给它添加参数  </span><br>   设置属性信息<br>   <span class="hljs-built_in">this</span>.color = color; 颜色<br>   <span class="hljs-built_in">this</span>.wheel = wheel; 轮子<br>   <span class="hljs-built_in">this</span>.seat = seat; 座位<br>$ &#125;<br></code></pre></td></tr></table></figure>
-<h1 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h1><p><strong>例如 车能飞</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java"> <span class="hljs-comment">//成员方法</span><br>$ <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">fly</span>()&#123;<br>$ System.out.println(<span class="hljs-built_in">this</span>.color+<span class="hljs-string">&quot;车能飞&quot;</span>);<br>$ &#125;<br></code></pre></td></tr></table></figure>
-<p><strong>例如 车可以潜水</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java"> <span class="hljs-comment">//成员方法</span><br>$ <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">diving</span>()&#123;<br>$ System.out.println(<span class="hljs-built_in">this</span>.diving+<span class="hljs-string">&quot;车可以下水&quot;</span>);<br>$ &#125;<br></code></pre></td></tr></table></figure>
-<h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java"> <span class="hljs-comment">//成员方法</span><br>$ <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[ ] args)</span> &#123;<br>   <span class="hljs-type">Car</span> <span class="hljs-variable">c1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Car</span>(<span class="hljs-string">&quot;透明&quot;</span>,<span class="hljs-number">5</span>,<span class="hljs-number">9</span>);<br>   <span class="hljs-type">Car</span> <span class="hljs-variable">c2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Car</span>(<span class="hljs-string">&quot;黄&quot;</span>,<span class="hljs-number">5</span>,<span class="hljs-number">9</span>);<br>   c1.fly();<br>   c1.diving();<br>$ <br>   c2.fly();<br>   c2.diving();<br>   &#125;<br>$ &#125;<br></code></pre></td></tr></table></figure>
-<h1 id="构造方法需要注意"><a href="#构造方法需要注意" class="headerlink" title="构造方法需要注意"></a>构造方法需要注意</h1><p><strong>没有返回值这一项</strong><br><strong>在new的时候, 给对象设置属性信息</strong><br><strong>Java会默认自动的送每个类一个无参数的构造方法, 如果你写了构造方法, 那么Java就不送了</strong></p>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -4165,25 +4165,6 @@ $
       </categories>
   </entry>
   <entry>
-    <title>React State(状态)</title>
-    <url>/React-State.html</url>
-    <content><![CDATA[<p><strong>React笔记</strong></p>
-<a id="more"></a>
-
-
-<h1 id="将生命周期方法添加到类中"><a href="#将生命周期方法添加到类中" class="headerlink" title="将生命周期方法添加到类中"></a>将生命周期方法添加到类中</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>class MyNameIsStitch extends React.Component &#123;<br>  constructor(props) &#123;<br>    super(props);<br>    this.state = &#123;date: new Date()&#125;;<br>  &#125;<br>  &#123;/*  生命周期钩子 钩子上设置一个定时器  */&#125;<br>  componentDidMount() &#123;<br>    this.timerID = setInterval(<br>      () =&gt; this.tick(),<br>      1000<br>    );<br>  &#125;<br>  &#123;/*  生命周期钩子 钩子中卸载定时器  */&#125;<br>  componentWillUnmount() &#123;<br>    clearInterval(this.timerID);<br>  &#125;<br><br>  tick() &#123;<br>    this.setState(&#123;<br>      date: new Date()<br>    &#125;);<br>  &#125;<br><br>  render() &#123;<br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>你浪费的时间 &#123;this.state.date.toLocaleTimeString()&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br><br>ReactDOM.render(<br>  <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> /&gt;</span>,<br>  document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-
-<h1 id="自顶向下或单向数据流"><a href="#自顶向下或单向数据流" class="headerlink" title="自顶向下或单向数据流"></a>自顶向下或单向数据流</h1><p><strong>解析: 所有组件都是真正隔离的</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function FormattedDate(props) &#123;<br>  return <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>你浪费的时间 &#123;props.date.toLocaleTimeString()&#125;.<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>;<br>&#125;<br><br>class MyNameIsStitch extends React.Component &#123;<br>  constructor(props) &#123;<br>    super(props);<br>    this.state = &#123;date: new Date()&#125;;<br>  &#125;<br><br>  componentDidMount() &#123;<br>    this.timerID = setInterval(<br>      () =&gt; this.tick(),<br>      1000<br>    );<br>  &#125;<br><br>  componentWillUnmount() &#123;<br>    clearInterval(this.timerID);<br>  &#125;<br><br>  tick() &#123;<br>    this.setState(&#123;<br>      date: new Date()<br>    &#125;);<br>  &#125;<br><br>  render() &#123;<br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">FormattedDate</span> <span class="hljs-attr">date</span>=<span class="hljs-string">&#123;this.state.date&#125;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br><br>function App() &#123;<br>  return (<br>    &#123;/*  创建App 组件 它渲染三个  */&#125;<br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> /&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  );<br>&#125;<br><br>ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>, document.getElementById(&#x27;example&#x27;));<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p><strong>有状态组件中使用无状态组件   也可以在无状态组件中使用有状态组件</strong></p>
-]]></content>
-      <categories>
-        <category>React</category>
-      </categories>
-  </entry>
-  <entry>
     <title>React Refs</title>
     <url>/React-Refs.html</url>
     <content><![CDATA[<p><strong>React笔记</strong></p>
@@ -4242,6 +4223,25 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <p><strong>没有使用属性初始化器语法, 你可以在回调函数中使用 箭头函数</strong></p>
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">class MyNameIsStitch extends React.Component &#123;<br>  handleClick() &#123;<br>    console.log(&#x27;this is:&#x27;, this);<br>  &#125;<br> <br>  render() &#123;<br>    &#123;/*  这个语法确保了 `this` 绑定在  handleClick 中  */&#125;  <br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">&#123;(e)</span> =&gt;</span> this.handleClick(e)&#125;&gt;<br>        我叫史迪奇<br>      <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h1 id="向事件处理程序传递参数-1"><a href="#向事件处理程序传递参数-1" class="headerlink" title="向事件处理程序传递参数"></a>向事件处理程序传递参数</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">&#123;/*  参数 e 作为 React 事件对象将会被作为第二个参数进行传递<br>通过箭头函数的方式, 事件对象必须显式的进行传递, 但bind 的方式, 事件对象以及更多的参数会被隐式的进行传递<br>bind 方式向监听函数传参 在类组件中定义的监听函数 事件对象 e 要排在所传递参数的后面  */&#125;  <br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">&#123;(e)</span> =&gt;</span> this.deleteRow(id, e)&#125;&gt;Delete Row<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">&#123;this.deleteRow.bind(this,</span> <span class="hljs-attr">id</span>)&#125;&gt;</span>Delete Row<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>React</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>React State(状态)</title>
+    <url>/React-State.html</url>
+    <content><![CDATA[<p><strong>React笔记</strong></p>
+<a id="more"></a>
+
+
+<h1 id="将生命周期方法添加到类中"><a href="#将生命周期方法添加到类中" class="headerlink" title="将生命周期方法添加到类中"></a>将生命周期方法添加到类中</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>class MyNameIsStitch extends React.Component &#123;<br>  constructor(props) &#123;<br>    super(props);<br>    this.state = &#123;date: new Date()&#125;;<br>  &#125;<br>  &#123;/*  生命周期钩子 钩子上设置一个定时器  */&#125;<br>  componentDidMount() &#123;<br>    this.timerID = setInterval(<br>      () =&gt; this.tick(),<br>      1000<br>    );<br>  &#125;<br>  &#123;/*  生命周期钩子 钩子中卸载定时器  */&#125;<br>  componentWillUnmount() &#123;<br>    clearInterval(this.timerID);<br>  &#125;<br><br>  tick() &#123;<br>    this.setState(&#123;<br>      date: new Date()<br>    &#125;);<br>  &#125;<br><br>  render() &#123;<br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>你浪费的时间 &#123;this.state.date.toLocaleTimeString()&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br><br>ReactDOM.render(<br>  <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> /&gt;</span>,<br>  document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+<h1 id="自顶向下或单向数据流"><a href="#自顶向下或单向数据流" class="headerlink" title="自顶向下或单向数据流"></a>自顶向下或单向数据流</h1><p><strong>解析: 所有组件都是真正隔离的</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function FormattedDate(props) &#123;<br>  return <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>你浪费的时间 &#123;props.date.toLocaleTimeString()&#125;.<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>;<br>&#125;<br><br>class MyNameIsStitch extends React.Component &#123;<br>  constructor(props) &#123;<br>    super(props);<br>    this.state = &#123;date: new Date()&#125;;<br>  &#125;<br><br>  componentDidMount() &#123;<br>    this.timerID = setInterval(<br>      () =&gt; this.tick(),<br>      1000<br>    );<br>  &#125;<br><br>  componentWillUnmount() &#123;<br>    clearInterval(this.timerID);<br>  &#125;<br><br>  tick() &#123;<br>    this.setState(&#123;<br>      date: new Date()<br>    &#125;);<br>  &#125;<br><br>  render() &#123;<br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">FormattedDate</span> <span class="hljs-attr">date</span>=<span class="hljs-string">&#123;this.state.date&#125;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br><br>function App() &#123;<br>  return (<br>    &#123;/*  创建App 组件 它渲染三个  */&#125;<br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> /&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  );<br>&#125;<br><br>ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>, document.getElementById(&#x27;example&#x27;));<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>有状态组件中使用无状态组件   也可以在无状态组件中使用有状态组件</strong></p>
+]]></content>
       <categories>
         <category>React</category>
       </categories>
@@ -4693,17 +4693,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>String 比较</title>
-    <url>/String-compare.html</url>
-    <content><![CDATA[<p><strong>个人笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="String-比较"><a href="#String-比较" class="headerlink" title="String 比较"></a>String 比较</h1><p><strong>当String进行比较时应该用equals</strong></p>
-<p><strong>因为equals是String类重写后的用于比较字符串内容的方法</strong></p>
-<p><strong>为什么不用==进行比较, 因为==是用于比较地址值</strong></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Three.js 向量</title>
     <url>/Three.js-vector.html</url>
     <content><![CDATA[<p><strong>Three.js学习笔记</strong></p>
@@ -4817,6 +4806,17 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>String 比较</title>
+    <url>/String-compare.html</url>
+    <content><![CDATA[<p><strong>个人笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="String-比较"><a href="#String-比较" class="headerlink" title="String 比较"></a>String 比较</h1><p><strong>当String进行比较时应该用equals</strong></p>
+<p><strong>因为equals是String类重写后的用于比较字符串内容的方法</strong></p>
+<p><strong>为什么不用==进行比较, 因为==是用于比较地址值</strong></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Three.js 第一枪</title>
     <url>/Three.html</url>
     <content><![CDATA[<p><strong>Three.js学习笔记</strong></p>
@@ -4877,27 +4877,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>TypeScript数据注解和类型推断</title>
-    <url>/TypeScript-zjtd.html</url>
-    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="类型注解"><a href="#类型注解" class="headerlink" title="类型注解"></a>类型注解</h1><p><strong>自动注解成Number</strong></p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">let</span> sdq : <span class="hljs-built_in">number</span>;<br>sdq = <span class="hljs-number">333</span>;<br><span class="hljs-keyword">let</span> countInference = <span class="hljs-number">333</span><br></code></pre></td></tr></table></figure>
-<h1 id="类型推断"><a href="#类型推断" class="headerlink" title="类型推断"></a>类型推断</h1><p><strong>把鼠标悬浮在上面自动会出现推断</strong></p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getTotal</span>(<span class="hljs-params">one, two</span>) &#123;<br>    <span class="hljs-keyword">return</span> one + two;<br>&#125;<br><span class="hljs-keyword">var</span> total = <span class="hljs-title function_">getTotal</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);<br></code></pre></td></tr></table></figure>
-<h1 id="工作使用问题"><a href="#工作使用问题" class="headerlink" title="工作使用问题"></a>工作使用问题</h1><ul>
-<li>如果TS能够自动分析变量类型, 我们上面也不需要做了</li>
-</ul>
-<ul>
-<li>如果TS无法自动分析变量的话, 我们就需要使用类型注释</li>
-</ul>
-]]></content>
-      <categories>
-        <category>TypeScript</category>
-      </categories>
-  </entry>
-  <entry>
     <title>TypeScript 命名空间</title>
     <url>/TypeScript-NameSpace.html</url>
     <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
@@ -4924,6 +4903,27 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <h1 id="import语法"><a href="#import语法" class="headerlink" title="import语法"></a>import语法</h1><h3 id="page-ts用import引入"><a href="#page-ts用import引入" class="headerlink" title="page.ts用import引入"></a>page.ts用import引入</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 引入</span><br><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">Header</span>, <span class="hljs-title class_">Content</span>, <span class="hljs-title class_">Footer</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./components&quot;</span>;<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Page</span> &#123;<br>  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">new</span> <span class="hljs-title class_">Header</span>();<br>    <span class="hljs-keyword">new</span> <span class="hljs-title class_">Content</span>();<br>    <span class="hljs-keyword">new</span> <span class="hljs-title class_">Footer</span>();<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="component-ts改成以下代码"><a href="#component-ts改成以下代码" class="headerlink" title="component.ts改成以下代码"></a>component.ts改成以下代码</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// export是ES6中的接口</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Header</span> &#123;<br>  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">const</span> elem = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;div&quot;</span>);<br>    elem.<span class="hljs-property">innerText</span> = <span class="hljs-string">&quot;This is Header&quot;</span>;<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(elem);<br>  &#125;<br>&#125;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Content</span> &#123;<br>  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">const</span> elem = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;div&quot;</span>);<br>    elem.<span class="hljs-property">innerText</span> = <span class="hljs-string">&quot;This is Content&quot;</span>;<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(elem);<br>  &#125;<br>&#125;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Footer</span> &#123;<br>  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">const</span> elem = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;div&quot;</span>);<br>    elem.<span class="hljs-property">innerText</span> = <span class="hljs-string">&quot;This is Footer&quot;</span>;<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(elem);<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h1 id="html文件-引用"><a href="#html文件-引用" class="headerlink" title="html文件 引用"></a>html文件 引用</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;cn&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- require.js 的 CDN 地址 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./build/page.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>史迪奇国王<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>        // require.js方式引入<br>        require([&quot;page&quot;], function (page) &#123;<br>          // ES6基本写法<br>          new page.default();<br>        &#125;);<br>      <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>TypeScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>TypeScript数据注解和类型推断</title>
+    <url>/TypeScript-zjtd.html</url>
+    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="类型注解"><a href="#类型注解" class="headerlink" title="类型注解"></a>类型注解</h1><p><strong>自动注解成Number</strong></p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">let</span> sdq : <span class="hljs-built_in">number</span>;<br>sdq = <span class="hljs-number">333</span>;<br><span class="hljs-keyword">let</span> countInference = <span class="hljs-number">333</span><br></code></pre></td></tr></table></figure>
+<h1 id="类型推断"><a href="#类型推断" class="headerlink" title="类型推断"></a>类型推断</h1><p><strong>把鼠标悬浮在上面自动会出现推断</strong></p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getTotal</span>(<span class="hljs-params">one, two</span>) &#123;<br>    <span class="hljs-keyword">return</span> one + two;<br>&#125;<br><span class="hljs-keyword">var</span> total = <span class="hljs-title function_">getTotal</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);<br></code></pre></td></tr></table></figure>
+<h1 id="工作使用问题"><a href="#工作使用问题" class="headerlink" title="工作使用问题"></a>工作使用问题</h1><ul>
+<li>如果TS能够自动分析变量类型, 我们上面也不需要做了</li>
+</ul>
+<ul>
+<li>如果TS无法自动分析变量的话, 我们就需要使用类型注释</li>
+</ul>
 ]]></content>
       <categories>
         <category>TypeScript</category>
@@ -6225,6 +6225,21 @@ python数据类型
 <h1 id="本放链接-想要的话-自己带着承诺完的截图来找我-我给你密码"><a href="#本放链接-想要的话-自己带着承诺完的截图来找我-我给你密码" class="headerlink" title="本放链接!!! 想要的话, 自己带着承诺完的截图来找我, 我给你密码"></a>本放<a href="https://wwr.lanzoui.com/iRu7Bqsx7od">链接</a>!!! 想要的话, 自己带着承诺完的截图来找<a href="https://wpa.qq.com/msgrd?v=3&uin=3083329400&site=qq&menu=yes">我</a>, 我给你密码</h1>]]></content>
   </entry>
   <entry>
+    <title>爬虫 cookie(吃牢饭集合)</title>
+    <url>/reptile-cookie.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="headers中携带cookie"><a href="#headers中携带cookie" class="headerlink" title="headers中携带cookie"></a>headers中携带cookie</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    <span class="hljs-string">&quot;Cookie&quot;</span>: <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br>&#125;<br><br>respinse = requests.get(url, headers=headers,)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(respinse.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(respinse.content)<br></code></pre></td></tr></table></figure>
+<h1 id="构建cookie字典"><a href="#构建cookie字典" class="headerlink" title="构建cookie字典"></a>构建cookie字典</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br><span class="hljs-comment"># 构造请求头字典</span><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    &#125;<br><br>temp = <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><br><br>cookie_list = temp.split(<span class="hljs-string">&#x27;; &#x27;</span>)<br><br><span class="hljs-comment"># 熟练方案</span><br><br>cookies = &#123; cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[<span class="hljs-number">0</span>]:cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[-<span class="hljs-number">1</span>] <span class="hljs-keyword">for</span> cookie <span class="hljs-keyword">in</span> cookie_list&#125;<br><br><span class="hljs-comment"># 稳妥方案</span><br><span class="hljs-comment"># cookies = &#123;&#125;</span><br><br><span class="hljs-comment"># for cookie in cookie_list:</span><br><span class="hljs-comment">#     cookies[cookie.split(&#x27;=&#x27;)[0]] = cookie.split(&#x27;=&#x27;)[-1]</span><br><br><span class="hljs-comment"># print(cookies)</span><br><br><span class="hljs-comment"># # 构造cookie字典</span><br><br>response = requests.get(url, headers=headers,cookies=cookies)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(response.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github3.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(response.content)<br></code></pre></td></tr></table></figure>
+<h1 id="cookieJar对象转换成cookie字典方法"><a href="#cookieJar对象转换成cookie字典方法" class="headerlink" title="cookieJar对象转换成cookie字典方法"></a>cookieJar对象转换成cookie字典方法</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://www.baidu.com&#x27;</span><br><br><span class="hljs-comment"># 设置(timeout)访问时长为3秒, 然后就断开</span><br>response = response.get(url, timeout=<span class="hljs-number">3</span>)<br><br><span class="hljs-built_in">print</span>(response.cookies)<br><br><span class="hljs-comment"># 将对象转字典</span><br>dict_cookie = requests.utils.dict_from_cookiejar(response.cookies)<br><span class="hljs-built_in">print</span>(dict_cookie)<br><br><span class="hljs-comment"># 将字典转换为对象</span><br>jar_cookies = requests.utils.cookiejar_from_dict(dict_cookies)<br><span class="hljs-built_in">print</span>(jar_cookies)<br></code></pre></td></tr></table></figure>
+<!--副作用丢失域名 这个不要紧我们自己知道这个cookie对应哪个域名的-->
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
     <title>游戏篇 狂扁小朋友修仙版(攻略)</title>
     <url>/Dad-n-Me.html</url>
     <content><![CDATA[<p><strong>游戏体验</strong></p>
@@ -6365,6 +6380,29 @@ python数据类型
       </categories>
   </entry>
   <entry>
+    <title>爬虫 http和https(吃牢饭集合)</title>
+    <url>/reptile-http-https.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1><p><strong>HTTP: 超文本传输协议, 默认端口号是80</strong></p>
+<ul>
+<li>超文本: 是指超过文本, 不仅限于文本; 还包含图片, 音频等文件</li>
+<li>传输协议: 是指使用共用约定的固定格式来传递转换成字符串的超文本内容</li>
+</ul>
+
+<p><strong>HTTPS: HTTP + SSL(安全套接字层), 即带有安全套接字层的超文本传输协议, 默认端口号: 443</strong></p>
+<ul>
+<li>SSL对传输的内容(超文本, 也就是请求体或响应体)进行加密</li>
+</ul>
+
+<p><strong>可以打开浏览器访问一个url, 右键检查, 点击network, 点选一个url, 查看http协议的形式</strong></p>
+<h1 id="HTTPS因为要加密缘故相比HTTP较慢一些-性能低一些-但是比HTTP更安全"><a href="#HTTPS因为要加密缘故相比HTTP较慢一些-性能低一些-但是比HTTP更安全" class="headerlink" title="HTTPS因为要加密缘故相比HTTP较慢一些,性能低一些, 但是比HTTP更安全"></a>HTTPS因为要加密缘故相比HTTP较慢一些,性能低一些, 但是比HTTP更安全</h1>]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
     <title>爬虫 Beautiful Soup(牢饭吃到饱)</title>
     <url>/reptile-bs4-lxml.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -6385,44 +6423,6 @@ python数据类型
 
 
 </h1></h1>]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>爬虫 cookie(吃牢饭集合)</title>
-    <url>/reptile-cookie.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="headers中携带cookie"><a href="#headers中携带cookie" class="headerlink" title="headers中携带cookie"></a>headers中携带cookie</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    <span class="hljs-string">&quot;Cookie&quot;</span>: <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br>&#125;<br><br>respinse = requests.get(url, headers=headers,)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(respinse.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(respinse.content)<br></code></pre></td></tr></table></figure>
-<h1 id="构建cookie字典"><a href="#构建cookie字典" class="headerlink" title="构建cookie字典"></a>构建cookie字典</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br><span class="hljs-comment"># 构造请求头字典</span><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    &#125;<br><br>temp = <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><br><br>cookie_list = temp.split(<span class="hljs-string">&#x27;; &#x27;</span>)<br><br><span class="hljs-comment"># 熟练方案</span><br><br>cookies = &#123; cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[<span class="hljs-number">0</span>]:cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[-<span class="hljs-number">1</span>] <span class="hljs-keyword">for</span> cookie <span class="hljs-keyword">in</span> cookie_list&#125;<br><br><span class="hljs-comment"># 稳妥方案</span><br><span class="hljs-comment"># cookies = &#123;&#125;</span><br><br><span class="hljs-comment"># for cookie in cookie_list:</span><br><span class="hljs-comment">#     cookies[cookie.split(&#x27;=&#x27;)[0]] = cookie.split(&#x27;=&#x27;)[-1]</span><br><br><span class="hljs-comment"># print(cookies)</span><br><br><span class="hljs-comment"># # 构造cookie字典</span><br><br>response = requests.get(url, headers=headers,cookies=cookies)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(response.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github3.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(response.content)<br></code></pre></td></tr></table></figure>
-<h1 id="cookieJar对象转换成cookie字典方法"><a href="#cookieJar对象转换成cookie字典方法" class="headerlink" title="cookieJar对象转换成cookie字典方法"></a>cookieJar对象转换成cookie字典方法</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://www.baidu.com&#x27;</span><br><br><span class="hljs-comment"># 设置(timeout)访问时长为3秒, 然后就断开</span><br>response = response.get(url, timeout=<span class="hljs-number">3</span>)<br><br><span class="hljs-built_in">print</span>(response.cookies)<br><br><span class="hljs-comment"># 将对象转字典</span><br>dict_cookie = requests.utils.dict_from_cookiejar(response.cookies)<br><span class="hljs-built_in">print</span>(dict_cookie)<br><br><span class="hljs-comment"># 将字典转换为对象</span><br>jar_cookies = requests.utils.cookiejar_from_dict(dict_cookies)<br><span class="hljs-built_in">print</span>(jar_cookies)<br></code></pre></td></tr></table></figure>
-<!--副作用丢失域名 这个不要紧我们自己知道这个cookie对应哪个域名的-->
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>爬虫 http和https(吃牢饭集合)</title>
-    <url>/reptile-http-https.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1><p><strong>HTTP: 超文本传输协议, 默认端口号是80</strong></p>
-<ul>
-<li>超文本: 是指超过文本, 不仅限于文本; 还包含图片, 音频等文件</li>
-<li>传输协议: 是指使用共用约定的固定格式来传递转换成字符串的超文本内容</li>
-</ul>
-
-<p><strong>HTTPS: HTTP + SSL(安全套接字层), 即带有安全套接字层的超文本传输协议, 默认端口号: 443</strong></p>
-<ul>
-<li>SSL对传输的内容(超文本, 也就是请求体或响应体)进行加密</li>
-</ul>
-
-<p><strong>可以打开浏览器访问一个url, 右键检查, 点击network, 点选一个url, 查看http协议的形式</strong></p>
-<h1 id="HTTPS因为要加密缘故相比HTTP较慢一些-性能低一些-但是比HTTP更安全"><a href="#HTTPS因为要加密缘故相比HTTP较慢一些-性能低一些-但是比HTTP更安全" class="headerlink" title="HTTPS因为要加密缘故相比HTTP较慢一些,性能低一些, 但是比HTTP更安全"></a>HTTPS因为要加密缘故相比HTTP较慢一些,性能低一些, 但是比HTTP更安全</h1>]]></content>
       <categories>
         <category>爬虫</category>
       </categories>
