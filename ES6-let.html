@@ -79,9 +79,6 @@
 <link rel="stylesheet" href="/css/katex.min.css">
 
 
-	
-	
-<script src="/js/sdq-iframe.js"></script>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 	
@@ -948,7 +945,9 @@ var $main = document.querySelector('.main');
 <h2 id="不存在变量提升"><a href="#不存在变量提升" class="headerlink" title="不存在变量提升"></a>不存在变量提升</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&lt;script&gt;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sdz);<br>    <span class="hljs-keyword">let</span> sdz = <span class="hljs-string">&#x27;史迪仔&#x27;</span>; <br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
 <h2 id="不影响作用域链"><a href="#不影响作用域链" class="headerlink" title="不影响作用域链"></a>不影响作用域链</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&lt;script&gt;<br>    <span class="hljs-keyword">let</span> sdq = <span class="hljs-string">&#x27;史迪奇&#x27;</span>;<br>    <span class="hljs-keyword">function</span> <span class="hljs-title function_">SDQ</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sdq);<br>    &#125;<br>    <span class="hljs-title function_">SDQ</span>()<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
 <h2 id="点击变色的案例"><a href="#点击变色的案例" class="headerlink" title="点击变色的案例"></a>点击变色的案例</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>    &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;<br>        &lt;h2 <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;page-header&quot;</span>&gt;变色&lt;/h2&gt;<br>        &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;Stitch&quot;</span>&gt;史迪奇&lt;/div&gt;<br>        &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;Reuben&quot;</span>&gt;鲁本&lt;/div&gt;<br>        &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;Angel &quot;</span>&gt;安琪&lt;/div&gt;<br>    &lt;/div&gt;<br>    &lt;script&gt;<br>        <span class="hljs-comment">//获取div元素对象</span><br>        <span class="hljs-keyword">let</span> sdqs = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByClassName</span>(<span class="hljs-string">&#x27;sdq&#x27;</span>);<br><br>        <span class="hljs-comment">//遍历并绑定事件</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;i&lt;sdqs.<span class="hljs-property">length</span>;i++)&#123;<br>            sdqs[i].<span class="hljs-property">onclick</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>                <span class="hljs-comment">//修改当前元素的背景颜色</span><br>                <span class="hljs-comment">// this.style.background = &#x27;#F08080&#x27;;</span><br>                sdqs[i].<span class="hljs-property">style</span>.<span class="hljs-property">background</span> = <span class="hljs-string">&#x27;#F08080&#x27;</span>;<br>            &#125;<br>        &#125;<br>    &lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
-<iframe id="iframe" scrolling="no" src="./html/let案例.html"></iframe>
+<iframe id="iframe" scrolling="no" src="/html/let案例.html"></iframe>
+
+<br>
 			  </article>
 		</div>
 		
@@ -1067,6 +1066,10 @@ $(window).load(function(){
 	<script src="/resources/jscex/jscex-builderbase.min.js"></script>
 	<script src="/resources/jscex/jscex-async.min.js"></script>
 	<script src="/resources/jscex/jscex-async-powerpack.min.js"></script>
+	
+	
+<script src="/js/sdq-iframe.js"></script>
+
 
 
 <style>

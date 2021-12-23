@@ -79,9 +79,6 @@
 <link rel="stylesheet" href="/css/katex.min.css">
 
 
-	
-	
-<script src="/js/sdq-iframe.js"></script>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 	
@@ -947,6 +944,8 @@ var $main = document.querySelector('.main');
 
 <h2 id="创建-git-仓库"><a href="#创建-git-仓库" class="headerlink" title="创建 git 仓库"></a>创建 git 仓库</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">创建sdq文件夹</span><br>mkdir sdq<br><br><span class="hljs-meta"># </span><span class="language-bash">打开sdq文件夹</span><br>cd sdq<br><br><span class="hljs-meta"># </span><span class="language-bash">初始化</span><br>git init<br><span class="hljs-meta"># </span><span class="language-bash">创建说明文档</span><br>touch README.md<br><br><span class="hljs-meta"># </span><span class="language-bash">添加说明文档</span><br>git add README.md<br><br><span class="hljs-meta"># </span><span class="language-bash">添加说明内容</span><br>git commit -m &quot;史迪奇&quot;<br><br><span class="hljs-meta"># </span><span class="language-bash">关联远程存储库 sdz为存储库名</span><br>git remote add sdz https:#gitee.com/sdq3/web.git<br><br><span class="hljs-meta"># </span><span class="language-bash">开始上传 master分支名称</span><br>git push -u sdz master<br></code></pre></td></tr></table></figure>
 <h1 id="git-分支查看与切换"><a href="#git-分支查看与切换" class="headerlink" title="git 分支查看与切换"></a>git 分支查看与切换</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs Shell"><span class="hljs-meta"># </span><span class="language-bash">查看所有分支</span><br>git branch -a<br><br><span class="hljs-meta"># </span><span class="language-bash">查看当前使用分支(结果列表中前面标*号的表示当前使用分支)</span><br>git branch<br><br><span class="hljs-meta"># </span><span class="language-bash">切换分支</span><br>git checkout [分支名]<br></code></pre></td></tr></table></figure>
+<br>
+
 			  </article>
 		</div>
 		
@@ -1065,6 +1064,10 @@ $(window).load(function(){
 	<script src="/resources/jscex/jscex-builderbase.min.js"></script>
 	<script src="/resources/jscex/jscex-async.min.js"></script>
 	<script src="/resources/jscex/jscex-async-powerpack.min.js"></script>
+	
+	
+<script src="/js/sdq-iframe.js"></script>
+
 
 
 <style>

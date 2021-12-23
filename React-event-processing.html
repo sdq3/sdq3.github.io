@@ -79,9 +79,6 @@
 <link rel="stylesheet" href="/css/katex.min.css">
 
 
-	
-	
-<script src="/js/sdq-iframe.js"></script>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 	
@@ -974,6 +971,7 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <p><strong>没有使用属性初始化器语法, 你可以在回调函数中使用 箭头函数</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs HTML">class MyNameIsStitch extends React.Component &#123;<br>  handleClick() &#123;<br>    console.log(&#x27;this is:&#x27;, this);<br>  &#125;<br> <br>  render() &#123;<br>    &#123;/*  这个语法确保了 `this` 绑定在  handleClick 中  */&#125;  <br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">&#123;(e)</span> =&gt;</span> this.handleClick(e)&#125;&gt;<br>        我叫史迪奇<br>      <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h1 id="向事件处理程序传递参数-1"><a href="#向事件处理程序传递参数-1" class="headerlink" title="向事件处理程序传递参数"></a>向事件处理程序传递参数</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs HTML">&#123;/*  参数 e 作为 React 事件对象将会被作为第二个参数进行传递<br>通过箭头函数的方式, 事件对象必须显式的进行传递, 但bind 的方式, 事件对象以及更多的参数会被隐式的进行传递<br>bind 方式向监听函数传参 在类组件中定义的监听函数 事件对象 e 要排在所传递参数的后面  */&#125;  <br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">&#123;(e)</span> =&gt;</span> this.deleteRow(id, e)&#125;&gt;Delete Row<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">&#123;this.deleteRow.bind(this,</span> <span class="hljs-attr">id</span>)&#125;&gt;</span>Delete Row<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<br>
 			  </article>
 		</div>
 		
@@ -1092,6 +1090,10 @@ $(window).load(function(){
 	<script src="/resources/jscex/jscex-builderbase.min.js"></script>
 	<script src="/resources/jscex/jscex-async.min.js"></script>
 	<script src="/resources/jscex/jscex-async-powerpack.min.js"></script>
+	
+	
+<script src="/js/sdq-iframe.js"></script>
+
 
 
 <style>

@@ -79,9 +79,6 @@
 <link rel="stylesheet" href="/css/katex.min.css">
 
 
-	
-	
-<script src="/js/sdq-iframe.js"></script>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 	
@@ -943,24 +940,34 @@ var $main = document.querySelector('.main');
 <a id="more"></a>
 
 <h1 id="React-组件"><a href="#React-组件" class="headerlink" title="React 组件"></a>React 组件</h1><ul>
-<li>设置状态: setState</li>
-<li>替换状态: replaceState</li>
-<li>设置属性: setProps</li>
-<li>替换属性: replaceProps</li>
-<li>强制更新: forceUpdate</li>
-<li>获取DOM节点: findDOMNode</li>
-<li>判断组件挂载状态: isMounted</li>
+<li><p>设置状态: setState</p>
+</li>
+<li><p>替换状态: replaceState</p>
+</li>
+<li><p>设置属性: setProps</p>
+</li>
+<li><p>替换属性: replaceProps</p>
+</li>
+<li><p>强制更新: forceUpdate</p>
+</li>
+<li><p>获取DOM节点: findDOMNode</p>
+</li>
+<li><p>判断组件挂载状态: isMounted</p>
+</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&#123;<span class="hljs-comment">/*  nextState将要设置的新状态, 该状态会和当前的state合并  */</span>&#125; <br><span class="hljs-title function_">setState</span>(object nextState[, <span class="hljs-keyword">function</span> callback])<br><br>&#123;<span class="hljs-comment">/*  callback可选参数, 回调函数 该函数会在setState设置成功, 且组件重新渲染后调用  */</span>&#125; <br><span class="hljs-title function_">setState</span>(object callback[, <span class="hljs-keyword">function</span> callback])<br></code></pre></td></tr></table></figure>
 <p><strong>关于setState</strong></p>
 <ul>
-<li>不能在组件内部通过this.state修改状态, 因为该状态会在调用setState()后被替换 </li>
-<li>setState()并不会立即改变this.state, 而是创建一个即将处理的state setState()并不一定是同步的, 为了提升性能React会批量执行state和DOM渲染 </li>
-<li>setState()总是会触发一次组件重绘, 除非在shouldComponentUpdate()中实现了一些条件渲染逻辑</li>
+<li><p>不能在组件内部通过this.state修改状态, 因为该状态会在调用setState()后被替换 </p>
+</li>
+<li><p>setState()并不会立即改变this.state, 而是创建一个即将处理的state setState()并不一定是同步的, 为了提升性能React会批量执行state和DOM渲染 </p>
+</li>
+<li><p>setState()总是会触发一次组件重绘, 除非在shouldComponentUpdate()中实现了一些条件渲染逻辑</p>
+</li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>    class MyNameIsStitch extends React.Component&#123;<br>      constructor(props) &#123;<br>          super(props);<br>          this.state = &#123;clickCount: 0&#125;;<br>          this.handleClick = this.handleClick.bind(this);<br>      &#125;<br>      <br>      handleClick() &#123;<br>        this.setState(function(state) &#123;<br>          return &#123;clickCount: state.clickCount + 1&#125;;<br>        &#125;);<br>      &#125;<br>      render () &#123;<br>        return (<span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">&#123;this.handleClick&#125;</span>&gt;</span>点击 点击次数为: &#123;this.state.clickCount&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>);<br>      &#125;<br>    &#125;<br>    ReactDOM.render(<br>      <span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span> /&gt;</span>,<br>      document.getElementById(&#x27;example&#x27;)<br>    );<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p><font color="#DC143C">查看效果</font></p>
-<iframe id="iframe" src="./html/setState.html"></iframe>
+<iframe id="iframe" src="/html/setState.html"></iframe>
 
 <h1 id="替换状态-replaceState"><a href="#替换状态-replaceState" class="headerlink" title="替换状态: replaceState"></a>替换状态: replaceState</h1><ul>
 <li>replaceState()方法与setState()类似, 但是方法只会保留nextState中状态, 原state不在nextState中的状态都会被删除 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&#123;<span class="hljs-comment">/*  nextState, 将要设置的新状态, 该状态会替换当前的state  */</span>&#125; <br><span class="hljs-title function_">setProps</span>(object nextProps[, <span class="hljs-keyword">function</span> callback]<br><br>&#123;<span class="hljs-comment">/*  callback, 可选参数, 回调函数 该函数会在replaceState设置成功, 且组件重新渲染后调用  */</span>&#125; <br><span class="hljs-title function_">setProps</span>(object callback[, <span class="hljs-keyword">function</span> callback]<br></code></pre></td></tr></table></figure>
@@ -991,6 +998,7 @@ var $main = document.querySelector('.main');
 <li>isMounted()方法用于判断组件是否已挂载到DOM中 可以使用该方法保证了setState()和forceUpdate()在异步场景下的调用不会出错</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&#123;<span class="hljs-comment">/*  返回值: true或false, 表示组件是否已挂载到DOM中  */</span>&#125; <br>bool <span class="hljs-title function_">isMounted</span>()<br></code></pre></td></tr></table></figure>
+<br>
 			  </article>
 		</div>
 		
@@ -1109,6 +1117,10 @@ $(window).load(function(){
 	<script src="/resources/jscex/jscex-builderbase.min.js"></script>
 	<script src="/resources/jscex/jscex-async.min.js"></script>
 	<script src="/resources/jscex/jscex-async-powerpack.min.js"></script>
+	
+	
+<script src="/js/sdq-iframe.js"></script>
+
 
 
 <style>

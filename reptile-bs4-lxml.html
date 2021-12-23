@@ -79,9 +79,6 @@
 <link rel="stylesheet" href="/css/katex.min.css">
 
 
-	
-	
-<script src="/js/sdq-iframe.js"></script>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 	
@@ -1031,7 +1028,6 @@ handeled_html_str &#x3D; etree.toString(html).decode()
 print(handeled_html_str)
 
 
-
 </span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">
 
 安装bs4打开cmd 输入以下内容
@@ -1163,7 +1159,6 @@ handeled_html_str &#x3D; etree.toString(html).decode()
 print(handeled_html_str)
 
 
-
 </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85bs4"><span class="toc-text">安装bs4</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#find%E7%94%A8%E6%B3%95"><span class="toc-text">find用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#find-all%E7%94%A8%E6%B3%95"><span class="toc-text">find_all用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0"><span class="toc-text">综合练习</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#lxml%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">lxml模块的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5lxml%E7%9A%84etree%E5%BA%93"><span class="toc-text">导入lxml的etree库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5lxml%E7%9A%84etree-tostring%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">导入lxml的etree.tostring函数的使用</span></a></li></ol></li></ol></li></ol>
     </div>
 </aside>
@@ -1218,9 +1213,7 @@ print(handeled_html_str)
 <p>利用etree.HTML 将HTML字符串(bytes类型活str类型) 转化为Element对象 Element对象具有xpath的方法 返回结果列表</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs Python">html = etree.HTML(text)     <span class="hljs-comment"># text为文本内容</span><br>ret_list = html.xpath(<span class="hljs-string">&quot;xpath语法规则字符串&quot;</span>)     <span class="hljs-comment"># 用xpath来解析</span><br></code></pre></td></tr></table></figure>
 <h3 id="导入lxml的etree-tostring函数的使用"><a href="#导入lxml的etree-tostring函数的使用" class="headerlink" title="导入lxml的etree.tostring函数的使用"></a>导入lxml的etree.tostring函数的使用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">from</span> lxml <span class="hljs-keyword">import</span> etree<br><br>html_str = <span class="hljs-string">&#x27;&#x27;&#x27; &lt;div&gt;&lt;ul&gt;</span><br>                &lt;li class=&quot;itrm-1&quot;&gt;&lt;a href=&quot;;link1.html&quot;&gt;first item&lt;/a&gt;&lt;/li&gt;<br>                &lt;li class=&quot;itrm-1&quot;&gt;&lt;a href=&quot;;link2.html&quot;&gt;second item&lt;/a&gt;&lt;/li&gt;<br>                &lt;li class=&quot;itrm-inactive&quot;&gt;&lt;a href=&quot;;link3.html&quot;&gt;third item&lt;/a&gt;&lt;/li&gt;<br>                &lt;li class=&quot;itrm-1&quot;&gt;&lt;a href=&quot;;link1.html&quot;&gt;fourth item&lt;/a&gt;&lt;/li&gt;<br>                &lt;li class=&quot;itrm-0&quot;&gt;&lt;a href=&quot;;link5.html&quot;&gt;fifth item&lt;/a&gt;&lt;/li&gt;<br>                &lt;ul&gt;&lt;div&gt; <span class="hljs-string">&#x27;&#x27;&#x27;         </span><br><span class="hljs-comment"># 将html源码转换成element对象   etree.HTML()能够自动补全html缺失的标签</span><br>html = etree.HTML(html_str)<br><span class="hljs-comment"># 转换成String类型的数据        </span><br>handeled_html_str = etree.toString(html).decode()<br><span class="hljs-built_in">print</span>(handeled_html_str)<br></code></pre></td></tr></table></figure>
-
-
-</h1></h1>
+<br></h1></h1>
 			  </article>
 		</div>
 		
@@ -1339,6 +1332,10 @@ $(window).load(function(){
 	<script src="/resources/jscex/jscex-builderbase.min.js"></script>
 	<script src="/resources/jscex/jscex-async.min.js"></script>
 	<script src="/resources/jscex/jscex-async-powerpack.min.js"></script>
+	
+	
+<script src="/js/sdq-iframe.js"></script>
+
 
 
 <style>

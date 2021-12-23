@@ -79,9 +79,6 @@
 <link rel="stylesheet" href="/css/katex.min.css">
 
 
-	
-	
-<script src="/js/sdq-iframe.js"></script>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 	
@@ -943,12 +940,15 @@ var $main = document.querySelector('.main');
 <blockquote>
 <h1 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h1></blockquote>
 <p><strong>命令英文原意: list</strong><br><strong>命令所在路径: /bin/ls</strong><br><strong>执行权限: 所有用户</strong><br><strong>功能描述: 显示目录文件</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$ </span><span class="language-bash">ls 显示当前目录下文件</span><br><br><span class="hljs-meta">$</span><span class="language-bash">ls 目录名 显示指定目录下文件</span><br><br><span class="hljs-meta">$</span><span class="language-bash">ls -l 长格式显示目录文件</span><br><br><span class="hljs-meta">$</span><span class="language-bash">ls -l 文件名 长格式显示指定文件</span><br><br><span class="hljs-meta">$</span><span class="language-bash">ls -a 显示所有文件包含隐藏文件</span><br><br><span class="hljs-meta">$</span><span class="language-bash">ls -al 长格式显示当前目录下所有文件</span><br><br><span class="hljs-meta">$</span><span class="language-bash">ls -h 文件大小显示为常见大小单位 B KB MB …</span><br><br><span class="hljs-meta">$</span><span class="language-bash">ls -d 显示目录本身，而不是里面的子文件</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell">ls 显示当前目录下文件<br><br>ls 目录名 显示指定目录下文件<br><br>ls -l 长格式显示目录文件<br><br>ls -l 文件名 长格式显示指定文件<br><br>ls -a 显示所有文件包含隐藏文件<br><br>ls -al 长格式显示当前目录下所有文件<br><br>ls -h 文件大小显示为常见大小单位 B KB MB …<br><br>ls -d 显示目录本身，而不是里面的子文件<br></code></pre></td></tr></table></figure>
 <h1 id="cd命令"><a href="#cd命令" class="headerlink" title="cd命令"></a>cd命令</h1><p><strong>命令英文原意: change directory</strong><br><strong>命令所在路径: shell内置命令</strong><br><strong>执行权限: 所有用户</strong><br><strong>功能描述: 切换所在目录</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="language-bash"><span class="hljs-built_in">cd</span> /xx  切换到指定路径(使用绝对路径方式)</span><br><br><span class="hljs-meta">$</span><span class="language-bash"><span class="hljs-built_in">cd</span> ~    进入当前用户的家目录</span><br><br><span class="hljs-meta">$</span><span class="language-bash"><span class="hljs-built_in">cd</span> –    进入上次目录</span><br><br><span class="hljs-meta">$</span><span class="language-bash"><span class="hljs-built_in">cd</span> ..   进入上一级目录</span><br><br><span class="hljs-meta">$</span><span class="language-bash"><span class="hljs-built_in">cd</span> .    进入当前目录</span><br></code></pre></td></tr></table></figure>
-<!-- ``` shell
-$ 
-``` -->
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd /xx  切换到指定路径(使用绝对路径方式)<br><br>cd ~    进入当前用户的家目录<br><br>cd –    进入上次目录<br><br>cd ..   进入上一级目录<br><br>cd .    进入当前目录<br></code></pre></td></tr></table></figure>
+<br>
+
+<!-- ~~~ shell
+
+~~~ -->
+
 
 
 			  </article>
@@ -1069,6 +1069,10 @@ $(window).load(function(){
 	<script src="/resources/jscex/jscex-builderbase.min.js"></script>
 	<script src="/resources/jscex/jscex-async.min.js"></script>
 	<script src="/resources/jscex/jscex-async-powerpack.min.js"></script>
+	
+	
+<script src="/js/sdq-iframe.js"></script>
+
 
 
 <style>

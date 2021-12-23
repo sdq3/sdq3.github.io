@@ -79,9 +79,6 @@
 <link rel="stylesheet" href="/css/katex.min.css">
 
 
-	
-	
-<script src="/js/sdq-iframe.js"></script>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 	
@@ -943,11 +940,14 @@ var $main = document.querySelector('.main');
 <a id="more"></a>
 
 <h1 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h1><ul>
-<li>React 组件的数据可以通过 componentDidMount 方法中的 Ajax 来获取, 当从服务端获取数据时可以将数据存储在 state 中, 再用 this.setState 方法重新渲染 UI</li>
-<li>当使用异步加载数据时, 在组件卸载前使用 componentWillUnmount 来取消未完成的请求</li>
+<li><p>React 组件的数据可以通过 componentDidMount 方法中的 Ajax 来获取, 当从服务端获取数据时可以将数据存储在 state 中, 再用 this.setState 方法重新渲染 UI</p>
+</li>
+<li><p>当使用异步加载数据时, 在组件卸载前使用 componentWillUnmount 来取消未完成的请求</p>
+</li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>class UserGist extends React.Component &#123;<br>  constructor(props) &#123;<br>      super(props);<br>      this.state = &#123;username: &#x27;&#x27;, lastGistUrl: &#x27;&#x27;&#125;;<br>  &#125;<br><br> <br>  componentDidMount() &#123;<br>    this.serverRequest = $.get(this.props.source, function (result) &#123;<br>      var lastGist = result[0];<br>      this.setState(&#123;<br>        username: lastGist.owner.login,<br>        lastGistUrl: lastGist.html_url<br>      &#125;);<br>    &#125;.bind(this));<br>  &#125;<br> <br>  componentWillUnmount() &#123;<br>    this.serverRequest.abort();<br>  &#125;<br> <br>  render() &#123;<br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        &#123;this.state.username&#125; 史迪奇的博客:<br>        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&#123;this.state.lastGistUrl&#125;</span>&gt;</span>&#123;this.state.lastGistUrl&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br> <br>ReactDOM.render(<br>  <span class="hljs-tag">&lt;<span class="hljs-name">UserGist</span> <span class="hljs-attr">source</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> /&gt;</span>,<br>  document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
+<br>
 			  </article>
 		</div>
 		
@@ -1066,6 +1066,10 @@ $(window).load(function(){
 	<script src="/resources/jscex/jscex-builderbase.min.js"></script>
 	<script src="/resources/jscex/jscex-async.min.js"></script>
 	<script src="/resources/jscex/jscex-async-powerpack.min.js"></script>
+	
+	
+<script src="/js/sdq-iframe.js"></script>
+
 
 
 <style>

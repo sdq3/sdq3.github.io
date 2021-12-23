@@ -79,9 +79,6 @@
 <link rel="stylesheet" href="/css/katex.min.css">
 
 
-	
-	
-<script src="/js/sdq-iframe.js"></script>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 	
@@ -960,6 +957,7 @@ var $main = document.querySelector('.main');
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">let</span> sdq = &#123;<br>    <span class="hljs-attr">name</span>:<span class="hljs-string">&quot;史迪奇&quot;</span>,<br>    <span class="hljs-attr">species</span>:<span class="hljs-string">&quot;外星生物&quot;</span>，<br>    <span class="hljs-title function_">myName</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-keyword">let</span> self = <span class="hljs-variable language_">this</span>;<br>        <span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>           <span class="hljs-comment">// 指向windous对象</span><br>           <span class="hljs-comment">// console.log(this); </span><br>           <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(self.<span class="hljs-property">name</span>); <br>        &#125;,<span class="hljs-number">500</span>)<br>    &#125;<br>&#125;<br>sdq.<span class="hljs-title function_">myName</span>();<br></code></pre></td></tr></table></figure>
 <p><strong>箭头函数 this指向</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">let</span> sdq = &#123;<br>    <span class="hljs-attr">name</span>:<span class="hljs-string">&quot;史迪奇&quot;</span>,<br>    <span class="hljs-attr">species</span>:<span class="hljs-string">&quot;外星生物&quot;</span>，<br>    <span class="hljs-title function_">myName</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-keyword">let</span> self = <span class="hljs-variable language_">this</span>;<br>        <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>           <span class="hljs-comment">// 指向sdq对象</span><br>           <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;我是&quot;</span>+<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>);     <br>        &#125;,<span class="hljs-number">500</span>)<br>    &#125;<br>&#125;<br>sdq.<span class="hljs-title function_">myName</span>();<br></code></pre></td></tr></table></figure>
+<br>
 			  </article>
 		</div>
 		
@@ -1078,6 +1076,10 @@ $(window).load(function(){
 	<script src="/resources/jscex/jscex-builderbase.min.js"></script>
 	<script src="/resources/jscex/jscex-async.min.js"></script>
 	<script src="/resources/jscex/jscex-async-powerpack.min.js"></script>
+	
+	
+<script src="/js/sdq-iframe.js"></script>
+
 
 
 <style>

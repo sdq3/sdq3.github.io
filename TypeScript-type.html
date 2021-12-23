@@ -79,9 +79,6 @@
 <link rel="stylesheet" href="/css/katex.min.css">
 
 
-	
-	
-<script src="/js/sdq-iframe.js"></script>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 	
@@ -943,22 +940,33 @@ var $main = document.querySelector('.main');
 <a id="more"></a>
 
 <h1 id="TypeScript中的基础静态数据类型有"><a href="#TypeScript中的基础静态数据类型有" class="headerlink" title="TypeScript中的基础静态数据类型有"></a>TypeScript中的基础静态数据类型有</h1><ul>
-<li>Undefined :</li>
-<li>Number : 数值类型;</li>
-<li>string : 字符串类型;</li>
-<li>Boolean : 布尔类型；</li>
-<li>enum : 枚举类型；</li>
-<li>any : 任意类型，一个牛X的类型；</li>
-<li>void : 空类型；</li>
-<li>Array : 数组类型;</li>
-<li>Tuple : 元祖类型；</li>
-<li>Null : 空类型</li>
+<li><p>Undefined : 未定义类型;</p>
+</li>
+<li><p>Number : 数值类型;</p>
+</li>
+<li><p>string : 字符串类型;</p>
+</li>
+<li><p>Boolean : 布尔类型;</p>
+</li>
+<li><p>enum : 枚举类型;</p>
+</li>
+<li><p>any : 任意类型，一个牛X的类型;</p>
+</li>
+<li><p>void : 空类型;</p>
+</li>
+<li><p>Array : 数组类型;</p>
+</li>
+<li><p>Tuple : 元祖类型;</p>
+</li>
+<li><p>Null : 空类型</p>
+</li>
 </ul>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> count : <span class="hljs-built_in">number</span> = <span class="hljs-number">333</span>;<br><span class="hljs-keyword">const</span> myNname : <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;史迪奇&quot;</span>;<br></code></pre></td></tr></table></figure>
 <h1 id="还包含对象类型-数组类型-类类型-函数类型"><a href="#还包含对象类型-数组类型-类类型-函数类型" class="headerlink" title="还包含对象类型 数组类型 类类型 函数类型"></a>还包含对象类型 数组类型 类类型 函数类型</h1><h3 id="对象类型"><a href="#对象类型" class="headerlink" title="对象类型"></a>对象类型</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> sdq : &#123;<br>    <span class="hljs-attr">name</span>:<span class="hljs-built_in">string</span>,<br>    <span class="hljs-attr">age</span>:<span class="hljs-built_in">number</span><br>&#125; = &#123;<br>    name = <span class="hljs-string">&quot;史迪奇&quot;</span>,<br>    age = <span class="hljs-number">18</span><br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="数组类型"><a href="#数组类型" class="headerlink" title="数组类型"></a>数组类型</h3><p><strong>对象类型也可以是数组, 但是类型必须一致</strong></p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> sdq : <span class="hljs-built_in">string</span> [] = [<span class="hljs-string">&#x27;史迪奇&#x27;</span>,<span class="hljs-string">&#x27;独眼霹雳&#x27;</span>,<span class="hljs-string">&#x27;强霸&#x27;</span>]<br></code></pre></td></tr></table></figure>
 <h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Experimentalarticle</span>&#123;&#125;<br><span class="hljs-keyword">const</span> sdq : <span class="hljs-title class_">Experimentalarticle</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Experimentalarticle</span>()<br><br><span class="hljs-keyword">const</span> sdz : <span class="hljs-function">()=&gt;</span><span class="hljs-built_in">string</span> = <span class="hljs-function">() =&gt;</span>&#123;<span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;史迪奇&#x27;</span>&#125;<br></code></pre></td></tr></table></figure>
+<br>
 
 			  </article>
 		</div>
@@ -1078,6 +1086,10 @@ $(window).load(function(){
 	<script src="/resources/jscex/jscex-builderbase.min.js"></script>
 	<script src="/resources/jscex/jscex-async.min.js"></script>
 	<script src="/resources/jscex/jscex-async-powerpack.min.js"></script>
+	
+	
+<script src="/js/sdq-iframe.js"></script>
+
 
 
 <style>

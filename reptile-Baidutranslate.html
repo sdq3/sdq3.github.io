@@ -79,9 +79,6 @@
 <link rel="stylesheet" href="/css/katex.min.css">
 
 
-	
-	
-<script src="/js/sdq-iframe.js"></script>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 	
@@ -947,6 +944,7 @@ var $main = document.querySelector('.main');
 <p><strong>打开cmd输入以下代码</strong></p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs PowerShell">pip install requests<br></code></pre></td></tr></table></figure>
 <h1 id="百度翻译案例"><a href="#百度翻译案例" class="headerlink" title="百度翻译案例"></a>百度翻译案例</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&quot;https://fanyi.baidu.com/sug&quot;</span><br><br>s = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入你要翻译的英文单词&quot;</span>)<br><br>dat = &#123;<br>        <span class="hljs-string">&quot;kw&quot;</span>:s<br>    &#125;<br><br>tou = &#123;<br>    <span class="hljs-string">&quot;user-agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Mobile Safari/537.36&quot;</span><br>&#125;<br><br>pachon = requests.post(url,headers=tou,data=dat)<br><br><span class="hljs-built_in">print</span>(pachon)<br><br><span class="hljs-built_in">print</span>(pachon.json())<br><br>pachon.close()  <span class="hljs-comment">#断开/关闭连接, 一定要断开</span><br></code></pre></td></tr></table></figure>
+<br>
 
 
 
@@ -1069,6 +1067,10 @@ $(window).load(function(){
 	<script src="/resources/jscex/jscex-builderbase.min.js"></script>
 	<script src="/resources/jscex/jscex-async.min.js"></script>
 	<script src="/resources/jscex/jscex-async-powerpack.min.js"></script>
+	
+	
+<script src="/js/sdq-iframe.js"></script>
+
 
 
 <style>

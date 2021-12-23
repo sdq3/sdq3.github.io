@@ -79,9 +79,6 @@
 <link rel="stylesheet" href="/css/katex.min.css">
 
 
-	
-	
-<script src="/js/sdq-iframe.js"></script>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 	
@@ -943,6 +940,7 @@ var $main = document.querySelector('.main');
 <a id="more"></a>
 
 <h1 id="非常常见的一种类型"><a href="#非常常见的一种类型" class="headerlink" title="非常常见的一种类型"></a>非常常见的一种类型</h1><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-built_in">enum</span> <span class="hljs-title class_">Status</span> &#123;<br>  <span class="hljs-title class_">Reuben</span> = <span class="hljs-number">625</span>,<br>  <span class="hljs-title class_">Angel</span> = <span class="hljs-number">624</span>,<br>  <span class="hljs-title class_">Stitch</span> = <span class="hljs-number">626</span>,<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">getServe</span>(<span class="hljs-params">status: <span class="hljs-built_in">any</span></span>) &#123;<br>  <span class="hljs-keyword">if</span> (status === <span class="hljs-title class_">Status</span>.<span class="hljs-property">Reuben</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;鲁本&quot;</span>;<br>  &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (status === <span class="hljs-title class_">Status</span>.<span class="hljs-property">Angel</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;安琪&quot;</span>;<br>  &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (status === <span class="hljs-title class_">Status</span>.<span class="hljs-property">Stitch</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;史迪奇&quot;</span>;<br>  &#125;<br>&#125;<br><br><span class="hljs-keyword">const</span> result = <span class="hljs-title function_">getServe</span>(<span class="hljs-title class_">Status</span>.<span class="hljs-property">AngelStitch</span>);<br><br><span class="hljs-comment">// 可以凭实验品编号查询</span><br><span class="hljs-comment">// const result = getServe(626);</span><br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`实验品<span class="hljs-subst">$&#123;result&#125;</span>`</span>);<br></code></pre></td></tr></table></figure>
+<br>
 			  </article>
 		</div>
 		
@@ -1061,6 +1059,10 @@ $(window).load(function(){
 	<script src="/resources/jscex/jscex-builderbase.min.js"></script>
 	<script src="/resources/jscex/jscex-async.min.js"></script>
 	<script src="/resources/jscex/jscex-async-powerpack.min.js"></script>
+	
+	
+<script src="/js/sdq-iframe.js"></script>
+
 
 
 <style>

@@ -79,9 +79,6 @@
 <link rel="stylesheet" href="/css/katex.min.css">
 
 
-	
-	
-<script src="/js/sdq-iframe.js"></script>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 	
@@ -948,6 +945,7 @@ var $main = document.querySelector('.main');
 </ul>
 <h1 id="Jquery的引入"><a href="#Jquery的引入" class="headerlink" title="Jquery的引入"></a>Jquery的引入</h1><h3 id="html文件"><a href="#html文件" class="headerlink" title="html文件"></a>html文件</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript">&lt;!<span class="hljs-variable constant_">DOCTYPE</span> html&gt;<br>&lt;html lang=<span class="hljs-string">&quot;en&quot;</span>&gt;<br>&lt;head&gt;<br>    &lt;meta charset=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;<br><br>    &lt;!-- 引入jquery --&gt;<br>    &lt;script src=<span class="hljs-string">&quot;https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js&quot;</span>&gt;&lt;/script&gt;<br>    &lt;script src=<span class="hljs-string">&quot;./page.ts&quot;</span>&gt;&lt;/script&gt;<br>   &lt;title&gt;史迪奇国王&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>    <br>&lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure>
 <h3 id="page-ts"><a href="#page-ts" class="headerlink" title="page.ts"></a>page.ts</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 解决报错问题 或者 npm i @types/jquery 和 cnpm i @types/jquery </span><br><span class="hljs-keyword">declare</span> <span class="hljs-keyword">var</span> <span class="hljs-attr">$</span>: <span class="hljs-built_in">any</span>;<br><br><span class="hljs-keyword">const</span> <span class="hljs-attr">sdq</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;史迪奇&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sdq);<br><br>$(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;史迪奇&quot;</span>);<br>&#125;);<br></code></pre></td></tr></table></figure>
+<br>
 			  </article>
 		</div>
 		
@@ -1066,6 +1064,10 @@ $(window).load(function(){
 	<script src="/resources/jscex/jscex-builderbase.min.js"></script>
 	<script src="/resources/jscex/jscex-async.min.js"></script>
 	<script src="/resources/jscex/jscex-async-powerpack.min.js"></script>
+	
+	
+<script src="/js/sdq-iframe.js"></script>
+
 
 
 <style>

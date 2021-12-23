@@ -79,9 +79,6 @@
 <link rel="stylesheet" href="/css/katex.min.css">
 
 
-	
-	
-<script src="/js/sdq-iframe.js"></script>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 	
@@ -942,10 +939,12 @@ var $main = document.querySelector('.main');
 				<p><strong>SQL Server个人整理</strong></p>
 <a id="more"></a>
 
-<h1 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs SQL">$ <span class="hljs-keyword">create</span> <span class="hljs-keyword">view</span> 视图(字段别名) <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> 字段 <span class="hljs-keyword">from</span> 表 <span class="hljs-keyword">WITH</span> <span class="hljs-keyword">CHECK</span> OPTION<br></code></pre></td></tr></table></figure>
-<h1 id="向视图插入数据"><a href="#向视图插入数据" class="headerlink" title="向视图插入数据"></a>向视图插入数据</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs SQL">$ <span class="hljs-keyword">insert</span> 视图 <span class="hljs-keyword">values</span>(<span class="hljs-string">&#x27;数据&#x27;</span>) <br></code></pre></td></tr></table></figure>
-<h1 id="查询视图数据"><a href="#查询视图数据" class="headerlink" title="查询视图数据"></a>查询视图数据</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs SQL">$ <span class="hljs-keyword">select</span> 字段 <span class="hljs-keyword">from</span> 视图<br></code></pre></td></tr></table></figure>
-<h1 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs SQL">$ <span class="hljs-keyword">update</span> 视图 <span class="hljs-keyword">set</span> 修改的字段<span class="hljs-operator">=</span><span class="hljs-string">&#x27;修改的数据&#x27;</span> <span class="hljs-keyword">where</span> 匹配字段<span class="hljs-operator">=</span><span class="hljs-string">&#x27;匹配数据&#x27;</span> <br></code></pre></td></tr></table></figure>
+<h1 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">create</span> <span class="hljs-keyword">view</span> 视图(字段别名) <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> 字段 <span class="hljs-keyword">from</span> 表 <span class="hljs-keyword">WITH</span> <span class="hljs-keyword">CHECK</span> OPTION<br></code></pre></td></tr></table></figure>
+<h1 id="向视图插入数据"><a href="#向视图插入数据" class="headerlink" title="向视图插入数据"></a>向视图插入数据</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">insert</span> 视图 <span class="hljs-keyword">values</span>(<span class="hljs-string">&#x27;数据&#x27;</span>) <br></code></pre></td></tr></table></figure>
+<h1 id="查询视图数据"><a href="#查询视图数据" class="headerlink" title="查询视图数据"></a>查询视图数据</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">select</span> 字段 <span class="hljs-keyword">from</span> 视图<br></code></pre></td></tr></table></figure>
+<h1 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">update</span> 视图 <span class="hljs-keyword">set</span> 修改的字段<span class="hljs-operator">=</span><span class="hljs-string">&#x27;修改的数据&#x27;</span> <span class="hljs-keyword">where</span> 匹配字段<span class="hljs-operator">=</span><span class="hljs-string">&#x27;匹配数据&#x27;</span> <br></code></pre></td></tr></table></figure>
+<br>
+
 			  </article>
 		</div>
 		
@@ -1064,6 +1063,10 @@ $(window).load(function(){
 	<script src="/resources/jscex/jscex-builderbase.min.js"></script>
 	<script src="/resources/jscex/jscex-async.min.js"></script>
 	<script src="/resources/jscex/jscex-async-powerpack.min.js"></script>
+	
+	
+<script src="/js/sdq-iframe.js"></script>
+
 
 
 <style>

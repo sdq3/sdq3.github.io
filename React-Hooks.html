@@ -79,9 +79,6 @@
 <link rel="stylesheet" href="/css/katex.min.css">
 
 
-	
-	
-<script src="/js/sdq-iframe.js"></script>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 	
@@ -977,7 +974,7 @@ var $main = document.querySelector('.main');
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">import</span> <span class="hljs-title class_">React</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">React</span>DOM <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react-dom&#x27;</span><br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">Demo</span>(<span class="hljs-params"></span>)&#123;<br>	<span class="hljs-comment">//console.log(&#x27;Demo&#x27;);</span><br><br>	<span class="hljs-keyword">const</span> [count,setCount] = <span class="hljs-title class_">React</span>.<span class="hljs-title function_">useState</span>(<span class="hljs-number">0</span>)<br>  &#123;<span class="hljs-comment">/*  Ref Hook  */</span>&#125;<br>	<span class="hljs-keyword">const</span> myRef = <span class="hljs-title class_">React</span>.<span class="hljs-title function_">useRef</span>()<br><br>	<span class="hljs-title class_">React</span>.<span class="hljs-title function_">useEffect</span>(<span class="hljs-function">()=&gt;</span>&#123;<br>		<span class="hljs-keyword">let</span> timer = <span class="hljs-built_in">setInterval</span>(<span class="hljs-function">()=&gt;</span>&#123;<br>			<span class="hljs-title function_">setCount</span>(<span class="hljs-function"><span class="hljs-params">count</span> =&gt;</span> count+<span class="hljs-number">1</span> )<br>		&#125;,<span class="hljs-number">1000</span>)<br>		<span class="hljs-keyword">return</span> <span class="hljs-function">()=&gt;</span>&#123;<br>			<span class="hljs-built_in">clearInterval</span>(timer)<br>		&#125;<br>	&#125;,[])<br><br>	<span class="hljs-comment">//加的回调</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-title function_">add</span>(<span class="hljs-params"></span>)&#123;<br>		<span class="hljs-comment">//setCount(count+1) //第一种写法</span><br>		<span class="hljs-title function_">setCount</span>(<span class="hljs-function"><span class="hljs-params">count</span> =&gt;</span> count+<span class="hljs-number">1</span> )<br>	&#125;<br><br>	<span class="hljs-comment">//提示输入的回调</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-title function_">show</span>(<span class="hljs-params"></span>)&#123;<br>		<span class="hljs-title function_">alert</span>(myRef.<span class="hljs-property">current</span>.<span class="hljs-property">value</span>)<br>	&#125;<br><br>	<span class="hljs-comment">//卸载组件的回调</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-title function_">unmount</span>(<span class="hljs-params"></span>)&#123;<br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">unmountComponentAtNode</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;root&#x27;</span>))<br>	&#125;<br><br>	<span class="hljs-keyword">return</span> (<br>		&lt;div&gt;<br>			&lt;input type=<span class="hljs-string">&quot;text&quot;</span> ref=&#123;myRef&#125;/&gt;<br>			&lt;h2&gt;当前求和为：&#123;count&#125;&lt;/h2&gt;<br>			&lt;button onClick=&#123;add&#125;&gt;点我+<span class="hljs-number">1</span>&lt;/button&gt;<br>			&lt;button onClick=&#123;unmount&#125;&gt;卸载组件&lt;/button&gt;<br>			&lt;button onClick=&#123;show&#125;&gt;点我提示数据&lt;/button&gt;<br>		&lt;/div&gt;<br>	)<br>&#125;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">Demo</span><br></code></pre></td></tr></table></figure>
 
-
+<br>
 
 
 
@@ -1100,6 +1097,10 @@ $(window).load(function(){
 	<script src="/resources/jscex/jscex-builderbase.min.js"></script>
 	<script src="/resources/jscex/jscex-async.min.js"></script>
 	<script src="/resources/jscex/jscex-async-powerpack.min.js"></script>
+	
+	
+<script src="/js/sdq-iframe.js"></script>
+
 
 
 <style>

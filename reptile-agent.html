@@ -79,9 +79,6 @@
 <link rel="stylesheet" href="/css/katex.min.css">
 
 
-	
-	
-<script src="/js/sdq-iframe.js"></script>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 	
@@ -983,6 +980,8 @@ B[代理]--response-->A[浏览器]
 
 <h1 id="proxies代理参数的使用"><a href="#proxies代理参数的使用" class="headerlink" title="proxies代理参数的使用"></a>proxies代理参数的使用</h1><p><strong>为了让服务器以为不是同一个客户端的请求, 防止频繁向一个域名发送请求被封ip, 所以要使用代理ip</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 主意: proxies字典中包含多个键值对, 发送请求时将按照url地址的协议来选择对应的代理ip</span><br><br><span class="hljs-comment"># proxies通常是用字典形式使用</span><br>proxies = &#123;<br>    <span class="hljs-string">&quot;http&quot;</span>:<span class="hljs-string">&quot;http://106.14.5.128:80&quot;</span>,<br>    <span class="hljs-string">&quot;https&quot;</span>:<span class="hljs-string">&quot;http://106.14.5.130:80&quot;</span><br>&#125;<br><br><span class="hljs-comment"># reuests模块使用代理的用法:</span><br>response = requests.get(url, proxies=proxies)<br></code></pre></td></tr></table></figure>
+<br>
+
 
 
 
@@ -1283,6 +1282,10 @@ $(window).load(function(){
 	<script src="/resources/jscex/jscex-builderbase.min.js"></script>
 	<script src="/resources/jscex/jscex-async.min.js"></script>
 	<script src="/resources/jscex/jscex-async-powerpack.min.js"></script>
+	
+	
+<script src="/js/sdq-iframe.js"></script>
+
 
 
 <style>

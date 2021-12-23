@@ -79,9 +79,6 @@
 <link rel="stylesheet" href="/css/katex.min.css">
 
 
-	
-	
-<script src="/js/sdq-iframe.js"></script>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 	
@@ -949,15 +946,20 @@ var $main = document.querySelector('.main');
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image<br><span class="hljs-keyword">import</span> pytesseract<br><br><span class="hljs-comment"># 打开一个图片文件</span><br>im = Image.<span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;起名可以是中文.jpg&#x27;</span>)    //该图片的<span class="hljs-string">&quot;内容&quot;</span>非中文, 中文不识别<br><br>result = pytesseract.image_to_string(im)<br><br><span class="hljs-built_in">print</span>(result)<br></code></pre></td></tr></table></figure>
 <h1 id="图片识别引擎的使用扩展"><a href="#图片识别引擎的使用扩展" class="headerlink" title="图片识别引擎的使用扩展"></a>图片识别引擎的使用扩展</h1><p><strong><a target="_blank" rel="noopener" href="https://www.cnblogs.com/cnlian/p/5765871.html">训练平台</a></strong></p>
 <ul>
-<li>其他OCR平台<ul>
-<li><a target="_blank" rel="noopener" href="https://azure.microsoft.com/zh-cn/services/cognitive-services/computer-vision">微软Azure图像识别</a></li>
-<li><a target="_blank" rel="noopener" href="http://aidemo.youdao.com/ocrdemo">有道智能文字识别</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.aliyun.com/product/cdi">阿里云图文识别</a></li>
-<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/product/ocr">腾讯OCR文字识别</a></li>
+<li><p>其他OCR平台</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://azure.microsoft.com/zh-cn/services/cognitive-services/computer-vision">微软Azure图像识别</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://aidemo.youdao.com/ocrdemo">有道智能文字识别</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.aliyun.com/product/cdi">阿里云图文识别</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/product/ocr">腾讯OCR文字识别</a></p>
+</li>
 </ul>
 </li>
 </ul>
-
+<br>
 			  </article>
 		</div>
 		
@@ -1076,6 +1078,10 @@ $(window).load(function(){
 	<script src="/resources/jscex/jscex-builderbase.min.js"></script>
 	<script src="/resources/jscex/jscex-async.min.js"></script>
 	<script src="/resources/jscex/jscex-async-powerpack.min.js"></script>
+	
+	
+<script src="/js/sdq-iframe.js"></script>
+
 
 
 <style>

@@ -79,9 +79,6 @@
 <link rel="stylesheet" href="/css/katex.min.css">
 
 
-	
-	
-<script src="/js/sdq-iframe.js"></script>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 	
@@ -953,10 +950,12 @@ var $main = document.querySelector('.main');
 <p><strong>例子</strong></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> bbs (id,name,sex,age,classid) <span class="hljs-keyword">VALUES</span><br>(<span class="hljs-number">1</span>, <span class="hljs-string">&#x27;sdqz&#x27;</span>, <span class="hljs-keyword">NULL</span>, <span class="hljs-keyword">NULL</span>, <span class="hljs-number">2</span>),<br>(<span class="hljs-number">2</span>, <span class="hljs-string">&#x27;sdq&#x27;</span>, <span class="hljs-keyword">NULL</span>,  <span class="hljs-keyword">NULL</span>,  <span class="hljs-number">3</span>),<br>(<span class="hljs-number">3</span>, <span class="hljs-string">&#x27;sdz&#x27;</span>, <span class="hljs-keyword">NULL</span>,  <span class="hljs-keyword">NULL</span>,  <span class="hljs-number">4</span>);<br></code></pre></td></tr></table></figure>
 
-<h1 id="查看数据表"><a href="#查看数据表" class="headerlink" title="查看数据表"></a>查看数据表</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs SQL">$ elect <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> sdq<br></code></pre></td></tr></table></figure>
-<h1 id="删除数据表"><a href="#删除数据表" class="headerlink" title="删除数据表"></a>删除数据表</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs SQL">$ <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> 表名;<br></code></pre></td></tr></table></figure>
+<h1 id="查看数据表"><a href="#查看数据表" class="headerlink" title="查看数据表"></a>查看数据表</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs SQL">elect <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> sdq<br></code></pre></td></tr></table></figure>
+<h1 id="删除数据表"><a href="#删除数据表" class="headerlink" title="删除数据表"></a>删除数据表</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> 表名;<br></code></pre></td></tr></table></figure>
 <p><strong>例子</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs SQL">$ <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> sdq;<br></code></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> sdq;<br></code></pre></td></tr></table></figure>
+<br>
+
 
 			  </article>
 		</div>
@@ -1076,6 +1075,10 @@ $(window).load(function(){
 	<script src="/resources/jscex/jscex-builderbase.min.js"></script>
 	<script src="/resources/jscex/jscex-async.min.js"></script>
 	<script src="/resources/jscex/jscex-async-powerpack.min.js"></script>
+	
+	
+<script src="/js/sdq-iframe.js"></script>
+
 
 
 <style>

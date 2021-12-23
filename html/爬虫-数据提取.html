@@ -4,24 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/js/mermaid.min.js"></script>
-    <style>
-    svg[id^="mermaid-"] {
-        min-width: 100%;
-        min-height: 100%;
-    }
-
-    .mermaid {
-        width: 100%;
-        height: 31.25rem;
-    }
-    </style>
+    <link rel="stylesheet" href="/css/Subpage-style.css">
+    <script src="/js/Subpage-js.js"></script>
+    <link rel="stylesheet" href="/css/Subpage-style.css">
+    <script src="/js/Subpage-js.js"></script>
     <title>爬虫数据提取</title>
 </head>
 <body>
 
 <div class="mermaid">
-graph LR
+graph TB
     A[" 数据解析 "]-->B[" json "]
     A[" 数据解析 "]-->C[" 非结构化数据 "]
     B[" 数据化数据 "]-->D[" json "]
@@ -45,4 +37,5 @@ graph LR
     V[" pyquery "]-->W[" css选择器 "]
 </div>
 </body>
+<script src="/js/mermaid.min.js"></script>
 </html>

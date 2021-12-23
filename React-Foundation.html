@@ -79,9 +79,6 @@
 <link rel="stylesheet" href="/css/katex.min.css">
 
 
-	
-	
-<script src="/js/sdq-iframe.js"></script>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 	
@@ -960,7 +957,7 @@ var $main = document.querySelector('.main');
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;./App.css&#x27;</span>;<br><br><span class="hljs-keyword">let</span> wbbl = <span class="hljs-string">&quot;外部变量&quot;</span><br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">App</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">let</span> nbbl = <span class="hljs-string">&quot;内部变量&quot;</span><br>  <span class="hljs-keyword">return</span> (<br>    &lt;div className=<span class="hljs-string">&quot;App&quot;</span>&gt;<br>      &lt;header className=<span class="hljs-string">&quot;App-header&quot;</span>&gt;<br>        &lt;h1&gt;&#123;nbbl&#125;&lt;/h1&gt;<br>        &lt;h1&gt;&#123;wbbl&#125;&lt;/h1&gt;<br>      &lt;/header&gt;<br>    &lt;/div&gt;<br>  );<br>&#125;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">App</span>;<br></code></pre></td></tr></table></figure>
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;./App.css&#x27;</span>;<br>&#123;<span class="hljs-comment">/*  useState是钩子函数  */</span>&#125;<br><span class="hljs-keyword">import</span> &#123; useState &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span><br><br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">App</span>(<span class="hljs-params"></span>) &#123;<br>  &#123;<span class="hljs-comment">/*  初始值 = 数组  */</span>&#125;<br>  <span class="hljs-keyword">const</span> [nbbl, setTitle] = <span class="hljs-title function_">useState</span>(<span class="hljs-string">&quot;内部变量&quot;</span>)<br>    nbbl = <span class="hljs-string">&quot;本来就是内部变量&quot;</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(nbbl)<br>  <br>  <span class="hljs-keyword">return</span> (<br>    &lt;div className=<span class="hljs-string">&quot;App&quot;</span>&gt;<br>      &lt;header className=<span class="hljs-string">&quot;App-header&quot;</span>&gt;<br>        &lt;h1 onClik=<span class="hljs-string">&quot;&quot;</span><span class="hljs-title class_">App</span>-header&gt;&#123;nbbl&#125;&lt;/h1&gt; <br>      &lt;/header&gt;<br>    &lt;/div&gt;<br>  );<br>&#125;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">App</span>;<br></code></pre></td></tr></table></figure>
-
+<br>
 
 			  </article>
 		</div>
@@ -1080,6 +1077,10 @@ $(window).load(function(){
 	<script src="/resources/jscex/jscex-builderbase.min.js"></script>
 	<script src="/resources/jscex/jscex-async.min.js"></script>
 	<script src="/resources/jscex/jscex-async-powerpack.min.js"></script>
+	
+	
+<script src="/js/sdq-iframe.js"></script>
+
 
 
 <style>

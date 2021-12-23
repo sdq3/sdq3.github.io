@@ -79,9 +79,6 @@
 <link rel="stylesheet" href="/css/katex.min.css">
 
 
-	
-	
-<script src="/js/sdq-iframe.js"></script>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 	
@@ -988,6 +985,8 @@ var $main = document.querySelector('.main');
 </tbody></table>
 <p><strong>案例</strong></p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs JSON"><span class="hljs-punctuation">[</span><br>    <span class="hljs-punctuation">&#123;</span>   <br>        <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;史迪奇&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;age&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;未知&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">626</span><span class="hljs-punctuation">,</span><br><br>    <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">]</span><br></code></pre></td></tr></table></figure>
+<br>
+
 <table>
 <thead>
 <tr>
@@ -1029,18 +1028,32 @@ var $main = document.querySelector('.main');
 </tbody></table>
 <h1 id="json转python"><a href="#json转python" class="headerlink" title="json转python"></a>json转python</h1><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs JSON">json_str=&#x27;&#x27;&#x27;<span class="hljs-punctuation">[</span><span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;史迪奇&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;age&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;未知&quot;</span><span class="hljs-punctuation">,</span><br>&quot;id&quot;:626,&#125;]&#x27;&#x27;&#x27;<br><br># 把json格式文件, 转换成python数据<br>rs = json.loads(json_str)<br>#查看类型<br>print(type(rs)) #列表<br>print(type(rs[0])) #字典<br><br># 把json格式文件, 转换成python类型的数据<br>with open(&#x27;data/sdq.json&#x27;) as fp:<br>    # 加载该文件对象, 转换为python类型的数据<br>    python_list = json.load(fp)<br>    print(type(python_list)) #列表<br>    print((type(python_list[0]))) #字典<br></code></pre></td></tr></table></figure>
 <p><strong>举例图</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs mermaid"><br>graph LR<br><br> <br>  A[&quot;json字符串&quot;]---B[&quot;json.loads(s)&quot;]--&gt;C[&quot;python数据类型&quot;]<br>    D[&quot;json格式的文件对象&quot;]---F[&quot;json.load(fp)&quot;]--&gt;C[&quot;python数据类型&quot;]<br></code></pre></td></tr></table></figure>
+<div class="mermaid">
+graph LR
+    A[" python数据类型 "]-->B[" json.dupmps(obj) "]
+    B[" json.dupmps(obj) "]-->D[" json字符串<br>
+json格式文件 "]
+    A[" python数据类型 "]-->F[" json.dupmps(obj) "]
+    F[" json.dupmps(obj,fp) "]-->D[" json字符串<br>
+json格式文件 "]
+</div>
+
 
 <h1 id="python转json"><a href="#python转json" class="headerlink" title="python转json"></a>python转json</h1><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs JSON">json_str=&#x27;&#x27;&#x27;<span class="hljs-punctuation">[</span><span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;史迪奇&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;age&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;未知&quot;</span><span class="hljs-punctuation">,</span><br>&quot;id&quot;:626,&#125;]&#x27;&#x27;&#x27;<br><br>rs = json.loads(json_str)<br># 把python转换json字符串<br>json_str = json.dump(rs)<br>print(json_str)<br><br># 把json格式文件, 转换成python类型的数据<br>with open(&#x27;data/sdz.json&#x27;,&#x27;w&#x27;) as fp:<br>    # 把python以json格式储存到文件中<br>    json.dump(re, fp,  ensure_ascii=False)<br></code></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>        /￣json.dupmps(obj)￣￣￣↘
-       /                         json字符串
-python数据类型 
-       \                         json格式文件
-        \__json.dupmps(obj,fp)__↗</code></pre>
+
+
+<br>
+<!-- 
+            /￣json.dupmps(obj)￣￣￣↘
+           /                         json字符串
+    python数据类型 
+           \                         json格式文件
+            \__json.dupmps(obj,fp)__↗ -->
+
 
 			  </article>
 		</div>
@@ -1160,6 +1173,10 @@ $(window).load(function(){
 	<script src="/resources/jscex/jscex-builderbase.min.js"></script>
 	<script src="/resources/jscex/jscex-async.min.js"></script>
 	<script src="/resources/jscex/jscex-async-powerpack.min.js"></script>
+	
+	
+<script src="/js/sdq-iframe.js"></script>
+
 
 
 <style>
