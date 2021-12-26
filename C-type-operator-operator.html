@@ -909,28 +909,10 @@ var $main = document.querySelector('.main');
 
 11.位逻辑运算和位运算赋值运算符位移运算符:
 
-
-
-
-操作符
-名称
-运算规则
-说明
-
-
-
-&lt;&lt;
-左移
-a &lt;&lt; b, a左移b位
-使操作各位左移, 低位补0, 高位移出舍去
-
-
-&gt;&gt;
-右移
-a &gt;&gt; b, a右移b位
-使操作各位右移, 移出低位舍去
-
-
+| 操作符 | 名称 | 运算规则 | 说明 | 实际操作 |
+| :—-: | :—-: | :—-: | :—-: |
+| &lt;&lt; | 左移 | a &lt;&lt; b, a左移b位 | 使操作各位左移, 低位补0, 高位移出舍去 | 操作数乘以2ⁿ (n位左移的位数) |
+| &gt;&gt; | 右移 | a &gt;&gt; b, a右移b位 | 使操作各位右移, 移出低位舍去 | 操作数除以2ⁿ (n位右移的位数) |
 说明:
 
 
@@ -1227,6 +1209,31 @@ sizeof
     A[" 数据类型 "]-->L[" 空类型 "] 
 </div>
 
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
 
 <br>
 
@@ -1416,6 +1423,13 @@ graph TB
 
 <br>
 
+<br>
+
+<br>
+
+<br>
+
+<br>
 
 
 <h5>保值转换</h5>
@@ -1594,28 +1608,7 @@ graph TB
 </ul>
 <h3 id="11-位逻辑运算和位运算赋值运算符"><a href="#11-位逻辑运算和位运算赋值运算符" class="headerlink" title="11.位逻辑运算和位运算赋值运算符"></a>11.位逻辑运算和位运算赋值运算符</h3><h4>位移运算符:</h4>
 
-<table>
-<thead>
-<tr>
-<th align="center">操作符</th>
-<th align="center">名称</th>
-<th align="center">运算规则</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">&lt;&lt;</td>
-<td align="center">左移</td>
-<td align="center">a &lt;&lt; b, a左移b位</td>
-<td align="center">使操作各位左移, 低位补0, 高位移出舍去</td>
-</tr>
-<tr>
-<td align="center">&gt;&gt;</td>
-<td align="center">右移</td>
-<td align="center">a &gt;&gt; b, a右移b位</td>
-<td align="center">使操作各位右移, 移出低位舍去</td>
-</tr>
-</tbody></table>
+<p>| 操作符 | 名称 | 运算规则 | 说明 | 实际操作 |<br>| :—-: | :—-: | :—-: | :—-: |<br>| &lt;&lt; | 左移 | a &lt;&lt; b, a左移b位 | 使操作各位左移, 低位补0, 高位移出舍去 | 操作数乘以2ⁿ (n位左移的位数) |<br>| &gt;&gt; | 右移 | a &gt;&gt; b, a右移b位 | 使操作各位右移, 移出低位舍去 | 操作数除以2ⁿ (n位右移的位数) |</p>
 <h4>说明:</h4>
 
 <ul>

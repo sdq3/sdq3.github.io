@@ -63,9 +63,9 @@
                     if (dyniframe[i] && !window.opera) {
                         dyniframe[i].style.display = "block";
                         if (dyniframe[i].contentDocument && dyniframe[i].contentDocument.body.offsetHeight) //如果用户的浏览器是NetScape
-                            dyniframe[i].height = dyniframe[i].contentDocument.body.offsetHeight;
+                            dyniframe[i].height = dyniframe[i].contentDocument.body.offsetHeight + 1000;
                         else if (dyniframe[i].Document && dyniframe[i].Document.body.scrollHeight) //如果用户的浏览器是IE
-                            dyniframe[i].height = dyniframe[i].Document.body.scrollHeight;
+                            dyniframe[i].height = dyniframe[i].Document.body.scrollHeight + 1000;
                     }
                 }
                 //根据设定的参数来处理不支持iframe的浏览器的显示问题
