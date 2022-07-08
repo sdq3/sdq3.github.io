@@ -55,6 +55,7 @@
         $(item)[0].allowfullscreen = true;
         $(item)[0].id = id + i;
         function dyniframesize() {
+            setTimeout(function(){
             var dyniframe = new Array()
             for (i = 0; i < iframeids.length; i++) {
                 if (document.getElementById) {
@@ -74,7 +75,9 @@
                     tempobj.style.display = "block";
                 }
             }
+            },5000);
         }
+
         if (window.addEventListener) {
             window.addEventListener("load", dyniframesize, false);
         }
